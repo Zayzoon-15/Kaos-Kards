@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrHealth",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrHealth",
+  "parent":{
+    "name":"Game",
+    "path":"folders/Scripts/Game.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

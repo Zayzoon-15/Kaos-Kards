@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snWin",
+  "audioGroupId":{
+    "name":"agSfx",
+    "path":"audiogroups/agSfx",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":1,
+  "conversionMode":0,
+  "duration":2.307687,
+  "name":"snWin",
+  "parent":{
+    "name":"Sfx",
+    "path":"folders/Sounds/Sfx.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snWin.ogg",
+  "type":0,
+  "volume":0.6,
+}

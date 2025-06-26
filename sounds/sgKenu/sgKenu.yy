@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"sgKenu",
+  "audioGroupId":{
+    "name":"agMusic",
+    "path":"audiogroups/agMusic",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":1,
+  "conversionMode":0,
+  "duration":151.85423,
+  "name":"sgKenu",
+  "parent":{
+    "name":"Music",
+    "path":"folders/Sounds/Music.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sgKenu.ogg",
+  "type":1,
+  "volume":1.0,
+}

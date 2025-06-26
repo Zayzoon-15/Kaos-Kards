@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snVolUp",
+  "audioGroupId":{
+    "name":"agSfx",
+    "path":"audiogroups/agSfx",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":1,
+  "conversionMode":0,
+  "duration":0.26922902,
+  "name":"snVolUp",
+  "parent":{
+    "name":"Sfx",
+    "path":"folders/Sounds/Sfx.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snVolUp.ogg",
+  "type":0,
+  "volume":1.0,
+}

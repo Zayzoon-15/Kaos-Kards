@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snRoundOver",
+  "audioGroupId":{
+    "name":"agSfx",
+    "path":"audiogroups/agSfx",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":1.1250113,
+  "name":"snRoundOver",
+  "parent":{
+    "name":"Sfx",
+    "path":"folders/Sounds/Sfx.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snRoundOver.ogg",
+  "type":0,
+  "volume":1.0,
+}

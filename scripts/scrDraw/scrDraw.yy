@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrDraw",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrDraw",
+  "parent":{
+    "name":"Drawing",
+    "path":"folders/Scripts/Drawing.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

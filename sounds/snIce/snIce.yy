@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snIce",
+  "audioGroupId":{
+    "name":"agSfx",
+    "path":"audiogroups/agSfx",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.0,
+  "name":"snIce",
+  "parent":{
+    "name":"Sfx",
+    "path":"folders/Sounds/Sfx.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snIce.ogg",
+  "type":0,
+  "volume":1.0,
+}

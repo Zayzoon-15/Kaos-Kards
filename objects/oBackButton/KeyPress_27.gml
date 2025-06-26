@@ -1,0 +1,1 @@
+transStart(rMainMenu,seqFadeOut,seqFadeIn);
