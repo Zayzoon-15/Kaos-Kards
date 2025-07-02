@@ -1,5 +1,0 @@
-with oLunchBag
-{
-    bagFilled();
-}
-

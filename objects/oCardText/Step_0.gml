@@ -1,0 +1,31 @@
+
+//Get Text Size
+height = string_height_ext(text,-1,maxWidth);
+width = string_width_ext(text,-1,maxWidth);
+var _nameWidth = string_width_ext(name,-1,maxWidth)*2;
+
+if _nameWidth > width
+{
+    width = _nameWidth;
+}
+
+//Fade Text
+textAlpha = lerp(textAlpha,1,.2);
+
+//Go To Parent
+if instance_exists(parent)
+{
+    var _yDist = sprite_get_height(sBlankCard)*.6;
+    
+    x = parent.x;
+    y = lerp(y,parent.cardY-_yDist,.2);
+}
+
+//Destory
+if !touchingMouse(parent) or !parent.canGrab
+{
+    instance_destroy();
+}
+
+//Depth
+depth = parent.depth - 5;

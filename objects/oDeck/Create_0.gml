@@ -1,37 +1,55 @@
 
-currentCards = 0;
-cardsPicked = 0;
+//Stats
+totalCards = array_length(playerDeck);
+cardsLeft = totalCards;
+currentCard = 0;
 cardsInPlay = 0;
 
-shake = 0;
-
-finishedDrawing = false;
-
-totalCards = array_length(playerDeck);
-maxHandSize = global.playerHandSize;
+//Create Hand
+if !ds_exists(playerHand,ds_type_list)
+{
+    playerHand = ds_list_create();
+} else ds_list_clear(playerHand);
 
 //Deck
+randomize();
 deck = array_shuffle(playerDeck);
 deckNum = 0;
 
+//Draw Cards
+drawTime = 10;
 
-givePlayerCards = function()
-{
-    randomize();
-    var _card = deck[deckNum];
-    var _inst = instance_create_layer(room_width/2,640,"Cards",_card);
-    _inst.cardId = currentCards;
+//Hover
+canHover = true;
+
+//Ui Box Stats
+height = 0;
+width = 0;
+heightMargin = 2;
+widthMargin = 10;
+maxWidth = 300;
+
+
+//Functions
+drawCard = function(){
+	
+    //Create Card
+	var _x = room_width/2;
+	var _y = 630;
+    var _info = deck[deckNum];
+	var _inst = instance_create_layer(_x,_y,"Cards",oCard,{
+        cardId : currentCard,
+        info : _info
+    });
     
+    //Add To Hand
     ds_list_add(playerHand,_inst);
     
-    var _sound = asset_get_index($"snCard{irandom_range(1,3)}");
-    audio_play_sound(_sound,0,false);
-    
+    //Change Stats
+    cardsLeft --;
+    currentCard ++;
     deckNum ++;
     cardsInPlay ++;
-    currentCards ++;
-    cardsPicked ++;
+    drawTime = 10;
+    
 }
-
-startingCards = 0;
-alarm[0] = 5;

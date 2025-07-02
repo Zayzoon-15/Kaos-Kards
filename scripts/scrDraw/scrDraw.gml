@@ -1,106 +1,69 @@
 
 
-///@desc Sets the size of the object to the given values
-///@arg {real} _x The x scale
-///@arg {real} _y The y scale
-function setSize(_x,_y)
-{
-    image_xscale = _x;
-    image_yscale = _y;
-}
-
-
-///@desc Creates the info box inst that shows information about the card
-///@arg {struct} _struct The struct giving the information required: name, desc, range, boxsize
-function showInfoBox(_struct)
-{
-    var _inst = instance_create_layer(x,bbox_top-50,"Instances",oInfoBox,{
-        parent : self,
-        info : _struct,
-        cardId : self.cardId
-    });
+///@self oCard
+function drawCardText(_info){
     
-    return _inst;
-    
-}
-
-
-///@desc Draws a tip box above the object when it touches the mouse
-///Put the function in a draw Gui event!!!
-///@arg {string} _tipText The tip to show
-///@arg {real} _boxWidth The width of the box (Default is 60)
-///@arg {real} _boxHeight The height of the box (Default is 30)
-///@arg {real} _yOffset The y offset of the box (Default is 50)
-///@arg {real} _yPos The y pos of the box (Default is bbox_top)
-function drawTipBox(_tipText,_boxWidth = 60,_boxHeight = 30, _yOffset = 50,_yPos = bbox_top)
-{
-    if touchingMouse() and !global.midTrans
+    if !instance_exists(oCardText) and touchingMouse()
     {
-        //Box Position
-        var _x = x;
-        var _y = _yPos - _yOffset;
-        
-        //Draw Box
-        drawBox(_x,_y,_boxWidth,_boxHeight);
-        
-        //Text Setup
-        draw_set_halign(fa_center);
-        draw_set_valign(fa_middle);
-        draw_set_font(fnMain);
-        
-        //Draw Info
-        draw_text_transformed(_x,_y,_tipText,1.5,1.5,0);
+        instance_create_depth(x,y,depth,oCardText,{ 
+            name : _info.name,
+            desc : _info.desc,
+            range : _info.range,
+            parent : self.id
+        });
     }
 }
 
-///@desc Draws a message on the screen
-///@arg {string} _message The message to show
-///@arg {real} _x The x position
-///@arg {real} _y The y position
-function showMessage(_message,_x = undefined,_y = undefined)
-{
-    instance_create_layer(0,0,"Ui",oMessage,{
-    text : _message,
-    xOveride : _x,
-    yOveride : _y,
 
-    });
+///@desc Creates a tip box that appears on top of the object
+///Keep in mind every object that uses this function needs the variable: canHover
+///@arg {string} _desc The description
+///@arg {bool} _top whether to draw at the top or bottom
+function drawTipBox(_desc,_top = true){
+    
+    //Check If Has Variable
+    if !variable_instance_exists(self.id,"canHover")
+    {
+        show_message($"{object_get_name(object_index)} does not have the variable: canHover");
+        game_end();
+    }
+    
+    //Create Tip Box
+    if !instance_exists(oTipBox) and touchingMouse()
+    {
+        instance_create_depth(x,y,depth,oTipBox,{ 
+            desc : _desc,
+            parent : self.id,
+            top : _top
+        });
+    }
+    
 }
 
 
-///@desc Draws a black box with the given size
-///Put the function in a draw event!!!
-///@arg {real} _x The x position
-///@arg {real} _y The y position
-///@arg {real} _boxWidth The width of the box (Default is 60)
-///@arg {real} _boxHeight The height of the box (Default is 30)
-///@arg {real} _yOffset The y offset of the box (Default is 0)
-///@arg {real} _alpha The alpha of the box (Default is .5)
-function drawBox(_x,_y,_boxWidth = 60,_boxHeight = 30, _yOffset=0,_alpha=.5)
+///@desc Draws a rectangle with an outline
+///@arg {real} _x1 The x position of the top left corner
+///@arg {real} _y1 The y position of the top left corner
+///@arg {real} _x2 The x position of the bottom right corner
+///@arg {real} _y2 The y position of the bottom right corner
+///@arg {real} _cornerRad The radius of the curve (by default : 0)
+///@arg {Constant.Color} _bgColor The color of the box without an outline (by default : Black)
+///@arg {Constant.Color} _outlineColor The color of the outline (by default : White)
+///@arg {real} _bgAlpha The alpha of the box without an outline (by default : 0.7)
+///@arg {real} _outlineAlpha The alpha of the outline (by default : 1)
+function drawRectOutlined(_x1,_y1,_x2,_y2,_cornerRad = 0,_bgColor=c_black,_outlineColor=c_white,_bgAlpha = UIBOX_ALPHA,_outlineAlpha = 1)
 {
-    //Draw Box
-    var _boxX = _x-(_boxWidth/2);
-    var _boxY = _y-(_boxHeight/2)-_yOffset;
+    //Draw Bg
+    draw_set_color(_bgColor);
+    draw_set_alpha(_bgAlpha);
+    draw_roundrect_ext(_x1,_y1,_x2,_y2,_cornerRad,_cornerRad,false);
     
-    draw_set_alpha(_alpha);
-    draw_set_color(c_black);
-    draw_rectangle(_boxX-_boxWidth*.5,_boxY-_boxHeight*.5,_boxX+_boxWidth*1.5,_boxY+_boxHeight*1.5,0);
+    //Draw Outline
+    draw_set_color(_outlineColor);
+    draw_set_alpha(_outlineAlpha);
+    draw_roundrect_ext(_x1,_y1,_x2,_y2,_cornerRad,_cornerRad,true);
     
-    draw_set_alpha(1);
+    //Reset Stuff
     draw_set_color(c_white);
-    draw_rectangle(_boxX-_boxWidth*.5,_boxY-_boxHeight*.5,_boxX+_boxWidth*1.5,_boxY+_boxHeight*1.5,1);
-    
+    draw_set_alpha(1);
 }
-
-
-function drawNumberCountdown(_x,_y,_currentNumber,_isString = false)
-{
-    instance_create_layer(_x,_y,"Ui",oNumberCount,{
-        number : _currentNumber,
-        isString : _isString
-    });
-}
-
-
-
-

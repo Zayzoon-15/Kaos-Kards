@@ -1,29 +1,32 @@
 ///@desc Grab Card
-
-if canGrab and !global.holdingCard and gamestate == GAMESTATE.PREPARE and oDeck.finishedDrawing
+if canGrab and !global.holdingCard
 {
+    //Set Right Position
+    x = cardX;
+    y = cardY;
+    
+    //Offset
     offsetX = mouse_x - x;
     offsetY = mouse_y - y;
     
+    //Remove Card From Hand
+    ds_list_delete(playerHand,cardId);
     
-    if state == CARDSTATE.HAND
+    with oCard
     {
-        ds_list_delete(playerHand,cardId);
-        
-        with oCard
+        if cardId > other.cardId
         {
-            if cardId > other.cardId
-            {
-                cardId --;
-            }
+            cardId --;
         }
     }
     
-    var _sound = asset_get_index($"snButtonHover{irandom_range(1,2)}");
-    audio_play_sound(_sound,0,false);
+    oDeck.currentCard --;
     
+    //Set Grab
+    canGrab = false;
     global.holdingCard = true;
     
+    //Set State
     state = CARDSTATE.GRABBED;
-    canGrab = false;
+    
 }

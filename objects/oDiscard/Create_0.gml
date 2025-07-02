@@ -1,7 +1,15 @@
 
-maxDiscrads = global.discardSpace;
+//Hover
+canHover = true;
+
+//Stats
 discards = 0;
+isFull = false;
 
-full = false;
-
-shake = 0;
+//Ui Box Stats
+height = 0;
+width = 0;
+heightMargin = 2;
+widthMargin = 10;
+maxWidth = 150;
+boxAlpha = 1;

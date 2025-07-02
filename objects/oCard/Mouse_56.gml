@@ -1,93 +1,33 @@
-///@desc Let Go of Card
-
+///@desc Let Go
 if state == CARDSTATE.GRABBED
 {
     
-    var _putCardInHand = function()
-    {
+    var _putCardInHand = function(){
+        //Add To Hand
         ds_list_add(playerHand,self);
+        cardId = oDeck.currentCard;
+        oDeck.currentCard ++;
         
-        if wasPlaced
-        {
-            oDeck.currentCards ++;
-        }
-        
-        cardId = oDeck.currentCards-1;
-        
-        if instance_exists(slot)
-        {
-            slot.filled = false;
-        }
-        
-        slot = noone;
+        //Change State
         state = CARDSTATE.HAND;
     }
     
-    if !place_meeting(x,y,[oDiscard,oPlayerCardSlot,oPlayerSpecialSlot])
+    //Discards
+    if place_meeting(x,y,oDiscard) and !oDiscard.isFull
     {
-        _putCardInHand();
-    }
-    
-    if place_meeting(x,y,oDiscard)
-    {
-        if oDiscard.discards < oDiscard.maxDiscrads
+        oDeck.cardsInPlay --;
+        oDiscard.discards ++;
+        instance_destroy();
+    } else {
+        //Slots
+        var _actionSlot = instance_place(x,y,oActionSlot);
+        
+        if _actionSlot and info.type == CARDTYPES.ACTION
         {
-            if !wasPlaced
-            {
-                oDeck.currentCards --;
-            } else slot.filled = false;
             
-            oDiscard.discards ++;
-            
-            oDeck.cardsInPlay --;
-            
-            var _sound = asset_get_index($"snDiscard{irandom_range(1,2)}");
-            audio_play_sound(_sound,0,false);
-            
-            instance_destroy();
-        } else{
-            _putCardInHand();
-            
-            oDiscard.shake = 8;
-            audio_play_sound(snDiscardFull,0,false);
-        } 
+        } else _putCardInHand();
     } 
     
-    //Action Slot
-    var _actionSlot = instance_place(x,y,oPlayerCardSlot);
-    if instance_place(x,y,oPlayerCardSlot)
-    {
-        if !_actionSlot.filled and cardInfo.type == "Action" and canBePlaced
-        {
-            if !wasPlaced
-            {
-                oDeck.currentCards --;
-            } else slot.filled = false;
-            slot = _actionSlot;
-            state = CARDSTATE.PLACED;
-        } else {
-        	_putCardInHand();
-        }
-    }
-    
-    //Special Slot
-    var _specialSlot = instance_place(x,y,oPlayerSpecialSlot);
-    if instance_place(x,y,oPlayerSpecialSlot)
-    {
-        if !_specialSlot.filled and cardInfo.type != "Action" and canBePlaced
-        {
-            if !wasPlaced
-            {
-                oDeck.currentCards --;
-            } else slot.filled = false;
-            slot = _specialSlot;
-            state = CARDSTATE.PLACED;
-        } else {
-        	_putCardInHand();
-        }
-    }
-    
-    
+    //Set Grab
     global.holdingCard = false;
-    
 }

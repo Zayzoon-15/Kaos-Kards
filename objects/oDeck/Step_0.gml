@@ -1,4 +1,18 @@
 
-currentCards = clamp(currentCards,0,maxHandSize);
 
-shake = lerp(shake,0,.3);
+//Draw Cards
+if cardsInPlay < global.maxHandSize and drawTime <= 0 and cardsLeft != 0
+{
+    drawCard();
+} else drawTime --;
+
+
+//Destroy Deck
+if cardsLeft == 0
+{
+    visible = false;
+}
+
+//Tip Box
+if visible then canHover = true; else canHover = false;
+drawTipBox($"Your deck of cards\nYou have {cardsLeft} cards left");
