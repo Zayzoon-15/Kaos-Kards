@@ -2,30 +2,43 @@
 if state == CARDSTATE.GRABBED
 {
     
-    var _putCardInHand = function(){
-        //Add To Hand
-        ds_list_add(playerHand,self);
-        cardId = oDeck.currentCard;
-        oDeck.currentCard ++;
-        
-        //Change State
-        state = CARDSTATE.HAND;
-    }
-    
     //Discards
     if place_meeting(x,y,oDiscard) and !oDiscard.isFull
     {
-        oDeck.cardsInPlay --;
-        oDiscard.discards ++;
-        instance_destroy();
+        deleteCard();
     } else {
         //Slots
         var _actionSlot = instance_place(x,y,oActionSlot);
         
         if _actionSlot and info.type == CARDTYPES.ACTION
         {
+            //Swap Places
+            if _actionSlot.filled
+            {
+                with oCard
+                {
+                    if state == CARDSTATE.PLACED and slot == _actionSlot.id
+                    {
+                        //Swith With Other Slot
+                        if other.slot != noone
+                        {
+                            var _targetSlot = other.slot;
+                            other.slot = slot;
+                            slot = _targetSlot;
+                        } else {
+                        	other.slot = slot;
+                            putCardInHand();
+                        }
+                    }
+                }
+            } else {
+                resetSlot();
+                slot = _actionSlot.id;
+            } 
             
-        } else _putCardInHand();
+            state = CARDSTATE.PLACED;
+            
+        } else putCardInHand();
     } 
     
     //Set Grab

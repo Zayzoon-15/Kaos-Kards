@@ -19,7 +19,7 @@ if instance_exists(parent)
     
     x = parent.x;
     y = lerp(y,parent.cardY-_yDist,.2);
-}
+} else instance_destroy();
 
 //Destory
 if !touchingMouse(parent) or !parent.canGrab
@@ -28,4 +28,4 @@ if !touchingMouse(parent) or !parent.canGrab
 }
 
 //Depth
-depth = parent.depth - 5;
+if instance_exists(parent) then depth = parent.depth - 5;

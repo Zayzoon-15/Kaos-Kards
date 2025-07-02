@@ -9,18 +9,8 @@ if canGrab and !global.holdingCard
     offsetX = mouse_x - x;
     offsetY = mouse_y - y;
     
-    //Remove Card From Hand
-    ds_list_delete(playerHand,cardId);
-    
-    with oCard
-    {
-        if cardId > other.cardId
-        {
-            cardId --;
-        }
-    }
-    
-    oDeck.currentCard --;
+    //Remove Card
+    removeCardFromHand();
     
     //Set Grab
     canGrab = false;

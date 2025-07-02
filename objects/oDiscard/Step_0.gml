@@ -16,7 +16,12 @@ var _text;
 if !isFull
 {
     var _discardsLeft = global.maxDiscards - discards;
-    _text = $"Drag a card here to discard it\nYou have {_discardsLeft} discards left";
+    
+    if _discardsLeft > 1
+    {
+        _text = $"Drag a card here to discard it\nYou have {_discardsLeft} discards left";
+    } else _text = $"Drag a card here to discard it\nYou have {_discardsLeft} discard left";
+    
 } else _text = "You have no discards left";
 
 if !global.holdingCard

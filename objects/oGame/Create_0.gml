@@ -1,6 +1,9 @@
 
 #region Global Vars
 
+//Keyboard
+global.keyDiscard = ord("Z"); 
+
 //Deck
 globalvar playerHand,playerDeck;
 playerHand = undefined;

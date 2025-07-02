@@ -15,4 +15,10 @@ if cardsLeft == 0
 
 //Tip Box
 if visible then canHover = true; else canHover = false;
-drawTipBox($"Your deck of cards\nYou have {cardsLeft} cards left");
+
+var _text;
+if cardsLeft > 1
+{
+    _text = $"Your deck of cards\nYou have {cardsLeft} cards left";
+} else _text = $"Your deck of cards\nYou have {cardsLeft} card left";
+drawTipBox(_text);

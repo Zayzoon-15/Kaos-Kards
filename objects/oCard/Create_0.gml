@@ -24,6 +24,11 @@ canGrab = true;
 offsetX = 0;
 offsetY = 0;
 
+//Placed
+slot = noone;
+wasPlaced = false;
+
+
 //State
 enum CARDSTATE
 {
@@ -33,3 +38,55 @@ enum CARDSTATE
 }
 
 state = CARDSTATE.HAND;
+
+//Functions
+resetSlot = function()
+{
+    if wasPlaced
+    {
+        slot.filled = false;
+        slot = noone;
+        wasPlaced = false;
+    }
+}
+
+putCardInHand = function()
+{
+    
+    //Add To Hand
+    ds_list_add(playerHand,self);
+    cardId = oDeck.currentCard;
+    oDeck.currentCard ++;
+    
+    //Reset Slot
+    resetSlot();
+    
+    //Change State
+    state = CARDSTATE.HAND;
+}
+
+removeCardFromHand = function()
+{
+    //Remove Card From Hand
+    if state == CARDSTATE.HAND
+    {
+        ds_list_delete(playerHand,cardId);
+        
+        with oCard
+        {
+            if cardId > other.cardId
+            {
+                cardId --;
+            }
+        }
+        
+        oDeck.currentCard --;
+    }
+}
+
+deleteCard = function()
+{
+    oDeck.cardsInPlay --;
+    oDiscard.discards ++;
+    instance_destroy();
+}

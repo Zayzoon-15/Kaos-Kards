@@ -87,6 +87,16 @@ function cardStateHand(){
     #endregion
     
     
+    //Delete Key
+    if touchingMouse() and canGrab
+    {
+        if keyboard_check_pressed(global.keyDiscard) and !oDiscard.isFull
+        {
+            removeCardFromHand();
+            deleteCard();
+        }
+    }
+    
     //Info Box
     if canGrab
     {
@@ -95,11 +105,9 @@ function cardStateHand(){
     
     
     //Can Grab
-    if !global.holdingCard
-    {
-        canGrab = true;
-    } else canGrab = false;
+    canGrab = !global.holdingCard;
 }
+
 
 
 ///@self oCard
@@ -134,4 +142,77 @@ function cardStateGrabbed()
     
     //Depth
     depth = startDepth-10;
+}
+
+
+
+///@self oCard
+function cardStatePlaced()
+{
+    #region Hover
+    
+    var _cardX = slot.x;
+    var _cardY = slot.y;
+    
+    //Hovered
+    if touchingMouse() and !global.holdingCard
+    {
+        cardTargetY = _cardY - 10;
+        shadowY = lerp(shadowY,16,.2);
+    } else {
+    	cardTargetY = _cardY;
+        shadowY = lerp(shadowY,8,.2);
+    }
+    
+    targetX = _cardX;
+    targetY = _cardY;
+    
+    #endregion
+    
+    
+    #region Ease
+    
+    //Position
+    x = lerp(x,targetX,.2);
+    y = lerp(y,targetY,.2);
+    image_angle = lerp(image_angle,0,.2);
+    cardX = x;
+    cardY = lerp(cardY,cardTargetY,.2);
+    
+    //Scale
+    image_xscale = lerp(image_xscale,1,.2);
+    image_yscale = lerp(image_yscale,1,.2);
+
+    #endregion
+    
+    
+    #region Drawing
+    
+    //Depth
+    depth = startDepth;
+    
+    //Shadow
+    var _shadowX = (x - (room_width/2))*.03;
+    shadowX = clamp(shadowX,-10,10);
+    shadowX = lerp(shadowX,_shadowX,.2);
+    shadowSize = lerp(shadowSize,0.05,.2);
+    
+    #endregion
+    
+    
+    //Slot
+    slot.filled = true;
+    wasPlaced = true;
+    
+    
+    //Info Box
+    if canGrab
+    {
+        drawCardText(info);
+    }
+    
+    
+    //Can Grab
+    canGrab = !global.holdingCard;
+    
 }
