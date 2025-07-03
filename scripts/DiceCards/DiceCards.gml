@@ -27,4 +27,28 @@ diceCards = {
         sprite : sDiceCard,
     },
     
+    dice8: {
+        name : "8 Sided Dice",
+        desc : "Changes one random dice to an 8 sided dice\nCan only be placed before roll",
+        range : undefined,
+        type : CARDTYPES.DICE,
+        sprite : sDiceCard,
+    },
+    
+    dice12: {
+        name : "12 Sided Dice",
+        desc : "Changes one random dice to a 12 sided dice\nCan only be placed before roll",
+        range : undefined,
+        type : CARDTYPES.DICE,
+        sprite : sDiceCard,
+    },
+    
+    dice20: {
+        name : "20 Sided Dice",
+        desc : "Changes one random dice to a 12 sided dice\nCan only be placed before roll",
+        range : undefined,
+        type : CARDTYPES.DICE,
+        sprite : sDiceCard,
+    },
+    
 };

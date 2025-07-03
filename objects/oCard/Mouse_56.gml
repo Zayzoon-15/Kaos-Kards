@@ -9,8 +9,9 @@ if state == CARDSTATE.GRABBED
     } else {
         //Slots
         var _actionSlot = instance_place(x,y,oActionSlot);
+        var _specialSlot = instance_place(x,y,oSpecialSlot);
         
-        if _actionSlot and info.type == CARDTYPES.ACTION
+        if _actionSlot and !_actionSlot.used and info.type == CARDTYPES.ACTION and canPlace
         {
             //Swap Places
             if _actionSlot.filled
@@ -38,7 +39,52 @@ if state == CARDSTATE.GRABBED
             
             state = CARDSTATE.PLACED;
             
-        } else putCardInHand();
+        } else if _specialSlot and !_specialSlot.used and info.type != CARDTYPES.ACTION and canPlace{
+        	
+            
+            var _stopSwap = false;
+            
+            with oCard
+            {
+                if state == CARDSTATE.PLACED and slot == _specialSlot.id
+                {
+                    if canMove
+                    {
+                        _stopSwap = false;
+                    } else _stopSwap = true;
+                }
+            }
+            
+            //Swap Places
+            if !_stopSwap
+            {
+                if _specialSlot.filled
+                {
+                    with oCard
+                    {
+                        if state == CARDSTATE.PLACED and slot == _specialSlot.id
+                        {
+                            //Swith With Other Slot
+                            if other.slot != noone
+                            {
+                                var _targetSlot = other.slot;
+                                other.slot = slot;
+                                slot = _targetSlot;
+                            } else {
+                            	other.slot = slot;
+                                putCardInHand();
+                                
+                            }
+                        }
+                    }
+                } else {
+                    resetSlot();
+                    slot = _specialSlot.id;
+                }
+                
+                state = CARDSTATE.PLACED;
+            } else putCardInHand();
+        } else putCardInHand(); //Not Touching Any Slots
     } 
     
     //Set Grab

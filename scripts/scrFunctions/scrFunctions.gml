@@ -9,6 +9,17 @@ function setSize(_x,_y)
 }
 
 
+///@desc Sets the variables xscale and yscale
+///Keep in mind you need to have the variables: xscale, yscale
+///@arg {real} _x The x scale
+///@arg {real} _y The y scale
+function squash(_x,_y)
+{
+    xscale = _x;
+    yscale = _y;
+}
+
+
 ///@desc Checks if the mouse is touching the given instance
 ///@arg {Asset.GMObject} _inst The instance to check (by default: self)
 function touchingMouse(_inst = self)

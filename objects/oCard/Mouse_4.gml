@@ -1,5 +1,5 @@
 ///@desc Grab Card
-if canGrab and !global.holdingCard
+if canGrab and !global.holdingCard and canMove
 {
     //Set Right Position
     x = cardX;

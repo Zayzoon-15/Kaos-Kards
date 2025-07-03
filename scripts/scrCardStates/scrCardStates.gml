@@ -90,7 +90,7 @@ function cardStateHand(){
     //Delete Key
     if touchingMouse() and canGrab
     {
-        if keyboard_check_pressed(global.keyDiscard) and !oDiscard.isFull
+        if global.keyDiscard and !oDiscard.isFull
         {
             removeCardFromHand();
             deleteCard();
@@ -102,7 +102,6 @@ function cardStateHand(){
     {
         drawCardText(info);
     }
-    
     
     //Can Grab
     canGrab = !global.holdingCard;
@@ -136,6 +135,12 @@ function cardStateGrabbed()
     
     //Shake
     if place_meeting(x,y,oDiscard)
+    {
+        shake = 2;
+    }
+    
+    //Can Place
+    if place_meeting(x,y,oParSlots) and !canPlace
     {
         shake = 2;
     }
@@ -193,7 +198,7 @@ function cardStatePlaced()
     
     //Shadow
     var _shadowX = (x - (room_width/2))*.03;
-    shadowX = clamp(shadowX,-10,10);
+    shadowX = clamp(shadowX,-6,6);
     shadowX = lerp(shadowX,_shadowX,.2);
     shadowSize = lerp(shadowSize,0.05,.2);
     
@@ -203,6 +208,7 @@ function cardStatePlaced()
     //Slot
     slot.filled = true;
     wasPlaced = true;
+    wasOnSlot = true;
     
     
     //Info Box

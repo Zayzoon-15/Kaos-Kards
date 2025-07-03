@@ -2,7 +2,7 @@
 #region Global Vars
 
 //Keyboard
-global.keyDiscard = ord("Z"); 
+global.keyDiscard = undefined;
 
 //Deck
 globalvar playerHand,playerDeck;
@@ -10,11 +10,12 @@ playerHand = undefined;
 playerDeck = [
 //Action Cards
 actionCards.slash,
-actionCards.shield,
-actionCards.heal,
-actionCards.punch,
+actionCards.slash,
 actionCards.slash,
 actionCards.shield,
+actionCards.shield,
+actionCards.heal,
+actionCards.heal,
 
 //Dice Cards
 diceCards.reroll,
@@ -41,6 +42,10 @@ global.maxDiscards = round(array_length(playerDeck)/2);
 //Ui
 #macro UIBOX_RAD  3 
 #macro UIBOX_ALPHA  .6 
+
+//Font
+globalvar fnNumber;
+fnNumber = font_add_sprite_ext(sNumbers, "0123456789+-", true, 0);
 
 #endregion
 

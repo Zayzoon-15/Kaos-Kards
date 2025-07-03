@@ -21,12 +21,19 @@ sprite_index = info.sprite;
 
 //Grabbing
 canGrab = true;
+canMove = true;
 offsetX = 0;
 offsetY = 0;
 
 //Placed
 slot = noone;
 wasPlaced = false;
+wasOnSlot = false;
+canPlace = true;
+
+//Dice Cards
+randomize();
+targetDice = irandom_range(1,3);
 
 
 //State

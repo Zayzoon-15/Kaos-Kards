@@ -29,3 +29,8 @@ if !touchingMouse(parent) or !parent.canGrab
 
 //Depth
 if instance_exists(parent) then depth = parent.depth - 5;
+
+
+////Keep In Room
+//x = clamp(x,width*.6,room_width-(width*.6));
+//y = clamp(y,height,room_height-(height));

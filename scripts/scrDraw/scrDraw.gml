@@ -67,3 +67,6 @@ function drawRectOutlined(_x1,_y1,_x2,_y2,_cornerRad = 0,_bgColor=c_black,_outli
     draw_set_color(c_white);
     draw_set_alpha(1);
 }
+
+
+
