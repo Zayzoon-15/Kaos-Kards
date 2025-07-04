@@ -18,8 +18,9 @@ actionCards.heal,
 actionCards.heal,
 
 //Dice Cards
-diceCards.reroll,
-diceCards.reroll,
+diceCards.upgrade,
+diceCards.upgrade,
+diceCards.upgrade,
 
 //Kaos Cards
 kaosCards.swoop
@@ -46,6 +47,20 @@ global.maxDiscards = round(array_length(playerDeck)/2);
 //Font
 globalvar fnNumber;
 fnNumber = font_add_sprite_ext(sNumbers, "0123456789+-", true, 0);
+
+//Game State
+globalvar gameState;
+enum GAMESTATES {
+	PREPARE,
+    GETVALUES,
+    ENEMEYTURN,
+    KAOS
+}
+gameState = GAMESTATES.PREPARE;
+
+//Managers
+global.isPhone = false;
+if os_type == os_android or os_type == os_ios then global.isPhone = true;
 
 #endregion
 

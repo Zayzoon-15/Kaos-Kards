@@ -34,6 +34,11 @@ canPlace = true;
 //Dice Cards
 randomize();
 targetDice = irandom_range(1,3);
+followingDice = false;
+
+//Values
+currentValue = undefined;
+rangeScale = 1;
 
 
 //State
@@ -96,4 +101,14 @@ deleteCard = function()
     oDeck.cardsInPlay --;
     oDiscard.discards ++;
     instance_destroy();
+}
+
+cardJuice = function()
+{
+    //Scale
+    setSize(1.5,1.5);
+    rangeScale += 1;
+    
+    //Angle
+    image_angle += random_range(5,10)*choose(-1,1);
 }

@@ -15,3 +15,4 @@ function starEffect(_x,_y,_amount = 5,_xMin = -30,_xMax = 30,_yMin = -30,_yMax =
         });
     }
 }
+

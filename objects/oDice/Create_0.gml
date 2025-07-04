@@ -37,6 +37,9 @@ dice = diceTypes.dice6;
 diceNum = undefined;
 rolling = false;
 rollDone = false;
+targetSlot = undefined;
+skipped = false;
+scale = 1;
 
 //State
 enum DICESTATE {
@@ -83,4 +86,30 @@ diceJuice = function()
     
     //Stars
     starEffect(x,y,5);
+}
+
+combineValues = function()
+{
+    var _combine = false;
+    var _diceCardExtra = 0;
+    
+    with oParSlots
+    {
+        if slotId == other.diceId and filled
+        {
+            other.targetSlot = self.id;
+            _combine = true;
+        }
+    }
+    
+    with oCard
+    {
+        if state == CARDSTATE.PLACED and info.type == CARDTYPES.DICE
+        {
+            _diceCardExtra = 1;
+        }
+    }
+    
+    
+    alarm[2] = 30*(diceId+_diceCardExtra);
 }

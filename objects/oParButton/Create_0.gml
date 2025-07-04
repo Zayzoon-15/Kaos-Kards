@@ -17,8 +17,11 @@ canHover = true;
 
 //Clicking
 pressed = false;
+canPress = true;
+buttonUsed = false;
 
 //Info
+showInfoTop = true;
 infoText = "This button does something";
 
 //Text
@@ -30,4 +33,10 @@ text = "Button";
 action = function()
 {
     canHover = false;
+}
+
+//Check Condition
+condition = function()
+{
+    canPress = true;
 }

@@ -88,7 +88,7 @@ function cardStateHand(){
     
     
     //Delete Key
-    if touchingMouse() and canGrab
+    if touchingMouse() and canGrab and gameState == GAMESTATES.PREPARE
     {
         if global.keyDiscard and !oDiscard.isFull
         {

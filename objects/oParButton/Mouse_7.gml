@@ -2,4 +2,5 @@
 if pressed
 {
     action();
+    buttonUsed = true;
 }

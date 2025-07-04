@@ -1,5 +1,5 @@
 ///@desc Grab Card
-if canGrab and !global.holdingCard and canMove
+if canGrab and !global.holdingCard and canMove and gameState == GAMESTATES.PREPARE
 {
     //Set Right Position
     x = cardX;

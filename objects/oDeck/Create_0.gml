@@ -1,3 +1,6 @@
+//FOR NOW
+gameState = GAMESTATES.PREPARE;
+
 
 //Stats
 totalCards = array_length(playerDeck);
