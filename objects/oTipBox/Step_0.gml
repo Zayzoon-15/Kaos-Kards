@@ -29,4 +29,4 @@ if !touchingMouse(parent) or !parent.canHover
 }
 
 //Depth
-depth = parent.depth - 5;
+if instance_exists(parent) then depth = parent.depth - 5;

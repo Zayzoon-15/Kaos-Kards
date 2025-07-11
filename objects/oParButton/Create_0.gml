@@ -29,14 +29,19 @@ textTargetSize = 2;
 textSize = textTargetSize;
 text = "Button";
 
+//Size
+setSize(2,.85);
+
 //Action
 action = function()
 {
+    //Don't Hover
     canHover = false;
 }
 
 //Check Condition
 condition = function()
 {
+    //Allow Press
     canPress = true;
 }

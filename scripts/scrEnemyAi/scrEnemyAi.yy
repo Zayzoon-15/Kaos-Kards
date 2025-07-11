@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrEnemyAi",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrEnemyAi",
+  "parent":{
+    "name":"Ai",
+    "path":"folders/Scripts/Enemy/Ai.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

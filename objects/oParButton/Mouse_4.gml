@@ -1,6 +1,8 @@
-condition();
+//Check Condition
+if canHover then condition();
 
-if canHover and canPress
+//Press
+if canHover and canPress and !global.midTrans
 {
     //Juice
     var _growSize = .5;

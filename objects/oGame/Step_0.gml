@@ -10,5 +10,9 @@ if _debugKey
     if !is_debug_overlay_open()
     {
         show_debug_overlay(true);
-    } else show_debug_overlay(false);
+        createAlertMessage("DEBUG MODE ON");
+    } else { 
+        show_debug_overlay(false);
+        createAlertMessage("DEBUG MODE OFF");
+    }
 }

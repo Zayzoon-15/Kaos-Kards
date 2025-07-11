@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrEnemyBehavior",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrEnemyBehavior",
+  "parent":{
+    "name":"Ai",
+    "path":"folders/Scripts/Enemy/Ai.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

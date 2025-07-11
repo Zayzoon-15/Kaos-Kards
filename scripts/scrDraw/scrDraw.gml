@@ -5,7 +5,7 @@ function drawCardText(_info){
     
     if !instance_exists(oCardText) and touchingMouse()
     {
-        instance_create_depth(x,y,depth,oCardText,{ 
+        instance_create_depth(x,y,depth-1,oCardText,{ 
             name : _info.name,
             desc : _info.desc,
             range : _info.range,
@@ -69,4 +69,14 @@ function drawRectOutlined(_x1,_y1,_x2,_y2,_cornerRad = 0,_bgColor=c_black,_outli
 }
 
 
+///@desc Creates text that alerts the player about anything
+///@arg {string} _text The text to show
+///@arg {real} _x The x position of the text (by default : room_width/2)
+///@arg {real} _y The y position of the text (by default : 60)
+function createAlertMessage(_text,_x=room_width/2,_y=235)
+{
+    instance_create_layer(_x,_y,"Ui",oAlertMessage,{
+        text : _text
+    });
+}
 

@@ -222,3 +222,4 @@ function cardStatePlaced()
     canGrab = !global.holdingCard;
     
 }
+

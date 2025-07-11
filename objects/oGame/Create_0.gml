@@ -1,4 +1,10 @@
 
+//Initialize Info
+initActionCards();
+initDiceCards();
+initKaosCards();
+initEnemyinfo();
+
 #region Global Vars
 
 //Keyboard
@@ -40,13 +46,31 @@ enum CARDTYPES {
 global.maxHandSize = 6;
 global.maxDiscards = round(array_length(playerDeck)/2);
 
+//Enemy
+global.currentEnemy = enemyInfo.dog;
+
+//Health
+global.playerHp = 100;
+global.playerTempHp = 0;
+global.enemyHp = 100;
+global.enemyTempHp = 0;
+
+//Actions
+globalvar playerActions, enemyActions, playerKaos, enemyKaos;
+playerActions = ds_list_create();
+enemyActions = ds_list_create();
+playerKaos = undefined;
+enemyKaos = undefined;
+
 //Ui
 #macro UIBOX_RAD  3 
 #macro UIBOX_ALPHA  .6 
 
 //Font
-globalvar fnNumber;
-fnNumber = font_add_sprite_ext(sNumbers, "0123456789+-", true, 0);
+globalvar fnNumber,fnNumberOutline;
+var _numString = "0123456789+-";
+fnNumber = font_add_sprite_ext(sNumbers, _numString, true, 0);
+fnNumberOutline = font_add_sprite_ext(sNumbersOutlined, _numString, true, 0);
 
 //Game State
 globalvar gameState;
@@ -66,4 +90,4 @@ if os_type == os_android or os_type == os_ios then global.isPhone = true;
 
 
 //Start Game
-room_goto(rMain);
+room_goto_next();

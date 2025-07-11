@@ -64,7 +64,26 @@ condition = function()
     {
         if info == diceCards.reroll and state == CARDSTATE.PLACED
         {
+            createAlertMessage("You haven't used your reroll");
             other.canPress = false;
+            exit;
         }
+    }
+    
+    //Check If One Action Slot Filled
+    var _slotsFilled = 0;
+    with oCard //Add To Slots Filled
+    {
+        if state == CARDSTATE.PLACED and info.type == CARDTYPES.ACTION
+        {
+            _slotsFilled ++;
+        }
+    }
+    
+    if _slotsFilled < 1
+    {
+        createAlertMessage("You have to place at least one action card");
+        canPress = false;
+        exit;
     }
 }
