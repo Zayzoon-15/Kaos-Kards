@@ -1,7 +1,7 @@
 
 //Get Text Size
-height = string_height_ext(text,-1,maxWidth);
-width = string_width_ext(text,-1,maxWidth);
+height = string_height_ext(text,-1,maxWidth)*size;
+width = string_width_ext(text,-1,maxWidth)*size;
 
 //Fade Text
 textAlpha = lerp(textAlpha,1,.2);
@@ -16,7 +16,6 @@ if instance_exists(parent)
     {
         _y = parent.bbox_top-_distance;
     } else _y = parent.bbox_bottom+(_distance*5);
-    
     
     x = parent.x;
     y = lerp(y,_y,.2);

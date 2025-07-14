@@ -4,10 +4,8 @@ if life > lifespan
     image_alpha -= .03;
 } else life += 1;
 
-if image_alpha < 0
-{
-    instance_destroy();
-}
+//Destroy
+if image_alpha < 0 then instance_destroy();
 
 //Ease
 image_xscale = lerp(image_xscale,1,.3);

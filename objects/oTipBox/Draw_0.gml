@@ -6,7 +6,7 @@ drawRectOutlined(x-_halfWidth-widthMargin,y-height-(heightMargin*2),x+_halfWidth
 
 //Draw Text
 setupText(fnMain,fa_center,fa_top,c_white,textAlpha);
-draw_text_ext_transformed(x,y-height-heightMargin,text,-1,maxWidth,1,1,0);
+draw_text_ext_transformed(x,y-height-heightMargin,text,-1,maxWidth,size,size,0);
 
 //Reset
 resetDraw();

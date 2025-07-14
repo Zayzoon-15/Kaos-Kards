@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scrActions",
   "parent":{
-    "name":"Card",
-    "path":"folders/Scripts/Card.yy",
+    "name":"Actions",
+    "path":"folders/Scripts/Actions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

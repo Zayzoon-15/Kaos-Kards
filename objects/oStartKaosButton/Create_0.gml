@@ -16,7 +16,7 @@ text = "Ready?";
 action = function()
 {
     //Go To Kaos Room
-    transStart(rMain,seqFadeOut,seqFadeIn);
+    transStart(rKaos,seqFadeOut,seqFadeIn);
     
     //Don't Hover
     canHover = false;

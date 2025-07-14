@@ -1,5 +1,14 @@
 
 
+
+///@desc Spawns in multiple stars
+///@arg {real} _x The x center position of the stars
+///@arg {real} _y The y center position of the stars
+///@arg {real} _amount The amount of stars to spawn (Default = 5)
+///@arg {real} _xMin The min amount the stars can move on the x axis (Default = -30)
+///@arg {real} _xMax The max amount the stars can move on the x axis (Default = 30)
+///@arg {real} _yMin The min amount the stars can move on the y axis (Default = -30)
+///@arg {real} _yMax The max amount the stars can move on the y axis (Default = 30)
 function starEffect(_x,_y,_amount = 5,_xMin = -30,_xMax = 30,_yMin = -30,_yMax = 30)
 {
     

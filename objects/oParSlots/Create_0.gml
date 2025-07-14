@@ -10,3 +10,6 @@ image_index = 0;
 //Type
 targetType1 = CARDTYPES.ACTION;
 targetType2 = undefined;
+
+//Card
+card = noone;

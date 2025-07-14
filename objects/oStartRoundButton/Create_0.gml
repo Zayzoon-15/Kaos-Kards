@@ -22,12 +22,15 @@ action = function()
     
     //Add Players Actions In Order
     for (var i = 0; i < 3; i++) {
-        with oCard
+        
+        with oActionSlot
         {
-            if state == CARDSTATE.PLACED and slot.slotId == i + 1
+            if slotId == i + 1
             {
-                //Add Player Action
-                addPlayerAction(self);
+                if filled
+                {
+                    addPlayerAction(card);
+                } else ds_list_insert(playerActions,slotId-1,undefined);
             }
         }
     }

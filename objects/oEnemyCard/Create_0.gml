@@ -10,6 +10,19 @@ shadowX = 0;
 shadowY = 0;
 shadowSize = 0;
 
+//Depth
+startDepth = depth;
+
+//Slot
+slot = noone;
+with oParSlots
+{
+    if slotId == other.slotId
+    {
+        other.slot = self.id;
+    }
+}
+
 //Hover
 canGrab = true;
 

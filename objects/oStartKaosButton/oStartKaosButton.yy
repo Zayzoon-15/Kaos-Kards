@@ -8,8 +8,8 @@
   "name":"oStartKaosButton",
   "overriddenProperties":[],
   "parent":{
-    "name":"Prepare",
-    "path":"folders/Objects/Ui/Buttons/Prepare.yy",
+    "name":"Enemy",
+    "path":"folders/Objects/Ui/Buttons/Enemy.yy",
   },
   "parentObjectId":{
     "name":"oParButton",

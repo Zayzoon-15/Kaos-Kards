@@ -98,8 +98,14 @@ removeCardFromHand = function()
 
 deleteCard = function()
 {
+    //Set Values
     oDeck.cardsInPlay --;
     oDiscard.discards ++;
+    
+    //Reset Slot
+    resetSlot();
+    
+    //Destroy
     instance_destroy();
 }
 

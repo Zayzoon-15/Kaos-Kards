@@ -17,7 +17,6 @@ function createEnemy(_name,_sprite,_attacks,_kaos,_healWeight = 100, _defendWeig
     attacks = _attacks;
     kaos = _kaos;
     healWeight = _healWeight;
-    attackWeight = _attackWeight;
     defendWeight = _defendWeight;
     diceWeight = _diceWeight;
 }
@@ -26,23 +25,37 @@ function createEnemy(_name,_sprite,_attacks,_kaos,_healWeight = 100, _defendWeig
 
 ///@self oEnemyAi
 ///@desc Adds an enemy card to the room
-///@arg {string} _slot The slot name
+///@arg {real} _slotId The slot id
 ///@arg {struct} _info The cards info
 ///@arg {real} _value The cards value
-function enemyAddCard(_slot,_info,_value)
+///@arg {bool} _used If the slot is used
+function enemyAddCard(_slotId,_info,_value,_used = false)
 {
-    //Get Slot Position
-    var _slotId = layer_sprite_get_id("Slots",_slot);
-    var _slotX = layer_sprite_get_x(_slotId);
-    var _slotY = layer_sprite_get_y(_slotId);
+    //Get Inst
+    var _slotInst = oActionSlot;
+    if _slotId == 0 then _slotInst = oSpecialSlot;
+
+    //Get Pos
+    var _x, _y;
+    switch (_slotId) {
+    	case 0: _x = 160; _y = 512; break;
+    	case 1: _x = 439; _y = 359.5; break;
+    	case 2: _x = 639.5; _y = 359.5; break;
+    	case 3: _x = 840; _y = 359.5; break;
+    }
     
-    //Set Slot Size
-    layer_sprite_xscale(_slotId,1.5);
-    layer_sprite_yscale(_slotId,1.5);
+    //Create Slot
+    var _slot = instance_create_layer(_x,_y,"Slots",_slotInst,{slotId : _slotId,});
+    _slot.used = _used; //Set Used
+    _slot.scale = 1.3; //Set Size;
     
     //Create Card
-    instance_create_layer(_slotX,_slotY,"Cards",oEnemyCard,{
-        info : _info,
-        value : _value
-    });
+    if !_used 
+    {
+        instance_create_layer(_x,_y,"Cards",oEnemyCard,{
+            info : _info,
+            value : _value,
+            slotId : _slotId
+        });
+    }
 }

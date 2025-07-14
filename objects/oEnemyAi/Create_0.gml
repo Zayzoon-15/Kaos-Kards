@@ -1,11 +1,10 @@
 
 //Stats
-hp = 80;
+hp = global.enemyHp;
 
 
 //Weights
 healWeight = global.currentEnemy.healWeight;
-attackWeight = global.currentEnemy.attackWeight;
 defendWeight = global.currentEnemy.defendWeight;
 diceWeight = global.currentEnemy.diceWeight;
 
@@ -25,7 +24,6 @@ diceRoll = function()
         var _diceNum = irandom_range(1,6);
     	array_push(diceValues,_diceNum);
     }
-    show_message(diceValues)
 }
 diceRoll();
 
@@ -97,7 +95,7 @@ var _kaos = new enemyActionNode(placeKaos);
 
 
 //Set Decisions
-var _healCheck = new enemyDecisionNode(enemyHasHighHp(),_attack,_heal);
+var _healCheck = new enemyDecisionNode(enemyShouldHeal(),_heal,_attack);
 var _defendCheck = new enemyDecisionNode(enemyShouldDefend(),_defend,_healCheck);
 var _upgradeDice = new enemyDecisionNode(enemyShouldUpgrade(),_upgrade,_kaos);
 var _rerollDice = new enemyDecisionNode(enemyRolledLow(),_reroll,_upgradeDice);
@@ -128,21 +126,11 @@ if !specialUsed
         addEnemyKaos(_special);
         
         //Add Card In Game
-        enemyAddCard("EnemySpecialSlot",_special,undefined);
+        enemyAddCard(0,_special,undefined);
     }
 }else //Special Used
 { 
-    
-    //Get Slot Id
-    var _slotId = layer_sprite_get_id("Slots","EnemySpecialSlot");
-    
-    //Set Slot Size
-    layer_sprite_xscale(_slotId,1);
-    layer_sprite_yscale(_slotId,1);
-    
-    //Set Slot Alpha
-    layer_sprite_alpha(_slotId,.7);
-    
+    enemyAddCard(0,undefined,undefined,true);
 }
 
 
@@ -161,6 +149,6 @@ for (var i = 0; i < array_length(chosenActionCards); i++) {
     addEnemyAction(_card,_totalValue,i);
     
     //Add Card In Game
-    enemyAddCard($"EnemyActionSlot{i+1}",_card,_totalValue);
+    enemyAddCard(i+1,_card,_totalValue);
 }
 

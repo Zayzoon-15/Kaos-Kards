@@ -162,8 +162,8 @@ function cardStatePlaced()
     //Hovered
     if touchingMouse() and !global.holdingCard
     {
-        cardTargetY = _cardY - 10;
-        shadowY = lerp(shadowY,16,.2);
+        cardTargetY = _cardY - 8;
+        shadowY = lerp(shadowY,14,.2);
     } else {
     	cardTargetY = _cardY;
         shadowY = lerp(shadowY,8,.2);
@@ -200,7 +200,7 @@ function cardStatePlaced()
     var _shadowX = (x - (room_width/2))*.03;
     shadowX = clamp(shadowX,-6,6);
     shadowX = lerp(shadowX,_shadowX,.2);
-    shadowSize = lerp(shadowSize,0.05,.2);
+    shadowSize = lerp(shadowSize,0.07,.2);
     
     #endregion
     
