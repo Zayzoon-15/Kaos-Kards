@@ -7,13 +7,14 @@ initEnemyinfo();
 
 #region Global Vars
 
-//Keyboard
+//Controls
 global.keyDiscard = undefined;
 
 //Deck
 globalvar playerHand,playerDeck;
 playerHand = undefined;
 playerDeck = [
+
 //Action Cards
 actionCards.slash,
 actionCards.slash,
@@ -24,8 +25,6 @@ actionCards.heal,
 actionCards.heal,
 
 //Dice Cards
-diceCards.upgrade,
-diceCards.upgrade,
 diceCards.upgrade,
 
 //Kaos Cards
@@ -61,10 +60,6 @@ playerActions = ds_list_create();
 enemyActions = ds_list_create();
 playerKaos = undefined;
 enemyKaos = undefined;
-
-//Ui
-#macro UIBOX_RAD  3 
-#macro UIBOX_ALPHA  .6 
 
 //Font
 globalvar fnNumber,fnNumberOutline;

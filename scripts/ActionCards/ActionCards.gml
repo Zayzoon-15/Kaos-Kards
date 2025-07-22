@@ -31,6 +31,10 @@ actionCards = {
     "Punches your enemy in the flipping face",
     {min:1,max:6},CARDTYPES.ACTION,sPunchCard),
     
+    flamingAce : new createCard("Flaming Ace",
+    "Burns your enemy alive",
+    {min:1,max:6},CARDTYPES.ACTION,sFlaminAce),
+    
     
 };
 

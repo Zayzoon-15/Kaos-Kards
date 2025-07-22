@@ -19,21 +19,24 @@ hurt = function()
     currentAnim = 1;
     
     //Shake
-    shake += 10;
+    shake += 15;
     
     //Start Reset
     alarm[0] = 40;
 }
 
-win = function()
+win = function(_stars = true)
 {
     //Set Right Animation
     currentAnim = 2;
     
     //Stars
-    var _starsX = (sprite_width/2)-10;
-    var _starsY = (sprite_height/2)-15;
-    starEffect(x,y,10,-_starsX,_starsX,-_starsY,_starsY);
+    if _stars
+    {
+        var _starsX = (sprite_width/2)-10;
+        var _starsY = (sprite_height/2)-15;
+        starEffect(x,y,10,-_starsX,_starsX,-_starsY,_starsY);
+    }
     
     //Start Reset
     alarm[0] = 40;

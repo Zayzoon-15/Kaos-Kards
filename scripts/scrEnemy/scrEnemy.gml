@@ -39,9 +39,9 @@ function enemyAddCard(_slotId,_info,_value,_used = false)
     var _x, _y;
     switch (_slotId) {
     	case 0: _x = 160; _y = 512; break;
-    	case 1: _x = 439; _y = 359.5; break;
-    	case 2: _x = 639.5; _y = 359.5; break;
-    	case 3: _x = 840; _y = 359.5; break;
+    	case 1: _x = 440; _y = 360; break;
+    	case 2: _x = 640; _y = 360; break;
+    	case 3: _x = 840; _y = 360; break;
     }
     
     //Create Slot

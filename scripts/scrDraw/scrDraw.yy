@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scrDraw",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Drawing",
+    "path":"folders/Scripts/Drawing.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

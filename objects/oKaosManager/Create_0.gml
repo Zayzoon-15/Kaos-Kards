@@ -12,6 +12,8 @@ playerFirst = choose(true,false);
 yOffset = 150;
 xOffset = 400;
 
+//Time
+timeBetweenCards = 50;
 
 //Start Kaos
 alarm[0] = 30;

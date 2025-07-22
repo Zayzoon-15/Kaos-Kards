@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrCardHand",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrCardHand",
+  "parent":{
+    "name":"Card",
+    "path":"folders/Scripts/Card.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,9 +1,12 @@
+//Position
+targetX = x;
+targetY = y;
 
 //Card Position
-cardTargetX = x;
-cardTargetY = y;
 cardX = x;
 cardY = y;
+cardTargetX = x;
+cardTargetY = y;
 
 //Shadow
 shadowX = 0;
@@ -12,6 +15,9 @@ shadowSize = 0;
 
 //Depth
 startDepth = depth;
+
+//Set Sprite
+sprite_index = info.sprite;
 
 //Slot
 slot = noone;
@@ -25,6 +31,3 @@ with oParSlots
 
 //Hover
 canGrab = true;
-
-//Set Sprite
-sprite_index = info.sprite;

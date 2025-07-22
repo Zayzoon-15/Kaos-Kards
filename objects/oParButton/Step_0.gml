@@ -12,7 +12,7 @@ if touchingMouse() and canHover
 if canHover then image_index = 0; else image_index = 1;
 
 //Info
-drawTipBox(infoText,showInfoTop);
+drawTipBox(infoText,showInfoTop,11);
 
 //Ease
 boxX = lerp(boxX,targetX,.2);

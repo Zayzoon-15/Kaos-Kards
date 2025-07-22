@@ -6,5 +6,3 @@ switch (state) {
     case CARDSTATE.PLACED: cardStatePlaced(); break;
 }
 
-//Set Sprite
-sprite_index = info.sprite;

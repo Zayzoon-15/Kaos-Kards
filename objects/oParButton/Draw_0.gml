@@ -6,7 +6,7 @@ shake = lerp(shake,0,.3);
 
 //Draw Shadow
 var _shadowSize = .05;
-draw_sprite_ext(sprite_index, image_index, x+shadowX+_shakeX, y+shadowY+_shakeY, xscale-_shadowSize, yscale-_shadowSize, image_angle, c_black, .7);
+draw_sprite_ext(sprite_index, image_index, x+shadowX+_shakeX, y+shadowY+_shakeY, xscale-_shadowSize, yscale-_shadowSize, image_angle, c_black, image_alpha*SHADOW_ALPHA);
 
 //Draw Self
 draw_sprite_ext(sprite_index,image_index,boxX+_shakeX,boxY+_shakeY,xscale,yscale,image_angle,image_blend,image_alpha);

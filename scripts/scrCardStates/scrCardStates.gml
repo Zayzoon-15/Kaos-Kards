@@ -4,27 +4,20 @@ function cardStateHand(){
     
     #region Card Juice
     
-    //Get Hand Size
     var _handSize = ds_list_size(playerHand);
+    var _maxSize = 10;
     
     //Center Cards
-    var _gap;
-    var _gapSize = sprite_width+5;
-    var _maxSize = 11;
+    var _handX = 0;
     
-    if _handSize < _maxSize //Grow Deck
+    if _handSize >= _maxSize
     {
-        _gap = _gapSize;
-    } else _gap = _gapSize-(5*(oDeck.currentCard-_maxSize));
+        _handX = cardHandMush();
+    } else _handX = cardHandSep();
     
-    _gap = clamp(_gap,0,_gapSize);
-    
-    var _leftEdge = (_handSize-1)*(_gap/2);
-    var _handX = room_width/2 - _leftEdge + (cardId * _gap);
-    _handX = clamp(_handX,210,1070);
     
     //Angle Cards
-    var _angle = (xstart - x)*.02;
+    var _angle = ((room_width/2) - x)*.02;
     
     image_angle = lerp(image_angle,_angle,.2);
     image_angle = clamp(image_angle,-15,15);
@@ -163,10 +156,12 @@ function cardStatePlaced()
     if touchingMouse() and !global.holdingCard
     {
         cardTargetY = _cardY - 8;
-        shadowY = lerp(shadowY,14,.2);
+        shadowY = lerp(shadowY,15,.2);
+        shadowSize = lerp(shadowSize,0.08,.2);
     } else {
     	cardTargetY = _cardY;
         shadowY = lerp(shadowY,8,.2);
+        shadowSize = lerp(shadowSize,0.1,.2);
     }
     
     targetX = _cardX;
@@ -200,7 +195,6 @@ function cardStatePlaced()
     var _shadowX = (x - (room_width/2))*.03;
     shadowX = clamp(shadowX,-6,6);
     shadowX = lerp(shadowX,_shadowX,.2);
-    shadowSize = lerp(shadowSize,0.07,.2);
     
     #endregion
     

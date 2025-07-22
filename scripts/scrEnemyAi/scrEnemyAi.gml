@@ -17,12 +17,6 @@ function enemyCheckChance(_weight)
 #region Conditions
 
 
-function enemyHasHighHp()
-{
-    return hp > 50;
-}
-
-
 function enemyRolledLow()
 {
     var _lowDice = 0;
@@ -49,7 +43,7 @@ function enemyRolledLow()
 
 function enemyShouldDefend()
 {
-    if hp <= 80 and enemyCheckChance(defendWeight)
+    if hp <= 85 and enemyCheckChance(defendWeight)
     {
         return true;
     } else return false;
@@ -66,10 +60,20 @@ function enemyShouldUpgrade()
 
 function enemyShouldHeal()
 {
+    //Heal If Low
     if hp < 50 and enemyCheckChance(healWeight)
     {
         return true;
-    } return false;
+    }
+    
+    //Heal If Low But Not Bad
+    if hp < 70 and enemyCheckChance(10)
+    {
+        return true;
+    }
+    
+    //Return False
+    return false;
     
 }
 

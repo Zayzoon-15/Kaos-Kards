@@ -9,7 +9,7 @@ enemyInfo = {
     
     dog : new createEnemy("Dog the Duck",sDog,[actionCards.slash,actionCards.bread],[kaosCards.swoop],80,30,70),
     
-    angel : new createEnemy("Angel the Juvenile",sAngel,[actionCards.slash,actionCards.laser],[kaosCards.high],100,40,70),
+    angel : new createEnemy("Angel the Juvenile",sAngel,[actionCards.flamingAce,actionCards.laser],[kaosCards.high],100,40,70),
     
     cock : new createEnemy("Cock the Bug",sCock,[actionCards.slash,actionCards.bread],[kaosCards.swoop],80,30,70),
     

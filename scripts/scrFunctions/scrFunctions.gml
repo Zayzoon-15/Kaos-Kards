@@ -56,3 +56,19 @@ function resetDraw()
     draw_set_halign(fa_left);
     draw_set_valign(fa_top);
 }
+
+
+///@desc Gives you the value of an animated curve
+///You have to change the position yourself
+///@arg {Asset.GMAnimCurve} _asset The animation curve
+///@arg {real} _pos The position of the animation
+///@arg {string} _name The name of the value to get
+function getAnimValue(_asset,_pos,_name = "x")
+{
+    var _curveStruct = animcurve_get(_asset);
+    var _channel = animcurve_get_channel(_curveStruct,_name);
+    
+    var _value = animcurve_channel_evaluate(_channel, _pos);
+    
+    return _value;
+}

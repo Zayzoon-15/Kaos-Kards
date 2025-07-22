@@ -10,12 +10,11 @@ textAlpha = lerp(textAlpha,1,.2);
 if instance_exists(parent)
 {
     var _y;
-    var _distance = 10;
     
     if top 
     {
-        _y = parent.bbox_top-_distance;
-    } else _y = parent.bbox_bottom+(_distance*5);
+        _y = parent.bbox_top-distance;
+    } else _y = parent.bbox_bottom+(distance);
     
     x = parent.x;
     y = lerp(y,_y,.2);

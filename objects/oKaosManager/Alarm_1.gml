@@ -9,7 +9,8 @@ if _card != undefined
     instance_create_layer(room_width/2,room_height+sprite_get_height(sBlankCard),"Cards",oAttackCard,{
         card : _card,
         targetX : getXPos(playerCard),
-        targetY : room_height - yOffset
+        targetY : room_height - yOffset,
+        targetEnemy : true
     });
 }
 
@@ -17,4 +18,4 @@ if _card != undefined
 playerCard ++;
 
 //Keep Going
-if playerCard < 3 then alarm[1] = 30;
+if playerCard < 3 then alarm[1] = timeBetweenCards;

@@ -1,18 +1,20 @@
 
-//Stats
-hp = global.enemyHp;
+#region Stats
 
+//Health
+hp = global.enemyHp;
 
 //Weights
 healWeight = global.currentEnemy.healWeight;
 defendWeight = global.currentEnemy.defendWeight;
 diceWeight = global.currentEnemy.diceWeight;
 
-
 //Cards Available
 attacks = global.currentEnemy.attacks;
 kaos = global.currentEnemy.kaos;
 specialUsed = false;
+
+#endregion
 
 
 //Dice Values

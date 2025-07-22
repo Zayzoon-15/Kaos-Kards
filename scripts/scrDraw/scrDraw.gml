@@ -19,8 +19,9 @@ function drawCardText(_info){
 ///Keep in mind every object that uses this function needs the variable: canHover
 ///@arg {string} _desc The description
 ///@arg {bool} _top Whether to draw at the top or bottom (Default : true)
+///@arg {real} _distance The distance of the text (Default: 10)
 ///@arg {real} _size The size of the text (Default: 1)
-function drawTipBox(_desc,_top = true,_size = 1){
+function drawTipBox(_desc,_top = true,_distance = 10,_size = 1){
     
     //Check If Has Variable
     if !variable_instance_exists(self.id,"canHover")
@@ -36,7 +37,8 @@ function drawTipBox(_desc,_top = true,_size = 1){
             desc : _desc,
             parent : self.id,
             top : _top,
-            size : _size
+            distance : _distance,
+            size : _size,
         });
     }
     

@@ -12,7 +12,10 @@
     "name":"Effects",
     "path":"folders/Objects/Effects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oParEffect",
+    "path":"objects/oParEffect/oParEffect.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

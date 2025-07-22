@@ -1,11 +1,5 @@
-//Fade
-if life > lifespan
-{
-    image_alpha -= .03;
-} else life += 1;
-
-//Destroy
-if image_alpha < 0 then instance_destroy();
+//Inherit the parent event
+event_inherited();
 
 //Ease
 image_xscale = lerp(image_xscale,1,.3);
