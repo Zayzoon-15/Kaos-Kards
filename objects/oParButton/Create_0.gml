@@ -8,6 +8,9 @@ targetY = y;
 //Image
 xscale = image_xscale;
 yscale = image_yscale;
+scaleTime = .3;
+alpha = 1;
+alphaTime = .3;
 shake = 0;
 shadowX = 0;
 shadowY = 0;

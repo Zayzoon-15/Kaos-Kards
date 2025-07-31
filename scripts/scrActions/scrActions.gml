@@ -1,18 +1,7 @@
+///All the attack actions
+///All functions should look like this
+///function action(_card,_targetEnemy)
 
-
-///@self oAttackCard
-function slashAction(_card,_targetEnemy)
-{
-    //Juice
-    _card.cardShake();
-    
-    //Create Sword
-    instance_create_layer(_card.x,_card.y,"Attacks",oSlash,{
-        targetEnemy : _targetEnemy,
-        value : _card.value
-    });
-    
-}
 
 
 ///@self oAttackCard
@@ -41,7 +30,8 @@ function shieldAction(_card,_targetEnemy)
     
     //Effect
     instance_create_layer(_card.x,_card.y,"Attacks",oShield,{
-        value : _card.value
+        value : _card.value,
+        card : _card
     });
     
     //Give Temp Health
@@ -50,3 +40,45 @@ function shieldAction(_card,_targetEnemy)
         global.playerTempHp += _card.value;
     } else global.enemyTempHp += _card.value;
 }
+
+
+///@self oAttackCard
+function slashAction(_card,_targetEnemy)
+{
+    //Juice
+    _card.cardShake();
+    
+    //Create Sword
+    instance_create_layer(_card.x,_card.y,"Attacks",oSlash,{
+        targetEnemy : _targetEnemy,
+        value : _card.value,
+        card : _card
+    });
+    
+}
+
+
+///@self oAttackCard
+function breadAction(_card,_targetEnemy)
+{
+    //Create Bread
+    instance_create_layer(_card.x,_card.y,"Attacks",oBreadAttack,{
+        targetEnemy : _targetEnemy,
+        value : _card.value,
+        breadId : 1,
+        card : _card
+    });
+}
+
+
+///@self oAttackCard
+function laserAction(_card,_targetEnemy)
+{
+    instance_create_layer(_card.x,_card.y,"Attacks",oLaser,{
+        targetEnemy : _targetEnemy,
+        value : _card.value,
+        card : _card
+    });
+}
+
+

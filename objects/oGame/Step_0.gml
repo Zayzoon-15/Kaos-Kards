@@ -2,6 +2,7 @@
 //Keyboard
 global.keyDiscard = keyboard_check_pressed(ord("Z"));
 
+
 #region Clamp Health
 
 global.playerHp = floor(global.playerHp);
@@ -15,8 +16,9 @@ global.enemyTempHp = clamp(global.enemyTempHp,0,100);
 
 #endregion
 
+
 //Debug Mode
-var _debugKey = keyboard_check(vk_control) and keyboard_check(vk_alt) and keyboard_check_pressed(ord("D"));
+var _debugKey = keyboard_check_pressed(vk_f1);
 
 if _debugKey
 {

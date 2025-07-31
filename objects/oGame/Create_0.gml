@@ -16,13 +16,16 @@ playerHand = undefined;
 playerDeck = [
 
 //Action Cards
-actionCards.slash,
-actionCards.slash,
-actionCards.slash,
-actionCards.shield,
-actionCards.shield,
 actionCards.heal,
 actionCards.heal,
+actionCards.shield,
+actionCards.shield,
+actionCards.slash,
+actionCards.slash,
+actionCards.slash,
+actionCards.laser,
+actionCards.laser,
+actionCards.laser,
 
 //Dice Cards
 diceCards.upgrade,
@@ -76,6 +79,7 @@ enum GAMESTATES {
     KAOS
 }
 gameState = GAMESTATES.PREPARE;
+
 
 //Managers
 global.isPhone = false;

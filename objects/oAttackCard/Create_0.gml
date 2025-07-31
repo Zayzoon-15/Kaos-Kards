@@ -51,7 +51,7 @@ cardHurt = function(_value,_stars = true)
     setSize(1.2,1.2);
     
     //Number Effect
-    numberEffect(x,y,-value);
+    numberEffect(x,y,-_value);
     
     //Stars
     if _stars

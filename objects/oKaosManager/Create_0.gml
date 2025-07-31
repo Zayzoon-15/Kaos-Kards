@@ -13,11 +13,10 @@ yOffset = 150;
 xOffset = 400;
 
 //Time
-timeBetweenCards = 50;
+timeBetweenCards = 70;
 
 //Start Kaos
-alarm[0] = 30;
-
+alarm[0] = 50;
 
 //Functions
 getXPos = function(_index)

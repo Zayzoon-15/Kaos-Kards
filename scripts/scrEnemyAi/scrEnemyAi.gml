@@ -43,7 +43,9 @@ function enemyRolledLow()
 
 function enemyShouldDefend()
 {
-    if hp <= 85 and enemyCheckChance(defendWeight)
+    if hp <= 30 then return false;
+    
+    if hp <= 60 and enemyCheckChance(defendWeight)
     {
         return true;
     } else return false;
@@ -61,7 +63,7 @@ function enemyShouldUpgrade()
 function enemyShouldHeal()
 {
     //Heal If Low
-    if hp < 50 and enemyCheckChance(healWeight)
+    if hp <= 50 and enemyCheckChance(healWeight)
     {
         return true;
     }
@@ -75,6 +77,18 @@ function enemyShouldHeal()
     //Return False
     return false;
     
+}
+
+function enemyShouldHealAgain()
+{
+    //Heal If Low
+    if hp+15 <= 50 and enemyCheckChance(healWeight*.7)
+    {
+        return true;
+    }
+    
+    //Return False
+    return false;
 }
 
 #endregion

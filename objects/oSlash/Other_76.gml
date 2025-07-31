@@ -1,2 +1,2 @@
 ///@desc Receive Message
-spriteBroadcast("slashDamage",attack,true);
+spriteBroadcast("slashDamage",action,true);

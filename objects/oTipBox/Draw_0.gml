@@ -1,4 +1,4 @@
-//Varss
+//Vars
 var _halfWidth = width/2;
 var _rectRound = UIBOX_RAD;
 var _Boxy1, _Boxy2, _textY;

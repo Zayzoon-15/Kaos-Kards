@@ -1,17 +1,18 @@
+//Inherit the parent event
+event_inherited();
 
-//Set Right Direction
-if targetEnemy then image_yscale = 1; else image_yscale = -1;
+//Visual
+flipSprite = true;
 
 
-//Attack
-attack = function()
+//Functions
+action = function()
 {
-    //Card Effect
-    with instance_place(x,y,oAttackCard) {cardHurt(value);}
+    //Set Right Pos
+    var _y;
+    if targetEnemy then _y = bbox_top+50; else _y = bbox_bottom-50;
     
-    //Damage
-    if targetEnemy
-    {
-        hurtEnemy(value);
-    } else hurtPlayer(value);
+    //Functions
+    hurtEffect(x,_y);
+    damageTarget();
 }

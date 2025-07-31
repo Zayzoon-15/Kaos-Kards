@@ -79,6 +79,8 @@ function drawRectOutlined(_x1,_y1,_x2,_y2,_cornerRad = 0,_bgColor=c_black,_outli
 ///@arg {real} _y The y position of the text (Default : 60)
 function createAlertMessage(_text,_x=room_width/2,_y=235)
 {
+    if instance_exists(oAlertMessage) then instance_destroy(oAlertMessage);
+    
     instance_create_layer(_x,_y,"Ui",oAlertMessage,{
         text : _text
     });

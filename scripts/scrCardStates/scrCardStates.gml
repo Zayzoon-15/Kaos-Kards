@@ -69,7 +69,8 @@ function cardStateHand(){
     #region Drawing
     
     //Depth
-    depth = startDepth;
+    depth = startDepth + (cardId*.5);
+    if depth > -1 then depth = -1;
     
     //Shadow
     var _shadowX = (x - (room_width/2))*.03;
@@ -139,7 +140,7 @@ function cardStateGrabbed()
     }
     
     //Depth
-    depth = startDepth-10;
+    depth = -2;
 }
 
 

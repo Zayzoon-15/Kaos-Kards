@@ -11,6 +11,12 @@ var _createKaos = function(_card,_y)
     });
 }
 
+//Play Normal Cards
+if enemyKaos == undefined and playerKaos == undefined
+{
+    alarm[1] = 10;
+    alarm[2] = 10;
+}
 
 //Play Players Card
 if (playerFirst or enemyKaos == undefined) and playerKaos != undefined
@@ -20,7 +26,6 @@ if (playerFirst or enemyKaos == undefined) and playerKaos != undefined
     
     //Reset Kaos
     playerKaos = undefined;
-    alarm[0] = 30;
 }
 
 
@@ -32,12 +37,4 @@ if (!playerFirst or playerKaos == undefined) and enemyKaos != undefined
     
     //Reset Kaos
     enemyKaos = undefined;
-    alarm[0] = 30;
-}
-
-//Play Normal Cards
-if enemyKaos == undefined and playerKaos == undefined
-{
-    alarm[1] = 40;
-    alarm[2] = 40;
 }

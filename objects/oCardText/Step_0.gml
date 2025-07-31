@@ -27,7 +27,7 @@ if !touchingMouse(parent) or !parent.canGrab
 }
 
 //Depth
-if instance_exists(parent) then depth = parent.depth - 5;
+depth = -5;
 
 
 ////Keep In Room

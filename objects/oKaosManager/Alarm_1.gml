@@ -18,4 +18,4 @@ if _card != undefined
 playerCard ++;
 
 //Keep Going
-if playerCard < 3 then alarm[1] = timeBetweenCards;
+if playerCard < 3 then alarm[1] = timeBetweenCards; else alarm[3] = 135;

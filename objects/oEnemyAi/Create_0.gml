@@ -98,18 +98,18 @@ var _kaos = new enemyActionNode(placeKaos);
 
 //Set Decisions
 var _healCheck = new enemyDecisionNode(enemyShouldHeal(),_heal,_attack);
+var _healCheckAgain = new enemyDecisionNode(enemyShouldHealAgain(),_heal,_attack)
 var _defendCheck = new enemyDecisionNode(enemyShouldDefend(),_defend,_healCheck);
 var _upgradeDice = new enemyDecisionNode(enemyShouldUpgrade(),_upgrade,_kaos);
 var _rerollDice = new enemyDecisionNode(enemyRolledLow(),_reroll,_upgradeDice);
-
 
 //Ai Tree
 chosenSpecialCard = _rerollDice;
 
 chosenActionCards = [
 _defendCheck,
-_healCheck,
-_healCheck,
+_healCheckAgain,
+_attack,
 
 ];
 
