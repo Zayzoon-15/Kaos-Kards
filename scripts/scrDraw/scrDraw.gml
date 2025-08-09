@@ -50,12 +50,12 @@ function drawTipBox(_desc,_top = true,_distance = 10,_size = 1){
 ///@arg {real} _y1 The y position of the top left corner
 ///@arg {real} _x2 The x position of the bottom right corner
 ///@arg {real} _y2 The y position of the bottom right corner
-///@arg {real} _cornerRad The radius of the curve (Default : 0)
+///@arg {real} _cornerRad The radius of the curve (Default : UIBOX_RAD)
 ///@arg {Constant.Color} _bgColor The color of the box without an outline (Default : Black)
 ///@arg {Constant.Color} _outlineColor The color of the outline (Default : White)
-///@arg {real} _bgAlpha The alpha of the box without an outline (Default : 0.7)
+///@arg {real} _bgAlpha The alpha of the box without an outline (Default : UIBOX_ALPHA)
 ///@arg {real} _outlineAlpha The alpha of the outline (Default : 1)
-function drawRectOutlined(_x1,_y1,_x2,_y2,_cornerRad = 0,_bgColor=c_black,_outlineColor=c_white,_bgAlpha = UIBOX_ALPHA,_outlineAlpha = 1)
+function drawRectOutlined(_x1,_y1,_x2,_y2,_cornerRad = UIBOX_RAD,_bgColor=c_black,_outlineColor=c_white,_bgAlpha = UIBOX_ALPHA,_outlineAlpha = 1)
 {
     //Draw Bg
     draw_set_color(_bgColor);
