@@ -6,7 +6,12 @@ function transPlaceSequence(_type)
 {
     if (layer_exists("Transitions")) layer_destroy("Transitions");
     var _layer = layer_create(-99999,"Transitions");
-    layer_sequence_create(_layer,0,0,_type);
+	
+	var _x = camera_get_view_x(view_camera[0]);
+	var _xscale = camera_get_view_width(view_camera[0]);
+	
+    var _seq = layer_sequence_create(_layer,_x,0,_type);
+	layer_sequence_xscale(_seq,_xscale);
 }
 
 function transStart(_roomTarget,_typeOut,_typeIn)

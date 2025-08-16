@@ -90,14 +90,13 @@ function createAlertMessage(_text,_x=room_width/2,_y=235)
 
 ///@desc Makes a sprite with multiple animations in it to play as seprate
 ///Make sure to have these variables: "frame", "animationEnd"
-///@arg {real} _dir The animation direction. Example (0 : first anim, 90 : second anim)
+///@arg {real} _frame The animation frame
 ///@arg {real} _anims The amount of animations (Default = 4)
-function loopMultAnims(_dir,_anims = 4)
+function loopMultAnims(_frame,_anims = 4)
 {
     //Update Sprite
-    var _directions = round(_dir/90);
     var _totalFrames = image_number / _anims;
-    image_index = frame + (_directions*_totalFrames);
+    image_index = frame + (_frame*_totalFrames);
     frame += sprite_get_speed(sprite_index)/60;
     
     //Loop Animation

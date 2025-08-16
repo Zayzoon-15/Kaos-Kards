@@ -87,6 +87,5 @@ if os_type == os_android or os_type == os_ios then global.isPhone = true;
 
 #endregion
 
-
 //Start Game
 room_goto_next();

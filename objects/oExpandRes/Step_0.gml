@@ -1,0 +1,23 @@
+
+//Get Scale
+var _scale = window_get_height()/baseH;
+var _targetWidth = window_get_width()/_scale;
+
+camW = _targetWidth;
+camH = baseH;
+
+display_set_gui_size(camW,camH);
+
+//Get Camera Pos
+var _camX = room_width/2-camW/2;
+var _camY = 0;
+
+//Resize
+if surface_exists(application_surface)
+{
+	surface_resize(application_surface,camW,camH);
+}
+
+//Set Camera Values
+camera_set_view_pos(view_camera[0],_camX,_camY);
+camera_set_view_size(view_camera[0],camW,camH);

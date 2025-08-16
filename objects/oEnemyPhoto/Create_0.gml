@@ -4,7 +4,6 @@ sprite_index = global.currentEnemy.sprite;
 
 //Animation
 frame = 0;
-animation = [0,90,180,360];
 currentAnim = 0;
 animationEnd = false;
 shake = 0;

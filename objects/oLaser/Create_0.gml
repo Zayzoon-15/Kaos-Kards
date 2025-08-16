@@ -7,7 +7,6 @@ posBasedOnCard = true;
 
 //Reduce Value
 value *= 0.3;
-show_message(value)
 
 //Set Sprite
 sprite_index = sLaserStart;
