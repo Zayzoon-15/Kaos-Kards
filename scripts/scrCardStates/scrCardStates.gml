@@ -35,8 +35,22 @@ function cardStateHand(){
     
     #region Hover
     
+	var _touchingOthers = false;
+	with oCard
+	{
+		if hover and id != other.id
+		{
+			_touchingOthers = true;
+		}
+	}
+	
+	if touchingMouse() and !global.holdingCard and !_touchingOthers
+	{
+		hover = true;
+	} else hover = false;
+	
     //Hovered
-    if touchingMouse() and !global.holdingCard
+    if hover
     {
         cardTargetY = _handY - 10;
         shadowY = lerp(shadowY,16,.2);
@@ -153,8 +167,13 @@ function cardStatePlaced()
     var _cardX = slot.x;
     var _cardY = slot.y;
     
+	if touchingMouse() and !global.holdingCard
+	{
+		hover = true;
+	} else hover = false;
+	
     //Hovered
-    if touchingMouse() and !global.holdingCard
+    if hover
     {
         cardTargetY = _cardY - 8;
         shadowY = lerp(shadowY,15,.2);

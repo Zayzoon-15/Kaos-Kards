@@ -41,8 +41,5 @@
     "path":"sprites/sShield/sShield.yy",
   },
   "spriteMaskId":null,
-  "tags":[
-    "Attacks",
-  ],
   "visible":true,
 }

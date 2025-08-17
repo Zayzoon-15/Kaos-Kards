@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"TGM_Layers",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"TGM_Layers",
+  "parent":{
+    "name":"TurboGML",
+    "path":"folders/Extensions/TurboGML.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

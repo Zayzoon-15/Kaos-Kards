@@ -23,9 +23,12 @@ actionCards.shield,
 actionCards.slash,
 actionCards.slash,
 actionCards.slash,
-actionCards.laser,
-actionCards.laser,
-actionCards.laser,
+actionCards.punch,
+actionCards.punch,
+actionCards.punch,
+actionCards.poison,
+actionCards.poison,
+actionCards.poison,
 
 //Dice Cards
 diceCards.upgrade,
@@ -82,8 +85,8 @@ gameState = GAMESTATES.PREPARE;
 
 
 //Managers
-global.isPhone = false;
-if os_type == os_android or os_type == os_ios then global.isPhone = true;
+global.mobile = false;
+if os_type == os_android or os_type == os_ios then global.mobile = true;
 
 #endregion
 

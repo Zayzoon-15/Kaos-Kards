@@ -44,8 +44,5 @@
     "path":"sprites/sBread/sBread.yy",
   },
   "spriteMaskId":null,
-  "tags":[
-    "Attacks",
-  ],
   "visible":true,
 }

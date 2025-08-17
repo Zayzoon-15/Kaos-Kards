@@ -1,10 +1,12 @@
 
 //Visual
-flipSprite = false;
-posBasedOnCard = false;
+flipSprite = false; //If The Sprite Should Flip Based on The Target
+posBasedOnCard = false; //If The Attack Offset is Diffrent Based on The Target
 newYPos = [card.bbox_top,card.bbox_bottom]; //[targetEnemy,targetPlayer];
 
-//Functions DONT CHANGE
+
+#region Functions DONT CHANGE
+
 hurtEffect = function(_x = x,_y = y)
 {
     //Get Card
@@ -32,6 +34,8 @@ damageTarget = function()
         hurtEnemy(value);
     } else hurtPlayer(value);
 }
+
+#endregion
 
 //Change This One
 action = function()

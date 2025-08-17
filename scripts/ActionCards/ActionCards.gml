@@ -29,12 +29,15 @@ actionCards = {
     
     punch : new createCard("Punch Card",
     "Punches your enemy in the flipping face",
-    {min:1,max:6},CARDTYPES.ACTION,sPunchCard),
+    {min:1,max:6},CARDTYPES.ACTION,sPunchCard,punchAction),
     
     flamingAce : new createCard("Flaming Ace",
     "Burns your enemy alive",
-    {min:1,max:6},CARDTYPES.ACTION,sFlaminAce),
+    {min:1,max:6},CARDTYPES.ACTION,sFlaminAceCard),
     
+    poison : new createCard("Poison Card",
+    "Poisons your enemy for a random period of time",
+    {min:1,max:10},CARDTYPES.ACTION,sPoisonCard,poisonAction),
     
 };
 

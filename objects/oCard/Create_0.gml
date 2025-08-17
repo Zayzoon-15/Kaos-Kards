@@ -24,6 +24,7 @@ canGrab = true;
 canMove = true;
 offsetX = 0;
 offsetY = 0;
+hover = false;
 
 //Placed
 slot = noone;

@@ -21,7 +21,7 @@ if instance_exists(parent)
 } else instance_destroy();
 
 //Destory
-if !touchingMouse(parent) or !parent.canGrab
+if !parent.hover or !parent.canGrab
 {
     instance_destroy();
 }

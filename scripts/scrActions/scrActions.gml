@@ -1,6 +1,9 @@
-///All the attack actions
+/////////////////////////
+//// ATTACK ACTIONS ////
+///////////////////////
+
 ///All functions should look like this
-///function action(_card,_targetEnemy)
+//function action(_card,_targetEnemy)
 
 
 
@@ -49,7 +52,7 @@ function slashAction(_card,_targetEnemy)
     _card.cardShake();
     
     //Create Sword
-    instance_create_layer(_card.x,_card.y,"Attacks",oSlash,{
+    instance_create_layer(_card.x,_card.y,"Attacks",oSlashAttack,{
         targetEnemy : _targetEnemy,
         value : _card.value,
         card : _card
@@ -74,7 +77,29 @@ function breadAction(_card,_targetEnemy)
 ///@self oAttackCard
 function laserAction(_card,_targetEnemy)
 {
-    instance_create_layer(_card.x,_card.y,"Attacks",oLaser,{
+    instance_create_layer(_card.x,_card.y,"Attacks",oLaserAttack,{
+        targetEnemy : _targetEnemy,
+        value : _card.value,
+        card : _card
+    });
+}
+
+
+///@self oAttackCard
+function punchAction(_card,_targetEnemy)
+{
+    instance_create_layer(_card.x,_card.y,"Attacks",oFistAttack,{
+        targetEnemy : _targetEnemy,
+        value : _card.value,
+        card : _card
+    });
+}
+
+
+///@self oAttackCard
+function poisonAction(_card,_targetEnemy)
+{
+    instance_create_layer(_card.x,_card.y,"Attacks",oFistAttack,{
         targetEnemy : _targetEnemy,
         value : _card.value,
         card : _card

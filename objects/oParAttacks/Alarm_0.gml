@@ -1,4 +1,4 @@
-///@desc Applies Options
+///@desc Applies Options DONT CHANGE
 
 //Flip Sprite
 if flipSprite
