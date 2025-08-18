@@ -2,8 +2,12 @@
 //// ATTACK ACTIONS ////
 ///////////////////////
 
-///All functions should look like this
-//function action(_card,_targetEnemy)
+//This is where all card attacks go
+
+/* HOW TO
+ * All functions should look like this
+ * function action(_card,_targetEnemy)
+*/
 
 
 
@@ -38,10 +42,7 @@ function shieldAction(_card,_targetEnemy)
     });
     
     //Give Temp Health
-    if _targetEnemy
-    {
-        global.playerTempHp += _card.value;
-    } else global.enemyTempHp += _card.value;
+    applyAttackEffect(attackEffects.shield,!_targetEnemy,_card.value);
 }
 
 
@@ -99,11 +100,11 @@ function punchAction(_card,_targetEnemy)
 ///@self oAttackCard
 function poisonAction(_card,_targetEnemy)
 {
-    instance_create_layer(_card.x,_card.y,"Attacks",oFistAttack,{
-        targetEnemy : _targetEnemy,
-        value : _card.value,
-        card : _card
-    });
+    //Juice
+    _card.cardJuice(false);
+    
+    //Apply Poison
+    applyAttackEffect(attackEffects.poison,_targetEnemy,_card.value);
 }
 
 

@@ -13,8 +13,8 @@
   "name":"oLaserAttack",
   "overriddenProperties":[],
   "parent":{
-    "name":"Attacks",
-    "path":"folders/Objects/Attacks.yy",
+    "name":"Actions",
+    "path":"folders/Objects/Attacks/Actions.yy",
   },
   "parentObjectId":{
     "name":"oParAttacks",

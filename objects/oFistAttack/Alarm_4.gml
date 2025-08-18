@@ -1,0 +1,3 @@
+///@desc Hurt
+
+action();

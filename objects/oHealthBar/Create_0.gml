@@ -20,6 +20,7 @@ angle = 0;
 
 //TipBox
 canHover = true;
+tipBoxString = "";
 
 
 //Functions

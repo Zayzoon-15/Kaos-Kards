@@ -18,15 +18,22 @@ function drawCardText(_info){
 ///@desc Creates a tip box that appears on top of the object
 ///Keep in mind every object that uses this function needs the variable: canHover
 ///@arg {string} _desc The description
-///@arg {bool} _top Whether to draw at the top or bottom (Default : true)
+///@arg {bool} _top Whether to draw at the top or bottom (Default: true)
 ///@arg {real} _distance The distance of the text (Default: 10)
 ///@arg {real} _size The size of the text (Default: 1)
-function drawTipBox(_desc,_top = true,_distance = 10,_size = 1){
+///@arg {bool} _update If it should update each frame (Default: false) This would require the variable: tipBoxString 
+function drawTipBox(_desc,_top = true,_distance = 10,_size = 1,_update = false){
     
-    //Check If Has Variable
+    //Check If Has Variables
     if !variable_instance_exists(self.id,"canHover")
     {
         show_message($"{object_get_name(object_index)} does not have the variable: canHover");
+        game_end();
+    }
+    
+    if !variable_instance_exists(self.id,"tipBoxString") and _update
+    {
+        show_message($"{object_get_name(object_index)} does not have the variable: tipBoxString");
         game_end();
     }
     
@@ -39,6 +46,7 @@ function drawTipBox(_desc,_top = true,_distance = 10,_size = 1){
             top : _top,
             distance : _distance,
             size : _size,
+            update : _update
         });
     }
     

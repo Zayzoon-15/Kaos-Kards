@@ -20,6 +20,12 @@ if instance_exists(parent)
     y = lerp(y,_y,.2);
 }
 
+//Update String
+if instance_exists(parent) and update
+{
+    text = parent.tipBoxString;
+}
+
 //Destory
 if !touchingMouse(parent) or !parent.canHover
 {

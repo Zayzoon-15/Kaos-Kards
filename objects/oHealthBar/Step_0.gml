@@ -34,11 +34,11 @@ if tipOnTop
 } else _dist = 9;
 
 //String
-var _infoString = $"{_string}\nHealth:{floor(hp)}%";
-if tempHP >= 1 then _infoString = $"{_infoString}\nShield:{floor(tempHP)}%";
+tipBoxString = $"{_string}\nHealth:{floor(hp)}%";
+if tempHP >= 1 then tipBoxString = $"{tipBoxString}\nShield:{floor(tempHP)}%";
 
 //Draw Info
-drawTipBox(_infoString,tipOnTop,_dist);
+drawTipBox(tipBoxString,tipOnTop,_dist,1,true);
 
 #endregion
 
