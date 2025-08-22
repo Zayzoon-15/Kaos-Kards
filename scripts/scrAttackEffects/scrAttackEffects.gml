@@ -31,7 +31,7 @@ attackEffects = {
     shield : new createAttackEffect(sShieldIcon,EFFECTTYPES.ASS,undefined),
     poison : new createAttackEffect(sPoisonIcon,EFFECTTYPES.HARM,
     {min:5,max:8},{min:.3,max:1.5}),
-    fire : new createAttackEffect(sPoisonIcon,EFFECTTYPES.HARM,
+    fire : new createAttackEffect(sFireIcon,EFFECTTYPES.HARM,
     {min:3,max:5},{min:.6,max:2}),
 };
 
@@ -46,6 +46,7 @@ function applyAttackEffect(_attack,_targetEnemy,_value)
         value : _value
     });
 }
+
 
 /*
  * HOW TO ADD AN EFFECT:

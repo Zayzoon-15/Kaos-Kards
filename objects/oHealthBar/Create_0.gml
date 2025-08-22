@@ -22,6 +22,7 @@ angle = 0;
 canHover = true;
 tipBoxString = "";
 
+iconId = 0;
 
 //Functions
 hitEffect = function()

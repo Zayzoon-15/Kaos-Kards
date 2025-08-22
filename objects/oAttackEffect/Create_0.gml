@@ -59,7 +59,7 @@ function updateArray()
     if !_sameValue then array_insert(_array,0,_struct);
     
     //Debug
-    print(_array);
+    //print(_array);
 }
 
 //Update Array
@@ -78,11 +78,35 @@ if info.totalTime != undefined
 
 
 //Create Icon
-var _target = "Player";
-if targetEnemy then _target = "Enemy";
+var _array = global.playerEffects;
+if targetEnemy then _array = global.enemyEffects;
 
-instance_create_layer(0,0,"Ui",oHealthIcon,{
-    info : info,
-    target : _target,
-    sprite_index : info.sprite
-});
+var _createIcon = function(_info){
+    
+    var _target = "Player";
+    if targetEnemy then _target = "Enemy";
+    
+    instance_create_layer(0,0,"Ui",oHealthIcon,{
+        info : _info,
+        target : _target,
+        sprite_index : _info.sprite,
+    });
+}
+
+if instance_exists(oHealthIcon)
+{
+    var _create = true;
+    with oHealthIcon
+    {
+        iconId ++;
+        iconId = clamp(iconId,0,array_length(_array)-1);
+        
+        if info == other.info{
+            iconId = 0;
+            _create = false;
+        }
+    }
+    
+    if _create then _createIcon(info);
+    
+} else _createIcon(info);
