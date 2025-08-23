@@ -1,3 +1,10 @@
+//Hide If Healthbar Isnt Real
+if healthInst == noone
+{
+    visible = false;
+    exit;
+} else visible = true;
+
 //Get Target Array
 var _array = global.playerEffects;
 if target == "Enemy" then _array = global.enemyEffects;
@@ -14,7 +21,12 @@ var _y = _top + iconId * _gap;
 targetX = healthInst.bbox_right + 10;
 targetY = _y;
 
-
 //Ease
 x = lerp(x,targetX,.3);
 y = lerp(y,targetY,.1);
+
+//Destroy
+if !_array[iconId]
+{
+    
+}

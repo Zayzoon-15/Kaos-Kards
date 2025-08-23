@@ -34,8 +34,18 @@ if tipOnTop
 } else _dist = 9;
 
 //String
-tipBoxString = $"{_string}\nHealth:{floor(hp)}%";
-if tempHP >= 1 then tipBoxString = $"{tipBoxString}\nShield:{floor(tempHP)}%";
+tipBoxString = $"{_string}\nHealth:{floor(_hp)}%";
+//if _tempHp >= 1 then tipBoxString = $"{tipBoxString}\nShield:{floor(_tempHp)}%";
+
+var _array = global.playerEffects;
+if target == "Enemy" then _array = global.enemyEffects;
+for (var i = 0; i < array_length(_array); i++) {
+    
+    var _percent = floor(_array[i].percent);
+    
+    
+	tipBoxString += $"\n{_array[i].info.name}:{_percent}%";
+}
 
 //Draw Info
 drawTipBox(tipBoxString,tipOnTop,_dist,1,true);

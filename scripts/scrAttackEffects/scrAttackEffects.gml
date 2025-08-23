@@ -13,8 +13,9 @@ enum EFFECTTYPES
     HARM
 }
 
-function createAttackEffect(_sprite,_type,_totalTime = undefined,_timeBetween = undefined) constructor 
+function createAttackEffect(_name,_sprite,_type,_totalTime = undefined,_timeBetween = undefined) constructor 
 {
+    name = _name;
     sprite = _sprite;
     type = _type;
     totalTime = _totalTime;
@@ -28,10 +29,10 @@ globalvar attackEffects;
 
 attackEffects = {
     
-    shield : new createAttackEffect(sShieldIcon,EFFECTTYPES.ASS,undefined),
-    poison : new createAttackEffect(sPoisonIcon,EFFECTTYPES.HARM,
+    shield : new createAttackEffect("Shield",sShieldIcon,EFFECTTYPES.ASS,undefined),
+    poison : new createAttackEffect("Poison",sPoisonIcon,EFFECTTYPES.HARM,
     {min:5,max:8},{min:.3,max:1.5}),
-    fire : new createAttackEffect(sFireIcon,EFFECTTYPES.HARM,
+    fire : new createAttackEffect("Fire",sFireIcon,EFFECTTYPES.HARM,
     {min:3,max:5},{min:.6,max:2}),
 };
 

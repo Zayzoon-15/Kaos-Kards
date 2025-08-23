@@ -6,6 +6,10 @@ if info.totalTime != undefined
     timeBetween = random_range(info.timeBetween.min,info.timeBetween.max)*60;
 }
 
+percentage = value;
+
+//Array Struct
+arrayStruct = {info : info, value : value, percent:percentage};
 
 //Function
 applyEffect = function()
@@ -24,9 +28,12 @@ applyEffect = function()
         } else global.enemyHp -= value;
     }
     
+    //Add Percentage
+    percentage += value;
+    
     //Reduce Value
     value *= .6;
-    value = clamp(value,1,99);
+    value = clamp(value,1,100);
     
 }
 
@@ -40,7 +47,7 @@ function updateArray()
     } else _array = variable_global_get("playerEffects");
     
     //Create Struct
-    var _struct = {info : info, value : value};
+    var _struct = {info : info, value : value, percent:percentage};
     
     //Remove Same Value
     var _sameValue = false;
@@ -57,9 +64,6 @@ function updateArray()
     
     //Add To Array
     if !_sameValue then array_insert(_array,0,_struct);
-    
-    //Debug
-    //print(_array);
 }
 
 //Update Array
@@ -90,6 +94,7 @@ var _createIcon = function(_info){
         info : _info,
         target : _target,
         sprite_index : _info.sprite,
+        arrayStruct : arrayStruct
     });
 }
 
