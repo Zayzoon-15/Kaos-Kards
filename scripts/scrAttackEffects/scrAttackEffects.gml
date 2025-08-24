@@ -2,8 +2,31 @@
 //// ATTACK EFFECTS ////
 ///////////////////////
 
-//This is where all the effects that attacks can give go
 
+
+
+
+
+function createAttackEffect(_name,_sprite,_color,_type,_totalTime = undefined,_timeBetween = undefined) constructor 
+{
+    name = _name;
+    sprite = _sprite;
+    color = _color;
+    type = _type;
+    totalTime = _totalTime;
+    timeBetween = _timeBetween;
+}
+
+
+
+
+
+
+
+
+
+//This is where all the effects that attacks can give go
+/*
 global.playerEffects = [];
 global.enemyEffects = [];
 

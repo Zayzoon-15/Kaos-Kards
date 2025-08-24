@@ -3,9 +3,14 @@
 var _scale = window_get_height()/baseH;
 var _targetWidth = window_get_width()/_scale;
 
+//Set Camera Size
 camW = _targetWidth;
 camH = baseH;
 
+//Clamp
+camW = clamp(camW,0,7945);
+
+//Size Gui
 display_set_gui_size(camW,camH);
 
 //Get Camera Pos

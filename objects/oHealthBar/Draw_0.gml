@@ -9,7 +9,6 @@ var _spriteWidth = 292;
 var _spriteHeight = 41;
 var _hpValue = (hp/100)*_spriteWidth;
 var _shieldValue = (tempHP/100)*_spriteWidth;
-var _poisonValue = (50/100)*_spriteWidth;
 
 //Flip Values
 var _xPos,_yPos;
@@ -32,9 +31,55 @@ var _newY = y + lengthdir_y(_offsetX, angle) + lengthdir_y(_offsetY, angle - 90)
 draw_sprite_general(sprite_index,4,_xPos,_yPos,_hpValue,_spriteHeight,_newX,_newY,
 image_xscale, image_yscale, angle, image_blend, image_blend, image_blend, image_blend, image_alpha);
 
+//Draw Effects
+for (var i = 0; i < ds_list_size(targetList); i++) {
+    
+    var _list = ds_list_find_value(targetList,i);
+    
+    var _lastList = undefined;
+    var _lastValue = 0;
+    
+    for (var k = 0; k < ds_list_size(targetList); k++) {
+        var _foundList = ds_list_find_value(targetList,k);
+    	if _foundList.info.type == _list.info.type and _foundList.info != _list.info and k < i
+        {
+            _lastList = _foundList;
+        }
+    }
+    
+    if _lastList != undefined
+    {
+        if _lastList.info.type == _list.info.type
+        {
+            _lastValue = _lastList.percent;
+        }
+        
+    }
+    
+    var _newOffset = (_lastValue/(100))*(_spriteWidth)
+    var _barValue = (_list.percent/(100))*(_spriteWidth);
+    var _color = _list.info.color;
+    
+    _barValue += 1;
+    
+    var _barXOffset = 40;
+    if _list.info.type == EFFECT_TYPE.HARM{
+        _barXOffset = 331;
+        if flipped then _barXOffset = 305;
+        _barValue *= -1;
+        _newOffset *= -1;
+        _newOffset += _spriteWidth;
+    }
+    
+	draw_sprite_general(sprite_index,6,_barXOffset,38,_barValue,_spriteHeight,_newX+_newOffset,_newY,
+    image_xscale, image_yscale, angle, _color, _color, _color, _color, image_alpha);
+}
+
+
 //Draw Temp Health
-draw_sprite_general(sprite_index,5,40,38,_shieldValue,_spriteHeight,_newX,_newY,
-image_xscale, image_yscale, angle, image_blend, image_blend, image_blend, image_blend, image_alpha);
+//var _color = attackEffects.shield.color;
+//draw_sprite_general(sprite_index,6,40,38,_shieldValue,_spriteHeight,_newX,_newY,
+//image_xscale, image_yscale, angle, _color, _color, _color, _color, image_alpha);
 
 //Draw Cover
 draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,angle,image_blend,image_alpha);

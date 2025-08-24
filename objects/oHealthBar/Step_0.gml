@@ -1,3 +1,7 @@
+//Get Correct List
+targetList = playerEffects;
+if target == "Enemy" then targetList = enemyEffects;
+
 //Get Values
 var _hp, _tempHp;
 if target == "Player"
@@ -37,14 +41,9 @@ if tipOnTop
 tipBoxString = $"{_string}\nHealth:{floor(_hp)}%";
 //if _tempHp >= 1 then tipBoxString = $"{tipBoxString}\nShield:{floor(_tempHp)}%";
 
-var _array = global.playerEffects;
-if target == "Enemy" then _array = global.enemyEffects;
-for (var i = 0; i < array_length(_array); i++) {
-    
-    var _percent = floor(_array[i].percent);
-    
-    
-	tipBoxString += $"\n{_array[i].info.name}:{_percent}%";
+for (var i = 0; i < ds_list_size(targetList); i++) {
+    var _list = ds_list_find_value(targetList,i);
+	tipBoxString += $"\n{_list.info.name}:{_list.percent}%";
 }
 
 //Draw Info

@@ -24,6 +24,9 @@ tipBoxString = "";
 
 iconId = 0;
 
+//List
+targetList = playerEffects;
+
 //Functions
 hitEffect = function()
 {

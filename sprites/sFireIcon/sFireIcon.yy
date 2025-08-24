@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"HpIcons",
-    "path":"folders/Sprites/Ui/HpIcons.yy",
+    "name":"Hp Icons",
+    "path":"folders/Sprites/Ui/Hp Icons.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
