@@ -6,10 +6,10 @@ if info.totalTime != undefined
     timeBetween = random_range(info.timeBetween.min,info.timeBetween.max)*60;
 }
 
-percentage = value;
+percent = value;
 
 //Array Struct
-arrayStruct = {info : info, value : value, percent:percentage};
+arrayStruct = {info : info, value : value, percent:percent, showPercent};
 
 //Function
 applyEffect = function()
@@ -47,7 +47,7 @@ function updateArray()
     } else _array = variable_global_get("playerEffects");
     
     //Create Struct
-    var _struct = {info : info, value : value, percent:percentage};
+    var _struct = {info : info, value : value, percent:percent};
     
     //Remove Same Value
     var _sameValue = false;

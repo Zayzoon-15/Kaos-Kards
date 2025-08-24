@@ -39,7 +39,6 @@ if tipOnTop
 
 //String
 tipBoxString = $"{_string}\nHealth:{floor(_hp)}%";
-//if _tempHp >= 1 then tipBoxString = $"{tipBoxString}\nShield:{floor(_tempHp)}%";
 
 for (var i = 0; i < ds_list_size(targetList); i++) {
     var _list = ds_list_find_value(targetList,i);

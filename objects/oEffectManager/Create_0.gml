@@ -7,7 +7,7 @@ enemyEffects = ds_list_create();
 
 function addEffect(_effect,_value)
 {
-    var _struct = {info:_effect,value:_value,percent:_value};
+    var _struct = {info:_effect,value:_value,percent:_value,showPercent:0};
     
     for (var i = 0; i < ds_list_size(playerEffects); i++) {
     	if ds_list_find_value(playerEffects,i).info == _struct.info

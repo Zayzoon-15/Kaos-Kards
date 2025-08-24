@@ -8,7 +8,6 @@ draw_sprite_ext(sprite_index,3,x,y,image_xscale,image_yscale,angle,image_blend,i
 var _spriteWidth = 292;
 var _spriteHeight = 41;
 var _hpValue = (hp/100)*_spriteWidth;
-var _shieldValue = (tempHP/100)*_spriteWidth;
 
 //Flip Values
 var _xPos,_yPos;
@@ -51,13 +50,13 @@ for (var i = 0; i < ds_list_size(targetList); i++) {
     {
         if _lastList.info.type == _list.info.type
         {
-            _lastValue = _lastList.percent;
+            _lastValue = _lastList.showPercent;
         }
         
     }
     
     var _newOffset = (_lastValue/(100))*(_spriteWidth)
-    var _barValue = (_list.percent/(100))*(_spriteWidth);
+    var _barValue = (_list.showPercent/(100))*(_spriteWidth);
     var _color = _list.info.color;
     
     _barValue += 1;
@@ -71,15 +70,13 @@ for (var i = 0; i < ds_list_size(targetList); i++) {
         _newOffset += _spriteWidth;
     }
     
-	draw_sprite_general(sprite_index,6,_barXOffset,38,_barValue,_spriteHeight,_newX+_newOffset,_newY,
+    var _barX = x + lengthdir_x(_offsetX+_newOffset, angle) + lengthdir_x(_offsetY, angle - 90);
+    var _barY = y + lengthdir_y(_offsetX+_newOffset, angle) + lengthdir_y(_offsetY, angle - 90);
+    
+	draw_sprite_general(sprite_index,6,_barXOffset,38,_barValue,_spriteHeight,_barX,_barY,
     image_xscale, image_yscale, angle, _color, _color, _color, _color, image_alpha);
 }
 
-
-//Draw Temp Health
-//var _color = attackEffects.shield.color;
-//draw_sprite_general(sprite_index,6,40,38,_shieldValue,_spriteHeight,_newX,_newY,
-//image_xscale, image_yscale, angle, _color, _color, _color, _color, image_alpha);
 
 //Draw Cover
 draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,angle,image_blend,image_alpha);
@@ -88,9 +85,3 @@ draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,angle,image_blend,i
 var _titleNum = 1;
 if target != "Player" then _titleNum = 2;
 draw_sprite_ext(sprite_index,_titleNum,x,y,image_xscale,image_yscale,angle,image_blend,image_alpha);
-
-
-/*
-//Draw Effects
-draw_sprite_general(sprite_index,5,40,38,_value,_spriteHeight,_newX,_newY,
-image_xscale, image_yscale, angle, _color, _color, _color, _color, image_alpha);
