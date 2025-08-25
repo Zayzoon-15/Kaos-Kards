@@ -42,7 +42,7 @@ function shieldAction(_card,_targetEnemy)
     });
     
     //Give Temp Health
-    applyAttackEffect(attackEffects.shield,!_targetEnemy,_card.value);
+    addEffect(attackEffects.shield,_card.value,!_targetEnemy);
 }
 
 
@@ -104,7 +104,7 @@ function poisonAction(_card,_targetEnemy)
     _card.cardJuice(false);
     
     //Apply Poison
-    applyAttackEffect(attackEffects.poison,_targetEnemy,_card.value);
+    addEffect(attackEffects.poison,_card.value,_targetEnemy);
 }
 
 

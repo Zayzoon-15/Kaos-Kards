@@ -22,6 +22,8 @@ angle = 0;
 canHover = true;
 tipBoxString = "";
 
+//Icons
+icons = [];
 iconId = 0;
 
 //List

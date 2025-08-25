@@ -59,6 +59,8 @@ global.playerHp = 100;
 global.playerTempHp = 0;
 global.enemyHp = 100;
 global.enemyTempHp = 0;
+global.playerHpIcons = [];
+global.enemyHpIcons = [];
 
 //Actions
 globalvar playerActions, enemyActions, playerKaos, enemyKaos;

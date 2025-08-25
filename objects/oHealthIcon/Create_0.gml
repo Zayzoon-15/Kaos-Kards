@@ -5,9 +5,6 @@ with oHealthBar
     if target == other.target then other.healthInst = self.id;
 }
 
-//Set Sprite
-sprite_index = info.sprite;
-
 //Set Position
 x = healthInst.x;
 y = healthInst.y;

@@ -1,100 +1,67 @@
 
-//Set Time
-if info.totalTime != undefined
-{
-    time = random_range(info.totalTime.min,info.totalTime.max)*60;
-    timeBetween = random_range(info.timeBetween.min,info.timeBetween.max)*60;
-}
 
-percent = value;
-
-//Array Struct
-arrayStruct = {info : info, value : value, percent:percent, showPercent};
-
-//Function
 applyEffect = function()
 {
-    //Apply Values
-    if info.type == EFFECTTYPES.ASS
-    {
-        if !targetEnemy
-        {
-            global.playerTempHp += value;
-        } else global.enemyTempHp += value;
-    } else {
-        if !targetEnemy
-        {
-            global.playerHp -= value;
-        } else global.enemyHp -= value;
-    }
-    
-    //Add Percentage
-    percentage += value;
-    
-    //Reduce Value
-    value *= .6;
-    value = clamp(value,1,100);
-    
-}
+    var _targetList = playerEffects;
+    if targetEnemy then _targetList = enemyEffects;
 
-function updateArray()
-{
-    //Get Correct Array
-    var _array
-    if targetEnemy
-    {
-        _array = variable_global_get("enemyEffects");
-    } else _array = variable_global_get("playerEffects");
-    
-    //Create Struct
-    var _struct = {info : info, value : value, percent:percent};
-    
-    //Remove Same Value
-    var _sameValue = false;
-    for (var i = 0; i < array_length(_array); i++) {
-    	if _array[i].info == info
+    for (var i = 0; i < ds_list_size(_targetList); i++) {
+        
+        var _listValue = ds_list_find_value(_targetList,i);
+    	if _listValue.info == effect
         {
-            //Set Array
-            _array[i] = _struct;
+            //Add To Value
+            _listValue.percent += value;
             
-            //Same Value
-            _sameValue = true;
+            //Decrease Hp
+            if _listValue.info.type == EFFECT_TYPE.HARM
+            {
+                var _hpCheck = abs(global.playerHp-100)+5;
+                var _realCheck = _hpCheck - _listValue.percent;
+                
+                if targetEnemy then hurtEnemy(value); else hurtPlayer(value);
+            }
+            
         }
     }
-    
-    //Add To Array
-    if !_sameValue then array_insert(_array,0,_struct);
+
+    value *= .7;
+    value = floor(value);
+    value = clamp(value,1,100);
 }
 
-//Update Array
-updateArray();
+print("SPAWN")
 
-
-//Apply Effect
-if info.totalTime != undefined
+//Start Total Time
+if effect.totalTime != undefined
 {
-    alarm[0] = 1;
-    alarm[1] = time;
-} else {
-	applyEffect();
-    instance_destroy();
+    //Get Time
+    var _totalTime = effect.totalTime;
+    
+    //Appy Time
+    randomize();
+    alarm[1] = random_range(_totalTime[0],_totalTime[1])*60;
 }
+
+//Start Effect
+alarm[0] = 1;
 
 
 //Create Icon
-var _array = global.playerEffects;
-if targetEnemy then _array = global.enemyEffects;
-
-var _createIcon = function(_info){
-    
+var _createIcon = function(_effect)
+{
     var _target = "Player";
     if targetEnemy then _target = "Enemy";
     
+    var _array = global.playerHpIcons;
+    if targetEnemy then _array = global.enemyHpIcons;
+    
+    array_insert(_array,0,_effect);
+    
     instance_create_layer(0,0,"Ui",oHealthIcon,{
-        info : _info,
+        info : _effect,
         target : _target,
-        sprite_index : _info.sprite,
-        arrayStruct : arrayStruct
+        sprite_index : _effect.sprite,
     });
 }
 
@@ -103,15 +70,20 @@ if instance_exists(oHealthIcon)
     var _create = true;
     with oHealthIcon
     {
-        iconId ++;
-        iconId = clamp(iconId,0,array_length(_array)-1);
+        if healthInst == noone then exit;
         
-        if info == other.info{
+        var _array = global.playerHpIcons;
+        if target == "Enemy" then _array = global.enemyHpIcons;
+        
+        iconId ++;
+        iconId = clamp(iconId,0,array_length(_array));
+        
+        if info == other.effect{
             iconId = 0;
             _create = false;
         }
     }
     
-    if _create then _createIcon(info);
+    if _create then _createIcon(effect);
     
-} else _createIcon(info);
+} else _createIcon(effect);
