@@ -7,15 +7,12 @@ var _hp, _tempHp;
 if target == "Player"
 {
     _hp = global.playerHp;
-    _tempHp = global.playerTempHp;
 } else {
 	_hp = global.enemyHp;
-    _tempHp = global.enemyTempHp;
 }
 
 //Set Values
 hp = lerp(hp,_hp,.2);
-tempHP = lerp(tempHP,_tempHp,.2);
 
 //Lerp Angle
 angle = lerp(angle,0,.2);

@@ -9,10 +9,8 @@ image_xscale = 1;
 if target == "Player"
 {
     hp = global.playerHp;
-    tempHP = global.playerTempHp;
 } else {
     hp = global.enemyHp;
-    tempHP = global.enemyTempHp;
 }
 
 //Image Values

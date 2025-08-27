@@ -1,7 +1,7 @@
 
 
 //Update List
-for (var k = 0; k < 1; k++) {
+for (var k = 0; k < 2; k++) {
     
     var _targetList = playerEffects;
     if k == 1 then _targetList = enemyEffects;
