@@ -82,6 +82,7 @@
     {"name":"oSlashAttack","order":4,"path":"objects/oSlashAttack/oSlashAttack.yy",},
     {"name":"oSpecialSlot","order":2,"path":"objects/oSpecialSlot/oSpecialSlot.yy",},
     {"name":"oStartRoundButton","order":1,"path":"objects/oStartRoundButton/oStartRoundButton.yy",},
+    {"name":"oTempHpBar","order":2,"path":"objects/oTempHpBar/oTempHpBar.yy",},
     {"name":"oTipBox","order":2,"path":"objects/oTipBox/oTipBox.yy",},
     {"name":"rEnemy","order":2,"path":"rooms/rEnemy/rEnemy.yy",},
     {"name":"rKaos","order":3,"path":"rooms/rKaos/rKaos.yy",},
@@ -176,5 +177,6 @@
     {"name":"sSlash","order":1,"path":"sprites/sSlash/sSlash.yy",},
     {"name":"sSlashCard","order":2,"path":"sprites/sSlashCard/sSlashCard.yy",},
     {"name":"sSwapCard","order":3,"path":"sprites/sSwapCard/sSwapCard.yy",},
+    {"name":"sTempHpBar","order":6,"path":"sprites/sTempHpBar/sTempHpBar.yy",},
   ],
 }

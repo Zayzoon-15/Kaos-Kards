@@ -29,22 +29,31 @@ function addEffect(_effect,_value,_targetEnemy=false)
     if _effect.totalTime != undefined then _startValue = 2;
     
     //Create Struct
-    var _struct = {info:_effect,value:_value,percent:_startValue,showPercent:2};
+    var _struct = {info:_effect,value:_value,percent:0,showPercent:2};
     
     //Replace If Value Exists
     for (var i = 0; i < ds_list_size(_targetList); i++) {
     	if ds_list_find_value(_targetList,i).info == _struct.info
         {
             _struct = ds_list_find_value(_targetList,i);
-            _struct.value += _value;
-            _struct.percent += _value;
+            //_struct.value += _value;
+            //_struct.percent += _value;
+            with oAttackEffect
+            {
+                if effect == _struct.info
+                {
+                    value = _value;
+                    applyEffect();
+                }
+            }
+            
             ds_list_delete(_targetList,i);
             ds_list_insert(_targetList,i,_struct);
-            instance_create_depth(0,0,0,oAttackEffect,{
-                effect : _effect,
-                value : _value,
-                targetEnemy : _targetEnemy
-            });
+            //instance_create_depth(0,0,0,oAttackEffect,{
+                //effect : _effect,
+                //value : _value,
+                //targetEnemy : _targetEnemy
+            //});
             
             exit;
         }

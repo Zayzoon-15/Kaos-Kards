@@ -1,20 +1,18 @@
-
+//Get Correct List
+targetList = playerEffects;
+if target == "Enemy" then targetList = enemyEffects;
 
 //Get Values
 var _hp, _tempHp;
 if target == "Player"
 {
-    _hp = global.playerHp;
+    _hp = global.playerTempHp;
 } else {
-	_hp = global.enemyHp;
+	_hp = global.enemyTempHp;
 }
 
 //Set Values
 hp = lerp(hp,_hp,.2);
-
-//HitStun
-if startHitStun then hitStun = lerp(hitStun,hp-.5,.03);
-if hitStun <= hp then startHitStun = false;
 
 //Lerp Angle
 angle = lerp(angle,0,.2);
@@ -27,8 +25,8 @@ var _string,_dist;
 //Name
 if target == "Player"
 {
-    _string = "Your Health Bar";
-} else _string = "Enemies Health Bar";
+    _string = "Your Temp Health Bar";
+} else _string = "Enemies Temp Health Bar";
 
 //Distance
 if tipOnTop
@@ -37,7 +35,7 @@ if tipOnTop
 } else _dist = 9;
 
 //String
-tipBoxString = $"{_string}\nHealth:{floor(_hp)}%";
+tipBoxString = $"{_string}\nTemp Health:{floor(_hp)}%";
 
 //Draw Info
 drawTipBox(tipBoxString,tipOnTop,_dist,1,true);

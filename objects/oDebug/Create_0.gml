@@ -32,4 +32,15 @@ for (var i = 0; i < array_length(buttons); i++)
 {dbg_button(buttons[i].string, buttons[i].action);}
 
 
-show_debug_overlay(false);
+dbg_view("Health Bar",true,30,30,250,300);
+buttons = [
+{string:"Shield",action:function(){global.playerTempHp+=10;}},
+{string:"Heal",action:function(){healPlayer(20)}},
+{string:"Hurt",action:function(){hurtPlayer(20)}},
+];
+
+for (var i = 0; i < array_length(buttons); i++) 
+{dbg_button(buttons[i].string, buttons[i].action);}
+
+
+show_debug_overlay(true);

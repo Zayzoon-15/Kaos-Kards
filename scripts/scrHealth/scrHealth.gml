@@ -6,36 +6,19 @@ function hurtEnemy(_value)
     //Enemy Photo
     with oEnemyPhoto {hurt();}
     
-    //Health Bar
-    with oHealthBar
-    {
-        if target == "Enemy" then hitEffect();
-    }
-    
-    //Get Temp Hp
-    var _currentTemp = 0;
-    var _damage = _value;
-    for (var i = 0; i < ds_list_size(enemyEffects); i++) {
-    	var _list = ds_list_find_value(enemyEffects,i);
-        if _list.info.type == EFFECT_TYPE.ASS
-        {
-            var _percent = _list.percent;
-            
-            _currentTemp += _percent;
-            
-            if _damage > 0 then _list.percent -= _damage;
-            
-            _damage -= _percent;
-        }
-    }
-    global.enemyTempHp = _currentTemp;
-    
     //Remove Temp Health
     var _tempHp = global.enemyTempHp - _value;
     global.enemyTempHp = _tempHp;
     
     //Remove Health
+    var _lastHp = global.enemyHp;
     if _tempHp < 0 then global.enemyHp += _tempHp;
+    
+    //Health Bar
+    with oHealthBar
+    {
+        if target == "Enemy" then hitEffect(_lastHp);
+    }
 }
 
 
@@ -46,37 +29,31 @@ function hurtPlayer(_value)
     //Enemy Photo
     with oEnemyPhoto {win();}
     
-    //Health Bar
-    with oHealthBar
-    {
-        if target == "Player" then hitEffect();
-    }
-    
-    //Get Temp Hp
-    var _currentTemp = 0;
-    var _damage = _value;
-    for (var i = 0; i < ds_list_size(playerEffects); i++) {
-    	var _list = ds_list_find_value(playerEffects,i);
-        if _list.info.type == EFFECT_TYPE.ASS
-        {
-            var _percent = _list.percent;
-            
-            _currentTemp += _percent;
-            
-            if _damage > 0 then _list.percent -= _damage;
-            
-            _damage -= _percent;
-        }
-    }
-    global.playerTempHp = _currentTemp;
-    
     //Remove Temp Health
+    var _lastTemp = global.playerTempHp;
     var _tempHp = global.playerTempHp - _value;
     global.playerTempHp = _tempHp;
     
     //Remove Health
+    var _lastHp = global.playerHp;
     if _tempHp < 0 then global.playerHp += _tempHp;
     
+    //Health Bar
+    if _tempHp < 0
+    {
+        with oHealthBar
+        {
+            if target == "Player" then hitEffect(_lastHp);
+        }
+    }
+    
+    if _lastTemp > 0
+    {
+    	with oTempHpBar
+        {
+            if target == "Player" then hitEffect();
+        }
+    }
 }
 
 

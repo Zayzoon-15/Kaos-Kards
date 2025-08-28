@@ -20,7 +20,7 @@
     {"name":"inst_6A37D000","path":"rooms/rMain/rMain.yy",},
     {"name":"inst_5C64BB5E","path":"rooms/rMain/rMain.yy",},
     {"name":"inst_F1AF369","path":"rooms/rMain/rMain.yy",},
-    {"name":"inst_63999880","path":"rooms/rMain/rMain.yy",},
+    {"name":"inst_2234373F","path":"rooms/rMain/rMain.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -28,9 +28,9 @@
     {"$GMRInstanceLayer":"","%Name":"Ui","depth":100,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v2","%Name":"inst_50F9F106","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_50F9F106","objectId":{"name":"oHandInfo","path":"objects/oHandInfo/oHandInfo.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":640.0,"y":712.0,},
         {"$GMRInstance":"v2","%Name":"inst_5C64BB5E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5C64BB5E","objectId":{"name":"oHealthBar","path":"objects/oHealthBar/oHealthBar.yy",},"properties":[
-            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oHealthBar","path":"objects/oHealthBar/oHealthBar.yy",},"propertyId":{"name":"target","path":"objects/oHealthBar/oHealthBar.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"Enemy\"",},
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oHealthBar","path":"objects/oHealthBar/oHealthBar.yy",},"propertyId":{"name":"target","path":"objects/oHealthBar/oHealthBar.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"Player\"",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":192.0,"y":64.0,},
-        {"$GMRInstance":"v2","%Name":"inst_63999880","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_63999880","objectId":{"name":"oHealthBar","path":"objects/oHealthBar/oHealthBar.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"x":1024.0,"y":64.0,},
+        {"$GMRInstance":"v2","%Name":"inst_2234373F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2234373F","objectId":{"name":"oTempHpBar","path":"objects/oTempHpBar/oTempHpBar.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":192.0,"y":160.0,},
       ],"layers":[],"name":"Ui","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Cards","depth":200,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Cards","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Buttons","depth":300,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[

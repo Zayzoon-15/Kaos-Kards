@@ -2,15 +2,15 @@
 
 //Flip Sprite
 if image_xscale == 1 then flipped = false; else flipped = true;
-if flipped then sprite_index = sHealthBarFlipped; else sprite_index = sHealthBar;
-image_xscale = 1;
+//if flipped then sprite_index = sHealthBarFlipped; else sprite_index = sHealthBar;
+//image_xscale = 1;
 
 //Health
 if target == "Player"
 {
-    hp = global.playerHp;
+    hp = global.playerTempHp;
 } else {
-    hp = global.enemyHp;
+    hp = global.enemyTempHp;
 }
 
 //Image Values
@@ -27,20 +27,11 @@ iconId = 0;
 //List
 targetList = playerEffects;
 
-//Hit Stun
-hitStun = 100;
-startHitStun = false;
-
 //Functions
-hitEffect = function(_lastValue)
+hitEffect = function()
 {
     //Randomize
     randomize();
-    
-    //Hit Stun
-    if hitStun <= hp then hitStun = _lastValue;
-    startHitStun = false;
-    alarm[0] = 40;
     
     //Angle
     var _dir = choose(-1,1);

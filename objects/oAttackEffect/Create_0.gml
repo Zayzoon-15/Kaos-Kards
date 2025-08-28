@@ -1,4 +1,4 @@
-
+currentValue = 5;
 
 applyEffect = function()
 {
@@ -12,12 +12,11 @@ applyEffect = function()
         {
             //Add To Value
             _listValue.percent += value;
+            currentValue = _listValue.percent;
             
             //Decrease Hp
             if _listValue.info.type == EFFECT_TYPE.HARM
             {
-                var _hpCheck = abs(global.playerHp-100)+5;
-                var _realCheck = _hpCheck - _listValue.percent;
                 
                 if targetEnemy then hurtEnemy(value); else hurtPlayer(value);
             }
@@ -25,25 +24,32 @@ applyEffect = function()
         }
     }
 
-    value *= .7;
-    value = floor(value);
-    value = clamp(value,1,100);
 }
 
-print("SPAWN")
 
-//Start Total Time
-if effect.totalTime != undefined
+reduceEffect = function()
 {
-    //Get Time
-    var _totalTime = effect.totalTime;
-    
-    //Appy Time
-    randomize();
-    alarm[1] = random_range(_totalTime[0],_totalTime[1])*60;
+    var _targetList = playerEffects;
+    if targetEnemy then _targetList = enemyEffects;
+
+    for (var i = 0; i < ds_list_size(_targetList); i++) {
+        
+        var _listValue = ds_list_find_value(_targetList,i);
+    	if _listValue.info == effect
+        {
+            //Add To Value
+            _listValue.percent -= value;
+            currentValue = _listValue.percent;
+        }
+    }
+
 }
+
 
 //Start Effect
+applyEffect();
+
+//Reduce Effect
 alarm[0] = 1;
 
 
