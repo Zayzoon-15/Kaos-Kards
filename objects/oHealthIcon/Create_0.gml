@@ -1,9 +1,15 @@
 //Get Health Inst
 healthInst = noone;
-with oHealthBar
+findHealthInst = function()
 {
-    if target == other.target then other.healthInst = self.id;
+	with oHealthBar
+	{
+	    if target == other.target then other.healthInst = self.id;
+	}
 }
+
+findHealthInst();
+
 
 //Set Position
 x = healthInst.x;

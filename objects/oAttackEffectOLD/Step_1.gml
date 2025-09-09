@@ -1,3 +1,0 @@
-///@desc Update Array
-
-updateArray();

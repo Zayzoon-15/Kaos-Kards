@@ -9,10 +9,13 @@ if healthInst == noone
 var _array = global.playerHpIcons;
 if target == "Enemy" then _array = global.enemyHpIcons;
 
+//Clamp Id
+iconId = clamp(iconId,0,array_length(_array)-1);
+
 //Center Icons
 var _center = healthInst.y+5;
 var _height = 65;
-var _gap = _height/(array_length(_array));
+var _gap = _height/2;
 
 var _top = _center - _gap * (array_length(_array)-1)/2;
 var _y = _top + iconId * _gap;
@@ -29,5 +32,8 @@ y = lerp(y,targetY,.1);
 //Destroy
 if !array_contains_value(_array,info)
 {
+	instance_create_layer(x,y,"Effects",oHealthIconPop,{
+		sprite_index : sprite_index
+	});
     instance_destroy();
 }

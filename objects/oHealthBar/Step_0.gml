@@ -1,20 +1,22 @@
 
-
 //Get Values
 var _hp, _tempHp;
 if target == "Player"
 {
     _hp = global.playerHp;
+	_tempHp = global.playerTempHp;
 } else {
 	_hp = global.enemyHp;
+	_tempHp = global.enemyTempHp;
 }
+
+//Get List
+targetList = playerEffects;
+if target != "Player" then targetList = enemyEffects;
 
 //Set Values
 hp = lerp(hp,_hp,.2);
-
-//HitStun
-if startHitStun then hitStun = lerp(hitStun,hp-.5,.03);
-if hitStun <= hp then startHitStun = false;
+tempHp = lerp(tempHp,_tempHp,.2);
 
 //Lerp Angle
 angle = lerp(angle,0,.2);
@@ -38,6 +40,10 @@ if tipOnTop
 
 //String
 tipBoxString = $"{_string}\nHealth:{floor(_hp)}%";
+for (var i = 0; i < ds_list_size(targetList); ++i) {
+	var _listValue = ds_list_find_value(targetList,i);
+    tipBoxString += $"\n{_listValue.info.name}:{floor(_listValue.value)}%";
+}
 
 //Draw Info
 drawTipBox(tipBoxString,tipOnTop,_dist,1,true);

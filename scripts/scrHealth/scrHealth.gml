@@ -7,6 +7,7 @@ function hurtEnemy(_value)
     with oEnemyPhoto {hurt();}
     
     //Remove Temp Health
+    var _lastTemp = global.enemyTempHp;
     var _tempHp = global.enemyTempHp - _value;
     global.enemyTempHp = _tempHp;
     
@@ -17,8 +18,17 @@ function hurtEnemy(_value)
     //Health Bar
     with oHealthBar
     {
-        if target == "Enemy" then hitEffect(_lastHp);
+        if target == "Enemy" then hitEffect(_lastTemp);
     }
+	
+	//Remove Assist Effect
+	for (var i = 0; i < ds_list_size(enemyEffects); ++i) {
+	    var _list = ds_list_find_value(enemyEffects,i);
+		if _list.info.type == EFFECT_TYPE.ASS
+		{
+			_list.value -= _value;
+		}
+	}
 }
 
 
@@ -39,21 +49,20 @@ function hurtPlayer(_value)
     if _tempHp < 0 then global.playerHp += _tempHp;
     
     //Health Bar
-    if _tempHp < 0
+    with oHealthBar
     {
-        with oHealthBar
-        {
-            if target == "Player" then hitEffect(_lastHp);
-        }
+        if target == "Player" then hitEffect(_lastTemp);
     }
-    
-    if _lastTemp > 0
-    {
-    	with oTempHpBar
-        {
-            if target == "Player" then hitEffect();
-        }
-    }
+	
+	//Remove Assist Effect
+	for (var i = 0; i < ds_list_size(playerEffects); ++i) {
+	    var _list = ds_list_find_value(playerEffects,i);
+		if _list.info.type == EFFECT_TYPE.ASS
+		{
+			_list.value -= _value;
+		}
+	}
+   
 }
 
 

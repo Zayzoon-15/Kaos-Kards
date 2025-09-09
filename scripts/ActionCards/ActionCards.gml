@@ -40,7 +40,7 @@ actionCards = {
     
     poison : new createCard("Poison Card",
     "Poisons your enemy for a random period of time",
-    {min:1,max:10},CARDTYPES.ACTION,sPoisonCard,poisonAction),
+    {min:1,max:4},CARDTYPES.ACTION,sPoisonCard,poisonAction),
     
 };
 

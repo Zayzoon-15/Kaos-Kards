@@ -5,14 +5,14 @@
 
 
 
-function createAttackEffect(_name,_sprite,_color,_type,_totalTime = undefined,_timeBetween = undefined) constructor 
+function createAttackEffect(_name,_sprite,_color,_type,_timeBetween = undefined,_totalTime = undefined) constructor 
 {
     name = _name;
     sprite = _sprite;
     color = _color;
     type = _type;
-    totalTime = _totalTime;
     timeBetween = _timeBetween;
+	totalTime = _totalTime;
 }
 
 
@@ -23,37 +23,38 @@ function addEffect(_effect,_value,_targetEnemy=false)
     //Get Target
     var _targetList = playerEffects;
     if _targetEnemy then _targetList = enemyEffects;
+	
     
     //Get Starting Value
     var _startValue = _value;
     if _effect.totalTime != undefined then _startValue = 2;
     
     //Create Struct
-    var _struct = {info:_effect,value:_value,percent:0,showPercent:2};
+    var _struct = {info:_effect,value:0,percent:0,showPercent:0,healthInst:noone};
     
     //Replace If Value Exists
     for (var i = 0; i < ds_list_size(_targetList); i++) {
     	if ds_list_find_value(_targetList,i).info == _struct.info
         {
             _struct = ds_list_find_value(_targetList,i);
-            //_struct.value += _value;
-            //_struct.percent += _value;
+
             with oAttackEffect
             {
                 if effect == _struct.info
                 {
+					//Set Time
+					setupTime();
+					
+					//Set Value
                     value = _value;
+					
+					//Effect
                     applyEffect();
                 }
             }
             
             ds_list_delete(_targetList,i);
             ds_list_insert(_targetList,i,_struct);
-            //instance_create_depth(0,0,0,oAttackEffect,{
-                //effect : _effect,
-                //value : _value,
-                //targetEnemy : _targetEnemy
-            //});
             
             exit;
         }
@@ -66,7 +67,8 @@ function addEffect(_effect,_value,_targetEnemy=false)
     instance_create_depth(0,0,0,oAttackEffect,{
         effect : _effect,
         value : _value,
-        targetEnemy : _targetEnemy
+        targetEnemy : _targetEnemy,
+		info : _effect
     });
 
 }
