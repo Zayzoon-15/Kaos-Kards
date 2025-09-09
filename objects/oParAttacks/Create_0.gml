@@ -4,6 +4,8 @@ flipSprite = false; //If The Sprite Should Flip Based on The Target
 posBasedOnCard = false; //If The Attack Offset is Diffrent Based on The Target
 newYPos = [card.bbox_top,card.bbox_bottom]; //[targetEnemy,targetPlayer];
 
+//Stats
+hitOthers = false;
 
 #region Functions DONT CHANGE
 
@@ -34,6 +36,28 @@ damageTarget = function()
         hurtEnemy(value);
     } else hurtPlayer(value);
 }
+
+moveToDir = function(_speed = 13,_setAngle = true,_dir = undefined)
+{	
+	//Get Direction
+	if _dir == undefined
+	{
+		if targetEnemy then _dir = 90; else _dir = -90;
+	}
+	
+	//Set Direction
+	direction = _dir;
+	
+	//Set Angle
+	if _setAngle
+	{
+		image_angle = direction;
+	}
+
+	//Move Towards Direction
+	speed = _speed;
+}
+
 
 #endregion
 

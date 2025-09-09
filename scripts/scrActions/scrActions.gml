@@ -107,4 +107,17 @@ function poisonAction(_card,_targetEnemy)
     addEffect(attackEffects.poison,_card.value,_targetEnemy);
 }
 
+///@self oAttackCard
+function flameAceAction(_card,_targetEnemy)
+{
+	//Juice
+	_card.cardJuice(false);
+	
+    //Create Ace
+    instance_create_layer(_card.x,_card.y,"Attacks",oFlameAceAttack,{
+        targetEnemy : _targetEnemy,
+        value : _card.value,
+        card : _card
+    });
+}
 

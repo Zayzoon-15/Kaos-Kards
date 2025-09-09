@@ -6,12 +6,11 @@ event_inherited();
 flipSprite = false;
 posBasedOnCard = true;
 
-//Get Direction
-if targetEnemy then direction = 90; else direction = -90;
-image_angle = direction;
+//Stats
+hitOthers = true;
 
-//Move Towards Direction
-speed = 13;
+//Move
+moveToDir(13);
 
 //Card Juice
 card.cardJuice(false);

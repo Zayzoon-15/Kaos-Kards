@@ -42,7 +42,11 @@ if tipOnTop
 tipBoxString = $"{_string}\nHealth:{floor(_hp)}%";
 for (var i = 0; i < ds_list_size(targetList); ++i) {
 	var _listValue = ds_list_find_value(targetList,i);
-    tipBoxString += $"\n{_listValue.info.name}:{floor(_listValue.value)}%";
+	var _amount = _listValue.value;
+	if _amount > 0
+	{
+		tipBoxString += $"\n{_listValue.info.name}:{floor(_listValue.value)}%";
+	}
 }
 
 //Draw Info

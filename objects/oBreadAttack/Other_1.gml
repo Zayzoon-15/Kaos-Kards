@@ -1,3 +1,0 @@
-///@desc Hit Wall
-
-action();

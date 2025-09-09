@@ -36,7 +36,7 @@ actionCards = {
     
     flamingAce : new createCard("Flaming Ace",
     "Burns your enemy alive",
-    {min:1,max:6},CARDTYPES.ACTION,sFlaminAceCard),
+    {min:1,max:4},CARDTYPES.ACTION,sFlaminAceCard,flameAceAction),
     
     poison : new createCard("Poison Card",
     "Poisons your enemy for a random period of time",
