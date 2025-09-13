@@ -87,8 +87,8 @@ for (var i = 0; i < ds_list_size(targetList); i++) {
 	
 	_list.percent = (_value/100)*_spriteWidth;
     
-    _barX = _maskXOffset + lengthdir_x(_newOffset-5, angle) + lengthdir_x(_maskYOffset, angle - 90);
-    _barY = lengthdir_y(_newOffset-5, angle) + lengthdir_y(_maskYOffset, angle - 90);
+    _barX = _maskXOffset + lengthdir_x(_newOffset, angle) + lengthdir_x(_maskYOffset, angle - 90);
+    _barY = lengthdir_y(_newOffset, angle) + lengthdir_y(_maskYOffset, angle - 90);
 	}
     
 	draw_sprite_general(sprite_index,6,_xPos,_yPos,_list.percent,_spriteHeight,_barX,_barY,

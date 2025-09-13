@@ -1,3 +1,5 @@
+///Scripts that change how the card moves in the players hand
+
 
 ///@self oCard
 function cardHandMush()

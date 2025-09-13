@@ -1,10 +1,8 @@
 
 
-//Reduce Shield
-if room == rMain
+//Round Started
+if room == rMain and room_last == rKaos
 {
-    var _reduceAmount = 20;
-    global.playerTempHp -= _reduceAmount;
-    global.enemyTempHp -= _reduceAmount;
-    
+    //Next Round
+	nextRoundStarted();
 }

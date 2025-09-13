@@ -2,7 +2,7 @@
 //// ATTACK ACTIONS ////
 ///////////////////////
 
-//This is where all card attacks go
+//This is where all action card attacks go
 
 /* HOW TO
  * All functions should look like this

@@ -74,26 +74,23 @@ function addEffect(_effect,_value,_targetEnemy=false)
 }
 
 
-function deceraseAllEffects(_amount,_targetEnemy)
+function reduceAssEffects(_amount,_targetEnemy)
 {
     var _targetList = playerEffects;
     if _targetEnemy then _targetList = enemyEffects;
     
     for (var i = 0; i < ds_list_size(_targetList); i++) {
         var _struct = ds_list_find_value(_targetList,i);
-        _struct.percent -= _amount;
+        _struct.value -= _amount;
         
-        if _struct.info.type == EFFECT_TYPE.HARM
+        if _struct.info.type == EFFECT_TYPE.ASS
         {
             if _targetEnemy
             {
-                if global.enemyTempHp <= 0
-                {
-                    global.enemyHp += _amount;
-                }
-            } else if global.playerTempHp <= 0
+				global.enemyTempHp -= _amount;
+            } else
             {
-                global.playerHp += _amount;
+                global.enemyTempHp -= _amount;
             } 
                 
         }

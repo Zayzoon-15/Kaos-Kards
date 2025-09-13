@@ -1,3 +1,5 @@
+//Functions that make stuff easier to do such as changing an objects size
+
 
 ///@desc Sets the size of the object to the given values
 ///@arg {real} _x The x scale

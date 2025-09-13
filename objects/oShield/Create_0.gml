@@ -1,3 +1,5 @@
+//Inherit
+event_inherited();
 
 //Set Size
 setSize(.3,.3);

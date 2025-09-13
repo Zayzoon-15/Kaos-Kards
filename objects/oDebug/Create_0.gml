@@ -1,14 +1,11 @@
 
 dbg_view("Enemy Bar",false,30,30,250,300);
 buttons = [
-{string:"Shield",action:function(){addEffect(attackEffects.shield,10,true);}},
+{string:"Shield Effect",action:function(){addEffect(attackEffects.shield,5,true)}},
 {string:"Poison",action:function(){addEffect(attackEffects.poison,10,true);}},
 {string:"Fire",action:function(){addEffect(attackEffects.fire,10,true);}},
-{string:"Piss",action:function(){addEffect(attackEffects.pee,10,true);}},
-{string:"Add",action:function(){deceraseAllEffects(-10,false)}},
-{string:"Remove",action:function(){deceraseAllEffects(10,false);}},
-{string:"Heal",action:function(){healEnemy(10)}},
-{string:"Hurt",action:function(){hurtEnemy(10)}},
+{string:"Heal",action:function(){healEnemy(20)}},
+{string:"Hurt",action:function(){hurtEnemy(20)}},
 ];
 
 for (var i = 0; i < array_length(buttons); i++) 
@@ -17,7 +14,6 @@ for (var i = 0; i < array_length(buttons); i++)
 
 dbg_view("Player Bar",false,30,30,250,300);
 buttons = [
-{string:"Shield",action:function(){global.playerTempHp+=5;}},
 {string:"Shield Effect",action:function(){addEffect(attackEffects.shield,5,false)}},
 {string:"Poison",action:function(){addEffect(attackEffects.poison,10,false);}},
 {string:"Fire",action:function(){addEffect(attackEffects.fire,10,false);}},
@@ -27,3 +23,5 @@ buttons = [
 
 for (var i = 0; i < array_length(buttons); i++) 
 {dbg_button(buttons[i].string, buttons[i].action);}
+
+show_debug_overlay(false);

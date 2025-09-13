@@ -1,5 +1,14 @@
 
 
+#region //Important Stuff DONT CHANGE
+
+//Card Types
+enum CARDTYPES {
+	ACTION,
+    DICE,
+    KAOS
+}
+
 ///@desc Creates the cards information
 ///@arg {string} _name The name of the card
 ///@arg {string} _desc The description of the card
@@ -18,6 +27,8 @@ function createCard(_name,_desc,_range,_type,_sprite,_action = function(){}) con
     
 }
 
+
+#endregion
 
 
 

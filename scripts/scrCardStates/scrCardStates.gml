@@ -1,3 +1,5 @@
+//All the cards states
+
 
 ///@self oCard
 function cardStateHand(){

@@ -11,6 +11,9 @@ for (var k = 0; k < 2; k++) {
     
         var _listValue = ds_list_find_value(_targetList,i);
 
+		//Clamp
+		_listValue.value = clamp(_listValue.value,-10,100);
+
 		//Ease Percent
 		if _listValue.healthInst != noone and _listValue.info.type == EFFECT_TYPE.HARM
 		{
@@ -23,7 +26,10 @@ for (var k = 0; k < 2; k++) {
 		if _listValue.info.type == EFFECT_TYPE.ASS
 		{
 			_listValue.showPercent = lerp(_listValue.showPercent,_listValue.value,0.3);
-			global.playerTempHp = _listValue.value;
+			if k == 1
+			{
+				global.enemyTempHp = _listValue.value;
+			} else global.playerTempHp = _listValue.value;	
 		}
 		
 		if _listValue.value <= 0

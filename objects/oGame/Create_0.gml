@@ -41,11 +41,6 @@ kaosCards.swoop
 
 //Cards
 global.holdingCard = false;
-enum CARDTYPES {
-	ACTION,
-    DICE,
-    KAOS
-}
 
 //Player Stats
 global.maxHandSize = 6;
