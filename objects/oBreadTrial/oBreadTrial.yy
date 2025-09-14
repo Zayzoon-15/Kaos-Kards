@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sStars",
-    "path":"sprites/sStars/sStars.yy",
+    "name":"sBreadTrail",
+    "path":"sprites/sBreadTrail/sBreadTrail.yy",
   },
   "spriteMaskId":null,
   "visible":true,

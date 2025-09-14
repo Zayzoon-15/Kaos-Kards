@@ -6,5 +6,5 @@ card.info.action(self.id,targetEnemy);
 //Do Kaos Card
 if card.info.type == CARDTYPES.KAOS
 {
-    alarm[1] = 60;
+    alarm[1] = card.info.destroyTime;
 }

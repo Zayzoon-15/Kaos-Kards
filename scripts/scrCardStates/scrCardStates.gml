@@ -129,7 +129,7 @@ function cardStateGrabbed()
     cardY = y;
     
     //Rotate
-    var _angle = (xprevious - x);
+    var _angle = xprevious - x;
     image_angle = lerp(image_angle,_angle,.2);
     
     //Shadow

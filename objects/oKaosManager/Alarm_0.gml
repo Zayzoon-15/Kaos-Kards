@@ -26,6 +26,9 @@ if (playerFirst or enemyKaos == undefined) and playerKaos != undefined
     
     //Reset Kaos
     playerKaos = undefined;
+	
+	//Stop Other Code
+	exit;
 }
 
 

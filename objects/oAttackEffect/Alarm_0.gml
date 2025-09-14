@@ -1,7 +1,5 @@
 ///@desc Apply Effect
 
-print("EFFECT")
-
 //Times Up
 if timeUp then exit;
 

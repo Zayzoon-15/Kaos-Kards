@@ -1,9 +1,15 @@
 
 //Fade
-if life > lifespan
+if fade
 {
-    image_alpha -= .05;
-} else life += 1;
 
-//Destroy
-if image_alpha < 0 then instance_destroy();
+	//Check Life Span
+	if life > lifespan
+	{
+	    image_alpha -= .05;
+	} else life += 1;
+
+	//Destroy
+	if image_alpha < 0 then instance_destroy();
+
+}

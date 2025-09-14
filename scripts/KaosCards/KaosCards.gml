@@ -21,7 +21,7 @@ kaosCards = {
 	
     destroy : new createCard("Deck Wrecker",
     "Destroys one random card from both the players and enemies hand",
-    undefined,CARDTYPES.KAOS,sDestroyCard),
+    undefined,CARDTYPES.KAOS,sDestroyCard,destroyKaosAction,120),
     
 };
 

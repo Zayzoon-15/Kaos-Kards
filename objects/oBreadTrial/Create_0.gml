@@ -2,12 +2,13 @@
 event_inherited();
 
 //LifeSpan
-lifespan = random_range(10,20);
+lifespan = random_range(10,15);
 
 //Movement
-vspeed = random_range(2,4)*dir;
+hspeed = random_range(1,1.5)*choose(1,-1);
+vspeed = random_range(1,3)*dir;
 spinSpd = random_range(1,3);
 
 //Scale
-var _scale = random_range(.7,1.3);
+var _scale = random_range(1.5,2.5);
 setSize(_scale,_scale);

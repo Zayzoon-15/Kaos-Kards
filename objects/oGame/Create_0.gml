@@ -20,21 +20,17 @@ actionCards.heal,
 actionCards.heal,
 actionCards.shield,
 actionCards.shield,
-actionCards.flamingAce,
-actionCards.flamingAce,
-actionCards.flamingAce,
-actionCards.punch,
-actionCards.punch,
-actionCards.punch,
-actionCards.poison,
-actionCards.poison,
-actionCards.poison,
+actionCards.shield,
 
 //Dice Cards
-diceCards.upgrade,
+//diceCards.upgrade,
 
 //Kaos Cards
-kaosCards.swoop
+kaosCards.destroy,
+kaosCards.destroy,
+kaosCards.destroy,
+kaosCards.destroy,
+kaosCards.destroy,
 
 
 ];

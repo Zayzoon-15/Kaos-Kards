@@ -21,3 +21,21 @@ function highKaosAction(_card,_targetEnemy)
 {
 	
 }
+
+///@self oAttackCard
+function destroyKaosAction(_card,_targetEnemy)
+{
+	//Juice
+	_card.cardJuice(false);
+	
+	//Take From Enemy
+	instance_create_layer(0,0,"Attacks",oDestroyedCard,{
+		targetEnemy : true
+	});
+	
+	//Take From Player
+	instance_create_layer(0,0,"Attacks",oDestroyedCard,{
+		targetEnemy : false
+	});
+	
+}

@@ -16,7 +16,12 @@ shadowSize = 0.05;
 if card.value != undefined then value = round(card.value*1.5);
 
 //Action
-alarm[0] = 30;
+var _actTime = 30;
+if card.info.type == CARDTYPES.KAOS
+{
+	_actTime = 60;
+}
+alarm[0] = _actTime;
 
 //Functions
 cardJuice = function(_stars = true)
