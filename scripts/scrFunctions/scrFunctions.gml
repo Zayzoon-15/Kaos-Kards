@@ -2,9 +2,10 @@
 
 
 ///@desc Sets the size of the object to the given values
+///If y is not set y will be the same as x
 ///@arg {real} _x The x scale
 ///@arg {real} _y The y scale
-function setSize(_x,_y)
+function setSize(_x,_y = _x)
 {
     image_xscale = _x;
     image_yscale = _y;

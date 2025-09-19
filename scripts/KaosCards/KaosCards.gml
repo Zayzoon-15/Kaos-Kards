@@ -17,7 +17,7 @@ kaosCards = {
     
     swap : new createCard("Swap Card",
     "Swaps both the players hands",
-    undefined,CARDTYPES.KAOS,sSwapCard),
+    undefined,CARDTYPES.KAOS,sSwapCard,swapKaosAction),
 	
     destroy : new createCard("Deck Wrecker",
     "Destroys one random card from both the players and enemies hand",

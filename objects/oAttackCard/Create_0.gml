@@ -24,7 +24,7 @@ if card.info.type == CARDTYPES.KAOS
 alarm[0] = _actTime;
 
 //Functions
-cardJuice = function(_stars = true)
+cardJuice = function(_stars = true,_angle = true)
 {
     //Scale
     setSize(1.5,1.5);
@@ -38,7 +38,10 @@ cardJuice = function(_stars = true)
     }
     
     //Angle
-    angle += random_range(8,14)*choose(-1,1);
+	if _angle
+	{
+		angle += random_range(8,14)*choose(-1,1);
+	}
 }
 
 cardShake = function()

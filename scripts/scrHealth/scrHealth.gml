@@ -5,6 +5,9 @@ function hurtEnemy(_value)
 {
     //Enemy Photo
     with oEnemyPhoto {hurt();}
+	
+	//Add Mult
+	_value *= global.valueMult;
     
     //Remove Temp Health
     var _lastTemp = global.enemyTempHp;
@@ -38,6 +41,9 @@ function hurtPlayer(_value)
 {
     //Enemy Photo
     with oEnemyPhoto {win();}
+	
+	//Add Mult
+	_value *= global.valueMult;
     
     //Remove Temp Health
     var _lastTemp = global.playerTempHp;
@@ -79,6 +85,9 @@ function healEnemy(_value)
         var _healY = (sprite_height/2)-15;
         healthEffect(x,y,10,-_healX,_healX,-_healY,_healY);
     }
+	
+	//Add Mult
+	_value *= global.valueMult;
     
     //Health Bar
     with oHealthBar
@@ -98,6 +107,9 @@ function healPlayer(_value)
     {
         if target == "Player" then gainEffect();
     }
+	
+	//Add Mult
+	_value *= global.valueMult;
     
     //Give Health
     global.playerHp += _value;

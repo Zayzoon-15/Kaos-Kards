@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Slots",
-    "path":"folders/Objects/Slots.yy",
+    "path":"folders/Objects/Game/Prepare/Slots.yy",
   },
   "parentObjectId":null,
   "persistent":false,

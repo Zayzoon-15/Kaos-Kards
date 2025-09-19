@@ -4,43 +4,18 @@ initActionCards();
 initDiceCards();
 initKaosCards();
 initEnemyinfo();
+initPlayerStats();
 
 #region Global Vars
 
 //Controls
 global.keyDiscard = undefined;
 
-//Deck
-globalvar playerHand,playerDeck;
-playerHand = undefined;
-playerDeck = [
-
-//Action Cards
-actionCards.heal,
-actionCards.heal,
-actionCards.shield,
-actionCards.shield,
-actionCards.shield,
-
-//Dice Cards
-//diceCards.upgrade,
-
-//Kaos Cards
-kaosCards.destroy,
-kaosCards.destroy,
-kaosCards.destroy,
-kaosCards.destroy,
-kaosCards.destroy,
-
-
-];
+//Values
+global.valueMult = 1;
 
 //Cards
 global.holdingCard = false;
-
-//Player Stats
-global.maxHandSize = 6;
-global.maxDiscards = round(array_length(playerDeck)/2);
 
 //Enemy
 global.currentEnemy = enemyInfo.dog;
@@ -75,7 +50,6 @@ enum GAMESTATES {
     KAOS
 }
 gameState = GAMESTATES.PREPARE;
-
 
 //Managers
 global.mobile = false;
