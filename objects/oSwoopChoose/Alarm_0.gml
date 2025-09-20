@@ -1,8 +1,10 @@
-///@desc Create Bread
+///@desc Attack
 
-instance_create_layer(0,0,"Effects",oBreadKaosAttack,{
+//Create Bread
+instance_create_layer(0,0,"Effects",oSwoopBreadAttack,{
 	targetEnemy : targetEnemy,
 	value : 10
 });
 
-instance_destroy();
+//Destroy
+alarm[1] = 60;

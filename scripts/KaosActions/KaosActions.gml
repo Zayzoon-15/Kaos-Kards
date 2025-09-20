@@ -15,6 +15,9 @@ function swoopKaosAction(_card,_targetEnemy)
 {
 	//Create Bread Attack
 	instance_create_layer(_card.x,_card.y-50,"Attacks",oSwoopChoose);
+	
+	//Juice
+	_card.cardJuice(true);
 }
 
 ///@self oAttackCard

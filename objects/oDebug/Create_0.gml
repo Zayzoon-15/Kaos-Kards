@@ -36,7 +36,7 @@ createView("Game Stats", [
 
 //Test Stuff
 createView("Test Stuff", [
-{string:"Bread Attack",action:function(){instance_create_layer(0,0,"Effects",oBreadKaosAttack)}},
+{string:"Bread Attack",action:function(){instance_create_layer(0,0,"Effects",oSwoopBreadAttack)}},
 {string:"Arrow",action:function(){instance_create_layer(room_width/2,room_height/2,"Effects",oSwoopChoose)}},
 ],true);
 
