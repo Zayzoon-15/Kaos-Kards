@@ -32,9 +32,7 @@ win = function(_stars = true)
     //Stars
     if _stars
     {
-        var _starsX = (sprite_width/2)-10;
-        var _starsY = (sprite_height/2)-15;
-        starEffect(x,y,10,-_starsX,_starsX,-_starsY,_starsY);
+        starEffect(x,y,10,10,15);
     }
     
     //Start Reset

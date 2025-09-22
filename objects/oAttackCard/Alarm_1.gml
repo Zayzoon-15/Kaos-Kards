@@ -1,12 +1,17 @@
 ///@desc Destroy
 
+//Stop If Attacks Are Still Going On
+if instance_exists(oParAttacks)
+{
+	alarm[1] = 30;
+	exit;
+}
+
 //Next Kaos
 oKaosManager.alarm[0] = 50;
 
 //Stars
-var _starX = (sprite_width/2)-20;
-var _starY = (sprite_height/2)-25;
-starEffect(x,y,10,-_starX,_starX,-_starY,_starY);
+starEffect(x,y,10,20,25);
 
 //Destroy
 instance_destroy();

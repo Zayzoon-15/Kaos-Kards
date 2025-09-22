@@ -1,5 +1,7 @@
 ///@desc Destroy
 
-instance_destroy();
+//Effect
+starEffect(x,y,8,10,15);
 
-starEffect()
+//Destroy
+instance_destroy();

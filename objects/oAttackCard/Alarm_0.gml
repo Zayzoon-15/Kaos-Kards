@@ -1,9 +1,9 @@
 ///@desc Action
 
-//Do Action Card
+//Do Action
 card.info.action(self.id,targetEnemy);
 
-//Do Kaos Card
+//Destroy Kaos Card
 if card.info.type == CARDTYPES.KAOS
 {
     alarm[1] = card.info.destroyTime;

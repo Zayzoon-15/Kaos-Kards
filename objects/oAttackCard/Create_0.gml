@@ -32,9 +32,7 @@ cardJuice = function(_stars = true,_angle = true)
     //Stars
     if _stars
     {
-        var _starX = (sprite_width/2)-10;
-        var _starY = (sprite_height/2)-15;
-        starEffect(x,y,8,-_starX,_starX,-_starY,_starY);
+        starEffect(x,y,8,10,15);
     }
     
     //Angle
@@ -64,8 +62,6 @@ cardHurt = function(_value,_stars = true)
     //Stars
     if _stars
     {
-        var _starX = (sprite_width/2)-20;
-        var _starY = (sprite_height/2)-25;
-        starEffect(x,y,5,-_starX,_starX,-_starY,_starY);
+        starEffect(x,y,5,20,25);
     }
 }

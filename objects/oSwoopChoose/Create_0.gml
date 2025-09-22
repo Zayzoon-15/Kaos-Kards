@@ -1,8 +1,6 @@
 
 //Effect
-var _starX = (sprite_width/2)-10;
-var _starY = (sprite_height/2)-15;
-starEffect(x,y,8,-_starX,_starX,-_starY,_starY);
+starEffect(x,y,8,10,15);
 
 //Get Target
 randomize();

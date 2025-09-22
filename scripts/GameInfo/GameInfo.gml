@@ -22,6 +22,7 @@ playerDeck = [
 	kaosCards.destroy,
 	kaosCards.swap,
 	kaosCards.high,
+	kaosCards.swoop,
 
 ];
 

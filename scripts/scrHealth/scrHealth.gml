@@ -81,9 +81,7 @@ function healEnemy(_value)
         win(false);
         
         //Health Effect
-        var _healX = (sprite_width/2)-10;
-        var _healY = (sprite_height/2)-15;
-        healthEffect(x,y,10,-_healX,_healX,-_healY,_healY);
+        healthEffect(x,y,10,10,15);
     }
 	
 	//Add Mult

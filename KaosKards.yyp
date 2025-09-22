@@ -201,6 +201,7 @@
     {"id":{"name":"seqFadeIn","path":"sequences/seqFadeIn/seqFadeIn.yy",},},
     {"id":{"name":"seqFadeOut","path":"sequences/seqFadeOut/seqFadeOut.yy",},},
     {"id":{"name":"sAce","path":"sprites/sAce/sAce.yy",},},
+    {"id":{"name":"sAlien","path":"sprites/sAlien/sAlien.yy",},},
     {"id":{"name":"sAngel","path":"sprites/sAngel/sAngel.yy",},},
     {"id":{"name":"sArrow","path":"sprites/sArrow/sArrow.yy",},},
     {"id":{"name":"sBeer","path":"sprites/sBeer/sBeer.yy",},},

@@ -16,7 +16,7 @@ enum CARDTYPES {
 ///@arg {real} _type The type of the card. This is an enum so use CARDTYPES
 ///@arg {Asset.GMSprite} _sprite The sprite of the card
 ///@arg {function} _action The function to preform when the card is used (DONT USE FOR DICE CARDS)
-///@arg {real} _destroyTime The amount to time till it destroys itself
+///@arg {real} _destroyTime The amount to time till it destroys itself (Defualt = 60)
 function createCard(_name,_desc,_range,_type,_sprite,_action = function(){},_destroyTime = 60) constructor{
     
     name = _name;

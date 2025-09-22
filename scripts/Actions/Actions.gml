@@ -16,9 +16,7 @@ function healAction(_card,_targetEnemy)
 {
     //Juice
     _card.cardJuice(false);
-    var _healX = (_card.sprite_width/2)-10;
-    var _healY = (_card.sprite_height/2)-25;
-    healthEffect(_card.x,_card.y,10,-_healX,_healX,-_healY,_healY);
+    healthEffect(_card.x,_card.y,10,10,25,sprite_get_width(sBlankCard),sprite_get_height(sBlankCard));
     numberEffect(_card.x,_card.y,_card.value);
     
     //Give Health

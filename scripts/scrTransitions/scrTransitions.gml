@@ -14,7 +14,7 @@ function transPlaceSequence(_type)
 	layer_sequence_xscale(_seq,_xscale);
 }
 
-function transStart(_roomTarget,_typeOut,_typeIn)
+function transStart(_roomTarget,_typeOut = seqFadeOut,_typeIn = seqFadeIn)
 {
     if !global.midTrans
     {

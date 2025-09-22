@@ -60,7 +60,5 @@ gainEffect = function()
     randomize();
     
     //Effects
-    var _healX = (sprite_width/2)-30;
-    var _healY = (sprite_height/2)-15;
-    healthEffect(x,y,10,-_healX,_healX,-_healY,_healY);
+    healthEffect(x,y,10,30,15);
 }

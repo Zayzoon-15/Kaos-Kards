@@ -5,20 +5,26 @@
 ///@arg {real} _x The x center position of the stars
 ///@arg {real} _y The y center position of the stars
 ///@arg {real} _amount The amount of stars to spawn (Default = 5)
-///@arg {real} _xMin The min amount the stars can move on the x axis (Default = -30)
-///@arg {real} _xMax The max amount the stars can move on the x axis (Default = 30)
-///@arg {real} _yMin The min amount the stars can move on the y axis (Default = -30)
-///@arg {real} _yMax The max amount the stars can move on the y axis (Default = 30)
-function starEffect(_x,_y,_amount = 5,_xMin = -30,_xMax = 30,_yMin = -30,_yMax = 30)
+///@arg {real} _xOffset The x offset of the effect (Default = 30)
+///@arg {real} _yOffset The y offset of the effect (Default = 30)
+///@arg {real} _width The width (Default = sprite_width)
+///@arg {real} _height The height (Default = sprite_height)
+function starEffect(_x,_y,_amount = 5,_xOffset = 30,_yOffset = 30,_width = sprite_width,_height = sprite_height)
 {
     for (var i = 0; i < _amount; i++) {
+        		
+		//Get Star Values
+		var _effectX = (_width/2)-_xOffset;
+		var _effectY = (_height/2)-_yOffset;
+		
+		//Get Offsets
+		randomize();
+		var _xOff = random_range(-_effectX,_effectX);
+		var _yOff = random_range(-_effectY,_effectY);
+        var _dir = sign(_xOff);
         
-        randomize();
-        var _xOffset = random_range(_xMin,_xMax);
-        var _yOffset = random_range(_yMin,_yMax);
-        var _dir = sign(_xOffset);
-        
-    	instance_create_layer(_x+_xOffset,_y+_yOffset,"Effects",oStarEffect,{
+		//Create Stars
+    	instance_create_layer(_x+_xOff,_y+_yOff,"Effects",oStarEffect,{
             dir : _dir
         });
     }
@@ -30,19 +36,26 @@ function starEffect(_x,_y,_amount = 5,_xMin = -30,_xMax = 30,_yMin = -30,_yMax =
 ///@arg {real} _x The x center position of the effect
 ///@arg {real} _y The y center position of the effect
 ///@arg {real} _amount The amount of health to spawn (Default = 5)
-///@arg {real} _xMin The min amount the effect can move on the x axis (Default = -30)
-///@arg {real} _xMax The max amount the effect can move on the x axis (Default = 30)
-///@arg {real} _yMin The min amount the effect can move on the y axis (Default = -30)
-///@arg {real} _yMax The max amount the effect can move on the y axis (Default = 30)
-function healthEffect(_x,_y,_amount = 5,_xMin = -30,_xMax = 30,_yMin = -30,_yMax = 30)
+///@arg {real} _xOffset The x offset of the effect (Default = 30)
+///@arg {real} _yOffset The y offset of the effect (Default = 30)
+///@arg {real} _width The width (Default = sprite_width)
+///@arg {real} _height The height (Default = sprite_height)
+function healthEffect(_x,_y,_amount = 5,_xOffset = 30,_yOffset = 30,_width = sprite_width,_height = sprite_height)
 {
     for (var i = 0; i < _amount; i++) {
         
-        randomize();
-        var _xOffset = random_range(_xMin,_xMax);
-        var _yOffset = random_range(_yMin,_yMax);
+		//Get Star Values
+		var _effectX = (_width/2)-_xOffset;
+		var _effectY = (_height/2)-_yOffset;
+		
+		//Get Offsets
+		randomize();
+		var _xOff = random_range(-_effectX,_effectX);
+		var _yOff = random_range(-_effectY,_effectY);
         
-    	instance_create_layer(_x+_xOffset,_y+_yOffset,"Effects",oHealthEffect);
+		//Create Health
+		instance_create_layer(_x+_xOffset,_y+_yOffset,"Effects",oHealthEffect);
+    	
     }
 }
 
