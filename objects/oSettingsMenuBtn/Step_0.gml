@@ -12,3 +12,6 @@ boxY = lerp(boxY,targetY,.2);
 xscale = lerp(xscale,image_xscale,scaleTime);
 yscale = lerp(yscale,image_yscale,scaleTime);
 textSize = lerp(textSize,textTargetSize,.3);
+
+//Set Position
+x = getPosToWindow(false);

@@ -15,9 +15,8 @@ shake = 0;
 pressed = false;
 
 //Text
-textTargetSize = 2;
+textTargetSize = 3;
 textSize = textTargetSize;
-text = "Button";
 
 
 //Action

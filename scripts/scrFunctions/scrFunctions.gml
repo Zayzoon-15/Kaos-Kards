@@ -75,3 +75,23 @@ function getAnimValue(_asset,_pos,_name = "x")
     
     return _value;
 }
+
+///@desc Gets the postion of the objects x based on the window size
+///It uses the objects xstart to choose the position (This can be changed)
+///@arg {bool} _onRight If it should stick to the right side
+///@arg {real} _xOffset The offset of the x position (Default = xstart)
+function getPosToWindow(_onRight,_xOffset = xstart)
+{
+	//Vars
+	var _camPos,_targetPos;
+	
+	//Set Target
+	if _onRight
+	{
+		var _camRight = camera_get_view_x(view_camera[0])+camera_get_view_width(view_camera[0]);
+		_targetPos = _camRight - (room_width - (_xOffset));
+	} else _targetPos = camera_get_view_x(view_camera[0])+_xOffset;
+	
+	//Return
+	return 	_targetPos;
+}

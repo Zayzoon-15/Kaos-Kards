@@ -1,6 +1,6 @@
 {
   "$GMSprite":"",
-  "%Name":"Button",
+  "%Name":"sSettingsButton",
   "bboxMode":0,
   "bbox_bottom":80,
   "bbox_left":0,
@@ -21,8 +21,27 @@
   "layers":[
     {"$GMImageLayer":"","%Name":"13fb23b9-e073-40c2-8cbd-79fcacf9720e","blendMode":0,"displayName":"default","isLocked":false,"name":"13fb23b9-e073-40c2-8cbd-79fcacf9720e","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"Button",
-  "nineSlice":null,
+  "name":"sSettingsButton",
+  "nineSlice":{
+    "$GMNineSliceData":"",
+    "bottom":4,
+    "enabled":false,
+    "guideColour":[4294902015,4294902015,4294902015,4294902015,],
+    "highlightColour":1728023040,
+    "highlightStyle":0,
+    "left":4,
+    "resourceType":"GMNineSliceData",
+    "resourceVersion":"2.0",
+    "right":4,
+    "tileMode":[
+      0,
+      0,
+      0,
+      0,
+      0,
+    ],
+    "top":4,
+  },
   "origin":4,
   "parent":{
     "name":"Sprites",
@@ -33,7 +52,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"Button",
+    "%Name":"sSettingsButton",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -57,7 +76,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"Button",
+    "name":"sSettingsButton",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -71,7 +90,7 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"895839f4-c6ef-4d7b-94fe-b55e649a6351","path":"sprites/Button/Button.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"895839f4-c6ef-4d7b-94fe-b55e649a6351","path":"sprites/sSettingsButton/sSettingsButton.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"cf2034e8-1b56-4d8a-a6ce-c4e12865fde9","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],

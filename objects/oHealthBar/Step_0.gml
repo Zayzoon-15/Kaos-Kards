@@ -58,7 +58,6 @@ drawTipBox(tipBoxString,tipOnTop,_dist,1,true);
 //Move To Correct Position
 if flipped
 {
-	var _camRight = camera_get_view_x(view_camera[0])+camera_get_view_width(view_camera[0]);
-	x = _camRight - (room_width - xstart);
-} else x = camera_get_view_x(view_camera[0]) + xstart;
+	x = getPosToWindow(true);
+} else x = getPosToWindow(false);
 
