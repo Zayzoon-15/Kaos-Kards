@@ -1,7 +1,6 @@
-// Inherit the parent event
+//Inherit
 event_inherited();
 
-if struct_exists(info,"options")
-{
-	currentSelection = info.options[selection];
-}
+//Ease
+boxXScale = lerp(boxXScale,1,.2);
+boxYScale = lerp(boxYScale,1,.2);

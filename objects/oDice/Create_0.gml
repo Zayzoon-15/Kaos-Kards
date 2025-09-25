@@ -3,34 +3,6 @@
 image_speed = 0;
 
 //Dice Types
-diceTypes =  {
-    
-    dice6 : {
-        sprite : sDice6,
-        range : {min:1,max:6},
-        color : c_white
-    },
-    
-    dice8 : {
-        sprite : sDice8,
-        range : {min:3,max:8},
-        color : #f6e0ff
-    },
-    
-    dice12 : {
-        sprite : sDice12,
-        range : {min:5,max:12},
-        color : #d2ffff
-    },
-    
-    dice20 : {
-        sprite : sDice20,
-        range : {min:8,max:20},
-        color : #b23227
-    },
-    
-}
-
 dice = diceTypes.dice6;
 
 //Dice

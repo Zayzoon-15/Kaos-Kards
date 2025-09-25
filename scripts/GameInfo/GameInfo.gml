@@ -16,13 +16,15 @@ playerDeck = [
 	actionCards.shield,
 
 	//Dice Cards
-	//diceCards.upgrade,
+	diceCards.upgrade,
+	diceCards.reroll,
+	diceCards.dice12,
 
 	//Kaos Cards
-	kaosCards.destroy,
-	kaosCards.swap,
-	kaosCards.high,
-	kaosCards.swoop,
+	//kaosCards.destroy,
+	//kaosCards.swap,
+	//kaosCards.high,
+	//kaosCards.swoop,
 
 ];
 

@@ -1,4 +1,5 @@
 
+
 ///@desc Creates a new settings button
 ///@arg {string} _text The text on the button
 ///@arg {Asset.GMObject} _type The type of button it is (Ex: oSettingsCheckBox)
@@ -23,14 +24,13 @@ function getSettingsButtons(_menu)
 	{
 		case "AUDIO":
 			_buttons = [
-				new createSettingsButton("Resoultion",oSettingsSelection,{
+				new createSettingsButton("Farts",oSettingsSelection,{
 					options: [
-						{ text:"1280x720",
-						action:function(){window_set_size(1280,720);window_center();} },
+						{ text:"Gassy",
+						action:function(){print("GAS")} },
 						
-						{ text:"960x540",
-						action:function(){window_set_size(960,540);window_center();} },
-						
+						{ text:"Wet",
+						action:function(){print("Wet")} },
 					],
 					selection : 0
 				},true),
@@ -39,12 +39,23 @@ function getSettingsButtons(_menu)
 	
 		case "VIDEO":
 			_buttons = [
+				new createSettingsButton("Resoultion",oSettingsSelection,{
+					
+					options: settingsGetWindowRes(),
+					selection : global.currentRes,
+					reverse : true
+				},false),
+				
+				new createSettingsButton("Borderless",oSettingsCheckBox, {
+					condition:function(){return !window_get_showborder()},
+					action:function(_check){window_set_showborder(!_check)}
+				}),	
+				
 				new createSettingsButton("Fullscreen",oSettingsCheckBox, {
 					condition:function(){return window_get_fullscreen()},
 					action:function(_check){window_set_fullscreen(_check)}
 				}),	
 					
-				new createSettingsButton("Test",oSettingsCheckBox),	
 			];
 		break;
 	}

@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scrAttackEffects",
+  "%Name":"scrSettings",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scrAttackEffects",
+  "name":"scrSettings",
   "parent":{
-    "name":"Setups",
-    "path":"folders/Scripts/Actions/Setups.yy",
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

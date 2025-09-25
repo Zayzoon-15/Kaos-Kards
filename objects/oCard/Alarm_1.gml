@@ -1,4 +1,4 @@
-///@desc Go To Dice
+///@desc Go To Dice ONLY FOR DICE CARD
 
 var _target = undefined;
 

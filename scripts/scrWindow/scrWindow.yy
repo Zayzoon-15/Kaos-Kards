@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"Settings",
+  "%Name":"scrWindow",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Settings",
+  "name":"scrWindow",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Game",
+    "path":"folders/Scripts/Game.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

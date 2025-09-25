@@ -1,10 +1,12 @@
 
 //Initialize Info
 initActionCards();
+initDiceTypes();
 initDiceCards();
 initKaosCards();
 initEnemyinfo();
 initPlayerStats();
+initSettings();
 
 #region Global Vars
 

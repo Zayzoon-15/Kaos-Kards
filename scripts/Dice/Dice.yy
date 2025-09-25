@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scrAttackEffects",
+  "%Name":"Dice",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scrAttackEffects",
+  "name":"Dice",
   "parent":{
-    "name":"Setups",
-    "path":"folders/Scripts/Actions/Setups.yy",
+    "name":"Actions",
+    "path":"folders/Scripts/Actions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

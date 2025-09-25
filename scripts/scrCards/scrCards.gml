@@ -15,9 +15,10 @@ enum CARDTYPES {
 ///@arg {struct} _range The range of the card example: {min:1,max:3}. If there is no range put undefined
 ///@arg {real} _type The type of the card. This is an enum so use CARDTYPES
 ///@arg {Asset.GMSprite} _sprite The sprite of the card
-///@arg {function} _action The function to preform when the card is used (DONT USE FOR DICE CARDS)
+///@arg {function} _action The function to preform when the card is used
 ///@arg {real} _destroyTime The amount to time till it destroys itself (Defualt = 60)
-function createCard(_name,_desc,_range,_type,_sprite,_action = function(){},_destroyTime = 60) constructor{
+///@arg {struct} _diceType The type of dice it uses (ONLY FOR DICE CARDS)
+function createCard(_name,_desc,_range,_type,_sprite,_action = function(){},_destroyTime = 60,_diceType = undefined) constructor{
     
     name = _name;
     desc = _desc;
@@ -25,15 +26,15 @@ function createCard(_name,_desc,_range,_type,_sprite,_action = function(){},_des
     type = _type;
     sprite = _sprite;
     action = _action;
-	destroyTime = _destroyTime
-    
+	destroyTime = _destroyTime;
+    diceType = _diceType;
 }
 
 
 #endregion
 
 
-
+/*
 ///@self oCard
 function diceCardSwapDice(_dice){
     

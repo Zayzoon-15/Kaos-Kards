@@ -1,5 +1,6 @@
-///@desc Combine With Dice
+///@desc Combine With Dice ONLY FOR DICE CARD
 
+//Change Dice
 with oDice
 {
     if diceId == other.targetDice
@@ -9,4 +10,8 @@ with oDice
     }
 }
 
+//Set Slot
+slot.used = true;
+
+//Destroy
 instance_destroy();

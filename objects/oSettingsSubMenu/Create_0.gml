@@ -24,7 +24,7 @@ swapMenu = function(_menu)
 	//Setup Grid
 	var _cols = 2;
 	var _cellW = sprite_width/_cols;
-	var _cellH = 100;
+	var _cellH = 120;
 	var _rows = ceil(_totalButtons / _cols);
 	var _gridWidth  = (_cols - 1) * _cellW;
 	var _gridHeight = (_rows - 1) * _cellH;
