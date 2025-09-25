@@ -62,6 +62,7 @@ swapMenu = function(_menu)
 			col : _buttonCollum,
 			image_xscale : 1.5,
 			image_yscale : .5,
+			info : _buttons[i].objectInfo,
 		});
 	}
 	
