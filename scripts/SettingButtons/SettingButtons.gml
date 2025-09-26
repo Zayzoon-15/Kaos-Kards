@@ -24,16 +24,11 @@ function getSettingsButtons(_menu)
 	{
 		case "AUDIO":
 			_buttons = [
-				new createSettingsButton("Farts",oSettingsSelection,{
-					options: [
-						{ text:"Gassy",
-						action:function(){print("GAS")} },
-						
-						{ text:"Wet",
-						action:function(){print("Wet")} },
-					],
-					selection : 0
+				new createSettingsButton("Mute When Inactive",oSettingsCheckBox,{
+					condition:function(){return global.muteAudio},
+					action:function(_check){global.muteAudio =_check;},
 				},true),
+				new createSettingsButton("Gato",oSettingsGato,{},true),
 			];
 		break;
 	
@@ -41,20 +36,36 @@ function getSettingsButtons(_menu)
 			_buttons = [
 				new createSettingsButton("Resoultion",oSettingsSelection,{
 					
-					options: settingsGetWindowRes(),
+					options: settingsButtonWindowRes(),
 					selection : global.currentRes,
-					reverse : true
-				},false),
+					reverse : true,
+					disabled : function(){return !window_get_fullscreen() and !global.mobile;}
+				}),
+				
+				new createSettingsButton("Particle Amount",oSettingsSelection,{
+					
+					options: [
+						{text:"Full",action:function(){global.partAmount=1}},
+						{text:"Medium",action:function(){global.partAmount=.5}},
+						{text:"Low",action:function(){global.partAmount=.2}},
+						{text:"None",action:function(){global.partAmount=0}},
+					],
+					selection: settingsButtonParticle()
+				}),
 				
 				new createSettingsButton("Borderless",oSettingsCheckBox, {
 					condition:function(){return !window_get_showborder()},
-					action:function(_check){window_set_showborder(!_check)}
+					action:function(_check){window_set_showborder(!_check)},
+					disabled : function(){return !global.mobile;}
 				}),	
 				
 				new createSettingsButton("Fullscreen",oSettingsCheckBox, {
 					condition:function(){return window_get_fullscreen()},
-					action:function(_check){window_set_fullscreen(_check)}
+					action:function(_check){window_set_fullscreen(_check)},
+					disabled : function(){return !global.mobile;}
 				}),	
+				
+				new createSettingsButton("Gato",oSettingsGato,{},true),
 					
 			];
 		break;

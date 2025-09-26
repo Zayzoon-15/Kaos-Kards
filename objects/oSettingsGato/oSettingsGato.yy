@@ -10,8 +10,8 @@
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oParSettingsUi","path":"objects/oParSettingsUi/oParSettingsUi.yy",},"propertyId":{"name":"text","path":"objects/oParSettingsUi/oParSettingsUi.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"",},
   ],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Ui Types",
+    "path":"folders/Objects/Settings/Ui Types.yy",
   },
   "parentObjectId":{
     "name":"oParSettingsUi",

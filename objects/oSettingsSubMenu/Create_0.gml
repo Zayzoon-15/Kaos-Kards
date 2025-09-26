@@ -60,6 +60,7 @@ swapMenu = function(_menu)
 			targetY : _y,
 			targetX : _x-x,
 			col : _buttonCollum,
+			fill : _buttons[i].takeRow,
 			image_xscale : 1.5,
 			image_yscale : .5,
 			info : _buttons[i].objectInfo,

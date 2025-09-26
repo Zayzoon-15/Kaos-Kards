@@ -11,6 +11,9 @@
 ///@arg {real} _height The height (Default = sprite_height)
 function starEffect(_x,_y,_amount = 5,_xOffset = 30,_yOffset = 30,_width = sprite_width,_height = sprite_height)
 {
+	//Set To Particle Amount
+	_amount *= global.partAmount;
+	
     for (var i = 0; i < _amount; i++) {
         		
 		//Get Star Values
@@ -42,6 +45,9 @@ function starEffect(_x,_y,_amount = 5,_xOffset = 30,_yOffset = 30,_width = sprit
 ///@arg {real} _height The height (Default = sprite_height)
 function healthEffect(_x,_y,_amount = 5,_xOffset = 30,_yOffset = 30,_width = sprite_width,_height = sprite_height)
 {
+	//Set To Particle Amount
+	_amount *= global.partAmount;
+	
     for (var i = 0; i < _amount; i++) {
         
 		//Get Star Values

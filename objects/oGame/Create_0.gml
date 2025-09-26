@@ -15,6 +15,7 @@ global.keyDiscard = undefined;
 
 //Values
 global.valueMult = 1;
+global.partAmount = 1;
 
 //Cards
 global.holdingCard = false;

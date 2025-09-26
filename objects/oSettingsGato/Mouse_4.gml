@@ -1,1 +1,1 @@
-game_end()
+starEffect(x,y,10);

@@ -11,8 +11,8 @@
   "name":"oSettingsCheckBox",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Ui Types",
+    "path":"folders/Objects/Settings/Ui Types.yy",
   },
   "parentObjectId":{
     "name":"oParSettingsUi",

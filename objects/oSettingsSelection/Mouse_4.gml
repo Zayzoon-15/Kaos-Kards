@@ -1,6 +1,6 @@
 
+//Can Click
+if !canClick then exit;
+
 //Change Selection
-if reverse
-{
-	changeSelection(-1);
-} else changeSelection(1);
+changeSelection(1);
