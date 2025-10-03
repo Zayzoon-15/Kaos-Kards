@@ -22,10 +22,16 @@ function getSettingsButtons(_menu)
 	{
 		case "AUDIO":
 			_buttons = [
-				new createSettingsButton("Master",oSlider),
-				new createSettingsButton("Music",oSlider),
-				new createSettingsButton("SFX",oSlider),
-				new createSettingsButton("Unfocused Mute",oCheckBox,{
+				new createSettingsButton("Master",oSettingsSlider,{
+					changeVar : "masterVol"
+				}),
+				new createSettingsButton("Music",oSettingsSlider,{
+					changeVar : "musicVol"
+				}),
+				new createSettingsButton("SFX",oSettingsSlider,{
+					changeVar : "sfxVol"
+				}),
+				new createSettingsButton("Unfocused Mute",oSettingsCheck,{
 					action : function(_checked){global.unFocusMute = _checked;},
 					checked : function(){return global.unFocusMute;},
 				}),
@@ -36,24 +42,48 @@ function getSettingsButtons(_menu)
 		if !global.mobile
 		{
 			_buttons = [
-				new createSettingsButton("Resolution",oOptions,{
+				new createSettingsButton("Resolution",oSettingsOptions,{
 					condition : function(){return window_get_fullscreen();},
-					reason : "Window Is Fullscreened"
+					reason : "Window Is Fullscreened",
+					selectVar : "currentRes",
+					options : settingsGetWindowRes()
 				}),
-				new createSettingsButton("Fullscreen",oCheckBox,{
+				new createSettingsButton("Fullscreen",oSettingsCheck,{
 					action : function(_checked){window_set_fullscreen(_checked);},
 					checked : function(){return window_get_fullscreen();},
 				}),
-				new createSettingsButton("Borderless",oCheckBox,{
+				new createSettingsButton("Borderless",oSettingsCheck,{
 					action : function(_checked){window_set_showborder(!_checked);},
 					checked : function(){return !window_get_showborder();},
 				}),
 				
-				new createSettingsButton("Particle Amount",oOptions),
+				new createSettingsButton("Particle Amount",oSettingsOptions,
+				{
+					selectVar : "partSelection",
+					options : [
+						{
+							text:"Full",
+							action:function(){global.partAmount = 1;}
+						},
+						{
+							text:"Meduim",
+							action:function(){global.partAmount = .5;}
+						},
+						{
+							text:"Low",
+							action:function(){global.partAmount = .2;}
+						},
+						{
+							text:"None",
+							action:function(){global.partAmount = 0;}
+						},
+						
+					],
+				}),
 			];
 		} else {
 			_buttons = [	
-				new createSettingsButton("Particle Amount",oOptions),
+				new createSettingsButton("Particle Amount",oSettingsOptions),
 				
 				];
 		}
@@ -63,19 +93,19 @@ function getSettingsButtons(_menu)
 			if !global.mobile
 			{
 			_buttons = [
-				new createSettingsButton("Discard",oInput,{
+				new createSettingsButton("Discard",oSettingsInput,{
 					key : "keyDiscard",
 				}),
-				new createSettingsButton("Fullscreen",oInput,{
+				new createSettingsButton("Fullscreen",oSettingsInput,{
 					key : "keyFullscreen",
 				}),
-				new createSettingsButton("Pause",oInput,{
+				new createSettingsButton("Pause",oSettingsInput,{
 					key : "keyPause",
 				}),
-				new createSettingsButton("Debug Mode",oInput,{
+				new createSettingsButton("Debug Mode",oSettingsInput,{
 					key : "keyDebug",
 				}),
-				new createSettingsButton("Gamepad",oCheckBox,{
+				new createSettingsButton("Gamepad",oSettingsCheck,{
 					condition : function(){return true;},
 					reason : "In Development"
 				}),
@@ -83,7 +113,7 @@ function getSettingsButtons(_menu)
 			} else {
 			_buttons = [
 				new createSettingsButton("Haptic Feedback",oParSettingsBox),
-				new createSettingsButton("Double Tap For Buttons",oCheckBox,{
+				new createSettingsButton("Double Tap For Buttons",oSettingsCheck,{
 					action : function(_checked){global.unFocusMute = _checked;},
 					checked : function(){return global.unFocusMute;},
 				}),
@@ -105,7 +135,7 @@ function getSettingsButtons(_menu)
 					condition : function(){return true;},
 					reason : ""	
 				}),
-				new createSettingsButton("Tip Boxes",oCheckBox,{
+				new createSettingsButton("Tip Boxes",oSettingsCheck,{
 					condition : function(){return true;},
 					reason : ""	
 				},),

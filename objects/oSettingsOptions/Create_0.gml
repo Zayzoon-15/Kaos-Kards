@@ -18,12 +18,15 @@ options = [
 	text:"Selection3",
 	action:function(){}
 },
-{
-	text:"Selection4",
-	action:function(){}
-},
 ];
 currentSelection = 0;
+selectVar = undefined;
+
+if struct_exists(info,"options") then options = info.options;
+if struct_exists(info,"selectVar"){
+	selectVar = info.selectVar;
+	currentSelection = variable_global_get(selectVar);
+}
 
 
 action = function()
@@ -51,4 +54,7 @@ action = function()
 		currentSelection = array_length(options)-1;
 	}
 	
+	//Do Action
+	variable_global_set(selectVar,currentSelection);
+	options[currentSelection].action();
 }

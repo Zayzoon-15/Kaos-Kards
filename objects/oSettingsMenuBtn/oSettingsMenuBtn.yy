@@ -14,8 +14,8 @@
   "name":"oSettingsMenuBtn",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Settings",
+    "path":"folders/Objects/Settings.yy",
   },
   "parentObjectId":null,
   "persistent":false,

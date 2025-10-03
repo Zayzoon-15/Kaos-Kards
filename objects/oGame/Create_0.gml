@@ -51,10 +51,17 @@ enum GAMESTATES {
 gameState = GAMESTATES.PREPARE;
 
 //Managers
+global.paused = false;
 global.mobile = false;
 if os_type == os_android or os_type == os_ios then global.mobile = true;
 
 #endregion
+
+//Load Save
+
+
+//Set Window
+setWindowToRes();
 
 //Start Game
 room_goto_next();

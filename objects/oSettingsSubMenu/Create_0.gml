@@ -2,7 +2,7 @@
 targetXScale = 16;
 targetYScale = 12;
 
-currentMenu = "Menu";
+currentMenu = "Audio";
 
 
 
@@ -15,7 +15,7 @@ swapMenu = function(_menu)
 	currentMenu = _menu;
 	
 	//Remove Last Ui
-	instance_destroy(oParSettingsUi);
+	instance_destroy(oParSettingsBox);
 
 	//Get Buttons
 	var _buttons = getSettingsButtons(_menu);

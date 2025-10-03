@@ -1,11 +1,17 @@
 function initSettings()
 {
 	//Window
-	global.resolutions = [new Vector2(1920,1080),new Vector2(1280,720),new Vector2(960,540),new Vector2(640,360)]
-	global.currentRes = 1;
-	setWindowToRes();
+	global.resolutions = [new Vector2(640,360),new Vector2(960,540),new Vector2(1280,720),new Vector2(1920,1080)]
+	global.currentRes = 2;
+	
+	//Video
+	global.partSelection = 0;
+	global.partAmount = 1;
 	
 	//Audio
+	global.masterVol = 50;
+	global.musicVol = 50;
+	global.sfxVol = 50;
 	global.unFocusMute = false;
 	
 	//Input
@@ -54,11 +60,7 @@ function settingsGetWindowRes()
 	for (var i = 0; i < array_length(global.resolutions); ++i) {
 		
 		//Set Action
-		var _action = function(_selection)
-		{
-			global.currentRes = _selection;
-			setWindowToRes();
-		}
+		var _action = setWindowToRes;
 		
 		//Set Info
 		var _info = {

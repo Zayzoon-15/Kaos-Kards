@@ -22,6 +22,13 @@ textSize = textTargetSize;
 //Action
 action = function()
 {
+	//Back
+	if text == "Back"
+	{
+		oSettings.destroySettings();
+		exit;
+	}
+	
 	//Change Menu
 	oSettingsSubMenu.swapMenu(string_upper(text));
 }

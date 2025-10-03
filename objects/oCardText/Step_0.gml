@@ -18,13 +18,13 @@ if instance_exists(parent)
     
     x = parent.x;
     y = lerp(y,parent.cardY-_yDist,.2);
+	
+	//Destory
+	if !parent.hover or !parent.canGrab
+	{
+	    instance_destroy();
+	}
 } else instance_destroy();
-
-//Destory
-if !parent.hover or !parent.canGrab
-{
-    instance_destroy();
-}
 
 //Depth
 depth = -5;

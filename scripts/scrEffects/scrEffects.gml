@@ -11,9 +11,12 @@
 ///@arg {real} _height The height (Default = sprite_height)
 function starEffect(_x,_y,_amount = 5,_xOffset = 30,_yOffset = 30,_width = sprite_width,_height = sprite_height)
 {
+	//Set Amount
+	_amount *= global.partAmount;
+	
     for (var i = 0; i < _amount; i++) {
         		
-		//Get Star Values
+		//Get Values
 		var _effectX = (_width/2)-_xOffset;
 		var _effectY = (_height/2)-_yOffset;
 		
@@ -23,7 +26,7 @@ function starEffect(_x,_y,_amount = 5,_xOffset = 30,_yOffset = 30,_width = sprit
 		var _yOff = random_range(-_effectY,_effectY);
         var _dir = sign(_xOff);
         
-		//Create Stars
+		//Create Effect
     	instance_create_layer(_x+_xOff,_y+_yOff,"Effects",oStarEffect,{
             dir : _dir
         });
@@ -42,9 +45,12 @@ function starEffect(_x,_y,_amount = 5,_xOffset = 30,_yOffset = 30,_width = sprit
 ///@arg {real} _height The height (Default = sprite_height)
 function healthEffect(_x,_y,_amount = 5,_xOffset = 30,_yOffset = 30,_width = sprite_width,_height = sprite_height)
 {
+	//Set Amount
+	_amount *= global.partAmount;
+	
     for (var i = 0; i < _amount; i++) {
         
-		//Get Star Values
+		//Get Values
 		var _effectX = (_width/2)-_xOffset;
 		var _effectY = (_height/2)-_yOffset;
 		
@@ -53,7 +59,7 @@ function healthEffect(_x,_y,_amount = 5,_xOffset = 30,_yOffset = 30,_width = spr
 		var _xOff = random_range(-_effectX,_effectX);
 		var _yOff = random_range(-_effectY,_effectY);
         
-		//Create Health
+		//Create Effect
 		instance_create_layer(_x+_xOffset,_y+_yOffset,"Effects",oHealthEffect);
     	
     }

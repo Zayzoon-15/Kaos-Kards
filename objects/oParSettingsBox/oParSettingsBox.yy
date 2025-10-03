@@ -10,13 +10,10 @@
   "name":"oParSettingsBox",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Settings",
+    "path":"folders/Objects/Settings.yy",
   },
-  "parentObjectId":{
-    "name":"oParSettingsUi",
-    "path":"objects/oParSettingsUi/oParSettingsUi.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

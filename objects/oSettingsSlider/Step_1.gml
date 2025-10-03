@@ -1,9 +1,11 @@
 
+//Set Dragging
 if dragging and mouse_check_button_released(mb_left)
 {
 	dragging = false;
 }
 
+//Drag
 if dragging
 {
 	//No Hover
@@ -25,3 +27,12 @@ if dragging
 	} else currentAmount = 0;
 	
 } else canHover = true;
+
+//Clamp
+currentAmount = clamp(currentAmount,0,100);
+
+//Change Var
+if struct_exists(info,"changeVar")
+{
+	variable_global_set(info.changeVar,currentAmount);
+}
