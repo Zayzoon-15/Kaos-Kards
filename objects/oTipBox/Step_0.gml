@@ -10,11 +10,17 @@ textAlpha = lerp(textAlpha,1,.2);
 if instance_exists(parent)
 {
     var _y;
-    
+	var _boxTop = parent.bbox_top;
+	var _boxBottom = parent.bbox_bottom;
+	
+	//Check If Real
+	if is_real(_boxTop) then boxTop = _boxTop;
+	if is_real(_boxBottom) then boxBottom = _boxBottom;
+	
     if top 
     {
-        _y = parent.bbox_top-distance;
-    } else _y = parent.bbox_bottom+(distance);
+        _y = boxTop-distance;
+    } else _y = boxBottom+distance;
     
     x = parent.x;
     y = lerp(y,_y,.2);

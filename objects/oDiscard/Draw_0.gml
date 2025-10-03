@@ -14,10 +14,10 @@ width = string_width_ext(_text,-1,maxWidth);
 var _halfWidth = width/2;
 var _rectRound = UIBOX_RAD;
 var _x = x;
-var _y = bbox_top - 10;
+var _y = y - (sprite_width/2) - 10;
 
 //Draw The Box
-drawRectOutlined(_x-_halfWidth-widthMargin,_y-height-(heightMargin*2),_x+_halfWidth+widthMargin,_y,_rectRound,c_black,c_white,UIBOX_ALPHA*boxAlpha,1*boxAlpha);
+drawRectOutlined(_x-_halfWidth-widthMargin,_y-height-(heightMargin*2),_x+_halfWidth+widthMargin,_y,_rectRound,1,c_black,c_white,UIBOX_ALPHA*boxAlpha,1*boxAlpha);
 
 //Draw Text
 setupText(fnMain,fa_center,fa_top,c_white,boxAlpha);

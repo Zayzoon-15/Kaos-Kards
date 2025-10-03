@@ -10,9 +10,6 @@ initSettings();
 
 #region Global Vars
 
-//Controls
-global.keyDiscard = undefined;
-
 //Values
 global.valueMult = 1;
 

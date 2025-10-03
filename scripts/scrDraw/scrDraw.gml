@@ -39,7 +39,7 @@ function drawTipBox(_desc,_top = true,_distance = 10,_size = 1,_update = false){
     
     //Create Tip Box
     if !instance_exists(oTipBox) and touchingMouse()
-    {
+    {	
         instance_create_depth(x,y,depth,oTipBox,{ 
             desc : _desc,
             parent : self.id,
@@ -59,11 +59,12 @@ function drawTipBox(_desc,_top = true,_distance = 10,_size = 1,_update = false){
 ///@arg {real} _x2 The x position of the bottom right corner
 ///@arg {real} _y2 The y position of the bottom right corner
 ///@arg {real} _cornerRad The radius of the curve (Default : UIBOX_RAD)
+///@arg {real} _outlineWidth The width of the outline (Default : 1)
 ///@arg {Constant.Color} _bgColor The color of the box without an outline (Default : Black)
 ///@arg {Constant.Color} _outlineColor The color of the outline (Default : White)
 ///@arg {real} _bgAlpha The alpha of the box without an outline (Default : UIBOX_ALPHA)
 ///@arg {real} _outlineAlpha The alpha of the outline (Default : 1)
-function drawRectOutlined(_x1,_y1,_x2,_y2,_cornerRad = UIBOX_RAD,_bgColor=c_black,_outlineColor=c_white,_bgAlpha = UIBOX_ALPHA,_outlineAlpha = 1)
+function drawRectOutlined(_x1,_y1,_x2,_y2,_cornerRad = UIBOX_RAD,_outlineWidth=1,_bgColor=c_black,_outlineColor=c_white,_bgAlpha = UIBOX_ALPHA,_outlineAlpha = 1)
 {
     //Draw Bg
     draw_set_color(_bgColor);
@@ -73,7 +74,12 @@ function drawRectOutlined(_x1,_y1,_x2,_y2,_cornerRad = UIBOX_RAD,_bgColor=c_blac
     //Draw Outline
     draw_set_color(_outlineColor);
     draw_set_alpha(_outlineAlpha);
-    draw_roundrect_ext(_x1,_y1,_x2,_y2,_cornerRad,_cornerRad,true);
+    //draw_roundrect_ext(_x1,_y1,_x2,_y2,_cornerRad,_cornerRad,true);
+	
+	//Outline Width
+	for (var i = 0; i < _outlineWidth; ++i) {
+		draw_roundrect_ext(_x1-i,_y1-i,_x2+i,_y2+i,_cornerRad+i,_cornerRad+i,true);
+	}
     
     //Reset Stuff
     draw_set_color(c_white);

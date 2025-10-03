@@ -95,3 +95,15 @@ function getPosToWindow(_onRight,_xOffset = xstart)
 	//Return
 	return 	_targetPos;
 }
+
+
+///@desc Checks of the given input key is pressed
+///@arg {real} _key The input key
+function keyCheckPressed(_key)
+{
+	if keyboard_check_pressed(_key) or mouse_check_button_pressed(_key)
+	{
+		return true;
+	} else return false;
+	
+}

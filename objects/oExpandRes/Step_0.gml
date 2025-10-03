@@ -20,7 +20,7 @@ var _camY = 0;
 //Resize
 if surface_exists(application_surface)
 {
-	surface_resize(application_surface,camW,camH);
+	if camW > 0 and camH > 0 then surface_resize(application_surface,camW,camH);
 }
 
 //Set Camera Values

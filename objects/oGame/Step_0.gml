@@ -1,7 +1,9 @@
 
-//Keyboard
-global.keyDiscard = keyboard_check_pressed(ord("Z"));
-
+//Fullscreen
+if keyCheckPressed(global.keyFullscreen)
+{
+	window_set_fullscreen(!window_get_fullscreen());
+}
 
 #region Clamp Health
 

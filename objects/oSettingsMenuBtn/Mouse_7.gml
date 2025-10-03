@@ -1,4 +1,11 @@
 
 //Do Action
-if pressed then action();
+if pressed
+{
+	//Set Selected
+	oSettingsMenuBtn.selected = false;
+	selected = true;
+
+	action();
+}
 

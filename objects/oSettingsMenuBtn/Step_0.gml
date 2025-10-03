@@ -12,7 +12,7 @@ if touchingMouse()
 }
 
 //Selected
-if selected
+if selected or touchingMouse()
 {
 	boxAlpha = lerp(boxAlpha,0,.2);
 } else boxAlpha = lerp(boxAlpha,.5,.2);
