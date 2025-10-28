@@ -12,8 +12,9 @@ function cardHandMush()
     var _width = 780;
     var _gap = _width/(_handSize);
     
-    var _leftSide = _center - _gap * (_handSize-1)/2;
-    var _handX = _leftSide + cardId * _gap;
+	//Get Position
+    var _leftEdge = _center - _gap * (_handSize-1)/2;
+    var _handX = _leftEdge + cardId * _gap;
     
     //Return X
     return _handX;
@@ -29,6 +30,7 @@ function cardHandSep()
     var _center = room_width/2;
     var _gap = sprite_width+5;
     
+	//Get Position
     var _leftEdge = (_handSize-1)*(_gap/2);
     var _handX = _center - _leftEdge + (cardId * _gap);
     _handX = clamp(_handX,210,1070);

@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Settings",
-    "path":"folders/Objects/Settings.yy",
+    "path":"folders/Objects/Ui/Settings.yy",
   },
   "parentObjectId":{
     "name":"oParSettingsBox",
@@ -34,10 +34,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sSettingsSliderBg",
-    "path":"sprites/sSettingsSliderBg/sSettingsSliderBg.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

@@ -41,8 +41,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sBlankCard",
-    "path":"sprites/sBlankCard/sBlankCard.yy",
+    "name":"sCardBlank",
+    "path":"sprites/sCardBlank/sCardBlank.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -16,7 +16,7 @@ function healAction(_card,_targetEnemy)
 {
     //Juice
     _card.cardJuice(false);
-    healthEffect(_card.x,_card.y,10,10,25,sprite_get_width(sBlankCard),sprite_get_height(sBlankCard));
+    healthEffect(_card.x,_card.y,10,10,25,sprite_get_width(sCardBlank),sprite_get_height(sCardBlank));
     numberEffect(_card.x,_card.y,_card.value);
     
     //Give Health
@@ -119,3 +119,15 @@ function flameAceAction(_card,_targetEnemy)
     });
 }
 
+///@self oAttackCard
+function mirrorAction(_card,_targetEnemy)
+{
+	//Juice
+	_card.cardJuice(true);
+	
+	//Create Mirror
+    instance_create_layer(_card.x,_card.y,"Attacks",oMirror,{
+        value : _card.value,
+        card : _card
+    });
+}

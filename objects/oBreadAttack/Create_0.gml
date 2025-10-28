@@ -8,6 +8,7 @@ posBasedOnCard = true;
 
 //Stats
 hitOthers = true;
+currentlyDamaging = true;
 
 //Move
 moveToDir(13);

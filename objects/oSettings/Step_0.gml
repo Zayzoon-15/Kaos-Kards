@@ -1,6 +1,6 @@
 
 
-if keyCheckPressed(global.keyPause)
+if keyCheckPressed(global.keyPause) and !global.midTrans
 {
 	if global.paused
 	{

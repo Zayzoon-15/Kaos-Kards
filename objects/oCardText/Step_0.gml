@@ -14,7 +14,7 @@ textAlpha = lerp(textAlpha,1,.2);
 //Go To Parent
 if instance_exists(parent)
 {
-    var _yDist = sprite_get_height(sBlankCard)*.6;
+    var _yDist = sprite_get_height(sCardBlank)*.6;
     
     x = parent.x;
     y = lerp(y,parent.cardY-_yDist,.2);

@@ -6,7 +6,7 @@ var _card = ds_list_find_value(enemyActions,enemyCard);
 //Create Card
 if _card != undefined
 {
-    instance_create_layer(room_width/2,-sprite_get_height(sBlankCard),"Cards",oAttackCard,{
+    instance_create_layer(room_width/2,-sprite_get_height(sCardBlank),"Cards",oAttackCard,{
         card : _card,
         targetX : getXPos(enemyCard),
         targetY : yOffset,

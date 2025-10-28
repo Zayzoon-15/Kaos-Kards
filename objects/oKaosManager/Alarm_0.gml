@@ -22,7 +22,7 @@ if enemyKaos == undefined and playerKaos == undefined
 if (playerFirst or enemyKaos == undefined) and playerKaos != undefined
 {
     //Create Card
-    _createKaos(playerKaos,room_height+sprite_get_height(sBlankCard));
+    _createKaos(playerKaos,room_height+sprite_get_height(sCardBlank));
     
     //Reset Kaos
     playerKaos = undefined;
@@ -36,7 +36,7 @@ if (playerFirst or enemyKaos == undefined) and playerKaos != undefined
 if (!playerFirst or playerKaos == undefined) and enemyKaos != undefined
 {
     //Create Card
-    _createKaos(enemyKaos,-sprite_get_height(sBlankCard));
+    _createKaos(enemyKaos,-sprite_get_height(sCardBlank));
     
     //Reset Kaos
     enemyKaos = undefined;
