@@ -2,10 +2,8 @@
 
 
 ///@self oCard
-function diceCardSwapDice(_info,_card)
+function diceCardSwapDice(_info,_card,_dice)
 {	
-    var _dice = _info.diceType;
-	
     //Can Place
     with oDice
     {
@@ -29,9 +27,9 @@ function diceCardSwapDice(_info,_card)
     } else { //Change Dice Back
         with oDice
         {
-            if diceId == _card.targetDice and dice != diceTypes.dice6 and _card.wasOnSlot
+            if diceId == _card.targetDice and dice != diceTypes.d6 and _card.wasOnSlot
             {
-                dice = diceTypes.dice6;
+                dice = diceTypes.d6;
                 diceJuice();
                 _card.wasOnSlot = false;
             }

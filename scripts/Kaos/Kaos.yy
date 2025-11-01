@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"KaosActions",
+  "%Name":"Kaos",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"KaosActions",
+  "name":"Kaos",
   "parent":{
     "name":"Actions",
     "path":"folders/Scripts/Actions.yy",

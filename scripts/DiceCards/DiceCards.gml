@@ -1,31 +1,29 @@
 function initDiceTypes()
 {
 	
-	
-	
 globalvar diceTypes;
 	
 diceTypes =  {
     
-	dice6 : {
+	d6 : {
 	    sprite : sDice6,
 	    range : {min:1,max:6},
 	    color : c_white
 	},
     
-	dice8 : {
+	d8 : {
 	    sprite : sDice8,
 	    range : {min:3,max:8},
 	    color : #f6e0ff
 	},
     
-	dice12 : {
+	d12 : {
 	    sprite : sDice12,
 	    range : {min:5,max:12},
 	    color : #d2ffff
 	},
     
-	dice20 : {
+	d20 : {
 	    sprite : sDice20,
 	    range : {min:8,max:20},
 	    color : #b23227
@@ -34,8 +32,8 @@ diceTypes =  {
 }
 
 
-
 }
+
 
 
 function initDiceCards()
@@ -47,25 +45,25 @@ globalvar diceCards;
 
 diceCards = {
     
-    reroll : new createCard("Reroll",
+    reroll : new createCardDice("Reroll",
     "Reroll all the dice\nCan only be placed after roll",
-    undefined,CARDTYPES.DICE,sCardDice,diceCardReroll),
+    sCardDice,diceCardReroll),
     
-    upgrade : new createCard("Dice Upgrade",
+    upgrade : new createCardDice("Dice Upgrade",
     "Adds a random amount to a random dice roll",
-    {min:1,max:6},CARDTYPES.DICE,sCardDice),
+    sCardDice,undefined,[],[1,6]),
     
-    dice8 : new createCard("8 Sided Dice",
+    dice8 : new createCardDice("8 Sided Dice",
     "Changes one random dice to an 8 sided dice\nCan only be placed before roll",
-    undefined,CARDTYPES.DICE,sCardDice,diceCardSwapDice,0,diceTypes.dice8),
+    sCardDice,diceCardSwapDice,[diceTypes.d8]),
     
-    dice12 : new createCard("12 Sided Dice",
+    dice12 : new createCardDice("12 Sided Dice",
     "Changes one random dice to a 12 sided dice\nCan only be placed before roll",
-    undefined,CARDTYPES.DICE,sCardDice,diceCardSwapDice,0,diceTypes.dice12),
+    sCardDice,diceCardSwapDice,[diceTypes.d12]),
     
-    dice20 : new createCard("20 Sided Dice",
+    dice20 : new createCardDice("20 Sided Dice",
     "Changes one random dice to a 20 sided dice\nCan only be placed before roll",
-    undefined,CARDTYPES.DICE,sCardDice,diceCardSwapDice,0,diceTypes.dice20),
+    sCardDice,diceCardSwapDice,[diceTypes.d20]),
     
 };
 

@@ -1,4 +1,11 @@
 ///@desc Card Conditions
 
-
-if info.type == CARDTYPES.DICE then info.action(info,self.id);
+//Dice Card Actions
+if info.type == CARDTYPES.DICE
+{
+    //Get Arguments
+    var _arguments = array_concat([info,self.id],info.extraAgrs);
+    
+    //Call Action
+    method_call(info.action,_arguments);
+}

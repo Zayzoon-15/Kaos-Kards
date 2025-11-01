@@ -10,28 +10,25 @@ playerDeck = [
 
 	//Action Cards
 	actionCards.heal,
-	actionCards.bread2,
-	actionCards.bread2,
-	actionCards.bread2,
-	actionCards.bread2,
-	actionCards.bread2,
-	//actionCards.heal,
-	//actionCards.shield,
-	//actionCards.shield,
-	//actionCards.slash,
-	//actionCards.slash,
-	//actionCards.punch,
-	//actionCards.punch,
-	//actionCards.laser,
-	//actionCards.laser,
-	//actionCards.laser,
-	//actionCards.bread,
-	//actionCards.bread,
+	actionCards.heal,
+	actionCards.shield,
+	actionCards.shield,
+	actionCards.slash,
+	actionCards.slash,
+	actionCards.punch,
+	actionCards.punch,
+	actionCards.laser,
+	actionCards.laser,
+	actionCards.laser,
+	actionCards.bread,
+	actionCards.bread,
 
 	//Dice Cards
 	diceCards.upgrade,
 	diceCards.reroll,
+    diceCards.dice8,
 	diceCards.dice12,
+	diceCards.dice20,
 
 	//Kaos Cards
 	//kaosCards.destroy,
@@ -43,6 +40,6 @@ playerDeck = [
 
 //Stats
 global.maxHandSize = 6;
-global.maxDiscards = round(array_length(playerDeck)/2);
+global.maxDiscards = 99;//round(array_length(playerDeck)/2);
 
 }

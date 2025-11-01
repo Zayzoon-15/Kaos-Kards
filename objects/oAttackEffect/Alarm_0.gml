@@ -1,5 +1,6 @@
 ///@desc Apply Effect
 
+print("TIME",timeUp);
 //Times Up
 if timeUp then exit;
 

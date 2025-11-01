@@ -3,7 +3,7 @@
 image_speed = 0;
 
 //Dice Types
-dice = diceTypes.dice6;
+dice = diceTypes.d6;
 
 //Dice
 diceNum = undefined;

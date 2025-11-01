@@ -7,10 +7,10 @@
   "inheritLayers":false,
   "instanceCreationOrder":[
     {"name":"inst_4E68B901","path":"rooms/rSetup/rSetup.yy",},
-    {"name":"inst_5DB403AE","path":"rooms/rSetup/rSetup.yy",},
     {"name":"inst_245962BD","path":"rooms/rSetup/rSetup.yy",},
     {"name":"inst_4960E8D1","path":"rooms/rSetup/rSetup.yy",},
     {"name":"inst_6544E2AA","path":"rooms/rSetup/rSetup.yy",},
+    {"name":"inst_5DB403AE","path":"rooms/rSetup/rSetup.yy",},
   ],
   "isDnd":false,
   "layers":[

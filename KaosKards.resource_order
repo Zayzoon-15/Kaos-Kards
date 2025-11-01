@@ -108,7 +108,7 @@
     {"name":"DiceCards","order":1,"path":"scripts/DiceCards/DiceCards.yy",},
     {"name":"Effects","order":3,"path":"scripts/Effects/Effects.yy",},
     {"name":"EnemyInfo","order":2,"path":"scripts/EnemyInfo/EnemyInfo.yy",},
-    {"name":"KaosActions","order":4,"path":"scripts/KaosActions/KaosActions.yy",},
+    {"name":"Kaos","order":4,"path":"scripts/Kaos/Kaos.yy",},
     {"name":"KaosCards","order":2,"path":"scripts/KaosCards/KaosCards.yy",},
     {"name":"PlayerStats","order":5,"path":"scripts/PlayerStats/PlayerStats.yy",},
     {"name":"scrAttackEffects","order":1,"path":"scripts/scrAttackEffects/scrAttackEffects.yy",},

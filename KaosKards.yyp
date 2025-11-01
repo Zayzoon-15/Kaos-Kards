@@ -162,7 +162,7 @@
     {"id":{"name":"DiceCards","path":"scripts/DiceCards/DiceCards.yy",},},
     {"id":{"name":"Effects","path":"scripts/Effects/Effects.yy",},},
     {"id":{"name":"EnemyInfo","path":"scripts/EnemyInfo/EnemyInfo.yy",},},
-    {"id":{"name":"KaosActions","path":"scripts/KaosActions/KaosActions.yy",},},
+    {"id":{"name":"Kaos","path":"scripts/Kaos/Kaos.yy",},},
     {"id":{"name":"KaosCards","path":"scripts/KaosCards/KaosCards.yy",},},
     {"id":{"name":"Macros","path":"scripts/Macros/Macros.yy",},},
     {"id":{"name":"PlayerStats","path":"scripts/PlayerStats/PlayerStats.yy",},},

@@ -14,10 +14,9 @@ textAlpha = lerp(textAlpha,1,.2);
 //Go To Parent
 if instance_exists(parent)
 {
-    var _yDist = sprite_get_height(sCardBlank)*.6;
-    
+    //Set Position    
     x = parent.x;
-    y = lerp(y,parent.cardY-_yDist,.2);
+    y = lerp(y,parent.bbox_top-20,.2);
 	
 	//Destory
 	if !parent.hover or !parent.canGrab

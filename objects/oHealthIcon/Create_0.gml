@@ -13,11 +13,11 @@ findHealthInst = function()
 	{
 		x = healthInst.x;
 		y = healthInst.y;
+        
+        //Set Position
+    	targetX = healthInst.bbox_right + 10;
+    	targetY = y;
 	}
-	
-	//Set Position
-	targetX = healthInst.bbox_right + 10;
-	targetY = y;
 }
 
 findHealthInst();
