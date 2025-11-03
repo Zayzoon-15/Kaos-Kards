@@ -18,6 +18,10 @@ function swoopKaosAction(_card,_targetEnemy)
 	
 	//Juice
 	_card.cardJuice(true);
+    
+    //Finish
+    var _timeSource = time_source_create(time_source_game, 5, time_source_units_seconds, kaosCardDone);
+    time_source_start(_timeSource);
 }
 
 ///@self oAttackCard
@@ -45,6 +49,10 @@ function swapKaosAction(_card,_targetEnemy)
 	enemyActions = _playersActs;
 	
 	#endregion
+    
+    //Finish
+    var _timeSource = time_source_create(time_source_game, 5, time_source_units_seconds, kaosCardDone);
+    time_source_start(_timeSource);
 }
 
 ///@self oAttackCard
@@ -58,6 +66,10 @@ function highKaosAction(_card,_targetEnemy)
 	
 	//Double Values
 	global.valueMult *= 2;
+    
+    //Finish
+    var _timeSource = time_source_create(time_source_game, 5, time_source_units_seconds, kaosCardDone);
+    time_source_start(_timeSource);
 }
 
 ///@self oAttackCard
@@ -75,4 +87,8 @@ function destroyKaosAction(_card,_targetEnemy)
 	instance_create_layer(0,0,"Attacks",oDestroyedCard,{
 		targetEnemy : false
 	});
+    
+    //Finish
+    var _timeSource = time_source_create(time_source_game, 5, time_source_units_seconds, kaosCardDone);
+    time_source_start(_timeSource);
 }

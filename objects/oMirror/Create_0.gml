@@ -1,11 +1,13 @@
 //Inherit
 event_inherited();
 
-//Hit Other
+//Stats
+currentlyDamaging = false;
 hitOthers = false;
+reflected = false;
 
 //Set Size
 setSize(.3,.3);
 
-//Alpha
-image_alpha = 0;
+//Destroy
+alarm[1] = 120;

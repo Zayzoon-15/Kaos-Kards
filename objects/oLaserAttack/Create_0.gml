@@ -5,6 +5,9 @@ event_inherited();
 flipSprite = true;
 posBasedOnCard = true;
 
+//Stats
+currentlyDamaging = false;
+
 //Reduce Value
 value *= 0.3;
 

@@ -1,9 +1,12 @@
 ///@desc Attack
 
+//Randomise
+randomise();
+
 //Create Bread
 instance_create_layer(0,0,"Effects",oSwoopBreadAttack,{
 	targetEnemy : targetEnemy,
-	value : 10
+	value : irandom_range(2,6)
 });
 
 //Destroy

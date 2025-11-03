@@ -123,11 +123,12 @@ function flameAceAction(_card,_targetEnemy)
 function mirrorAction(_card,_targetEnemy)
 {
 	//Juice
-	_card.cardJuice(true);
+	//_card.cardJuice(true);
 	
 	//Create Mirror
     instance_create_layer(_card.x,_card.y,"Attacks",oMirror,{
         value : _card.value,
-        card : _card
+        card : _card,
+        targetEnemy : _targetEnemy
     });
 }

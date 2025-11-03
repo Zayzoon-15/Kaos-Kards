@@ -7,6 +7,7 @@ posBasedOnCard = true;
 
 //Stats
 hitOthers = true;
+currentlyDamaging = true;
 value /= 2;
 
 //Move

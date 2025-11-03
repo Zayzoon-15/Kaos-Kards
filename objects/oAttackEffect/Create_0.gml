@@ -4,8 +4,6 @@ applyEffect = function()
 	//Get List
     var _targetList = playerEffects;
     if targetEnemy then _targetList = enemyEffects;
-	
-    print("TargetList",_targetList);
     
 	//Get Temp Hp
 	var _tempHp = global.playerTempHp;
@@ -22,15 +20,11 @@ applyEffect = function()
 			if _listValue.info.type == EFFECT_TYPE.HARM
 			{
 				_value = value - _tempHp;
-                print("VALUE", _value);
 				if _value < 0 then _value = 0;
 			}
 			
             //Add To Value
             _listValue.value += _value;
-            print("List Value",_listValue.value);
-            print("AttackValue",value);
-            //ITS NOT ADDING TO LIST VALUE FOR HARM
             
             //Decrease Hp
             if _listValue.info.type == EFFECT_TYPE.HARM
@@ -69,19 +63,6 @@ setupTime();
 //Create Icon
 var _createIcon = function(_effect)
 {
-	//No Value
-	//var _targetList = playerEffects;
-    //if targetEnemy then _targetList = enemyEffects;
-	//var _value = 0;
-    //for (var i = 0; i < ds_list_size(_targetList); i++) {
-        //var _listValue = ds_list_find_value(_targetList,i);
-    	//if _listValue.info == effect
-        //{
-			//_value = _listValue.value;
-        //}
-    //}
-	//
-    
 	//Get Target
     var _target = "Player";
     if targetEnemy then _target = "Enemy";
@@ -101,7 +82,6 @@ var _createIcon = function(_effect)
     });
 }
 
-print("Created")
 
 //Change Existing Icon
 if instance_exists(oHealthIcon)
@@ -130,7 +110,6 @@ if instance_exists(oHealthIcon)
 		
 		}
     }
-    print(_create);
     
     if _create then _createIcon(effect);
     

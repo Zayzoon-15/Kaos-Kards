@@ -43,8 +43,8 @@ actionCards = {
     sCardPoison,[1,4],poisonAction),
 	
     mirror : new createCardAction("Mirror Card",
-    "Reflects any physical attacks attacking the card. The range effects how the damage is changed",
-    sCardMirror,[1,2],mirrorAction),
+    "Reflects any physical attacks attacking the card\nThe range changes how much more damage the attack does",
+    sCardMirror,[0,4],mirrorAction),
     
 };
 

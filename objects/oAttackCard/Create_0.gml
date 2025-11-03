@@ -24,7 +24,7 @@ if card.info.type == CARDTYPES.KAOS
 alarm[0] = _actTime;
 
 //Functions
-cardJuice = function(_stars = true,_angle = true)
+cardJuice = function(_stars = true,_angle = true,_angleAmount = [8,14])
 {
     //Scale
     setSize(1.5,1.5);
@@ -38,7 +38,7 @@ cardJuice = function(_stars = true,_angle = true)
     //Angle
 	if _angle
 	{
-		angle += random_range(8,14)*choose(-1,1);
+		angle += random_range(_angleAmount[0],_angleAmount[1])*choose(-1,1);
 	}
 }
 
@@ -64,4 +64,9 @@ cardHurt = function(_value,_stars = true)
     {
         starEffect(x,y,5,20,25);
     }
+}
+
+cardFlash = function()
+{
+    
 }

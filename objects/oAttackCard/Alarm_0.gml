@@ -1,10 +1,7 @@
 ///@desc Action
 
-//Do Action
-card.info.action(self.id,targetEnemy);
+//Arguments
+var _args = array_concat([self.id,targetEnemy],card.info.extraArgs);
 
-//Destroy Kaos Card
-if card.info.type == CARDTYPES.KAOS
-{
-    alarm[1] = card.info.destroyTime;
-}
+//Do Action
+method_call(card.info.action,_args);

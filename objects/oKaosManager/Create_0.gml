@@ -1,8 +1,6 @@
-
 //Set Current Card
 playerCard = 0;
 enemyCard = 0;
-
 
 //Who Goes First
 randomize();

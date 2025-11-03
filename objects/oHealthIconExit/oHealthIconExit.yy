@@ -1,12 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"oHealthIconPop",
+  "%Name":"oHealthIconExit",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oHealthIconPop",
+  "name":"oHealthIconExit",
   "overriddenProperties":[],
   "parent":{
     "name":"Health",
@@ -29,7 +29,11 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v2","%Name":"healthInst","filters":[
+        "GMObject",
+      ],"listItems":[],"multiselect":false,"name":"healthInst","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":5,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,

@@ -1,5 +1,5 @@
 {
-  "$GMOperaGXOptions":"",
+  "$GMOperaGXOptions":"v1",
   "%Name":"Opera GX",
   "name":"Opera GX",
   "option_operagx_display_cursor":true,
@@ -23,6 +23,7 @@
   "option_operagx_team_id":"c4749f4d-8f82-4c56-83d4-083837926af0",
   "option_operagx_team_name":"Lunch Break",
   "option_operagx_texture_page":"2048x2048",
+  "option_operagx_transparent_background":false,
   "option_operagx_version":"0.0.0.0",
   "resourceType":"GMOperaGXOptions",
   "resourceVersion":"2.0",

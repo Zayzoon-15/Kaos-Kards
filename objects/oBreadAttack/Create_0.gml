@@ -9,6 +9,7 @@ posBasedOnCard = true;
 //Stats
 hitOthers = true;
 currentlyDamaging = true;
+hitTarget = false;
 
 //Move
 moveToDir(13);
@@ -18,6 +19,7 @@ card.cardJuice(false);
 
 //Reduce Value
 value *= .4;
+value = clamp(value,1,99);
 
 //Create More Bread
 if breadId < 3

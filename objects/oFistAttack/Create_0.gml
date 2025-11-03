@@ -1,9 +1,11 @@
 //Inherit the parent event
 event_inherited();
 
-
 //Visual
 posBasedOnCard = true;
+
+//Stats
+currentlyDamaging = false;
 
 //Directiond
 dir = 1;

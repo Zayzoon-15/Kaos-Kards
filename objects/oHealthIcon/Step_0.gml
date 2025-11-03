@@ -32,8 +32,13 @@ y = lerp(y,targetY,.1);
 //Destroy
 if !array_contains_value(_array,info)
 {
-	instance_create_layer(x,y,"Effects",oHealthIconPop,{
-		sprite_index : sprite_index
-	});
+    //Create Inst
+	var _inst = instance_create_layer(x,y,"Effects",oHealthIconExit);
+    _inst.healthInst = healthInst;
+    _inst.sprite_index = sprite_index;
+    _inst.x = x;
+    _inst.y = y;
+    
+    //Destroy
     instance_destroy();
 }

@@ -28,13 +28,13 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"iconId","filters":[],"listItems":[],"multiselect":false,"name":"iconId","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"info","filters":[],"listItems":[],"multiselect":false,"name":"info","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"target","filters":[],"listItems":[
+    {"$GMObjectProperty":"v2","%Name":"iconId","filters":[],"listItems":[],"multiselect":false,"name":"iconId","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"info","filters":[],"listItems":[],"multiselect":false,"name":"info","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"target","filters":[],"listItems":[
         "\"Player\"",
         "\"Enemy\"",
       ],"multiselect":false,"name":"target","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"\"Player\"","varType":6,},
-    {"$GMObjectProperty":"v1","%Name":"arrayStruct","filters":[],"listItems":[],"multiselect":false,"name":"arrayStruct","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"arrayStruct","filters":[],"listItems":[],"multiselect":false,"name":"arrayStruct","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

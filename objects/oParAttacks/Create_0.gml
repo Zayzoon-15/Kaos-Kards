@@ -1,4 +1,3 @@
-
 //Visual
 flipSprite = false; //If The Sprite Should Flip Based on The Target
 posBasedOnCard = false; //If The Attack Offset is Diffrent Based on The Target
@@ -7,7 +6,7 @@ newYPos = [card.bbox_top,card.bbox_bottom]; //[targetEnemy,targetPlayer];
 //Stats
 hitOthers = false; //If It Should Damage Cards
 currentlyDamaging = false; //If Currrently Damaging
-reflected = false; //If It Was Reflected DONT CHANGE
+
 
 #region Functions DONT CHANGE
 

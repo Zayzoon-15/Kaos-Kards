@@ -4,6 +4,8 @@ event_inherited();
 //Visual
 flipSprite = true;
 
+//Stats
+currentlyDamaging = false;
 
 //Functions
 action = function()

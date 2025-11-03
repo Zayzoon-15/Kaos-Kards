@@ -4,6 +4,7 @@
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"oMirror",
@@ -30,15 +31,12 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"value","filters":[],"listItems":[],"multiselect":false,"name":"value","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"-1","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"value","filters":[],"listItems":[],"multiselect":false,"name":"value","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"-1","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sMirror",
-    "path":"sprites/sMirror/sMirror.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

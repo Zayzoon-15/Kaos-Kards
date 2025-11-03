@@ -37,19 +37,18 @@ function cardStateHand(){
     
     #region Hover
     
+    //Other Cards
 	var _touchingOthers = false;
 	with oCard
 	{
 		if hover and id != other.id
 		{
-			_touchingOthers = true;
+            _touchingOthers = cardId < other.cardId;
 		}
 	}
 	
-	if touchingMouse() and !global.holdingCard and !_touchingOthers
-	{
-		hover = true;
-	} else hover = false;
+    //Set Hover
+	hover = touchingMouse() and !global.holdingCard and !_touchingOthers;
 	
     //Hovered
     if hover
@@ -96,9 +95,11 @@ function cardStateHand(){
     
     #endregion
     
+    //Can Grab
+    canGrab = !global.holdingCard;
     
     //Delete Key
-    if touchingMouse() and canGrab and gameState == GAMESTATES.PREPARE
+    if hover and gameState == GAMESTATES.PREPARE
     {
         if keyCheckPressed(global.keyDiscard) and !oDiscard.isFull
         {
@@ -108,13 +109,7 @@ function cardStateHand(){
     }
     
     //Info Box
-    if canGrab
-    {
-        drawCardText(info);
-    }
-    
-    //Can Grab
-    canGrab = !global.holdingCard;
+    if hover then drawCardText(info);
 }
 
 

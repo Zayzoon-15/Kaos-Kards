@@ -38,8 +38,11 @@ for (var k = 0; k < 2; k++) {
 			{
 				if timeUp
 				{
-					if _listValue.info == effect then instance_destroy();
-					ds_list_delete(_targetList,i);
+					if _listValue.info == effect
+                    {
+                        ds_list_delete(_targetList,i);
+                        instance_destroy();
+                    }
 				}
 				
 			}
