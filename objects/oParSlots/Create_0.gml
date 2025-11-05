@@ -2,6 +2,7 @@
 //Stats
 filled = false;
 used = false;
+disabled = false;
 
 //Image
 scale = 1;
@@ -13,3 +14,8 @@ targetType2 = undefined;
 
 //Card
 card = noone;
+
+//Check If Disabled
+var _slot = global.disabledSlots.player[slotId];
+if room == rEnemy then _slot = global.disabledSlots.enemy[slotId];
+disabled = _slot;

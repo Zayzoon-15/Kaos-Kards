@@ -29,7 +29,8 @@ function createEnemy(_name,_sprite,_attacks,_kaos,_healWeight = 100, _defendWeig
 ///@arg {struct} _info The cards info
 ///@arg {real} _value The cards value
 ///@arg {bool} _used If the slot is used
-function enemyAddCard(_slotId,_info,_value,_used = false)
+///@arg {bool} _disabled If the slot is disabled
+function enemyAddCard(_slotId,_info,_value,_used = false,_disabled = false)
 {
     //Get Inst
     var _slotInst = oActionSlot;
@@ -48,6 +49,7 @@ function enemyAddCard(_slotId,_info,_value,_used = false)
     var _slot = instance_create_layer(_x,_y,"Slots",_slotInst,{slotId : _slotId,});
     _slot.used = _used; //Set Used
     _slot.scale = 1.3; //Set Size;
+    _slot.disabled = _disabled; //Set Disabled
     
     //Create Card
     if !_used 

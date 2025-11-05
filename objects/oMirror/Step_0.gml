@@ -1,6 +1,6 @@
 //Reflect Attack
 var _list = ds_list_create();
-var _collide = collision_circle_list(x,y,130,oParAttacks,false,true,_list,true);
+var _collide = collision_rectangle_list(x-50,y-100,x+50,y+100,oParAttacks,false,true,_list,true);
 ds_list_sort(_list,true);
 if _collide
 {
@@ -10,7 +10,10 @@ if _collide
         //Stop If Ally
         if _inst.targetEnemy == targetEnemy then exit;
         
+        //Stop If Not Damaging
         if !_inst.currentlyDamaging then exit;
+        
+        var _action = function(){};
         
         //Reflect Inst
         with _inst
@@ -21,16 +24,22 @@ if _collide
                 other.card.value += value/3;
                 
                 //Action
-                card.card.info.action(other.card.id,other.targetEnemy);
+                _action = card.card.info.action;
             }
+        }
+        
+        with card
+        {
+            var _args = array_concat([other.targetEnemy],card.info.extraArgs);
+            method_call(_action,_args);
         }
         
         //Destroy Inst
         instance_destroy(_inst);
         
         //Juice
-        card.cardJuice(true,true,[10,15]);
-        card.cardFlash();
+        card.cardJuice(true,true);
+        card.cardFlash(.5,c_white);
         
         //Reflected
         reflected = true;

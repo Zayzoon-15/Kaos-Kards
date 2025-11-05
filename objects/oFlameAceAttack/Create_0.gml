@@ -24,7 +24,7 @@ action = function()
     hurtEffect(x,y);
     
     //Effects
-	addEffect(attackEffects.fire,value*.8,targetEnemy);
+	addEffect(attackEffects.fire,value*.7,targetEnemy);
 	
     //Destroy
     instance_destroy();

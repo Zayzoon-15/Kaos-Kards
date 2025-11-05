@@ -15,6 +15,10 @@ global.valueMult = 1;
 
 //Cards
 global.holdingCard = false;
+global.disabledSlots = {
+    player: array_create(4,false),
+    enemy : array_create(4,false)
+};
 
 //Enemy
 global.currentEnemy = enemyInfo.dog;

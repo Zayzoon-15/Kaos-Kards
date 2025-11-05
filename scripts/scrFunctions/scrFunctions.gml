@@ -107,3 +107,17 @@ function keyCheckPressed(_key)
 	} else return false;
 	
 }
+
+
+/// @desc Creates and starts a time source
+/// @param {real} _time The amount of time
+/// @param {function} _action The action to preform
+/// @param {array} [_args] The arguments for the action
+/// @param {constant.timesourceunits} _units [seconds] The unit source to use
+/// @param {constant.timesource} [_source] [game] The time source to use
+function timeSourceCreate(_time,_action,_args = [],_units = time_source_units_seconds,_source = time_source_game)
+{
+    var _timeSource = time_source_create(_source, _time, _units, _action,_args);
+    time_source_start(_timeSource);
+    
+}

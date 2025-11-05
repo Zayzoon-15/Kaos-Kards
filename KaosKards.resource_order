@@ -173,6 +173,7 @@
     {"name":"sCardDestroy","order":1,"path":"sprites/sCardDestroy/sCardDestroy.yy",},
     {"name":"sCardDice","order":1,"path":"sprites/sCardDice/sCardDice.yy",},
     {"name":"sCardFlaminAce","order":6,"path":"sprites/sCardFlaminAce/sCardFlaminAce.yy",},
+    {"name":"sCardFreeze","order":4,"path":"sprites/sCardFreeze/sCardFreeze.yy",},
     {"name":"sCardHeal","order":3,"path":"sprites/sCardHeal/sCardHeal.yy",},
     {"name":"sCardHigh","order":2,"path":"sprites/sCardHigh/sCardHigh.yy",},
     {"name":"sCardLaser","order":4,"path":"sprites/sCardLaser/sCardLaser.yy",},

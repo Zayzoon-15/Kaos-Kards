@@ -139,18 +139,23 @@ if !specialUsed
 //Get Action Cards
 for (var i = 0; i < array_length(chosenActionCards); i++) {
     
-    //Get Card Info
-	var _card = chosenActionCards[i].evaluate();
-    
-    //Get Card Value
-    randomize();
-    var _cardValue = irandom_range(_card.range.min,_card.range.min);
-    var _totalValue = _cardValue + diceValues[i];
-    
-    //Add Enemy Action
-    addEnemyAction(_card,_totalValue,i);
-    
-    //Add Card In Game
-    enemyAddCard(i+1,_card,_totalValue);
+    if !global.disabledSlots.enemy[i+1]
+    {
+        //Get Card Info
+    	var _card = chosenActionCards[i].evaluate();
+        
+        //Get Card Value
+        randomize();
+        var _cardValue = irandom_range(_card.range.min,_card.range.min);
+        var _totalValue = _cardValue + diceValues[i];
+        
+        //Add Enemy Action
+        addEnemyAction(_card,_totalValue,i);
+        
+        //Add Card In Game
+        enemyAddCard(i+1,_card,_totalValue);
+    } else {
+        //Add Disabled Slot
+        enemyAddCard(i+1,{},0,true,true);
+    }
 }
-

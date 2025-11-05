@@ -7,6 +7,10 @@ newYPos = [card.bbox_top,card.bbox_bottom]; //[targetEnemy,targetPlayer];
 hitOthers = false; //If It Should Damage Cards
 currentlyDamaging = false; //If Currrently Damaging
 
+//Reduce Value
+value *= .8;
+value = clamp(value,0,99);
+
 
 #region Functions DONT CHANGE
 

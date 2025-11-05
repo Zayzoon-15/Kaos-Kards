@@ -4,7 +4,6 @@
 ///@arg {Asset.GMObject} _card The card inst
 function addPlayerAction(_card)
 {
-    
     //Create Struct
     var _struct;
     with _card
@@ -16,7 +15,7 @@ function addPlayerAction(_card)
     }
     
     //Add To List
-    ds_list_insert(playerActions,_card.slot.slotId-1,_struct);
+    ds_list_set(playerActions,_card.slot.slotId-1,_struct);
 }
 
 
@@ -58,7 +57,7 @@ function addEnemyAction(_info,_value,_pos)
     }
     
     //Add To List
-    ds_list_insert(enemyActions,_pos,_struct);
+    ds_list_set(enemyActions,_pos,_struct);
 }
 
 ///@desc Adds the enemies kaos to a variable

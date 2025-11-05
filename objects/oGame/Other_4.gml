@@ -1,8 +1,14 @@
 
 
 //Round Started
-if room == rMain and room_last == rKaos
+if room == rMain
 {
-    //Next Round
 	nextRoundStarted();
 }
+
+//Kaos Started
+if room == rKaos
+{
+    kaosRoundStarted();
+}
+

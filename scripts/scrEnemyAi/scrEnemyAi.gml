@@ -74,6 +74,12 @@ function enemyShouldHeal()
         return true;
     }
     
+    //HEAL ME DAMMIT
+    if hp < 100 and enemyCheckChance(healWeight)
+    {
+        return true;
+    }
+    
     //Return False
     return false;
     

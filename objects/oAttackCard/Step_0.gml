@@ -15,6 +15,9 @@ var _shadowX = (x - (room_width/2))*.03;
 shadowX = clamp(shadowX,-6,6);
 shadowX = lerp(shadowX,_shadowX,.2);
 
+//Flash
+if flashAlpha > 0 then flashAlpha -= 0.03;
+
 //Ease
 image_xscale = lerp(image_xscale,1,.3);
 image_yscale = lerp(image_yscale,1,.3);

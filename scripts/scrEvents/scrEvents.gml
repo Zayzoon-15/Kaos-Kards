@@ -2,6 +2,13 @@
 ///@desc This event plays when the next round starts
 function nextRoundStarted()
 {
+    //Set Gamestate
+    gameState = GAMESTATES.PREPARE;
+    
+    //Remove Actions
+    ds_list_clear(playerActions);
+    ds_list_clear(enemyActions);
+    
 	//Reduce Assist Effects
 	reduceAssEffects(10,true);
 	reduceAssEffects(10,false);
@@ -10,7 +17,20 @@ function nextRoundStarted()
 	global.valueMult = 1;
 }
 
-///@desc Plays when the played kaos card is complete
+///@desc This event plays when the kaos part of the match starts
+function kaosRoundStarted()
+{
+    //Set Gamestate
+    gameState = GAMESTATES.KAOS;
+    
+    //Reset Slots
+    global.disabledSlots = {
+        player: array_create(4,false),
+        enemy : array_create(4,false)
+    };
+}
+
+///@desc This event plays when the played kaos card is complete
 function kaosCardDone()
 {
     //Destroy Kaos Card

@@ -75,6 +75,57 @@ dbgCreateList(_ref,[
 {name:"Beer",info: enemyInfo.beer},
 ]);
 
+//Hand
+dbg_view("Played Cards",false,30,30,250,300);
+
+dbgCreateButtons([
+{string:"Apply",action:function(){
+    
+    for (var i = 0; i < array_length(oDebug.dbgPlayerAction); i++) {
+    	var _info = struct_get_variable(actionCards,oDebug.dbgPlayerAction[i]);
+        ds_list_set(playerActions,i,{
+            info : _info,
+            value : 5
+        });
+    }
+    
+    for (var i = 0; i < array_length(oDebug.dbgEnemyAction); i++) {
+    	var _info = struct_get_variable(actionCards,oDebug.dbgEnemyAction[i]);
+        addEnemyAction(_info,5,i);
+    }
+    
+    ds_debug_print(playerActions,ds_type_list);
+    ds_debug_print(enemyActions,ds_type_list);
+}},
+]);
+
+dbg_section("Player Actions",true);
+
+dbgPlayerAction = [
+    ds_list_find_value(playerActions,0),
+    ds_list_find_value(playerActions,1),
+    ds_list_find_value(playerActions,2), 
+];
+var _p1 = ref_create(self,"dbgPlayerAction",0);
+var _p2 = ref_create(self,"dbgPlayerAction",1);
+var _p3 = ref_create(self,"dbgPlayerAction",2);
+dbg_text_input(_p1,"First Card");
+dbg_text_input(_p2,"Second Card");
+dbg_text_input(_p3,"Third Card");
+
+dbg_section("Enemy Actions",true);
+
+dbgEnemyAction = [
+    ds_list_find_value(enemyActions,0),
+    ds_list_find_value(enemyActions,1),
+    ds_list_find_value(enemyActions,2), 
+];
+var _e1 = ref_create(self,"dbgEnemyAction",0);
+var _e2 = ref_create(self,"dbgEnemyAction",1);
+var _e3 = ref_create(self,"dbgEnemyAction",2);
+dbg_text_input(_e1,"First Card");
+dbg_text_input(_e2,"Second Card");
+dbg_text_input(_e3,"Third Card");
 
 //Debug Overlay
 show_debug_overlay(false);

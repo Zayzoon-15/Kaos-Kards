@@ -1,11 +1,14 @@
 //Set Sprite
 sprite_index = card.info.sprite;
 
-//Animation
+//Image
 shake = 0;
+flashAlpha = 0;
+flashColor = c_white;
+
+//Animation
 angle = 0;
 curvePos = 0;
-curveSpd = 0.02;
 
 //Shadow
 shadowX = 0;
@@ -24,6 +27,11 @@ if card.info.type == CARDTYPES.KAOS
 alarm[0] = _actTime;
 
 //Functions
+
+/// @desc Make the card have juice
+/// @param {bool} [_stars] [True] If it should have stars
+/// @param {bool} [_angle] [True] If it should rotate
+/// @param {array<real>} [_angleAmount] [8,14] The amount it rotates [Lowest, Highest]
 cardJuice = function(_stars = true,_angle = true,_angleAmount = [8,14])
 {
     //Scale
@@ -42,12 +50,16 @@ cardJuice = function(_stars = true,_angle = true,_angleAmount = [8,14])
 	}
 }
 
+/// @desc Makes the card shake
 cardShake = function()
 {
     var _tween = TweenCreate(self,EaseLinear,TWEEN_MODE_ONCE,false,0,10,"curvePos",0,1);
     TweenPlay(_tween);
 }
 
+/// @desc The card hurt effect
+/// @param {any*} _value The damage amount
+/// @param {bool} [_stars] [True] If it should have stars
 cardHurt = function(_value,_stars = true)
 {
     //Shake
@@ -66,7 +78,11 @@ cardHurt = function(_value,_stars = true)
     }
 }
 
-cardFlash = function()
+/// @desc Makes the card flash
+/// @param {any*} [_flashAmount] [1] The amount it should flash
+/// @param {any*} [_flashColor] [c_white] The flash color
+cardFlash = function(_flashAmount = 1,_flashColor = c_white)
 {
-    
+    flashAlpha = _flashAmount;
+    flashColor = _flashColor;
 }

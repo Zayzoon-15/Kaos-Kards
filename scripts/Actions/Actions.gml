@@ -6,129 +6,128 @@
 
 /* HOW TO
  * All functions should look like this
- * function action(_card,_targetEnemy)
+ * function action(_targetEnemy)
 */
 
 
 
 ///@self oAttackCard
-function healAction(_card,_targetEnemy)
+function actionHeal(_targetEnemy)
 {
     //Juice
-    _card.cardJuice(false);
-    healthEffect(_card.x,_card.y,10,10,25,sprite_get_width(sCardBlank),sprite_get_height(sCardBlank));
-    numberEffect(_card.x,_card.y,_card.value);
+    cardJuice(false);
+    healthEffect(x,y,10,10,25,sprite_get_width(sCardBlank),sprite_get_height(sCardBlank));
+    numberEffect(x,y,value);
     
     //Give Health
     if _targetEnemy
     {
-        healPlayer(_card.value);
-    } else healEnemy(_card.value);
+        healPlayer(value);
+    } else healEnemy(value);
 }
 
 
 ///@self oAttackCard
-function shieldAction(_card,_targetEnemy)
+function actionShield(_targetEnemy)
 {
     //Juice
-    _card.cardShake();
+    cardShake();
     
     //Effect
-    instance_create_layer(_card.x,_card.y,"Attacks",oShield,{
-        value : _card.value,
-        card : _card
+    instance_create_layer(x,y,"Attacks",oShield,{
+        value : value,
+        card : self.id
     });
     
     //Give Temp Health
-    addEffect(attackEffects.shield,_card.value,!_targetEnemy);
+    addEffect(attackEffects.shield,value,!_targetEnemy);
 }
 
 
 ///@self oAttackCard
-function slashAction(_card,_targetEnemy)
+function actionSlash(_targetEnemy)
 {
     //Juice
-    _card.cardShake();
+    cardShake();
     
     //Create Sword
-    instance_create_layer(_card.x,_card.y,"Attacks",oSlashAttack,{
+    instance_create_layer(x,y,"Attacks",oSlashAttack,{
         targetEnemy : _targetEnemy,
-        value : _card.value,
-        card : _card
+        value : value,
+        card : self.id
     });
     
 }
 
 
 ///@self oAttackCard
-function breadAction(_card,_targetEnemy)
+function actionBread(_targetEnemy)
 {
     //Create Bread
-    instance_create_layer(_card.x,_card.y,"Attacks",oBreadAttack,{
+    instance_create_layer(x,y,"Attacks",oBreadAttack,{
         targetEnemy : _targetEnemy,
-        value : _card.value,
+        value : value,
         breadId : 1,
-        card : _card
+        card : self.id
     });
 }
 
 
 ///@self oAttackCard
-function laserAction(_card,_targetEnemy)
+function actionLaser(_targetEnemy)
 {
-    instance_create_layer(_card.x,_card.y,"Attacks",oLaserAttack,{
+    instance_create_layer(x,y,"Attacks",oLaserAttack,{
         targetEnemy : _targetEnemy,
-        value : _card.value,
-        card : _card
+        value : value,
+        card : self.id
     });
 }
 
 
 ///@self oAttackCard
-function punchAction(_card,_targetEnemy)
+function actionPunch(_targetEnemy)
 {
-    instance_create_layer(_card.x,_card.y,"Attacks",oFistAttack,{
+    instance_create_layer(x,y,"Attacks",oFistAttack,{
         targetEnemy : _targetEnemy,
-        value : _card.value,
-        card : _card
+        value : value,
+        card : self.id
     });
 }
 
 
 ///@self oAttackCard
-function poisonAction(_card,_targetEnemy)
+function actionPoison(_targetEnemy)
 {
     //Juice
-    _card.cardJuice(false);
+    cardJuice(false);
     
     //Apply Poison
-    addEffect(attackEffects.poison,_card.value,_targetEnemy);
+    addEffect(attackEffects.poison,value*.7,_targetEnemy);
 }
 
+
 ///@self oAttackCard
-function flameAceAction(_card,_targetEnemy)
+function actionFlameAce(_targetEnemy)
 {
 	//Juice
-	_card.cardJuice(false);
+	cardJuice(false);
 	
     //Create Ace
-    instance_create_layer(_card.x,_card.y,"Attacks",oFlameAceAttack,{
+    instance_create_layer(x,y,"Attacks",oFlameAceAttack,{
         targetEnemy : _targetEnemy,
-        value : _card.value,
-        card : _card
+        value : value,
+        card : self.id
     });
 }
 
+
 ///@self oAttackCard
-function mirrorAction(_card,_targetEnemy)
+function actionMirror(_targetEnemy)
 {
-	//Juice
-	//_card.cardJuice(true);
-	
 	//Create Mirror
-    instance_create_layer(_card.x,_card.y,"Attacks",oMirror,{
-        value : _card.value,
-        card : _card,
+    instance_create_layer(x,y,"Attacks",oMirror,{
+        value : value,
+        card : self.id,
         targetEnemy : _targetEnemy
     });
 }

@@ -1,6 +1,3 @@
-
-
-
 //Debug Mode
 if keyCheckPressed(global.keyDebug)
 {

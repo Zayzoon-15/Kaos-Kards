@@ -1,4 +1,9 @@
 
+//Value
+value /= 2;
+value = clamp(value,1,99);
+
+//Effect
 applyEffect = function()
 {
 	//Get List

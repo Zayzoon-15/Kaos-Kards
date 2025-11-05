@@ -1,9 +1,11 @@
 //Check Target Type
 if targetType2 == undefined then targetType2 = targetType1;
 
+//Set Disabled
+if disabled then used = true;
+
 //Touching Card
 card = instance_place(x,y,oCard);
-
 if !filled and !used
 {
     if card and (card.info.type == targetType1 or card.info.type == targetType2)

@@ -9,31 +9,15 @@ playerHand = undefined;
 playerDeck = [
 
 	//Action Cards
-    actionCards.mirror,
-    actionCards.mirror,
-    actionCards.mirror,
-    actionCards.mirror,
-    actionCards.mirror,
-    actionCards.mirror,
-    actionCards.mirror,
-    actionCards.mirror,
-    actionCards.mirror,
-    actionCards.mirror,
-    actionCards.mirror,
-    actionCards.mirror,
-    actionCards.mirror,
-    actionCards.mirror,
-    actionCards.mirror,
-    actionCards.mirror,
-    actionCards.mirror,
-    actionCards.mirror,
-    actionCards.mirror,
-    actionCards.mirror,
-    actionCards.mirror,
-    actionCards.mirror,
-    actionCards.mirror,
-    actionCards.mirror,
-
+    actionCards.poison,
+    actionCards.poison,
+    actionCards.poison,
+    actionCards.poison,
+    actionCards.poison,
+    actionCards.poison,
+    actionCards.poison,
+    
+    
 	////Dice Cards
 	//diceCards.upgrade,
 	//diceCards.reroll,

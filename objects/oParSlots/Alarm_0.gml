@@ -1,7 +1,7 @@
 ///@desc Slot Called
 
 //Slot Empty
-if !filled
+if !filled and !disabled
 {
     instance_create_layer(x,bbox_top,"Effects",oSkippedEffect);
     scale += .3;
