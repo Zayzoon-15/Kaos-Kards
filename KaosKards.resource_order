@@ -193,6 +193,7 @@
     {"name":"sFireIcon","order":2,"path":"sprites/sFireIcon/sFireIcon.yy",},
     {"name":"sFist","order":2,"path":"sprites/sFist/sFist.yy",},
     {"name":"sFreezeSlot","order":2,"path":"sprites/sFreezeSlot/sFreezeSlot.yy",},
+    {"name":"sGato","order":10,"path":"sprites/sGato/sGato.yy",},
     {"name":"sHealth","order":2,"path":"sprites/sHealth/sHealth.yy",},
     {"name":"sHealthBar","order":2,"path":"sprites/sHealthBar/sHealthBar.yy",},
     {"name":"sHealthBarFlipped","order":3,"path":"sprites/sHealthBarFlipped/sHealthBarFlipped.yy",},

@@ -8,17 +8,16 @@ playerHand = undefined;
 //Players Deck
 playerDeck = [
     
+    actionCards.gato,
+    actionCards.gato,
+    actionCards.gato,
     actionCards.mirror,
     actionCards.mirror,
     actionCards.mirror,
-    actionCards.mirror,
+    actionCards.poison,
+    actionCards.poison,
+    actionCards.poison,
     kaosCards.freeze,
-    kaosCards.freeze,
-    kaosCards.freeze,
-    kaosCards.freeze,
-    diceCards.upgrade,
-    diceCards.upgrade,
-    diceCards.upgrade,
 
 	//Action Cards
     //actionCards.poison,
