@@ -4,5 +4,5 @@ draw_sprite_ext(sprite_index,image_index,x,y,scale,scale,image_angle,image_blend
 //Disabled
 if disabled
 {
-    draw_sprite_ext(sMirror,0,x,y,1,1,0,c_white,1);
+    draw_sprite_ext(sFreezeSlot,0,x,y,1,1,0,c_white,1);
 }

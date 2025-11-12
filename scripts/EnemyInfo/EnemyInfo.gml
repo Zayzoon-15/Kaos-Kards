@@ -8,7 +8,7 @@ globalvar enemyInfo;
 enemyInfo = {
     
     //Main Crew
-    dog : new createEnemy("Dog the Duck",sDog,[actionCards.poison],[kaosCards.freeze],0,0,100),
+    dog : new createEnemy("Dog the Duck",sDog,[actionCards.slash,actionCards.bread],[kaosCards.freeze],0,0,100),
     
     angel : new createEnemy("Angel the Juvenile",sAngel,[actionCards.poison,actionCards.flamingAce,actionCards.laser],[kaosCards.high],100,100,0),
     

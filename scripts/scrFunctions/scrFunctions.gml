@@ -53,6 +53,7 @@ function setupText(_font,_halign,_valign,_color=c_white,_alpha=1)
 ///@desc Resets all draw values
 function resetDraw()
 {
+    gpu_set_blendmode(bm_normal);
     draw_set_color(c_white);
     draw_set_alpha(1);
     draw_set_font(fnMain);

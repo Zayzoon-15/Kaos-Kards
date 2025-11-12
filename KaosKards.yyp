@@ -263,6 +263,7 @@
     {"id":{"name":"sExplosion","path":"sprites/sExplosion/sExplosion.yy",},},
     {"id":{"name":"sFireIcon","path":"sprites/sFireIcon/sFireIcon.yy",},},
     {"id":{"name":"sFist","path":"sprites/sFist/sFist.yy",},},
+    {"id":{"name":"sFreezeSlot","path":"sprites/sFreezeSlot/sFreezeSlot.yy",},},
     {"id":{"name":"sHealth","path":"sprites/sHealth/sHealth.yy",},},
     {"id":{"name":"sHealthBar","path":"sprites/sHealthBar/sHealthBar.yy",},},
     {"id":{"name":"sHealthBarFlipped","path":"sprites/sHealthBarFlipped/sHealthBarFlipped.yy",},},

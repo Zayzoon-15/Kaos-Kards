@@ -72,7 +72,6 @@ function actionBread(_targetEnemy)
     });
 }
 
-
 ///@self oAttackCard
 function actionLaser(_targetEnemy)
 {

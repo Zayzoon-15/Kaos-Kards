@@ -7,15 +7,27 @@ playerHand = undefined;
 
 //Players Deck
 playerDeck = [
+    
+    actionCards.mirror,
+    actionCards.mirror,
+    actionCards.mirror,
+    actionCards.mirror,
+    kaosCards.freeze,
+    kaosCards.freeze,
+    kaosCards.freeze,
+    kaosCards.freeze,
+    diceCards.upgrade,
+    diceCards.upgrade,
+    diceCards.upgrade,
 
 	//Action Cards
-    actionCards.poison,
-    actionCards.poison,
-    actionCards.poison,
-    actionCards.poison,
-    actionCards.poison,
-    actionCards.poison,
-    actionCards.poison,
+    //actionCards.poison,
+    //actionCards.poison,
+    //actionCards.poison,
+    //actionCards.poison,
+    //actionCards.poison,
+    //actionCards.poison,
+    //actionCards.poison,
     
     
 	////Dice Cards
@@ -34,7 +46,7 @@ playerDeck = [
 ];
 
 //Stats
-global.maxHandSize = 100;//6;
-global.maxDiscards = 100;//round(array_length(playerDeck)/2);
+global.maxHandSize = 6;
+global.maxDiscards = round(array_length(playerDeck)/2);
 
 }

@@ -1,5 +1,5 @@
 //Check Target Type
-if targetType2 == undefined then targetType2 = targetType1;
+targetType2 ??= targetType1;
 
 //Set Disabled
 if disabled then used = true;
@@ -21,7 +21,7 @@ if filled and !used
 }
 
 //Used
-if used
+if used and !disabled
 {
     scale = lerp(scale,1,.2);
     image_alpha = lerp(image_alpha,.7,.2);
