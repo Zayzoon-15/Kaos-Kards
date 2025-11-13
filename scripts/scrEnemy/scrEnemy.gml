@@ -7,18 +7,28 @@
 ///@arg {array} _attacks The enemies attack cards (Example: [actionCards.bread, actionCards.slash])
 ///@arg {array} _kaos The enemies kaos cards (Example: [kaosCards.swoop])
 ///@arg {real} _healWeight How important healing is (Default = 100)
+///@arg {real} _healValue When should it consider healing (Default = 50)
 ///@arg {real} _defendWeight How important defending is (Default = 30)
-///@arg {real} _diceWeight How important the dice are (Default = 80)
-///If dice weight is low a kaos card will be placed
-function createEnemy(_name,_sprite,_attacks,_kaos,_healWeight = 100, _defendWeight = 30, _diceWeight = 80) constructor{
+///@arg {real} _defendValue When should it consider defending (Default = 60)
+///@arg {real} _diceWeight How important the dice are if low a kaos card will be placed (Default = 80)
+///@arg {real} _diceValue How many low dice before upgrading (Default = 2)
+function createEnemy(_name,_sprite,_attacks,_kaos,_healWeight = 100,_healValue = 50,_defendWeight = 30,_defendValue = 60, _diceWeight = 80, _diceValue = 2) constructor{
     
+    //Info
     name = _name;
     sprite = _sprite;
     attacks = _attacks;
     kaos = _kaos;
+    
+    //Weights
     healWeight = _healWeight;
     defendWeight = _defendWeight;
     diceWeight = _diceWeight;
+    
+    //Values
+    healValue = _healValue;
+    defendValue = _defendValue;
+    diceValue = _diceValue;
 }
 
 

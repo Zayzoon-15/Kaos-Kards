@@ -101,7 +101,7 @@ function actionPoison(_targetEnemy)
     cardJuice(false);
     
     //Apply Poison
-    addEffect(attackEffects.poison,value*.7,_targetEnemy);
+    addEffect(attackEffects.poison,value,_targetEnemy);
 }
 
 

@@ -223,6 +223,7 @@
     {"id":{"name":"seqFadeOut","path":"sequences/seqFadeOut/seqFadeOut.yy",},},
     {"id":{"name":"shFlash","path":"shaders/shFlash/shFlash.yy",},},
     {"id":{"name":"sAce","path":"sprites/sAce/sAce.yy",},},
+    {"id":{"name":"sAceFire","path":"sprites/sAceFire/sAceFire.yy",},},
     {"id":{"name":"sAlien","path":"sprites/sAlien/sAlien.yy",},},
     {"id":{"name":"sAngel","path":"sprites/sAngel/sAngel.yy",},},
     {"id":{"name":"sArrow","path":"sprites/sArrow/sArrow.yy",},},

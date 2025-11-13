@@ -161,6 +161,8 @@
     {"name":"TGMX_Experimental","order":12,"path":"scripts/TGMX_Experimental/TGMX_Experimental.yy",},
     {"name":"TGMX_System","order":1,"path":"scripts/TGMX_System/TGMX_System.yy",},
     {"name":"seqFadeOut","order":1,"path":"sequences/seqFadeOut/seqFadeOut.yy",},
+    {"name":"sAce","order":11,"path":"sprites/sAce/sAce.yy",},
+    {"name":"sAceFire","order":10,"path":"sprites/sAceFire/sAceFire.yy",},
     {"name":"sAlien","order":5,"path":"sprites/sAlien/sAlien.yy",},
     {"name":"sAngel","order":4,"path":"sprites/sAngel/sAngel.yy",},
     {"name":"sBeer","order":3,"path":"sprites/sBeer/sBeer.yy",},

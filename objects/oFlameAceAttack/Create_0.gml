@@ -8,7 +8,7 @@ posBasedOnCard = true;
 //Stats
 hitOthers = true;
 currentlyDamaging = true;
-value /= 2;
+value *= .7;
 
 //Move
 moveToDir(13);
@@ -24,7 +24,7 @@ action = function()
     hurtEffect(x,y);
     
     //Effects
-	addEffect(attackEffects.fire,value*.7,targetEnemy);
+	addEffect(attackEffects.fire,value*.6,targetEnemy);
 	
     //Destroy
     instance_destroy();

@@ -9,6 +9,11 @@ healWeight = global.currentEnemy.healWeight;
 defendWeight = global.currentEnemy.defendWeight;
 diceWeight = global.currentEnemy.diceWeight;
 
+//Value
+healValue = global.currentEnemy.healValue;
+defendValue = global.currentEnemy.defendValue;
+diceValue = global.currentEnemy.diceValue;
+
 //Cards Available
 attacks = global.currentEnemy.attacks;
 kaos = global.currentEnemy.kaos;
@@ -20,11 +25,11 @@ specialUsed = false;
 //Dice Values
 diceRoll = function()
 {
-    diceValues = [];
+    diceOutcome = [];
     repeat (3) {
         randomize();
         var _diceNum = irandom_range(1,6);
-    	array_push(diceValues,_diceNum);
+    	array_push(diceOutcome,_diceNum);
     }
 }
 diceRoll();
@@ -68,7 +73,7 @@ upgrade = function()
     //Upgrade Dice
     randomize();
     var _targetDice = choose(0,2);
-    diceValues[_targetDice] += irandom_range(diceCards.upgrade.range.min,diceCards.upgrade.range.max);
+    diceOutcome[_targetDice] += irandom_range(diceCards.upgrade.range.min,diceCards.upgrade.range.max);
     
     //Set Special
     specialUsed = true;
@@ -100,6 +105,7 @@ var _kaos = new enemyActionNode(placeKaos);
 var _healCheck = new enemyDecisionNode(enemyShouldHeal(),_heal,_attack);
 var _healCheckAgain = new enemyDecisionNode(enemyShouldHealAgain(),_heal,_attack)
 var _defendCheck = new enemyDecisionNode(enemyShouldDefend(),_defend,_healCheck);
+var _defendCheckAgain = new enemyDecisionNode(enemyShouldDefend(),_defend,_healCheckAgain);
 var _upgradeDice = new enemyDecisionNode(enemyShouldUpgrade(),_upgrade,_kaos);
 var _rerollDice = new enemyDecisionNode(enemyRolledLow(),_reroll,_upgradeDice);
 
@@ -107,12 +113,11 @@ var _rerollDice = new enemyDecisionNode(enemyRolledLow(),_reroll,_upgradeDice);
 chosenSpecialCard = _rerollDice;
 
 chosenActionCards = [
-_defendCheck,
-_healCheckAgain,
-_attack,
+_defendCheck, //Defend Or Heal (if all good then attack)
+_defendCheckAgain, //Defend, Heal or Attack
+_healCheckAgain, //Heal or Attack
 
 ];
-
 
 //Use Special
 chosenSpecialCard.evaluate();
@@ -147,7 +152,7 @@ for (var i = 0; i < array_length(chosenActionCards); i++) {
         //Get Card Value
         randomize();
         var _cardValue = irandom_range(_card.range.min,_card.range.min);
-        var _totalValue = _cardValue + diceValues[i];
+        var _totalValue = _cardValue + diceOutcome[i];
         
         //Add Enemy Action
         addEnemyAction(_card,_totalValue,i);

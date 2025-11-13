@@ -8,7 +8,7 @@ hitOthers = false; //If It Should Damage Cards
 currentlyDamaging = false; //If Currrently Damaging
 
 //Reduce Value
-value *= .8;
+value *= .9;
 value = clamp(value,0,99);
 
 

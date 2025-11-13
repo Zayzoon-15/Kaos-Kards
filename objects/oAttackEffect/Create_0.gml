@@ -1,6 +1,6 @@
 
 //Value
-value /= 2;
+value *= .55;
 value = clamp(value,1,99);
 
 //Effect

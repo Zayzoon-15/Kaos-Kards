@@ -22,12 +22,12 @@ function enemyRolledLow()
     var _lowDice = 0;
     
     //Check If Dice Low
-    if diceValues[0] <= 3 then _lowDice++;
-    if diceValues[1] <= 3 then _lowDice++;
-    if diceValues[2] <= 3 then _lowDice++;
+    if diceOutcome[0] <= 3 then _lowDice++;
+    if diceOutcome[1] <= 3 then _lowDice++;
+    if diceOutcome[2] <= 3 then _lowDice++;
     
     //If Low
-    if _lowDice >= 2 and enemyCheckChance(diceWeight)
+    if _lowDice >= diceValue and enemyCheckChance(diceWeight)
     {
         return true;
     } else return false;
@@ -45,7 +45,7 @@ function enemyShouldDefend()
 {
     if hp <= 30 then return false;
     
-    if hp <= 60 and enemyCheckChance(defendWeight)
+    if hp <= defendValue and enemyCheckChance(defendWeight)
     {
         return true;
     } else return false;
@@ -54,28 +54,19 @@ function enemyShouldDefend()
 
 function enemyShouldUpgrade()
 {
-    if enemyCheckChance(diceWeight)
-    {
-        return true;
-    } else return false;
+    return enemyCheckChance(diceWeight);
 } 
 
 function enemyShouldHeal()
 {
     //Heal If Low
-    if hp <= 50 and enemyCheckChance(healWeight)
+    if hp <= healValue and enemyCheckChance(healWeight)
     {
         return true;
     }
     
     //Heal If Low But Not Bad
-    if hp < 70 and enemyCheckChance(10)
-    {
-        return true;
-    }
-    
-    //HEAL ME DAMMIT
-    if hp < 100 and enemyCheckChance(healWeight)
+    if hp < clamp(healValue+20,0,95) and enemyCheckChance(10)
     {
         return true;
     }
@@ -88,7 +79,19 @@ function enemyShouldHeal()
 function enemyShouldHealAgain()
 {
     //Heal If Low
-    if hp+15 <= 50 and enemyCheckChance(healWeight*.7)
+    if hp+15 <= healValue and enemyCheckChance(healWeight*.7)
+    {
+        return true;
+    }
+    
+    //Return False
+    return false;
+}
+
+function enemyShouldDefendAgain()
+{
+    //Defend If Low
+    if hp+25 <= defendValue and enemyCheckChance(defendWeight*.4)
     {
         return true;
     }

@@ -21,7 +21,8 @@ if _collide
             if !other.reflected
             {
                 //Change Value
-                other.card.value += value/3;
+                other.card.value += value/5;
+                other.card.value = clamp(other.card.value,1,99);
                 
                 //Action
                 _action = card.card.info.action;
