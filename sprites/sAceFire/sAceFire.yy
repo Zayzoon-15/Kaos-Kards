@@ -21,6 +21,7 @@
   "height":106,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"e9fb58b8-346d-4e64-b998-06058e14002b","blendMode":2,"displayName":"pasteLayer","isLocked":false,"name":"e9fb58b8-346d-4e64-b998-06058e14002b","opacity":75.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"f966e7fc-d51c-4305-b57b-2bc5996be9ae","blendMode":0,"displayName":"default","isLocked":false,"name":"f966e7fc-d51c-4305-b57b-2bc5996be9ae","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sAceFire",

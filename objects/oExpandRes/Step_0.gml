@@ -1,22 +1,33 @@
-//Get Values
-var _scale = window_get_height()/baseH;
-var _targetH = window_get_height()/_scale;
-var _targetWidth = window_get_width()/_scale;
+//Get Window Size
+var _winW = window_get_width();
+var _winH = window_get_height();
+
+//Exit if Minimized or Invalid
+if (_winW <= 0 || _winH <= 0) exit;
+
+//Get Scale Based on Height
+var _scale = _winH / baseH;
+
+//Get Width
+var _targetWidth = _winW / _scale;
 
 //Set Camera Size
-camH = baseH;
 camW = _targetWidth;
+camH = baseH;
 
-//Set Camera Position
-var _camX = room_width/2-camW/2;
+//Get Camera Position
+var _camX = room_width/2 - camW/2;
 var _camY = 0;
 
-//Set Gui
-display_set_gui_size(camW,camH);
+//Set GUI Size
+display_set_gui_size(baseW, baseH);
 
-//Exit if Minimized
-if _scale <= 0 then exit;
+//Resize Surface
+if surface_exists(application_surface) and _winW >= baseW and _winH >= baseH 
+{
+    surface_resize(application_surface, round(camW), round(camH));
+}
 
-//Set Camera Values
-camera_set_view_pos(view_camera[0],_camX,_camY);
-camera_set_view_size(view_camera[0],camW,camH);
+//Set Camera
+camera_set_view_pos(view_camera[0], _camX, _camY);
+camera_set_view_size(view_camera[0], camW, camH);
