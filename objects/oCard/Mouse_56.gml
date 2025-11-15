@@ -20,7 +20,7 @@ if state == CARDSTATE.GRABBED
                 {
                     if state == CARDSTATE.PLACED and slot == _actionSlot.id
                     {
-                        //Switch With Other Slot
+                        //Swith With Other Slot
                         if other.slot != noone
                         {
                             var _targetSlot = other.slot;
@@ -64,7 +64,7 @@ if state == CARDSTATE.GRABBED
                     {
                         if state == CARDSTATE.PLACED and slot == _specialSlot.id
                         {
-                            //Switch With Other Slot
+                            //Swith With Other Slot
                             if other.slot != noone
                             {
                                 var _targetSlot = other.slot;
