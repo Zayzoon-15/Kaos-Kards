@@ -31,7 +31,7 @@ if dragging
 //Clamp
 currentAmount = clamp(currentAmount,0,100);
 
-//Change Var
+//Change Variable
 if struct_exists(info,"changeVar")
 {
 	variable_global_set(info.changeVar,currentAmount);

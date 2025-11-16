@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sgKaos",
+  "audioGroupId":{
+    "name":"agMusic",
+    "path":"audiogroups/agMusic",
+  },
+  "bitDepth":1,
+  "channelFormat":1,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":36.57143,
+  "exportDir":"",
+  "name":"sgKaos",
+  "parent":{
+    "name":"Music",
+    "path":"folders/Sounds/Music.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sgKaos.ogg",
+  "volume":1.0,
+}

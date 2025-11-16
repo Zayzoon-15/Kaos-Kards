@@ -12,7 +12,16 @@ if touchingMouse() and canHover
 if canHover then image_index = 0; else image_index = 1;
 
 //Info
-drawTipBox(infoText,showInfoTop,11);
+if drawInfo
+{
+    drawTipBox(infoText,showInfoTop,11);
+}
+
+//Size To Text
+if sizeToText
+{
+    image_xscale = (string_width(text)/60) * textTargetSize;
+}
 
 //Ease
 boxX = lerp(boxX,targetX,.2);

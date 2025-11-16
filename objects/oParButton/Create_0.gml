@@ -24,10 +24,12 @@ canPress = true;
 buttonUsed = false;
 
 //Info
+drawInfo = true;
 showInfoTop = true;
 infoText = "This button does something";
 
 //Text
+sizeToText = false;
 textTargetSize = 2;
 textSize = textTargetSize;
 text = "Button";

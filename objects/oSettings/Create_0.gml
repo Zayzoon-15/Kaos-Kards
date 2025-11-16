@@ -7,9 +7,11 @@ createSettings = function()
 	global.paused = true;
 	
 	#region Deactiveate
+    audio_pause_all();
 	instance_deactivate_all(true);
 	instance_activate_object(oGame);
 	instance_activate_object(oExpandRes);
+    instance_activate_object(oSound);
 	
 	#endregion
 	
@@ -66,5 +68,6 @@ destroySettings = function()
 	instance_destroy(oSettingsSubMenu);
 	
 	//Activate
+    audio_resume_all();
 	instance_activate_all();
 }

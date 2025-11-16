@@ -32,8 +32,8 @@ function getSettingsButtons(_menu)
 					changeVar : "sfxVol"
 				}),
 				new createSettingsButton("Unfocused Mute",oSettingsCheck,{
-					action : function(_checked){global.unFocusMute = _checked;},
-					checked : function(){return global.unFocusMute;},
+					action : function(_checked){global.unfocusMute = _checked;},
+					checked : function(){return global.unfocusMute;},
 				}),
 			];
 		break;
@@ -114,8 +114,8 @@ function getSettingsButtons(_menu)
 			_buttons = [
 				new createSettingsButton("Haptic Feedback",oParSettingsBox),
 				new createSettingsButton("Double Tap For Buttons",oSettingsCheck,{
-					action : function(_checked){global.unFocusMute = _checked;},
-					checked : function(){return global.unFocusMute;},
+					action : function(_checked){global.unfocusMute = _checked;},
+					checked : function(){return global.unfocusMute;},
 				}),
 			];
 			}

@@ -61,11 +61,9 @@ if os_type == os_android or os_type == os_ios then global.mobile = true;
 
 #endregion
 
-//Load Save
-
+//Load Groups
+audio_group_load(agMusic);
+audio_group_load(agSfx);
 
 //Set Window
 setWindowToRes();
-
-//Start Game
-room_goto_next();

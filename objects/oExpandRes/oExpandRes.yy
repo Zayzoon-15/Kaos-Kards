@@ -9,8 +9,8 @@
   "name":"oExpandRes",
   "overriddenProperties":[],
   "parent":{
-    "name":"Managers",
-    "path":"folders/Objects/Managers.yy",
+    "name":"_Managers",
+    "path":"folders/Objects/_Managers.yy",
   },
   "parentObjectId":null,
   "persistent":true,

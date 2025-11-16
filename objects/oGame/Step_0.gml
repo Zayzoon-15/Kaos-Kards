@@ -1,4 +1,3 @@
-
 //Fullscreen
 if keyCheckPressed(global.keyFullscreen)
 {

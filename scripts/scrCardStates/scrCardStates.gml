@@ -48,7 +48,14 @@ function cardStateHand(){
 	}
 	
     //Set Hover
-	hover = touchingMouse() and !global.holdingCard and !_touchingOthers;
+	if touchingMouse() and !global.holdingCard and !_touchingOthers
+    {
+        //Sound
+        if !hover then audio_play_sound(snCardHover,0,false);
+        
+        //Set Hover
+        hover = true;
+    } else hover = false;
 	
     //Hovered
     if hover
@@ -159,14 +166,23 @@ function cardStateGrabbed()
 ///@self oCard
 function cardStatePlaced()
 {
+    //Can Grab
+    canGrab = !global.holdingCard;
+    
     #region Hover
     
     var _cardX = slot.x;
     var _cardY = slot.y;
     
-	if touchingMouse() and !global.holdingCard
+    //Set Hover
+	if touchingMouse() and canGrab
 	{
+        //Sound
+        if !hover then audio_play_sound(snCardHover,0,false);
+        
+        //Set Hover
 		hover = true;
+        
 	} else hover = false;
 	
     //Hovered
@@ -215,22 +231,12 @@ function cardStatePlaced()
     
     #endregion
     
-    
     //Slot
     slot.filled = true;
     wasPlaced = true;
     wasOnSlot = true;
     
-    
     //Info Box
-    if canGrab
-    {
-        drawCardText(info);
-    }
-    
-    
-    //Can Grab
-    canGrab = !global.holdingCard;
-    
+    if canGrab then drawCardText(info);
 }
 

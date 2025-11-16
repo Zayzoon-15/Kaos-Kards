@@ -3,7 +3,7 @@ var _winW = window_get_width();
 var _winH = window_get_height();
 
 //Exit if Minimized or Invalid
-if (_winW <= 0 || _winH <= 0) exit;
+if _winW <= 0 or _winH <= 0 then exit;
 
 //Get Scale Based on Height
 var _scale = _winH / baseH;

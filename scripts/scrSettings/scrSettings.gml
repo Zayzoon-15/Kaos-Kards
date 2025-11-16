@@ -12,7 +12,7 @@ function initSettings()
 	global.masterVol = 50;
 	global.musicVol = 50;
 	global.sfxVol = 50;
-	global.unFocusMute = false;
+	global.unfocusMute = false;
 	
 	//Input
 	global.keyDiscard = ord("Z");

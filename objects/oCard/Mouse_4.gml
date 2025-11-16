@@ -14,6 +14,7 @@ if canGrab and !global.holdingCard and canMove and gameState == GAMESTATES.PREPA
     
     //Set Grab
     canGrab = false;
+    hover = false;
     global.holdingCard = true;
     
     //Set State

@@ -21,7 +21,7 @@ text = "Continue";
 action = function()
 {
     //Go To Kaos Room
-    transStart(rMain,seqFadeOut,seqFadeIn);
+    transStart(rPrepare,seqFadeOut,seqFadeIn);
     
     //Don't Hover
     canHover = false;

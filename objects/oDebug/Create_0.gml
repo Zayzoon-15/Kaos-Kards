@@ -62,7 +62,7 @@ dbgCreateButtons([
 //Rooms
 dbg_view("Rooms",false,30,30,250,300);
 dbgCreateButtons([
-{string:"Prepare Room",action:function(){transStart(rMain);}},
+{string:"Prepare Room",action:function(){transStart(rPrepare);}},
 {string:"Enemy Room",action:function(){transStart(rEnemy);}},
 ]);
 

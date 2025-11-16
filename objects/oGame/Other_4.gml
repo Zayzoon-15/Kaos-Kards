@@ -1,7 +1,7 @@
 
 
 //Round Started
-if room == rMain
+if room == rPrepare
 {
 	nextRoundStarted();
 }

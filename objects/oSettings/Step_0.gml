@@ -1,5 +1,4 @@
-
-
+//Pause
 if keyCheckPressed(global.keyPause) and !global.midTrans
 {
 	if global.paused
