@@ -9,6 +9,13 @@ if canHover and canPress and !global.midTrans
     squash(image_xscale+_growSize,image_yscale+_growSize);
     textSize += _growSize;
     
+    //Sound
+    audioPlaySfx(soundPressed);
+    
+    //Set Pressed
     pressed = true;
     
-} else shake += 5;
+} else {
+    audioPlaySfx(snDeny);
+    shake += 5;
+}

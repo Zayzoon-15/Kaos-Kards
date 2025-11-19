@@ -14,7 +14,7 @@ if canHover then image_index = 0; else image_index = 1;
 //Info
 if drawInfo
 {
-    drawTipBox(infoText,showInfoTop,11);
+    drawTipBox(infoText,showInfoTop,false,11);
 }
 
 //Size To Text

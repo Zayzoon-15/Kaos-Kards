@@ -34,6 +34,10 @@ textTargetSize = 2;
 textSize = textTargetSize;
 text = "Button";
 
+//Sound
+soundHover = [snBtnHover1,snBtnHover2];
+soundPressed = snBtnPress;
+
 //Size
 setSize(2,.85);
 

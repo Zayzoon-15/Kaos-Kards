@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snFire1",
+  "audioGroupId":{
+    "name":"agSfx",
+    "path":"audiogroups/agSfx",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.9230839,
+  "exportDir":"",
+  "name":"snFire1",
+  "parent":{
+    "name":"Actions",
+    "path":"folders/Sounds/Sfx/Actions.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snFire1.ogg",
+  "volume":1.0,
+}

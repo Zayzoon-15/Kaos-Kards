@@ -51,7 +51,7 @@ function cardStateHand(){
 	if touchingMouse() and !global.holdingCard and !_touchingOthers
     {
         //Sound
-        if !hover then audio_play_sound(snCardHover,0,false);
+        if !hover then audioPlaySfx(snCardHover);
         
         //Set Hover
         hover = true;
@@ -178,7 +178,7 @@ function cardStatePlaced()
 	if touchingMouse() and canGrab
 	{
         //Sound
-        if !hover then audio_play_sound(snCardHover,0,false);
+        if !hover then audioPlaySfx(snCardHover);
         
         //Set Hover
 		hover = true;

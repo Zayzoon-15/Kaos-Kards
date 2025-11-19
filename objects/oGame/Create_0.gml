@@ -31,6 +31,10 @@ global.enemyTempHp = 0;
 global.playerHpIcons = [];
 global.enemyHpIcons = [];
 
+//Meter
+global.playerComboMeter = 0;
+global.enemyComboMeter = 0;
+
 //Actions
 globalvar playerActions, enemyActions, playerKaos, enemyKaos;
 playerActions = ds_list_create();

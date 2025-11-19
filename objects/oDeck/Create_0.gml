@@ -55,4 +55,7 @@ drawCard = function(){
     cardsInPlay ++;
     drawTime = 10;
     
+    //Sound
+    audioPlaySfx([snCardDraw1,snCardDraw2,snCardDraw3]);
+    
 }

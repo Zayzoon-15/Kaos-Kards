@@ -1,6 +1,7 @@
 ///@desc Get Values
 
-randomize();
+//Randomise;
+randomise();
 
 //Get Range
 if info.range != undefined
@@ -10,3 +11,6 @@ if info.range != undefined
 
 //Juice
 cardJuice();
+
+//Sound
+audioPlaySfx(snCardCombine,.95,1.05);

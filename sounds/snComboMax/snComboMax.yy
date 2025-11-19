@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snComboMax",
+  "audioGroupId":{
+    "name":"agSfx",
+    "path":"audiogroups/agSfx",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":1.3749887,
+  "exportDir":"",
+  "name":"snComboMax",
+  "parent":{
+    "name":"Ui",
+    "path":"folders/Sounds/Sfx/Ui.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snComboMax.ogg",
+  "volume":1.0,
+}

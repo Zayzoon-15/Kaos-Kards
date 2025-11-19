@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snDiscard3",
+  "audioGroupId":{
+    "name":"agSfx",
+    "path":"audiogroups/agSfx",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.0,
+  "exportDir":"",
+  "name":"snDiscard3",
+  "parent":{
+    "name":"Game",
+    "path":"folders/Sounds/Sfx/Game.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snDiscard3.ogg",
+  "volume":1.0,
+}

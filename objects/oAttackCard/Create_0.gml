@@ -40,7 +40,7 @@ cardJuice = function(_stars = true,_angle = true,_angleAmount = [8,14])
     //Stars
     if _stars
     {
-        starEffect(x,y,8,10,15);
+        starEffect(x,y,8,false,10,15);
     }
     
     //Angle
@@ -74,7 +74,7 @@ cardHurt = function(_value,_stars = true)
     //Stars
     if _stars
     {
-        starEffect(x,y,5,20,25);
+        starEffect(x,y,5,false,20,25);
     }
 }
 

@@ -38,7 +38,7 @@ if tipOnTop
 tipBoxString = $"{_string}\nTemp Health:{floor(_hp)}%";
 
 //Draw Info
-drawTipBox(tipBoxString,tipOnTop,_dist,1,true);
+drawTipBox(tipBoxString,tipOnTop,true,_dist,1);
 
 #endregion
 

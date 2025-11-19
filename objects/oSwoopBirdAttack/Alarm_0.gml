@@ -2,7 +2,7 @@
 
 //Effect
 var _starOffset = 30;
-starEffect(x,y,15,_starOffset,_starOffset);
+starEffect(x,y,15,false,_starOffset,_starOffset);
 
 //Hurt
 hurtPlayer(value);

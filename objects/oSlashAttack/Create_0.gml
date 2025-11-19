@@ -7,6 +7,9 @@ flipSprite = true;
 //Stats
 currentlyDamaging = false;
 
+//Sound
+audioPlaySfx(snSlash);
+
 //Functions
 action = function()
 {

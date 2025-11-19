@@ -12,7 +12,7 @@ draw_sprite_ext(sprite_index, image_index, x+shadowX+_shakeX, y+shadowY+_shakeY,
 draw_sprite_ext(sprite_index,image_index,boxX+_shakeX,boxY+_shakeY,xscale,yscale,image_angle,image_blend,image_alpha);
 
 //Draw Text
-setupText(fnMain,fa_center,fa_middle,c_white,image_alpha);
+textSetup(fnMain,fa_center,fa_middle,c_white,image_alpha);
 draw_text_transformed(boxX+_shakeX,boxY+_shakeY,text,textSize,textSize,0);
 
 

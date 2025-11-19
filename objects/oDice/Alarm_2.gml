@@ -1,7 +1,7 @@
 ///@desc Go To Slot
 
 //Set State
-state = DICESTATE.COMBINE;
+state = diceStates.combine;
 
 //Skipped
 if targetSlot == undefined{ 

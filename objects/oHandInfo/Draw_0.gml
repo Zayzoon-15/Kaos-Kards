@@ -5,7 +5,7 @@ var _rectRound = UIBOX_RAD;
 drawRectOutlined(x-_halfWidth-widthMargin,y-height-(heightMargin*2),x+_halfWidth+widthMargin,y,_rectRound);
 
 //Draw Text
-setupText(fnMain,fa_center,fa_top,c_white,1);
+textSetup(fnMain,fa_center,fa_top,c_white,1);
 draw_text_ext_transformed(x,y-height-heightMargin,text,-1,maxWidth,1,1,0);
 
 //Reset

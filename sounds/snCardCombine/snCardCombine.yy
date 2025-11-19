@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snCardCombine",
+  "audioGroupId":{
+    "name":"agSfx",
+    "path":"audiogroups/agSfx",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.96154195,
+  "exportDir":"",
+  "name":"snCardCombine",
+  "parent":{
+    "name":"Game",
+    "path":"folders/Sounds/Sfx/Game.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snCardCombine.ogg",
+  "volume":1.0,
+}

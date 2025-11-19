@@ -19,3 +19,6 @@ card = noone;
 var _slot = global.disabledSlots.player[slotId];
 if room == rEnemy then _slot = global.disabledSlots.enemy[slotId];
 disabled = _slot;
+
+//Sound
+if disabled then audioPlaySfx(snFreeze,.95,1.05);

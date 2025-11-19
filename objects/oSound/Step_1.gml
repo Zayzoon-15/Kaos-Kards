@@ -3,7 +3,7 @@
 //Set Targets
 var _ease = .3;
 var _masterTarget = global.masterVol/100;
-var _musicTarget = global.musicVol/200;
+var _musicTarget = 0//global.musicVol/200;
 var _sfxTarget = global.sfxVol/40;
 
 //Unfocus Mute

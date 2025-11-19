@@ -42,6 +42,9 @@ hitEffect = function(_lastTemp)
     //Randomize
     randomize();
     
+    //Sound
+    audioPlaySfx([snHurt1,snHurt2],.9,1.1);
+    
     //Hit Stun
     startHitStun = false;
     alarm[0] = 60;
@@ -60,5 +63,5 @@ gainEffect = function()
     randomize();
     
     //Effects
-    healthEffect(x,y,10,30,15);
+    healthEffect(x,y,10,false,30,15);
 }

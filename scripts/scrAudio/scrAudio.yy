@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scrBroadcasts",
+  "%Name":"scrAudio",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scrBroadcasts",
+  "name":"scrAudio",
   "parent":{
     "name":"Game",
     "path":"folders/Scripts/Game.yy",

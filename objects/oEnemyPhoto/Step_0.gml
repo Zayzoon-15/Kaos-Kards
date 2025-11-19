@@ -1,6 +1,6 @@
 
 //Play Animation
-loopMultAnims(currentAnim,4);
+spriteLoopFrames(currentAnim,4);
 
 //Draw Info
 drawTipBox(global.currentEnemy.name, false);

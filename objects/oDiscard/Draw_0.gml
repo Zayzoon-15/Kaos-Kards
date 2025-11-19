@@ -20,7 +20,7 @@ var _y = y - (sprite_width/2) - 10;
 drawRectOutlined(_x-_halfWidth-widthMargin,_y-height-(heightMargin*2),_x+_halfWidth+widthMargin,_y,_rectRound,1,c_black,c_white,UIBOX_ALPHA*boxAlpha,1*boxAlpha);
 
 //Draw Text
-setupText(fnMain,fa_center,fa_top,c_white,boxAlpha);
+textSetup(fnMain,fa_center,fa_top,c_white,boxAlpha);
 draw_text_ext_transformed(_x,_y-height-(heightMargin/2),_text,-1,maxWidth,1,1,0);
 
 //Reset Draw

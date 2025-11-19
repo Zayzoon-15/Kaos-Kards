@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snComboTick",
+  "audioGroupId":{
+    "name":"agSfx",
+    "path":"audiogroups/agSfx",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.45090702,
+  "exportDir":"",
+  "name":"snComboTick",
+  "parent":{
+    "name":"Ui",
+    "path":"folders/Sounds/Sfx/Ui.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snComboTick.ogg",
+  "volume":1.0,
+}

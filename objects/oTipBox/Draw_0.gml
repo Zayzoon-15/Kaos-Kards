@@ -19,7 +19,7 @@ if top
 drawRectOutlined(x-_halfWidth-widthMargin,_Boxy1,x+_halfWidth+widthMargin,_Boxy2,_rectRound,1,c_black,c_white,UIBOX_ALPHA*textAlpha,1*textAlpha);
 
 //Draw Text
-setupText(fnMain,fa_center,fa_top,c_white,textAlpha);
+textSetup(fnMain,fa_center,fa_top,c_white,textAlpha);
 draw_text_ext_transformed(x,_textY,text,-1,maxWidth,size,size,0);
 
 //Reset

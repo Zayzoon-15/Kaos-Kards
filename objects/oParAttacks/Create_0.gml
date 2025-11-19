@@ -27,7 +27,7 @@ hurtEffect = function(_x = x,_y = y)
         //Stars
         var _starX = (sprite_width/2)-20;
         var _starY = (sprite_height/2)-25;
-        starEffect(_x,_y,5,20,25);
+        starEffect(_x,_y,5,false,20,25);
     }
     
     //Card Effect

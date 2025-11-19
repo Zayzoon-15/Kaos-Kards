@@ -14,7 +14,10 @@ value *= .7;
 moveToDir(13);
 
 //Set Size
-setSize(.7,.7);
+setSize(1);
+
+//Sound
+audioPlaySfx(snFire1,.95,1.05);
 
 //Action
 action = function()
@@ -22,6 +25,9 @@ action = function()
     //Damage
     damageTarget();
     hurtEffect(x,y);
+    
+    //Sound
+    audioPlaySfx(snFire2,.95,1.05);
     
     //Effects
 	addEffect(attackEffects.fire,value*.6,targetEnemy);

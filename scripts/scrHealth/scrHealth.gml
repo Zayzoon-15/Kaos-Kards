@@ -81,7 +81,7 @@ function healEnemy(_value)
         win(false);
         
         //Health Effect
-        healthEffect(x,y,10,10,15);
+        healthEffect(x,y,10,false,10,15);
     }
 	
 	//Add Mult

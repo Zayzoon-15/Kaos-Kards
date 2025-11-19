@@ -32,7 +32,7 @@ win = function(_stars = true)
     //Stars
     if _stars
     {
-        starEffect(x,y,10,10,15);
+        starEffect(x,y,10,false,10,15);
     }
     
     //Start Reset

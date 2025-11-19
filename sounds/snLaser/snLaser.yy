@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snLaser",
+  "audioGroupId":{
+    "name":"agSfx",
+    "path":"audiogroups/agSfx",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":3.3605669,
+  "exportDir":"",
+  "name":"snLaser",
+  "parent":{
+    "name":"Actions",
+    "path":"folders/Sounds/Sfx/Actions.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snLaser.ogg",
+  "volume":1.0,
+}

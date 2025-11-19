@@ -50,7 +50,7 @@ for (var i = 0; i < ds_list_size(targetList); ++i) {
 }
 
 //Draw Info
-drawTipBox(tipBoxString,tipOnTop,_dist,1,true);
+drawTipBox(tipBoxString,tipOnTop,true,_dist,1);
 
 #endregion
 

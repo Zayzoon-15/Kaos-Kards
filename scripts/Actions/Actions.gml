@@ -16,7 +16,7 @@ function actionHeal(_targetEnemy)
 {
     //Juice
     cardJuice(false);
-    healthEffect(x,y,10,10,25,sprite_get_width(sCardBlank),sprite_get_height(sCardBlank));
+    healthEffect(x,y,10,true,10,25,sprite_get_width(sCardBlank),sprite_get_height(sCardBlank));
     numberEffect(x,y,value);
     
     //Give Health

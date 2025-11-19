@@ -5,15 +5,20 @@
 ///@arg {real} _x The x center position of the stars
 ///@arg {real} _y The y center position of the stars
 ///@arg {real} _amount The amount of stars to spawn (Default = 5)
+///@arg {bool} _sound If it should play the star sound effect (Default = true)
 ///@arg {real} _xOffset The x offset of the effect (Default = 30)
 ///@arg {real} _yOffset The y offset of the effect (Default = 30)
 ///@arg {real} _width The width (Default = sprite_width)
 ///@arg {real} _height The height (Default = sprite_height)
-function starEffect(_x,_y,_amount = 5,_xOffset = 30,_yOffset = 30,_width = sprite_width,_height = sprite_height)
+function starEffect(_x,_y,_amount = 5,_sound = true,_xOffset = 30,_yOffset = 30,_width = sprite_width,_height = sprite_height)
 {
+    //Play Sound
+    if _sound then audioPlaySfx([snStars1,snStars2],1,1,_x,_y);
+    
 	//Set Amount
 	_amount *= global.partAmount;
 	
+    //Loop
     for (var i = 0; i < _amount; i++) {
         		
 		//Get Values
@@ -39,15 +44,20 @@ function starEffect(_x,_y,_amount = 5,_xOffset = 30,_yOffset = 30,_width = sprit
 ///@arg {real} _x The x center position of the effect
 ///@arg {real} _y The y center position of the effect
 ///@arg {real} _amount The amount of health to spawn (Default = 5)
+///@arg {bool} _sound If it should play the heal sound effect (Default = true)
 ///@arg {real} _xOffset The x offset of the effect (Default = 30)
 ///@arg {real} _yOffset The y offset of the effect (Default = 30)
 ///@arg {real} _width The width (Default = sprite_width)
 ///@arg {real} _height The height (Default = sprite_height)
-function healthEffect(_x,_y,_amount = 5,_xOffset = 30,_yOffset = 30,_width = sprite_width,_height = sprite_height)
+function healthEffect(_x,_y,_amount = 5,_sound = true,_xOffset = 30,_yOffset = 30,_width = sprite_width,_height = sprite_height)
 {
+    //Play Sound
+    if _sound then audioPlaySfx(snHeal,.9,1.1,_x,_y);
+    
 	//Set Amount
 	_amount *= global.partAmount;
 	
+    //Loop
     for (var i = 0; i < _amount; i++) {
         
 		//Get Values

@@ -8,7 +8,7 @@ draw_sprite_ext(sprite_index, image_index, cardX, cardY, image_xscale, image_ysc
 //Draw Value
 if value != undefined
 {
-    setupText(fnNumberOutline,fa_center,fa_middle);
+    textSetup(fnNumberOutline,fa_center,fa_middle);
     draw_text_transformed(x,bbox_top - 40,value,1,1,image_angle);
     resetDraw();
 }

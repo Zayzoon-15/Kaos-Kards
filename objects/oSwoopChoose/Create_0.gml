@@ -1,6 +1,6 @@
 
 //Effect
-starEffect(x,y,8,10,15);
+starEffect(x,y,8,true,10,15);
 
 //Get Target
 randomize();

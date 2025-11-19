@@ -19,10 +19,10 @@ function drawCardText(_info){
 ///Keep in mind every object that uses this function needs the variable: canHover
 ///@arg {string} _desc The description
 ///@arg {bool} _top Whether to draw at the top or bottom (Default: true)
+///@arg {bool} _update If it should update each frame (Default: false) This would require the variable: tipBoxString 
 ///@arg {real} _distance The distance of the text (Default: 10)
 ///@arg {real} _size The size of the text (Default: 1)
-///@arg {bool} _update If it should update each frame (Default: false) This would require the variable: tipBoxString 
-function drawTipBox(_desc,_top = true,_distance = 10,_size = 1,_update = false){
+function drawTipBox(_desc,_top = true,_update = false,_distance = 10,_size = 1){
     
     //Check If Has Variables
     if !variable_instance_exists(self.id,"canHover")
@@ -106,7 +106,7 @@ function createAlertMessage(_text,_x=room_width/2,_y=235)
 ///Make sure to have these variables: "frame", "animationEnd"
 ///@arg {real} _frame The animation frame
 ///@arg {real} _anims The amount of animations (Default = 4)
-function loopMultAnims(_frame,_anims = 4)
+function spriteLoopFrames(_frame,_anims = 4)
 {
     //Update Sprite
     var _totalFrames = image_number / _anims;

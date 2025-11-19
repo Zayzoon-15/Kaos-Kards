@@ -14,12 +14,12 @@ skipped = false;
 scale = 1;
 
 //State
-enum DICESTATE {
-    IDLE,
-    COMBINE
-}
+diceStates = {
+    idle : 0,
+    combine : 1
+};
 
-state = DICESTATE.IDLE;
+state = diceStates.idle;
 
 //Functions
 rollDice = function()
@@ -62,9 +62,11 @@ diceJuice = function()
 
 combineValues = function()
 {
+    //Vars
     var _combine = false;
     var _diceCardExtra = 0;
     
+    //Check Slots
     with oParSlots
     {
         if slotId == other.diceId and filled
@@ -74,6 +76,7 @@ combineValues = function()
         }
     }
     
+    //Combine More
     with oCard
     {
         if state == CARDSTATE.PLACED and info.type == CARDTYPES.DICE
@@ -82,6 +85,6 @@ combineValues = function()
         }
     }
     
-    
+    //Next
     alarm[2] = 30*(diceId+_diceCardExtra);
 }

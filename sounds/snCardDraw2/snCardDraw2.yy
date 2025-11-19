@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snCardDraw2",
+  "audioGroupId":{
+    "name":"agSfx",
+    "path":"audiogroups/agSfx",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.24106576,
+  "exportDir":"",
+  "name":"snCardDraw2",
+  "parent":{
+    "name":"Game",
+    "path":"folders/Sounds/Sfx/Game.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snCardDraw2.ogg",
+  "volume":1.0,
+}

@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snBtnHover2",
+  "audioGroupId":{
+    "name":"agSfx",
+    "path":"audiogroups/agSfx",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.45863944,
+  "exportDir":"",
+  "name":"snBtnHover2",
+  "parent":{
+    "name":"Ui",
+    "path":"folders/Sounds/Sfx/Ui.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snBtnHover2.ogg",
+  "volume":1.0,
+}

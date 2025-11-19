@@ -20,9 +20,10 @@ if state == CARDSTATE.GRABBED
                 {
                     if state == CARDSTATE.PLACED and slot == _actionSlot.id
                     {
-                        //Swith With Other Slot
+                        //Switch With Other Slot
                         if other.slot != noone
                         {
+                            hover = true;
                             var _targetSlot = other.slot;
                             other.slot = slot;
                             slot = _targetSlot;
@@ -64,16 +65,16 @@ if state == CARDSTATE.GRABBED
                     {
                         if state == CARDSTATE.PLACED and slot == _specialSlot.id
                         {
-                            //Swith With Other Slot
+                            //Switch With Other Slot
                             if other.slot != noone
                             {
+                                hover = true;
                                 var _targetSlot = other.slot;
                                 other.slot = slot;
                                 slot = _targetSlot;
                             } else {
                             	other.slot = slot;
                                 putCardInHand();
-                                
                             }
                         }
                     }

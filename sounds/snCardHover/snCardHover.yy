@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snCardHover",
   "parent":{
-    "name":"Sfx",
-    "path":"folders/Sounds/Sfx.yy",
+    "name":"Game",
+    "path":"folders/Sounds/Sfx/Game.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

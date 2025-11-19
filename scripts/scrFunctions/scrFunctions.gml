@@ -40,7 +40,7 @@ function touchingMouse(_inst = self)
 ///@arg {Constant.VAlign} _valign The vertical alignment
 ///@arg {Constant.Color} _color The color (by default : White)
 ///@arg {real} _alpha The alpha (by default : 1)
-function setupText(_font,_halign,_valign,_color=c_white,_alpha=1)
+function textSetup(_font,_halign,_valign,_color=c_white,_alpha=1)
 {
     draw_set_font(_font);
     draw_set_halign(_halign);
@@ -80,7 +80,7 @@ function getAnimValue(_asset,_pos,_name = "x")
 ///@desc Gets the postion of the objects x based on the window size
 ///It uses the objects xstart to choose the position (This can be changed)
 ///@arg {bool} _onRight If it should stick to the right side
-///@arg {real} _xOffset The offset of the x position (Default = xstart)
+///@arg {real} _xOffset The offset of the x position to the window side (Default = xstart)
 function getPosToWindow(_onRight,_xOffset = xstart)
 {
 	//Vars
@@ -107,6 +107,36 @@ function keyCheckPressed(_key)
 		return true;
 	} else return false;
 	
+}
+
+
+///@desc Checks to see if the message given is received
+///@arg {string} _message The message to receive
+///@arg {function} _func What to do if it receives the message
+///@arg {bool} _sameAs Only recive the message if its from the current objects sprite (Default = false)
+function spriteBroadcast(_message,_func,_sameAs = false)
+{
+    //Can Receive Message
+    var _canReceive = true;
+    
+    //Check If Same Sprite
+    if _sameAs
+    {
+        if layer_instance_get_instance(event_data[? "element_id"]) == id
+        {
+            _canReceive = true;
+        } else _canReceive = false;
+    }
+    
+    //Check Message
+    if event_data[? "event_type"] == "sprite event" and _canReceive
+    {
+        //Do The Function
+        if event_data[? "message"] == _message
+        {
+            _func();
+        }
+    }
 }
 
 

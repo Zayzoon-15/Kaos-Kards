@@ -1,2 +1,4 @@
-
-spriteBroadcast("laserSetShake",function(){targetShakePower = 6;});
+spriteBroadcast("laserSetShake",function(){
+    audioPlaySfx(snLaser);
+    targetShakePower = 6;
+});

@@ -10,11 +10,11 @@ if canGrab and !global.holdingCard and canMove and gameState == GAMESTATES.PREPA
     offsetY = mouse_y - y;
     
     //Remove Card
+    hover = false;
     removeCardFromHand();
     
     //Set Grab
     canGrab = false;
-    hover = false;
     global.holdingCard = true;
     
     //Set State

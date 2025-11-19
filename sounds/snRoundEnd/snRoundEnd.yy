@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snRoundEnd",
+  "audioGroupId":{
+    "name":"agSfx",
+    "path":"audiogroups/agSfx",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":1.1250113,
+  "exportDir":"",
+  "name":"snRoundEnd",
+  "parent":{
+    "name":"Game",
+    "path":"folders/Sounds/Sfx/Game.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snRoundEnd.ogg",
+  "volume":1.0,
+}

@@ -21,7 +21,7 @@ draw_sprite_ext(sprite_index, image_index, cardX+_shakeX, cardY+_shakeY, image_x
 rangeScale = lerp(rangeScale,1,.2);
 if currentValue != undefined
 {
-    setupText(fnNumberOutline,fa_center,fa_middle);
+    textSetup(fnNumberOutline,fa_center,fa_middle);
     draw_text_transformed(x,bbox_top - 40,currentValue,rangeScale,rangeScale,image_angle);
 }
 

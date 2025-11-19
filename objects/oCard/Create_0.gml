@@ -41,7 +41,6 @@ followingDice = false;
 currentValue = undefined;
 rangeScale = 1;
 
-
 //State
 enum CARDSTATE
 {
@@ -65,6 +64,8 @@ resetSlot = function()
 
 putCardInHand = function()
 {
+    //Hover
+    hover = true;
     
     //Add To Hand
     ds_list_add(playerHand,self);
@@ -105,6 +106,9 @@ deleteCard = function()
     
     //Reset Slot
     resetSlot();
+    
+    //Sound
+    audioPlaySfx([snDiscard1,snDiscard2,snDiscard3]);
     
     //Destroy
     instance_destroy();
