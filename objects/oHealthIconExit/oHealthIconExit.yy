@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Health",
-    "path":"folders/Objects/Ui/Health.yy",
+    "path":"folders/Objects/Ui/Game/Health.yy",
   },
   "parentObjectId":{
     "name":"oParEffect",

@@ -38,7 +38,7 @@ diceTypes =  {
 
 function initDiceCards()
 {
-
+initDiceTypes();
 
 
 globalvar diceCards;

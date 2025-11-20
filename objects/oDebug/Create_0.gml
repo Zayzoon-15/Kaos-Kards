@@ -1,4 +1,7 @@
+debugMode = false;
+show_debug_overlay(debugMode);
 
+/*
 //Function DO NOT TOUCH NO NO
 dbgCreateButtons = function(_buttons = [])
 {	

@@ -10,6 +10,7 @@ x = getPosToWindow(false);
 
 //Draw Info
 tipBoxString = $"Your Combo Meter\n{value}%";
+if target == "Enemy" then tipBoxString = $"Enemies Combo Meter\n{value}%";
 drawTipBox(tipBoxString, false, true);
 
 //Set Image
@@ -41,11 +42,3 @@ tickCooldown --; //Reduce Tick
 //Set Last Value
 lastValue = value;
 lastFrame = image_index;
-
-//DEBUG
-if mouse_check_button(mb_left) global.playerComboMeter ++;
-if mouse_check_button(mb_right) global.playerComboMeter --;
-if keyboard_check_pressed(ord("D")) global.playerComboMeter += 20;
-if keyboard_check_pressed(ord("A")) global.playerComboMeter -= 20;
-
-global.playerComboMeter = clamp(global.playerComboMeter,0,100);

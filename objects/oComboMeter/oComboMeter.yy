@@ -10,8 +10,8 @@
   "name":"oComboMeter",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Game",
+    "path":"folders/Objects/Ui/Game.yy",
   },
   "parentObjectId":null,
   "persistent":false,
