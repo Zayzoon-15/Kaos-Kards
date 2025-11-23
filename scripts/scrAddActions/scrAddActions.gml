@@ -15,7 +15,7 @@ function addPlayerAction(_card)
     }
     
     //Add To List
-    ds_list_set(playerActions,_card.slot.slotId-1,_struct);
+    ds_list_set(playerActions,_card.slot.slotId,_struct);
 }
 
 

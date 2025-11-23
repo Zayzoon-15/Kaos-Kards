@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Combos",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Combos",
+  "parent":{
+    "name":"Actions",
+    "path":"folders/Scripts/Actions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

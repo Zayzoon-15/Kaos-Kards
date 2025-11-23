@@ -49,3 +49,23 @@ function kaosCardDone()
     //Next Kaos
     oKaosManager.alarm[0] = 50;
 }
+
+///@desc This event plays when the played combo attack is complete
+function comboAttackDone()
+{
+    //Destroy Kaos Card
+    with oAttackCard
+    {
+        if combo
+        {
+            //Stars
+            starEffect(x,y,10,true,20,25);
+            
+            //Destroy
+            instance_destroy();
+        }
+    }
+    
+    //Next Kaos
+    oKaosManager.alarm[5] = 50;
+}

@@ -20,8 +20,8 @@ enemyInfo = {
     [actionCards.punch,actionCards.laser,actionCards.poison,actionCards.bread],
     [kaosCards.destroy,kaosCards.high,kaosCards.swap,kaosCards.swoop],80,75,50,80,65,2),
     
-    //Concept Enemies
-    cow : new createEnemy("Cow",sCock,[actionCards.gato],[kaosCards.freeze],80,70,45,90,65,2),
+    //Retro
+    chud : new createEnemy("Chud",sChud,[actionCards.gato],[kaosCards.swoop]),
 };
 
 

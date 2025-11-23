@@ -1,7 +1,7 @@
 ///@desc Create Player Card
 
 //Get Card
-var _card = ds_list_find_value(playerActions,playerCard);
+var _card = ds_list_find_value(playerActions,playerCard+1);
 
 //Create Card
 if _card != undefined and _card != 0
@@ -10,7 +10,8 @@ if _card != undefined and _card != 0
         card : _card,
         targetX : getXPos(playerCard),
         targetY : room_height - yOffset,
-        targetEnemy : true
+        targetEnemy : true,
+        cardId : playerCard
     });
 }
 

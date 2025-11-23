@@ -10,7 +10,7 @@ if _card != undefined and _card != 0
         card : _card,
         targetX : getXPos(enemyCard),
         targetY : yOffset,
-        targetEnemy : false
+        targetEnemy : false,
     });
 }
 

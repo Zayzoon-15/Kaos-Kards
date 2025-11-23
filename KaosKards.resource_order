@@ -1,9 +1,9 @@
 {
   "FolderOrderSettings":[
-    {"name":"TweenGMX","order":1,"path":"folders/Extensions/TweenGMX.yy",},
     {"name":"Figgy","order":2,"path":"folders/Extensions/Figgy.yy",},
     {"name":"01. Public","order":1,"path":"folders/Extensions/Figgy/01. Public.yy",},
     {"name":"02. Private","order":2,"path":"folders/Extensions/Figgy/02. Private.yy",},
+    {"name":"TweenGMX","order":1,"path":"folders/Extensions/TweenGMX.yy",},
     {"name":"Slots","order":3,"path":"folders/Objects/Game/Prepare/Slots.yy",},
     {"name":"Enemy","order":1,"path":"folders/Objects/Ui/Buttons/Enemy.yy",},
     {"name":"Kaos","order":2,"path":"folders/Objects/Ui/Buttons/Kaos.yy",},
@@ -23,6 +23,8 @@
   "ResourceOrderSettings":[
     {"name":"03. Figgy Info","order":3,"path":"notes/03. Figgy Info/03. Figgy Info.yy",},
     {"name":"oCard","order":4,"path":"objects/oCard/oCard.yy",},
+    {"name":"oComboButton","order":1,"path":"objects/oComboButton/oComboButton.yy",},
+    {"name":"oComboChecker","order":5,"path":"objects/oComboChecker/oComboChecker.yy",},
     {"name":"oComboMeter","order":1,"path":"objects/oComboMeter/oComboMeter.yy",},
     {"name":"oDeck","order":2,"path":"objects/oDeck/oDeck.yy",},
     {"name":"oDice","order":1,"path":"objects/oDice/oDice.yy",},
@@ -30,6 +32,7 @@
     {"name":"__FiggyInit","order":1,"path":"scripts/__FiggyInit/__FiggyInit.yy",},
     {"name":"__FiggyMacros","order":2,"path":"scripts/__FiggyMacros/__FiggyMacros.yy",},
     {"name":"__FiggyUtility","order":3,"path":"scripts/__FiggyUtility/__FiggyUtility.yy",},
+    {"name":"Combos","order":1,"path":"scripts/Combos/Combos.yy",},
     {"name":"FiggyMain","order":1,"path":"scripts/FiggyMain/FiggyMain.yy",},
     {"name":"FiggySetup","order":2,"path":"scripts/FiggySetup/FiggySetup.yy",},
     {"name":"Macros","order":1,"path":"scripts/Macros/Macros.yy",},
@@ -65,6 +68,7 @@
     {"name":"snStars2","order":1,"path":"sounds/snStars2/snStars2.yy",},
     {"name":"sButton","order":3,"path":"sprites/sButton/sButton.yy",},
     {"name":"sButtonX","order":1,"path":"sprites/sButtonX/sButtonX.yy",},
+    {"name":"sChud","order":1,"path":"sprites/sChud/sChud.yy",},
     {"name":"sComboArrow","order":6,"path":"sprites/sComboArrow/sComboArrow.yy",},
     {"name":"sComboMeter","order":7,"path":"sprites/sComboMeter/sComboMeter.yy",},
     {"name":"sHealthBar","order":4,"path":"sprites/sHealthBar/sHealthBar.yy",},

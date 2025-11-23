@@ -20,10 +20,8 @@ if card.value != undefined then value = round(card.value*1.5);
 
 //Action
 var _actTime = 30;
-if card.info.type == CARDTYPES.KAOS
-{
-	_actTime = 60;
-}
+if card.info.type == CARDTYPES.KAOS then _actTime = 60;
+if combo then _actTime = 120;
 alarm[0] = _actTime;
 
 //Functions

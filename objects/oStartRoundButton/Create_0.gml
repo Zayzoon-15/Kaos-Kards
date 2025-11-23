@@ -19,6 +19,8 @@ action = function()
     //Set Gamestate
     gameState = GAMESTATES.ENEMEYTURN;
     
+    //Add If Combo
+    ds_list_insert(playerActions,0,oComboButton.toggle);
     
     //Add Players Actions In Order
     for (var i = 0; i < 3; i++) {
@@ -30,7 +32,7 @@ action = function()
                 if filled
                 {
                     addPlayerAction(card);
-                } else ds_list_insert(playerActions,slotId-1,undefined);
+                } else ds_list_insert(playerActions,slotId,undefined);
             }
         }
     }

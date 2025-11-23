@@ -14,7 +14,9 @@ enum CARDTYPES {
 /// @param {array} _range The cards range Ex: [1,6] min-1 max-6
 /// @param {function} _action The cards action (Put undefined of it has no action)
 /// @param {array} _extraArgs Extra arguments the givin function can use
-function createCardAction(_name,_desc,_sprite,_range,_action = undefined,_extraArgs = []) constructor
+/// @param {function} _comboAction The cards combo action (Put undefined of it has no action)
+/// @param {array} _comboArgs Extra arguments the givin combo function can use
+function createCardAction(_name,_desc,_sprite,_range,_action = undefined,_extraArgs = [],_comboAction = undefined,_comboArgs = []) constructor
 {
     //Info
     name = _name;
@@ -28,12 +30,14 @@ function createCardAction(_name,_desc,_sprite,_range,_action = undefined,_extraA
     };
     
     //Get Action
-    var _func = _action;
-    if _action == undefined then _func = function(){};
+    var _funcAction = _action == undefined ? function(){} : _action;
+    var _funcCombo = _comboAction == undefined ? function(){} : _comboAction;
     
     //Set Action
-    action = _func;
+    action = _funcAction;
     extraArgs = _extraArgs;
+    comboAction = _funcCombo;
+    comboArgs = _comboArgs;
     
     //Set Type
     type = CARDTYPES.ACTION;

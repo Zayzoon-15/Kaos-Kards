@@ -6,6 +6,9 @@ function hurtEnemy(_value)
     //Enemy Photo
     with oEnemyPhoto {hurt();}
 	
+    //Give Combo
+    global.playerComboMeter += _value*2;
+    
 	//Add Mult
 	_value *= global.valueMult;
     
@@ -41,6 +44,9 @@ function hurtPlayer(_value)
 {
     //Enemy Photo
     with oEnemyPhoto {win();}
+    
+    //Give Combo
+    global.enemyComboMeter += _value*2;
 	
 	//Add Mult
 	_value *= global.valueMult;

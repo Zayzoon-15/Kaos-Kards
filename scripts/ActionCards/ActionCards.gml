@@ -26,7 +26,7 @@ actionCards = {
     
     bread : new createCardAction("Bread Card",
     "Shoots a 3 slices of bread at the enemy",
-    sCardBread,[1,6],actionBread),
+    sCardBread,[1,6],actionBread,[],comboBread),
 	
     laser : new createCardAction("Giant F**King Laser",
     "Shoots a giant f**king laser at the enemy",

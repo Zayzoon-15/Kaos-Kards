@@ -2,6 +2,9 @@
 playerCard = 0;
 enemyCard = 0;
 
+//Combo
+playerComboDone = false;
+
 //Who Goes First
 randomize();
 playerFirst = choose(true,false);

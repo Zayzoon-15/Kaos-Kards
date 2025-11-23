@@ -155,7 +155,7 @@ for (var i = 0; i < array_length(chosenActionCards); i++) {
         var _totalValue = _cardValue + diceOutcome[i];
         
         //Add Enemy Action
-        addEnemyAction(_card,_totalValue,i);
+        addEnemyAction(_card,_totalValue,i+1);
         
         //Add Card In Game
         enemyAddCard(i+1,_card,_totalValue);

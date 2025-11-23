@@ -6,16 +6,16 @@ var _percent = value / 100;
 percent = lerp(percent,_percent,.2);
 
 //Set Position
-x = getPosToWindow(false);
+x = getPosToWindow(onRight);
 
 //Draw Info
 tipBoxString = $"Your Combo Meter\n{value}%";
 if target == "Enemy" then tipBoxString = $"Enemies Combo Meter\n{value}%";
-drawTipBox(tipBoxString, false, true);
+drawTipBox(tipBoxString, tipOnTop, true);
 
 //Set Image
 image_index = 6*_percent;
-arrowDir = 180*percent;
+arrowDir = 165*(percent-.02);
 
 //Sounds
 if value != lastValue

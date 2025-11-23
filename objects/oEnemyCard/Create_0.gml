@@ -31,3 +31,4 @@ with oParSlots
 
 //Hover
 canGrab = true;
+hover = false;

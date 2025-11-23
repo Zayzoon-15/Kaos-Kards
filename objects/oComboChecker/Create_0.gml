@@ -1,0 +1,2 @@
+cards = [];
+canCombo = false;

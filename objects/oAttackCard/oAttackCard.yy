@@ -33,6 +33,8 @@
     {"$GMObjectProperty":"v2","%Name":"targetX","filters":[],"listItems":[],"multiselect":false,"name":"targetX","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"targetY","filters":[],"listItems":[],"multiselect":false,"name":"targetY","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"targetEnemy","filters":[],"listItems":[],"multiselect":false,"name":"targetEnemy","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"false","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"combo","filters":[],"listItems":[],"multiselect":false,"name":"combo","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
+    {"$GMObjectProperty":"v2","%Name":"cardId","filters":[],"listItems":[],"multiselect":false,"name":"cardId","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
