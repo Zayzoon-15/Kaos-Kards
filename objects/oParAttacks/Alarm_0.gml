@@ -11,3 +11,9 @@ if posBasedOnCard
 {
     if targetEnemy then y = newYPos[0] else y = newYPos[1];
 }
+
+//Buff Card If Combo
+if isCombo
+{
+	value *= 1.6;
+}

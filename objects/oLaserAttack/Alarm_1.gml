@@ -12,5 +12,5 @@ if !laserDone
     sprite_index = sLaserEnd;
     
     //Set Shake
-    targetShakePower = 0;
+    card.cardSetShake(0);
 }

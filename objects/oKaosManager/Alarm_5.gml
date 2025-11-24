@@ -32,12 +32,22 @@ if !ds_list_find_value(playerActions,0) and !ds_list_find_value(enemyActions,0)
 //Play Player
 if (playerFirst or !ds_list_find_value(enemyActions,0)) and ds_list_find_value(playerActions,0)
 {
+	//Set Combo Value
+	var _ogInfo = ds_list_find_value(playerActions,1);
+	for (var i = 2; i < ds_list_size(playerActions); ++i) {
+		_ogInfo.value += ds_list_find_value(playerActions,i).value;
+	    ds_list_set(playerActions,2,_ogInfo);
+	}
+	
     //Create Combos
     _createCombo(ds_list_find_value(playerActions,1),true);
     
     //Set Values
     ds_list_set(playerActions,0,false);
     
+	//Remove Other Actions
+	ds_list_clear(playerActions);
+	
     //Stop Other Code
 	exit;
 } 
@@ -45,9 +55,19 @@ if (playerFirst or !ds_list_find_value(enemyActions,0)) and ds_list_find_value(p
 //Play Enemy
 if (!playerFirst or !ds_list_find_value(playerActions,0)) and ds_list_find_value(enemyActions,0)
 {
+	//Set Combo Value
+	var _ogInfo = ds_list_find_value(enemyActions,1);
+	for (var i = 2; i < ds_list_size(enemyActions); ++i) {
+		_ogInfo.value += ds_list_find_value(enemyActions,i).value;
+	    ds_list_set(enemyActions,2,_ogInfo);
+	}
+	
     //Create Combos
-    _createCombo(ds_list_find_value(enemyActions,1),false);
+    _createCombo(ds_list_find_value(enemyActions,1),true);
     
     //Set Values
     ds_list_set(enemyActions,0,false);
+    
+	//Remove Other Actions
+	ds_list_clear(enemyActions);
 }

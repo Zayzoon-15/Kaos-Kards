@@ -1,4 +1,4 @@
 spriteBroadcast("laserSetShake",function(){
     audioPlaySfx(snLaser);
-    targetShakePower = 6;
+	card.cardSetShake(6);
 });

@@ -6,15 +6,11 @@ newYPos = [card.bbox_top,card.bbox_bottom]; //[targetEnemy,targetPlayer];
 //Stats
 hitOthers = false; //If It Should Damage Cards
 currentlyDamaging = false; //If Currrently Damaging
-
-//Reduce Value
-value *= .9;
-value = clamp(value,0,99);
-
+isCombo = false; //If the attack is a combo
 
 #region Functions DONT CHANGE
 
-hurtEffect = function(_x = x,_y = y)
+hurtEffect = function(_x = x,_y = y,_starAmount = 5)
 {
     //Get Card
     var _card = instance_place(x,y,oAttackCard);
@@ -27,7 +23,7 @@ hurtEffect = function(_x = x,_y = y)
         //Stars
         var _starX = (sprite_width/2)-20;
         var _starY = (sprite_height/2)-25;
-        starEffect(_x,_y,5,false,20,25);
+        starEffect(_x,_y,_starAmount,false,20,25);
     }
     
     //Card Effect
@@ -70,12 +66,14 @@ moveToDir = function(_speed = 13,_setAngle = true,_dir = undefined)
 
 #endregion
 
+
 //Change This One
 action = function()
 {
     hurtEffect();
     damageTarget();
 }
+
 
 //Apply Options
 alarm[0] = 1;

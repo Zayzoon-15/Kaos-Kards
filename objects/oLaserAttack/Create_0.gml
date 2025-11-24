@@ -16,8 +16,6 @@ sprite_index = sLaserStart;
 
 //Laser Done
 laserDone = false;
-targetShakePower = 2;
-shakePower = 0;
 
 //Alarm Values
 delayTime = 40;

@@ -14,33 +14,39 @@
 ///@self oAttackCard
 function actionHeal(_targetEnemy)
 {
+	//Buff Value
+	var _value = value * 1.5;
+	
     //Juice
     cardJuice(false);
     healthEffect(x,y,10,true,10,25,sprite_get_width(sCardBlank),sprite_get_height(sCardBlank));
-    numberEffect(x,y,value);
+    numberEffect(x,y,_value);
     
     //Give Health
     if _targetEnemy
     {
-        healPlayer(value);
-    } else healEnemy(value);
+        healPlayer(_value);
+    } else healEnemy(_value);
 }
 
 
 ///@self oAttackCard
 function actionShield(_targetEnemy)
 {
+	//Buff Value
+	var _value = value * 1.5;
+	
     //Juice
     cardShake();
     
     //Effect
     instance_create_layer(x,y,"Attacks",oShield,{
-        value : value,
+        value : _value,
         card : self.id
     });
     
     //Give Temp Health
-    addEffect(attackEffects.shield,value,!_targetEnemy);
+    addEffect(attackEffects.shield,_value,!_targetEnemy);
 }
 
 

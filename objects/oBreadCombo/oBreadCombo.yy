@@ -1,19 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"oLaserAttack",
+  "%Name":"oBreadCombo",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":76,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oLaserAttack",
+  "name":"oBreadCombo",
   "overriddenProperties":[],
   "parent":{
-    "name":"Actions",
-    "path":"folders/Objects/Attacks/Actions.yy",
+    "name":"Combos",
+    "path":"folders/Objects/Attacks/Combos.yy",
   },
   "parentObjectId":{
     "name":"oParAttacks",
@@ -37,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sLaserLoop",
-    "path":"sprites/sLaserLoop/sLaserLoop.yy",
+    "name":"sBreadCombo",
+    "path":"sprites/sBreadCombo/sBreadCombo.yy",
   },
   "spriteMaskId":null,
   "visible":true,

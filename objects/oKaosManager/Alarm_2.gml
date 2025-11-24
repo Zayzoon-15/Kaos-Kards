@@ -1,7 +1,7 @@
 ///@desc Create Enemy Card
 
 //Get Card
-var _card = ds_list_find_value(enemyActions,enemyCard);
+var _card = ds_list_find_value(enemyActions,enemyCard+1);
 
 //Create Card
 if _card != undefined and _card != 0
@@ -11,6 +11,7 @@ if _card != undefined and _card != 0
         targetX : getXPos(enemyCard),
         targetY : yOffset,
         targetEnemy : false,
+		cardId : enemyCard
     });
 }
 

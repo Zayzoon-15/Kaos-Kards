@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"DiceCards",
   "parent":{
-    "name":"Info",
-    "path":"folders/Scripts/Card/Info.yy",
+    "name":"_Info",
+    "path":"folders/Scripts/_Info.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

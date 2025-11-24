@@ -1,7 +1,11 @@
+///@desc Setup Card
+
 //Set Sprite
 sprite_index = card.info.sprite;
 
 //Image
+shakeTarget = 0;
+shakeEase = .1;
 shake = 0;
 flashAlpha = 0;
 flashColor = c_white;
@@ -16,15 +20,15 @@ shadowY = 8;
 shadowSize = 0.05;
 
 //Value
-if card.value != undefined then value = round(card.value*1.5);
+value = card.value != undefined ? ceil(card.value*.7) : undefined; //Reduce Value
 
 //Action
 var _actTime = 30;
 if card.info.type == CARDTYPES.KAOS then _actTime = 60;
-if combo then _actTime = 120;
+if combo then _actTime = 80;
 alarm[0] = _actTime;
 
-//Functions
+#region Functions
 
 /// @desc Make the card have juice
 /// @param {bool} [_stars] [True] If it should have stars
@@ -48,7 +52,7 @@ cardJuice = function(_stars = true,_angle = true,_angleAmount = [8,14])
 	}
 }
 
-/// @desc Makes the card shake
+/// @desc Makes the card shake from left to right
 cardShake = function()
 {
     var _tween = TweenCreate(self,EaseLinear,TWEEN_MODE_ONCE,false,0,10,"curvePos",0,1);
@@ -56,7 +60,7 @@ cardShake = function()
 }
 
 /// @desc The card hurt effect
-/// @param {any*} _value The damage amount
+/// @param {real} _value The damage amount
 /// @param {bool} [_stars] [True] If it should have stars
 cardHurt = function(_value,_stars = true)
 {
@@ -77,10 +81,22 @@ cardHurt = function(_value,_stars = true)
 }
 
 /// @desc Makes the card flash
-/// @param {any*} [_flashAmount] [1] The amount it should flash
-/// @param {any*} [_flashColor] [c_white] The flash color
+/// @param {real} [_flashAmount] [1] The amount it should flash
+/// @param {Constant.Color} [_flashColor] [c_white] The flash color
 cardFlash = function(_flashAmount = 1,_flashColor = c_white)
 {
     flashAlpha = _flashAmount;
     flashColor = _flashColor;
 }
+
+/// @desc Makes the card shake in all directions
+/// @param {real} [_shakeAmount] [1] The amount it should shake
+/// @param {float} [_easeAmount] [.1] The ease amount
+cardSetShake = function(_shakeAmount,_easeAmount = .1)
+{
+	shakeTarget = _shakeAmount;
+	shakeEase = _easeAmount;
+}
+
+
+#endregion

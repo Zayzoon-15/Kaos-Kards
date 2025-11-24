@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Effects",
   "parent":{
-    "name":"Actions",
-    "path":"folders/Scripts/Actions.yy",
+    "name":"_Info",
+    "path":"folders/Scripts/_Info.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

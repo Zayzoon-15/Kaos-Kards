@@ -21,17 +21,17 @@ arrowDir = 165*(percent-.02);
 if value != lastValue
 {
     //Reached Max
-    if value == 100 then audioPlaySfx(snComboMax);
+    if value >= 100 and lastValue < 100 {
+		audioPlaySfx(snComboMax);
+	}
     
     //Hit Mark
-    if floor(lastFrame) != floor(image_index) and value != 100
-    {
+    if floor(lastFrame) != floor(image_index) and value > 100 {
         audioPlaySfx(snComboHit)
     }
     
     //Tick
-    if tickCooldown <= 0
-    {
+    if tickCooldown <= 0 {
         audioPlaySfx(snComboTick);
         tickCooldown = 8;
     }

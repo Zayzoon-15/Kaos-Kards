@@ -1,6 +1,5 @@
-
-//Value
-value *= .55;
+//Change Value
+if info.type == EFFECT_TYPE.HARM then value *= .55;
 value = clamp(value,1,99);
 
 //Effect
@@ -108,7 +107,6 @@ if instance_exists(oHealthIcon)
         
         if info == other.effect
         {
-            print("SAME EFFECT",info);
             iconId = 0;
             _create = false;
         } else _create = true;
