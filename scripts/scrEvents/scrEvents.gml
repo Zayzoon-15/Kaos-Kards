@@ -47,7 +47,7 @@ function kaosCardDone()
     }
     
     //Next Kaos
-    oKaosManager.alarm[0] = 50;
+	if instance_exists(oKaosManager) then oKaosManager.alarm[0] = 50;
 }
 
 ///@desc This event plays when the played combo attack is complete
@@ -67,5 +67,5 @@ function comboAttackDone()
     }
     
     //Next Kaos
-    oKaosManager.alarm[5] = 50;
+    if instance_exists(oKaosManager) then oKaosManager.alarm[5] = 50;
 }

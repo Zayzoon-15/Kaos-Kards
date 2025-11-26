@@ -14,6 +14,6 @@ targetVar = "playerComboMeter";
 if target == "Enemy" then targetVar = "enemyComboMeter";
 
 //Value
-value = 0;
-lastValue = 0;
-percent = 0;
+value = variable_global_get(targetVar);
+lastValue = value;
+percent = value/100;

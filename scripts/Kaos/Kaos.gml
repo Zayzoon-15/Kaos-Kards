@@ -93,6 +93,9 @@ function kaosActionFreeze(_targetEnemy)
 {	
     //Show Message
 	createAlertMessage("Slots Frozen For Next Round");
+	
+	//Sound
+	audioPlaySfx(snFreeze);
     
     //Juice
     cardJuice();

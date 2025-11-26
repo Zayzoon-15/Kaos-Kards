@@ -4,7 +4,7 @@
 #region General
 
 // Whether to show debug messages in the Output window (true) or not (false).
-#macro FIGGY_DEBUG true
+#macro FIGGY_DEBUG false
 
 // Whether to build the Figgy debug interface (true) or not (false).
 // By default, this is enabled when running the game from IDE and disabled when running from EXE, using the __FIGGY_IN_IDE status macro.

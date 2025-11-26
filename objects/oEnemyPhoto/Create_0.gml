@@ -1,4 +1,3 @@
-
 //Set Sprite
 sprite_index = global.currentEnemy.sprite;
 
@@ -30,10 +29,7 @@ win = function(_stars = true)
     currentAnim = 2;
     
     //Stars
-    if _stars
-    {
-        starEffect(x,y,10,false,10,15);
-    }
+    if _stars then starEffect(x,y,10,false,10,15);
     
     //Start Reset
     alarm[0] = 40;

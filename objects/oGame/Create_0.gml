@@ -1,5 +1,5 @@
+#region Initialize Info
 
-//Initialize Info
 initActionCards();
 initDiceTypes();
 initDiceCards();
@@ -7,6 +7,8 @@ initKaosCards();
 initEnemyinfo();
 initPlayerStats();
 initSettings();
+
+#endregion
 
 #region Global Vars
 
@@ -68,6 +70,9 @@ if os_type == os_android or os_type == os_ios then global.mobile = true;
 //Load Groups
 audio_group_load(agMusic);
 audio_group_load(agSfx);
+
+//Load Save
+saveLoad();
 
 //Set Window
 setWindowToRes();

@@ -12,3 +12,6 @@ if keyCheckPressed(global.keyDebug)
     //Sound For Fun
     audioPlaySfx(snRoundEnd);
 }
+
+//Restart Room
+if keyboard_check_pressed(ord("R")) then room_restart();

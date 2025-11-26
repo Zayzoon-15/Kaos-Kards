@@ -91,9 +91,14 @@ function numberEffect(_x,_y,_value)
 ///@desc Creates an explosion
 ///@arg {real} _x The x pos of the effect
 ///@arg {real} _y The y pos of the effect
+///@arg {bool} _sound If it should play the explosion sound effect (Default = true)
 ///@arg {real} _scale The scale of the effect
-function explosionEffect(_x,_y,_scale = 2)
+function explosionEffect(_x,_y,_sound = true,_scale = 2)
 {
+	//Play Sound
+	if _sound then audioPlaySfx(snExplosion,.9,1.1);
+	
+	//Create Explosion
     instance_create_layer(_x,_y,"Effects",oExplosionEffect, {
 		image_xscale : _scale,
 		image_yscale : _scale

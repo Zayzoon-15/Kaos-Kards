@@ -1,6 +1,3 @@
-//Depth
-depth = -1;
-
 //Draw Background
 draw_sprite_ext(sprite_index,3,x,y,image_xscale,image_yscale,angle,image_blend,image_alpha);
 

@@ -1,3 +1,3 @@
 ///@desc Explosion Effect
 
-explosionEffect(x,y,3);
+explosionEffect(x,y,true,3);

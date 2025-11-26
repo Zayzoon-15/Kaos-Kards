@@ -1,4 +1,4 @@
 ///@desc Reset The Enemy
 
 //Reset Animation
-currentAnim = 0;
+if !instance_exists(oGameOver) then currentAnim = 0;

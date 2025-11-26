@@ -21,6 +21,7 @@ function FiggySetup() {
         Figgy.Button("Reset Room",function(){room_restart()});
         Figgy.Button("Prepare",function(){room_goto(rPrepare)});
         Figgy.Button("Enemy",function(){room_goto(rEnemy)});
+        Figgy.Button("Kaos",function(){room_goto(rKaos)});
 	
 		Figgy.Section("Combo",false);
 		Figgy.Int("Player Combo",0,0,100,1,function(){global.playerComboMeter = argument0});
@@ -28,14 +29,14 @@ function FiggySetup() {
 		
 		Figgy.Section("Health Bar",false);
         Figgy.Separator("Player");
-        Figgy.Int("Health",100,0,100,FIGGY_INT_DEFAULT_STEP,function(){global.playerHp = argument0;});
-        Figgy.Button("Apply Shield",function(){addEffect(attackEffects.shield,10,false)});
-        Figgy.Button("Apply Poison",function(){addEffect(attackEffects.poison,10,false)});
-        Figgy.Button("Apply Fire",function(){addEffect(attackEffects.fire,10,false)});
+        Figgy.Int("Player Health",100,0,100,FIGGY_INT_DEFAULT_STEP,function(){global.playerHp = argument0;});
+        Figgy.Button("Apply Shield Player",function(){addEffect(attackEffects.shield,10,false)});
+        Figgy.Button("Apply Poison Player",function(){addEffect(attackEffects.poison,10,false)});
+        Figgy.Button("Apply Fire Player",function(){addEffect(attackEffects.fire,10,false)});
         
         Figgy.Separator("Enemy");
-        Figgy.Int("Health",100,0,100,FIGGY_INT_DEFAULT_STEP,function(){global.enemyHp = argument0;});
-        Figgy.Button("Apply Shield",function(){addEffect(attackEffects.shield,10,true)});
-        Figgy.Button("Apply Poison",function(){addEffect(attackEffects.poison,10,true)});
-        Figgy.Button("Apply Fire",function(){addEffect(attackEffects.fire,10,true)});
+        Figgy.Int("Enemy Health",100,0,100,FIGGY_INT_DEFAULT_STEP,function(){global.enemyHp = argument0;});
+        Figgy.Button("Apply Shield Enemy",function(){addEffect(attackEffects.shield,10,true)});
+        Figgy.Button("Apply Poison Enemy",function(){addEffect(attackEffects.poison,10,true)});
+        Figgy.Button("Apply Fire Enemy",function(){addEffect(attackEffects.fire,10,true)});
 }

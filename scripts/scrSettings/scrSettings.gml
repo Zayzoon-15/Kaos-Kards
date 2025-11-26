@@ -17,10 +17,16 @@ function initSettings()
 	//Input
 	global.keyDiscard = ord("Z");
 	global.keyFullscreen = vk_f11;
-	global.keyDebug = 220;
 	global.keyPause = vk_escape;
+	global.keyDebug = 220;
 }
 
+function setWindowToRes()
+{
+	var _res = global.resolutions[global.currentRes];
+	window_set_size(_res.x,_res.y);
+	window_center();
+}
 
 function keyToString(_key)
 {	
