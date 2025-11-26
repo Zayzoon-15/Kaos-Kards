@@ -15,5 +15,5 @@ if posBasedOnCard
 //Buff Card If Combo
 if isCombo
 {
-	value *= 1.6;
+	value *= 1.7;
 }

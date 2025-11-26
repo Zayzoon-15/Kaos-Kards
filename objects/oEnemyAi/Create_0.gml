@@ -8,6 +8,7 @@ hp = global.enemyHp;
 healWeight = global.currentEnemy.healWeight;
 defendWeight = global.currentEnemy.defendWeight;
 diceWeight = global.currentEnemy.diceWeight;
+comboWeight = global.currentEnemy.comboWeight
 
 //Value
 healValue = global.currentEnemy.healValue;
@@ -18,11 +19,16 @@ diceValue = global.currentEnemy.diceValue;
 attacks = global.currentEnemy.attacks;
 kaos = global.currentEnemy.kaos;
 specialUsed = false;
+combo = false;
+
+//Get Combo Card
+randomise();
+comboCard = attacks[irandom_range(0,array_length(attacks)-1)];
 
 #endregion
 
 
-//Dice Values
+//Get Dice Values
 diceRoll = function()
 {
     diceOutcome = [];
@@ -35,7 +41,7 @@ diceRoll = function()
 diceRoll();
 
 
-#region Actions
+#region Actions The Enemy Can Take
 
 attack = function()
 {
@@ -82,11 +88,17 @@ upgrade = function()
 placeKaos = function()
 {
     //Get Random Card
-    randomize();
+    randomise();
     var _card = irandom_range(0,array_length(kaos)-1);
     
     //Return Card
     return kaos[_card];
+}
+
+preformCombo = function()
+{
+	//Return Card
+	return comboCard;
 }
 
 #endregion
@@ -99,6 +111,7 @@ var _heal = new enemyActionNode(heal);
 var _reroll = new enemyActionNode(reroll);
 var _upgrade = new enemyActionNode(upgrade);
 var _kaos = new enemyActionNode(placeKaos);
+var _combo = new enemyActionNode(preformCombo);
 
 
 //Set Decisions
@@ -112,6 +125,7 @@ var _rerollDice = new enemyDecisionNode(enemyRolledLow(),_reroll,_upgradeDice);
 //Ai Tree
 chosenSpecialCard = _rerollDice;
 
+//Choose Cards
 chosenActionCards = [
 _defendCheck, //Defend Or Heal (if all good then attack)
 _defendCheckAgain, //Defend, Heal or Attack
@@ -119,9 +133,27 @@ _healCheckAgain, //Heal or Attack
 
 ];
 
+//Do Combo
+if enemyShouldCombo()
+{
+	//Set Combo
+	combo = true;
+	
+	//Set Actions
+	chosenActionCards = [
+		_combo,
+		_combo,
+		_combo,
+	];
+}
+
+
 //Use Special
 chosenSpecialCard.evaluate();
 
+
+//Add Combo
+ds_list_set(enemyActions,0,combo);
 
 //Get Kaos Card
 if !specialUsed

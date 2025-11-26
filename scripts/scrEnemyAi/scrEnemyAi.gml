@@ -78,26 +78,17 @@ function enemyShouldHeal()
 
 function enemyShouldHealAgain()
 {
-    //Heal If Low
-    if hp+15 <= healValue and enemyCheckChance(healWeight*.7)
-    {
-        return true;
-    }
-    
-    //Return False
-    return false;
+    return hp+15 <= healValue and enemyCheckChance(healWeight*.7);
 }
 
 function enemyShouldDefendAgain()
 {
-    //Defend If Low
-    if hp+25 <= defendValue and enemyCheckChance(defendWeight*.4)
-    {
-        return true;
-    }
-    
-    //Return False
-    return false;
+    return hp+25 <= defendValue and enemyCheckChance(defendWeight*.4);
+}
+
+function enemyShouldCombo()
+{
+	return global.enemyComboMeter >= 100 and enemyCheckChance(comboWeight);
 }
 
 #endregion

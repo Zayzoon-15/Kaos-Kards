@@ -1,6 +1,4 @@
 
-
-
 ///@desc Creates the enemies information
 ///@arg {string} _name The name of the enemy
 ///@arg {Asset.GMSprite} _sprite The sprite of the enemy
@@ -12,8 +10,9 @@
 ///@arg {real} _defendValue When should it consider defending (Default = 60)
 ///@arg {real} _diceWeight How important the dice are if low a kaos card will be placed (Default = 80)
 ///@arg {real} _diceValue How many low dice before upgrading (Default = 2)
-function createEnemy(_name,_sprite,_attacks,_kaos,_healWeight = 100,_healValue = 50,_defendWeight = 30,_defendValue = 60, _diceWeight = 80, _diceValue = 2) constructor{
-    
+///@arg {real} _comboWeight How important it is to combo (Default = 100)
+function createEnemy(_name,_sprite,_attacks,_kaos,_healWeight = 100,_healValue = 50,_defendWeight = 30,_defendValue = 60, _diceWeight = 80, _diceValue = 2,_comboWeight = 100) constructor
+{    
     //Info
     name = _name;
     sprite = _sprite;
@@ -24,6 +23,7 @@ function createEnemy(_name,_sprite,_attacks,_kaos,_healWeight = 100,_healValue =
     healWeight = _healWeight;
     defendWeight = _defendWeight;
     diceWeight = _diceWeight;
+	comboWeight = _comboWeight;
     
     //Values
     healValue = _healValue;

@@ -20,7 +20,8 @@ action = function()
     gameState = GAMESTATES.ENEMEYTURN;
     
     //Add If Combo
-    ds_list_insert(playerActions,0,oComboButton.toggle);
+    ds_list_insert(playerActions,0,false);
+	if instance_exists(oComboButton) then ds_list_insert(playerActions,0,oComboButton.toggle);
     
     //Add Players Actions In Order
     for (var i = 0; i < 3; i++) {
