@@ -1,6 +1,15 @@
 //Death Done
 deathDone = false;
 
+//Position
+x = room_width/2;
+y = (room_height/2) - 50; 
+
+//Sprite
+fade = false;
+image_index = playerWon;
+image_alpha = 0;
+
 //Play Sound
 audioPlaySfx(snUhOh);
 

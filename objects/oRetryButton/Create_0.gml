@@ -21,5 +21,6 @@ text = "Retry";
 action = function()
 {
     //Start Game Again
-	game_restart();
+	transStart(rPrepare);
+	timeSourceCreate(.3,gameReset);
 }

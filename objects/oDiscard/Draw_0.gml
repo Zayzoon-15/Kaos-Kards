@@ -2,6 +2,9 @@ draw_self();
 
 #region Draw Stats
 
+//Dont Draw If In Enemy Room
+if room == rEnemy then exit;
+
 //Setup Text
 draw_set_font(fnMain);
 draw_set_halign(fa_center);

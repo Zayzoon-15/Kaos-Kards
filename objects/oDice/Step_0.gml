@@ -9,7 +9,11 @@ image_yscale = lerp(image_yscale,scale,.3);
 //State
 if state == diceStates.idle
 {
-    scale = 1;
+	//Set Scale
+	scale = 1;
+	
+	//Set Position
+	x = getPosToWindow(false);
     y = lerp(y,ystart,.2);
 }
 

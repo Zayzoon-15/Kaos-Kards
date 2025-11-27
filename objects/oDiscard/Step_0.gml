@@ -1,3 +1,9 @@
+//Set Position
+x = getPosToWindow(true);
+
+//Exit If In Enemy Room
+if room == rEnemy then exit;
+
 //Is Full
 if discards >= global.maxDiscards
 {

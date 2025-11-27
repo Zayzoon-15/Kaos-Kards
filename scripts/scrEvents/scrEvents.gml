@@ -1,4 +1,42 @@
 
+///@desc This event plays when the player resets the match
+function gameReset()
+{	
+	//Set Gamestate
+	gameState = GAMESTATES.PREPARE;
+	
+	//Destroy All Effects
+	instance_destroy(oAttackEffect);
+	instance_destroy(oHealthIcon);
+	ds_list_clear(playerEffects);
+	ds_list_clear(enemyEffects);
+	
+	//Reset Combo
+	global.playerComboMeter = 0;
+	global.enemyComboMeter = 0;
+	
+	//Reset Health Bar
+	global.playerHp = 100;
+	global.playerTempHp = 100;
+	global.playerHpIcons = [];
+	global.enemyHp = 100;
+	global.enemyTempHp = 0;
+	global.enemyHpIcons = [];
+	
+	//Remove Actions
+	ds_list_clear(playerActions);
+	ds_list_clear(enemyActions);
+	
+	//Reset Mult
+	global.valueMult = 1;
+	
+	//Reset Slots
+    global.disabledSlots = {
+        player: array_create(4,false),
+        enemy : array_create(4,false)
+    };
+}
+
 ///@desc This event plays when the next round starts
 function nextRoundStarted()
 {

@@ -1,4 +1,8 @@
+//Set Position
+x = getPosToWindow(true);
 
+//Exit If In Enemy Room
+if room == rEnemy then exit;
 
 //Draw Cards
 if cardsInPlay < global.maxHandSize and drawTime <= 0 and cardsLeft != 0

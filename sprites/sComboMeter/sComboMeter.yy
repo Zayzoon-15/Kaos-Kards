@@ -32,8 +32,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Ui",
-    "path":"folders/Sprites/Ui.yy",
+    "name":"Combo",
+    "path":"folders/Sprites/Ui/Combo.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -4,6 +4,12 @@
 //Someone Died
 if global.playerHp <= 0 or global.enemyHp <= 0
 {
+	//Sound
+	if instance_exists(oParAttacks) or instance_exists(oAttackCard)
+	{
+		audioPlaySfx([snStars1,snStars2]);
+	}
+	
 	//Destroy Attacks
 	instance_destroy(oAttackEffect);
 	with oParAttacks
@@ -13,7 +19,6 @@ if global.playerHp <= 0 or global.enemyHp <= 0
 	}
 	
 	//Destroy Cards
-	audioPlaySfx([snStars1,snStars2]);
 	with oAttackCard
 	{
 		starEffect(x,y,10,false,20,25);

@@ -16,7 +16,6 @@ playerDeck = [
     actionCards.gato,
     actionCards.gato,
     actionCards.gato,
-    actionCards.gato,
 
 	//Action Cards
     //actionCards.poison,
