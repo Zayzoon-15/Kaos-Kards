@@ -43,8 +43,7 @@ function createEnemy(_name,_sprite,_attacks,_kaos,_healWeight = 100,_healValue =
 function enemyAddCard(_slotId,_info,_value,_used = false,_disabled = false)
 {
     //Get Inst
-    var _slotInst = oActionSlot;
-    if _slotId == 0 then _slotInst = oSpecialSlot;
+    var _slotInst = _slotId != 0 ? oActionSlot : oSpecialSlot;
 
     //Get Pos
     var _x, _y;
@@ -58,7 +57,6 @@ function enemyAddCard(_slotId,_info,_value,_used = false,_disabled = false)
     //Create Slot
     var _slot = instance_create_layer(_x,_y,"Slots",_slotInst,{slotId : _slotId,});
     _slot.used = _used; //Set Used
-    _slot.scale = 1.3; //Set Size;
     _slot.disabled = _disabled; //Set Disabled
     
     //Create Card

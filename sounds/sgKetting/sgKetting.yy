@@ -7,10 +7,10 @@
   },
   "bitDepth":1,
   "channelFormat":1,
-  "compression":0,
+  "compression":1,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":151.8644,
+  "duration":151.85423,
   "exportDir":"",
   "name":"sgKetting",
   "parent":{

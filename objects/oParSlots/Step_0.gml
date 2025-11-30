@@ -15,7 +15,7 @@ if !filled and !used
 }
 
 //Filled
-if filled and !used
+if filled and !used and !disabled
 {
     scale = lerp(scale,1.3,.3);
 }

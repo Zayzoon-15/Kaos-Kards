@@ -39,4 +39,11 @@ function FiggySetup() {
         Figgy.Button("Apply Shield Enemy",function(){addEffect(attackEffects.shield,10,true)});
         Figgy.Button("Apply Poison Enemy",function(){addEffect(attackEffects.poison,10,true)});
         Figgy.Button("Apply Fire Enemy",function(){addEffect(attackEffects.fire,10,true)});
+		
+		Figgy.Section("Kaos Effects",false);
+		Figgy.Button("Freeze Slots",function(){
+			global.disabledSlots.player[1] = true;
+			global.disabledSlots.enemy[1] = true;
+		});
+		
 }

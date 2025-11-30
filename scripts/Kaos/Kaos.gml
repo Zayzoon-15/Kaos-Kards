@@ -6,14 +6,14 @@
 
 /* HOW TO
  * All functions should look like this
- * function kaosActionTemp(_targetEnemy)
+ * function kaosActionTemp()
  * All actions have to call kaosCardDone to show that they are done
 */
 
 
 
 ///@self oAttackCard
-function kaosActionSwoop(_targetEnemy)
+function kaosActionSwoop()
 {
 	//Create Bread Attack
 	instance_create_layer(x,y-150,"Attacks",oSwoopChoose);
@@ -26,7 +26,7 @@ function kaosActionSwoop(_targetEnemy)
 }
 
 ///@self oAttackCard
-function kaosActionSwap(_targetEnemy)
+function kaosActionSwap()
 {
 	//Show Message
 	createAlertMessage("All Cards Swapped");
@@ -53,7 +53,7 @@ function kaosActionSwap(_targetEnemy)
 }
 
 ///@self oAttackCard
-function kaosActionHigh(_targetEnemy)
+function kaosActionHigh()
 {
 	//Show Message
 	createAlertMessage("All Values Doubled");
@@ -69,7 +69,7 @@ function kaosActionHigh(_targetEnemy)
 }
 
 ///@self oAttackCard
-function kaosActionDestroy(_targetEnemy)
+function kaosActionDestroy()
 {
 	//Juice
 	cardJuice(false);
@@ -89,7 +89,7 @@ function kaosActionDestroy(_targetEnemy)
 }
 
 ///@self oAttackCard
-function kaosActionFreeze(_targetEnemy)
+function kaosActionFreeze()
 {	
     //Show Message
 	createAlertMessage("Slots Frozen For Next Round");
