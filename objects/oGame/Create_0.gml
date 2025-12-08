@@ -62,8 +62,12 @@ gameState = GAMESTATES.PREPARE;
 
 //Managers
 global.paused = false;
-global.mobile = false;
-if os_type == os_android or os_type == os_ios then global.mobile = true;
+
+//Mobile
+global.mobile = os_type == os_android or os_type == os_ios;
+
+//Gamepad
+global.gamepad = false;
 
 #endregion
 

@@ -67,7 +67,7 @@ function resetDraw()
 ///@arg {Asset.GMAnimCurve} _asset The animation curve
 ///@arg {real} _pos The position of the animation
 ///@arg {string} _name The name of the value to get
-function getAnimValue(_asset,_pos,_name = "x")
+function animGetValue(_asset,_pos,_name = 0)
 {
     var _curveStruct = animcurve_get(_asset);
     var _channel = animcurve_get_channel(_curveStruct,_name);
@@ -114,7 +114,7 @@ function keyCheckPressed(_key)
 ///@arg {string} _message The message to receive
 ///@arg {function} _func What to do if it receives the message
 ///@arg {bool} _sameAs Only recive the message if its from the current objects sprite (Default = false)
-function spriteBroadcast(_message,_func,_sameAs = false)
+function broadcastSprite(_message,_func,_sameAs = false)
 {
     //Can Receive Message
     var _canReceive = true;
@@ -130,6 +130,23 @@ function spriteBroadcast(_message,_func,_sameAs = false)
     
     //Check Message
     if event_data[? "event_type"] == "sprite event" and _canReceive
+    {
+        //Do The Function
+        if event_data[? "message"] == _message
+        {
+            _func();
+        }
+    }
+}
+
+
+///@desc Checks to see if the message given is received
+///@arg {string} _message The message to receive
+///@arg {function} _func What to do if it receives the message
+function broadcastSequence(_message,_func)
+{    
+    //Check Message
+    if event_data[? "event_type"] == "sequence event"
     {
         //Do The Function
         if event_data[? "message"] == _message

@@ -4,7 +4,7 @@ x = lerp(x,targetX,.2);
 y = lerp(y,targetY,.2);
 
 //Animate
-x += getAnimValue(acCard,curvePos,"shake")*7;
+x += animGetValue(acCard,curvePos,"shake")*7;
 
 //Rotate
 var _angle = (xprevious - x);

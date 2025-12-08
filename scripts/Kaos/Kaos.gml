@@ -8,6 +8,7 @@
  * All functions should look like this
  * function kaosActionTemp()
  * All actions have to call kaosCardDone to show that they are done
+ * MAKE SURE ALL KAOS ACTIONS HAVE A WAY TO CALL KaosCardDone TO FINISH THE ACTION
 */
 
 
@@ -124,4 +125,19 @@ function kaosActionFreeze()
     
     //Finish
     timeSourceCreate(2,kaosCardDone);
+}
+
+///@self oAttackCard
+function kaosActionRps()
+{
+	//Create Layer
+	if layer_exists("Rps") then layer_destroy("Rps");
+    var _layer = layer_create(layer_get_depth("Attacks"),"Rps");
+	
+	//Create Hands
+	layer_sequence_create(_layer,room_width/2,room_height/2,seqRps);
+	
+	//Destroy Card
+    starEffect(x,y,10,true,20,25);
+	instance_destroy();
 }

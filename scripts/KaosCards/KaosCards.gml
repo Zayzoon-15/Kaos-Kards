@@ -25,7 +25,11 @@ kaosCards = {
     
     freeze : new createCardKaos("Freezing Ace",
     "Freezes a random slot from both the players and enemies side",
-    sCardFreeze,kaosActionFreeze)
+    sCardFreeze,kaosActionFreeze),
+    
+    rps : new createCardKaos("Rock Paper Scissors",
+    "Play rock paper scissors against the enemy",
+    sCardRps,kaosActionRps),
     
 };
 

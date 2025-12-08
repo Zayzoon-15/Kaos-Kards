@@ -1,5 +1,5 @@
 ///@desc Receive Message
-spriteBroadcast("slashDamage",action,true);
-spriteBroadcast("slashCharge",function() {
+broadcastSprite("slashDamage",action,true);
+broadcastSprite("slashCharge",function() {
   currentlyDamaging = true;  
 },true);

@@ -4,7 +4,7 @@ global.roomTarget = -1;
 
 function transPlaceSequence(_type)
 {
-    if (layer_exists("Transitions")) layer_destroy("Transitions");
+    if layer_exists("Transitions") then layer_destroy("Transitions");
     var _layer = layer_create(-99999,"Transitions");
 	
 	var _x = camera_get_view_x(view_camera[0]);
