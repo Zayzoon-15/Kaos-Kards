@@ -130,12 +130,13 @@ function kaosActionFreeze()
 ///@self oAttackCard
 function kaosActionRps()
 {
-	//Create Layer
-	if layer_exists("Rps") then layer_destroy("Rps");
-    var _layer = layer_create(layer_get_depth("Attacks"),"Rps");
-	
 	//Create Hands
-	layer_sequence_create(_layer,room_width/2,room_height/2,seqRps);
+	instance_create_layer(0,room_height/2,"Attacks",oRpsHand,{
+        handId : 0
+    });
+    instance_create_layer(0,room_height/2,"Attacks",oRpsHand,{
+        handId : 1
+    });
 	
 	//Destroy Card
     starEffect(x,y,10,true,20,25);
