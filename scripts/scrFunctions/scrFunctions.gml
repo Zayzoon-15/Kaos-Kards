@@ -169,3 +169,45 @@ function timeSourceCreate(_time,_action,_args = [],_units = time_source_units_se
     time_source_start(_timeSource);
     
 }
+
+
+/// @desc Creates an array of integers from the min value to the max value
+/// @param {real} _min The starting number
+/// @param {real} _max The ending number
+/// @returns {Array<Real>} An array containing the range
+function arrayCreateRange(_min, _max) {
+    var _result = [];
+    var _length = _max - _min + 1;
+    
+    //Check if the range is valid
+    if _length <= 0 then return _result;
+    
+    //Grow Array
+    _result = array_create(_length, 0); 
+
+	//Add To Array
+    for (var i = 0; i < _length; i++;) {
+        _result[i] = _min + i*20;
+    }
+	
+	//Return Final Array
+    return _result;
+}
+
+function randomNonRepeat(_array) {
+	
+    //Get the length of the array and choose any one index except the last index
+    var _length = array_length(_array);
+    var _chosenIndex = irandom_range(0, _length - 2);
+
+    //Remember what we choose
+    var _result = _array[_chosenIndex];
+
+    //Move the chosen result to the end of the array
+    array_delete(_array, _chosenIndex, 1);
+    array_push(_array, _result);
+
+   //Return the result
+    return _result;
+
+}

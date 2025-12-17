@@ -48,7 +48,10 @@ action = function()
     }
     
     //Go To Enemy Room
-    transStart(rEnemy,seqFadeOut,seqFadeIn);
+	randomise();
+	_trans = seqFadeOut;
+	if irandom_range(0,10) == 0 then _trans = oTransSticker;
+    transStart(rEnemy,_trans,seqFadeIn);
     
     //Don't Hover
     canHover = false;

@@ -22,6 +22,7 @@ function FiggySetup() {
         Figgy.Button("Prepare",function(){room_goto(rPrepare)});
         Figgy.Button("Enemy",function(){room_goto(rEnemy)});
         Figgy.Button("Kaos",function(){room_goto(rKaos)});
+        Figgy.Button("Stickers",function(){transStart(room,oTransSticker)});
 	
 		Figgy.Section("Combo",false);
 		Figgy.Int("Player Combo",0,0,100,1,function(){global.playerComboMeter = argument0});

@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snKeyClick6",
+  "audioGroupId":{
+    "name":"agSfx",
+    "path":"audiogroups/agSfx",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.0,
+  "exportDir":"",
+  "name":"snKeyClick6",
+  "parent":{
+    "name":"Transitions",
+    "path":"folders/Sounds/Sfx/Transitions.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snKeyClick6.ogg",
+  "volume":1.0,
+}
