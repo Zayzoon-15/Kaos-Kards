@@ -68,8 +68,8 @@
     {"$GMFolder":"","%Name":"Actions","folderPath":"folders/Sounds/Sfx/Actions.yy","name":"Actions","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Effects","folderPath":"folders/Sounds/Sfx/Effects.yy","name":"Effects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Game","folderPath":"folders/Sounds/Sfx/Game.yy","name":"Game","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Transitions","folderPath":"folders/Sounds/Sfx/Transitions.yy","name":"Transitions","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Kaos","folderPath":"folders/Sounds/Sfx/Kaos.yy","name":"Kaos","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Transitions","folderPath":"folders/Sounds/Sfx/Transitions.yy","name":"Transitions","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Ui","folderPath":"folders/Sounds/Sfx/Ui.yy","name":"Ui","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Sprites","folderPath":"folders/Sprites.yy","name":"Sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Attacks","folderPath":"folders/Sprites/Attacks.yy","name":"Attacks","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -97,7 +97,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.2.212",
+    "IDEVersion":"2024.14.1.210",
   },
   "name":"KaosKards",
   "resources":[

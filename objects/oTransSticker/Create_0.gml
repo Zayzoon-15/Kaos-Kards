@@ -59,24 +59,24 @@ startStickerTrans = function()
 	    if stickers[i] != stickers[array_length(stickers)-1]
 		{
 			stickers[i].alarm[0] = random_range(1,30);
-		} else stickers[i].alarm[0] = 33;
+		} else stickers[i].alarm[0] = 32;
 	}
 
 	//Start Transition
-	timeSourceCreate(1.5,function()
+	timeSourceCreate(80,function()
 	{
 		//Change Room
 		room_goto(global.roomTarget);
 	
 		//Destroy Stickers
 		removeStickers();
-	});
+	},[],time_source_units_frames);
 	
 	//Set Transition
-	timeSourceCreate(2,function(){
+	timeSourceCreate(120,function(){
 		global.midTrans = false;
 		instance_destroy();
-	});
+	},[],time_source_units_frames);
 }
 
 //Transition

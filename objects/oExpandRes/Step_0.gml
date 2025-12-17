@@ -22,12 +22,26 @@ var _camY = 0;
 //Set GUI Size
 display_set_gui_size(baseW, baseH);
 
-//Resize Surface
-if surface_exists(application_surface) and _winW >= baseW and _winH >= baseH 
+//Resize Screen
+if _winW >= baseW * _scale and _winW >= 200 and _winH >= 200
 {
-    surface_resize(application_surface, round(camW), round(camH));
+    if surface_exists(application_surface) 
+    {
+        //Resize Surface
+        surface_resize(application_surface, round(camW), round(camH));
+        
+        //Set Camera
+        camera_set_view_pos(view_camera[0], _camX, _camY);
+        camera_set_view_size(view_camera[0], camW, camH);
+    }
+} else {
+    
+    //Resize
+	surface_resize(application_surface, baseW, baseH);
+    
+    //Set Camera
+    _camX = room_width/2 - baseW/2;
+    camera_set_view_pos(view_camera[0], _camX, _camY);
+    camera_set_view_size(view_camera[0], baseW, baseH);
 }
 
-//Set Camera
-camera_set_view_pos(view_camera[0], _camX, _camY);
-camera_set_view_size(view_camera[0], camW, camH);
