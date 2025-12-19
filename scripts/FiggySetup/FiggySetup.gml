@@ -22,6 +22,7 @@ function FiggySetup() {
         Figgy.Button("Prepare",function(){room_goto(rPrepare)});
         Figgy.Button("Enemy",function(){room_goto(rEnemy)});
         Figgy.Button("Kaos",function(){room_goto(rKaos)});
+        Figgy.Button("Test Room",function(){room_goto(rTesting)});
         Figgy.Button("Stickers",function(){transStart(room,oTransSticker)});
 	
 		Figgy.Section("Combo",false);

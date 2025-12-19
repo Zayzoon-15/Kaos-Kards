@@ -14,7 +14,8 @@ playerDeck = [
     actionCards.shield,
     actionCards.shield,
 	
-	kaosCards.rps
+	kaosCards.rps,
+	kaosCards.brawl,
 
 ];
 

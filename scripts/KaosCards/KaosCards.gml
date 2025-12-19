@@ -30,6 +30,10 @@ kaosCards = {
     rps : new createCardKaos("Rock Paper Scissors",
     "Play rock paper scissors against the enemy",
     sCardRps,kaosActionRps),
+	
+    brawl : new createCardKaos("Retro Brawler Card",
+    "Play smash bros bro lets smash rn bro >:D",
+    sCardBrawl,kaosActionBrawl),
     
 };
 

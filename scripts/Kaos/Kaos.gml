@@ -130,15 +130,25 @@ function kaosActionFreeze()
 ///@self oAttackCard
 function kaosActionRps()
 {
-	//Create Hands
-	instance_create_layer(0,room_height/2,"Attacks",oRpsHand,{
-        handId : 0
-    });
-    instance_create_layer(0,room_height/2,"Attacks",oRpsHand,{
-        handId : 1
-    });
+	//Create Text
+	instance_create_layer(0,0,"Attacks",oRpsText);
+	
+	//Create Choices
+	var _offset = sprite_get_width(sRpsChoice) * 2;
+	for (var i = 0; i < 3; ++i) {	
+	    instance_create_layer(ROOM_CENTER.x + (_offset*(i-1)),ROOM_CENTER.y,"Attacks",oRpsChoice,{
+			choiceId : i
+		});
+	}
 	
 	//Destroy Card
     starEffect(x,y,10,true,20,25);
 	instance_destroy();
+}
+
+///@self oAttackCard
+function kaosActionBrawl()
+{
+    //Finish
+    timeSourceCreate(4,kaosCardDone);
 }

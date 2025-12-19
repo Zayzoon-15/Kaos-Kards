@@ -14,7 +14,7 @@ if animPos >= .5 and played and currentAnim != action
 	currentAnim = action;
 	
 	//Check Who Won
-	alarm[1] = 30;
+	alarm[1] = 45;
 }
 
 //Move Forward
@@ -27,9 +27,9 @@ if winner
 //Play Sound
 if animPos >= .5 and !soundPlayed
 {
-    //Stars
-    var _x = handId == 0 ? bbox_right - 10 : bbox_left + 10;
-    starEffect(_x,y,10,true,40,150,40);
+    ////Stars
+    //var _x = handId == 0 ? bbox_right - 10 : bbox_left + 10;
+    //starEffect(_x,y,10,true,40,150,40);
     
     //Set Var
     soundPlayed = true;

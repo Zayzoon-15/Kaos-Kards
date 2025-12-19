@@ -8,5 +8,15 @@ TweenEasyFade(1,0,0,40,EaseInBack);
 //Destroy
 timeSourceCreate(40,function(){instance_destroy();},[],time_source_units_frames);
 
-//End Kaos
-timeSourceCreate(1.3,kaosCardDone);
+//Is Draw
+if outcome == "Draw"
+{
+	timeSourceCreate(.7,function(){
+		var _offset = sprite_get_width(sRpsChoice) * 2;
+		for (var i = 0; i < 3; ++i) {	
+			instance_create_layer(ROOM_CENTER.x + (_offset*(i-1)),ROOM_CENTER.y,"Attacks",oRpsChoice,{
+				choiceId : i
+			});
+		}
+	});
+}

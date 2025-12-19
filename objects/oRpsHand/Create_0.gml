@@ -8,8 +8,6 @@ animPos = 1;
 animSpd = 0.05;
 
 //Play
-randomise();
-action = irandom_range(0,2);
 winner = false;
 outcome = "";
 played = false;

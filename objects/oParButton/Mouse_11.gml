@@ -1,2 +1,2 @@
-//Mouse Left
+///@desc Mouse Left
 pressed = false;

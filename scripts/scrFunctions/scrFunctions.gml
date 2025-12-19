@@ -14,9 +14,10 @@ function setSize(_x,_y = _x)
 
 ///@desc Sets the variables xscale and yscale
 ///Keep in mind you need to have the variables: xscale, yscale
+///If y is not set y will be the same as x
 ///@arg {real} _x The x scale
 ///@arg {real} _y The y scale
-function squash(_x,_y)
+function squash(_x,_y = _x)
 {
     xscale = _x;
     yscale = _y;

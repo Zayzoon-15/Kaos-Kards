@@ -38,21 +38,26 @@ if outcome == "Won"
 //Redo If Draw
 if outcome == "Draw"
 {
-    timeSourceCreate(.3,function()
-    {
-        with oRpsHand
-        {
-            //Animate
-            alarm[0] = 40;
-            handDown = 0;
+	with oRpsHand
+	{
+		alarm[2] = 40;
+	}
+	
+    //timeSourceCreate(.3,function()
+    //{
+    //    with oRpsHand
+    //    {
+    //        //Animate
+    //        alarm[0] = 40;
+    //        handDown = 0;
             
-            //Set Values
-            played = false;
-            outcome = "";
-            currentAnim = 3;
-            action = irandom_range(0,2);
-        }
-    });
+    //        //Set Values
+    //        played = false;
+    //        outcome = "";
+    //        currentAnim = 3;
+    //        action = irandom_range(0,2);
+    //    }
+    //});
     
     exit;
 }
@@ -67,6 +72,9 @@ with oRpsHand
     
     if winner
     {
+		//End Kaos
+		timeSourceCreate(2.5,kaosCardDone);
+		
         //Depth
         depth = _otherHand.depth - 5;
         

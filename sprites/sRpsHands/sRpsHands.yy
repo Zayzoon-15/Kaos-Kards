@@ -49,8 +49,8 @@
   },
   "origin":9,
   "parent":{
-    "name":"Kaos",
-    "path":"folders/Sprites/Attacks/Kaos.yy",
+    "name":"Rps",
+    "path":"folders/Sprites/Attacks/Kaos/Rps.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
