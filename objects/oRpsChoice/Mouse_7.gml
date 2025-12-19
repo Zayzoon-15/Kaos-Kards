@@ -3,7 +3,6 @@ if pressed
 {
 	//Action
 	timeSourceCreate(.8,function(){
-		
 		//Create Hands
 		randomise();
 		instance_create_layer(0,room_height/2,"Attacks",oRpsHand,{
@@ -18,6 +17,9 @@ if pressed
 		//Destroy
 		instance_destroy();
 	});
+	
+	//Fade Text
+	with oRpsText {fade = true;}
 	
 	//Disable Other Buttons
 	with oRpsChoice {canClick = false;}

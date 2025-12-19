@@ -27,10 +27,15 @@ if winner
 //Play Sound
 if animPos >= .5 and !soundPlayed
 {
-    ////Stars
-    //var _x = handId == 0 ? bbox_right - 10 : bbox_left + 10;
-    //starEffect(_x,y,10,true,40,150,40);
-    
+    //Sound
+	switch handDown
+	{
+		case 1: audioPlaySfx(snRpsRock); break;
+		case 2: audioPlaySfx(snRpsPaper); break;
+		case 3: audioPlaySfx(snRpsScissor); break;
+		case 4: audioPlaySfx(snRpsShoot); break;
+	}
+	
     //Set Var
     soundPlayed = true;
 }

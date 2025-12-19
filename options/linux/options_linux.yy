@@ -2,7 +2,7 @@
   "$GMLinuxOptions":"",
   "%Name":"Linux",
   "name":"Linux",
-  "option_linux_allow_fullscreen":false,
+  "option_linux_allow_fullscreen":true,
   "option_linux_disable_sandbox":false,
   "option_linux_display_cursor":true,
   "option_linux_display_name":"Kaos Kards",

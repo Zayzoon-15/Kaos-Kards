@@ -12,3 +12,11 @@ middleTextY = (sin(timer*3)*2.5)+ystart;
 //Move Bottom Text
 bottomTextX = (cos(timer*3)*2)+xstart;
 bottomTextY = (sin(timer*2)*2.5)+ystart;
+
+//Fade
+if fade
+{
+	image_alpha = lerp(image_alpha,0,.1);
+	
+	if image_alpha <= 0.5 then instance_destroy();
+}

@@ -42,22 +42,6 @@ if outcome == "Draw"
 	{
 		alarm[2] = 40;
 	}
-	
-    //timeSourceCreate(.3,function()
-    //{
-    //    with oRpsHand
-    //    {
-    //        //Animate
-    //        alarm[0] = 40;
-    //        handDown = 0;
-            
-    //        //Set Values
-    //        played = false;
-    //        outcome = "";
-    //        currentAnim = 3;
-    //        action = irandom_range(0,2);
-    //    }
-    //});
     
     exit;
 }

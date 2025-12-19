@@ -9,7 +9,7 @@ TweenEasyFade(1,0,0,40,EaseInBack);
 timeSourceCreate(40,function(){instance_destroy();},[],time_source_units_frames);
 
 //Is Draw
-if outcome == "Draw"
+if outcome == "Draw" and handId == 0
 {
 	timeSourceCreate(.7,function(){
 		var _offset = sprite_get_width(sRpsChoice) * 2;
