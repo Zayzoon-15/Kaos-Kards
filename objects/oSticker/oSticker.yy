@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Transitions",
-    "path":"folders/Objects/_Managers/Transitions.yy",
+    "path":"folders/Objects/Ui/Transitions.yy",
   },
   "parentObjectId":null,
   "persistent":true,

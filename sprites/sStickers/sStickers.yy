@@ -40,8 +40,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Game",
-    "path":"folders/Sprites/Game.yy",
+    "name":"Ui",
+    "path":"folders/Sprites/Ui.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

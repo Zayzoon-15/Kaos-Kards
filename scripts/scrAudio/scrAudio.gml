@@ -1,3 +1,6 @@
+//Functions that have to do with audio
+
+
 ///@desc Plays a sound effect
 ///The pitch of this sound can be changed
 ///@param {Asset.GMSound} _sound The sound asset (Can be an array of sounds)

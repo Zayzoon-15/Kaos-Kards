@@ -194,6 +194,10 @@ function arrayCreateRange(_min, _max) {
     return _result;
 }
 
+
+/// @desc Chooses a random number or item from the given array and does not repeat them
+///You can use arrayCreateRange to make a range
+/// @param {array<any*>} _array An array with the numbers or items you want
 function randomNonRepeat(_array) {
 	
     //Get the length of the array and choose any one index except the last index

@@ -16,9 +16,7 @@ text = "Ready?";
 action = function()
 {
     //Go To Kaos Room
-	randomise();
-	_trans = seqFadeOut;
-	if irandom_range(0,10) == 0 then _trans = oTransSticker;
+    transStart(rKaos);
     
     //Don't Hover
     canHover = false;
