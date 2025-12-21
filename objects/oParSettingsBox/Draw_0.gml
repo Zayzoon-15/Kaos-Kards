@@ -19,4 +19,4 @@ if disabled
 }
 
 //Reset Draw
-resetDraw();
+drawReset();

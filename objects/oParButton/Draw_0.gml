@@ -20,4 +20,4 @@ draw_text_transformed(boxX+_shakeX,boxY+_shakeY,text,textSize,textSize,0);
 if !canHover then draw_sprite(sButtonX,0,boxX+_shakeX,boxY+_shakeY);
 
 //Reset
-resetDraw();
+drawReset();

@@ -10,5 +10,5 @@ if value != undefined
 {
     textSetup(fnNumberOutline,fa_center,fa_middle);
     draw_text_transformed(x,bbox_top - 40,value,1,1,image_angle);
-    resetDraw();
+    drawReset();
 }

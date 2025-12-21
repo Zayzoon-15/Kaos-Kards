@@ -149,6 +149,12 @@ function kaosActionRps()
 ///@self oAttackCard
 function kaosActionBrawl()
 {
+	//Create Map
+	instance_create_layer(x,bbox_top+45,"Attacks",oBrawlSetup);
+	
+	//Change Pos
+	targetY += 50;
+	
     //Finish
-    timeSourceCreate(4,kaosCardDone);
+    //timeSourceCreate(4,kaosCardDone);
 }

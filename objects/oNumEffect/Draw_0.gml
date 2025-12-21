@@ -13,4 +13,4 @@ if value >= 0
 draw_text_transformed(x,y,_string,image_xscale,image_yscale,image_angle);
 
 //Reset
-resetDraw();
+drawReset();

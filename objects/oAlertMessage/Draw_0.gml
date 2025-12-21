@@ -10,5 +10,5 @@ draw_text_ext_transformed(x+_shakeX,y+_shakeY,text,-1,600,2,2,0);
 
 
 //Reset Draw
-resetDraw();
+drawReset();
 

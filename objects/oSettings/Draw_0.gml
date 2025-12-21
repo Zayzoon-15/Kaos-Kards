@@ -17,6 +17,6 @@ draw_sprite_tiled(sSettingsCards,0,0,bgY);
 bgY += 0.2;
 
 //Reset Draw
-resetDraw();
+drawReset();
 
 #endregion

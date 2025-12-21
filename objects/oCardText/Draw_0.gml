@@ -10,4 +10,4 @@ draw_text_ext_transformed(x,y-height-heightMargin-(heightMargin/2),name,-1,maxWi
 draw_text_ext_transformed(x,y-height-heightMargin,text,-1,maxWidth,1,1,0);
 
 //Reset
-resetDraw();
+drawReset();

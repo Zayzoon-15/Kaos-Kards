@@ -27,7 +27,7 @@ textSetup(fnMain,fa_center,fa_top,c_white,boxAlpha);
 draw_text_ext_transformed(_x,_y-height-(heightMargin/2),_text,-1,maxWidth,1,1,0);
 
 //Reset Draw
-resetDraw();
+drawReset();
 
 
 #endregion

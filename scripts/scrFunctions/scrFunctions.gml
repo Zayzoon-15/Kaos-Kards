@@ -52,7 +52,7 @@ function textSetup(_font,_halign,_valign,_color=c_white,_alpha=1)
 
 
 ///@desc Resets all draw values
-function resetDraw()
+function drawReset()
 {
     gpu_set_blendmode(bm_normal);
     draw_set_color(c_white);

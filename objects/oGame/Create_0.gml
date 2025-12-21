@@ -34,7 +34,7 @@ global.playerHpIcons = [];
 global.enemyHpIcons = [];
 
 //Meter
-global.playerComboMeter = 100;
+global.playerComboMeter = 0;
 global.enemyComboMeter = 0;
 
 //Actions

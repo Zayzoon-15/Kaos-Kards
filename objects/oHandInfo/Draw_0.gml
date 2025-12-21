@@ -9,4 +9,4 @@ textSetup(fnMain,fa_center,fa_top,c_white,1);
 draw_text_ext_transformed(x,y-height-heightMargin,text,-1,maxWidth,1,1,0);
 
 //Reset
-resetDraw();
+drawReset();

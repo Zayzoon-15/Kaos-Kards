@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snOpenWindow",
+  "audioGroupId":{
+    "name":"agSfx",
+    "path":"audiogroups/agSfx",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.42857143,
+  "exportDir":"",
+  "name":"snOpenWindow",
+  "parent":{
+    "name":"Kaos",
+    "path":"folders/Sounds/Sfx/Kaos.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snOpenWindow.ogg",
+  "volume":1.0,
+}

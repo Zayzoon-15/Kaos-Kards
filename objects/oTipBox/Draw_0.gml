@@ -23,4 +23,4 @@ textSetup(fnMain,fa_center,fa_top,c_white,textAlpha);
 draw_text_ext_transformed(x,_textY,text,-1,maxWidth,size,size,0);
 
 //Reset
-resetDraw();
+drawReset();

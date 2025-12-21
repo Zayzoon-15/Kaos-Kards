@@ -10,4 +10,4 @@ draw_text_transformed(boxX,boxY,text,textSize*xscale,textSize*yscale,0);
 draw_sprite_ext(sprite_index,image_index,boxX,boxY,xscale,yscale,image_angle,c_black,boxAlpha);
 
 //Reset
-resetDraw();
+drawReset();
