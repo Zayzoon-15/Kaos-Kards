@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.09687075,
+  "duration":0.0,
   "exportDir":"",
   "name":"snKeyClick1",
   "parent":{
@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snKeyClick1.ogg",
-  "volume":1.0,
+  "volume":0.5,
 }

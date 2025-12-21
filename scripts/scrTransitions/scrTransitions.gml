@@ -35,14 +35,15 @@ function transStart(_roomTarget,_typeOut = seqFadeOut,_typeIn = seqFadeIn)
 	        transPlaceSequence(_typeIn);
 	        layer_reset_target_room();
 		} else {
+			
+			layer_set_target_room(_roomTarget);
+			if layer_exists("Transitions") then layer_destroy("Transitions");
+			layer_reset_target_room();
+			
 			if layer_exists("Transitions") then layer_destroy("Transitions");
 			var _layer = layer_create(-99999,"Transitions");
 			
 			instance_create_layer(0,0,_layer,_typeOut);
-			
-			layer_set_target_room(_roomTarget);
-			layer_destroy("Transitions");
-			layer_reset_target_room();
 		}
 		
         return true;

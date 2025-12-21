@@ -23,7 +23,7 @@ global.disabledSlots = {
 };
 
 //Enemy
-global.currentEnemy = enemyInfo.dog;
+global.currentEnemy = undefined;
 
 //Health
 global.playerHp = 100;
