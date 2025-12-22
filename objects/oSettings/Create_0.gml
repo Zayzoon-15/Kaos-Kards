@@ -1,6 +1,10 @@
+//Audio
+lastSong = noone;
 
+//Bg
 bgY = 0;
 
+//Functions
 createSettings = function()
 {
 	//Pause
@@ -14,6 +18,10 @@ createSettings = function()
     instance_activate_object(oSound);
 	
 	#endregion
+	
+	//Play Song
+	lastSong = global.curMusic;
+	audioPlaySong(sgKetting);
 	
 	#region Menu
 	var _depth = -10;
@@ -66,6 +74,9 @@ destroySettings = function()
 	instance_destroy(oParSettingsBox);
 	instance_destroy(oSettingsGear);
 	instance_destroy(oSettingsSubMenu);
+	
+	//Play Song
+	audioPlayGroupSong(global.bgSyncGroup,lastSong);
 	
 	//Activate
     audio_resume_all();

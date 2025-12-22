@@ -18,6 +18,9 @@ if count < 4
 {
 	alarm[1] = 70;
 } else {
+	//Start Song
+	audioPlaySong(choose(sgRetro1,sgRetro2),false,300);
+	
 	with oBrawlChar
 	{
 		canMove = true;

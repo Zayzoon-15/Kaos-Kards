@@ -10,7 +10,7 @@ globalvar actionCards;
 
 actionCards = {
     
-    gato : new createCardAction("Gato","Its a cat",sGato,[1,99],actionLaser),
+    gato : new createCardAction("Gato","Its a cat",sGato,[1,69],actionLaser),
     
     heal : new createCardAction("Heal Card",
     "Heals you by a random amount",

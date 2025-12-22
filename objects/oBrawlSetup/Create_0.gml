@@ -5,6 +5,10 @@ image_index = 1;
 //Audio
 audioPlaySfx(snOpenWindow);
 
+//Music
+lastSong = global.curMusic;
+audioPlaySong(noone,false,3000);
+
 //Load Game
 alarm[0] = 40;
 gameover = false;

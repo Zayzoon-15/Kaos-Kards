@@ -13,3 +13,6 @@ instance_destroy();
 
 //Finish
 kaosCardDone();
+
+//Play Song
+audioPlayGroupSong(global.bgSyncGroup,lastSong,80);

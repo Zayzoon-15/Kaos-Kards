@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sgRetro2",
+  "audioGroupId":{
+    "name":"agMusic",
+    "path":"audiogroups/agMusic",
+  },
+  "bitDepth":1,
+  "channelFormat":1,
+  "compression":1,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":91.41841,
+  "exportDir":"",
+  "name":"sgRetro2",
+  "parent":{
+    "name":"Music",
+    "path":"folders/Sounds/Music.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sgRetro2.ogg",
+  "volume":1.0,
+}

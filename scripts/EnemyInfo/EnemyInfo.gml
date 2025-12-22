@@ -21,7 +21,7 @@ enemyInfo = {
     [kaosCards.destroy,kaosCards.high,kaosCards.swap,kaosCards.swoop],80,75,50,80,65,2,100),
     
     //Retro Crew
-    chud : new createEnemy("Chud",sChud,[actionCards.punch,actionCards.slash,actionCards.laser,actionCards.mirror],[kaosCards.brawl,kaosCards.rps]),
+    chud : new createEnemy("Ichiro Uzumaki the Chud",sChud,[actionCards.punch,actionCards.slash,actionCards.laser,actionCards.mirror],[kaosCards.brawl,kaosCards.rps]),
 };
 
 
