@@ -32,9 +32,10 @@ alarm[0] = _actTime;
 
 /// @desc Make the card have juice
 /// @param {bool} [_stars] [True] If it should have stars
+/// @param {bool} [_starSound] [False] If it should have the stars sound effect
 /// @param {bool} [_angle] [True] If it should rotate
 /// @param {array<real>} [_angleAmount] [8,14] The amount it rotates [Lowest, Highest]
-cardJuice = function(_stars = true,_angle = true,_angleAmount = [8,14])
+cardJuice = function(_stars = true,_starSound = false,_angle = true,_angleAmount = [8,14])
 {
     //Scale
     setSize(1.5,1.5);
@@ -42,7 +43,7 @@ cardJuice = function(_stars = true,_angle = true,_angleAmount = [8,14])
     //Stars
     if _stars
     {
-        starEffect(x,y,8,false,10,15);
+        starEffect(x,y,8,_starSound,10,15);
     }
     
     //Angle

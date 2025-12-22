@@ -2,7 +2,7 @@
 ///@desc Hurts the enemy by the given amount
 ///@arg {real} _value The amount of damage
 function hurtEnemy(_value)
-{
+{	
     //Enemy Photo
     with oEnemyPhoto {hurt();}
 	
@@ -11,7 +11,7 @@ function hurtEnemy(_value)
     
 	//Add Mult
 	_value *= global.valueMult;
-    
+	
     //Remove Temp Health
     var _lastTemp = global.enemyTempHp;
     var _tempHp = global.enemyTempHp - _value;

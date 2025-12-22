@@ -20,5 +20,8 @@ timeSourceCreate(3,function(){
 	if playerWon then starEffect(x,y,10,false);
 	
 	//Create Button For Now
-	instance_create_layer(room_width/2,(room_height/2) + 50,"Ui",oRetryButton);
+	var _xOffset = 120;
+	var _y = ROOM_CENTER.y + 50;
+	instance_create_layer(ROOM_CENTER.x + _xOffset,_y,"Ui",oRetryButton);
+	instance_create_layer(ROOM_CENTER.x - _xOffset,_y,"Ui",oKaosExitButton);
 });

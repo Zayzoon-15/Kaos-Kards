@@ -35,7 +35,7 @@ function kaosActionSwap()
 	//Juice
     randomize();
     angle += 360 * choose(-1,1);
-    cardJuice(true,false);
+    cardJuice(true,false,false);
 	
 	#region Swap Cards
 	
@@ -60,7 +60,7 @@ function kaosActionHigh()
 	createAlertMessage("All Values Doubled");
 	
 	//Juice
-	cardJuice(true);
+	cardJuice(true,true);
 	
 	//Double Values
 	global.valueMult *= 2;

@@ -10,17 +10,17 @@ alphaTime = .03;
 scaleTime = .5;
 
 //Info
-infoText = "Press to retry";
+infoText = "Press to return to the menu";
 
 //Text
 textTargetSize = 2;
 textSize = textTargetSize;
-text = "Retry";
+text = "Exit";
 
 //Action
 action = function()
 {
-    //Start Game Again
-	transStart(rPrepare);
+    //Leave Game
+	transStart(rTournies);
 	timeSourceCreate(.3,gameReset);
 }

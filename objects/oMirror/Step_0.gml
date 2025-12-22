@@ -39,7 +39,7 @@ if _collide
         instance_destroy(_inst);
         
         //Juice
-        card.cardJuice(true,true);
+        card.cardJuice(true,false,true);
         card.cardFlash(.5,c_white);
         
         //Reflected
