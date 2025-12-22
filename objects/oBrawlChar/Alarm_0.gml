@@ -1,9 +1,12 @@
 ///@desc Enemy Ai Choice
 
+///At somepoint the ai will be actually smart but for now it's random
+
+//Randomise
 randomise();
 
 //Move
-var _dir = choose(-1,1);
+var _dir = choose(-1,1,1,1);
 if _dir == -1
 {
 	keyLeft = 1;
@@ -21,7 +24,7 @@ if irandom_range(1,4) == 1
 }
 
 //Punch
-if irandom_range(1,3) == 1
+if irandom_range(1,2) == 1
 {
 	actPunch();
 }

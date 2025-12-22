@@ -10,5 +10,5 @@ soundPlayed = false;
 //Repeat
 if handDown <= 3
 {
-    alarm[0] = 25;
+    alarm[0] = 50;
 } else played = true;

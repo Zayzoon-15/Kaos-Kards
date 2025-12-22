@@ -53,7 +53,7 @@ function enemyAddCard(_slotId,_info,_value,_used = false,_disabled = false)
     	case 2: _x = 640; _y = 360; break;
     	case 3: _x = 840; _y = 360; break;
     }
-    
+
     //Create Slot
     var _slot = instance_create_layer(_x,_y,"Slots",_slotInst,{slotId : _slotId,});
     _slot.used = _used; //Set Used
@@ -65,7 +65,8 @@ function enemyAddCard(_slotId,_info,_value,_used = false,_disabled = false)
         instance_create_layer(_x,_y,"Cards",oEnemyCard,{
             info : _info,
             value : _value,
-            slotId : _slotId
+            slotId : _slotId,
+			slot : _slot
         });
     }
 }

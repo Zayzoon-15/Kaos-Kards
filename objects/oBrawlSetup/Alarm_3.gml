@@ -2,7 +2,7 @@
 
 //Hurt Loser
 randomise();
-var _amount = irandom_range(15,20);
+var _amount = irandom_range(20,30);
 if loser == 1
 {
 	hurtEnemy(_amount);

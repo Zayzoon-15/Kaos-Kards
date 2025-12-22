@@ -14,7 +14,7 @@ if animPos >= .5 and played and currentAnim != action
 	currentAnim = action;
 	
 	//Check Who Won
-	alarm[1] = 45;
+	alarm[1] = 75;
 }
 
 //Move Forward

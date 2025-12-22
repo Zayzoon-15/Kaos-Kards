@@ -216,3 +216,14 @@ function randomNonRepeat(_array) {
     return _result;
 
 }
+
+///@desc Swaps to indexes in an array
+///@param {array} _array The target array
+///@param {real} _indexA The first index
+///@param {real} _indexB The second Index
+function arraySwapIndex(_array,_indexA,_indexB)
+{
+	var _temp = _array[_indexA];
+    _array[_indexA] = _array[_indexB]; 
+    _array[_indexB] = _temp;
+}

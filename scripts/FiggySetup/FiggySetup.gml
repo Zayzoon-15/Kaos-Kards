@@ -5,9 +5,10 @@
 	• Do NOT rename, delete or call it yourself. Doing so will break initialization.
 	• Documentation: https://glebtsereteli.github.io/Figgy/pages/api/figgy/setup
 */
+
 function FiggySetup() {
 			
-	Figgy.Window("Game Info",true,FIGGY_WINDOW_DEFAULT_X,40,FIGGY_WINDOW_DEFAULT_WIDTH,400);
+	Figgy.Window("Game Info",true,FIGGY_WINDOW_DEFAULT_X,40,FIGGY_WINDOW_DEFAULT_WIDTH,500);
 	
 		Figgy.Section("Enemy Info");
 	    Figgy.String("Current Enemy", "dog", function(){
@@ -23,8 +24,74 @@ function FiggySetup() {
         Figgy.Button("Enemy",function(){room_goto(rEnemy)});
         Figgy.Button("Kaos",function(){room_goto(rKaos)});
         Figgy.Button("Test Room",function(){room_goto(rTesting)});
+        Figgy.Button("Menu",function(){transStart(rTournies,oTransSticker)});
         Figgy.Button("Stickers",function(){transStart(room,oTransSticker)});
-	
+		
+		Figgy.Section("Game Stats",false)
+		Figgy.String("Discards",10,function(){
+			if argument0 != ""
+			{
+				global.maxDiscards = real(argument0);
+			}
+		});
+		Figgy.String("MaxHand",10,function(){
+			if argument0 != ""
+			{
+				global.maxHandSize = real(argument0);
+			}
+		});
+		Figgy.Separator("Cards");
+		Figgy.String("Card To Give", "NONE",function(){
+			global.debugCard = argument0;
+		});
+		Figgy.Button("Give Card",function(){
+			
+			if struct_exists(actionCards,global.debugCard)
+			{
+				var _card = struct_get_variable(actionCards,global.debugCard);
+				array_insert(playerDeck,0,_card);
+				
+				//Give Deck Cards
+				with oDeck
+				{
+					totalCards ++;
+					cardsLeft ++;
+					deck = playerDeck;	
+					deckNum = 0;
+				}
+			}
+			
+			if struct_exists(kaosCards,global.debugCard)
+			{
+				var _card = struct_get_variable(kaosCards,global.debugCard);
+				array_insert(playerDeck,0,_card);
+				
+				//Give Deck Cards
+				with oDeck
+				{
+					totalCards ++;
+					cardsLeft ++;
+					deck = playerDeck;
+					deckNum = 0;
+				}
+			}
+			
+			if struct_exists(diceCards,global.debugCard)
+			{
+				var _card = struct_get_variable(diceCards,global.debugCard);
+				array_insert(playerDeck,0,_card);
+				
+				//Give Deck Cards
+				with oDeck
+				{
+					totalCards ++;
+					cardsLeft ++;
+					deck = playerDeck;	
+					deckNum = 0;
+				}
+			}
+		});
+		
 		Figgy.Section("Combo",false);
 		Figgy.Int("Player Combo",0,0,100,1,function(){global.playerComboMeter = argument0});
 		Figgy.Int("Enemy Combo",0,0,100,1,function(){global.enemyComboMeter = argument0});
@@ -32,11 +99,13 @@ function FiggySetup() {
 		Figgy.Section("Health Bar",false);
         Figgy.Separator("Player");
         Figgy.Int("Player Health",100,0,100,FIGGY_INT_DEFAULT_STEP,function(){global.playerHp = argument0;});
+		Figgy.Bool("Killable Player", true,function(){global.playerHp = clamp(global.playerHp,1,100)});
         Figgy.Button("Apply Shield Player",function(){addEffect(attackEffects.shield,10,false)});
         Figgy.Button("Apply Poison Player",function(){addEffect(attackEffects.poison,10,false)});
         Figgy.Button("Apply Fire Player",function(){addEffect(attackEffects.fire,10,false)});
         
         Figgy.Separator("Enemy");
+		Figgy.Bool("Killable Enemy", true,function(){global.enemyHp = clamp(global.enemyHp,1,100)});
         Figgy.Int("Enemy Health",100,0,100,FIGGY_INT_DEFAULT_STEP,function(){global.enemyHp = argument0;});
         Figgy.Button("Apply Shield Enemy",function(){addEffect(attackEffects.shield,10,true)});
         Figgy.Button("Apply Poison Enemy",function(){addEffect(attackEffects.poison,10,true)});
@@ -47,5 +116,4 @@ function FiggySetup() {
 			global.disabledSlots.player[1] = true;
 			global.disabledSlots.enemy[1] = true;
 		});
-		
 }

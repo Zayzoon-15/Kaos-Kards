@@ -22,7 +22,7 @@ TweenEasyMove(_startX,y,_targetX,y,0,20,EaseOutBack);
 
 //Hand Animate
 handDown = 0;
-alarm[0] = 30;
+alarm[0] = 40;
 
 //Sound
 soundPlayed = false;

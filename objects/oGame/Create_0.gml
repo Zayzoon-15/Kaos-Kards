@@ -14,6 +14,7 @@ initSettings();
 
 //Values
 global.valueMult = 1;
+global.comboMult = 2;
 
 //Cards
 global.holdingCard = false;
@@ -23,7 +24,7 @@ global.disabledSlots = {
 };
 
 //Enemy
-global.currentEnemy = undefined;
+global.currentEnemy = enemyInfo.dog;
 
 //Health
 global.playerHp = 100;

@@ -1,4 +1,3 @@
-
 #region Stats
 
 //Health
@@ -26,7 +25,6 @@ randomise();
 comboCard = attacks[irandom_range(0,array_length(attacks)-1)];
 
 #endregion
-
 
 //Get Dice Values
 diceRoll = function()

@@ -45,6 +45,9 @@ function addEffect(_effect,_value,_targetEnemy=false)
 					//Set Time
 					setupTime();
 					
+					//Setup Icon
+					setupIcons();
+					
 					//Set Value
                     value = _value;
 					

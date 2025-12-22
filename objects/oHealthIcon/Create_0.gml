@@ -1,3 +1,6 @@
+//Array
+targetArray = undefined;
+
 //Get Health Inst
 healthInst = noone;
 findHealthInst = function()

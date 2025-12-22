@@ -8,12 +8,14 @@ playerHand = undefined;
 //Players Deck
 playerDeck = [
     
-	//Action Cards
+	//Action Cards (Required)
     actionCards.heal,
     actionCards.heal,
     actionCards.shield,
     actionCards.shield,
 	
+	//Action Cards
+	actionCards.gato,
 	actionCards.slash,
 	actionCards.slash,
 	actionCards.bread,

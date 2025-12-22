@@ -19,7 +19,7 @@ if hp <= 0
 	}
 }
 
-if oBrawlSetup.gameover and hp > 0
+if oBrawlSetup.gameover and oBrawlSetup.loser != playerId
 {
 	won = true;
 }
@@ -30,25 +30,28 @@ if oBrawlSetup.gameover and hp > 0
 
 if playerId == 0
 {
+	//Inputs
+	var _keyPunch = keyboard_check_pressed(ord("Z")) or keyboard_check_pressed(ord("L")) or mouse_check_button_pressed(mb_left);
+	var _keyJump = keyboard_check_pressed(ord("K")) or keyboard_check_pressed(ord("X")) or keyboard_check_pressed(vk_up) or keyboard_check_pressed(ord("W")) or keyboard_check_pressed(vk_space);
+	
 	//Movement
 	keyLeft = keyboard_check(ord("A")) or keyboard_check(vk_left);
 	keyRight = keyboard_check(ord("D")) or keyboard_check(vk_right);
 	
-	//Punch
-	if keyboard_check_pressed(ord("Z")) or keyboard_check_pressed(ord("L"))
-	{
-		actPunch();
-	}
-	
-	if keyboard_check_pressed(ord("K")) or keyboard_check_pressed(ord("X")) or keyboard_check_pressed(vk_space)
-	{
-		actJump();
-	}
+	//Actions
+	if _keyPunch then actPunch();
+	if _keyJump then actJump();
 	
 } else { //Enemy Ai
-	if !alarm[0]
+	if !alarm[0] and !won
 	{
-		alarm[0] = 30;
+		alarm[0] = random_range(3,10);
+	}
+	
+	if won
+	{
+		keyLeft = 0;
+		keyRight = 0;
 	}
 }
 

@@ -64,6 +64,9 @@ setupTime = function()
 }
 setupTime();
 
+
+setupIcons = function()
+{
 //Create Icon
 var _createIcon = function(_effect)
 {
@@ -92,28 +95,33 @@ if instance_exists(oHealthIcon)
 {
 	var _target = "Player";
 	if targetEnemy then _target = "Enemy";
-	
     var _create = true;
     with oHealthIcon
     {
         if _target == target and healthInst != noone
 		{
+			//Get Array
+	        var _array = global.playerHpIcons;
+	        if target == "Enemy" then _array = global.enemyHpIcons;
 		
-        var _array = global.playerHpIcons;
-        if target == "Enemy" then _array = global.enemyHpIcons;
-        
-        iconId ++;
-        iconId = clamp(iconId,0,array_length(_array));
-        
-        if info == other.effect
-        {
-            iconId = 0;
-            _create = false;
-        } else _create = true;
-		
+			//Same Effect Exists
+	        if info.name == other.effect.name
+	        {
+				//Set Position Of Effect
+				var _index = array_get_index(_array,info);
+				arraySwapIndex(_array,_index,0);
+				
+	            _create = false;
+	        } else _create = true;
+			
+			//Array Contains Effect
+			if array_contains(_array,other.effect) then _create = false;
 		}
     }
     
     if _create then _createIcon(effect);
     
 } else _createIcon(effect);
+
+}
+setupIcons();

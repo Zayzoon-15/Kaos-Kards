@@ -1,3 +1,6 @@
+//Set Target Enemy
+global.currentEnemy = undefined;
+
 //Setup Character
 sprite_index = info.sprite;
 

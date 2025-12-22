@@ -93,8 +93,13 @@ function drawRectOutlined(_x1,_y1,_x2,_y2,_cornerRad = UIBOX_RAD,_outlineWidth=1
 ///@arg {real} _y The y position of the text (Default : 235)
 function createAlertMessage(_text,_x=room_width/2,_y=235)
 {
+	//Make Layer
+	if !layer_exists("Ui") then layer_create(-1,"Ui");
+	
+	//Destroy Last Message
     if instance_exists(oAlertMessage) then instance_destroy(oAlertMessage);
     
+	//Create Message
     instance_create_layer(_x,_y,"Ui",oAlertMessage,{
         text : _text
     });

@@ -1,3 +1,13 @@
+//Go To Slot Position 
+timeSourceCreate(2,function()
+{
+	x = slot.x;
+	targetX = x;
+	cardX = x;
+	cardTargetX = x;
+	
+},[],time_source_units_frames);
+
 //Position
 targetX = x;
 targetY = y;

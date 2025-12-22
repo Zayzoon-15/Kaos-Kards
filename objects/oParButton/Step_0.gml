@@ -23,6 +23,13 @@ if sizeToText
     image_xscale = (string_width(text)/60) * textTargetSize;
 }
 
+//Stick To Screen
+if stickToScreen
+{
+	x = getPosToWindow(stickToScreenRight,stickToScreenOffset);
+	targetX = x;
+}
+
 //Ease
 boxX = lerp(boxX,targetX,.2);
 boxY = lerp(boxY,targetY,.2);

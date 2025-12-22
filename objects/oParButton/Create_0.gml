@@ -1,9 +1,23 @@
+//Apply Options 
+timeSourceCreate(2,function()
+{
+	if stickToScreen
+	{
+		x = getPosToWindow(stickToScreenRight,stickToScreenOffset);
+		targetX = x;
+		boxX = x;
+	}
+	
+},[],time_source_units_frames);
 
 //Position
 boxX = x;
 boxY = y;
 targetX = x;
 targetY = y;
+stickToScreen = false; //Makes the position change based on the screen
+stickToScreenRight = true; //If it should stick the the right side or left side of the screen
+stickToScreenOffset = xstart; //The offset of the x position to the screen
 
 //Image
 xscale = image_xscale;

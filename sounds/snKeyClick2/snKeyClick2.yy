@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.0,
+  "duration":0.09723356,
   "exportDir":"",
   "name":"snKeyClick2",
   "parent":{

@@ -14,4 +14,6 @@ if keyCheckPressed(global.keyDebug)
 }
 
 //Restart Room
-if keyboard_check_pressed(ord("R")) then room_restart();
+if keyboard_check(vk_control) and keyboard_check_pressed(ord("R")){
+	room_restart();
+}

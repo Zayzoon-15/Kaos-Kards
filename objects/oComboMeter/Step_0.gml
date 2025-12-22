@@ -1,5 +1,6 @@
 //Set Value
 value = variable_global_get(targetVar);
+value = floor(value);
 
 //Get Percent
 var _percent = value / 100;

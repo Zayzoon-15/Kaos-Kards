@@ -1,6 +1,9 @@
-///@desc Hurt Character
+//Go To Characters
+x = playerInst.x + targetX;
+y = playerInst.y + targetY;
 
-//Hit Another Box (Characters Collide)
+
+//Hit Another Box (Characters Collide Attacks)
 var _hurtbox = instance_place(x,y,oBrawlHurtBox);
 if _hurtbox and _hurtbox.playerInst != playerInst
 {

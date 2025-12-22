@@ -1,19 +1,19 @@
 {
   "$GMRoom":"v1",
   "%Name":"rEnemy",
-  "creationCodeFile":"",
+  "creationCodeFile":"rooms/rEnemy/RoomCreationCode.gml",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
     {"name":"inst_632DD319_1","path":"rooms/rEnemy/rEnemy.yy",},
     {"name":"inst_4B153985","path":"rooms/rEnemy/rEnemy.yy",},
-    {"name":"inst_43A85C05","path":"rooms/rEnemy/rEnemy.yy",},
     {"name":"inst_6E79F0F","path":"rooms/rEnemy/rEnemy.yy",},
     {"name":"inst_15B875DF","path":"rooms/rEnemy/rEnemy.yy",},
     {"name":"inst_51AA8FFF","path":"rooms/rEnemy/rEnemy.yy",},
     {"name":"inst_51294C5C","path":"rooms/rEnemy/rEnemy.yy",},
     {"name":"inst_41F1EC29","path":"rooms/rEnemy/rEnemy.yy",},
+    {"name":"inst_43A85C05","path":"rooms/rEnemy/rEnemy.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -24,9 +24,7 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oHealthBar","path":"objects/oHealthBar/oHealthBar.yy",},"propertyId":{"name":"target","path":"objects/oHealthBar/oHealthBar.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"Enemy\"",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":192.0,"y":64.0,},
       ],"layers":[],"name":"Ui","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
-    {"$GMRInstanceLayer":"","%Name":"Cards","depth":200,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"v4","%Name":"inst_43A85C05","colour":4294967295,"frozen":true,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_43A85C05","objectId":{"name":"oEnemyAi","path":"objects/oEnemyAi/oEnemyAi.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":0.0,},
-      ],"layers":[],"name":"Cards","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+    {"$GMRInstanceLayer":"","%Name":"Cards","depth":200,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Cards","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Buttons","depth":300,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_632DD319_1","colour":4294967295,"frozen":true,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_632DD319_1","objectId":{"name":"oRollButton","path":"objects/oRollButton/oRollButton.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":0.85,"x":160.0,"y":359.575,},
         {"$GMRInstance":"v4","%Name":"inst_4B153985","colour":4294967295,"frozen":true,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4B153985","objectId":{"name":"oStartKaosButton","path":"objects/oStartKaosButton/oStartKaosButton.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":0.85,"x":640.0,"y":576.0,},
@@ -35,6 +33,7 @@
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":500,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_51294C5C","colour":4294967295,"frozen":true,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_51294C5C","objectId":{"name":"oDiscard","path":"objects/oDiscard/oDiscard.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1180.0,"y":632.0,},
         {"$GMRInstance":"v4","%Name":"inst_41F1EC29","colour":4294967295,"frozen":true,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_41F1EC29","objectId":{"name":"oDeck","path":"objects/oDeck/oDeck.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1180.0,"y":384.0,},
+        {"$GMRInstance":"v4","%Name":"inst_43A85C05","colour":4294967295,"frozen":true,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_43A85C05","objectId":{"name":"oEnemyAi","path":"objects/oEnemyAi/oEnemyAi.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":688.0,"y":-32.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Bg","depth":600,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_51AA8FFF","colour":4294967295,"frozen":true,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_51AA8FFF","objectId":{"name":"oBg","path":"objects/oBg/oBg.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":0.0,},

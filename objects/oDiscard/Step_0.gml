@@ -5,10 +5,7 @@ x = getPosToWindow(true);
 if room == rEnemy then exit;
 
 //Is Full
-if discards >= global.maxDiscards
-{
-    isFull = true;
-}
+isFull = discards >= global.maxDiscards;
 
 //Set Image
 if isFull

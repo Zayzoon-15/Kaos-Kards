@@ -1,6 +1,6 @@
 //Set Position
 y = oBrawlSetup.y + 30 - sprite_get_height(sBrawlMap)/2;
-x = playerId == 0 ? x - 90 : x + 90;
+x = playerId == 1 ? x - 90 : x + 90;
 
 //Reset Position
 ystart = y;
@@ -79,7 +79,9 @@ if playerId == 0
 //Image
 xscale = 1;
 yscale = 1;
-dir = playerId == 0 ? 1 : -1;
+dir = playerId == 1 ? 1 : -1;
+textAlpha = 1;
+TweenFire(self,EaseLinear,0,false,260,40,"textAlpha",1,0);
 
 //Winner
 won = false;
@@ -91,20 +93,20 @@ actPunch = function()
 	if !canMove then exit;
 	
 	//Already Punched
-	if punchStun > 0 then exit;
+	if punchStun > 0 or hitStun > 0 then exit;
 	
 	//Stun Time
 	punchStun = 10;
 	
 	//Audio
-	audioPlaySfx(snWoosh);
+	audioPlaySfx(snWoosh,.95,1.1);
 	
 	//Box Values
 	var _x = x + (30 * dir);
 	var _y = onGround ? y - (sprite_height/2) : y + 10 - (sprite_height/2);
 	var _life = 10;
-	var _w = onGround ? 10 : 15;
-	var _h = onGround ? 20 : 20;
+	var _w = onGround ? 5 : 5;
+	var _h = onGround ? 15 : 10;
 	
 	//Create Hurt Box
 	instance_create_depth(_x,_y,depth,oBrawlHurtBox,{

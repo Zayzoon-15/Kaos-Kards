@@ -1,6 +1,10 @@
 // Inherit the parent event
 event_inherited();
 
+//Position
+stickToScreen = true;
+stickToScreenRight = false;
+
 //Info
 infoText = "Press to roll the dice";
 

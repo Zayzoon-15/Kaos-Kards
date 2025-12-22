@@ -125,7 +125,7 @@
 // Whether to enable the Changes tracking system (true) or not (false).
 // By default, this is enabled when running the game from IDE and disabled when running from EXE, using the __FIGGY_IN_IDE status macro.
 // NOTE: Set this to false to improve performance at scale.
-#macro FIGGY_CHANGES_ENABLED __FIGGY_IN_IDE
+#macro FIGGY_CHANGES_ENABLED true//__FIGGY_IN_IDE
 
 // The default function to call when a Value Widget value is changed. undefined stands for "no function".
 // The arguments passed to the callback: (newValue, oldValue, variableName).
