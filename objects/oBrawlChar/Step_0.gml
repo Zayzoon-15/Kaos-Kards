@@ -31,12 +31,15 @@ if oBrawlSetup.gameover and oBrawlSetup.loser != playerId
 if playerId == 0
 {
 	//Inputs
-	var _keyPunch = keyboard_check_pressed(ord("Z")) or keyboard_check_pressed(ord("L")) or mouse_check_button_pressed(mb_left);
+	var _keyPunch = keyboard_check_pressed(ord("Z")) or keyboard_check_pressed(ord("L"));
 	var _keyJump = keyboard_check_pressed(ord("K")) or keyboard_check_pressed(ord("X")) or keyboard_check_pressed(vk_up) or keyboard_check_pressed(ord("W")) or keyboard_check_pressed(vk_space);
 	
 	//Movement
-	keyLeft = keyboard_check(ord("A")) or keyboard_check(vk_left);
-	keyRight = keyboard_check(ord("D")) or keyboard_check(vk_right);
+	if !global.mobile
+	{
+		keyLeft = keyboard_check(ord("A")) or keyboard_check(vk_left);
+		keyRight = keyboard_check(ord("D")) or keyboard_check(vk_right);
+	}
 	
 	//Actions
 	if _keyPunch then actPunch();

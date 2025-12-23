@@ -9,8 +9,8 @@
   "name":"oBrawlCount",
   "overriddenProperties":[],
   "parent":{
-    "name":"Brawl",
-    "path":"folders/Objects/Attacks/Kaos/Brawl.yy",
+    "name":"Ui",
+    "path":"folders/Objects/Attacks/Kaos/Brawl/Ui.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -6,8 +6,8 @@
   "name":"oBrawlSolid",
   "overriddenProperties":[],
   "parent":{
-    "name":"Brawl",
-    "path":"folders/Objects/Attacks/Kaos/Brawl.yy",
+    "name":"Collisions",
+    "path":"folders/Objects/Attacks/Kaos/Brawl/Collisions.yy",
   },
   "parentObjectId":null,
   "persistent":false,

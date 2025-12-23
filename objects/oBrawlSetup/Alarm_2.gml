@@ -12,3 +12,9 @@ alarm[3] = 90;
 timeSourceCreate(65,function(){
 	audioPlaySfx(snCloseWindow);
 },[],time_source_units_frames);
+
+//Fade Buttons
+if instance_exists(oBrawlMobile)
+{
+	oBrawlMobile.fade = true;
+}

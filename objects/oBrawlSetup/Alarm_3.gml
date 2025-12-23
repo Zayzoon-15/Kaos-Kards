@@ -10,6 +10,7 @@ if loser == 1
 
 //Destroy
 instance_destroy();
+instance_destroy(oBrawlMobile);
 
 //Finish
 kaosCardDone();

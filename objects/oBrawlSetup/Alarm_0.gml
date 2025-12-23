@@ -14,5 +14,20 @@ instance_create_layer(x,y,brawlLayerTop,oBrawlChar,{playerId : 1});
 instance_create_layer(x,y,brawlLayerTop,oBrawlHp);
 instance_create_layer(x,y,brawlLayerTop,oBrawlHp,{playerId : 1});
 
+//Mobile Controls
+instance_create_layer(1168,496,brawlLayerTop,oBrawlMobile,{ //Top Right
+	buttonType : "Punch"
+});
+instance_create_layer(976,624,brawlLayerTop,oBrawlMobile,{ //Bottom Right
+	buttonType : "Jump"
+});
+
+instance_create_layer(112,496,brawlLayerTop,oBrawlMobile,{ //Top Left
+	buttonType : "Left"
+});
+instance_create_layer(304,624,brawlLayerTop,oBrawlMobile,{ //Bottom Left
+	buttonType : "Right"
+});
+
 //Start Count
 alarm[1] = 40;
