@@ -1,4 +1,3 @@
-
 //Set Dragging
 if dragging and mouse_check_button_released(mb_left)
 {
@@ -30,6 +29,23 @@ if dragging
 
 //Clamp
 currentAmount = clamp(currentAmount,0,100);
+
+//Sound
+if dragging
+{
+	if !audio_is_playing(snSettingsHold) then audioPlaySfx(snSettingsHold);
+	playSound = true;
+	
+	//Change Pitch
+	var _pitch = (currentAmount/100)+.8;
+	audio_sound_pitch(snSettingsHold,_pitch);
+	
+} else {
+	if playSound {
+		audio_stop_sound(snSettingsHold);
+		playSound = false;
+	}
+}
 
 //Change Variable
 if struct_exists(info,"changeVar")

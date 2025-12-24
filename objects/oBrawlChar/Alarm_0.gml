@@ -18,13 +18,10 @@ if _dir == -1
 }
 
 //Jump
-if irandom_range(1,4) == 1
-{
-	actJump();
-}
+if irandom_range(1,4) == 1 then actJump();
 
 //Punch
-if irandom_range(1,2) == 1
-{
-	actPunch();
-}
+if irandom_range(1,3) == 1 then actPunch();
+
+//Block
+if irandom_range(1,10) == 1 then actBlock();

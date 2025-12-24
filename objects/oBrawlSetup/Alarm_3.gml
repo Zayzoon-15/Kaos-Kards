@@ -14,6 +14,3 @@ instance_destroy(oBrawlMobile);
 
 //Finish
 kaosCardDone();
-
-//Play Song
-audioPlayGroupSong(global.bgSyncGroup,lastSong,80);

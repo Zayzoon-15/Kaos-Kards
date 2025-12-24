@@ -16,6 +16,7 @@ if !instance_exists(oBrawlSolid)
 //Input
 keyRight = 0;
 keyLeft = 0;
+keyBlock = 0;
 
 //Movement
 moveSpd = 2;
@@ -32,6 +33,10 @@ fallspd = 0;
 
 //Punching
 punchStun = 0;
+
+//Blocking
+blocking = false;
+blockChance = 5;
 
 //Hit
 hitStun = 0;
@@ -55,6 +60,7 @@ if playerId == 0
 		walk : sBrawlRedWalk,	
 		jump : sBrawlRedJump,
 		air : sBrawlRedAir,
+		block : sBrawlRedBlock,
 		win : winSprites[irandom_range(0,2)]
 	};
 } else {
@@ -72,6 +78,7 @@ if playerId == 0
 		walk : sBrawlBlueWalk,
 		jump : sBrawlBlueJump,
 		air : sBrawlBlueAir,
+		block : sBrawlBlueBlock,
 		win : winSprites[irandom_range(0,2)]
 	};	
 }
@@ -81,7 +88,8 @@ xscale = 1;
 yscale = 1;
 dir = playerId == 1 ? 1 : -1;
 textAlpha = 1;
-TweenFire(self,EaseLinear,0,false,260,40,"textAlpha",1,0);
+TweenFire(self,EaseLinear,0,false,320,40,"textAlpha",1,0);
+nameTriFrame = 0;
 
 //Winner
 won = false;
@@ -89,12 +97,12 @@ won = false;
 //Functions
 actPunch = function()
 {
-	//Can't Move
-	if !canMove then exit;
-	
-	//Already Punched
-	if punchStun > 0 or hitStun > 0 then exit;
-	
+	//Not Stunned
+	if !canMove or (punchStun > 0 or hitStun > 0)
+	{
+		exit;
+	}
+
 	//Stun Time
 	punchStun = 10;
 	
@@ -117,26 +125,72 @@ actPunch = function()
 	});
 }
 
-actHit = function()
+actHit = function(_blockBroke = false)
 {
+	//Block
+	if blocking and !_blockBroke
+	{
+		//Push Players
+		with oBrawlChar
+		{
+			if !blocking
+			{
+				knockBack -= 5 * dir;
+				punchStun += 10;
+			}
+		}
+		
+		//Reduce Block Chance
+		blockChance --;
+		
+		//Broke Block
+		if blockChance <= 0
+		{
+			//Reduce Block Chance More
+			blockChance -= 5;
+			blocking = false;
+			
+			//Stun
+			actHit(true);
+			
+			//Exit
+			exit;
+		}
+		
+		//Sound
+		audioPlaySfx([snBrawlBlock1,snBrawlBlock2,snBrawlBlock3]);
+		
+		//Exit
+		exit;
+	}
+	
 	//Don't Hit If Invincible
 	if invisTime > 0 then exit;
 	
 	//Stun Time
-	hitStun = 20;
-	invisTime = 35;
+	if !_blockBroke
+	{
+		hitStun = 20;
+		invisTime = 35;
+	} else
+	{
+		hitStun = 50;
+	}
 	
 	//Push Back
-	knockBack += 10 * -dir;
+	if !_blockBroke then knockBack += 10 * -dir;
 	
 	//Audio
 	audio_stop_sound(snWoosh);
-	audioPlaySfx(snBrawlPunch);
-	audioPlaySfx([snBrawlHit1,snBrawlHit2]);
+	if !_blockBroke
+	{
+		audioPlaySfx(snBrawlPunch);
+		audioPlaySfx([snBrawlHit1,snBrawlHit2]);
+	} else audioPlaySfx(snBrawlBlockBroke);
 	
 	//Health
 	randomise();
-	var _amount = irandom_range(8,12);
+	var _amount = !_blockBroke ? irandom_range(8,12) : irandom_range(5,8);
 	hp -= _amount;
 	
 	//Health Bar
@@ -151,15 +205,38 @@ actHit = function()
 
 actJump = function()
 {
-	//Not On Ground
-	if !onGround then exit;
-	
-	//Not Punching
-	if punchStun > 0 then exit;
-	
-	//Can't Move
-	if !canMove then exit;
+	//Check
+	if !onGround or !canMove or (punchStun > 0 or hitStun > 0)
+	{
+		exit;
+	}
 	
 	//Jump
 	yspd = -jumpSpd;
+}
+
+actBlock = function()
+{
+	//Check
+	if !onGround or !canMove or (punchStun > 0 or hitStun > 0)
+	{
+		exit;
+	}
+	
+	//Broke Block
+	if blockChance <= 0
+	{
+		//Reduce Block Chance More
+		blockChance -= 5;
+		blocking = false;
+			
+		//Stun
+		actHit(true);
+			
+		//Exit
+		exit;
+	}
+	
+	//Set Block
+	blocking = true;
 }

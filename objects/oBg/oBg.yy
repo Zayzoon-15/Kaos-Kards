@@ -34,9 +34,6 @@
     "name":"sBgBack",
     "path":"sprites/sBgBack/sBgBack.yy",
   },
-  "spriteMaskId":{
-    "name":"sBg",
-    "path":"sprites/sBg/sBg.yy",
-  },
+  "spriteMaskId":null,
   "visible":true,
 }

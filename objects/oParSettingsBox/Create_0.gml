@@ -26,18 +26,28 @@ reason = "";
 //Functions
 hoverJuice = function()
 {
-	rectXScale = 2;
-	rectYScale = .8;
+	//Set Scale
+	rectXScale = 1.2;
+	rectYScale = .9;
 	
-	setSize(1.2,.8);	
+	//Set Text Scale
+	setSize(1.2,.9);
+	
+	//Sound
+	audioPlaySfx(snSettingsHover,.9,1.1);
 }
 
 clickedJuice = function()
 {
-	rectXScale = 2;
-	rectYScale = .8;
+	//Set Scale
+	rectXScale = 1.2;
+	rectYScale = .9;
 	
-	setSize(1.2,.8);	
+	//Set Text Scale
+	setSize(1.2,.9);
+	
+	//Sound
+	audioPlaySfx(snSettingsSelect,.9,1.1);
 }
 
 action = function()

@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snSettingsCheck",
+  "audioGroupId":{
+    "name":"agSfx",
+    "path":"audiogroups/agSfx",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.2678458,
+  "exportDir":"",
+  "name":"snSettingsCheck",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snSettingsCheck.ogg",
+  "volume":1.0,
+}

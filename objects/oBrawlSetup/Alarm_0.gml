@@ -23,6 +23,9 @@ if global.mobile
 	instance_create_layer(976,624,brawlLayerTop,oBrawlMobile,{ //Bottom Right
 		buttonType : "Jump"
 	});
+	instance_create_layer(976,432,brawlLayerTop,oBrawlMobile,{ //Bottom Right
+		buttonType : "Block"
+	});
 
 	instance_create_layer(112,496,brawlLayerTop,oBrawlMobile,{ //Top Left
 		buttonType : "Left"

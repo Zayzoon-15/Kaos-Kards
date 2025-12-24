@@ -9,3 +9,6 @@ image_index = count;
 TweenEasyScale(0,0,1,1,0,10,EaseOutQuart);
 TweenEasyFade(0,1,0,20,EaseOutCubic);
 alarm[0] = 30;
+
+//Sound
+alarm[1] = 8;

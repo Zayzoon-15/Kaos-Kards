@@ -14,6 +14,14 @@ checkYScale = 0;
 //Functions
 clickedJuice = function()
 {
+	//Set Scale
+	rectXScale = 1.2;
+	rectYScale = .9;
+	
+	//Set Text Scale
+	setSize(1.2,.9);
+	
+	//Check Scale
 	checkXScale = 1.2;
 	checkYScale = .8;
 }
@@ -29,6 +37,12 @@ action = function()
 	
 	//Set Checked
 	checked = !checked;
+	
+	//Sound
+	if checked
+	{
+		audioPlaySfx(snSettingsCheck);
+	} else audioPlaySfx(snSettingsUnCheck);
 	
 	//Action
 	if struct_exists(info,"action")

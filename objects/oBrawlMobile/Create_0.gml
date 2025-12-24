@@ -82,6 +82,31 @@ switch buttonType
 			}
 		}
 	break;
+	
+	case "Block": 
+		image_index = 3; 
+		type = "Hold";
+		action = function()
+		{
+			with oBrawlChar
+			{
+				if playerId == 0
+				{
+					keyBlock = 1;
+				}
+			}
+		}
+		notHeld = function()
+		{
+			with oBrawlChar
+			{
+				if playerId == 0
+				{
+					keyBlock = 0;
+				}
+			}
+		}
+	break;
 }
 
 //Touch Id

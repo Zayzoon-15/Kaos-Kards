@@ -28,19 +28,37 @@ if struct_exists(info,"selectVar"){
 	currentSelection = variable_global_get(selectVar);
 }
 
+clickedJuice = function()
+{
+	//Set Scale
+	rectXScale = 1.2;
+	rectYScale = .9;
+	
+	//Set Text Scale
+	setSize(1.2,.9);
+	
+	//Options Scale
+	opXScale = 2.2;
+	opYScale = 1.9;
+}
 
 action = function()
-{
+{	
 	//Juice
-	opXScale = 2.2;
-	opYScale = 1.8;
+	clickedJuice();
 	
 	//Change Selection
 	if mouse_x > opCenter
 	{
 		currentSelection ++;
+		
+		//Sound
+		audioPlaySfx(snSettingsSelect,1,1.1);
 	} else {
 		currentSelection --;
+		
+		//Sound
+		audioPlaySfx(snSettingsSelect,.8,.9);
 	}
 	
 	//Clamp

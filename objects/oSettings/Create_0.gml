@@ -4,6 +4,11 @@ lastSong = noone;
 //Bg
 bgY = 0;
 
+//Mobile
+mobilePos = new Vector2();
+mobileRad = 60;
+mobilePressed = false;
+
 //Functions
 createSettings = function()
 {
@@ -11,7 +16,8 @@ createSettings = function()
 	global.paused = true;
 	
 	#region Deactiveate
-    audio_pause_all();
+	//audio_pause_all();
+	audio_group_stop_all(agSfx);
 	instance_deactivate_all(true);
 	instance_activate_object(oGame);
 	instance_activate_object(oExpandRes);
@@ -21,7 +27,7 @@ createSettings = function()
 	
 	//Play Song
 	lastSong = global.curMusic;
-	audioPlaySong(sgKetting);
+	audioPlayGroupSong(global.musicGroups.menu,sgKetting,300);
 	
 	#region Menu
 	var _depth = -10;
@@ -76,7 +82,7 @@ destroySettings = function()
 	instance_destroy(oSettingsSubMenu);
 	
 	//Play Song
-	audioPlayGroupSong(global.bgSyncGroup,lastSong);
+	audioPlayGroupSong(global.musicGroups.bg,lastSong);
 	
 	//Activate
     audio_resume_all();

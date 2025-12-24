@@ -63,7 +63,7 @@ if (!playerFirst or !ds_list_find_value(playerActions,0)) and ds_list_find_value
 	}
 	
     //Create Combos
-    _createCombo(ds_list_find_value(enemyActions,1),true);
+    _createCombo(ds_list_find_value(enemyActions,1),false);
     
     //Set Values
     ds_list_set(enemyActions,0,false);

@@ -1,3 +1,16 @@
+//Increase Block Chance
+if !blocking
+{
+	blockChance += 0.01;
+	blockChance = clamp(blockChance,0,5);
+} else
+{
+	blockChance -= 0.01;
+}
+
+//Set Block
+blocking = false;
+
 #region Lost Or Won
 
 if hp <= 0
@@ -39,16 +52,18 @@ if playerId == 0
 	{
 		keyLeft = keyboard_check(ord("A")) or keyboard_check(vk_left);
 		keyRight = keyboard_check(ord("D")) or keyboard_check(vk_right);
+		keyBlock = keyboard_check(ord("C")) or keyboard_check(ord("J"));
 	}
 	
 	//Actions
 	if _keyPunch then actPunch();
 	if _keyJump then actJump();
+	if keyBlock then actBlock();
 	
 } else { //Enemy Ai
 	if !alarm[0] and !won
 	{
-		alarm[0] = random_range(3,10);
+		alarm[0] = random_range(5,10);
 	}
 	
 	if won
@@ -63,13 +78,10 @@ if playerId == 0
 
 #region Movement
 
-//Set Move Speed
-var _spd = onGround ? moveSpd : moveSpd;
-
 //Move Direction
-if hitStun <= 0 and (punchStun <= 0 or !onGround)
+if hitStun <= 0 and (punchStun <= 0 or !onGround) and !blocking
 {
-	xspd = (keyRight - keyLeft)*_spd;
+	xspd = (keyRight - keyLeft)*moveSpd;
 } else xspd = 0;
 
 //Reduce Knock Back
@@ -148,13 +160,18 @@ if punchStun <= 0 and hitStun <= 0
 	{
 		sprite_index = sprites.hit;
 	}
-	
 }
 
 //Won The Game
 if won and onGround and xspd == 0 and punchStun <= 0
 {
 	sprite_index = sprites.win;
+}
+
+//Block
+if blocking and onGround
+{
+	sprite_index = sprites.block;
 }
 
 #endregion

@@ -59,6 +59,8 @@ function FiggySetup() {
 					deck = playerDeck;	
 					deckNum = 0;
 				}
+				
+				exit;
 			}
 			
 			if struct_exists(kaosCards,global.debugCard)
@@ -74,6 +76,8 @@ function FiggySetup() {
 					deck = playerDeck;
 					deckNum = 0;
 				}
+				
+				exit;
 			}
 			
 			if struct_exists(diceCards,global.debugCard)
@@ -89,7 +93,12 @@ function FiggySetup() {
 					deck = playerDeck;	
 					deckNum = 0;
 				}
+				
+				exit;
 			}
+			
+			//No Cards
+			show_message($"Card '{global.debugCard}' Does Not Exist");
 		});
 		
 		Figgy.Section("Combo",false);

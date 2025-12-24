@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snSettingsSelect",
+  "audioGroupId":{
+    "name":"agSfx",
+    "path":"audiogroups/agSfx",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":1.8461452,
+  "exportDir":"",
+  "name":"snSettingsSelect",
+  "parent":{
+    "name":"Ui",
+    "path":"folders/Sounds/Sfx/Ui.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snSettingsSelect.ogg",
+  "volume":0.29,
+}

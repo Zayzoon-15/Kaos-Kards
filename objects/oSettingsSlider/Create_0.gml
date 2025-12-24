@@ -7,6 +7,7 @@ currentAmount = 50;
 
 //Drag
 dragging = false;
+playSound = false;
 
 //Change Var
 if struct_exists(info,"changeVar")

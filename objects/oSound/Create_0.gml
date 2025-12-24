@@ -8,5 +8,7 @@ global.curMusic = noone;
 global.curMusicGroup = noone;
 
 //Groups
-global.bgSyncGroup = audioCreateSyncGroup([sgPrepare,sgKaos]);
-global.menuSyncGroup = audioCreateSyncGroup([sgKetting,sgKaos]);
+global.musicGroups = {
+	bg : audioCreateSyncGroup([sgPrepare,sgKaos]),
+	menu : audioCreateSyncGroup([sgKetting,sgKenu])
+};

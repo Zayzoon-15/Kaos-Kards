@@ -8,7 +8,7 @@ posBasedOnCard = true;
 //Stats
 hitOthers = true;
 currentlyDamaging = true;
-value *= .7;
+value *= .5;
 
 //Move
 moveToDir(13);
@@ -30,7 +30,7 @@ action = function()
     audioPlaySfx(snFire2,.95,1.05);
     
     //Effects
-	addEffect(attackEffects.fire,value*.6,targetEnemy);
+	addEffect(attackEffects.fire,value*.8,targetEnemy);
 	
     //Destroy
     instance_destroy();
