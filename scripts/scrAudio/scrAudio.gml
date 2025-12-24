@@ -22,7 +22,7 @@ function audioPlaySfx(_sound,_low = 1,_high = 1,_x = x,_y = y)
     }
     
     //Play Sound
-    audio_play_sound(_asset,0,false,1,0,_pitch);
+    return audio_play_sound(_asset,0,false,1,0,_pitch);
     //audio_play_sound_at(_asset, _x, _y, 0, 1500, 100, 1, false, 0,  1,0,_pitch);
 }
 

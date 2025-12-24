@@ -21,6 +21,9 @@ laserDone = false;
 delayTime = 40;
 laserTime = 60*2;
 
+//Sound
+laserSound = noone;
+
 //Functions
 action = function()
 {
@@ -30,4 +33,13 @@ action = function()
     
     hurtEffect(sprite_width/2+_x,sprite_height/2+_y);
     damageTarget();
+}
+
+reflected = function()
+{
+	//Stop Shake
+	card.cardSetShake(0);
+	
+	//Stop Sound
+	audio_sound_gain(laserSound,0,60);
 }

@@ -1,4 +1,9 @@
 broadcastSprite("laserSetShake",function(){
-    audioPlaySfx(snLaser);
+    laserSound = audioPlaySfx(snLaser);
 	card.cardSetShake(6);
+	
+});
+
+broadcastSprite("laserStartAttack",function(){
+	currentlyDamaging = true;
 });

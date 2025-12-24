@@ -74,6 +74,12 @@ action = function()
     damageTarget();
 }
 
+//Happens When The Attack Is Reflected
+reflected = function()
+{
+	
+}
+
 
 //Apply Options
 alarm[0] = 1;

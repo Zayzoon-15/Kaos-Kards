@@ -9,8 +9,8 @@ function hurtEnemy(_value)
     //Give Combo
     global.playerComboMeter += _value*global.comboMult;
     
-	//Add Mult
-	_value *= global.valueMult;
+	////Add Mult
+	//_value *= global.valueMult;
 	
     //Remove Temp Health
     var _lastTemp = global.enemyTempHp;
@@ -48,8 +48,8 @@ function hurtPlayer(_value)
     //Give Combo
     global.enemyComboMeter += _value*global.comboMult;
 	
-	//Add Mult
-	_value *= global.valueMult;
+	////Add Mult
+	//_value *= global.valueMult;
     
     //Remove Temp Health
     var _lastTemp = global.playerTempHp;

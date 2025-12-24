@@ -45,7 +45,7 @@ for (var i = 0; i < ds_list_size(targetList); ++i) {
 	var _amount = abs(_listValue.value);
 	if _amount > 0
 	{
-		tipBoxString += $"\n{_listValue.info.name}:{floor(_listValue.percent)}%";
+		tipBoxString += $"\n{_listValue.info.name}:{round(_listValue.percent)}%";
 	}
 }
 

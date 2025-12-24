@@ -21,9 +21,13 @@ if _collide
             if !other.reflected
             {
                 //Change Value
-                other.card.value += value/5;
+				var _multiplier = (other.card.value * .5)*1.5;
+                other.card.value += card.value*_multiplier;
                 other.card.value = clamp(other.card.value,1,99);
-                
+				
+				//Tell Attack They Were Reflected
+				reflected();
+				
                 //Action
                 _action = card.card.info.action;
             }

@@ -39,11 +39,6 @@ if !array_contains_value(targetArray,info)
     _inst.sprite_index = sprite_index;
     _inst.x = x;
     _inst.y = y;
-	
-	with oHealthIcon
-	{
-		print(info.name,iconId);
-	}
     
     //Destroy
     instance_destroy();
