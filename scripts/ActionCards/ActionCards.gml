@@ -22,7 +22,7 @@ actionCards = {
     
     slash : new createCardAction("Slash Card",
     "Slashes your enemy with a mighty sword",
-    sCardSlash,[1,6],actionSlash),
+    sCardSlash,[1,6],actionSlash,[],comboBread),
     
     bread : new createCardAction("Bread Card",
     "Shoots a 3 slices of bread at the enemy",

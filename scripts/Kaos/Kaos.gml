@@ -141,8 +141,10 @@ function kaosActionRps()
 		});
 	}
 	
+	//Star Sound
+	audioPlaySfx([snStars1,snStars2]);
+	
 	//Destroy Card
-    starEffect(x,y,10,true,20,25);
 	instance_destroy();
 }
 

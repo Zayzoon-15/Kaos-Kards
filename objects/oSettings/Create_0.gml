@@ -1,5 +1,5 @@
 //Audio
-lastSong = noone;
+curSong = noone;
 
 //Bg
 bgY = 0;
@@ -26,7 +26,6 @@ createSettings = function()
 	#endregion
 	
 	//Play Song
-	lastSong = global.curMusic;
 	audioPlayGroupSong(global.musicGroups.menu,sgKetting,300);
 	
 	#region Menu
@@ -82,7 +81,7 @@ destroySettings = function()
 	instance_destroy(oSettingsSubMenu);
 	
 	//Play Song
-	audioPlayGroupSong(global.musicGroups.bg,lastSong);
+	audioPlayGroupSong(global.musicGroups.bg,global.lastSong);
 	
 	//Activate
     audio_resume_all();

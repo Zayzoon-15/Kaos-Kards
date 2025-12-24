@@ -4,11 +4,15 @@ musicVol = 0;
 sfxVol = 0;
 
 //Current Song
-global.curMusic = noone;
-global.curMusicGroup = noone;
+global.curSong = noone;
+global.lastSong = noone;
+global.curSongGroup = noone;
 
 //Groups
 global.musicGroups = {
-	bg : audioCreateSyncGroup([sgPrepare,sgKaos]),
+	bg : audioCreateSyncGroup([sgPrepare,sgKaos,sgPrepareExtended]),
 	menu : audioCreateSyncGroup([sgKetting,sgKenu])
 };
+
+//Extended Version
+prepareLoopCount = 0;

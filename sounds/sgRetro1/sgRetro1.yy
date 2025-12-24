@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"sgRetro1",
   "parent":{
-    "name":"Music",
-    "path":"folders/Sounds/Music.yy",
+    "name":"Kaos",
+    "path":"folders/Sounds/Music/Kaos.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

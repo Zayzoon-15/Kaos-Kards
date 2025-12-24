@@ -66,7 +66,7 @@ with oRpsHand
         TweenEasyScale(image_xscale,1,1.4*sign(image_xscale),1,0,40,EaseOutElastic);
         
         //Hurt
-        timeSourceCreate(10,function() {
+        timeSourceCreate(8.5,function() {
             
             //Stars
             var _x = handId == 0 ? bbox_right - 10 : bbox_left + 10;
@@ -78,12 +78,12 @@ with oRpsHand
                 randomise();
                 var _amount = irandom_range(10,15);
                 
-                if handId == 0 and winner
+                if handId == 1 and winner
                 {
                     hurtEnemy(_amount);
                 }
                 
-                if handId == 1 and winner
+                if handId == 0 and winner
                 {
                     hurtPlayer(_amount);
                 }

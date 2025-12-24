@@ -17,5 +17,8 @@ bottomTextY = y;
 //Timer
 timer = 0;
 
+//Set Scale
+setSize(0);
+
 //Fade
 fade = false;

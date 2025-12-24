@@ -6,7 +6,7 @@ image_index = 1;
 audioPlaySfx(snOpenWindow);
 
 //Music
-lastSong = global.curMusic;
+lastSong = global.curSong;
 audioPlaySong(noone,false,3000);
 
 //Load Game

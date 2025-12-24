@@ -26,3 +26,7 @@ alarm[0] = 40;
 
 //Sound
 soundPlayed = false;
+
+//Name Tag
+nameTagAlpha = 1;
+TweenFire(self,EaseLinear,0,false,120,40,"nameTagAlpha",1,0);

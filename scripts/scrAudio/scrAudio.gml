@@ -27,9 +27,10 @@ function audioPlaySfx(_sound,_low = 1,_high = 1,_x = x,_y = y)
 }
 
 
+
 function audioCreateSyncGroup(_songs = [],_loop = true)
 {
-	var _audioGroup = audio_create_sync_group(_loop);
+	var _audioGroup = audio_create_sync_group(false);
 	
 	for (var i = 0; i < array_length(_songs); ++i) {
 	    audio_play_in_sync_group(_audioGroup,_songs[i]);
@@ -39,42 +40,49 @@ function audioCreateSyncGroup(_songs = [],_loop = true)
 	return _audioGroup;
 }
 
+
 function audioPlayGroupSong(_audioGroup,_targetSong,_fadeTime = 30)
 {
+	//Set Last Song
+	global.lastSong = global.curSong;
+	
 	//Play Group Song
 	if !audio_sync_group_is_playing(_audioGroup)
 	{
 		audio_start_sync_group(_audioGroup);
 	}
 	
-	//Unpause Song
+	//Unpause Group Song
 	if audio_sync_group_is_paused(_audioGroup)
 	{
 		audio_resume_sync_group(_audioGroup);
 	}
 	
 	//Fade Out Song
-	audio_sound_gain(global.curMusic,0,_fadeTime);
+	audio_sound_gain(global.curSong,0,_fadeTime);
 	
 	//Fade In Song
 	audio_sound_gain(_targetSong,1,_fadeTime);
 	
 	//Set Global Var
-	global.curMusic = _targetSong;
-	global.curMusicGroup = _audioGroup;
+	global.curSong = _targetSong;
+	global.curSongGroup = _audioGroup;
 }
 
 function audioPlaySong(_song,_mixSong = false,_fadeTime = 30,_loop = true)
 {	
+	//Set Last Song
+	global.lastSong = global.curSong;
+	
 	//Fade Out Song
-	audio_sound_gain(global.curMusic,0,_fadeTime);
+	audio_sound_gain(global.curSong,0,_fadeTime);
 	
 	//Stop Audio Group
 	timeSourceCreate(_fadeTime,function(_curSong){
-		if global.curMusicGroup != noone and _curSong == global.curMusic
+		if global.curSongGroup != noone and _curSong == global.curSong
 		{
-			audio_pause_sync_group(global.curMusicGroup);
-			global.curMusicGroup = noone;
+			audio_pause_sync_group(global.curSongGroup);
+			global.curSongGroup = noone;
 		}
 	},[_song],time_source_units_frames);
 	
@@ -89,5 +97,5 @@ function audioPlaySong(_song,_mixSong = false,_fadeTime = 30,_loop = true)
 	audio_sound_gain(_song,1,_fadeTime);
 	
 	//Set Global Var
-	global.curMusic = _song;
+	global.curSong = _song;
 }

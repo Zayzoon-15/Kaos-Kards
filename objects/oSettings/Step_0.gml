@@ -7,12 +7,6 @@ if keyCheckPressed(global.keyPause) and !global.midTrans
 	} else createSettings();
 }
 
-//Window Focus
-if !global.paused and !window_has_focus()
-{
-	createSettings();
-}
-
 //Mobile Position
 mobilePos.x = getPosToWindow(false,41);
 mobilePos.y = 678;

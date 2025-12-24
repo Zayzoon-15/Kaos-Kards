@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snSettingsCheck",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"Ui",
+    "path":"folders/Sounds/Sfx/Ui.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

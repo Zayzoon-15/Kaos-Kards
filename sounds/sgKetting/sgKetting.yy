@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"sgKetting",
   "parent":{
-    "name":"Music",
-    "path":"folders/Sounds/Music.yy",
+    "name":"Menus",
+    "path":"folders/Sounds/Music/Menus.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

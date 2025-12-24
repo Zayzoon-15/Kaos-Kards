@@ -8,3 +8,6 @@ targetScale = 1;
 //Button
 canClick = true;
 pressed = false;
+
+//Stars
+starEffect(x,y,10,false);

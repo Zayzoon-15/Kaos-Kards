@@ -34,7 +34,7 @@ hoverJuice = function()
 	setSize(1.2,.9);
 	
 	//Sound
-	audioPlaySfx(snSettingsHover,.9,1.1);
+	audioPlaySfx(snSettingsHover);
 }
 
 clickedJuice = function()
