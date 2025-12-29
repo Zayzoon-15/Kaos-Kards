@@ -10,7 +10,7 @@
   "compression":1,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.0,
+  "duration":-1.0,
   "exportDir":"",
   "name":"sgKenu",
   "parent":{

@@ -8,11 +8,21 @@ global.curSong = noone;
 global.lastSong = noone;
 global.curSongGroup = noone;
 
+#region Mixer
+
+global.soundMixer = ds_map_create();
+
+global.soundMixer[? sgRetro1] = .9;
+global.soundMixer[? sgRetro2] = .8;
+
+#endregion
+
 //Groups
 global.musicGroups = {
 	bg : audioCreateSyncGroup([sgPrepare,sgKaos,sgPrepareExtended]),
 	menu : audioCreateSyncGroup([sgKetting,sgKenu])
 };
 
-//Extended Version
+//Extended Version Secret
 prepareLoopCount = 0;
+loopCount = 0;

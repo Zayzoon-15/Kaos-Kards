@@ -10,7 +10,7 @@
   "compression":1,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":30.47619,
+  "duration":30.475964,
   "exportDir":"",
   "name":"sgRetro1",
   "parent":{

@@ -1,4 +1,3 @@
-
 //Create Lists
 globalvar playerEffects,enemyEffects;
 playerEffects = ds_list_create();
