@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.0,
+  "duration":0.6497506,
   "exportDir":"",
   "name":"snHeal",
   "parent":{
@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snHeal.wav",
-  "volume":1.0,
+  "volume":0.5,
 }

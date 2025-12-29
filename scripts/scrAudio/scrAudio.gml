@@ -29,11 +29,11 @@ function audioPlaySfx(_sound,_low = 1,_high = 1,_x = x,_y = y)
 
 /// @desc Creates an audio sync group with the songs given
 /// @param {array} _songs The songs to add to the sync group
-/// @param {bool} [_loop] If the songs should loop or not (Default = true)
+/// @param {bool} [_loop] If the song should loop (Default = true)
 /// @returns {id} The audio sync group
 function audioCreateSyncGroup(_songs,_loop = true)
 {
-	var _audioGroup = audio_create_sync_group(false);
+	var _audioGroup = audio_create_sync_group(_loop);
 	
 	for (var i = 0; i < array_length(_songs); ++i) {
 	    audio_play_in_sync_group(_audioGroup,_songs[i]);
@@ -43,13 +43,15 @@ function audioCreateSyncGroup(_songs,_loop = true)
 	return _audioGroup;
 }
 
-
 /// @desc Plays a song that is inside a sync group
 /// @param {id.audiosyncgroup} _audioGroup The target sync group
 /// @param {asset.GMSound} _targetSong The target song
 /// @param {real} [_fadeTime] The fade time for the song (Default = 30)
 function audioPlayGroupSong(_audioGroup,_targetSong,_fadeTime = 30)
 {
+    //Exit If Same Song
+    if _targetSong == global.curSong and _targetSong != noone then exit;
+    
 	//Set Last Song
 	global.lastSong = global.curSong;
 	
@@ -87,7 +89,8 @@ function audioPlayGroupSong(_audioGroup,_targetSong,_fadeTime = 30)
 /// @param {asset.GMSound} _song The target Song
 /// @param {bool} [_mixSongs] If the song should keep playing in the background (Default = false)
 /// @param {real} [_fadeTime] The time it takes to fade a song out and in (Default = 60)
-function audioPlaySong(_song,_mixSongs = false,_fadeTime = 60)
+/// @param {bool} [_loop] If the song should loop (Default = true)
+function audioPlaySong(_song,_mixSongs = false,_fadeTime = 60,_loop = true)
 {	
     //Exit If Same Song
     if _song == global.curSong and _song != noone then exit;
@@ -102,7 +105,7 @@ function audioPlaySong(_song,_mixSongs = false,_fadeTime = 60)
 	//Fade Out Song
 	audio_sound_gain(global.curSong,0,_fadeTime);
 	
-	////Stop Audio Group
+	//Stop Audio Group
 	timeSourceCreate(_fadeTime,function(_curSong){
 		if global.curSongGroup != noone and _curSong == global.curSong
 		{
@@ -118,7 +121,7 @@ function audioPlaySong(_song,_mixSongs = false,_fadeTime = 60)
 	//Play Song
 	if _song != noone
     {
-        audio_play_sound(_song,10,false);
+        audio_play_sound(_song,10,_loop);
     }
     
 	//Fade In Song

@@ -13,6 +13,7 @@ value *= 0.3;
 
 //Set Sprite
 sprite_index = sLaserStart;
+depth -= 2;
 
 //Laser Done
 laserDone = false;

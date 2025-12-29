@@ -84,7 +84,7 @@ function actionLaser(_targetEnemy)
     instance_create_layer(x,y,"Attacks",oLaserAttack,{
         targetEnemy : _targetEnemy,
         value : value,
-        card : self.id
+        card : self.id,
     });
 }
 
@@ -95,7 +95,7 @@ function actionPunch(_targetEnemy)
     instance_create_layer(x,y,"Attacks",oFistAttack,{
         targetEnemy : _targetEnemy,
         value : value,
-        card : self.id
+        card : self.id,
     });
 }
 

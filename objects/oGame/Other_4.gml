@@ -11,4 +11,3 @@ if room == rKaos
 {
     kaosRoundStarted();
 }
-
