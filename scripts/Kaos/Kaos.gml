@@ -145,3 +145,18 @@ function kaosActionBrawl(_targetEnemy)
 	//Change Pos
 	targetY += 50;
 }
+
+///@self oAttackCard
+function kaosActionSticky(_targetEnemy)
+{
+    //Get Target Card
+    var _deck = _targetEnemy ? enemyDeck : playerDeck;
+    
+    
+    
+    //For Now
+    createAlertMessage("Imagine A Sticky Hand Grabbing A Card");
+    
+    //Finish
+    timeSourceCreate(2,kaosCardDone);
+}

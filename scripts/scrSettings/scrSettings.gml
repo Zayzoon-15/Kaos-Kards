@@ -12,7 +12,9 @@ function initSettings()
 	global.masterVol = 50;
 	global.musicVol = 50;
 	global.sfxVol = 50;
+	global.voiceVol = 50;
 	global.unfocusMute = false;
+    global.voiceover = true;
 	
 	//Input
 	global.keyDiscard = ord("Z");

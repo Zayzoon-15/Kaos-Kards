@@ -43,8 +43,16 @@ function enemyRolledLow()
 
 function enemyShouldDefend()
 {
+    //Has Card
+    if !array_contains(deck,actionCards.shield) return false;
+    
+    //Just Don't
+    if defendWeight == 0 then return false;
+    
+    //Defend If Low
     if hp <= 30 then return false;
     
+    //Defend
     if hp <= defendValue and enemyCheckChance(defendWeight)
     {
         return true;
@@ -59,6 +67,12 @@ function enemyShouldUpgrade()
 
 function enemyShouldHeal()
 {
+    //Has Card
+    if !array_contains(deck,actionCards.heal) return false;
+    
+    //Just Don't
+    if healWeight == 0 then return false;
+    
     //Heal If Low
     if hp <= healValue and enemyCheckChance(healWeight)
     {
@@ -78,11 +92,25 @@ function enemyShouldHeal()
 
 function enemyShouldHealAgain()
 {
+    //Has Card
+    if !array_contains(deck,actionCards.heal) return false;
+    
+    //Just Don't
+    if healWeight == 0 then return false;
+    
+    //Check
     return hp+15 <= healValue and enemyCheckChance(healWeight*.7);
 }
 
 function enemyShouldDefendAgain()
 {
+    //Has Card
+    if !array_contains(deck,actionCards.shield) return false;
+    
+    //Just Don't
+    if defendValue == 0 then return false;
+    
+    //Check
     return hp+25 <= defendValue and enemyCheckChance(defendWeight*.4);
 }
 

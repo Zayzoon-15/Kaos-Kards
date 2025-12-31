@@ -2,6 +2,7 @@
 masterVol = 0;
 musicVol = 0;
 sfxVol = 0;
+voiceVol = 0;
 
 //Current Song
 global.curSong = noone;

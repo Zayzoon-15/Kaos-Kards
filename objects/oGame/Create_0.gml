@@ -75,6 +75,7 @@ global.gamepad = false;
 //Load Groups
 audio_group_load(agMusic);
 audio_group_load(agSfx);
+audio_group_load(agVoice);
 
 //Load Save
 saveLoad();

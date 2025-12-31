@@ -52,14 +52,13 @@ createSettings = function()
 		instance_create_depth(182,_y,_depth,oSettingsMenuBtn,{
 			text : _mainButtons[i],
 			selected : _selected
-		})
-			    
+		});
 	}
 	
 	#endregion
 
 	//Create Sub Menu
-	instance_create_depth(816,352,_depth,oSettingsSubMenu,{
+	instance_create_depth(816,360,_depth,oSettingsSubMenu,{
 		image_xscale : 16,
 		image_yscale : 12
 	}); //Magic Numbers I Know -_-

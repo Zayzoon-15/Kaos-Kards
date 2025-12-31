@@ -13,34 +13,36 @@ playerDeck = [
     actionCards.heal,
     actionCards.shield,
     actionCards.shield,
+    
+    kaosCards.sticky,
 	
-	//Action Cards
-	actionCards.gato,
-	actionCards.slash,
-	actionCards.slash,
-	actionCards.bread,
-	actionCards.bread,
-	actionCards.bread,
-	actionCards.flamingAce,
-	actionCards.laser,
-	actionCards.punch,
-	actionCards.poison,
-	
-	//Kaos Cards
-	kaosCards.rps,
-	kaosCards.brawl,
-	kaosCards.swoop,
-	kaosCards.swap,
-	kaosCards.destroy,
-	kaosCards.freeze,
-	kaosCards.high,
-	
-	//Dice Cards
-	diceCards.dice20,
-	diceCards.dice12,
-	diceCards.dice8,
-	diceCards.reroll,
-	diceCards.upgrade,
+	////Action Cards
+	//actionCards.gato,
+	//actionCards.slash,
+	//actionCards.slash,
+	//actionCards.bread,
+	//actionCards.bread,
+	//actionCards.bread,
+	//actionCards.flamingAce,
+	//actionCards.laser,
+	//actionCards.punch,
+	//actionCards.poison,
+	//
+	////Kaos Cards
+	//kaosCards.rps,
+	//kaosCards.brawl,
+	//kaosCards.swoop,
+	//kaosCards.swap,
+	//kaosCards.destroy,
+	//kaosCards.freeze,
+	//kaosCards.high,
+	//
+	////Dice Cards
+	//diceCards.dice20,
+	//diceCards.dice12,
+	//diceCards.dice8,
+	//diceCards.reroll,
+	//diceCards.upgrade,
 
 ];
 

@@ -1,7 +1,8 @@
-
+//Target Scale
 targetXScale = 16;
 targetYScale = 12;
 
+//Menu
 currentMenu = "Audio";
 
 
@@ -20,15 +21,18 @@ swapMenu = function(_menu)
 	//Get Buttons
 	var _buttons = getSettingsButtons(_menu);
 	var _totalButtons = array_length(_buttons);
-	
+    
+    //Grow More
+    var _squish = _totalButtons >= 6;
+    
 	//Create New Ui
 	for (var i = 0; i < _totalButtons; ++i) 
 	{	
 		
 		//Get Buttons
-	    var _center = y;
-	    var _height = 100//(sprite_get_height(sSettingsBg)*targetYScale)-20;
-	    var _gap = _height///(_totalButtons);
+	    var _center = y+5;
+	    var _height = _squish ? (sprite_get_height(sprite_index)*targetYScale)-40 : 100;
+	    var _gap = _squish ? _height/(_totalButtons) : _height;
     
 	    var _top = _center - _gap * (_totalButtons-1)/2;
 	    var _y = _top + i * _gap;

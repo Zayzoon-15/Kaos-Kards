@@ -20,6 +20,9 @@ kaos = global.currentEnemy.kaos;
 specialUsed = false;
 combo = false;
 
+//Deck
+deck = global.currentEnemy.deck;
+
 //Get Combo Card
 randomise();
 comboCard = attacks[irandom_range(0,array_length(attacks)-1)];

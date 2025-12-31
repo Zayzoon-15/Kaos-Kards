@@ -37,7 +37,7 @@ kaosCards = {
 	
     sticky : new createCardKaos("Sticky Hand",
     "Use a sticky hand to steal a card from the enemy",
-    sCardSticky,kaosActionBrawl),
+    sCardSticky,kaosActionSticky),
     
 };
 

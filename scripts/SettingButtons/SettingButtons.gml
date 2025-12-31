@@ -31,9 +31,16 @@ function getSettingsButtons(_menu)
 				new createSettingsButton("SFX",oSettingsSlider,{
 					changeVar : "sfxVol"
 				}),
+				new createSettingsButton("Voice Over",oSettingsSlider,{
+					changeVar : "voiceVol"
+				}),
 				new createSettingsButton("Unfocused Mute",oSettingsCheck,{
 					action : function(_checked){global.unfocusMute = _checked;},
 					checked : function(){return global.unfocusMute;},
+				}),
+				new createSettingsButton("Voice Over",oSettingsCheck,{
+					action : function(_checked){global.voiceover = _checked;},
+					checked : function(){return global.voiceover;},
 				}),
 			];
 		break;

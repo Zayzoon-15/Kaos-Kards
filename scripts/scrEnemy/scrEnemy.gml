@@ -18,6 +18,7 @@ function createEnemy(_name,_sprite,_attacks,_kaos,_healWeight = 100,_healValue =
     sprite = _sprite;
     attacks = _attacks;
     kaos = _kaos;
+    deck = array_concat(_attacks,_kaos);
     
     //Weights
     healWeight = _healWeight;
