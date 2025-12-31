@@ -20,11 +20,11 @@ kaosCards = {
     sCardSwap,kaosActionSwap),
 	
     destroy : new createCardKaos("Deck Wrecker",
-    "Destroys one random card from both the players and enemies hand",
+    "Destroys one random card from enemies hand",
     sCardDestroy,kaosActionDestroy),
     
     freeze : new createCardKaos("Freezing Ace",
-    "Freezes a random slot from both the players and enemies side",
+    "Freezes a random slot from the enemies side making it unusable",
     sCardFreeze,kaosActionFreeze),
     
     rps : new createCardKaos("Rock Paper Scissors",
@@ -34,6 +34,10 @@ kaosCards = {
     brawl : new createCardKaos("Retro Brawler Card",
     "Play smash bros bro lets smash rn bro >:D",
     sCardBrawl,kaosActionBrawl),
+	
+    sticky : new createCardKaos("Sticky Hand",
+    "Use a sticky hand to steal a card from the enemy",
+    sCardSticky,kaosActionBrawl),
     
 };
 

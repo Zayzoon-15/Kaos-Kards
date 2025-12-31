@@ -24,5 +24,5 @@ global.musicGroups = {
 };
 
 //Extended Version Secret
-loopCount = 0;
-loopTimer = undefined;
+prepareTimer = 0;
+prepareLoopCount = 0;

@@ -6,7 +6,7 @@
 
 /* HOW TO
  * All functions should look like this
- * function kaosActionTemp()
+ * function kaosActionTemp(_targetEnemy)
  * All actions have to call kaosCardDone to show that they are done
  * MAKE SURE ALL KAOS ACTIONS HAVE A WAY TO CALL KaosCardDone TO FINISH THE ACTION
 */
@@ -14,7 +14,7 @@
 
 
 ///@self oAttackCard
-function kaosActionSwoop()
+function kaosActionSwoop(_targetEnemy)
 {
 	//Create Bread Attack
 	instance_create_layer(x,y-150,"Attacks",oSwoopChoose);
@@ -27,7 +27,7 @@ function kaosActionSwoop()
 }
 
 ///@self oAttackCard
-function kaosActionSwap()
+function kaosActionSwap(_targetEnemy)
 {
 	//Show Message
 	createAlertMessage("All Cards Swapped");
@@ -54,7 +54,7 @@ function kaosActionSwap()
 }
 
 ///@self oAttackCard
-function kaosActionHigh()
+function kaosActionHigh(_targetEnemy)
 {
 	//Show Message
 	createAlertMessage("All Values Doubled");
@@ -70,27 +70,22 @@ function kaosActionHigh()
 }
 
 ///@self oAttackCard
-function kaosActionDestroy()
+function kaosActionDestroy(_targetEnemy)
 {
 	//Juice
 	cardJuice(false);
 	
-	//Take From Enemy
+	//Take From Someone
 	instance_create_layer(0,0,"Attacks",oDestroyedCard,{
-		targetEnemy : true
-	});
-	
-	//Take From Player
-	instance_create_layer(0,0,"Attacks",oDestroyedCard,{
-		targetEnemy : false
+		targetEnemy : _targetEnemy
 	});
     
     //Finish
-    timeSourceCreate(5,kaosCardDone);
+    timeSourceCreate(3,kaosCardDone);
 }
 
 ///@self oAttackCard
-function kaosActionFreeze()
+function kaosActionFreeze(_targetEnemy)
 {	
     //Show Message
 	createAlertMessage("Slots Frozen For Next Round");
@@ -101,34 +96,27 @@ function kaosActionFreeze()
     //Juice
     cardJuice();
     
-    #region Disable Slots
+    //Get Array
+    var _array = _targetEnemy ? global.disabledSlots.enemy : global.disabledSlots.player;
     
-    for (var i = 0; i < 2; i++) {
-        //Get Array
-        var _array = global.disabledSlots.player;
-    	if i == 1 then _array = global.disabledSlots.enemy;
-        
-        //Get Target Slot
-        randomise();
-        var _slot = irandom_range(1,3); //1-3 for only action slots
-        //Make Sure Same Numbers Dont Repeat
-        while _array[_slot]
-        {
-            _slot = irandom_range(1,3);
-        }
-        
-        //Disable Slot
-        _array[_slot] = true;  
+    //Get Target Slot
+    randomise();
+    var _slot = irandom_range(1,3); //1-3 for only action slots
+    //Make Sure Same Numbers Dont Repeat
+    while _array[_slot]
+    {
+        _slot = irandom_range(1,3);
     }
     
-    #endregion
+    //Disable Slot
+    _array[_slot] = true; 
     
     //Finish
     timeSourceCreate(2,kaosCardDone);
 }
 
 ///@self oAttackCard
-function kaosActionRps()
+function kaosActionRps(_targetEnemy)
 {
 	//Create Text
 	instance_create_layer(0,0,"Attacks",oRpsText);
@@ -149,7 +137,7 @@ function kaosActionRps()
 }
 
 ///@self oAttackCard
-function kaosActionBrawl()
+function kaosActionBrawl(_targetEnemy)
 {
 	//Create Map
 	instance_create_layer(x,bbox_top+45,"Effects",oBrawlSetup);

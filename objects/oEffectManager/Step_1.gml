@@ -1,6 +1,3 @@
-
-
-
 //Update List
 for (var k = 0; k < 2; k++) {
     

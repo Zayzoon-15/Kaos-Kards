@@ -44,7 +44,6 @@ applyEffect = function()
 //Start Effect
 applyEffect();
 
-
 //Time
 timeUp = true;
 setupTime = function()

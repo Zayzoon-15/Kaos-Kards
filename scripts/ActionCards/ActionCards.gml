@@ -14,15 +14,15 @@ actionCards = {
     
     heal : new createCardAction("Heal Card",
     "Heals you by a random amount",
-    sCardHeal,[1,10],actionHeal),
+    sCardHeal,[1,10],actionHeal,[],comboHeal),
     
     shield : new createCardAction("Defense Card",
     "Grants you temporary health that reduces after every round",
-    sCardShield,[1,10],actionShield),
+    sCardShield,[1,10],actionShield,[],comboShield),
     
     slash : new createCardAction("Slash Card",
     "Slashes your enemy with a mighty sword",
-    sCardSlash,[1,6],actionSlash,[],comboBread),
+    sCardSlash,[1,6],actionSlash,[],comboSlash),
     
     bread : new createCardAction("Bread Card",
     "Shoots a 3 slices of bread at the enemy",
