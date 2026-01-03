@@ -47,6 +47,10 @@ actionCards = {
     mirror : new createCardAction("Mirror Card",
     "Reflects any physical attacks attacking the card\nThe range changes how much more damage the attack does",
     sCardMirror,[0,2],CARDACT_GENRES.ATTACK,actionMirror),
+	
+    ghost : new createCardAction("Ghost Card",
+    "Shoots a non physical ghost that ignores shields",
+    sCardGhost,[1,4],CARDACT_GENRES.ATTACK,actionGhost),
     
 };
 

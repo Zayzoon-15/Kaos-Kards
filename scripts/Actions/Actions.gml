@@ -136,3 +136,18 @@ function actionMirror(_targetEnemy)
         targetEnemy : _targetEnemy
     });
 }
+
+
+///@self oAttackCard
+function actionGhost(_targetEnemy)
+{
+	//Juice
+	cardJuice(false);
+	
+    //Create Ghost
+    instance_create_layer(x,y,"Attacks",oGhostAttack,{
+        targetEnemy : _targetEnemy,
+        value : value,
+        card : self.id
+    });
+}
