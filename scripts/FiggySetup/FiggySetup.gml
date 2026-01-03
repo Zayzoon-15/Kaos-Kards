@@ -126,4 +126,6 @@ function FiggySetup() {
 			global.disabledSlots.player[1] = true;
 			global.disabledSlots.enemy[1] = true;
 		});
+    
+    
 }

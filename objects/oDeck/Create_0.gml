@@ -1,13 +1,3 @@
-//FOR NOW
-gameState = GAMESTATES.PREPARE;
-
-
-//Stats
-totalCards = array_length(playerDeck);
-cardsLeft = totalCards;
-currentCard = 0;
-cardsInPlay = 0;
-
 //Create Hand
 if !ds_exists(playerHand,ds_type_list)
 {
@@ -15,9 +5,7 @@ if !ds_exists(playerHand,ds_type_list)
 } else ds_list_clear(playerHand);
 
 //Deck
-randomize();
-deck = array_shuffle(playerDeck);
-deckNum = 0;
+deck = playerDeck;
 
 //Remove Cards
 for (var i = 0; i < array_length(global.playerRemovedCards); i++) 
@@ -31,6 +19,15 @@ for (var i = 0; i < array_length(global.playerRemovedCards); i++)
 
 //Add Cards
 deck = array_concat(deck,global.playerAddCards);
+
+//Set Stats
+randomize();
+deck = array_shuffle(deck);
+deckNum = 0;
+totalCards = array_length(deck);
+cardsLeft = totalCards;
+currentCard = 0;
+cardsInPlay = 0;
 
 //Draw Cards
 drawTime = 10;
