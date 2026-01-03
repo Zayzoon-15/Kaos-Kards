@@ -27,7 +27,7 @@ shadowSize = 0;
 startDepth = depth;
 
 //Set Sprite
-sprite_index = info.sprite;
+if info != undefined then sprite_index = info.sprite;
 
 //Slot
 slot = noone;
@@ -36,6 +36,12 @@ with oParSlots
     if slotId == other.slotId
     {
         other.slot = self.id;
+    }
+    
+    if other.info == undefined
+    {
+        filled = false;
+        instance_destroy(other);
     }
 }
 

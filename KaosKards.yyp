@@ -164,7 +164,6 @@
     {"id":{"name":"oDiscard","path":"objects/oDiscard/oDiscard.yy",},},
     {"id":{"name":"oDonePrepButton","path":"objects/oDonePrepButton/oDonePrepButton.yy",},},
     {"id":{"name":"oEffectManager","path":"objects/oEffectManager/oEffectManager.yy",},},
-    {"id":{"name":"oEnemyAi_old","path":"objects/oEnemyAi_old/oEnemyAi_old.yy",},},
     {"id":{"name":"oEnemyAi","path":"objects/oEnemyAi/oEnemyAi.yy",},},
     {"id":{"name":"oEnemyCard","path":"objects/oEnemyCard/oEnemyCard.yy",},},
     {"id":{"name":"oEnemyPhoto","path":"objects/oEnemyPhoto/oEnemyPhoto.yy",},},
@@ -498,8 +497,8 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"rSetup","path":"rooms/rSetup/rSetup.yy",},},
     {"roomId":{"name":"rTournies","path":"rooms/rTournies/rTournies.yy",},},
-    {"roomId":{"name":"rTesting","path":"rooms/rTesting/rTesting.yy",},},
     {"roomId":{"name":"rEnemy","path":"rooms/rEnemy/rEnemy.yy",},},
+    {"roomId":{"name":"rTesting","path":"rooms/rTesting/rTesting.yy",},},
     {"roomId":{"name":"rMusicTest","path":"rooms/rMusicTest/rMusicTest.yy",},},
     {"roomId":{"name":"rPrepare","path":"rooms/rPrepare/rPrepare.yy",},},
     {"roomId":{"name":"rSettings","path":"rooms/rSettings/rSettings.yy",},},

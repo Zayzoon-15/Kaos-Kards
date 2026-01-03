@@ -3,6 +3,7 @@ randomise();
 
 //Get Info
 info = global.currentEnemy;
+global.enemyRemovedCards = [actionCards.slash];
 
 //Set Weights
 weights = {
@@ -24,7 +25,7 @@ values = {
 var _cardsHeal = [];
 var _cardsDefend = [];
 var _cardsAct = [];
-var _cardsKaos = info.cardsKaos;
+var _cardsKaos = array_concat([],info.cardsKaos);
 
 //Seperate Deck
 for (var i = 0; i < array_length(info.cardsAct); i++) {
@@ -80,7 +81,8 @@ enemyDeck = array_concat(cardsHeal,cardsDefend,cardsAct,cardsKaos);
 
 //Get Combo Card
 combo = false;
-var _targetCombo = array_concat(cardsDefend,cardsHeal,cardsAct);
+var _targetCombo = cardsAct;
+if enemyShouldHeal() then _targetCombo = array_concat(cardsDefend,cardsHeal,cardsAct);
 cardsCombo = _targetCombo[irandom_range(0,array_length(_targetCombo)-1)];
 
 //Stats
@@ -104,29 +106,50 @@ diceRoll();
 
 attack = function()
 {
+    //No Cards Left
+    if array_length(cardsAct) <= 0 then return undefined;
+    
     //Get Random Card
-    var _card = irandom_range(0,array_length(cardsAct)-1);
+    var _index = irandom_range(0,array_length(cardsAct)-1);
+    var _card = cardsAct[_index];
+    
+    //Remove From Array
+    array_delete(cardsAct,_index,1);
     
     //Return Card
-    return cardsAct[_card];
+    return _card;
 }
 
 defend = function()
 {
+    //No Cards Left
+    if array_length(cardsDefend) <= 0 then return undefined;
+    
     //Get Random Card
-    var _card = irandom_range(0,array_length(cardsDefend)-1);
+    var _index = irandom_range(0,array_length(cardsDefend)-1);
+    var _card = cardsDefend[_index];
+    
+    //Remove From Array
+    array_delete(cardsDefend,_index,1);
     
     //Return Card
-    return cardsDefend[_card];
+    return _card;
 }
 
 heal = function()
 {
+    //No Cards Left
+    if array_length(cardsHeal) <= 0 then return undefined;
+    
     //Get Random Card
-    var _card = irandom_range(0,array_length(cardsHeal)-1);
+    var _index = irandom_range(0,array_length(cardsHeal)-1);
+    var _card = cardsHeal[_index];
+    
+    //Remove From Array
+    array_delete(cardsHeal,_index,1);
     
     //Return Card
-    return cardsHeal[_card];
+    return _card;
 }
 
 reroll = function()
@@ -150,11 +173,18 @@ upgrade = function()
 
 placeKaos = function()
 {
+    //No Cards Left
+    if array_length(cardsKaos) <= 0 then return undefined;
+    
     //Get Random Card
-    var _card = irandom_range(0,array_length(cardsKaos)-1);
+    var _index = irandom_range(0,array_length(cardsKaos)-1);
+    var _card = cardsKaos[_index];
+    
+    //Remove From Array
+    array_delete(cardsKaos,_index,1);
     
     //Return Card
-    return cardsKaos[_card];
+    return _card;
 }
 
 preformCombo = function()
@@ -211,7 +241,7 @@ if enemyShouldCombo()
 }
 
 //Use Special
-chosenSpecialCard.evaluate();
+var _special = chosenSpecialCard.evaluate();
 
 //Add Combo
 ds_list_set(enemyActions,0,combo);
@@ -220,7 +250,6 @@ ds_list_set(enemyActions,0,combo);
 //Get Kaos Card
 if !specialUsed
 {
-    var _special = chosenSpecialCard.evaluate();
     if _special.type == CARDTYPES.KAOS
     {
         //Add Kaos
@@ -242,16 +271,22 @@ for (var i = 0; i < array_length(chosenActionCards); i++) {
         //Get Card Info
     	var _card = chosenActionCards[i].evaluate();
         
-        //Get Card Value
-        randomize();
-        var _cardValue = irandom_range(_card.range.min,_card.range.min);
-        var _totalValue = _cardValue + diceOutcome[i];
-        
-        //Add Enemy Action
-        addEnemyAction(_card,_totalValue,i+1);
-        
-        //Add Card In Game
-        enemyAddCard(i+1,_card,_totalValue);
+        if _card == undefined
+        {
+            enemyAddCard(i+1,undefined,undefined,false);
+        } else {
+            //Get Card Value
+            randomize();
+            var _cardValue = irandom_range(_card.range.min,_card.range.min);
+            var _totalValue = _cardValue + diceOutcome[i];
+            
+            //Add Enemy Action
+            addEnemyAction(_card,_totalValue,i+1);
+            
+            
+            //Add Card In Game
+            enemyAddCard(i+1,_card,_totalValue);
+        }
     } else {
         //Add Disabled Slot
         enemyAddCard(i+1,{},0,true,true);

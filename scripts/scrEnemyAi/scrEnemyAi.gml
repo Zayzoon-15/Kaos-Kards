@@ -42,6 +42,9 @@ function enemyRolledLow()
 
 function enemyShouldDefend()
 {
+    //Don't Have Actions
+    if array_length(cardsAct) <= 2 and enemyCheckChance(weights.defend) then return true;
+    
     //Just Don't
     if weights.defend == 0 or array_length(cardsDefend) <= 0 then return false;
     

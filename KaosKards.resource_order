@@ -70,7 +70,6 @@
     {"name":"oComboMeter","order":1,"path":"objects/oComboMeter/oComboMeter.yy",},
     {"name":"oDeck","order":2,"path":"objects/oDeck/oDeck.yy",},
     {"name":"oDice","order":1,"path":"objects/oDice/oDice.yy",},
-    {"name":"oEnemyAi_old","order":1,"path":"objects/oEnemyAi_old/oEnemyAi_old.yy",},
     {"name":"oGameOver","order":1,"path":"objects/oGameOver/oGameOver.yy",},
     {"name":"oGhostAttack","order":1,"path":"objects/oGhostAttack/oGhostAttack.yy",},
     {"name":"oKaosExitButton","order":2,"path":"objects/oKaosExitButton/oKaosExitButton.yy",},
