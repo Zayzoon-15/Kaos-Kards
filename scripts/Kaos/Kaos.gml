@@ -149,10 +149,27 @@ function kaosActionBrawl(_targetEnemy)
 ///@self oAttackCard
 function kaosActionSticky(_targetEnemy)
 {
-    //Get Target Card
-    var _deck = _targetEnemy ? enemyDeck : playerDeck;
+    //Remove Card
+    randomise();
+    var _lostCard = noone;
+    if _targetEnemy
+    {
+        _lostCard = enemyDeck[irandom_range(0,array_length(enemyDeck)-1)];
+        array_push(global.enemyRemovedCards,_lostCard);
+        
+        array_push(global.playerAddCards,_lostCard);
+    } else {
+        _lostCard = playerDeck[irandom_range(0,array_length(playerDeck)-1)];
+        array_push(global.playerRemovedCards,_lostCard);
+        
+        array_push(global.enemyAddCards,_lostCard);
+    }
     
-    
+    //Print
+    if _targetEnemy
+    {
+        print("Enemy Lost", _lostCard);
+    } else print("Player Lost", _lostCard);
     
     //For Now
     createAlertMessage("Imagine A Sticky Hand Grabbing A Card");

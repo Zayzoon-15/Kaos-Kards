@@ -5,7 +5,7 @@
 
 
 
-function createAttackEffect(_name,_sprite,_color,_type,_timeBetween = undefined,_totalTime = undefined) constructor 
+function createAttackEffect(_name,_sprite,_color,_type,_timeBetween = undefined,_totalTime = undefined,_ignoreShield = false) constructor 
 {
     name = _name;
     sprite = _sprite;
@@ -13,6 +13,7 @@ function createAttackEffect(_name,_sprite,_color,_type,_timeBetween = undefined,
     type = _type;
     timeBetween = _timeBetween;
 	totalTime = _totalTime;
+    ignoreShield = _ignoreShield;
 }
 
 

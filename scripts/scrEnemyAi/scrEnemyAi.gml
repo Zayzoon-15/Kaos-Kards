@@ -1,6 +1,5 @@
+
 ///@self oEnemyAi
-
-
 function enemyCheckChance(_weight)
 {
     //Get Chance
@@ -16,7 +15,7 @@ function enemyCheckChance(_weight)
 
 #region Conditions
 
-
+///@self oEnemyAi
 function enemyRolledLow()
 {
     var _lowDice = 0;
@@ -27,7 +26,7 @@ function enemyRolledLow()
     if diceOutcome[2] <= 3 then _lowDice++;
     
     //If Low
-    if _lowDice >= diceValue and enemyCheckChance(diceWeight)
+    if _lowDice >= values.dice and enemyCheckChance(weights.dice)
     {
         return true;
     } else return false;
@@ -43,17 +42,14 @@ function enemyRolledLow()
 
 function enemyShouldDefend()
 {
-    //Has Card
-    if !array_contains(deck,actionCards.shield) return false;
-    
     //Just Don't
-    if defendWeight == 0 then return false;
+    if weights.defend == 0 or array_length(cardsDefend) <= 0 then return false;
     
     //Defend If Low
     if hp <= 30 then return false;
     
     //Defend
-    if hp <= defendValue and enemyCheckChance(defendWeight)
+    if hp <= values.defend and enemyCheckChance(weights.defend)
     {
         return true;
     } else return false;
@@ -62,25 +58,22 @@ function enemyShouldDefend()
 
 function enemyShouldUpgrade()
 {
-    return enemyCheckChance(diceWeight);
+    return enemyCheckChance(weights.dice);
 } 
 
 function enemyShouldHeal()
 {
-    //Has Card
-    if !array_contains(deck,actionCards.heal) return false;
-    
     //Just Don't
-    if healWeight == 0 then return false;
+    if weights.heal == 0 or array_length(cardsHeal) <= 0 then return false;
     
     //Heal If Low
-    if hp <= healValue and enemyCheckChance(healWeight)
+    if hp <= values.heal and enemyCheckChance(weights.heal)
     {
         return true;
     }
     
     //Heal If Low But Not Bad
-    if hp < clamp(healValue+20,0,95) and enemyCheckChance(10)
+    if hp < clamp(values.heal+15,0,95) and enemyCheckChance(10)
     {
         return true;
     }
@@ -92,31 +85,25 @@ function enemyShouldHeal()
 
 function enemyShouldHealAgain()
 {
-    //Has Card
-    if !array_contains(deck,actionCards.heal) return false;
-    
     //Just Don't
-    if healWeight == 0 then return false;
+    if weights.heal == 0 or array_length(cardsHeal) <= 0 then return false;
     
     //Check
-    return hp+15 <= healValue and enemyCheckChance(healWeight*.7);
+    return hp+15 <= values.heal and enemyCheckChance(weights.heal*.7);
 }
 
 function enemyShouldDefendAgain()
 {
-    //Has Card
-    if !array_contains(deck,actionCards.shield) return false;
-    
     //Just Don't
-    if defendValue == 0 then return false;
+    if weights.defend == 0 or array_length(cardsDefend) <= 0 then return false;
     
     //Check
-    return hp+25 <= defendValue and enemyCheckChance(defendWeight*.4);
+    return hp+25 <= values.defend and enemyCheckChance(weights.defend*.4);
 }
 
 function enemyShouldCombo()
 {
-	return global.enemyComboMeter >= 100 and enemyCheckChance(comboWeight);
+	return global.enemyComboMeter >= 100 and enemyCheckChance(weights.combo);
 }
 
 #endregion

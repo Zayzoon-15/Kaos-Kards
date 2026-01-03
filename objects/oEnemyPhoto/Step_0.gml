@@ -1,3 +1,5 @@
+//Set Sprite
+sprite_index = global.currentEnemy.sprite;
 
 //Play Animation
 spriteLoopFrames(currentAnim,4);

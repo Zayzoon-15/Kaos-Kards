@@ -1,98 +1,40 @@
-//Randomise
-randomise();
+#region Stats
 
-//Get Info
-info = global.currentEnemy;
-
-//Set Weights
-weights = {
-    "heal" : info.strat.healWeight,
-    "defend" : info.strat.defendWeight,
-    "dice" : info.strat.diceWeight,
-    "combo" : info.strat.comboWeight,
-};
-
-//Set Values
+//Health
 hp = global.enemyHp;
-values = {
-    "heal" : info.strat.healValue,
-    "defend" : info.strat.defendValue,
-    "dice" : info.strat.diceValue,
-}
 
-//Cards
-var _cardsHeal = [];
-var _cardsDefend = [];
-var _cardsAct = [];
-var _cardsKaos = info.cardsKaos;
+//Weights
+healWeight = global.currentEnemy.healWeight;
+defendWeight = global.currentEnemy.defendWeight;
+diceWeight = global.currentEnemy.diceWeight;
+comboWeight = global.currentEnemy.comboWeight
 
-//Seperate Deck
-for (var i = 0; i < array_length(info.cardsAct); i++) {
-    switch (info.cardsAct[i].genre) {
-    	case CARDACT_GENRES.HEAL: array_push(_cardsHeal,info.cardsAct[i]); break;
-    	case CARDACT_GENRES.DEFEND: array_push(_cardsDefend,info.cardsAct[i]); break;
-    	case CARDACT_GENRES.ATTACK: array_push(_cardsAct,info.cardsAct[i]); break;
-    }
-}
+//Value
+healValue = global.currentEnemy.healValue;
+defendValue = global.currentEnemy.defendValue;
+diceValue = global.currentEnemy.diceValue;
 
-//Remove Cards
-for (var i = 0; i < 4; i++) {
-    
-    //Get Array
-	var _array;
-    switch (i) {
-    	case 0: _array = _cardsHeal; break;
-    	case 1: _array = _cardsDefend; break;
-    	case 2: _array = _cardsAct; break;
-    	case 3: _array = _cardsKaos; break;
-    }
-    
-    //Remove From Array
-    for (var d = 0; d < array_length(global.enemyRemovedCards); d++) 
-    {
-        //Get Index
-    	var _index = array_get_index(_array,global.enemyRemovedCards[d]);
-        
-        //Remove Card
-        if _index != -1 then array_delete(_array,_index,1);
-    }
-    
-    //Add To Array
-    for (var d = 0; d < array_length(global.enemyAddCards); d++) 
-    {
-        switch global.enemyAddCards[d].genre
-        {
-            case CARDACT_GENRES.HEAL: array_push(_cardsHeal,global.enemyAddCards[d]); break;
-            case CARDACT_GENRES.DEFEND: array_push(_cardsDefend,global.enemyAddCards[d]); break;
-            case CARDACT_GENRES.ATTACK: array_push(_cardsAct,global.enemyAddCards[d]); break;
-        }
-    }
-}
+//Cards Available
+attacks = global.currentEnemy.attacks;
+kaos = global.currentEnemy.kaos;
+specialUsed = false;
+combo = false;
 
-//Set Cards
-cardsHeal = _cardsHeal;
-cardsDefend = _cardsDefend;
-cardsAct = _cardsAct;
-cardsKaos = _cardsKaos;
-
-//Set Deck
-enemyDeck = array_concat(cardsHeal,cardsDefend,cardsAct,cardsKaos);
+//Deck
+deck = global.currentEnemy.deck;
 
 //Get Combo Card
-combo = false;
-var _targetCombo = array_concat(cardsDefend,cardsHeal,cardsAct);
-cardsCombo = _targetCombo[irandom_range(0,array_length(_targetCombo)-1)];
+randomise();
+comboCard = attacks[irandom_range(0,array_length(attacks)-1)];
 
-//Stats
-specialUsed = false;
-
+#endregion
 
 //Get Dice Values
-diceOutcome = [];
 diceRoll = function()
 {
     diceOutcome = [];
     repeat (3) {
+        randomize();
         var _diceNum = irandom_range(1,6);
     	array_push(diceOutcome,_diceNum);
     }
@@ -100,33 +42,28 @@ diceRoll = function()
 diceRoll();
 
 
-#region Actions
+#region Actions The Enemy Can Take
 
 attack = function()
 {
     //Get Random Card
-    var _card = irandom_range(0,array_length(cardsAct)-1);
+    randomize();
+    var _card = irandom_range(0,array_length(attacks)-1);
     
     //Return Card
-    return cardsAct[_card];
+    return attacks[_card];
 }
 
 defend = function()
 {
-    //Get Random Card
-    var _card = irandom_range(0,array_length(cardsDefend)-1);
-    
     //Return Card
-    return cardsDefend[_card];
+    return actionCards.shield;
 }
 
 heal = function()
 {
-    //Get Random Card
-    var _card = irandom_range(0,array_length(cardsHeal)-1);
-    
     //Return Card
-    return cardsHeal[_card];
+    return actionCards.heal;
 }
 
 reroll = function()
@@ -141,6 +78,7 @@ reroll = function()
 upgrade = function()
 {
     //Upgrade Dice
+    randomize();
     var _targetDice = choose(0,2);
     diceOutcome[_targetDice] += irandom_range(diceCards.upgrade.range.min,diceCards.upgrade.range.max);
     
@@ -151,16 +89,17 @@ upgrade = function()
 placeKaos = function()
 {
     //Get Random Card
-    var _card = irandom_range(0,array_length(cardsKaos)-1);
+    randomise();
+    var _card = irandom_range(0,array_length(kaos)-1);
     
     //Return Card
-    return cardsKaos[_card];
+    return kaos[_card];
 }
 
 preformCombo = function()
 {
 	//Return Card
-	return cardsCombo;
+	return comboCard;
 }
 
 #endregion
@@ -183,7 +122,6 @@ var _defendCheck = new enemyDecisionNode(enemyShouldDefend(),_defend,_healCheck)
 var _defendCheckAgain = new enemyDecisionNode(enemyShouldDefend(),_defend,_healCheckAgain);
 var _upgradeDice = new enemyDecisionNode(enemyShouldUpgrade(),_upgrade,_kaos);
 var _rerollDice = new enemyDecisionNode(enemyRolledLow(),_reroll,_upgradeDice);
-
 
 //Ai Tree
 chosenSpecialCard = _rerollDice;
@@ -210,12 +148,13 @@ if enemyShouldCombo()
 	];
 }
 
+
 //Use Special
 chosenSpecialCard.evaluate();
 
+
 //Add Combo
 ds_list_set(enemyActions,0,combo);
-
 
 //Get Kaos Card
 if !specialUsed
@@ -233,6 +172,7 @@ if !specialUsed
 { 
     enemyAddCard(0,undefined,undefined,true);
 }
+
 
 //Get Action Cards
 for (var i = 0; i < array_length(chosenActionCards); i++) {

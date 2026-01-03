@@ -6,17 +6,25 @@ enum CARDTYPES {
     KAOS
 }
 
+//Card Genres
+enum CARDACT_GENRES {
+	HEAL,
+    DEFEND,
+    ATTACK
+}
+
 
 /// @desc Creates an action card
 /// @param {string} _name The cards names
 /// @param {string} _desc The cards description
 /// @param {asset.GMSprite} _sprite The cards sprite
 /// @param {array} _range The cards range Ex: [1,6] min-1 max-6
+/// @param {Enum} _genre The card genre
 /// @param {function} _action The cards action (Put undefined of it has no action)
 /// @param {array} _extraArgs Extra arguments the givin function can use
 /// @param {function} _comboAction The cards combo action (Put undefined of it has no action)
 /// @param {array} _comboArgs Extra arguments the givin combo function can use
-function createCardAction(_name,_desc,_sprite,_range,_action = undefined,_extraArgs = [],_comboAction = undefined,_comboArgs = []) constructor
+function createCardAction(_name,_desc,_sprite,_range,_genre = CARDACT_GENRES.ATTACK,_action = undefined,_extraArgs = [],_comboAction = undefined,_comboArgs = []) constructor
 {
     //Info
     name = _name;
@@ -41,6 +49,7 @@ function createCardAction(_name,_desc,_sprite,_range,_action = undefined,_extraA
     
     //Set Type
     type = CARDTYPES.ACTION;
+    genre = _genre;
 }
 
 

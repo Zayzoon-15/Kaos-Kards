@@ -35,6 +35,12 @@ function gameReset()
         player: array_create(4,false),
         enemy : array_create(4,false)
     };
+    
+    //Removed
+    global.playerRemovedCards = [];
+    global.enemyRemovedCards = [];
+    global.playerAddCards = [];
+    global.enemyAddCards = [];
 }
 
 ///@desc This event plays when the next round starts

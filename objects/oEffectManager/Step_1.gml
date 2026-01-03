@@ -17,6 +17,7 @@ for (var k = 0; k < 2; k++) {
 			with _listValue.healthInst
 			{	
 				if startHitStun then _listValue.value = lerp(_listValue.value,-2,.03);
+                    _listValue.showPercent = _listValue.value;
 			}
 		}
 		

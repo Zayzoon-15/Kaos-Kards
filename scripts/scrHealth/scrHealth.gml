@@ -1,7 +1,8 @@
 
 ///@desc Hurts the enemy by the given amount
-///@arg {real} _value The amount of damage
-function hurtEnemy(_value)
+///@param {real} _value The amount of damage
+///@param {bool} _ignoreShield If it should ignore shield the shield and affect the health
+function hurtEnemy(_value,_ignoreShield = false)
 {	
     //Enemy Photo
     with oEnemyPhoto {hurt();}
@@ -16,6 +17,9 @@ function hurtEnemy(_value)
     var _lastTemp = global.enemyTempHp;
     var _tempHp = global.enemyTempHp - _value;
     global.enemyTempHp = _tempHp;
+    
+    //Ignore Temp Hp
+    if _ignoreShield then _tempHp = -_value;
     
     //Remove Health
     var _lastHp = global.enemyHp;
@@ -39,8 +43,9 @@ function hurtEnemy(_value)
 
 
 ///@desc Hurts the player by the given amount
-///@arg {real} _value The amount of damage
-function hurtPlayer(_value)
+///@param {real} _value The amount of damage
+///@param {bool} _ignoreShield If it should ignore shield the shield and affect the health
+function hurtPlayer(_value,_ignoreShield = false)
 {
     //Enemy Photo
     with oEnemyPhoto {win();}
@@ -55,6 +60,9 @@ function hurtPlayer(_value)
     var _lastTemp = global.playerTempHp;
     var _tempHp = global.playerTempHp - _value;
     global.playerTempHp = _tempHp;
+    
+    //Ignore Temp Hp
+    if _ignoreShield then _tempHp = -_value;
     
     //Remove Health
     var _lastHp = global.playerHp;

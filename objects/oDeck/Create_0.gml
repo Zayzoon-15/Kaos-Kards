@@ -19,6 +19,19 @@ randomize();
 deck = array_shuffle(playerDeck);
 deckNum = 0;
 
+//Remove Cards
+for (var i = 0; i < array_length(global.playerRemovedCards); i++) 
+{
+    //Get Index
+    var _index = array_get_index(deck,global.playerRemovedCards[i]);
+    
+    //Remove Card
+    if _index != -1 then array_delete(deck,_index,1);
+}
+
+//Add Cards
+deck = array_concat(deck,global.playerAddCards);
+
 //Draw Cards
 drawTime = 10;
 

@@ -12,18 +12,21 @@ applyEffect = function()
 	//Get Temp Hp
 	var _tempHp = global.playerTempHp;
 	if targetEnemy then _tempHp = global.enemyTempHp;
-
+    
     for (var i = 0; i < ds_list_size(_targetList); i++) {
         
         var _listValue = ds_list_find_value(_targetList,i);
+        
     	if _listValue.info == effect
         {
-			
 			//Set Value
 			var _value = value;
 			if _listValue.info.type == EFFECT_TYPE.HARM
 			{
-				_value = value - _tempHp;
+                if _listValue.info.ignoreShield
+                {
+                    _value = value;
+                } else _value = value - _tempHp;
 				if _value < 0 then _value = 0;
 			}
 			
@@ -33,7 +36,9 @@ applyEffect = function()
             //Decrease Hp
             if _listValue.info.type == EFFECT_TYPE.HARM
             {
-                if targetEnemy then hurtEnemy(value); else hurtPlayer(value);
+                if targetEnemy {
+                    hurtEnemy(value,_listValue.info.ignoreShield);
+                } else hurtPlayer(value,_listValue.info.ignoreShield);
             }
             
         }

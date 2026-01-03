@@ -24,7 +24,13 @@ global.disabledSlots = {
 };
 
 //Enemy
-global.currentEnemy = enemyInfo.dog;
+global.currentEnemy = enemyInfo.bones;
+
+//Removes
+global.playerRemovedCards = [];
+global.enemyRemovedCards = [];
+global.playerAddCards = [];
+global.enemyAddCards = [];
 
 //Health
 global.playerHp = 100;
