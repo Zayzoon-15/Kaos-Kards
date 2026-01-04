@@ -1,5 +1,5 @@
 //Change Value
-if info.type == EFFECT_TYPE.HARM then value *= .55;
+if info.type == EFFECT_TYPE.HARM then value *= .8;
 value = clamp(value,1,99);
 
 //Effect
@@ -27,8 +27,10 @@ applyEffect = function()
                 {
                     _value = value;
                 } else _value = value - _tempHp;
-				if _value < 0 then _value = 0;
 			}
+            
+            //Make Sure It's Not Below Zero
+            if _value < 0 then _value = 0;
 			
             //Add To Value
             _listValue.value += _value;

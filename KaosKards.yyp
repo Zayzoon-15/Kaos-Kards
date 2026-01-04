@@ -449,6 +449,7 @@
     {"id":{"name":"sCock","path":"sprites/sCock/sCock.yy",},},
     {"id":{"name":"sComboArrow","path":"sprites/sComboArrow/sComboArrow.yy",},},
     {"id":{"name":"sComboMeter","path":"sprites/sComboMeter/sComboMeter.yy",},},
+    {"id":{"name":"sCosmo","path":"sprites/sCosmo/sCosmo.yy",},},
     {"id":{"name":"sDeck","path":"sprites/sDeck/sDeck.yy",},},
     {"id":{"name":"sDice12","path":"sprites/sDice12/sDice12.yy",},},
     {"id":{"name":"sDice20","path":"sprites/sDice20/sDice20.yy",},},

@@ -225,6 +225,7 @@
     {"name":"sCardSticky","order":3,"path":"sprites/sCardSticky/sCardSticky.yy",},
     {"name":"sChud","order":5,"path":"sprites/sChud/sChud.yy",},
     {"name":"sComboMeter","order":1,"path":"sprites/sComboMeter/sComboMeter.yy",},
+    {"name":"sCosmo","order":7,"path":"sprites/sCosmo/sCosmo.yy",},
     {"name":"sDeck","order":3,"path":"sprites/sDeck/sDeck.yy",},
     {"name":"sDiscard","order":1,"path":"sprites/sDiscard/sDiscard.yy",},
     {"name":"sDog","order":4,"path":"sprites/sDog/sDog.yy",},
