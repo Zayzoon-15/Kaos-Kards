@@ -29,6 +29,7 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"v2","%Name":"text","filters":[],"listItems":[],"multiselect":false,"name":"text","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"No Text Placed","varType":2,},
+    {"$GMObjectProperty":"v2","%Name":"lifeSpan","filters":[],"listItems":[],"multiselect":false,"name":"lifeSpan","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"30","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

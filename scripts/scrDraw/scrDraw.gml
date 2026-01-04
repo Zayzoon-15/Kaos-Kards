@@ -89,9 +89,10 @@ function drawRectOutlined(_x1,_y1,_x2,_y2,_cornerRad = UIBOX_RAD,_outlineWidth=1
 
 ///@desc Creates text that alerts the player about anything
 ///@arg {string} _text The text to show
+///@arg {real} _lifeSpan The life span of the text (Default : 30)
 ///@arg {real} _x The x position of the text (Default : room_width/2)
 ///@arg {real} _y The y position of the text (Default : 235)
-function createAlertMessage(_text,_x=room_width/2,_y=235)
+function createAlertMessage(_text,_lifeSpan = 30,_x=room_width/2,_y=235)
 {
 	//Make Layer
 	if !layer_exists("Ui") then layer_create(-1,"Ui");
@@ -101,7 +102,8 @@ function createAlertMessage(_text,_x=room_width/2,_y=235)
     
 	//Create Message
     instance_create_layer(_x,_y,"Ui",oAlertMessage,{
-        text : _text
+        text : _text,
+        lifeSpan : _lifeSpan
     });
 }
 

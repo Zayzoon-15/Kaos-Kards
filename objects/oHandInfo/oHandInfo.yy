@@ -2,8 +2,6 @@
   "$GMObject":"",
   "%Name":"oHandInfo",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
@@ -13,7 +11,10 @@
     "name":"Info",
     "path":"folders/Objects/Ui/Info.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oParInfoBox",
+    "path":"objects/oParInfoBox/oParInfoBox.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sPixelCenter",
+    "path":"sprites/sPixelCenter/sPixelCenter.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

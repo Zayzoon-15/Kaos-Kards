@@ -1,25 +1,45 @@
-
-function createEnemyStrat(_healWeight = 80,_healVal = 70,_defendWeight = 70,_defendValue = 50,_diceWeight = 85,_diceVal = 2,_comboWeight = 100) constructor 
+/// @desc Create the enemies fighting strategy
+/// @param {real} [_healWeight] How important healing is (Default = 80)
+/// @param {real} [_healVal] When should it consider healing (Default = 60)
+/// @param {real} [_defendWeight] How important defending is (Default = 50)
+/// @param {real} [_defendValue] When should it consider defending (Default = 50)
+/// @param {real} [_diceWeight] How important the dice are if low a kaos card will be placed (Default = 80)
+/// @param {real} [_diceVal] How many low dice before upgrading (Default = 2)
+/// @param {real} [_comboWeight] How important it is to combo (Default = 100)
+/// @param {real} [_specialWeight] How important it is to use the special move (Default = 40)
+/// @param {real} [_specialVal] How many rounds in before using special move (Default = 3)
+/// @param {real} [_specialUses] How many uses before they stop completely (Default = 2)
+function enemyCreateStrat(_healWeight = 80,_healVal = 60,_defendWeight = 50,_defendValue = 50,_diceWeight = 80,_diceVal = 2,_comboWeight = 100,_specialWeight = 40,_specialVal = 3,_specialUses = 2) constructor 
 {
     //Weights
     healWeight = _healWeight;
     defendWeight = _defendWeight;
     diceWeight = _diceWeight;
     comboWeight = _comboWeight;
+    specialWeight = _specialWeight;
     
     //Values
     healValue = _healVal;
     defendValue = _defendValue;
     diceValue = _diceVal;
+    specialValue = _specialVal;
+    specialUses = _specialUses;
 }
 
 
-
-function createEnemy(_name,_sprite,_actionCards,_kaosCards,_strat = new createEnemyStrat(),_special = undefined) constructor
+/// @desc Creates the enemies information
+/// @param {string} _name The name of the enemy
+/// @param {Asset.GMSprite} _sprite The sprite of the enemy
+/// @param {array} _actionCards The enemies action cards (Example: [actionCards.bread, actionCards.heal])
+/// @param {array} _kaosCards The enemies kaos cards (Example: [kaosCards.swoop])
+/// @param {struct.enemycreatestrat} [_strat] The enemies figthing strategy
+/// @param {any*} [_special] The enemies special move(leave as undefined if they don't use one)
+function enemyCreate(_name,_sprite,_actionCards,_kaosCards,_strat = new enemyCreateStrat(),_special = undefined) constructor
 {    
     //Info
     name = _name;
     sprite = _sprite;
+    special = _special;
     
     //Cards
     cardsAct = _actionCards;
@@ -27,42 +47,6 @@ function createEnemy(_name,_sprite,_actionCards,_kaosCards,_strat = new createEn
     
     //Strat
     strat = _strat;
-}
-
-
-
-
-///@desc Creates the enemies information
-///@arg {string} _name The name of the enemy
-///@arg {Asset.GMSprite} _sprite The sprite of the enemy
-///@arg {array} _attacks The enemies attack cards (Example: [actionCards.bread, actionCards.slash])
-///@arg {array} _kaos The enemies kaos cards (Example: [kaosCards.swoop])
-///@arg {real} _healWeight How important healing is (Default = 100)
-///@arg {real} _healValue When should it consider healing (Default = 50)
-///@arg {real} _defendWeight How important defending is (Default = 30)
-///@arg {real} _defendValue When should it consider defending (Default = 60)
-///@arg {real} _diceWeight How important the dice are if low a kaos card will be placed (Default = 80)
-///@arg {real} _diceValue How many low dice before upgrading (Default = 2)
-///@arg {real} _comboWeight How important it is to combo (Default = 100)
-function createEnemyOLD(_name,_sprite,_attacks,_kaos,_healWeight = 100,_healValue = 50,_defendWeight = 30,_defendValue = 60, _diceWeight = 80, _diceValue = 2,_comboWeight = 0) constructor
-{    
-    //Info
-    name = _name;
-    sprite = _sprite;
-    attacks = _attacks;
-    kaos = _kaos;
-    deck = array_concat(_attacks,_kaos);
-    
-    //Weights
-    healWeight = _healWeight;
-    defendWeight = _defendWeight;
-    diceWeight = _diceWeight;
-	comboWeight = _comboWeight;
-    
-    //Values
-    healValue = _healValue;
-    defendValue = _defendValue;
-    diceValue = _diceValue;
 }
 
 

@@ -11,6 +11,7 @@ weights = {
     "defend" : info.strat.defendWeight,
     "dice" : info.strat.diceWeight,
     "combo" : info.strat.comboWeight,
+    "special" : info.strat.specialWeight
 };
 
 //Set Values
@@ -19,6 +20,8 @@ values = {
     "heal" : info.strat.healValue,
     "defend" : info.strat.defendValue,
     "dice" : info.strat.diceValue,
+    "special" : info.strat.specialValue,
+    "specialUses" : info.strat.specialUses
 }
 
 //Cards
@@ -195,6 +198,13 @@ preformCombo = function()
 
 #endregion
 
+//Do Special
+if info.special != undefined and enemyCheckChance(weights.special) and values.special <= global.gameRound and global.enemySpecialUses <= values.specialUses
+{
+    info.special();
+    global.enemySpecialUses ++;
+}
+
 
 //Set Actions
 var _attack = new enemyActionNode(attack);
@@ -204,7 +214,6 @@ var _reroll = new enemyActionNode(reroll);
 var _upgrade = new enemyActionNode(upgrade);
 var _kaos = new enemyActionNode(placeKaos);
 var _combo = new enemyActionNode(preformCombo);
-
 
 //Set Decisions
 var _healCheck = new enemyDecisionNode(enemyShouldHeal(),_heal,_attack);

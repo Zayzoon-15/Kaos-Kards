@@ -25,6 +25,7 @@ global.disabledSlots = {
 
 //Enemy
 global.currentEnemy = enemyInfo.bones;
+global.enemySpecialUses = 0;
 
 //Removes
 global.playerRemovedCards = [];
@@ -66,6 +67,7 @@ enum GAMESTATES {
     KAOS
 }
 gameState = GAMESTATES.PREPARE;
+global.gameRound = 0;
 
 //Managers
 global.paused = false;

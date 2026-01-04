@@ -5,6 +5,12 @@ function gameReset()
 	//Set Gamestate
 	gameState = GAMESTATES.PREPARE;
 	
+    //Reset Round
+    global.gameRound = 0;
+    
+    //Reset Uses
+    global.enemySpecialUses = 0;
+    
 	//Destroy All Effects
 	instance_destroy(oAttackEffect);
 	instance_destroy(oHealthIcon);
@@ -48,6 +54,10 @@ function nextRoundStarted()
 {
     //Set Gamestate
     gameState = GAMESTATES.PREPARE;
+    
+    //Increase Round
+    global.gameRound ++;
+    print("Game Round",global.gameRound)
     
     //Remove Actions
     ds_list_clear(playerActions);
