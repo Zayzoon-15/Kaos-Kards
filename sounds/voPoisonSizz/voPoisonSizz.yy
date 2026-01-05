@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"voPoisonSizz",
+  "audioGroupId":{
+    "name":"agVoice",
+    "path":"audiogroups/agVoice",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":3.2019274,
+  "exportDir":"",
+  "name":"voPoisonSizz",
+  "parent":{
+    "name":"Actions",
+    "path":"folders/Sounds/VoiceOver/Actions.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"voPoisonSizz.ogg",
+  "volume":1.0,
+}

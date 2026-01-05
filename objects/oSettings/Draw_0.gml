@@ -16,6 +16,9 @@ if global.paused
 
 	//Reset Draw
 	drawReset();
+    
+    //Draw Guys
+    draw_self();
 }
 
 #endregion

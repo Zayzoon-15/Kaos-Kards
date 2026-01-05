@@ -108,6 +108,12 @@ function actionPoison(_targetEnemy)
     
     //Apply Poison
     addEffect(attackEffects.poison,value,_targetEnemy);
+    
+    //Play Voice
+    if irandom_range(1,4) == 1
+    {
+        audioPlayVoice([voiceInfo.poisonGoo,voiceInfo.poisonInfect,voiceInfo.poisonShip,voiceInfo.poisonSizz]);
+    }
 }
 
 

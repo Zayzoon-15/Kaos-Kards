@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Voiceover",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Voiceover",
+  "parent":{
+    "name":"KaosKards",
+    "path":"KaosKards.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

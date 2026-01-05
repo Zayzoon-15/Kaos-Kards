@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"voLikeKoas",
+  "audioGroupId":{
+    "name":"agVoice",
+    "path":"audiogroups/agVoice",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":3.8365307,
+  "exportDir":"",
+  "name":"voLikeKoas",
+  "parent":{
+    "name":"VoiceOver",
+    "path":"folders/Sounds/VoiceOver.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"voLikeKoas.ogg",
+  "volume":1.0,
+}

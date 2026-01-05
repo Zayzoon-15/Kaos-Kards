@@ -1,3 +1,7 @@
+//Set Pos
+xstart = SCREEN_WIDTH/2;
+y = SCREEN_HEIGHT/2;
+
 //Audio
 curSong = noone;
 
@@ -22,6 +26,7 @@ createSettings = function()
 	instance_activate_object(oGame);
 	instance_activate_object(oExpandRes);
     instance_activate_object(oSound);
+    instance_activate_object(oSubtitle);
 	
 	#endregion
 	

@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"voTacoTime",
+  "audioGroupId":{
+    "name":"agVoice",
+    "path":"audiogroups/agVoice",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":5.596145,
+  "exportDir":"",
+  "name":"voTacoTime",
+  "parent":{
+    "name":"Random",
+    "path":"folders/Sounds/VoiceOver/Random.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"voTacoTime.ogg",
+  "volume":1.0,
+}
