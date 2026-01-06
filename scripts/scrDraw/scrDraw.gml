@@ -79,11 +79,11 @@ function drawRectOutlined(_x1,_y1,_x2,_y2,_cornerRad = UIBOX_RAD,_outlineWidth=1
 	//Outline Width
 	for (var i = 0; i < _outlineWidth; ++i) {
 		draw_roundrect_ext(_x1-i,_y1-i,_x2+i,_y2+i,_cornerRad+i,_cornerRad+i,true);
+		draw_roundrect_ext(_x1-i/2,_y1-i/2,_x2+i/2,_y2+i/2,_cornerRad+i/2,_cornerRad+i/2,true);
 	}
     
     //Reset Stuff
-    draw_set_color(c_white);
-    draw_set_alpha(1);
+    drawReset();
 }
 
 

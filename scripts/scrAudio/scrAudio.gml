@@ -137,10 +137,7 @@ function audioPlaySong(_song,_mixSongs = false,_fadeTime = 60,_loop = true)
 function audioPlayVoice(_voiceover)
 {
     //No Voice Over
-    if !global.voiceover
-    {
-        return noone;
-    }
+    if !global.voiceover then return noone;
     
     //Stop Other Voice
     audio_group_stop_all(agVoice);
@@ -149,6 +146,7 @@ function audioPlayVoice(_voiceover)
     var _voice = _voiceover;
     if is_array(_voiceover)
     {
+        randomise();
         _voice = array_get_random(_voiceover);
     }
     

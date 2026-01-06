@@ -7,11 +7,21 @@ y = SCREEN_HEIGHT - 25;
 
 //Box Setup
 heightMargin = 5;
-widthMargin = 5;
+widthMargin = 10;
 maxWidth = 600;
+outlineWidth = 0;
 
 //Image
-textScale = 2;
+textScale = 1;
+targetFont = fnSubtitle;
+smoothText = true;
+
+//Give Font Outline
+font_enable_effects(fnSubtitle, true, { 
+    outlineEnable: true, 
+    outlineDistance: 3,
+    outlineColour: c_black
+});
 
 //Array Id
 arrayId = 0;

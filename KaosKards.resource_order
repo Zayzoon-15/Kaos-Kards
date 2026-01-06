@@ -61,6 +61,7 @@
   ],
   "ResourceOrderSettings":[
     {"name":"acRps","order":1,"path":"animcurves/acRps/acRps.yy",},
+    {"name":"fnSubtitle","order":1,"path":"fonts/fnSubtitle/fnSubtitle.yy",},
     {"name":"03. Figgy Info","order":3,"path":"notes/03. Figgy Info/03. Figgy Info.yy",},
     {"name":"oAttackEffect","order":1,"path":"objects/oAttackEffect/oAttackEffect.yy",},
     {"name":"oBrawlChar","order":1,"path":"objects/oBrawlChar/oBrawlChar.yy",},

@@ -118,6 +118,7 @@
     {"link":"io.gamemaker.gm_filter_pixelate-1.0.0","name":"io.gamemaker.gm_filter_pixelate-1.0.0","path":"io.gamemaker.gm_filter_pixelate-1.0.0.yyp",},
     {"link":"io.gamemaker.gm_filter_ripples-1.0.0","name":"io.gamemaker.gm_filter_ripples-1.0.0","path":"io.gamemaker.gm_filter_ripples-1.0.0.yyp",},
     {"link":"io.gamemaker.gm_filter_edgedetect-1.0.0","name":"io.gamemaker.gm_filter_edgedetect-1.0.0","path":"io.gamemaker.gm_filter_edgedetect-1.0.0.yyp",},
+    {"link":"io.gamemaker.sdfshaders-1.0.0","name":"io.gamemaker.sdfshaders-1.0.0","path":"io.gamemaker.sdfshaders-1.0.0.yyp",},
   ],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"cosmo.mp4","CopyToMask":-1,"filePath":"datafiles/assets","name":"cosmo.mp4","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -135,6 +136,7 @@
     {"id":{"name":"EaseHeartbeat","path":"animcurves/EaseHeartbeat/EaseHeartbeat.yy",},},
     {"id":{"name":"EaseMidSlow","path":"animcurves/EaseMidSlow/EaseMidSlow.yy",},},
     {"id":{"name":"fnMain","path":"fonts/fnMain/fnMain.yy",},},
+    {"id":{"name":"fnSubtitle","path":"fonts/fnSubtitle/fnSubtitle.yy",},},
     {"id":{"name":"03. Figgy Info","path":"notes/03. Figgy Info/03. Figgy Info.yy",},},
     {"id":{"name":"TGMX_Documentation","path":"notes/TGMX_Documentation/TGMX_Documentation.yy",},},
     {"id":{"name":"TGMX_Update_Log","path":"notes/TGMX_Update_Log/TGMX_Update_Log.yy",},},
@@ -518,8 +520,8 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rSetup","path":"rooms/rSetup/rSetup.yy",},},
-    {"roomId":{"name":"rPrepare","path":"rooms/rPrepare/rPrepare.yy",},},
     {"roomId":{"name":"rTournies","path":"rooms/rTournies/rTournies.yy",},},
+    {"roomId":{"name":"rPrepare","path":"rooms/rPrepare/rPrepare.yy",},},
     {"roomId":{"name":"rTestingVoice","path":"rooms/rTestingVoice/rTestingVoice.yy",},},
     {"roomId":{"name":"rEnemy","path":"rooms/rEnemy/rEnemy.yy",},},
     {"roomId":{"name":"rTesting","path":"rooms/rTesting/rTesting.yy",},},
