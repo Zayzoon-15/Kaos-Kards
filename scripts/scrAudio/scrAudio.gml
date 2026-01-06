@@ -1,6 +1,7 @@
 //Functions that have to do with audio
 
 
+
 ///@desc Plays a sound effect
 ///The pitch of this sound can be changed
 ///@param {Asset.GMSound} _sound The sound asset (Can be an array of sounds)
@@ -43,6 +44,7 @@ function audioCreateSyncGroup(_songs,_loop = true)
 	return _audioGroup;
 }
 
+
 /// @desc Plays a song that is inside a sync group
 /// @param {id.audiosyncgroup} _audioGroup The target sync group
 /// @param {asset.GMSound} _targetSong The target song
@@ -84,6 +86,7 @@ function audioPlayGroupSong(_audioGroup,_targetSong,_fadeTime = 30)
 	global.curSong = _targetSong;
 	global.curSongGroup = _audioGroup;
 }
+
 
 /// @desc Plays a song and fades out the last song
 /// @param {asset.GMSound} _song The target Song
@@ -134,6 +137,8 @@ function audioPlaySong(_song,_mixSongs = false,_fadeTime = 60,_loop = true)
 }
 
 
+///@desc Plays the announcers voice line with subtitles
+///@param {struct.voicecreate} _voiceover The voice over to play (Make sure its a voiceInfo in order to create subtitles)
 function audioPlayVoice(_voiceover)
 {
     //No Voice Over

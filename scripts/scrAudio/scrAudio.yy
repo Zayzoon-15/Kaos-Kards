@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scrAudio",
   "parent":{
-    "name":"Game",
-    "path":"folders/Scripts/Game.yy",
+    "name":"Audio",
+    "path":"folders/Scripts/Audio.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

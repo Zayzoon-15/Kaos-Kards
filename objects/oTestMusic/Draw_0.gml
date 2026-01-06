@@ -1,5 +1,3 @@
-
-
 textSetup(fnMain,fa_center,fa_top);
 draw_text_transformed(x,10,$"Current Song: {global.curSong}\nCurrent Group: {struct_get_names(currentTextGroup)}\nSong Speed: {songSpeed}\nPress Enter To Start",2,2,0);
 

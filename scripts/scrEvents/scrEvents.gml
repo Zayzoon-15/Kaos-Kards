@@ -49,6 +49,7 @@ function gameReset()
     global.enemyAddCards = [];
 }
 
+
 ///@desc This event plays when the next round starts
 function nextRoundStarted()
 {
@@ -71,6 +72,7 @@ function nextRoundStarted()
 	global.valueMult = 1;
 }
 
+
 ///@desc This event plays when the kaos part of the match starts
 function kaosRoundStarted()
 {
@@ -83,6 +85,7 @@ function kaosRoundStarted()
         enemy : array_create(4,false)
     };
 }
+
 
 ///@desc This event plays when the played kaos card is complete
 function kaosCardDone()
@@ -103,6 +106,7 @@ function kaosCardDone()
     //Next Kaos
 	if instance_exists(oKaosManager) then oKaosManager.alarm[0] = 50;
 }
+
 
 ///@desc This event plays when the played combo attack is complete
 function comboAttackDone()

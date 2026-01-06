@@ -29,5 +29,5 @@ voiceInfo = {
     #endregion
     
     //Random
-    tacoTime : new voiceCreate(voTacoTime,["I love Taco Time","But I can't eat it or else I'll get","Fat."],[0,2.40,4.61]),
+    tacoTime : new voiceCreate(voTacoTime,["I love Taco Time","But I can't eat it or else I'll get","Fat."],[0,2.20,4.61]),
 };

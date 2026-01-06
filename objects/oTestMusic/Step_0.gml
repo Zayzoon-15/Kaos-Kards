@@ -13,6 +13,18 @@ if keyboard_check_pressed(vk_space)
 //Type
 if typing 
 {
+    currentText = keyboard_string;
+    
+    //Clear
+    if keyboard_check(vk_control) and keyboard_check_pressed(vk_backspace)
+    {
+        keyboard_string = "";
+    }
+}
+
+//Type
+if typing 
+{
     if typingSong
     {
         currentText = keyboard_string;

@@ -67,6 +67,7 @@
     {"$GMFolder":"","%Name":"Enemy","folderPath":"folders/Scripts/Enemy.yy","name":"Enemy","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Ai","folderPath":"folders/Scripts/Enemy/Ai.yy","name":"Ai","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Game","folderPath":"folders/Scripts/Game.yy","name":"Game","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Audio","folderPath":"folders/Scripts/Audio.yy","name":"Audio","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Settings","folderPath":"folders/Scripts/Settings.yy","name":"Settings","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Sequences","folderPath":"folders/Sequences.yy","name":"Sequences","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Transitions","folderPath":"folders/Sequences/Transitions.yy","name":"Transitions","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -521,8 +522,8 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"rSetup","path":"rooms/rSetup/rSetup.yy",},},
     {"roomId":{"name":"rTournies","path":"rooms/rTournies/rTournies.yy",},},
-    {"roomId":{"name":"rPrepare","path":"rooms/rPrepare/rPrepare.yy",},},
     {"roomId":{"name":"rTestingVoice","path":"rooms/rTestingVoice/rTestingVoice.yy",},},
+    {"roomId":{"name":"rPrepare","path":"rooms/rPrepare/rPrepare.yy",},},
     {"roomId":{"name":"rEnemy","path":"rooms/rEnemy/rEnemy.yy",},},
     {"roomId":{"name":"rTesting","path":"rooms/rTesting/rTesting.yy",},},
     {"roomId":{"name":"rTestingMusic","path":"rooms/rTestingMusic/rTestingMusic.yy",},},

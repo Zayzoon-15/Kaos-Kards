@@ -83,7 +83,8 @@ function drawRectOutlined(_x1,_y1,_x2,_y2,_cornerRad = UIBOX_RAD,_outlineWidth=1
 	}
     
     //Reset Stuff
-    drawReset();
+    draw_set_alpha(1);
+    draw_set_colour(c_white);
 }
 
 
