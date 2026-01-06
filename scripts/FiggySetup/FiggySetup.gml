@@ -24,7 +24,7 @@ function FiggySetup() {
         Figgy.Button("Enemy",function(){room_goto(rEnemy)});
         Figgy.Button("Kaos",function(){room_goto(rKaos)});
         Figgy.Button("Test Room",function(){room_goto(rTesting)});
-        Figgy.Button("Music Test Room",function(){room_goto(rMusicTest)});
+        Figgy.Button("Music Test Room",function(){room_goto(rTestingMusic)});
         Figgy.Button("Voice Test Room",function(){room_goto(rTestingVoice)});
         Figgy.Button("Menu",function(){transStart(rTournies,oTransSticker)});
         Figgy.Button("Stickers",function(){transStart(room,oTransSticker)});

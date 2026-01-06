@@ -9,8 +9,8 @@
   "name":"oTestCard",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Testing",
+    "path":"folders/Objects/Testing.yy",
   },
   "parentObjectId":null,
   "persistent":false,
