@@ -9,7 +9,6 @@ y = SCREEN_HEIGHT - 25;
 heightMargin = 5;
 widthMargin = 5;
 maxWidth = 600;
-targetFont = fnSubtitle;
 
 //Image
 textScale = 2;

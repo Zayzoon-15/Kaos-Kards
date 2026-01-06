@@ -38,8 +38,8 @@
     {"name":"Kaos","order":4,"path":"folders/Sounds/Sfx/Kaos.yy",},
     {"name":"Transitions","order":5,"path":"folders/Sounds/Sfx/Transitions.yy",},
     {"name":"VoiceOver","order":2,"path":"folders/Sounds/VoiceOver.yy",},
-    {"name":"GreatJob","order":3,"path":"folders/Sounds/VoiceOver/GreatJob.yy",},
     {"name":"Actions","order":10,"path":"folders/Sounds/VoiceOver/Actions.yy",},
+    {"name":"GreatJob","order":3,"path":"folders/Sounds/VoiceOver/GreatJob.yy",},
     {"name":"Random","order":5,"path":"folders/Sounds/VoiceOver/Random.yy",},
     {"name":"Attacks","order":1,"path":"folders/Sprites/Attacks.yy",},
     {"name":"Combos","order":1,"path":"folders/Sprites/Attacks/Combos.yy",},
@@ -61,7 +61,6 @@
   ],
   "ResourceOrderSettings":[
     {"name":"acRps","order":1,"path":"animcurves/acRps/acRps.yy",},
-    {"name":"fnSubtitle","order":1,"path":"fonts/fnSubtitle/fnSubtitle.yy",},
     {"name":"03. Figgy Info","order":3,"path":"notes/03. Figgy Info/03. Figgy Info.yy",},
     {"name":"oAttackEffect","order":1,"path":"objects/oAttackEffect/oAttackEffect.yy",},
     {"name":"oBrawlChar","order":1,"path":"objects/oBrawlChar/oBrawlChar.yy",},
