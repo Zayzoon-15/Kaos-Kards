@@ -9,8 +9,8 @@
   "name":"oSettingsSlider",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Z/Objects.yy",
+    "name":"Ui Types",
+    "path":"folders/Z/Objects/Ui Types.yy",
   },
   "parentObjectId":{
     "name":"oParSettingBtn",

@@ -10,8 +10,8 @@
   "name":"oSettingsCheck",
   "overriddenProperties":[],
   "parent":{
-    "name":"ButtonTypes",
-    "path":"folders/Z/Objects/ButtonTypes.yy",
+    "name":"Ui Types",
+    "path":"folders/Z/Objects/Ui Types.yy",
   },
   "parentObjectId":{
     "name":"oParSettingBtn",

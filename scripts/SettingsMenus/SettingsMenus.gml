@@ -7,19 +7,18 @@ function SettingsMenus()
         oSettingsSubMenu.buttonId = 0;
         
         //Create Buttons
-        SettingsButtons.Seperator("Volume");
-            SettingsButtons.Slider("Master","masterVol");
-            SettingsButtons.Slider("Music","musicVol");
-            SettingsButtons.Slider("SFX","sfxVol");
-            SettingsButtons.Slider("Announcer","voiceVol");
-            SettingsButtons.Check("Unfocus Mute",function()
-            {
-                global.unfocusMute = argument0;
-            },global.unfocusMute);
-            SettingsButtons.Check("Announcer Voice",function()
-            {
-                global.voiceover = argument0;
-            },global.voiceover);
+        SettingsButtons.Slider("Master","masterVol");
+        SettingsButtons.Slider("Music","musicVol");
+        SettingsButtons.Slider("SFX","sfxVol");
+        SettingsButtons.Slider("Announcer","voiceVol");
+        SettingsButtons.Check("Unfocus Mute",function()
+        {
+            global.unfocusMute = argument0;
+        },global.unfocusMute);
+        SettingsButtons.Check("Announcer Voice",function()
+        {
+            global.voiceover = argument0;
+        },global.voiceover);
         
         SettingsButtons.Seperator("Type Shit Fr");
             SettingsButtons.Button("Hell Yea");

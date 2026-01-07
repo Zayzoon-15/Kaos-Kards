@@ -77,13 +77,18 @@ function SettingsButtons()
     }
     
     ///@desc Creates An Options Button
-    static Options = function(_text = "Options",_textScale = 2)
+    static Options = function(_text = "Options",_choices=["Option1","Option2","Option3"],_actions=[function(){},function(){},function(){}],_curOption = 0,_disabled = undefined,_reason = "No Reason",_textScale = 2)
     {
         //Create Basic Button
-        instance_create_depth(0,0,-5,oParSettingBtn,{
+        instance_create_depth(0,0,-5,oSettingsOptions,{
             btnId : global.settingsBtnId,
             text : _text,
+            disableCheck : _disabled,
+            reason : _reason,
             textTargetScale : _textScale,
+            choices : _choices,
+            opActions : _actions,
+            curOption : _curOption
         });
         
         //Increase Button Id
