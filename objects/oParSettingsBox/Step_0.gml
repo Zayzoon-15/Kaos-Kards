@@ -1,4 +1,3 @@
-
 //Ease
 x = oSettingsSubMenu.x;
 y = lerp(y,targetY,.2);

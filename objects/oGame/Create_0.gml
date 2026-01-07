@@ -73,7 +73,7 @@ global.gameRound = 0;
 global.paused = false;
 
 //Mobile
-global.mobile = os_type == os_android or os_type == os_ios;
+global.mobile = true//os_type == os_android or os_type == os_ios;
 
 //Gamepad
 global.gamepad = false;

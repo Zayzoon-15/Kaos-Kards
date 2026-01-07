@@ -1,6 +1,6 @@
 function initSettings()
 {
-	//Window
+    //Window
 	global.resolutions = [new Vector2(640,360),new Vector2(960,540),new Vector2(1280,720),new Vector2(1920,1080)]
 	global.currentRes = 2;
 	
@@ -15,12 +15,18 @@ function initSettings()
 	global.voiceVol = 50;
 	global.unfocusMute = false;
     global.voiceover = true;
+    global.subtitles = true;
 	
 	//Input
 	global.keyDiscard = ord("Z");
 	global.keyFullscreen = vk_f11;
 	global.keyPause = vk_escape;
 	global.keyDebug = 220;
+    
+    //Settings Menus
+    global.settingsBtnId = 0;
+    SettingsButtons();
+    SettingsMenus();
 }
 
 function setWindowToRes()

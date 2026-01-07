@@ -22,9 +22,10 @@ voiceInfo = {
     //Poison
     poisonSizz : new voiceCreate(voPoisonSizz,"OH MY GOD! Why is it sizzling!"),
     poisonInfect : new voiceCreate(voPoisonInfect,"Oughh... That's definitely infected..."),
-    poisonGoo : new voiceCreate(voPoisonGoo,"Oouei gooey!"),
     poisonShip : new voiceCreate(voPoisonShip,"God this is one, toxic relationship huh."),
     
+    //Sticky Hand
+    stickyGoo : new voiceCreate(voStickyGoo,"Oouei gooey!"),
     
     #endregion
     

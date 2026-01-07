@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"voStickyGoo",
+  "audioGroupId":{
+    "name":"agVoice",
+    "path":"audiogroups/agVoice",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.0,
+  "exportDir":"",
+  "name":"voStickyGoo",
+  "parent":{
+    "name":"Actions",
+    "path":"folders/Sounds/VoiceOver/Actions.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"voStickyGoo.ogg",
+  "volume":1.0,
+}

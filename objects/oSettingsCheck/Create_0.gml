@@ -1,31 +1,52 @@
 //Inherit
 event_inherited();
 
-//Set Selected
-checked = false;
-
-//Set Image
-image_index = image_number-1;
-
-//Scale
+//Check Scale
 checkXScale = 1;
-checkYScale = 0;
+checkYScale = 1;
 
-//Functions
+//Set Checked
+if checkedFunc != undefined
+{
+    if is_method(checkedFunc)
+    {
+        checked = checkedFunc();
+    } else checked = checkedFunc;
+}
+
+/// @desc Draws The Button And Other Stuff
+drawBtn = function()
+{
+    //Draws Box And Text
+    drawBox();
+    
+    //Draw Checkmark
+    var _x = (rectX1-20)-sprite_get_width(sprite_index)/2;
+    draw_sprite_ext(sprite_index,image_index,_x,y,checkXScale,checkYScale,image_angle,image_blend,image_alpha);
+    
+    //Disabled
+    if disabled
+    {
+        draw_sprite_ext(sprite_index,image_index,_x,y,checkXScale,checkYScale,image_angle,c_black,image_alpha*.5);
+    }
+}
+
 clickedJuice = function()
 {
 	//Set Scale
-	rectXScale = 1.2;
+	rectXScale = 1.03;
 	rectYScale = .9;
 	
 	//Set Text Scale
-	setSize(1.2,.9);
-	
-	//Check Scale
-	checkXScale = 1.2;
-	checkYScale = .8;
+    textXScale = 1.3;
+    textYScale = .9;
+    
+	//Set Check Scale
+	checkXScale = 1.3;
+    checkYScale = .8;
 }
 
+//Action
 action = function()
 {
 	//Juice
@@ -43,10 +64,7 @@ action = function()
 	{
 		audioPlaySfx(snSettingsCheck);
 	} else audioPlaySfx(snSettingsUnCheck);
-	
-	//Action
-	if struct_exists(info,"action")
-	{
-		info.action(checked);
-	}
+    
+    //Action
+    btnAction(checked);
 }

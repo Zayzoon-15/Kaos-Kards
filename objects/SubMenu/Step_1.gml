@@ -1,2 +1,0 @@
-//Update Scissor Value
-updateScissorValue();

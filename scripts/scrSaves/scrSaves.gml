@@ -9,7 +9,8 @@ function saveLoad()
 	global.sfxVol = ini_read_real("Settings","SfxVol",50);
 	global.voiceVol = ini_read_real("Settings","VoiceVol",50);
 	global.unfocusMute = ini_read_real("Settings","Mute",false);
-	global.voiceover = ini_read_real("Settings","Voiceover",false);
+	global.voiceover = ini_read_real("Settings","Voiceover",true);
+	global.subtitles = ini_read_real("Settings","Subtitles",true);
 	
 	//Video
 	global.currentRes = ini_read_real("Settings","Resolution",2);
@@ -37,6 +38,7 @@ function saveGame()
 	ini_write_real("Settings","VoiceVol",global.voiceVol);
 	ini_write_real("Settings","Mute",global.unfocusMute);
 	ini_write_real("Settings","Voiceover",global.voiceover);
+	ini_write_real("Settings","Subtitles",global.subtitles);
 	
 	//Video
 	ini_write_real("Settings","Resolution",global.currentRes);

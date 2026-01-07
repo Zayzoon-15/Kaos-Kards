@@ -38,10 +38,10 @@ function getSettingsButtons(_menu)
 					action : function(_checked){global.unfocusMute = _checked;},
 					checked : function(){return global.unfocusMute;},
 				}),
-				new createSettingsButton("Voice Over",oSettingsCheck,{
-					action : function(_checked){global.voiceover = _checked;},
-					checked : function(){return global.voiceover;},
-				}),
+				//new createSettingsButton("Voice Over",oSettingsCheck,{
+					//action : function(_checked){global.voiceover = _checked;},
+					//checked : function(){return global.voiceover;},
+				//}),
 			];
 		break;
 	

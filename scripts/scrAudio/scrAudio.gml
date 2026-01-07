@@ -157,7 +157,10 @@ function audioPlayVoice(_voiceover)
     
     //Create Subtitle
     instance_destroy(oSubtitle);
-    instance_create_depth(0,0,-1,oSubtitle,{info : _voice});
+    if global.subtitles
+    {
+        instance_create_depth(0,0,-1,oSubtitle,{info : _voice});
+    }
     
     //Play Sound
     return audio_play_sound(_voice.sound,0,false);

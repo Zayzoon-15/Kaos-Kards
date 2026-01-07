@@ -112,7 +112,7 @@ function actionPoison(_targetEnemy)
     //Play Voice
     if irandom_range(1,4) == 1
     {
-        audioPlayVoice([voiceInfo.poisonGoo,voiceInfo.poisonInfect,voiceInfo.poisonShip,voiceInfo.poisonSizz]);
+        audioPlayVoice([voiceInfo.poisonInfect,voiceInfo.poisonShip,voiceInfo.poisonSizz]);
     }
 }
 
