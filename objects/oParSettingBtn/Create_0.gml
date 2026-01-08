@@ -63,7 +63,7 @@ drawBox = function()
 {
     //Set Alpha Based On Disabled
     var _alpha = 1;
-    if disabled then _alpha = .5;
+    if disabled then _alpha = .3;
     
     //Draw Bg
     var _bgColor = merge_color(c_black,c_gray,rectAlpha);

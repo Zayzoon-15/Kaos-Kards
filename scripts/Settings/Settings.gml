@@ -56,9 +56,11 @@ function SettingsButtons()
     ///@param {real} _textScale The text scale
     ///@param {real} _min The minimum the slider can go
     ///@param {real} _max The max the slider can go
+    ///@param {function} _roundFunc The rounding method the value should use (Ex: ceil, floor, round)
+    ///@param {string} _textIcon The icon to put after the value (Ex: % = 100%)
     ///@param {function} _disabled The function to check if the button is disabled
     ///@param {string} _reason The reason for why the button is disabled
-    static Slider = function(_text = "Slider",_changeVar = undefined,_textScale = 2,_min = 0,_max = 100,_disabled = undefined,_reason = "No Reason")
+    static Slider = function(_text = "Slider",_changeVar = undefined,_textScale = 2,_min = 0,_max = 100,_roundFunc = undefined,_textIcon = "%",_disabled = undefined,_reason = "No Reason")
     {
         //Create Slider
         instance_create_depth(0,0,-5,oSettingsSlider,{
@@ -70,6 +72,8 @@ function SettingsButtons()
             reason : _reason,
             slideMin : _min,
             slideMax : _max,
+            roundFunc : _roundFunc,
+            textIcon : _textIcon
         });
         
         //Increase Button Id
@@ -77,7 +81,7 @@ function SettingsButtons()
     }
     
     ///@desc Creates An Options Button
-    static Options = function(_text = "Options",_choices=["Option1","Option2","Option3"],_actions=[function(){},function(){},function(){}],_curOption = 0,_disabled = undefined,_reason = "No Reason",_textScale = 2)
+    static Options = function(_text = "Options",_choices=[{text:"Option1",action:function(){}},{text:"Option2",action:function(){}}],_curOption = undefined,_disabled = undefined,_reason = "No Reason",_textScale = 2)
     {
         //Create Basic Button
         instance_create_depth(0,0,-5,oSettingsOptions,{
@@ -87,8 +91,7 @@ function SettingsButtons()
             reason : _reason,
             textTargetScale : _textScale,
             choices : _choices,
-            opActions : _actions,
-            curOption : _curOption
+            targetOption : _curOption,
         });
         
         //Increase Button Id

@@ -11,14 +11,14 @@ with oParSettingBtn
     if btnId == global.settingsBtnId-1
     {
         _maxScrollDist = ystart - other.scissorStuct.h -10;
+        _maxScrollDist = max(0,_maxScrollDist)
     }
 }
 
 //Scroll
 var _dir = mouse_wheel_down() - mouse_wheel_up();
-scroll += _dir*20;
+scroll += _dir*30;
 scroll = clamp(scroll,0,_maxScrollDist);
-
 
 //Update Button Ui
 with oParSettingBtn

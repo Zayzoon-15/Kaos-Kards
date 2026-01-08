@@ -151,6 +151,7 @@
     {"id":{"name":"oAttackCard","path":"objects/oAttackCard/oAttackCard.yy",},},
     {"id":{"name":"oAttackEffect","path":"objects/oAttackEffect/oAttackEffect.yy",},},
     {"id":{"name":"oBg","path":"objects/oBg/oBg.yy",},},
+    {"id":{"name":"Object100","path":"objects/Object100/Object100.yy",},},
     {"id":{"name":"oBrawlChar","path":"objects/oBrawlChar/oBrawlChar.yy",},},
     {"id":{"name":"oBrawlCount","path":"objects/oBrawlCount/oBrawlCount.yy",},},
     {"id":{"name":"oBrawlHp","path":"objects/oBrawlHp/oBrawlHp.yy",},},

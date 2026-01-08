@@ -83,6 +83,7 @@
     {"name":"03. Figgy Info","order":3,"path":"notes/03. Figgy Info/03. Figgy Info.yy",},
     {"name":"oAlertMessage","order":2,"path":"objects/oAlertMessage/oAlertMessage.yy",},
     {"name":"oAttackEffect","order":1,"path":"objects/oAttackEffect/oAttackEffect.yy",},
+    {"name":"Object100","order":11,"path":"objects/Object100/Object100.yy",},
     {"name":"oBrawlChar","order":1,"path":"objects/oBrawlChar/oBrawlChar.yy",},
     {"name":"oBrawlHp","order":1,"path":"objects/oBrawlHp/oBrawlHp.yy",},
     {"name":"oBrawlMap","order":2,"path":"objects/oBrawlMap/oBrawlMap.yy",},

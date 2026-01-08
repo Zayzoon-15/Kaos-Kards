@@ -32,9 +32,19 @@ if dragging
 	//Change Value
 	if mouse_x > sliderBoxX1
 	{
+        //Get Amount
 		var _x = abs(sliderBoxX1-mouse_x);
 		var _amount = _x / sliderBoxWidth;
+        
+        //Set Amount
 		currentAmount = _amount*slideMax;
+        
+        //Round Method
+        if roundFunc != undefined
+        {
+            currentAmount = roundFunc(currentAmount);
+        }
+        
 	} else currentAmount = 0;
 	
 } else canHover = true;

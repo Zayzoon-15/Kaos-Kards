@@ -37,23 +37,28 @@ drawBtn = function()
     //Draw Box
     drawBox();
     
+    //Set Alpha Based On Disabled
+    var _alpha = 1;
+    if disabled then _alpha = .3;
+    
     //Slider Value
-    var _sliderText = $"{ceil(currentAmount)}%"
+    var _sliderText = $"{ceil(currentAmount)}{textIcon}";
     
     //Draw Slider Value
-    textSetup(fnMain,fa_center,fa_middle);
+    textSetup(fnMain,fa_center,fa_middle,c_white,_alpha);
     draw_text_transformed(sliderBoxX1+sliderBoxWidth/2,y,_sliderText,1,1,0);
     drawReset();
     
     //Draw Slider
+    draw_set_alpha(_alpha);
     var _fillOffset = 10;
     var _value = (currentAmount / slideMax) * 100;
     
     draw_healthbar(sliderBoxX1+_fillOffset,sliderBoxY1+_fillOffset,sliderBoxX2-_fillOffset,sliderBoxY2-_fillOffset,_value,c_black,c_white,c_white,0,false,false);
-    drawRectOutlined(sliderBoxX1,sliderBoxY1,sliderBoxX2,sliderBoxY2,UIBOX_RAD,2,c_black,c_white,0,1);
+    drawRectOutlined(sliderBoxX1,sliderBoxY1,sliderBoxX2,sliderBoxY2,UIBOX_RAD,2,c_black,c_white,0,_alpha);
     
     //Draw Slider Value
-    textSetup(fnMain,fa_center,fa_middle,c_black);
+    textSetup(fnMain,fa_center,fa_middle,c_black,_alpha);
     
     //Create Surface
     var _surface = surface_create((currentAmount / slideMax) * sliderBoxWidth+1.5,40);
