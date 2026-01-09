@@ -22,7 +22,7 @@ btnAction = function()
     var _dir = mouse_x > _center ? 1 : -1;
     
     //Change Option
-    curOption += _dir;
+    curOption += flipChoices ? -_dir : _dir;
     
     //Loop Option
     if curOption >= array_length(choices) then curOption = 0;
@@ -44,12 +44,8 @@ drawBtn = function()
     //Draws Box And Text
     drawBox();
     
-    //Set Alpha Based On Disabled
-    var _alpha = 1;
-    if disabled then _alpha = .3;
-    
     //Draw Option
     var _text = $" < {choices[curOption].text} > ";
-    textSetup(fnMain,fa_right,fa_middle,c_white,_alpha);
+    textSetup(fnMain,fa_right,fa_middle,c_white,image_alpha);
     draw_text_transformed(rectX1 - 20,y,_text,textScaleX,textScaleY,0);
 }

@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"Settings",
+  "%Name":"SettingsButtons",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Settings",
+  "name":"SettingsButtons",
   "parent":{
-    "name":"Z",
-    "path":"folders/Z.yy",
+    "name":"Settings",
+    "path":"folders/Scripts/Settings.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

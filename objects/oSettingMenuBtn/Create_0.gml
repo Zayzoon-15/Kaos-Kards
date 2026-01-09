@@ -23,7 +23,7 @@ textSize = textTargetSize;
 action = function()
 {
     //Destroy Buttons
-    instance_destroy(oParSettingBtn);
+    instance_destroy(oParSettingsBtn);
     
     //Reset Values
     oSettingsSubMenu.scroll = 0;

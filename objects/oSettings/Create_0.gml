@@ -1,6 +1,6 @@
-//Set Pos
-xstart = SCREEN_WIDTH/2;
-y = SCREEN_HEIGHT/2;
+//Set Position
+x = 462;
+y = 360;
 
 //Audio
 curSong = noone;
@@ -54,8 +54,8 @@ createSettings = function()
 		var _y = _center - _top + (i * _gap);
     
 		//Create Buttons
-		instance_create_depth(182,_y,_depth,oSettingsMenuBtn,{
-			text : _mainButtons[i],
+		instance_create_depth(167,_y,_depth,oSettingMenuBtn,{
+			targetMenu : _mainButtons[i],
 			selected : _selected
 		});
 	}
@@ -63,13 +63,13 @@ createSettings = function()
 	#endregion
 
 	//Create Sub Menu
-	instance_create_depth(816,360,_depth,oSettingsSubMenu,{
-		image_xscale : 16,
-		image_yscale : 12
+	instance_create_depth(967,372,_depth,oSettingsSubMenu,{
+		image_xscale : 11,
+		image_yscale : 12.3
 	}); //Magic Numbers I Know -_-
 	
 	//Create Gear
-	instance_create_depth(1265,708,_depth-2,oSettingsGear);
+	//instance_create_depth(1265,708,_depth-2,oSettingsGear);
 	#endregion
 }
 
@@ -79,9 +79,8 @@ destroySettings = function()
 	global.paused = false;
 	
 	//Destroy
-	instance_destroy(oSettingsMenuBtn);
-	instance_destroy(oParSettingsBox);
-	instance_destroy(oSettingsGear);
+	instance_destroy(oSettingMenuBtn);
+	instance_destroy(oParSettingsBtn);
 	instance_destroy(oSettingsSubMenu);
 	
 	//Play Song

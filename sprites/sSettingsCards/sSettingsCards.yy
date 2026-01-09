@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Z/Sprites.yy",
+    "name":"Settings",
+    "path":"folders/Sprites/Ui/Settings.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

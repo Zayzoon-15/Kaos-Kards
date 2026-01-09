@@ -61,16 +61,12 @@ action = function()
 
 drawBox = function()
 {
-    //Set Alpha Based On Disabled
-    var _alpha = 1;
-    if disabled then _alpha = .3;
-    
     //Draw Bg
     var _bgColor = merge_color(c_black,c_gray,rectAlpha);
-    drawRectOutlined(rectX1,rectY1,rectX2,rectY2,UIBOX_RAD,2,_bgColor,c_white,.5*_alpha,_alpha);
+    drawRectOutlined(rectX1,rectY1,rectX2,rectY2,UIBOX_RAD,2,_bgColor,c_white,.5*image_alpha,image_alpha);
     
     //Draw Name
-    textSetup(fnMain,fa_left,fa_middle,c_white,_alpha);
+    textSetup(fnMain,fa_left,fa_middle,c_white,image_alpha);
     draw_text_transformed(rectX2 + 20,y,text,textScaleX,textScaleY,0);
     
     //Reset Draw

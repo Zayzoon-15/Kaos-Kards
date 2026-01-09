@@ -1,13 +1,13 @@
 //Get Positions
-var _x = oSettingsSubMenu.x;
-var _y = oSettingsSubMenu.bbox_top + 60;
+var _x = instance_exists(oSettingsSubMenu) ? oSettingsSubMenu.x : x;
+var _y = instance_exists(oSettingsSubMenu) ? oSettingsSubMenu.bbox_top + 60 : ystart;
 
 //Seperate Buttons
 _y += btnId * 100;
 ystart = _y;
 
 //Ease
-x = oSettingsSubMenu.x;
+x = _x;
 y = lerp(y,ystart + targetY,.15);
 textScaleX = lerp(textScaleX,textTargetScale,.15);
 textScaleY = lerp(textScaleY,textTargetScale,.15);
@@ -15,10 +15,13 @@ rectXScale = lerp(rectXScale,1,.15);
 rectYScale = lerp(rectYScale,1,.15);
 
 //Set Rectangle
-rectX1 = (oSettingsSubMenu.bbox_left)+(width*rectXScale);
-rectX2 = (oSettingsSubMenu.bbox_right)-(width*rectXScale);
-rectY1 = y-(height*rectYScale);
-rectY2 = y+(height*rectYScale);
+if instance_exists(oSettingsSubMenu)
+{
+    rectX1 = (oSettingsSubMenu.bbox_left)+(width*rectXScale);
+    rectX2 = (oSettingsSubMenu.bbox_right)-(width*rectXScale);
+    rectY1 = y-(height*rectYScale);
+    rectY2 = y+(height*rectYScale);
+}
 
 //Set Hover
 if point_in_rectangle(mouse_x,mouse_y,rectX2,y-height,rectX1,y+height) and !disabled

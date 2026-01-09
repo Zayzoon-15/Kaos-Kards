@@ -11,11 +11,11 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Ui Types",
-    "path":"folders/Z/Objects/Ui Types.yy",
+    "path":"folders/Objects/Ui/Settings/Ui Types.yy",
   },
   "parentObjectId":{
-    "name":"oParSettingBtn",
-    "path":"objects/oParSettingBtn/oParSettingBtn.yy",
+    "name":"oParSettingsBtn",
+    "path":"objects/oParSettingsBtn/oParSettingsBtn.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

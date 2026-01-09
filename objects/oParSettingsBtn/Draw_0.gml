@@ -11,6 +11,11 @@ if instance_exists(oSettingsSubMenu)
     //Draw Disabled
     if disabled
     {
+        //Draw Box
+        var _alpha = .8;
+        drawRectOutlined(rectX1,rectY1,rectX2,rectY2,UIBOX_RAD,2,c_black,c_black,_alpha*image_alpha,_alpha*image_alpha);
+        
+        //Draw Text
     	textSetup(fnMain,fa_center,fa_middle);
     	draw_text_transformed(x,y,reason,textScaleX,textScaleY,0);
     }

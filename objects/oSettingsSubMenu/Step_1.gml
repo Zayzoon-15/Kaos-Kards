@@ -6,7 +6,7 @@ updateScissorValue();
 
 //Get Scroll Distance
 var _maxScrollDist = 0;
-with oParSettingBtn
+with oParSettingsBtn
 {
     if btnId == global.settingsBtnId-1
     {
@@ -21,7 +21,7 @@ scroll += _dir*30;
 scroll = clamp(scroll,0,_maxScrollDist);
 
 //Update Button Ui
-with oParSettingBtn
+with oParSettingsBtn
 {
     targetY = -other.scroll;
 }

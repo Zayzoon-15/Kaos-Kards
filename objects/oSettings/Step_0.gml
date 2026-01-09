@@ -1,6 +1,3 @@
-//Set Position
-x = getPosToWindow(false);
-
 //Pause
 if keyCheckPressed(global.keyPause) and !global.midTrans
 {

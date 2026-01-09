@@ -1,15 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"Object100",
-  "eventList":[],
+  "%Name":"oSettingsSeparator",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"Object100",
+  "name":"oSettingsSeparator",
   "overriddenProperties":[],
   "parent":{
-    "name":"Z",
-    "path":"folders/Z.yy",
+    "name":"Ui Types",
+    "path":"folders/Objects/Ui/Settings/Ui Types.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oParSettingsBtn",
+    "path":"objects/oParSettingsBtn/oParSettingsBtn.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

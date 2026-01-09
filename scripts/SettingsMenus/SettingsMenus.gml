@@ -1,3 +1,4 @@
+/// @desc The settings menus
 function SettingsMenus()
 {
     
@@ -20,7 +21,7 @@ function SettingsMenus()
             global.voiceover = argument0;
         },global.voiceover);
         
-        SettingsButtons.Seperator("Type Shit Fr");
+        SettingsButtons.Separator("Type Shit Fr");
             SettingsButtons.Button("Hell Yea");
     }
     
@@ -30,8 +31,8 @@ function SettingsMenus()
         //Create Buttons
         if !global.mobile
         {
-            SettingsButtons.Seperator("Window");
-                SettingsButtons.Options("Resolution",settingsGetWindowRes(),"currentRes",function(){
+            SettingsButtons.Separator("Window");
+                SettingsButtons.Options("Resolution",settingsGetWindowRes(),"currentRes",false,function(){
                     return window_get_fullscreen();
                 }, "Window Is Fullscreened");
                 SettingsButtons.Check("Fullscreen",function()
@@ -44,16 +45,16 @@ function SettingsMenus()
                 },function(){return !window_get_showborder();});
         }
         
-        SettingsButtons.Seperator("Graphics");
+        SettingsButtons.Separator("Graphics");
             SettingsButtons.Options("Particle Amount",[
                 {text : "Full",action:function(){global.partAmount = 1;}}, 
                 {text : "Meduim",action:function(){global.partAmount = .5;}}, 
                 {text : "Low",action:function(){global.partAmount = .2;}}, 
                 {text : "None",action:function(){global.partAmount = 0;}}, 
-            ],"partSelection");
+            ],"partSelection",true);
             SettingsButtons.Button("Other Suff Idk");
         
-        SettingsButtons.Seperator("Subtitles");
+        SettingsButtons.Separator("Subtitles");
             SettingsButtons.Check("Subtitles",function()
             {
                 global.subtitles = argument0;
@@ -67,11 +68,11 @@ function SettingsMenus()
     static Game = function()
     {
         //Create Buttons
-        SettingsButtons.Seperator("User Interface");
+        SettingsButtons.Separator("User Interface");
             SettingsButtons.Slider("Tip Box Size",undefined,2,1,5,ceil,"X");
             SettingsButtons.Check("Tip Boxes");
         
-        SettingsButtons.Seperator("Gameplay");
+        SettingsButtons.Separator("Gameplay");
             SettingsButtons.Slider("Game Speed",undefined,2,1,10,ceil,"X");
             SettingsButtons.Button("What Do I Put Here...");
         
@@ -83,13 +84,13 @@ function SettingsMenus()
         //Create Buttons
         if !global.mobile
         {
-            SettingsButtons.Seperator("Nothing Works Rn ToT");
+            SettingsButtons.Separator("Nothing Works Rn ToT");
                 SettingsButtons.Button("Discard");
                 SettingsButtons.Button("Fullscreen");
                 SettingsButtons.Button("Pause");
                 SettingsButtons.Button("Debug Mode");
             
-            SettingsButtons.Seperator("Gamepad (Maybe)");
+            SettingsButtons.Separator("Gamepad (Maybe)");
                 SettingsButtons.Check("Gamepad");
                 SettingsButtons.Button("Accept");
                 SettingsButtons.Button("Discard");
