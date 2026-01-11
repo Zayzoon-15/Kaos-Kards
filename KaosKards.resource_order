@@ -103,6 +103,7 @@
     {"name":"oRpsChoice","order":1,"path":"objects/oRpsChoice/oRpsChoice.yy",},
     {"name":"oRpsText","order":2,"path":"objects/oRpsText/oRpsText.yy",},
     {"name":"oSettingMenuBtn","order":2,"path":"objects/oSettingMenuBtn/oSettingMenuBtn.yy",},
+    {"name":"oSettingsInput","order":4,"path":"objects/oSettingsInput/oSettingsInput.yy",},
     {"name":"oSettingsOptions","order":3,"path":"objects/oSettingsOptions/oSettingsOptions.yy",},
     {"name":"oSettingsSeparator","order":2,"path":"objects/oSettingsSeparator/oSettingsSeparator.yy",},
     {"name":"oSettingsSlider","order":1,"path":"objects/oSettingsSlider/oSettingsSlider.yy",},

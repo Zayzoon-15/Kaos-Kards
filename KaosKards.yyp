@@ -209,6 +209,7 @@
     {"id":{"name":"oSettingMenuBtn","path":"objects/oSettingMenuBtn/oSettingMenuBtn.yy",},},
     {"id":{"name":"oSettings","path":"objects/oSettings/oSettings.yy",},},
     {"id":{"name":"oSettingsCheck","path":"objects/oSettingsCheck/oSettingsCheck.yy",},},
+    {"id":{"name":"oSettingsInput","path":"objects/oSettingsInput/oSettingsInput.yy",},},
     {"id":{"name":"oSettingsOptions","path":"objects/oSettingsOptions/oSettingsOptions.yy",},},
     {"id":{"name":"oSettingsSeparator","path":"objects/oSettingsSeparator/oSettingsSeparator.yy",},},
     {"id":{"name":"oSettingsSlider","path":"objects/oSettingsSlider/oSettingsSlider.yy",},},

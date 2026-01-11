@@ -59,7 +59,7 @@ startStickerTrans = function()
 	    if stickers[i] != stickers[array_length(stickers)-1]
 		{
 			stickers[i].alarm[0] = random_range(1,30);
-		} else stickers[i].alarm[0] = 32;
+		} else stickers[i].alarm[0] = 31;
 	}
 
 	//Start Transition

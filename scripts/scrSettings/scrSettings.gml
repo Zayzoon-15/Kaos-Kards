@@ -59,6 +59,8 @@ function keyToString(_key)
 		case 1: return "Left Mouse";
 		case 2: return "Right Mouse";
 		case 3: return "Middle Mouse";
+		case 4: return "Bottom Side Mouse";
+		case 5: return "Top Side Mouse";
 	}
 	
 }

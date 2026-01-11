@@ -26,7 +26,7 @@ canHover = true;
 
 hoverJuice = function()
 {
-	//Set Scale
+	//Set Box Scale
 	rectXScale = 1.02;
 	rectYScale = .9;
 	
@@ -40,7 +40,7 @@ hoverJuice = function()
 
 clickedJuice = function()
 {
-	//Set Scale
+	//Set Box Scale
 	rectXScale = 1.03;
 	rectYScale = .9;
 	

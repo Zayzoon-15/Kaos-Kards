@@ -118,5 +118,26 @@ function SettingsButtons()
         //Increase Button Id
         global.settingsBtnId ++;
     }
-    
+ 
+    ///@desc Creates an input button
+    ///@param {string} _text The button name
+    ///@param {string} _targetVar The target global variable that contains the input key
+    ///@param {function} _disabled The function to check if the button is disabled (can be a bool to)
+    ///@param {string} _reason The reason for why the button is disabled
+    ///@param {real} _textScale The text scale (Default = 2)
+    static Input = function(_text = "Empty",_targetVar = undefined,_disabled = undefined,_reason = "No Reason",_textScale = 2)
+    {
+        //Create Basic Button
+        instance_create_depth(0,0,oSettingsSubMenu.depth-1,oSettingsInput,{
+            btnId : global.settingsBtnId,
+            text : _text,
+            textTargetScale : _textScale,
+            disableCheck : _disabled,
+            reason : _reason,
+            targetKey : _targetVar
+        });
+        
+        //Increase Button Id
+        global.settingsBtnId ++;
+    }   
 }

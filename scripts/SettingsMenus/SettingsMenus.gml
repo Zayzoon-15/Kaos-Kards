@@ -60,7 +60,7 @@ function SettingsMenus()
                 global.subtitles = argument0;
             },global.subtitles);
             SettingsButtons.Slider("Bg Alpha");
-            SettingsButtons.Slider("Outline Thickness",undefined,1.6,0,10,ceil,"");
+            SettingsButtons.Slider("Outline Thickness",undefined,1.6,0,10,ceil,"X");
         
     }
     
@@ -85,10 +85,10 @@ function SettingsMenus()
         if !global.mobile
         {
             SettingsButtons.Separator("Nothing Works Rn ToT");
-                SettingsButtons.Button("Discard");
-                SettingsButtons.Button("Fullscreen");
-                SettingsButtons.Button("Pause");
-                SettingsButtons.Button("Debug Mode");
+                SettingsButtons.Input("Discard","keyDiscard");
+                SettingsButtons.Input("Fullscreen","keyFullscreen");
+                SettingsButtons.Input("Pause","keyPause");
+                SettingsButtons.Input("Debug Mode","keyDebug");
             
             SettingsButtons.Separator("Gamepad (Maybe)");
                 SettingsButtons.Check("Gamepad");
