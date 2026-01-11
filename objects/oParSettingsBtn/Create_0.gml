@@ -20,6 +20,7 @@ textScaleY = 1;
 //Hover
 hover = false;
 canHover = true;
+mobileDragging = false;
 
 #region Functions
 

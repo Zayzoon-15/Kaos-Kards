@@ -24,7 +24,7 @@ if instance_exists(oSettingsSubMenu)
 }
 
 //Set Hover
-if point_in_rectangle(mouse_x,mouse_y,rectX2,y-height,rectX1,y+height) and !disabled
+if point_in_rectangle(mouse_x,mouse_y,rectX2,y-height,rectX1,y+height) and !disabled and !mobileDragging
 {
 	//Juice
 	if !hover and canHover then hoverJuice();

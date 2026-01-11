@@ -12,3 +12,24 @@ updateScissorValue = function()
 
 //Scroll
 scroll = 0;
+scrollVel = 0;
+
+//Mobile
+mobileTouch = false;
+mobileTouchLast = 0;
+mobileTouchVel = 0;
+mobileCanDrag = true;
+
+#region Scroll Tuning
+
+scrollFriction = 0.88; //How Quickly Momentum Slows Down | Big = Stops Faster  Small = Glides Longer
+scrollMaxVel = 70; //Maximum Speed
+
+//PC
+pcScrollStep = 5; //How Far The List Moves | Bigger = More sensitive
+pcScrollMomentum = 12; //How Much Velocity Is Added On Mouse | Big = Wheel Flick Glides Further
+
+//Mobile
+mobileScrollDrag = 1.4; //Multiplier For Drag Movement | Bigr = Faster  Small = Slower
+
+#endregion

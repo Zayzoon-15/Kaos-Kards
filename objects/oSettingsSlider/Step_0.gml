@@ -14,6 +14,12 @@ event_inherited();
 if dragging and mouse_check_button_released(mb_left)
 {
 	dragging = false;
+    
+    //Set Mobile Drag
+    if instance_exists(oSettingsSubMenu)
+    { 
+        oSettingsSubMenu.mobileCanDrag = true;
+    }
 }
 
 //Set Slider Box

@@ -30,6 +30,12 @@ clickedJuice = function()
 action = function()
 {
 	dragging = true;	
+    
+    //Set Mobile Drag
+    if instance_exists(oSettingsSubMenu)
+    { 
+        oSettingsSubMenu.mobileCanDrag = false;
+    }
 }
 
 drawBtn = function()
