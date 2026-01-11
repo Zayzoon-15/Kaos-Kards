@@ -24,8 +24,6 @@ enemyInfo = {
     //Spooky Crew
     bones : new enemyCreate("Jones the Living Bones",sBones,[actionCards.heal,actionCards.shield,actionCards.heal,actionCards.shield,actionCards.slash,actionCards.slash,actionCards.flamingAce,actionCards.flamingAce],[kaosCards.sticky]),
     
-    //Joke
-    cosmo : new enemyCreate("Cosmo The Goat",sCosmo,[actionCards.heal,actionCards.heal,actionCards.shield,actionCards.ghost,actionCards.bread,actionCards.bread,actionCards.bread,actionCards.flamingAce,actionCards.laser,actionCards.laser,actionCards.punch],[kaosCards.brawl,kaosCards.swoop],new enemyCreateStrat(40,60,10,70,0,0,0,30,3,3),enemySpecialCosmo),
 };
 
 

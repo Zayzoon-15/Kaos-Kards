@@ -3,7 +3,6 @@ randomise();
 
 //Get Info
 info = global.currentEnemy;
-global.enemyRemovedCards = [actionCards.slash];
 
 //Set Weights
 weights = {

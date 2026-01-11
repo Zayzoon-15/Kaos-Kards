@@ -113,9 +113,9 @@
     {"$GMFolder":"","%Name":"Ui","folderPath":"folders/Sprites/Ui.yy","name":"Ui","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Buttons","folderPath":"folders/Sprites/Ui/Buttons.yy","name":"Buttons","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Combo","folderPath":"folders/Sprites/Ui/Combo.yy","name":"Combo","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Settings","folderPath":"folders/Sprites/Ui/Settings.yy","name":"Settings","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Health","folderPath":"folders/Sprites/Ui/Health.yy","name":"Health","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Hp Icons","folderPath":"folders/Sprites/Ui/Health/Hp Icons.yy","name":"Hp Icons","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Settings","folderPath":"folders/Sprites/Ui/Settings.yy","name":"Settings","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "ForcedPrefabProjectReferences":[
     {"link":"io.gamemaker.gm_filter_pixelate-1.0.0","name":"io.gamemaker.gm_filter_pixelate-1.0.0","path":"io.gamemaker.gm_filter_pixelate-1.0.0.yyp",},
@@ -167,7 +167,6 @@
     {"id":{"name":"oComboButton","path":"objects/oComboButton/oComboButton.yy",},},
     {"id":{"name":"oComboChecker","path":"objects/oComboChecker/oComboChecker.yy",},},
     {"id":{"name":"oComboMeter","path":"objects/oComboMeter/oComboMeter.yy",},},
-    {"id":{"name":"oCosmoVid","path":"objects/oCosmoVid/oCosmoVid.yy",},},
     {"id":{"name":"oDebug","path":"objects/oDebug/oDebug.yy",},},
     {"id":{"name":"oDeck","path":"objects/oDeck/oDeck.yy",},},
     {"id":{"name":"oDestroyedCard","path":"objects/oDestroyedCard/oDestroyedCard.yy",},},

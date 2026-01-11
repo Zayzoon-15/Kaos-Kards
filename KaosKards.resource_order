@@ -72,8 +72,8 @@
     {"name":"Text","order":8,"path":"folders/Sprites/Text.yy",},
     {"name":"Ui","order":9,"path":"folders/Sprites/Ui.yy",},
     {"name":"Combo","order":1,"path":"folders/Sprites/Ui/Combo.yy",},
-    {"name":"Settings","order":7,"path":"folders/Sprites/Ui/Settings.yy",},
     {"name":"Health","order":2,"path":"folders/Sprites/Ui/Health.yy",},
+    {"name":"Settings","order":7,"path":"folders/Sprites/Ui/Settings.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"acRps","order":1,"path":"animcurves/acRps/acRps.yy",},
@@ -91,7 +91,6 @@
     {"name":"oComboButton","order":1,"path":"objects/oComboButton/oComboButton.yy",},
     {"name":"oComboChecker","order":5,"path":"objects/oComboChecker/oComboChecker.yy",},
     {"name":"oComboMeter","order":1,"path":"objects/oComboMeter/oComboMeter.yy",},
-    {"name":"oCosmoVid","order":5,"path":"objects/oCosmoVid/oCosmoVid.yy",},
     {"name":"oDeck","order":2,"path":"objects/oDeck/oDeck.yy",},
     {"name":"oDice","order":1,"path":"objects/oDice/oDice.yy",},
     {"name":"oGameOver","order":1,"path":"objects/oGameOver/oGameOver.yy",},
