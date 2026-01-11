@@ -7,6 +7,12 @@ function initSettings()
 	//Video
 	global.partSelection = 0;
 	global.partAmount = 1;
+    
+    //Subtitles
+    global.subtitlesStyle = {
+        boxAlpha : UIBOX_ALPHA,
+        outlineThickness : 3,
+    };
 	
 	//Audio
 	global.masterVol = 50;

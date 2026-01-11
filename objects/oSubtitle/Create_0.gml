@@ -9,7 +9,10 @@ y = SCREEN_HEIGHT - 25;
 heightMargin = 5;
 widthMargin = 10;
 maxWidth = 600;
+
+//Box Style
 outlineWidth = 0;
+boxAlpha = global.subtitlesStyle.boxAlpha;
 
 //Image
 textScale = 1;
@@ -18,8 +21,8 @@ smoothText = true;
 
 //Give Font Outline
 font_enable_effects(fnSubtitle, true, { 
-    outlineEnable: true, 
-    outlineDistance: 3,
+    outlineEnable: global.subtitlesStyle.outlineThickness > 0, 
+    outlineDistance: global.subtitlesStyle.outlineThickness,
     outlineColour: c_black
 });
 

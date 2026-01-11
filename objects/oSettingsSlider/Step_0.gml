@@ -53,6 +53,12 @@ if dragging
         
 	} else currentAmount = 0;
 	
+    //Update On Change
+    if onChange != undefined
+    {
+        onChange(currentAmount);
+    }
+    
 } else canHover = true;
 
 //Clamp

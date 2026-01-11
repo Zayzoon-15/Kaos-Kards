@@ -23,13 +23,13 @@ mobileCanDrag = true;
 #region Scroll Tuning
 
 scrollFriction = 0.88; //How Quickly Momentum Slows Down | Big = Stops Faster  Small = Glides Longer
-scrollMaxVel = 70; //Maximum Speed
+scrollMaxVel = 70; //Max Speed
 
 //PC
-pcScrollStep = 5; //How Far The List Moves | Bigger = More sensitive
+pcScrollStep = 5; //How Far The List Moves | Big = More sensitive
 pcScrollMomentum = 12; //How Much Velocity Is Added On Mouse | Big = Wheel Flick Glides Further
 
 //Mobile
-mobileScrollDrag = 1.4; //Multiplier For Drag Movement | Bigr = Faster  Small = Slower
+mobileScrollDrag = 1.4; //Multiplier For Drag Movement | Big = Faster  Small = Slower
 
 #endregion

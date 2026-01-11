@@ -35,6 +35,7 @@
     {"$GMObjectProperty":"v2","%Name":"slideMax","filters":[],"listItems":[],"multiselect":false,"name":"slideMax","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"100","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"roundFunc","filters":[],"listItems":[],"multiselect":false,"name":"roundFunc","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"undefined","varType":4,},
     {"$GMObjectProperty":"v2","%Name":"textIcon","filters":[],"listItems":[],"multiselect":false,"name":"textIcon","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"%","varType":2,},
+    {"$GMObjectProperty":"v2","%Name":"onChange","filters":[],"listItems":[],"multiselect":false,"name":"onChange","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"undefined","varType":4,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

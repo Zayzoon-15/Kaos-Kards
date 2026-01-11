@@ -6,6 +6,10 @@ width = 0;
 heightMargin = 5;
 widthMargin = 5;
 maxWidth = 230;
+
+//Box Style
+boxAlpha = UIBOX_ALPHA;
+boxRad = UIBOX_RAD;
 outlineWidth = 1;
 targetFont = fnMain;
 

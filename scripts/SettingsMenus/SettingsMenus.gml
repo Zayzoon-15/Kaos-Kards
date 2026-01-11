@@ -8,7 +8,7 @@ function SettingsMenus()
         SettingsButtons.Slider("Master","masterVol");
         SettingsButtons.Slider("Music","musicVol");
         SettingsButtons.Slider("SFX","sfxVol");
-        SettingsButtons.Slider("Announcer","voiceVol",2,0,100,undefined,"%",function()
+        SettingsButtons.Slider("Announcer","voiceVol",undefined,2,0,100,undefined,"%",function()
         {
             return !global.voiceover;
         },"Announcer Voice Disabled");
@@ -20,9 +20,6 @@ function SettingsMenus()
         {
             global.voiceover = argument0;
         },global.voiceover);
-        
-        SettingsButtons.Separator("Type Shit Fr");
-            SettingsButtons.Button("Hell Yea");
     }
     
     
@@ -59,8 +56,12 @@ function SettingsMenus()
             {
                 global.subtitles = argument0;
             },global.subtitles);
-            SettingsButtons.Slider("Bg Alpha");
-            SettingsButtons.Slider("Outline Thickness",undefined,1.6,0,10,ceil,"X");
+            SettingsButtons.Slider("Box Alpha",global.subtitlesStyle.boxAlpha*100,function(){global.subtitlesStyle.boxAlpha = argument0/100;},2,0,100,undefined,"%",function(){
+                return !global.subtitles;
+            },"Subtitles Disabled");
+            SettingsButtons.Slider("Outline Thickness",global.subtitlesStyle.outlineThickness,function(){global.subtitlesStyle.outlineThickness = argument0;},1.6,0,5,ceil,"X",function(){
+                return !global.subtitles;
+            },"Subtitles Disabled");
         
     }
     
@@ -69,11 +70,11 @@ function SettingsMenus()
     {
         //Create Buttons
         SettingsButtons.Separator("User Interface");
-            SettingsButtons.Slider("Tip Box Size",undefined,2,1,5,ceil,"X");
+            SettingsButtons.Slider("Tip Box Size",undefined,undefined,2,1,5,ceil,"X");
             SettingsButtons.Check("Tip Boxes");
         
         SettingsButtons.Separator("Gameplay");
-            SettingsButtons.Slider("Game Speed",undefined,2,1,10,ceil,"X");
+            SettingsButtons.Slider("Game Speed",undefined,undefined,2,1,10,ceil,"X");
             SettingsButtons.Button("What Do I Put Here...");
         
     }
@@ -84,7 +85,7 @@ function SettingsMenus()
         //Create Buttons
         if !global.mobile
         {
-            SettingsButtons.Separator("Nothing Works Rn ToT");
+            SettingsButtons.Separator("Keyboard And Mouse");
                 SettingsButtons.Input("Discard","keyDiscard");
                 SettingsButtons.Input("Fullscreen","keyFullscreen");
                 SettingsButtons.Input("Pause","keyPause");

@@ -19,7 +19,7 @@ sliderBoxWidth = 0;
 if variable_global_exists(changeVar)
 {
     currentAmount = variable_global_get(changeVar);
-}
+} else if is_real(changeVar) then currentAmount = changeVar;
 
 //Functions
 clickedJuice = function()

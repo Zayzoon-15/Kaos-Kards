@@ -23,9 +23,9 @@ if !global.mobile
     
     if _dir != 0
     {
-        //Immediate response
+        //Add Scroll
         scroll += _dir * pcScrollStep;
-    
+        
         //Momentum For Flicks
         scrollVel += _dir * pcScrollMomentum;
     }

@@ -15,6 +15,8 @@ function saveLoad()
 	//Video
 	global.currentRes = ini_read_real("Settings","Resolution",2);
 	global.partSelection = ini_read_real("Settings","Particle",0);
+	global.subtitlesStyle.boxAlpha = ini_read_real("Settings","SubtitleAlpha",UIBOX_ALPHA);
+	global.subtitlesStyle.outlineThickness = ini_read_real("Settings","SubtitleOutline",3);
 	
 	//Input
 	global.keyDiscard = ini_read_real("Settings","Discard",ord("Z"));
@@ -43,6 +45,8 @@ function saveGame()
 	//Video
 	ini_write_real("Settings","Resolution",global.currentRes);
 	ini_write_real("Settings","Particle",global.partSelection);
+	ini_write_real("Settings","SubtitleAlpha",global.subtitlesStyle.boxAlpha);
+	ini_write_real("Settings","SubtitleOutline",global.subtitlesStyle.outlineThickness);
 	
 	//Input
 	ini_write_real("Settings","Discard",global.keyDiscard);
