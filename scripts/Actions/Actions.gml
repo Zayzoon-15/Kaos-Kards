@@ -27,6 +27,9 @@ function actionHeal(_targetEnemy)
     {
         healPlayer(_value);
     } else healEnemy(_value);
+    
+    //Play Voice
+    audioPlayVoice([voiceInfo.healAnymore,voiceInfo.healMid],false,3);
 }
 
 
@@ -47,6 +50,9 @@ function actionShield(_targetEnemy)
     
     //Give Temp Health
     addEffect(attackEffects.shield,_value,!_targetEnemy);
+    
+    //Play Voice
+    audioPlayVoice(voiceInfo.shield,false,3);
 }
 
 
@@ -110,10 +116,7 @@ function actionPoison(_targetEnemy)
     addEffect(attackEffects.poison,value,_targetEnemy);
     
     //Play Voice
-    if irandom_range(1,4) == 1
-    {
-        audioPlayVoice([voiceInfo.poisonInfect,voiceInfo.poisonShip,voiceInfo.poisonSizz]);
-    }
+    audioPlayVoice([voiceInfo.poisonInfect,voiceInfo.poisonShip,voiceInfo.poisonSizz],false,3);
 }
 
 

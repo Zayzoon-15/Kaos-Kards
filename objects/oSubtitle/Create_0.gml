@@ -8,14 +8,14 @@ y = SCREEN_HEIGHT - 25;
 //Box Setup
 heightMargin = 5;
 widthMargin = 10;
-maxWidth = 600;
+maxWidth = 800;
 
 //Box Style
 outlineWidth = 0;
 boxAlpha = global.subtitlesStyle.boxAlpha;
 
 //Image
-textScale = 1;
+textScale = global.subtitlesStyle.textScale;
 targetFont = fnSubtitle;
 smoothText = true;
 
@@ -52,9 +52,5 @@ for (var i = 0; i < array_length(info.textTime); i++) {
     array_push(timeSources,_timeSource);
 }
 
-//No Subtitles
-if !global.voiceover
-{
-    audio_stop_sound(info.sound);
-    instance_destroy();
-}
+//Set Voice Playing
+global.voicePlaying = true;

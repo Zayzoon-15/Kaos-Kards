@@ -10,7 +10,7 @@
   "option_android_build_tools":"",
   "option_android_compile_sdk":"34",
   "option_android_device_support":1,
-  "option_android_display_layout":"LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER",
+  "option_android_display_layout":"LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS",
   "option_android_display_name":"Kaos Kards",
   "option_android_edge_to_edge_display":true,
   "option_android_facebook_app_display_name":"",

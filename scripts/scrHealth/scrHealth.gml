@@ -10,6 +10,9 @@ function hurtEnemy(_value,_ignoreShield = false)
     //Give Combo
     global.playerComboMeter += _value*global.comboMult;
     
+    //Voice
+    audioPlayVoice([voiceInfo.hurtCheck,voiceInfo.hurtMark,voiceInfo.hurtOugh,voiceInfo.hurtPretty],false,5);
+    
 	////Add Mult
 	//_value *= global.valueMult;
 	
@@ -52,6 +55,9 @@ function hurtPlayer(_value,_ignoreShield = false)
     
     //Give Combo
     global.enemyComboMeter += _value*global.comboMult;
+    
+    //Voice
+    audioPlayVoice([voiceInfo.hurtCheck,voiceInfo.hurtMark,voiceInfo.hurtOugh,voiceInfo.hurtPretty],false,5);
 	
 	////Add Mult
 	//_value *= global.valueMult;

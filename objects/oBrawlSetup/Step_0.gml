@@ -6,8 +6,6 @@ if gameover and alpha >= .9
 	instance_destroy(oBrawlMap);
 }
 
-
-
 //No Fxs
 if fxLayer == undefined then exit;
 

@@ -17,7 +17,7 @@ if instance_exists(oSettingsSubMenu)
         
         //Draw Text
     	textSetup(fnMain,fa_center,fa_middle);
-    	draw_text_transformed(x,y,reason,textScaleX,textScaleY,0);
+    	draw_text_transformed(x,y,reason,2,2,0);
     }
     
     //Reset Scissor

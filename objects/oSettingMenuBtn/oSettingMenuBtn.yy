@@ -36,12 +36,13 @@
   "properties":[
     {"$GMObjectProperty":"v2","%Name":"selected","filters":[],"listItems":[],"multiselect":false,"name":"selected","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
     {"$GMObjectProperty":"v2","%Name":"targetMenu","filters":[],"listItems":[
-        "\"Video\"",
         "\"Audio\"",
+        "\"Video\"",
         "\"Game\"",
         "\"Input\"",
         "\"Back\"",
       ],"multiselect":false,"name":"targetMenu","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"\"Back\"","varType":6,},
+    {"$GMObjectProperty":"v2","%Name":"btnId","filters":[],"listItems":[],"multiselect":false,"name":"btnId","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

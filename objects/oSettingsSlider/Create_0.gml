@@ -44,7 +44,7 @@ drawBtn = function()
     drawBox();
     
     //Slider Value
-    var _sliderText = $"{ceil(currentAmount)}{textIcon}";
+    var _sliderText = roundText ? $"{ceil(currentAmount)}{textIcon}" : $"{currentAmount}{textIcon}";
     
     //Draw Slider Value
     textSetup(fnMain,fa_center,fa_middle,c_white,image_alpha);

@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"voBrawlRetro",
+  "audioGroupId":{
+    "name":"agVoice",
+    "path":"audiogroups/agVoice",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":1.269229,
+  "exportDir":"",
+  "name":"voBrawlRetro",
+  "parent":{
+    "name":"Kaos",
+    "path":"folders/Sounds/VoiceOver/Kaos.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"voBrawlRetro.ogg",
+  "volume":1.0,
+}

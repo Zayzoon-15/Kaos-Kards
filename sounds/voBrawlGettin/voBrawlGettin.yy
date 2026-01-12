@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"voBrawlGettin",
+  "audioGroupId":{
+    "name":"agVoice",
+    "path":"audiogroups/agVoice",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":2.307687,
+  "exportDir":"",
+  "name":"voBrawlGettin",
+  "parent":{
+    "name":"Kaos",
+    "path":"folders/Sounds/VoiceOver/Kaos.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"voBrawlGettin.ogg",
+  "volume":1.0,
+}

@@ -52,10 +52,13 @@ if dragging
         }
         
 	} else currentAmount = 0;
-	
+    
     //Update On Change
     if onChange != undefined
     {
+        //Clamp
+        currentAmount = clamp(currentAmount,slideMin,slideMax);
+        
         onChange(currentAmount);
     }
     

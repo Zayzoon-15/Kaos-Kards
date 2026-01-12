@@ -1,4 +1,4 @@
-//No Subtitles
+//No Voice Over
 if !global.voiceover
 {
     audio_stop_sound(info.sound);
@@ -6,6 +6,7 @@ if !global.voiceover
 }
 
 //Set Style
+textScale = global.subtitlesStyle.textScale;
 boxAlpha = global.subtitlesStyle.boxAlpha;
 font_enable_effects(fnSubtitle, true, { 
     outlineEnable: global.subtitlesStyle.outlineThickness > 0, 

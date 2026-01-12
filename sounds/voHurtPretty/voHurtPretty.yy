@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"voHurtPretty",
+  "audioGroupId":{
+    "name":"agVoice",
+    "path":"audiogroups/agVoice",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.0,
+  "exportDir":"",
+  "name":"voHurtPretty",
+  "parent":{
+    "name":"Hurt",
+    "path":"folders/Sounds/VoiceOver/Hurt.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"voHurtPretty.ogg",
+  "volume":1.0,
+}

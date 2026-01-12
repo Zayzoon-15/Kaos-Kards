@@ -70,11 +70,12 @@ function SettingsButtons()
     ///@param {real} _textScale The text scale (Default = 2)
     ///@param {real} _min The minimum the slider can go
     ///@param {real} _max The max the slider can go
+    ///@param {bool} _roundText If the text shown should be rounded
     ///@param {function} _roundFunc The rounding method the value should use (Ex: ceil, floor, round)
     ///@param {string} _textIcon The icon to put after the value (Ex: % = 100%)
     ///@param {function} _disabled The function to check if the button is disabled (can be a bool to)
     ///@param {string} _reason The reason for why the button is disabled
-    static Slider = function(_text = "Slider",_changeVar = undefined,_onChange = undefined,_textScale = 2,_min = 0,_max = 100,_roundFunc = undefined,_textIcon = "%",_disabled = undefined,_reason = "No Reason")
+    static Slider = function(_text = "Slider",_changeVar = undefined,_onChange = undefined,_textScale = 2,_min = 0,_max = 100,_roundText = true,_roundFunc = undefined,_textIcon = "%",_disabled = undefined,_reason = "No Reason")
     {
         //Create Slider
         instance_create_depth(0,0,oSettingsSubMenu.depth-1,oSettingsSlider,{
@@ -88,7 +89,8 @@ function SettingsButtons()
             slideMax : _max,
             roundFunc : _roundFunc,
             textIcon : _textIcon,
-            onChange : _onChange
+            onChange : _onChange,
+            roundText : _roundText
         });
         
         //Increase Button Id

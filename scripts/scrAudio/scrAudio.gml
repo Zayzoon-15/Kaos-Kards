@@ -138,28 +138,34 @@ function audioPlaySong(_song,_mixSongs = false,_fadeTime = 60,_loop = true)
 
 ///@desc Plays the announcers voice line with subtitles
 ///@param {struct.voicecreate} _voiceover The voice over to play (Make sure its a voiceInfo in order to create subtitles)
-function audioPlayVoice(_voiceover)
+///@param {bool} _stopOthers If set to true it will stop the other voice and play the new one but if it's set to false it will only play the new voice if there is no voices playing (Default = true)
+///@param {real} _playChance The chance the audio plays 1 in X (Default = 1) which is always
+function audioPlayVoice(_voiceover,_stopOthers = true,_playChance = 1)
 {
     //No Voice Over
     if !global.voiceover then return noone;
     
+    //Play Chance
+    randomise();
+    if irandom_range(1,_playChance) != 1 then return noone;
+    
     //Stop Other Voice
-    audio_group_stop_all(agVoice);
+    if _stopOthers
+    {
+        audio_group_stop_all(agVoice);
+    } else if global.voicePlaying then return noone;
+    
     
     //Get Voice Info
     var _voice = _voiceover;
     if is_array(_voiceover)
     {
-        randomise();
         _voice = array_get_random(_voiceover);
     }
     
     //Create Subtitle
     instance_destroy(oSubtitle);
-    if global.subtitles
-    {
-        instance_create_depth(0,0,-1,oSubtitle,{info : _voice});
-    }
+    instance_create_depth(0,0,-1,oSubtitle,{info : _voice});
     
     //Play Sound
     return audio_play_sound(_voice.sound,0,false);

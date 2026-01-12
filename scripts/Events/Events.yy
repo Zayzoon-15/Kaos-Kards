@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scrEvents",
+  "%Name":"Events",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scrEvents",
+  "name":"Events",
   "parent":{
     "name":"Game",
     "path":"folders/Scripts/Game.yy",

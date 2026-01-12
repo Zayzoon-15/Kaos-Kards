@@ -13,7 +13,7 @@
 function starEffect(_x,_y,_amount = 5,_sound = true,_xOffset = 30,_yOffset = 30,_width = sprite_width,_height = sprite_height)
 {
     //Play Sound
-    if _sound then audioPlaySfx([snStars1,snStars2],1,1,_x,_y);
+    if _sound then audioPlaySfx([snStars1,snStars2]);
     
 	//Set Amount
 	_amount *= global.partAmount;
@@ -52,7 +52,7 @@ function starEffect(_x,_y,_amount = 5,_sound = true,_xOffset = 30,_yOffset = 30,
 function healthEffect(_x,_y,_amount = 5,_sound = true,_xOffset = 30,_yOffset = 30,_width = sprite_width,_height = sprite_height)
 {
     //Play Sound
-    if _sound then audioPlaySfx(snHeal,.9,1.1,_x,_y);
+    if _sound then audioPlaySfx(snHeal,.9,1.1);
     
 	//Set Amount
 	_amount *= global.partAmount;

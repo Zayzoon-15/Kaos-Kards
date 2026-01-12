@@ -17,7 +17,25 @@ voiceInfo = {
     //Great Job
     dank : new voiceCreate(voDank,"That was DANK!"),
     
+    //Combo
+    comboNice : new voiceCreate(voComboNice,"Nice combo!"),
+    comboSweet : new voiceCreate(voComboSweet,"Sweet combo!"),
+    womboCombo : new voiceCreate(voWomboCombo,"WOMBO COMBO!!!"),
+    
+    //Hurt
+    hurtCheck : new voiceCreate(voHurtCheck,"Ugh... might want to get that checked out."),
+    hurtMark : new voiceCreate(voHurtMark,"Ooh- that's gonna leave a mark."),
+    hurtOugh : new voiceCreate(voHurtOugh,"OUGH!"),
+    hurtPretty : new voiceCreate(voHurtPretty,"That wasn't pretty!"),
+    
     #region Actions
+    
+    //Heal
+    healAnymore : new voiceCreate(voHealAnymore,"Bro, who the hell heals anymore!"),
+    healMid : new voiceCreate(voHealMid,"Look at this guy, healing mid-battle."),
+    
+    //Shield
+    shield : new voiceCreate(voShieldUp,"OOH! Keep your shields up."),
     
     //Poison
     poisonSizz : new voiceCreate(voPoisonSizz,"OH MY GOD! Why is it sizzling!"),
@@ -26,6 +44,11 @@ voiceInfo = {
     
     //Sticky Hand
     stickyGoo : new voiceCreate(voStickyGoo,"Oouei gooey!"),
+    
+    //Brawl
+    brawlFreak : new voiceCreate(voBrawlFreak,"That's so freakin' retro!"),
+    brawlRetro : new voiceCreate(voBrawlRetro,"Retro!!!"),
+    brawlTimes : new voiceCreate(voBrawlTimes,["God, I remember playing that as a kid.","Good times, good times"],[0,1.80]),
     
     #endregion
     

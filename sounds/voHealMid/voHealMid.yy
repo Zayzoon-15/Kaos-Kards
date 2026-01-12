@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"voHealMid",
+  "audioGroupId":{
+    "name":"agVoice",
+    "path":"audiogroups/agVoice",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.0,
+  "exportDir":"",
+  "name":"voHealMid",
+  "parent":{
+    "name":"Actions",
+    "path":"folders/Sounds/VoiceOver/Actions.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"voHealMid.ogg",
+  "volume":1.0,
+}

@@ -29,6 +29,9 @@ action = function()
     oSettingsSubMenu.scroll = 0;
     global.settingsBtnId = 0;
     
+    //Set Button
+    if targetMenu != "Back" then oSettings.lastButton = btnId;
+    
     //Set Text
     oSettingsSubMenu.menuText = targetMenu;
     
@@ -36,8 +39,8 @@ action = function()
     switch (targetMenu) {
         
         //Menus
-        case "Video": SettingsMenus.Video(); break;
         case "Audio": SettingsMenus.Audio(); break;
+        case "Video": SettingsMenus.Video(); break;
         case "Game": SettingsMenus.Game(); break;
         case "Input": SettingsMenus.Input(); break;
            

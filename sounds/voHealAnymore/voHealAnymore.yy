@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"voHealAnymore",
+  "audioGroupId":{
+    "name":"agVoice",
+    "path":"audiogroups/agVoice",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":2.0048072,
+  "exportDir":"",
+  "name":"voHealAnymore",
+  "parent":{
+    "name":"Actions",
+    "path":"folders/Sounds/VoiceOver/Actions.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"voHealAnymore.ogg",
+  "volume":1.0,
+}

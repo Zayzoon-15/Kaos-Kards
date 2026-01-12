@@ -12,6 +12,7 @@ function initSettings()
     global.subtitlesStyle = {
         boxAlpha : UIBOX_ALPHA,
         outlineThickness : 3,
+        textScale : 1
     };
 	
 	//Audio
@@ -22,6 +23,7 @@ function initSettings()
 	global.unfocusMute = false;
     global.voiceover = true;
     global.subtitles = true;
+    global.voicePlaying = false;
 	
 	//Input
 	global.keyDiscard = ord("Z");

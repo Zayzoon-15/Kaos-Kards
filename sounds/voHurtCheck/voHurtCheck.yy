@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"voHurtCheck",
+  "audioGroupId":{
+    "name":"agVoice",
+    "path":"audiogroups/agVoice",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":2.2788436,
+  "exportDir":"",
+  "name":"voHurtCheck",
+  "parent":{
+    "name":"Hurt",
+    "path":"folders/Sounds/VoiceOver/Hurt.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"voHurtCheck.ogg",
+  "volume":1.0,
+}

@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"voBrawlTimes",
+  "audioGroupId":{
+    "name":"agVoice",
+    "path":"audiogroups/agVoice",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":3.5480726,
+  "exportDir":"",
+  "name":"voBrawlTimes",
+  "parent":{
+    "name":"Kaos",
+    "path":"folders/Sounds/VoiceOver/Kaos.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"voBrawlTimes.ogg",
+  "volume":1.0,
+}

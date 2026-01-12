@@ -21,8 +21,12 @@ if count < 4
 	//Start Song
 	audioPlaySong(choose(sgRetro1,sgRetro2),false,300);
 	
-	with oBrawlChar
-	{
-		canMove = true;
-	}
+	with oBrawlChar {canMove = true;}
+    
+    //Voice Over
+    randomise();
+    if irandom_range(1,2) == 1
+    {
+        alarm[5] = random_range(70,90);
+    }
 }

@@ -111,13 +111,15 @@ function FiggySetup() {
         Figgy.Separator("Player");
         Figgy.Int("Player Health",100,0,100,FIGGY_INT_DEFAULT_STEP,function(){global.playerHp = argument0;});
 		Figgy.Bool("Killable Player", true,function(){global.debugKillable.player = argument0});
+        Figgy.Button("Hurt Effect",function(){hurtPlayer(0);});
         Figgy.Button("Apply Shield Player",function(){addEffect(attackEffects.shield,10,false)});
         Figgy.Button("Apply Poison Player",function(){addEffect(attackEffects.poison,10,false)});
         Figgy.Button("Apply Fire Player",function(){addEffect(attackEffects.fire,10,false)});
         
         Figgy.Separator("Enemy");
-		Figgy.Bool("Killable Enemy", true,function(){global.debugKillable.enemy = argument0});
         Figgy.Int("Enemy Health",100,0,100,FIGGY_INT_DEFAULT_STEP,function(){global.enemyHp = argument0;});
+		Figgy.Bool("Killable Enemy", true,function(){global.debugKillable.enemy = argument0});
+        Figgy.Button("Hurt Effect",function(){hurtEnemy(0);});
         Figgy.Button("Apply Shield Enemy",function(){addEffect(attackEffects.shield,10,true)});
         Figgy.Button("Apply Poison Enemy",function(){addEffect(attackEffects.poison,10,true)});
         Figgy.Button("Apply Fire Enemy",function(){addEffect(attackEffects.fire,10,true)});

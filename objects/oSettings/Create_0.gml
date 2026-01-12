@@ -2,6 +2,9 @@
 x = 462;
 y = 360;
 
+//Menu
+lastButton = 0;
+
 //Audio
 curSong = noone;
 
@@ -44,7 +47,7 @@ createSettings = function()
 			
 		//Selected
 		var _selected = false;
-		if i == 0 then _selected = true;
+		if i == lastButton then _selected = true;
 			
 		//Center Buttons
 		var _center = room_height/2;
@@ -56,7 +59,8 @@ createSettings = function()
 		//Create Buttons
 		instance_create_depth(167,_y,_depth,oSettingMenuBtn,{
 			targetMenu : _mainButtons[i],
-			selected : _selected
+			selected : _selected,
+            btnId : i
 		});
 	}
 	
@@ -85,6 +89,9 @@ destroySettings = function()
 	
 	//Play Song
 	audioPlayGroupSong(global.musicGroups.bg,global.lastSong);
+    
+    //Save
+    saveGame(); //Just in case
 	
 	//Activate
     audio_resume_all();
