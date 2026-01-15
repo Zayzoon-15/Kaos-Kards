@@ -13,6 +13,7 @@ maxWidth = 800;
 //Box Style
 outlineWidth = 0;
 boxAlpha = global.subtitlesStyle.boxAlpha;
+targetAlpha = 1;
 
 //Image
 textScale = global.subtitlesStyle.textScale;

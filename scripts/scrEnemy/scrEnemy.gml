@@ -26,19 +26,64 @@ function enemyCreateStrat(_healWeight = 80,_healVal = 60,_defendWeight = 50,_def
     specialUses = _specialUses;
 }
 
+/// @desc Creates the enemies animation info
+/// @param {real} [_idle] The amount of frames the idle animation has (Default = 2)
+/// @param {real} [_hurt] The amount of frames the hurt animation has (Default = 2)
+/// @param {real} [_win] The amount of frames the win animation has (Default = 2)
+/// @param {real} [_death] The amount of frames the death animation has (Default = 2)
+/// @returns {struct} The animation info
+function enemyCreateAnims(_idle = 2,_hurt = 2,_win = 2,_death = 2) {
+    //Create Clips
+    var _clip = function(_length,_start=0,_loop = true)
+    {
+        return {
+            start : _start,
+            length : _length,
+            loop : _loop,
+        };
+    }
+    
+    //Create Info
+    var _info = { 
+        idle : _clip(_idle),
+        hurt : _clip(_hurt),
+        win : _clip(_win),
+        death: _clip(_death),
+    }
+    
+    //Set Offsets
+    var _order = ["idle","hurt","win","death"];
+    var _offset = 0;
+    
+    for (var i = 0; i < array_length(_order); i++)
+    {
+        var _key = _order[i];
+        var _anim = struct_get(_info, _key);
+        
+        _anim.start = _offset;
+        _offset += _anim.length;
+        
+        struct_set(_info, _key, _anim);
+    }
+    
+    //Return Animation Info
+    return _info;
+}
 
 /// @desc Creates the enemies information
 /// @param {string} _name The name of the enemy
 /// @param {Asset.GMSprite} _sprite The sprite of the enemy
+/// @param {struct.enemycreateanims} [_animInfo] The animation info for the enemies sprite
 /// @param {array} _actionCards The enemies action cards (Example: [actionCards.bread, actionCards.heal])
 /// @param {array} _kaosCards The enemies kaos cards (Example: [kaosCards.swoop])
 /// @param {struct.enemycreatestrat} [_strat] The enemies figthing strategy
 /// @param {any*} [_special] The enemies special move(leave as undefined if they don't use one)
-function enemyCreate(_name,_sprite,_actionCards,_kaosCards,_strat = new enemyCreateStrat(),_special = undefined) constructor
+function enemyCreate(_name,_sprite,_animInfo = enemyCreateAnims(),_actionCards,_kaosCards,_strat = new enemyCreateStrat(),_special = undefined) constructor
 {    
     //Info
     name = _name;
     sprite = _sprite;
+    animInfo = _animInfo;
     special = _special;
     
     //Cards
@@ -88,3 +133,4 @@ function enemyAddCard(_slotId,_info,_value,_used = false,_disabled = false)
         });
     }
 }
+

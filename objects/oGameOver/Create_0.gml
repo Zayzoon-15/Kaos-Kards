@@ -23,12 +23,12 @@ if playerWon
 	with oEnemyPhoto
 	{
 		//Set Animation
-		currentAnim = 1;
+		enemyPlayAnim("hurt");
 		canHover = false;
 		
 		//Set Death Photo
 		timeSourceCreate(5,function(){
-			currentAnim = 3;
+			enemyPlayAnim("death");
 		});
 	}
 	
@@ -41,7 +41,7 @@ if playerWon
 	with oEnemyPhoto
 	{
 		//Set Animation
-		currentAnim = 2;
+		enemyPlayAnim("win");
 		canHover = false;
 		
 		//Stars

@@ -2,10 +2,12 @@
 sprite_index = global.currentEnemy.sprite;
 
 //Animation
+animInfo = global.currentEnemy.animInfo;
 frame = 0;
 currentAnim = 0;
 animationEnd = false;
 shake = 0;
+enemyPlayAnim("idle");
 
 //Hover
 canHover = true;
@@ -13,10 +15,8 @@ canHover = true;
 //Functions
 hurt = function()
 {
-    //Set Right Animation
-    currentAnim = 1;
-    
-    //Shake
+    //Play Animation
+    enemyPlayAnim("hurt");
     shake += 15;
     
     //Start Reset
@@ -25,8 +25,8 @@ hurt = function()
 
 win = function(_stars = true)
 {
-    //Set Right Animation
-    currentAnim = 2;
+    //Play Animation
+    enemyPlayAnim("win");
     
     //Stars
     if _stars then starEffect(x,y,10,false,10,15);

@@ -27,3 +27,10 @@ if touchingMouse()
 //Ease
 xscale = lerp(xscale,1,.2);
 yscale = lerp(yscale,1,.2);
+
+//Not Shown
+if !layer_get_visible(layer)
+{
+    selected = false;
+    canHover = false;
+} else canHover = true;

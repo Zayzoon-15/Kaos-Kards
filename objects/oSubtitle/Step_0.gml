@@ -1,17 +1,18 @@
-//Inherit
-event_inherited();
-
-//Destroy
+//Sound Is Not Playing
 if !audio_is_playing(info.sound) and !audio_is_paused(info.sound)
 {
-    //Set Voice Playing
     global.voicePlaying = false;
-    
-    //Fade
-    alpha = lerp(alpha,0,.2);
+    targetAlpha = 0;
 }
 
-if alpha <= .2 and !audio_is_paused(info.sound) then instance_destroy();
+//Destroy
+if alpha <= .2 and !audio_is_paused(info.sound)
+{
+    instance_destroy();
+}
+
+//Fade
+alpha = lerp(alpha,targetAlpha,.2);
 
 //Pause
 if global.paused

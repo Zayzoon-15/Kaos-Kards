@@ -15,8 +15,8 @@ selected = false;
 canHover = true;
 
 //Image
-xscale = 1;
-yscale = 1;
+xscale = .5;
+yscale = .5;
 boxY = 0;
 
 //Shadow

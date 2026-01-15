@@ -128,3 +128,29 @@ function spriteLoopFrames(_frame,_anims = 4)
         frame -= _totalFrames;
     } else animationEnd = false;
 }
+
+///@desc Plays the enemy animation
+///@param {string} _anim The animation to play
+function enemyPlayAnim(_anim)
+{
+    //Animation Does Not Exist
+    if !variable_struct_exists(global.currentEnemy.animInfo,_anim)
+    {
+        print($"'{_anim}' Does Not Exist")
+        exit;
+    }
+    
+    //Set clip
+    var _clip = variable_struct_get(global.currentEnemy.animInfo, _anim);
+    
+    //Switch Animation
+    with oEnemyPhoto
+    {
+        if _clip != undefined and currentAnim != _clip
+        {
+            currentAnim = _clip;
+            frame = 0;
+            animationEnd = false;
+        }
+    }
+}

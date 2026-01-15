@@ -16,7 +16,10 @@ function FiggySetup() {
                 global.currentEnemy = struct_get(enemyInfo,argument0);
                 with oEnemyPhoto {sprite_index = global.currentEnemy.sprite;}
             }});
-        Figgy.Int("Enemy Frame",0,0,3,1,function(){with oEnemyPhoto {currentAnim = argument0}});
+        //Figgy.Int("Enemy Frame",0,0,3,1,function(){with oEnemyPhoto {currentAnim = argument0}});
+        Figgy.String("Enemy Animation","idle",function(){
+            enemyPlayAnim(argument0);
+        });
 	
         Figgy.Section("Rooms");
         Figgy.Button("Reset Room",function(){room_restart()});

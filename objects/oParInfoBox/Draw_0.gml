@@ -1,3 +1,11 @@
+//Depth
+depth = -5;
+
+//Get Text Size
+draw_set_font(targetFont);
+height = string_height_ext(text,-1,maxWidth/textScale)*textScale;
+width = string_width_ext(text,-1,maxWidth/textScale)*textScale;
+
 //Draw The Box
 drawRectOutlined(x-(width/2)-widthMargin,y-height-(heightMargin*2),x+(width/2)+widthMargin,y,boxRad,outlineWidth,c_black,c_white,boxAlpha*alpha,alpha);
 
