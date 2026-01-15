@@ -13,6 +13,9 @@ text = dir == "Left" ? "Last Page" : "Next Page";
 //Action
 action = function()
 {
+    oTournies.selected = false;
+    global.currentEnemy = undefined;
+    
     //Hide Other Layers
     layer_set_visible("Page1",false);
     layer_set_visible("Page2",false);
