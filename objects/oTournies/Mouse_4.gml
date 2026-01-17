@@ -1,3 +1,10 @@
+//Mobile Press
+if global.mobile and global.mobilePress and !mobilePress and canHover
+{
+    mobilePress = true;
+    exit;
+}
+
 if canHover
 {
 	//Scale
@@ -8,4 +15,5 @@ if canHover
 	
 	//Set Pressed
 	pressed = true;
+    mobilePress = false;
 }

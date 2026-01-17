@@ -11,6 +11,7 @@ curAnim = 0;
 
 //Button
 pressed = false;
+mobilePress = false;
 selected = false;
 canHover = true;
 

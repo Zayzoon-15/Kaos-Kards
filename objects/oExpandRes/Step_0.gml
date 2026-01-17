@@ -5,14 +5,12 @@ var _winH = window_get_height();
 //Exit if Minimized or Invalid
 if _winW <= 0 or _winH <= 0 then exit;
 
-//Get Scale Based on Height
+//Get Ratio
 var _scale = _winH / baseH;
-
-//Get Width
-var _targetWidth = _winW / _scale;
+var _aspect = _winW / _winH;
 
 //Set Camera Size
-camW = _targetWidth;
+camW = baseH * _aspect;
 camH = baseH;
 
 //Get Camera Position

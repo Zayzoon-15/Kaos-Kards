@@ -7,6 +7,7 @@ currentAmount = 50;
 //Drag
 dragging = false;
 playSound = false;
+ignoreMobile = true;
 
 //Slider Box
 sliderBoxX1 = 0;

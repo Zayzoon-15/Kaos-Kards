@@ -31,7 +31,10 @@ if point_in_rectangle(mouse_x,mouse_y,rectX2,y-height,rectX1,y+height) and !disa
 
 	//Set Hover
 	hover = true;
-} else hover = false;
+} else {
+    hover = false;
+    mobilePress = false;
+}
 
 //Fade Color
 if hover
@@ -42,7 +45,13 @@ if hover
 //Clicked
 if mouse_check_button_pressed(mb_left) and hover
 {
-	action();
+    if global.mobile and global.mobilePress and !mobilePress and !ignoreMobile
+    {
+        mobilePress = true;
+    } else {
+    	action();
+        mobilePress = false;
+    }
 }
 
 //Check If Disabled

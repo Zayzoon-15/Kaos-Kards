@@ -24,6 +24,7 @@ function saveLoad()
 	global.keyFullscreen = ini_read_real("Settings","Fullscreen",vk_f11);
 	global.keyPause = ini_read_real("Settings","Pause",vk_escape);
 	global.keyDebug = ini_read_real("Settings","Debug",220);
+	global.mobilePress = ini_read_real("Settings","MobilePress",true);
 	
 	ini_close();
 }
@@ -55,6 +56,7 @@ function saveGame()
 	ini_write_real("Settings","Fullscreen",global.keyFullscreen);
 	ini_write_real("Settings","Pause",global.keyPause);
 	ini_write_real("Settings","Debug",global.keyDebug);
+	ini_write_real("Settings","MobilePress",global.mobilePress);
 	
 	ini_close();
 }

@@ -1,3 +1,10 @@
+//Mobile Press
+if global.mobile and global.mobilePress and !mobilePress and canPress and !global.midTrans
+{
+    mobilePress = true;
+    exit;
+}
+
 //Check Condition
 if canHover then condition();
 
@@ -14,6 +21,7 @@ if canHover and canPress and !global.midTrans
     
     //Set Pressed
     pressed = true;
+    mobilePress = false;
     
 } else {
     audioPlaySfx(snDeny);

@@ -1,7 +1,7 @@
 //Position
-boxX = x;
+boxX = getPosToWindow(false);
 boxY = y;
-targetX = x;
+targetX = getPosToWindow(false);
 targetY = y;
 
 //Image
@@ -13,6 +13,7 @@ boxAlpha = .5;
 
 //Clicking
 pressed = false;
+mobilePress = false;
 
 //Text
 textTargetSize = 3;

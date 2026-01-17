@@ -1,1 +1,2 @@
 pressed = false;
+mobilePress = false;

@@ -115,8 +115,11 @@ function SettingsMenus()
                 SettingsButtons.Button("Accept");
                 SettingsButtons.Button("Discard");
         } else { //Mobile Input
-            SettingsButtons.Check("Double Tap For Buttons");
-            SettingsButtons.Slider("Haptic Feedback",undefined,1.8,0,10,true,ceil,"X");
+            SettingsButtons.Check("Double Tap For Buttons",function()
+            {
+                global.mobilePress = argument0;
+            },global.mobilePress);
+            SettingsButtons.Slider("Haptic Feedback",undefined,undefined,1.8,0,10,true,ceil,"X");
         }
         
     }

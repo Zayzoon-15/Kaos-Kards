@@ -1,3 +1,10 @@
+//Mobile Press
+if global.mobile and global.mobilePress and !mobilePress
+{
+    mobilePress = true;
+    exit;
+}
+
 //Audio
 audioPlaySfx(snBtnPress,.9,1.1);
 

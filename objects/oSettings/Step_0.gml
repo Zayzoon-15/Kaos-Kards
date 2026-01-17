@@ -12,21 +12,19 @@ mobilePos.x = getPosToWindow(false,41);
 mobilePos.y = 678;
 
 //Clicked Mobile
-if point_in_circle(mouse_x,mouse_y,mobilePos.x,mobilePos.y,mobileRad)
-{	
-	if mouse_check_button_pressed(mb_left)
-	{
-		mobilePressed = true;
-	}
-	
-	if mouse_check_button_released(mb_left)
-	{
-		if mobilePressed
-		{
-			createSettings();
-		}
-		
-		//Set Pressed
-		mobilePressed = false;
-	}
-} else mobilePressed = false;
+if !global.paused and global.mobile
+{
+    if point_in_circle(mouse_x,mouse_y,mobilePos.x,mobilePos.y,mobileRad)
+    {	
+    	if mouse_check_button_pressed(mb_left)
+    	{
+    		mobilePressed = true;
+    	}
+    	
+    	if mouse_check_button_released(mb_left)
+    	{
+    		if mobilePressed then createSettings();
+    		mobilePressed = false;
+    	}
+    } else mobilePressed = false;
+}

@@ -36,6 +36,7 @@ canHover = true;
 pressed = false;
 canPress = true;
 buttonUsed = false;
+mobilePress = false;
 
 //Info
 drawInfo = true;

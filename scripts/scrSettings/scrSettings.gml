@@ -31,6 +31,9 @@ function initSettings()
 	global.keyPause = vk_escape;
 	global.keyDebug = 220;
     
+    //Mobile
+    global.mobilePress = true;
+    
     //Settings Menus
     global.settingsBtnId = 0;
     SettingsButtons();

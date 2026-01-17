@@ -22,6 +22,10 @@ hover = false;
 canHover = true;
 mobileDragging = false;
 
+//Pressed
+ignoreMobile = false;
+mobilePress = false;
+
 #region Functions
 
 
