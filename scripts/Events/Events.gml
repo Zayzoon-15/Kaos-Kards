@@ -2,6 +2,11 @@
 ///@desc This event plays when the player resets the match
 function gameReset()
 {	
+    //Set Seed
+    randomise();
+    random_set_seed(random(999999));
+    print("Game Seed",random_get_seed());
+    
 	//Set Gamestate
 	gameState = GAMESTATES.PREPARE;
 	

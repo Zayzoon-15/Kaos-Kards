@@ -58,7 +58,6 @@ setupTime = function()
 	if info.totalTime != undefined
 	{
 		//Set Time
-		randomize();
 		timeBetween = random_range(info.timeBetween[0],info.timeBetween[1])*60;
 		totalTime = random_range(info.totalTime[0],info.totalTime[1])*60;
 		timeUp = false;

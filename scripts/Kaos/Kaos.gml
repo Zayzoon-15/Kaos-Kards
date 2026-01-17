@@ -33,7 +33,6 @@ function kaosActionSwap(_targetEnemy)
 	createAlertMessage("All Cards Swapped");
 	
 	//Juice
-    randomize();
     angle += 360 * choose(-1,1);
     cardJuice(true,false,false);
 	
@@ -100,7 +99,6 @@ function kaosActionFreeze(_targetEnemy)
     var _array = _targetEnemy ? global.disabledSlots.enemy : global.disabledSlots.player;
     
     //Get Target Slot
-    randomise();
     var _slot = irandom_range(1,3); //1-3 for only action slots
     //Make Sure Same Numbers Dont Repeat
     while _array[_slot]
@@ -150,7 +148,6 @@ function kaosActionBrawl(_targetEnemy)
 function kaosActionSticky(_targetEnemy)
 {
     //Remove Card
-    randomise();
     var _lostCard = noone;
     if _targetEnemy
     {

@@ -3,7 +3,6 @@
 starEffect(x,y,8,true,10,15);
 
 //Get Target
-randomize();
 targetEnemy = choose(0,1);
 
 //Get Angle

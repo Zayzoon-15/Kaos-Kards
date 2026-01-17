@@ -11,7 +11,6 @@
 function audioPlaySfx(_sound,_low = 1,_high = 1,_gain = 1)
 {
     //Get Pitch
-    randomise();
     var _pitch = random_range(_low,_high);
     
     //Get Sound Asset
@@ -146,7 +145,6 @@ function audioPlayVoice(_voiceover,_stopOthers = true,_playChance = 1)
     if !global.voiceover then return noone;
     
     //Play Chance
-    randomise();
     if irandom_range(1,_playChance) != 1 then return noone;
     
     //Stop Other Voice

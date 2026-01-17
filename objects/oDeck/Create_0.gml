@@ -21,7 +21,6 @@ for (var i = 0; i < array_length(global.playerRemovedCards); i++)
 deck = array_concat(deck,global.playerAddCards);
 
 //Set Stats
-randomize();
 deck = array_shuffle(deck);
 deckNum = 0;
 totalCards = array_length(deck);

@@ -24,9 +24,6 @@ if count < 4
 	with oBrawlChar {canMove = true;}
     
     //Voice Over
-    randomise();
-    if irandom_range(1,2) == 1
-    {
-        alarm[5] = random_range(70,90);
-    }
+    var _voicelines = [voiceInfo.brawlFreak,voiceInfo.brawlRetro,voiceInfo.brawlTimes];
+    timeSourceCreate(random_range(70,90),audioPlayVoice,[_voicelines,false,2],time_source_units_frames);
 }

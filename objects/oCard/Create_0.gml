@@ -33,7 +33,6 @@ wasOnSlot = false;
 canPlace = true;
 
 //Dice Cards
-randomize();
 targetDice = irandom_range(1,3);
 followingDice = false;
 

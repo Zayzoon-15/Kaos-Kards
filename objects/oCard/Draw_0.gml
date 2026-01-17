@@ -1,5 +1,4 @@
 //Shake
-randomize();
 var _shakeX = random_range(-1,1)*shake;
 var _shakeY = random_range(-1,1)*shake;
 shake = lerp(shake,0,.3);

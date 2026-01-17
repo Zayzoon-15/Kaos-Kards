@@ -14,7 +14,10 @@ globalvar voiceInfo;
 voiceInfo = {
     
     likeKaos : new voiceCreate(voLikeKoas,"Hey! Do you like chaos? Do you like cards?"),
+    
+    //Start Match
     kaosBegin : new voiceCreate(voKaosBegin,"Let the chaos... begin."),
+    downForKaos : new voiceCreate(voDownForKaos,"Who's down for some chaos!"),
     
     //Great Job
     dank : new voiceCreate(voDank,"That was DANK!"),

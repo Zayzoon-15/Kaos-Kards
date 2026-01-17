@@ -26,7 +26,6 @@ function starEffect(_x,_y,_amount = 5,_sound = true,_xOffset = 30,_yOffset = 30,
 		var _effectY = (_height/2)-_yOffset;
 		
 		//Get Offsets
-		randomize();
 		var _xOff = random_range(-_effectX,_effectX);
 		var _yOff = random_range(-_effectY,_effectY);
         var _dir = sign(_xOff);
@@ -65,7 +64,6 @@ function healthEffect(_x,_y,_amount = 5,_sound = true,_xOffset = 30,_yOffset = 3
 		var _effectY = (_height/2)-_yOffset;
 		
 		//Get Offsets
-		randomize();
 		var _xOff = random_range(-_effectX,_effectX);
 		var _yOff = random_range(-_effectY,_effectY);
         

@@ -1,8 +1,5 @@
 ///@desc Attack Enemy Create Event
 
-//Random
-randomise();
-
 //Set Position
 x = -10;
 y = random_range(room_height/2,room_height);

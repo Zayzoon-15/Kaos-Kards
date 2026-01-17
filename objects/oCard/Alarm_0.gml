@@ -1,8 +1,5 @@
 ///@desc Get Values
 
-//Randomise;
-randomise();
-
 //Get Range
 if info.range != undefined
 {

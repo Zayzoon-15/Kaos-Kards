@@ -75,7 +75,6 @@ with oRpsHand
             //Hurt
             with oRpsHand
             {
-                randomise();
                 var _amount = irandom_range(10,15);
                 
                 if handId == 1 and winner

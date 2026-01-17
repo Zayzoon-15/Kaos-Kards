@@ -3,7 +3,6 @@
 function enemyCheckChance(_weight)
 {
     //Get Chance
-    randomize();
     var _chance = irandom_range(1,100);
     
     if _chance <= _weight

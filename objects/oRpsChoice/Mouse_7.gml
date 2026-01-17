@@ -4,7 +4,6 @@ if pressed
 	//Action
 	timeSourceCreate(.8,function(){
 		//Create Hands
-		randomise();
 		instance_create_layer(0,room_height/2,"Attacks",oRpsHand,{
 	        handId : 1,
 			action : choiceId

@@ -20,6 +20,7 @@ action = function()
 {
     //Go To Room
     transStart(rPrepare);
+    gameReset();
     
     //Don't Hover
     canHover = false;

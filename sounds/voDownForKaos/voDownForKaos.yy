@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"voKaosBegin",
+  "%Name":"voDownForKaos",
   "audioGroupId":{
     "name":"agVoice",
     "path":"audiogroups/agVoice",
@@ -10,9 +10,9 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":2.365374,
+  "duration":2.192313,
   "exportDir":"",
-  "name":"voKaosBegin",
+  "name":"voDownForKaos",
   "parent":{
     "name":"Start Match",
     "path":"folders/Sounds/VoiceOver/Start Match.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"voKaosBegin.ogg",
+  "soundFile":"voDownForKaos.ogg",
   "volume":1.0,
 }

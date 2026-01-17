@@ -1,8 +1,5 @@
 ///@desc Attack Player Create Event
 
-//Random
-randomize();
-
 //Set Position
 var _margin = 20;
 x = random_range(_margin,room_width-_margin);

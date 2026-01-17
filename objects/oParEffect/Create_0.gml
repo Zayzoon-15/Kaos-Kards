@@ -1,6 +1,3 @@
-//Randomize
-randomize();
-
 //Fade
 fade = true;
 lifespan = random_range(10,30);

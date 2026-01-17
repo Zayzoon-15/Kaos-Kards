@@ -6,7 +6,6 @@ enemyCard = 0;
 playerComboDone = false;
 
 //Who Goes First
-randomize();
 playerFirst = choose(true,false);
 
 //Card Positions
@@ -18,6 +17,10 @@ timeBetweenCards = 70;
 
 //Start Kaos
 alarm[0] = 50;
+
+//Voice Line
+var _voicelines = [voiceInfo.kaosBegin,voiceInfo.downForKaos];
+timeSourceCreate(10,audioPlayVoice,[_voicelines,false,3],time_source_units_frames);
 
 //Functions
 getXPos = function(_index)

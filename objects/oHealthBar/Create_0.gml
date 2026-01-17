@@ -39,9 +39,6 @@ barMask = undefined;
 //Functions
 hitEffect = function(_lastTemp)
 {
-    //Randomize
-    randomize();
-    
     //Sound
     audioPlaySfx([snHurt1,snHurt2],.9,1.1);
     
@@ -59,9 +56,5 @@ hitEffect = function(_lastTemp)
 
 gainEffect = function()
 {
-    //Randomize
-    randomize();
-    
-    //Effects
     healthEffect(x,y,10,false,30,15);
 }

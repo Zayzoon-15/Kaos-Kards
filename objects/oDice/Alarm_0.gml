@@ -8,7 +8,6 @@ image_index = 0;
 diceJuice();
 
 //Dice Number
-randomize();
 diceNum = irandom_range(dice.range.min,dice.range.max);
 
 //Final Dice

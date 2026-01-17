@@ -80,6 +80,9 @@ global.gamepad = false;
 
 #endregion
 
+//Randomise
+randomise();
+
 //Load Groups
 audio_group_load(agMusic);
 audio_group_load(agSfx);

@@ -2,7 +2,6 @@
 event_inherited();
 
 //Movement
-randomize();
 gravity = .5;
 vspeed = -random_range(5,8);
 hspeed = random_range(1,5)*dir;

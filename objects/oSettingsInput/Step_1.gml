@@ -10,7 +10,6 @@ if targetKey != undefined
 if selectingKey
 {
 	//Random Keys
-	randomize();
 	key = choose("?","&","#","@","!","$","%","*");
 	
 	//Keyboard

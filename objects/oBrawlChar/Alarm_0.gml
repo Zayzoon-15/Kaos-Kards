@@ -2,9 +2,6 @@
 
 ///At somepoint the ai will be actually smart but for now it's random
 
-//Randomise
-randomise();
-
 //Move
 var _dir = choose(-1,1,1,1);
 if _dir == -1

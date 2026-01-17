@@ -31,7 +31,6 @@ var _targetNum = 1;
 targetCard = undefined;
 while targetCard == undefined
 {
-	randomize();
 	_targetNum = irandom_range(1,ds_list_size(_list)-1);
 	targetCard = ds_list_find_value(_list,_targetNum);
 }

@@ -28,7 +28,6 @@ laserSound = noone;
 //Functions
 action = function()
 {
-    randomize();
     var _x = random_range(-30,30);
     var _y = random_range(-80,80);
     

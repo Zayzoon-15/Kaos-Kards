@@ -5,9 +5,6 @@ var _time = .2;
 
 for (var i = 0; i < 5; i++) {
     
-    //Randomise
-    randomise();
-    
     //Set Stuff
     var _func = function(_targetEnemy)
     {

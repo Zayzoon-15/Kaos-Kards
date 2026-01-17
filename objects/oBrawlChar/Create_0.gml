@@ -189,7 +189,6 @@ actHit = function(_blockBroke = false)
 	} else audioPlaySfx(snBrawlBlockBroke);
 	
 	//Health
-	randomise();
 	var _amount = !_blockBroke ? irandom_range(8,12) : irandom_range(5,8);
 	hp -= _amount;
 	

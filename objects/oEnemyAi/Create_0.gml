@@ -1,6 +1,3 @@
-//Randomise
-randomise();
-
 //Get Info
 info = global.currentEnemy;
 
@@ -284,7 +281,6 @@ for (var i = 0; i < array_length(chosenActionCards); i++) {
             enemyAddCard(i+1,undefined,undefined,false);
         } else {
             //Get Card Value
-            randomize();
             var _cardValue = irandom_range(_card.range.min,_card.range.min);
             var _totalValue = _cardValue + diceOutcome[i];
             

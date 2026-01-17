@@ -2,7 +2,6 @@
 event_inherited();
 
 //Movement
-randomize();
 vspeed = -3;
 
 //Fade
