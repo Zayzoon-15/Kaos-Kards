@@ -11,7 +11,7 @@ with oParSettingsBtn
     if btnId == global.settingsBtnId-1
     {
         _maxScrollDist = ystart - other.scissorStuct.h -10;
-        _maxScrollDist = max(0,_maxScrollDist)
+        _maxScrollDist = max(0,_maxScrollDist);
     }
 }
 
@@ -73,13 +73,13 @@ if !mobileTouch
 }
 
 ////Scroll Bounce On Edge
-//if (scroll < 0)
+//if scroll < 0
 //{
     //scroll *= 0.5;
     //scrollVel *= 0.5;
 //}
 //
-//if (scroll > _maxScrollDist)
+//if scroll > _maxScrollDist
 //{
     //var _over = scroll - _maxScrollDist;
     //scroll = _maxScrollDist + _over * 0.5;

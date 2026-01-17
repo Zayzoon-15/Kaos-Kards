@@ -8,7 +8,7 @@ y = SCREEN_HEIGHT - 25;
 //Box Setup
 heightMargin = 5;
 widthMargin = 10;
-maxWidth = 800;
+maxWidth = 900;
 
 //Box Style
 outlineWidth = 0;

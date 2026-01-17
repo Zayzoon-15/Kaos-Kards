@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"voDank",
+  "%Name":"voMild",
   "audioGroupId":{
     "name":"agVoice",
     "path":"audiogroups/agVoice",
@@ -10,17 +10,17 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":1.7884581,
+  "duration":2.2788436,
   "exportDir":"",
-  "name":"voDank",
+  "name":"voMild",
   "parent":{
-    "name":"Great Job",
-    "path":"folders/Sounds/VoiceOver/Great Job.yy",
+    "name":"Bad Job",
+    "path":"folders/Sounds/VoiceOver/Bad Job.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"voDank.ogg",
+  "soundFile":"voMild.ogg",
   "volume":1.0,
 }

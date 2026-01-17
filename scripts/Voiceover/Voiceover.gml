@@ -12,10 +12,17 @@ function voiceCreate(_sound,_text,_textTime = [0]) constructor
 
 globalvar voiceInfo;
 voiceInfo = {
+    
     likeKaos : new voiceCreate(voLikeKoas,"Hey! Do you like chaos? Do you like cards?"),
+    kaosBegin : new voiceCreate(voKaosBegin,"Let the chaos... begin."),
     
     //Great Job
     dank : new voiceCreate(voDank,"That was DANK!"),
+    bringinKaos : new voiceCreate(voBringinKaos,["Woah!", "These cards sure are bringing some...", "chaos.", "See what I did there?"],[0,.5,2.8,4.2]),
+    
+    //Bad Job
+    mild : new voiceCreate(voMild,["And the crowd goes...","mild."],[0,1.5]),
+    tryHarder : new voiceCreate(voTryHarder,"Gonna have to try a little harder than that if you wanna win."),
     
     //Combo
     comboNice : new voiceCreate(voComboNice,"Nice combo!"),

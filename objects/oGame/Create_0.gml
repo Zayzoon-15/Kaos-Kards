@@ -44,6 +44,8 @@ global.enemyHpIcons = [];
 //Meter
 global.playerComboMeter = 0;
 global.enemyComboMeter = 0;
+global.playerPerformance = 0;
+global.enemyPerformance = 0;
 
 //Actions
 globalvar playerActions, enemyActions, playerKaos, enemyKaos;

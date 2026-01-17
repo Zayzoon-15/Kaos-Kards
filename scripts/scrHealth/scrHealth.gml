@@ -10,6 +10,10 @@ function hurtEnemy(_value,_ignoreShield = false)
     //Give Combo
     global.playerComboMeter += _value*global.comboMult;
     
+    //Performance
+    global.playerPerformance += _value;
+    global.enemyPerformance -= _value;
+    
     //Voice
     audioPlayVoice([voiceInfo.hurtCheck,voiceInfo.hurtMark,voiceInfo.hurtOugh,voiceInfo.hurtPretty],false,5);
     
@@ -55,6 +59,10 @@ function hurtPlayer(_value,_ignoreShield = false)
     
     //Give Combo
     global.enemyComboMeter += _value*global.comboMult;
+    
+    //Performance
+    global.playerPerformance -= _value;
+    global.enemyPerformance += _value;
     
     //Voice
     audioPlayVoice([voiceInfo.hurtCheck,voiceInfo.hurtMark,voiceInfo.hurtOugh,voiceInfo.hurtPretty],false,5);

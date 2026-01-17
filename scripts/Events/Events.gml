@@ -70,6 +70,10 @@ function nextRoundStarted()
 	
 	//Reset Mult
 	global.valueMult = 1;
+    
+    //Reset Performance
+    global.playerPerformance = 0;
+    global.enemyPerformance = 0;
 }
 
 

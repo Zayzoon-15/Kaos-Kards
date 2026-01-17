@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"voDank",
+  "%Name":"voKaosBegin",
   "audioGroupId":{
     "name":"agVoice",
     "path":"audiogroups/agVoice",
@@ -10,17 +10,17 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":1.7884581,
+  "duration":0.0,
   "exportDir":"",
-  "name":"voDank",
+  "name":"voKaosBegin",
   "parent":{
-    "name":"Great Job",
-    "path":"folders/Sounds/VoiceOver/Great Job.yy",
+    "name":"VoiceOver",
+    "path":"folders/Sounds/VoiceOver.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"voDank.ogg",
+  "soundFile":"voKaosBegin.ogg",
   "volume":1.0,
 }

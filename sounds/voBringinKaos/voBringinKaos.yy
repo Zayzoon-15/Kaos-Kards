@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"voDank",
+  "%Name":"voBringinKaos",
   "audioGroupId":{
     "name":"agVoice",
     "path":"audiogroups/agVoice",
@@ -10,9 +10,9 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":1.7884581,
+  "duration":5.538458,
   "exportDir":"",
-  "name":"voDank",
+  "name":"voBringinKaos",
   "parent":{
     "name":"Great Job",
     "path":"folders/Sounds/VoiceOver/Great Job.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"voDank.ogg",
+  "soundFile":"voBringinKaos.ogg",
   "volume":1.0,
 }
