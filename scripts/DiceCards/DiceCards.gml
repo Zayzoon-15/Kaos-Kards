@@ -46,30 +46,29 @@ globalvar diceCards;
 diceCards = {
     
     reroll : new createCardDice("Reroll",
-    "Reroll all the dice\n| Can only be placed after roll |",
+    "Reroll all the dice\nCan only be placed after roll",
     sCardDice,diceCardReroll),
     
     upgrade : new createCardDice("Dice Upgrade",
     "Adds a random amount to a random dice roll",
-    sCardDice,undefined,[],[1,6]),
-    
-    dice8 : new createCardDice("8 Sided Dice",
-    "Changes one random dice to an 8 sided dice\n| Can only be placed before roll |",
-    sCardDice,diceCardSwapDice,[diceTypes.d8]),
-    
-    dice12 : new createCardDice("12 Sided Dice",
-    "Changes one random dice to a 12 sided dice\n| Can only be placed before roll |",
-    sCardDice,diceCardSwapDice,[diceTypes.d12]),
-    
-    dice20 : new createCardDice("20 Sided Dice",
-    "Changes one random dice to a 20 sided dice\n| Can only be placed before roll |",
-    sCardDice,diceCardSwapDice,[diceTypes.d20]),
-    
-    
+    sCardDice,undefined,NaN,[],[1,6]),
     
     screwUp : new createCardDice("Prophetic Screwup",
-    "If all dice roll higher than half of their maximum value, set all dice to their maximum value. Otherwise, set all dice to 0\n| Can only be placed before roll |",
+    "If all dice roll higher than half of their maximum value, set all dice to their maximum value. Otherwise, set all dice to 0\nCan only be placed before roll",
     sCardDice,diceCardScrewUp),
+    
+    //Change Dice
+    dice8 : new createCardDice("8 Sided Dice",
+    "Changes one random dice to an 8 sided dice\nCan only be placed before roll",
+    sCardDice,diceCardSwapDice,9,[diceTypes.d8]),
+    
+    dice12 : new createCardDice("12 Sided Dice",
+    "Changes one random dice to a 12 sided dice\nCan only be placed before roll",
+    sCardDice,diceCardSwapDice,6,[diceTypes.d12]),
+    
+    dice20 : new createCardDice("20 Sided Dice",
+    "Changes one random dice to a 20 sided dice\nCan only be placed before roll",
+    sCardDice,diceCardSwapDice,3,[diceTypes.d20]),
     
 };
 

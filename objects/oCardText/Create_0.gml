@@ -1,5 +1,4 @@
-
-//DONT TOUCH THESE
+//DON'T TOUCH THESE
 height = 0;
 width = 0;
 textAlpha = 0;
@@ -10,8 +9,15 @@ widthMargin = 10;
 maxWidth = 230;
 
 //Setup Text
-text = "";
-if range != undefined //Make Sure Range Is real
+text = $"\n\n{desc}";
+if range != undefined then text += $"\nRange: {range.min} - {range.max}";
+if !is_nan(uses)
 {
-    text = $"\n\n{desc}\nRange: {range.min} - {range.max}";
-} else text = $"\n\n{desc}"; //In Case There's No Range
+    if uses > 1
+    {
+        text += $"\nUses Left: {uses}";
+    } else if uses != 0
+    {
+        text += $"\nUse Left: {uses}";
+    } else text += $"\nNO USES LEFT";
+}

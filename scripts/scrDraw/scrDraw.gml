@@ -9,6 +9,7 @@ function drawCardText(_info){
             name : _info.name,
             desc : _info.desc,
             range : _info.range,
+            uses : uses,
             parent : self.id
         });
     }

@@ -16,6 +16,13 @@ draw_sprite_ext(sprite_index, image_index, cardX+shadowX+_shakeX, cardY+shadowY+
 //Draw Self
 draw_sprite_ext(sprite_index, image_index, cardX+_shakeX, cardY+_shakeY, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 
+//Draw Disable
+if !canUse
+{
+    draw_sprite_ext(sprite_index, image_index, cardX+_shakeX, cardY+_shakeY, image_xscale, image_yscale, image_angle, c_red, image_alpha*.2);
+    draw_sprite_ext(sCardDisable,0,cardX+_shakeX, cardY+_shakeY, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
+}
+
 //Draw Value
 rangeScale = lerp(rangeScale,1,.2);
 if currentValue != undefined

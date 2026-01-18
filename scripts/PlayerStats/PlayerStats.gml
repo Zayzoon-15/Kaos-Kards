@@ -21,6 +21,9 @@ playerDeck = [
     kaosCards.sticky,
 	
     diceCards.screwUp,
+    diceCards.dice8,
+    diceCards.dice12,
+    diceCards.dice20,
     
 	////Action Cards
 	//actionCards.gato,

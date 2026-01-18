@@ -54,6 +54,11 @@ function diceCardSwapDice(_info,_card,_dice)
                 
                 if rollDone
                 {
+                    //Add To Uses
+                    array_push(global.cardUses.player,_card.info.name);
+                    print(global.cardUses.player);
+                    
+                    //Destroy Card
                     _card.slot.used = true;
 					starEffect(_card.x,_card.y,10);
                     instance_destroy(_card);

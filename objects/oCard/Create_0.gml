@@ -31,6 +31,7 @@ slot = noone;
 wasPlaced = false;
 wasOnSlot = false;
 canPlace = true;
+canUse = true;
 
 //Dice Cards
 targetDice = irandom_range(1,3);
@@ -39,6 +40,15 @@ followingDice = false;
 //Values
 currentValue = undefined;
 rangeScale = 1;
+
+//Set Uses
+uses = info.uses;
+if array_contains(global.cardUses.player,info.name)
+{
+    for (var i = 0; i < array_length(global.cardUses.player); i++) {
+    	if global.cardUses.player[i] == info.name then uses --;
+    }
+}
 
 //State
 enum CARDSTATE

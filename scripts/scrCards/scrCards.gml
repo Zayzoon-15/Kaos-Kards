@@ -30,6 +30,7 @@ function createCardAction(_name,_desc,_sprite,_range,_genre = CARDACT_GENRES.ATT
     name = _name;
     desc = _desc;
     sprite = _sprite;
+    uses = NaN;
     
     //Set Range
     range = { 
@@ -66,6 +67,7 @@ function createCardKaos(_name,_desc,_sprite,_action = undefined,_extraArgs = [])
     desc = _desc;
     sprite = _sprite;
     range = undefined;
+    uses = NaN;
     
     //Get Action
     var _func = _action;
@@ -85,14 +87,16 @@ function createCardKaos(_name,_desc,_sprite,_action = undefined,_extraArgs = [])
 /// @param {string} _desc The cards description
 /// @param {asset.GMSprite} _sprite The cards sprite
 /// @param {function} _action The cards action (Put undefined of it has no action)
+/// @param {real} _uses The amount of times the card can be used before not being able to use again (put Nan if infinite)
 /// @param {array} _extraArgs Extra arguments the givin function can use
 /// /// @param {array} _range The cards range Ex: [1,6] min-1 max-6
-function createCardDice(_name,_desc,_sprite,_action = function(){},_extraArgs = [],_range = []) constructor
+function createCardDice(_name,_desc,_sprite,_action = function(){},_uses = NaN,_extraArgs = [],_range = []) constructor
 {
     //Info
     name = _name;
     desc = _desc;
     sprite = _sprite;
+    uses = _uses;
     
     //Set Range
     if array_length(_range) > 0

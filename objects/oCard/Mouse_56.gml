@@ -11,7 +11,7 @@ if state == CARDSTATE.GRABBED
         var _actionSlot = instance_place(x,y,oActionSlot);
         var _specialSlot = instance_place(x,y,oSpecialSlot);
         
-        if _actionSlot and !_actionSlot.used and info.type == CARDTYPES.ACTION and canPlace
+        if _actionSlot and !_actionSlot.used and info.type == CARDTYPES.ACTION and canPlace and canUse
         {
             //Swap Places
             if _actionSlot.filled
@@ -40,7 +40,8 @@ if state == CARDSTATE.GRABBED
             
             state = CARDSTATE.PLACED;
             
-        } else if _specialSlot and !_specialSlot.used and info.type != CARDTYPES.ACTION and canPlace{
+        } else if _specialSlot and !_specialSlot.used and info.type != CARDTYPES.ACTION and canPlace and canUse
+        {
         	
             
             var _stopSwap = false;

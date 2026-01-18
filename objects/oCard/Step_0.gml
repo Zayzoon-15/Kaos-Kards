@@ -1,3 +1,4 @@
+if uses <= 0 then canUse = false;
 
 //Card State
 switch (state) {
@@ -5,4 +6,3 @@ switch (state) {
 	case CARDSTATE.GRABBED: cardStateGrabbed(); break;
     case CARDSTATE.PLACED: cardStatePlaced(); break;
 }
-

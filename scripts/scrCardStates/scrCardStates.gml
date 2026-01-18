@@ -152,7 +152,7 @@ function cardStateGrabbed()
     }
     
     //Can Place
-    if place_meeting(x,y,oParSlots) and !canPlace
+    if place_meeting(x,y,oParSlots) and (!canPlace or !canUse)
     {
         shake = 2;
     }

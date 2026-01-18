@@ -278,6 +278,7 @@
     {"name":"sButtonX","order":1,"path":"sprites/sButtonX/sButtonX.yy",},
     {"name":"sCardBrawl","order":2,"path":"sprites/sCardBrawl/sCardBrawl.yy",},
     {"name":"sCardBread","order":3,"path":"sprites/sCardBread/sCardBread.yy",},
+    {"name":"sCardDisable","order":1,"path":"sprites/sCardDisable/sCardDisable.yy",},
     {"name":"sCardFlaminAce","order":7,"path":"sprites/sCardFlaminAce/sCardFlaminAce.yy",},
     {"name":"sCardGhost","order":9,"path":"sprites/sCardGhost/sCardGhost.yy",},
     {"name":"sCardHeal","order":1,"path":"sprites/sCardHeal/sCardHeal.yy",},
