@@ -38,8 +38,9 @@ function gameReset()
 	ds_list_clear(playerActions);
 	ds_list_clear(enemyActions);
 	
-	//Reset Mult
+	//Reset Values
 	global.valueMult = 1;
+    global.discards = 0;
 	
 	//Reset Slots
     global.disabledSlots = {
@@ -75,6 +76,10 @@ function nextRoundStarted()
 	
 	//Reset Mult
 	global.valueMult = 1;
+    
+    //Decrease Discards
+    global.discards -= .3;
+    global.discards = clamp(global.discards,0,global.maxDiscards);
     
     //Reset Performance
     global.playerPerformance = 0;

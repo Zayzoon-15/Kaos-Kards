@@ -13,6 +13,9 @@ targetSlot = undefined;
 skipped = false;
 scale = 1;
 
+//Events
+diceFullyDone = false;
+
 //State
 diceStates = {
     idle : 0,
@@ -48,7 +51,7 @@ rollDice = function()
     
 }
 
-diceJuice = function()
+diceJuice = function(_sound = true)
 {
     //Move Down
     y += 10;
@@ -57,7 +60,7 @@ diceJuice = function()
     setSize(image_xscale+1,image_yscale+1);
     
     //Stars
-    starEffect(x,y,5);
+    starEffect(x,y,5,_sound);
 }
 
 combineValues = function()

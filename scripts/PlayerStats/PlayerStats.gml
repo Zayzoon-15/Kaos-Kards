@@ -20,6 +20,8 @@ playerDeck = [
     
     kaosCards.sticky,
 	
+    diceCards.screwUp,
+    
 	////Action Cards
 	//actionCards.gato,
 	//actionCards.slash,
@@ -53,5 +55,6 @@ playerDeck = [
 //Stats
 global.maxHandSize = 6;
 global.maxDiscards = round(array_length(playerDeck)*.6);
+global.discards = 0;
 
 }

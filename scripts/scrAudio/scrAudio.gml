@@ -37,6 +37,8 @@ function audioCreateSyncGroup(_songs,_loop = true)
 	for (var i = 0; i < array_length(_songs); ++i) {
 	    audio_play_in_sync_group(_audioGroup,_songs[i]);
 		audio_sound_gain(_songs[i],0);
+        audio_start_sync_group(_audioGroup);
+        audio_stop_sync_group(_audioGroup);
 	}
 	
 	return _audioGroup;
@@ -47,13 +49,20 @@ function audioCreateSyncGroup(_songs,_loop = true)
 /// @param {id.audiosyncgroup} _audioGroup The target sync group
 /// @param {asset.GMSound} _targetSong The target song
 /// @param {real} [_fadeTime] The fade time for the song (Default = 30)
-function audioPlayGroupSong(_audioGroup,_targetSong,_fadeTime = 30)
+/// @param {bool} [_stopLastGroup] If it should completly stop the current song group playing (Default = false)
+function audioPlayGroupSong(_audioGroup,_targetSong,_fadeTime = 30,_stopLastGroup = false)
 {
     //Exit If Same Song
     if _targetSong == global.curSong and _targetSong != noone then exit;
     
 	//Set Last Song
 	global.lastSong = global.curSong;
+    
+    //Pause Last Group
+    if _stopLastGroup
+    {
+        audio_stop_sync_group(global.curSongGroup);
+    } else audio_pause_sync_group(global.curSongGroup);
 	
 	//Play Group Song
 	if !audio_sync_group_is_playing(_audioGroup)

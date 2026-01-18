@@ -1,17 +1,21 @@
+/////////////////////////
+//// DICE ACTIONS ////
+///////////////////////
+
+//This is where all dice card actions go
+
+/* HOW TO
+ * All functions should look like this
+ * function action(_info,_card,[_dice]) -> You can put in more info such as dice but it is not required
+*/
 
 
 
 ///@self oCard
 function diceCardSwapDice(_info,_card,_dice)
 {	
-    //Can Place
-    with oDice
-    {
-        if diceId == 3
-        {
-            if !rollDone then _card.canPlace = true; else _card.canPlace = false;
-        }
-    }
+    //Check If Dice Done
+    _card.canPlace = !oDice.diceFullyDone;
     
     //Swap Dice
     if _card.state == CARDSTATE.PLACED
@@ -63,14 +67,10 @@ function diceCardSwapDice(_info,_card,_dice)
 ///@self oCard
 function diceCardReroll(_info,_card)
 {	
-    with oDice
-    {
-        if diceId == 3
-        {
-            if rollDone then _card.canPlace = true; else _card.canPlace = false;
-        }
-    }
+    //Check If Dice Done
+    _card.canPlace = oDice.diceFullyDone;
     
+    //Reroll
     if _card.state == CARDSTATE.PLACED and !oRollButton.canHover
     {
         oRollButton.canHover = true;
@@ -81,4 +81,55 @@ function diceCardReroll(_info,_card)
         oRollButton.canHover = false;
         _card.wasOnSlot = false;
     }
+}
+
+
+function diceCardScrewUp(_info,_card)
+{
+    //Check If Dice Done
+    _card.canPlace = !oDice.diceFullyDone;
+    
+    //Don't Move
+    with oDice
+    {
+        if diceId == 3
+        {
+            if rolling then _card.canMove = false;
+        }
+    }
+    
+    //Do Action
+    if _card.state == CARDSTATE.PLACED and oDice.diceFullyDone
+    {
+        //Check Dice
+        var _amount = 0;
+        with oDice
+        {
+            print(dice.range.max/2,diceNum);
+            if diceNum >= dice.range.max/2
+            {
+                _amount ++;
+            }
+        }
+        print(_amount);
+        
+        //Set Dice
+        with oDice
+        {
+            //Set Number
+            if _amount >= 3
+            {
+                diceNum = dice.range.max;
+            } else diceNum = 0;
+            
+            //Juice
+            diceJuice(diceId == 3);
+        }
+        
+        //Destroy Card
+        _card.slot.used = true;
+        starEffect(_card.x,_card.y,10);
+        instance_destroy(_card);
+    }
+    
 }

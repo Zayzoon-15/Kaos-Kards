@@ -1,9 +1,9 @@
 //Secret Song (For Felx)
 if room == rPrepare
 {
-    prepareTimer += delta_time / 1000000; // seconds
+    prepareTimer += delta_time / 1000000; //Seconds
 
-    var _length = audio_sound_length(global.curSong);
+    var _length = audio_sound_length(sgPrepare);
 
     if prepareTimer >= _length
     {

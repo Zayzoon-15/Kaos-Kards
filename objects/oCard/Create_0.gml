@@ -101,7 +101,7 @@ deleteCard = function()
 {
     //Set Values
     oDeck.cardsInPlay --;
-    oDiscard.discards ++;
+    global.discards ++;
     
     //Reset Slot
     resetSlot();

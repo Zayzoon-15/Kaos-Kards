@@ -4,7 +4,7 @@
   "bboxMode":0,
   "bbox_bottom":80,
   "bbox_left":15,
-  "bbox_right":69,
+  "bbox_right":68,
   "bbox_top":3,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -19,6 +19,7 @@
   "height":84,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"80655e61-8c8d-4e91-bef2-4b36a5c784eb","blendMode":0,"displayName":"pasteLayer","isLocked":false,"name":"80655e61-8c8d-4e91-bef2-4b36a5c784eb","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"4f4f5185-45fa-422f-97e4-14be357863a3","blendMode":0,"displayName":"default","isLocked":false,"name":"4f4f5185-45fa-422f-97e4-14be357863a3","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sMobilePause",

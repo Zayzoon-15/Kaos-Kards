@@ -1,4 +1,3 @@
-
 //Hover
 canHover = true;
 

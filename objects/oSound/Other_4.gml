@@ -12,5 +12,5 @@ if room == rKaos
 
 if room == rTournies
 {
-	audioPlayGroupSong(global.musicGroups.menu,sgKenu);
+	audioPlayGroupSong(global.musicGroups.menu,sgKenu,30,true);
 }
