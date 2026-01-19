@@ -23,15 +23,26 @@ if grabbed
     //Ease
     image_xscale = lerp(image_xscale,1.1,.4);
     image_yscale = lerp(image_yscale,1.1,.4);
+    angle = 0;
     
     //Depth
     depth = startDepth - 5;
 } else { //Card Idle
+    
+    //Can Grab
+    if place_meeting(x,y,oDBSort)
+    {
+        canGrab = false;
+    } else canGrab = true;
+    
 	//Set Hover
-    if touchingMouse() and !global.holdingCard
+    if touchingMouse() and !global.holdingCard and canGrab
     {
         //Sound
-        if !hover then audioPlaySfx(snCardHover);
+        if !hover {
+            audioPlaySfx(snCardHover);
+            hoverDir = sign(mouse_x - x);
+        }
         
         //Set Hover
         hover = true;
@@ -44,17 +55,24 @@ if grabbed
         shadowY = lerp(shadowY,16,.2);
         
         onMouse ++;
+        angle = 3 * hoverDir;
         
     } else {
         cardTargetY = y;
         shadowY = lerp(shadowY,8,.2);
+        angle = 0;
         
         //Spin
-        if onMouse <= 5 and onMouse > 0
+        if onMouse <= 4 and onMouse > 0
         {
+            //Sound
+            audio_stop_sound(snCardHover);
+            audioPlaySfx(snCardFlip,.95,1.05);
+            
+            //Tween
             var _dir = sign(mouse_x - x);
-            var _start = _dir == 1 ? 0 : 360;
-            var _end = _dir == 1 ? 360 : 0;
+            var _start = _dir == -1 ? 0 : 360;
+            var _end = _dir == -1 ? 360 : 0;
             TweenFire(self,EaseOutBack,TWEEN_MODE_ONCE,false,0,60,"cardAngle",_start,_end);
         }
         onMouse = 0;
@@ -62,19 +80,23 @@ if grabbed
     }
     
     //Position
-    x = lerp(x,targetX,.2);
-    y = lerp(y,targetY,.2);
+    x = lerp(x,targetX,.3);
+    y = lerp(y,targetY,.3);
     cardX = x;
     cardY = lerp(cardY,cardTargetY,.2);
     
     //Ease
     image_xscale = lerp(image_xscale,1,.2);
     image_yscale = lerp(image_yscale,1,.2);
+    shadowX = lerp(shadowX,0,.2);
     
     //Depth
     depth = startDepth;
+    
+    //Info Box
+    if hover then drawCardText(info);
 }
 
 //Rotate
-var _angle = xprevious - x;
+var _angle = angle+(xprevious - x);
 image_angle = lerp(image_angle,_angle,.2);

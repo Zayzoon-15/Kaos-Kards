@@ -8,15 +8,19 @@ cardY = y;
 cardTargetX = x;
 cardTargetY = y;
 
+//Info
+uses = info.uses;
+
 //Drawing
 xscale = 1;
 yscale = 1;
+angle = 0;
 shadowX = 0;
 shadowY = 0;
 shadowSize = 0.05;
 shake = 0;
 startDepth = depth;
-//sprite_index = info.sprite;
+sprite_index = info != undefined ? info.sprite : sprite_index;
 
 //Grabbing
 grabbed = false;
@@ -25,7 +29,7 @@ canMove = true;
 offsetX = 0;
 offsetY = 0;
 hover = false;
-
+hoverDir = 0;
 
 //3d Card
 cardFront = sprite_index;
@@ -33,3 +37,4 @@ cardBack  = sDeck;
 cardAngle = 0;
 cardThickness = 8;
 onMouse = 0;
+//TweenFire(self,EaseOutBack,TWEEN_MODE_ONCE,false,0,60,"cardAngle",-180,0);

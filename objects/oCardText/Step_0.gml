@@ -30,5 +30,5 @@ depth = -5;
 
 
 ////Keep In Room
-//x = clamp(x,width*.6,room_width-(width*.6));
-//y = clamp(y,height,room_height-(height));
+x = clamp(x,width*.6,room_width-(width*.6));
+y = clamp(y,height,room_height-(height));

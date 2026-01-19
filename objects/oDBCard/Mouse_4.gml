@@ -11,6 +11,5 @@ if canGrab and !global.holdingCard and !grabbed
     
     //Set Grab
     grabbed = true;
-    hover = false;
     global.holdingCard = true;
 }

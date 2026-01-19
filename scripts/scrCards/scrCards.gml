@@ -31,6 +31,7 @@ function createCardAction(_name,_desc,_sprite,_range,_genre = CARDACT_GENRES.ATT
     desc = _desc;
     sprite = _sprite;
     uses = NaN;
+    date = $"{current_month}/{current_day}/{current_year}/{current_second}";
     
     //Set Range
     range = { 
@@ -68,6 +69,7 @@ function createCardKaos(_name,_desc,_sprite,_action = undefined,_extraArgs = [])
     sprite = _sprite;
     range = undefined;
     uses = NaN;
+    date = $"{current_month}/{current_day}/{current_year}/{current_second}";
     
     //Get Action
     var _func = _action;
@@ -97,6 +99,7 @@ function createCardDice(_name,_desc,_sprite,_action = function(){},_uses = NaN,_
     desc = _desc;
     sprite = _sprite;
     uses = _uses;
+    date = $"{current_month}/{current_day}/{current_year}/{current_second}";
     
     //Set Range
     if array_length(_range) > 0
