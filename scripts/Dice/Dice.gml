@@ -15,7 +15,11 @@
 function diceCardSwapDice(_info,_card,_dice)
 {	
     //Check If Dice Done
-    _card.canPlace = !oDice.diceFullyDone;
+    if instance_exists(oDice)
+    {
+        _card.canPlace = !oDice.diceFullyDone;
+    }
+    
     
     //Swap Dice
     if _card.state == CARDSTATE.PLACED
@@ -73,7 +77,10 @@ function diceCardSwapDice(_info,_card,_dice)
 function diceCardReroll(_info,_card)
 {	
     //Check If Dice Done
-    _card.canPlace = oDice.diceFullyDone;
+    if instance_exists(oDice)
+    {
+        _card.canPlace = oDice.diceFullyDone;
+    }
     
     //Reroll
     if _card.state == CARDSTATE.PLACED and !oRollButton.canHover
@@ -92,7 +99,10 @@ function diceCardReroll(_info,_card)
 function diceCardScrewUp(_info,_card)
 {
     //Check If Dice Done
-    _card.canPlace = !oDice.diceFullyDone;
+    if instance_exists(oDice)
+    {
+        _card.canPlace = !oDice.diceFullyDone;
+    }
     
     //Don't Move
     with oDice
@@ -110,13 +120,11 @@ function diceCardScrewUp(_info,_card)
         var _amount = 0;
         with oDice
         {
-            print(dice.range.max/2,diceNum);
             if diceNum >= dice.range.max/2
             {
                 _amount ++;
             }
         }
-        print(_amount);
         
         //Set Dice
         with oDice

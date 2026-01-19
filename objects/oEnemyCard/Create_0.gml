@@ -27,7 +27,10 @@ shadowSize = 0;
 startDepth = depth;
 
 //Set Sprite
-if info != undefined then sprite_index = info.sprite;
+if info != undefined {
+    sprite_index = info.sprite;
+    uses = info.uses;
+}
 
 //Slot
 slot = noone;

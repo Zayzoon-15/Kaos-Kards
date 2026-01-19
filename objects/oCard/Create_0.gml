@@ -1,4 +1,3 @@
-
 //Position
 targetX = x;
 targetY = y;
