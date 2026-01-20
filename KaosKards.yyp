@@ -132,6 +132,7 @@
     {"link":"io.gamemaker.gm_filter_ripples-1.0.0","name":"io.gamemaker.gm_filter_ripples-1.0.0","path":"io.gamemaker.gm_filter_ripples-1.0.0.yyp",},
     {"link":"io.gamemaker.gm_filter_edgedetect-1.0.0","name":"io.gamemaker.gm_filter_edgedetect-1.0.0","path":"io.gamemaker.gm_filter_edgedetect-1.0.0.yyp",},
     {"link":"io.gamemaker.sdfshaders-1.0.0","name":"io.gamemaker.sdfshaders-1.0.0","path":"io.gamemaker.sdfshaders-1.0.0.yyp",},
+    {"link":"io.gamemaker.userinterface-0.1.5","name":"io.gamemaker.userinterface-0.1.5","path":"io.gamemaker.userinterface-0.1.5.yyp",},
   ],
   "IncludedFiles":[],
   "isEcma":false,
@@ -142,6 +143,7 @@
   "name":"KaosKards",
   "resources":[
     {"id":{"name":"acCard","path":"animcurves/acCard/acCard.yy",},},
+    {"id":{"name":"acDropMenu","path":"animcurves/acDropMenu/acDropMenu.yy",},},
     {"id":{"name":"acRps","path":"animcurves/acRps/acRps.yy",},},
     {"id":{"name":"EaseFastToSlow","path":"animcurves/EaseFastToSlow/EaseFastToSlow.yy",},},
     {"id":{"name":"EaseHeartbeat","path":"animcurves/EaseHeartbeat/EaseHeartbeat.yy",},},
@@ -184,6 +186,7 @@
     {"id":{"name":"oDBScroll","path":"objects/oDBScroll/oDBScroll.yy",},},
     {"id":{"name":"oDBSearchBar","path":"objects/oDBSearchBar/oDBSearchBar.yy",},},
     {"id":{"name":"oDBSort","path":"objects/oDBSort/oDBSort.yy",},},
+    {"id":{"name":"oDBSortDone","path":"objects/oDBSortDone/oDBSortDone.yy",},},
     {"id":{"name":"oDBSortDropDown","path":"objects/oDBSortDropDown/oDBSortDropDown.yy",},},
     {"id":{"name":"oDebug","path":"objects/oDebug/oDebug.yy",},},
     {"id":{"name":"oDeck","path":"objects/oDeck/oDeck.yy",},},

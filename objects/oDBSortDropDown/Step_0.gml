@@ -1,0 +1,85 @@
+//Set List Values
+listW = sprite_width;
+listH = array_length(items) * itemH;
+
+////Set Scale
+//var _scale = open ? 1 : -.1;
+//listScale = lerp(listScale,_scale,.1);
+
+//Touching Drop Down
+if point_in_rectangle(mouse_x,mouse_y,bbox_right-listW,bbox_bottom,bbox_right,bbox_bottom+listH) and open
+{
+    //Hover
+    hover = (mouse_y - bbox_bottom) div itemH;
+    
+    //Click
+    if mouse_check_button_pressed(mb_left)
+    {
+        pressedItem = true;
+        lastHover = hover;
+    }
+    
+    //Not Hovering
+    if hover != lastHover then pressedItem = false;
+    
+    //Released
+    if mouse_check_button_released(mb_left) and pressedItem
+    {
+        //Set Vars
+        selected = hover;
+        open = false;
+        
+        //Do Function
+        items[selected].action();
+    }
+    
+} else {
+    hover = undefined;
+    pressedItem = false;
+    
+    //Open Menu
+    if !open
+    {
+        if touchingMouse()
+        {
+            if mouse_check_button_pressed(mb_left)
+            {
+                pressed = true;
+            }
+            
+            if mouse_check_button_released(mb_left) and pressed
+            {
+                open = true;
+                pressed = false;
+            }
+        } else pressed = false;
+
+    }
+    
+    //Close Menu
+    if open
+    {
+        if mouse_check_button_pressed(mb_left)
+        {
+            pressed = true;
+        }
+        
+        if mouse_check_button_released(mb_left) and pressed
+        {
+            //TweenFire(self,EaseInBack,TWEEN_MODE_ONCE,false,0,15,"listScale",listScale,0);
+            open = false;
+            pressed = false;
+        }
+    }
+}
+
+//Open Animation
+var _animSpd = 0.08;
+if open
+{
+    animPos += _animSpd;
+} else animPos -= _animSpd;
+
+//Play Animation
+animPos = clamp(animPos,0,1);
+listScale = animGetValue(acDropMenu,animPos);

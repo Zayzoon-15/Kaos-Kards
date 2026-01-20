@@ -30,11 +30,8 @@ if grabbed
 } else { //Card Idle
     
     //Can Grab
-    if place_meeting(x,y,oDBSort)
-    {
-        canGrab = false;
-    } else canGrab = true;
-    
+    canGrab = !instance_exists(oDBSort);
+
 	//Set Hover
     if touchingMouse() and !global.holdingCard and canGrab
     {

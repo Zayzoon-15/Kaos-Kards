@@ -1,12 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"oDBSort",
+  "%Name":"oDBSortDone",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oDBSort",
+  "name":"oDBSortDone",
   "overriddenProperties":[],
   "parent":{
     "name":"Sort",
@@ -31,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sDBSortBox",
-    "path":"sprites/sDBSortBox/sDBSortBox.yy",
+    "name":"sDBSortSmallBox",
+    "path":"sprites/sDBSortSmallBox/sDBSortSmallBox.yy",
   },
   "spriteMaskId":null,
   "visible":true,

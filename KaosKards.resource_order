@@ -85,6 +85,7 @@
     {"name":"Sort Box","order":16,"path":"folders/Z/Sprites/Sort Box.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"acDropMenu","order":2,"path":"animcurves/acDropMenu/acDropMenu.yy",},
     {"name":"acRps","order":1,"path":"animcurves/acRps/acRps.yy",},
     {"name":"fnSubtitle","order":1,"path":"fonts/fnSubtitle/fnSubtitle.yy",},
     {"name":"03. Figgy Info","order":3,"path":"notes/03. Figgy Info/03. Figgy Info.yy",},
@@ -107,6 +108,7 @@
     {"name":"oDBInstertHole","order":7,"path":"objects/oDBInstertHole/oDBInstertHole.yy",},
     {"name":"oDBScroll","order":8,"path":"objects/oDBScroll/oDBScroll.yy",},
     {"name":"oDBSearchBar","order":2,"path":"objects/oDBSearchBar/oDBSearchBar.yy",},
+    {"name":"oDBSortDone","order":2,"path":"objects/oDBSortDone/oDBSortDone.yy",},
     {"name":"oDBSortDropDown","order":1,"path":"objects/oDBSortDropDown/oDBSortDropDown.yy",},
     {"name":"oDeck","order":2,"path":"objects/oDeck/oDeck.yy",},
     {"name":"oDeckBuilder","order":1,"path":"objects/oDeckBuilder/oDeckBuilder.yy",},
