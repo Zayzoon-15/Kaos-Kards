@@ -20,7 +20,7 @@ playerDeck = [
     
     kaosCards.sticky,
 	
-    diceCards.screwUp,
+    diceCards.allNothin,
     diceCards.dice8,
     diceCards.dice12,
     diceCards.dice20,

@@ -19,7 +19,7 @@ if instance_exists(parent)
     y = lerp(y,parent.bbox_top-20,.2);
 	
 	//Destory
-	if !parent.hover or !parent.canGrab
+	if !parent.hover or !parent.canGrab or global.holdingCard
 	{
 	    instance_destroy();
 	}
@@ -29,6 +29,6 @@ if instance_exists(parent)
 depth = -5;
 
 
-////Keep In Room
+//Keep In Room
 x = clamp(x,width*.6,room_width-(width*.6));
-y = clamp(y,height,room_height-(height));
+y = clamp(y,height*1.4,room_height-(height*.15));

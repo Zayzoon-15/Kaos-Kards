@@ -53,7 +53,7 @@ diceCards = {
     "Adds a random amount to a random dice roll",
     sCardDice,undefined,NaN,[],[1,6]),
     
-    screwUp : new createCardDice("Prophetic Screwup",
+    allNothin : new createCardDice("All or Nothin'",
     "If all dice roll higher than half of their maximum value, set all dice to their maximum value. Otherwise, set all dice to 0\nCan only be placed before roll",
     sCardDice,diceCardScrewUp),
     
@@ -75,3 +75,13 @@ diceCards = {
 
 
 }
+
+//All or Nothin’
+
+//Double or Dead
+//
+//Fate Flip
+//
+//Zero or God Roll
+//
+//Max or Bust
