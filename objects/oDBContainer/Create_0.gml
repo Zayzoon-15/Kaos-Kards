@@ -3,7 +3,7 @@ scissorStuct = {x:0,y:0,w:0,h:0};
 updateScissorValue = function()
 {
     scissorStuct = {
-        x : bbox_left,
+        x : (SCREEN_WIDTH/2)-(bbox_left+160), //MAGIC NUMBERS ONCE MORE MWAHAHAHAHA >:D
         y : bbox_top,
         w : bbox_right - bbox_left,
         h : bbox_bottom - bbox_top
@@ -52,6 +52,12 @@ types = {
 currentSort = sorting.type;
 currentType = types.all;
 
+//Seperation
+maxScroll = 0;
+
+//Search
+searchText = "";
+
 //Create Cards
 createCards = function(_sortFunc = currentSort,_types = currentType)
 {
@@ -95,14 +101,27 @@ createCards = function(_sortFunc = currentSort,_types = currentType)
         if struct_exists(diceCards,_allCards[i]) then _info = struct_get_variable(diceCards,_allCards[i]);
         if struct_exists(kaosCards,_allCards[i]) then _info = struct_get_variable(kaosCards,_allCards[i]);
         
+        //Get Searched Cards
+        var _addCard = true;
+        searchText = string_upper(searchText);
+        if searchText != ""
+        {
+            var _name = string_upper(_info.name)
+            if !string_contains(_name,searchText)
+            {
+                _addCard = false;
+            }
+        }
+        
         //Put In Array
-        array_push(_cards,_info);
+        if _addCard then array_push(_cards,_info);
     }
     
     //Sort Cards
     if _sortFunc != undefined then array_sort(_cards, _sortFunc);
     
     //Create Cards
+    var _inst = noone;
     for (var i = 0; i < array_length(_cards); i++) {
         
         //Get Row
@@ -118,16 +137,42 @@ createCards = function(_sortFunc = currentSort,_types = currentType)
         var _yPos = _startPos.y + (_row * _gap.y);
         
         //Create Card
-        var _inst = instance_create_depth(_xPos,_yPos,depth-5,oDBCard,{
+        _inst = instance_create_depth(_xPos,_yPos,depth-2,oDBCard,{
             info : _cards[i]
         });	
         _inst.x = _startPos.x;
         _inst.image_angle = -90;
         //_inst.y = _startPos.y;
     }   
+    
+    //Max Scroll
+    maxScroll = _inst != noone ? _inst.bbox_bottom - _startPos.y - (2.6 * _gap.y) : 0;
+    
 }
 createCards();
 
 
+
 //Scroll
 scroll = 0;
+scrollVel = 0;
+
+//Mobile
+mobileTouch = false;
+mobileTouchLast = 0;
+mobileTouchVel = 0;
+mobileCanDrag = true;
+
+#region Scroll Tuning
+
+scrollFriction = 0.88; //How Quickly Momentum Slows Down | Big = Stops Faster  Small = Glides Longer
+scrollMaxVel = 70; //Max Speed
+
+//PC
+pcScrollStep = 5; //How Far The List Moves | Big = More sensitive
+pcScrollMomentum = 12; //How Much Velocity Is Added On Mouse | Big = Wheel Flick Glides Further
+
+//Mobile
+mobileScrollDrag = 1.4; //Multiplier For Drag Movement | Big = Faster  Small = Slower
+
+#endregion

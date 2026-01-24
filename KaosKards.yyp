@@ -184,7 +184,7 @@
     {"id":{"name":"oDBContainer","path":"objects/oDBContainer/oDBContainer.yy",},},
     {"id":{"name":"oDBCount","path":"objects/oDBCount/oDBCount.yy",},},
     {"id":{"name":"oDBDoneBtn","path":"objects/oDBDoneBtn/oDBDoneBtn.yy",},},
-    {"id":{"name":"oDBInstertHole","path":"objects/oDBInstertHole/oDBInstertHole.yy",},},
+    {"id":{"name":"oDBInsertHole","path":"objects/oDBInsertHole/oDBInsertHole.yy",},},
     {"id":{"name":"oDBScroll","path":"objects/oDBScroll/oDBScroll.yy",},},
     {"id":{"name":"oDBSearchBar","path":"objects/oDBSearchBar/oDBSearchBar.yy",},},
     {"id":{"name":"oDBSort","path":"objects/oDBSort/oDBSort.yy",},},

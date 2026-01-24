@@ -1,3 +1,9 @@
+//Visible
+var _visible = collision_rectangle(oDBContainer.bbox_left,oDBContainer.bbox_top+100,oDBContainer.bbox_right,oDBContainer.bbox_bottom-40,self,false,false);
+
+//Scroll
+targetY = ystart + scrollOffset;
+
 //Card Grabbed
 if grabbed
 {
@@ -7,8 +13,8 @@ if grabbed
     cardX = x;
     cardY = y;
     
-    //Instert Hole
-    if place_meeting(x,y,oDBInstertHole)
+    //Insert Hole
+    if place_meeting(x,y,oDBInsertHole)
     {
         shake = 1;
     } else shake = 0;
@@ -30,7 +36,7 @@ if grabbed
 } else { //Card Idle
     
     //Can Grab
-    canGrab = !instance_exists(oDBSort);
+    canGrab = !instance_exists(oDBSort) and _visible;
 
 	//Set Hover
     if touchingMouse() and !global.holdingCard and canGrab

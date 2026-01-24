@@ -106,7 +106,7 @@
     {"name":"oDBCard","order":5,"path":"objects/oDBCard/oDBCard.yy",},
     {"name":"oDBCount","order":4,"path":"objects/oDBCount/oDBCount.yy",},
     {"name":"oDBDoneBtn","order":3,"path":"objects/oDBDoneBtn/oDBDoneBtn.yy",},
-    {"name":"oDBInstertHole","order":7,"path":"objects/oDBInstertHole/oDBInstertHole.yy",},
+    {"name":"oDBInsertHole","order":7,"path":"objects/oDBInsertHole/oDBInsertHole.yy",},
     {"name":"oDBScroll","order":8,"path":"objects/oDBScroll/oDBScroll.yy",},
     {"name":"oDBSearchBar","order":2,"path":"objects/oDBSearchBar/oDBSearchBar.yy",},
     {"name":"oDBSortDone","order":2,"path":"objects/oDBSortDone/oDBSortDone.yy",},

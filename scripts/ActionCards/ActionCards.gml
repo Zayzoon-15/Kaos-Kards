@@ -14,7 +14,7 @@ actionCards = {
     "Heals you by a random amount",
     sCardHeal,[1,10],CARDACT_GENRES.HEAL,actionHeal,[],comboHeal),
     
-    shield : new createCardAction("Defense Card",
+    shield : new createCardAction("Shield Card",
     "Grants you temporary health that reduces after every round",
     sCardShield,[1,10],CARDACT_GENRES.DEFEND,actionShield,[],comboShield),
     
@@ -59,6 +59,10 @@ actionCards = {
     reckless : new createCardAction("Reckless Attack",
     "Deal high damage to the enemy, but take a small amount of recoil damage",
     sCardPunch,[5,9],CARDACT_GENRES.ATTACK,actionReckless),
+    
+    goon : new createCardAction("Goon Card",
+    "Goon time",
+    sCardBlank,[1,9],CARDACT_GENRES.ATTACK,actionTaunt),
     
 };
 
