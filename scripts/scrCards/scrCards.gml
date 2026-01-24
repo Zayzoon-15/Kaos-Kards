@@ -52,6 +52,11 @@ function createCardAction(_name,_desc,_sprite,_range,_genre = CARDACT_GENRES.ATT
     //Set Type
     type = CARDTYPES.ACTION;
     genre = _genre;
+    
+    //Placement
+    //Mainly just to be able to order the cards based on the struct :P
+    global.deckPlacementId ++;   
+    placementId = global.deckPlacementId;
 }
 
 
@@ -81,6 +86,11 @@ function createCardKaos(_name,_desc,_sprite,_action = undefined,_extraArgs = [])
     
     //Set Type
     type = CARDTYPES.KAOS;
+    
+    //Placement
+    //Mainly just to be able to order the cards based on the struct :P
+    global.deckPlacementId ++;   
+    placementId = global.deckPlacementId;
 }
 
 
@@ -120,4 +130,9 @@ function createCardDice(_name,_desc,_sprite,_action = function(){},_uses = NaN,_
     
     //Set Type
     type = CARDTYPES.DICE;
+    
+    //Placement
+    //Mainly just to be able to order the cards based on the struct :P
+    global.deckPlacementId ++;   
+    placementId = global.deckPlacementId;
 }

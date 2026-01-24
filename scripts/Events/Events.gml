@@ -28,7 +28,7 @@ function gameReset()
 	
 	//Reset Health Bar
 	global.playerHp = 100;
-	global.playerTempHp = 100;
+	global.playerTempHp = 0;
 	global.playerHpIcons = [];
 	global.enemyHp = 100;
 	global.enemyTempHp = 0;
@@ -139,7 +139,7 @@ function comboAttackDone()
     }
     
     //Voiceover
-    audioPlayVoice([voiceInfo.womboCombo,voiceInfo.comboNice,voiceInfo.comboSweet]);
+    audioPlayVoice([voiceInfo.womboCombo,voiceInfo.comboNice,voiceInfo.comboSweet],false);
     
     //Next Kaos
     if instance_exists(oKaosManager) then oKaosManager.alarm[5] = 50;

@@ -10,7 +10,7 @@ isCombo = false; //If the attack is a combo
 
 #region Functions DONT CHANGE
 
-hurtEffect = function(_x = x,_y = y,_starAmount = 5)
+hurtEffect = function(_x = x,_y = y,_starAmount = 5,_stars = true)
 {
     //Get Card
     var _card = instance_place(x,y,oAttackCard);
@@ -21,9 +21,12 @@ hurtEffect = function(_x = x,_y = y,_starAmount = 5)
         numberEffect(_x,_y,-value);
         
         //Stars
-        var _starX = (sprite_width/2)-20;
-        var _starY = (sprite_height/2)-25;
-        starEffect(_x,_y,_starAmount,false,20,25);
+        if _stars
+        {
+            var _starX = (sprite_width/2)-20;
+            var _starY = (sprite_height/2)-25;
+            starEffect(_x,_y,_starAmount,false,20,25);
+        }
     }
     
     //Card Effect

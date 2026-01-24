@@ -14,9 +14,6 @@ function hurtEnemy(_value,_ignoreShield = false)
     global.playerPerformance += _value;
     global.enemyPerformance -= _value;
     
-    //Voice
-    audioPlayVoice([voiceInfo.hurtCheck,voiceInfo.hurtMark,voiceInfo.hurtOugh,voiceInfo.hurtPretty],false,5);
-    
 	////Add Mult
 	//_value *= global.valueMult;
 	
@@ -63,10 +60,7 @@ function hurtPlayer(_value,_ignoreShield = false)
     //Performance
     global.playerPerformance -= _value;
     global.enemyPerformance += _value;
-    
-    //Voice
-    audioPlayVoice([voiceInfo.hurtCheck,voiceInfo.hurtMark,voiceInfo.hurtOugh,voiceInfo.hurtPretty],false,5);
-	
+
 	////Add Mult
 	//_value *= global.valueMult;
     

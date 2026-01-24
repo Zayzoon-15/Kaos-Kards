@@ -4,10 +4,19 @@
 state = diceStates.combine;
 
 //Skipped
-if targetSlot == undefined{ 
+if targetSlot == undefined { 
+    
+    skipped = true;
+    
+    //Give Combo
+    if !global.disabledSlots.player[diceId]
+    {
+        global.playerComboMeter += irandom_range(3,4);
+    }
+    
+    //Animate
     instance_create_layer(x,bbox_top,"Effects",oSkippedEffect);
     setSize(image_xscale+.5,image_yscale+.5);
-    skipped = true;
 } 
 
 //Go To Slot

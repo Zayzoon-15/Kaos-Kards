@@ -116,6 +116,12 @@ function enemyAddCard(_slotId,_info,_value,_used = false,_disabled = false)
     	case 2: _x = 640; _y = 360; break;
     	case 3: _x = 840; _y = 360; break;
     }
+    
+    //Skipped
+    if !_used and !_disabled and _info == undefined
+    {
+        global.enemyComboMeter += irandom_range(3,4);
+    }
 
     //Create Slot
     var _slot = instance_create_layer(_x,_y,"Slots",_slotInst,{slotId : _slotId,});

@@ -160,3 +160,34 @@ function actionGhost(_targetEnemy)
         card : self.id
     });
 }
+
+
+
+//Concept
+
+///@self oAttackCard
+function actionTaunt(_targetEnemy)
+{
+    var _y = 0;
+    if _targetEnemy
+    {
+        _y = bbox_top - 50;
+    } else _y = bbox_bottom + 50;
+    
+    instance_create_layer(x,_y,"Attacks",oTaunt,{
+        targetEnemy : _targetEnemy,
+        value : value,
+        card : self.id
+    });
+}
+
+
+///@self oAttackCard
+function actionReckless(_targetEnemy)
+{
+    instance_create_layer(x,y,"Attacks",oReckless,{
+        targetEnemy : _targetEnemy,
+        value : value,
+        card : self.id,
+    });
+}

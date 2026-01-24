@@ -49,7 +49,7 @@ function comboBread(_targetEnemy)
 	}
 
 	//Create Attack
-	var _createAttack = function(_targetEnemy,_card) {
+	var _attack = function(_targetEnemy,_card) {
 		instance_create_layer(x,y,"Attacks",oBreadCombo,{
 		    targetEnemy : _targetEnemy,
 		    value : _card.value,
@@ -58,7 +58,7 @@ function comboBread(_targetEnemy)
 	}
 	
 	//Start Time To Create Attack
-	timeSourceCreate(2,_createAttack,[_targetEnemy,self.id])
+	timeSourceCreate(2,_attack,[_targetEnemy,self.id])
 }
 
 

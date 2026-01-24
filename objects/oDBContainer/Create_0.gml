@@ -15,7 +15,13 @@ updateScissorValue();
 sorting = {
     type : function(_current, _next)
     {
-        return _current.type - _next.type;
+        //Group By Type
+        if _current.type != _next.type {
+            return _current.type - _next.type;
+        }
+    
+        //Change By Placement Id
+        return _next.placementId - _current.placementId;
     },
     date : function(_current, _next)
     {

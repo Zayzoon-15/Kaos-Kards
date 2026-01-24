@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.45192742,
+  "duration":0.0,
   "exportDir":"",
   "name":"snBoo",
   "parent":{
