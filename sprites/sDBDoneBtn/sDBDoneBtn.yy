@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Z/Sprites.yy",
+    "name":"Deck Builder",
+    "path":"folders/Sprites/Ui/Deck Builder.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -1,6 +1,8 @@
+
+
 #region Initialize Info
 
-global.deckPlacementId = 0;
+initDeck();
 initActionCards();
 initDiceTypes();
 initDiceCards();

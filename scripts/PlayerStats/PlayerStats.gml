@@ -13,17 +13,20 @@ playerDeck = [
     actionCards.heal,
     actionCards.shield,
     actionCards.shield,
+    actionCards.shield,
     
-    actionCards.ghost,
-    actionCards.ghost,
-    actionCards.ghost,
+    actionCards.slash,
+    actionCards.slash,
+    actionCards.slash,
+    actionCards.bread,
+    actionCards.bread,
+    actionCards.bread,
     
-    kaosCards.sticky,
+    kaosCards.swoop,
 	
-    diceCards.allNothin,
+    diceCards.reroll,
     diceCards.dice8,
-    diceCards.dice12,
-    diceCards.dice20,
+    diceCards.upgrade,
     
 	////Action Cards
 	//actionCards.gato,
@@ -59,5 +62,8 @@ playerDeck = [
 global.maxHandSize = 6;
 global.maxDiscards = round(array_length(playerDeck)*.6);
 global.discards = 0;
+
+//Set Deck Size For Now
+global.deckCardAmount = array_length(playerDeck);
 
 }

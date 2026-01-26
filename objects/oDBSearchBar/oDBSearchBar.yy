@@ -11,8 +11,8 @@
   "name":"oDBSearchBar",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Z/Objects.yy",
+    "name":"Menu1",
+    "path":"folders/Objects/Ui/Deck Builder/Menu1.yy",
   },
   "parentObjectId":null,
   "persistent":false,

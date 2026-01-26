@@ -1,6 +1,7 @@
 //Draw Box
 draw_self();
 
+//Draw Outline FOR NOW
 if focused
 {
     draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,true);

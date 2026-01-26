@@ -28,7 +28,7 @@
   "origin":1,
   "parent":{
     "name":"Sort Box",
-    "path":"folders/Z/Sprites/Sort Box.yy",
+    "path":"folders/Sprites/Ui/Deck Builder/Sort Box.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

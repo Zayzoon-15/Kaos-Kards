@@ -33,11 +33,10 @@ hoverDir = 0;
 
 //3d Card
 cardFront = sprite_index;
-cardBack  = sDeck;
+cardBack  = global.currentDeck.sprite;
 cardAngle = 0;
 cardThickness = 8;
 onMouse = 0;
-//TweenFire(self,EaseOutBack,TWEEN_MODE_ONCE,false,0,60,"cardAngle",-180,0);
 
 //Fade
 TweenEasyFade(0,1,0,20,EaseLinear);

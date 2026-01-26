@@ -1,8 +1,15 @@
 //Visible
-var _visible = collision_rectangle(oDBContainer.bbox_left,oDBContainer.bbox_top+100,oDBContainer.bbox_right,oDBContainer.bbox_bottom-40,self,false,false);
+var _visible = false;
+if instance_exists(oDBContainer)
+{
+    _visible = collision_rectangle(oDBContainer.bbox_left,oDBContainer.bbox_top+100,oDBContainer.bbox_right,oDBContainer.bbox_bottom-60,self,false,false);
+} else _visible = collision_rectangle(oDBDeck.bbox_left,oDBDeck.bbox_top+100,oDBDeck.bbox_right,oDBDeck.bbox_bottom-60,self,false,false);
 
 //Scroll
 targetY = ystart + scrollOffset;
+
+//Set Holding Card
+if global.midTrans then global.holdingCard = false;
 
 //Card Grabbed
 if grabbed

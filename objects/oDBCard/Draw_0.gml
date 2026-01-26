@@ -1,6 +1,8 @@
 //Set Scissor
 var _scissor = gpu_get_scissor();
-if !grabbed then gpu_set_scissor(oDBContainer.scissorStuct);
+if !grabbed and instance_exists(oDBContainer) then gpu_set_scissor(oDBContainer.scissorStuct);
+if !grabbed and instance_exists(oDBDeck) then gpu_set_scissor(oDBDeck.scissorStuct);
+
 
 //Shake
 var _shakeX = random_range(-1,1)*shake;

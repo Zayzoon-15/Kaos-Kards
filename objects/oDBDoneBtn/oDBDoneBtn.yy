@@ -1,13 +1,15 @@
 {
   "$GMObject":"",
   "%Name":"oDBDoneBtn",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"oDBDoneBtn",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Z/Objects.yy",
+    "name":"Menu2",
+    "path":"folders/Objects/Ui/Deck Builder/Menu2.yy",
   },
   "parentObjectId":null,
   "persistent":false,

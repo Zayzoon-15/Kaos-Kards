@@ -1,0 +1,1 @@
+image_index = room == rDeckBuilder1 ? 0 : 1;

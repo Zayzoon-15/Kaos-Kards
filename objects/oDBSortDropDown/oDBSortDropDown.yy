@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Sort",
-    "path":"folders/Z/Objects/Sort.yy",
+    "path":"folders/Objects/Ui/Deck Builder/Menu1/Sort.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -18,6 +18,7 @@
     {"name":"inst_47FD762C","path":"rooms/rTournies/rTournies.yy",},
     {"name":"inst_331AECD1","path":"rooms/rTournies/rTournies.yy",},
     {"name":"inst_172077D8","path":"rooms/rTournies/rTournies.yy",},
+    {"name":"inst_4A69ABE9","path":"rooms/rTournies/rTournies.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -57,6 +58,7 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oTournieNext","path":"objects/oTournieNext/oTournieNext.yy",},"propertyId":{"name":"dir","path":"objects/oTournieNext/oTournieNext.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"Right\"",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":864.0,"y":640.0,},
         {"$GMRInstance":"v4","%Name":"inst_47FD762C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_47FD762C","objectId":{"name":"oTournieNext","path":"objects/oTournieNext/oTournieNext.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":416.0,"y":640.0,},
+        {"$GMRInstance":"v4","%Name":"inst_4A69ABE9","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4A69ABE9","objectId":{"name":"oTournieDeck","path":"objects/oTournieDeck/oTournieDeck.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":128.0,"y":640.0,},
       ],"layers":[],"name":"Buttons","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Bg","depth":600,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_BDE815A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_BDE815A","objectId":{"name":"oBg","path":"objects/oBg/oBg.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":0.0,},

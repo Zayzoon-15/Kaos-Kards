@@ -1,1 +1,4 @@
-depth = oDBContainer.depth-5;
+if instance_exists(oDBContainer)
+{
+    depth = oDBContainer.depth - 6;
+}

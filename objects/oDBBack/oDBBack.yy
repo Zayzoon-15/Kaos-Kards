@@ -9,8 +9,8 @@
   "name":"oDBBack",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Z/Objects.yy",
+    "name":"Deck Builder",
+    "path":"folders/Objects/Ui/Deck Builder.yy",
   },
   "parentObjectId":null,
   "persistent":false,
