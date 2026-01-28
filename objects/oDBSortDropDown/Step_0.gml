@@ -49,6 +49,7 @@ if point_in_rectangle(mouse_x,mouse_y,bbox_right-listW,bbox_bottom,bbox_right,bb
             
             if mouse_check_button_released(mb_left) and pressed
             {
+                image_speed = 1;
                 open = true;
                 pressed = false;
             }
@@ -78,8 +79,23 @@ var _animSpd = 0.08;
 if open
 {
     animPos += _animSpd;
+    
+    if image_index >= 3
+    {
+        image_index = 3;
+    }
+    
 } else animPos -= _animSpd;
 
 //Play Animation
 animPos = clamp(animPos,0,1);
 listScale = animGetValue(acDropMenu,animPos);
+
+//Update Text Offset
+switch (image_index) {
+	case 0: textYOffset = 0; textScaleOffset = 0; break;
+	case 1: textYOffset = 1; break;
+	case 3: textYOffset = 4; textScaleOffset = .15; break;
+	case 4: textYOffset = 0; textScaleOffset = 0; break;
+	case 5: textYOffset = 1;
+}

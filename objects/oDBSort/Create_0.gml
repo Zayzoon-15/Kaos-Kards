@@ -58,28 +58,18 @@ var _dropDown = [
 //Set Vars
 var _dist = 120;
 var _y = bbox_bottom - 101;
-var _xscale = 3;
-var _yscale = 1;
 
 //Create Drop Downs
 var _inst = noone;
-_inst = instance_create_depth(x-_dist,_y,depth-5,oDBSortDropDown,{
-    image_xscale : _xscale,
-    image_yscale : _yscale,
-});
+_inst = instance_create_depth(x-_dist,_y,depth-5,oDBSortDropDown);
 _inst.items = _dropDown[0];
 _inst.title = "Sort";
 _inst.selected = dropDownCurSelection[0];
 
-_inst = instance_create_depth(x+_dist,_y,depth-5,oDBSortDropDown,{
-    image_xscale : _xscale,
-    image_yscale : _yscale,
-});
+_inst = instance_create_depth(x+_dist,_y,depth-5,oDBSortDropDown);
 _inst.items = _dropDown[1];
 _inst.title = "Type";
 _inst.selected = dropDownCurSelection[1];
 
 //Create Done
-instance_create_depth(x,bbox_bottom - 40,depth-5,oDBSortDone,{
-    image_xscale : 2,
-});
+instance_create_depth(x,bbox_bottom - 40,depth-5,oDBSortDone);
