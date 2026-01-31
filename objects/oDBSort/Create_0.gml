@@ -52,6 +52,13 @@ var _dropDown = [
                 oDBSearchBar.dropDownCurSelection[1] = 3;
             }
         }},
+        {text: "Favs",action: function(){
+            with oDBContainer
+            {
+                createCards(currentSort,types.favs);
+                oDBSearchBar.dropDownCurSelection[1] = 4;
+            }
+        }},
     ],
 ]
 
@@ -70,6 +77,9 @@ _inst = instance_create_depth(x+_dist,_y,depth-5,oDBSortDropDown);
 _inst.items = _dropDown[1];
 _inst.title = "Type";
 _inst.selected = dropDownCurSelection[1];
+
+//Create Arrow
+instance_create_depth(x - 30,_y,depth-5,oDBSortArrow);
 
 //Create Done
 instance_create_depth(x,bbox_bottom - 40,depth-5,oDBSortDone);

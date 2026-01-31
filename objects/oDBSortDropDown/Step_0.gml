@@ -95,7 +95,7 @@ listScale = animGetValue(acDropMenu,animPos);
 switch (image_index) {
 	case 0: textYOffset = 0; textScaleOffset = 0; break;
 	case 1: textYOffset = 1; break;
-	case 3: textYOffset = 4; textScaleOffset = .15; break;
+	case 3: textYOffset = 6; textScaleOffset = .15; break;
 	case 4: textYOffset = 0; textScaleOffset = 0; break;
 	case 5: textYOffset = 1;
 }

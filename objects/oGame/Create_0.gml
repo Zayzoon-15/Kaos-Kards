@@ -61,11 +61,21 @@ enemyActions = ds_list_create();
 playerKaos = undefined;
 enemyKaos = undefined;
 
-//Font
-globalvar fnNumber,fnNumberOutline;
+#region Custom Fonts
+
+//Set Global Vars
+globalvar fnNumber,fnNumberOutline,fnDBLetter,fnDBNumber;
+
+//Game Numbers
 var _numString = "0123456789+-";
 fnNumber = font_add_sprite_ext(sNumbers, _numString, true, 0);
 fnNumberOutline = font_add_sprite_ext(sNumbersOutlined, _numString, true, 0);
+
+//Deck Builder
+fnDBLetter = font_add_sprite_ext(sDBLetters,"|ABCDEFGHIJKMNLOPQRSTUVWXYZ",true,0);
+fnDBNumber = font_add_sprite_ext(sDBNumbers,"/0123456789",true,0);
+
+#endregion
 
 //Game State
 globalvar gameState;

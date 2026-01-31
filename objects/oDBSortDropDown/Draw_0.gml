@@ -62,7 +62,7 @@ var _textScale = 1 - textScaleOffset;
 
 //Draw Shadow
 draw_set_colour(#323142);
-draw_text_transformed(x+1,(y+2) + textYOffset,items[selected].text,_textScale,_textScale,0);
+draw_text_transformed(x+1,y+ 2 + textYOffset,items[selected].text,_textScale,_textScale,0);
 
 //Draw Main Text
 draw_set_colour(c_white);

@@ -1,6 +1,7 @@
 //Draw Box
 draw_self();
 
+
 //Draw Outline FOR NOW
 if focused
 {
@@ -8,7 +9,7 @@ if focused
 }
 
 //Setup Text
-textSetup(fnMain,fa_left,fa_middle);
+textSetup(fnDBLetter,fa_left,fa_middle);
 var _text = $"{text}";
 
 //Flash Bar

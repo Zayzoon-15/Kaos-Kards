@@ -8,7 +8,7 @@ var _text = "Done";
 
 //Draw Shadow
 draw_set_colour(#323142);
-draw_text_transformed(x+1,(y+2) + textYOffset,_text,_textScale,_textScale,0);
+draw_text_transformed(x+1,y+ 2 + textYOffset,_text,_textScale,_textScale,0);
 
 //Draw Text
 draw_set_colour(c_white);

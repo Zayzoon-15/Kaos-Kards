@@ -13,29 +13,67 @@ updateScissorValue();
 
 //Sorting Funcs
 sorting = {
-    type : function(_current, _next)
-    {
-        //Group By Type
-        if _current.type != _next.type {
-            return _current.type - _next.type;
-        }
     
-        //Change By Placement Id
-        return _next.placementId - _current.placementId;
-    },
-    date : function(_current, _next)
-    {
-        return _current.date - _next.date;
-    },
-    alphabetical : function(_left = 0,_right = 0) {
-        if _left.name < _right.name
+    type : {
+        ascend : function(_current, _next)
         {
-            return -1;
-        } else if _left.name > _right.name
+            //Group By Type
+            if _current.type != _next.type {
+                return _current.type - _next.type;
+            }
+        
+            //Change By Placement Id
+            return _next.placementId - _current.placementId;
+        },
+        
+        descend : function(_current, _next)
         {
-            return 1;
-        } else return 0;
+            //Group By Type
+            if _current.type != _next.type {
+                return _next.type - _current.type;
+            }
+        
+            //Change By Placement Id
+            return _next.placementId - _current.placementId;
+        },
     },
+    
+    date : {
+        ascend : function(_current, _next)
+        {
+            return _current.date - _next.date;
+        },
+        
+        descend : function(_current, _next)
+        {
+            return _next.date - _current.date;
+        },
+    },
+    
+    alphabetical : {
+        ascend : function(_left = 0,_right = 0)
+        {
+            if _left.name < _right.name
+            {
+                return -1;
+            } else if _left.name > _right.name
+            {
+                return 1;
+            } else return 0;
+        },
+        
+        descend : function(_left = 0,_right = 0)
+        {
+            if _left.name > _right.name
+            {
+                return -1;
+            } else if _left.name < _right.name
+            {
+                return 1;
+            } else return 0;
+        },
+    },
+
     
 }
 
@@ -51,6 +89,7 @@ types = {
 //Current
 currentSort = sorting.type;
 currentType = types.all;
+ascendOrder = true;
 
 //Seperation
 maxScroll = 0;
@@ -103,14 +142,10 @@ createCards = function(_sortFunc = currentSort,_types = currentType)
         
         //Get Searched Cards
         var _addCard = true;
-        searchText = string_upper(searchText);
         if searchText != ""
         {
-            var _name = string_upper(_info.name)
-            if !string_contains(_name,searchText)
-            {
-                _addCard = false;
-            }
+            var _name = string_upper(_info.name);
+            _addCard = string_contains(_name,searchText);
         }
         
         //Put In Array
@@ -118,7 +153,11 @@ createCards = function(_sortFunc = currentSort,_types = currentType)
     }
     
     //Sort Cards
-    if _sortFunc != undefined then array_sort(_cards, _sortFunc);
+    if _sortFunc != undefined
+    {
+        var _func = ascendOrder ? _sortFunc.ascend : _sortFunc.descend;
+        array_sort(_cards, _func);
+    }
     
     //Create Cards
     var _inst = noone;
