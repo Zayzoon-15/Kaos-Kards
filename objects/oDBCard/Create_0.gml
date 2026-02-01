@@ -7,6 +7,8 @@ cardX = x;
 cardY = y;
 cardTargetX = x;
 cardTargetY = y;
+cardXOffset = 0;
+cardYOffset = 0;
 
 //Info
 uses = info.uses;
@@ -21,6 +23,7 @@ shadowSize = 0.05;
 shake = 0;
 startDepth = depth;
 sprite_index = info != undefined ? info.sprite : sprite_index;
+cardVisible = false;
 
 //Grabbing
 grabbed = false;

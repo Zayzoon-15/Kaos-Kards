@@ -1,8 +1,10 @@
+//Dont Draw
+if !cardVisible and oDeckBuilder.transition then exit;
+
 //Set Scissor
 var _scissor = gpu_get_scissor();
-if !grabbed and instance_exists(oDBContainer) then gpu_set_scissor(oDBContainer.scissorStuct);
-if !grabbed and instance_exists(oDBDeck) then gpu_set_scissor(oDBDeck.scissorStuct);
-
+if !grabbed and !oDeckBuilder.transition and instance_exists(oDBContainer) then gpu_set_scissor(oDBContainer.scissorStuct);
+if !grabbed and !oDeckBuilder.transition and instance_exists(oDBDeck) then gpu_set_scissor(oDBDeck.scissorStuct);
 
 //Shake
 var _shakeX = random_range(-1,1)*shake;

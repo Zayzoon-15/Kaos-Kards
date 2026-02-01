@@ -36,5 +36,8 @@
     "path":"sprites/sDBDeck/sDBDeck.yy",
   },
   "spriteMaskId":null,
+  "tags":[
+    "DeckBuilder",
+  ],
   "visible":true,
 }

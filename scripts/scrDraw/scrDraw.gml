@@ -111,7 +111,7 @@ function createAlertMessage(_text,_lifeSpan = 30,_x=room_width/2,_y=235)
 
 
 
-///@desc Makes a sprite with multiple animations in it to play as seprate
+///@desc Makes a sprite with multiple animations in it to play as separate
 ///Make sure to have these variables: "frame", "animationEnd"
 ///@arg {real} _frame The animation frame
 ///@arg {real} _anims The amount of animations (Default = 4)
@@ -129,6 +129,7 @@ function spriteLoopFrames(_frame,_anims = 4)
         frame -= _totalFrames;
     } else animationEnd = false;
 }
+
 
 ///@desc Plays the enemy animation
 ///@param {string} _anim The animation to play

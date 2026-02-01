@@ -48,5 +48,8 @@
     "path":"sprites/sCardBlank/sCardBlank.yy",
   },
   "spriteMaskId":null,
+  "tags":[
+    "DeckBuilder",
+  ],
   "visible":true,
 }

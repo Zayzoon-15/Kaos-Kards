@@ -35,5 +35,8 @@
     "path":"sprites/sDBCount/sDBCount.yy",
   },
   "spriteMaskId":null,
+  "tags":[
+    "DeckBuilder",
+  ],
   "visible":true,
 }

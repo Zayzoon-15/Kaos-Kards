@@ -13,7 +13,7 @@
   "For3D":false,
   "frames":[
     {"$GMSpriteFrame":"v1","%Name":"515c8cc8-6ce7-420a-b825-c3fb0b8bdb2a","name":"515c8cc8-6ce7-420a-b825-c3fb0b8bdb2a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"d378eed8-1001-40dc-9735-8a540250a85b","name":"d378eed8-1001-40dc-9735-8a540250a85b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"f4b40272-db91-4d8f-a22f-5e8bac13e53b","name":"f4b40272-db91-4d8f-a22f-5e8bac13e53b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"0beac3af-733d-4cb3-a829-ac11e5c16764","name":"0beac3af-733d-4cb3-a829-ac11e5c16764","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
@@ -74,8 +74,8 @@
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"515c8cc8-6ce7-420a-b825-c3fb0b8bdb2a","path":"sprites/sDbInsertHole/sDbInsertHole.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"f12d2b00-0f56-46b5-96a9-45a86e5796aa","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"d378eed8-1001-40dc-9735-8a540250a85b","path":"sprites/sDbInsertHole/sDbInsertHole.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"c18d0fe0-2c20-41bf-8297-faa83f457247","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"f4b40272-db91-4d8f-a22f-5e8bac13e53b","path":"sprites/sDbInsertHole/sDbInsertHole.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"58bef80b-1dec-4b4f-9141-aec5b0b93819","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0beac3af-733d-4cb3-a829-ac11e5c16764","path":"sprites/sDbInsertHole/sDbInsertHole.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"0fd665c5-bac4-4c60-9e8e-d678fa9a040e","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},

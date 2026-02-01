@@ -69,5 +69,5 @@ draw_set_colour(c_white);
 draw_text_transformed(x,y + textYOffset,items[selected].text,_textScale,_textScale,0);
 
 //Draw Title
-textSetup(fnMain,fa_center,fa_bottom);
-draw_text(x,bbox_top-10,$"{title}:");
+textSetup(fnDBLetter,fa_center,fa_bottom);
+draw_text(x,bbox_top-10,$"{string_upper(title)}:");

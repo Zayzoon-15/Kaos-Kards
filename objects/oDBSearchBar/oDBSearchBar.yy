@@ -37,5 +37,8 @@
     "path":"sprites/sDBSearchBar/sDBSearchBar.yy",
   },
   "spriteMaskId":null,
+  "tags":[
+    "DeckBuilder",
+  ],
   "visible":true,
 }

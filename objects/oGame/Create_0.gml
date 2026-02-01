@@ -72,7 +72,7 @@ fnNumber = font_add_sprite_ext(sNumbers, _numString, true, 0);
 fnNumberOutline = font_add_sprite_ext(sNumbersOutlined, _numString, true, 0);
 
 //Deck Builder
-fnDBLetter = font_add_sprite_ext(sDBLetters,"|ABCDEFGHIJKMNLOPQRSTUVWXYZ",true,0);
+fnDBLetter = font_add_sprite_ext(sDBLetters,"ABCDEFGHIJKLMNOPQRSTUVWXYZ|:",true,0);
 fnDBNumber = font_add_sprite_ext(sDBNumbers,"/0123456789",true,0);
 
 #endregion

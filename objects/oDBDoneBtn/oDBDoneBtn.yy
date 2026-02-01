@@ -34,5 +34,8 @@
     "path":"sprites/sDBDoneBtn/sDBDoneBtn.yy",
   },
   "spriteMaskId":null,
+  "tags":[
+    "DeckBuilder",
+  ],
   "visible":true,
 }

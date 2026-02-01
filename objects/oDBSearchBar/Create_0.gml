@@ -11,3 +11,6 @@ lastText = text;
 //Flash Bar
 flashTimer = 0;
 flashDir = 1;
+
+//Cards Mask
+cardsOffset = new Vector2(20,20);
