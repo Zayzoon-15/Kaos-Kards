@@ -141,37 +141,40 @@ if punchStun <= 0 and hitStun <= 0
 	{
 		if xspd != 0 and canMove
 		{
-			sprite_index = sprites.walk;
-		} else sprite_index = sprites.idle;
-	} else sprite_index = sprites.jump;
+			currentAnim = sprites.walk;
+		} else currentAnim = sprites.idle;
+	} else currentAnim = sprites.jump;
 } else {
 	
 	//Punch
 	if punchStun > 0
 	{
-		if onGround and sprite_index != sprites.air
+		if onGround and currentAnim != sprites.kick
 		{
-			sprite_index = sprites.punch;
-		} else sprite_index = sprites.air;
+			currentAnim = sprites.punch;
+		} else currentAnim = sprites.kick;
 	}
 	
 	//Hurt
 	if hitStun > 0
 	{
-		sprite_index = sprites.hit;
+		currentAnim = sprites.hit;
 	}
 }
 
 //Won The Game
 if won and onGround and xspd == 0 and punchStun <= 0
 {
-	sprite_index = sprites.win;
+	currentAnim = sprites.win;
 }
 
 //Block
 if blocking and onGround
 {
-	sprite_index = sprites.block;
+	currentAnim = sprites.block;
 }
+
+//Set Sprite
+spriteLoopFrames(currentAnim,10);
 
 #endregion

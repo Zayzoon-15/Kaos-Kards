@@ -44,43 +44,21 @@ invisTime = 0;
 invisFlash = 0;
 hp = 100;
 
+currentAnim = 0;
+animationEnd = false;
+frame = 0;
+
 //Set Sprites
-if playerId == 0
-{
-	winSprites = [
-		sBrawlRedWin1,
-		sBrawlRedWin2,
-		sBrawlRedWin3,
-	];
-	
-	sprites = {
-		idle : sBrawlRedIdle,	
-		hit : sBrawlRedHit,	
-		punch : sBrawlRedPunch,	
-		walk : sBrawlRedWalk,	
-		jump : sBrawlRedJump,
-		air : sBrawlRedAir,
-		block : sBrawlRedBlock,
-		win : winSprites[irandom_range(0,2)]
-	};
-} else {
-	
-	winSprites = [
-		sBrawlBlueWin1,
-		sBrawlBlueWin2,
-		sBrawlBlueWin3,
-	];
-	
-	sprites = {
-		idle : sBrawlBlueIdle,	
-		hit : sBrawlBlueHit,	
-		punch : sBrawlBluePunch,
-		walk : sBrawlBlueWalk,
-		jump : sBrawlBlueJump,
-		air : sBrawlBlueAir,
-		block : sBrawlBlueBlock,
-		win : winSprites[irandom_range(0,2)]
-	};	
+sprite_index = playerId == 0 ? sBrawlRed : sBrawlBlue;
+sprites = {
+    idle : 0,
+    win : irandom_range(1,3),
+    block : 4,
+    jump : 5,
+    punch : 6,
+    kick : 7,
+    hit : 8,
+    walk : 9
 }
 
 //Image

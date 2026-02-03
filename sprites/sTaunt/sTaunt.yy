@@ -38,8 +38,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Sprites.yy",
+    "name":"Action",
+    "path":"folders/Sprites/Attacks/Action.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

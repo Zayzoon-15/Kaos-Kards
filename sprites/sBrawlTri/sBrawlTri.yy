@@ -26,8 +26,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Brawler",
-    "path":"folders/Sprites/Attacks/Kaos/Brawler.yy",
+    "name":"Characters",
+    "path":"folders/Sprites/Attacks/Kaos/Brawler/Characters.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -117,9 +117,8 @@ function createAlertMessage(_text,_lifeSpan = 30,_x=room_width/2,_y=235)
 ///@arg {real} _anims The amount of animations (Default = 4)
 function spriteLoopFrames(_frame,_anims = 4)
 {
-    //Update Sprite
+    //Set Frame
     var _totalFrames = image_number / _anims;
-    image_index = frame + (_frame*_totalFrames);
     frame += sprite_get_speed(sprite_index)/60;
     
     //Loop Animation
@@ -128,6 +127,10 @@ function spriteLoopFrames(_frame,_anims = 4)
         animationEnd = true;
         frame -= _totalFrames;
     } else animationEnd = false;
+    
+    //Update Sprte
+    image_index = frame + (_frame*_totalFrames);
+    image_index = clamp(image_index, 0, image_number-1);
 }
 
 

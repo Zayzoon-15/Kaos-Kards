@@ -36,12 +36,12 @@
   "resourceVersion":"2.0",
   "solid":true,
   "spriteId":{
-    "name":"sBrawlRedIdle",
-    "path":"sprites/sBrawlRedIdle/sBrawlRedIdle.yy",
+    "name":"sBrawlRed",
+    "path":"sprites/sBrawlRed/sBrawlRed.yy",
   },
   "spriteMaskId":{
-    "name":"sBrawlRedIdle",
-    "path":"sprites/sBrawlRedIdle/sBrawlRedIdle.yy",
+    "name":"sBrawlRed",
+    "path":"sprites/sBrawlRed/sBrawlRed.yy",
   },
   "visible":true,
 }
