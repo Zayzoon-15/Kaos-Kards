@@ -92,7 +92,7 @@ global.gameRound = 0;
 global.paused = false;
 
 //Modes
-global.mobile = os_type == os_android or os_type == os_ios or os_type == os_gxgames;
+global.mobile = true//os_type == os_android or os_type == os_ios or os_type == os_gxgames;
 global.gamepad = false;
 
 #endregion

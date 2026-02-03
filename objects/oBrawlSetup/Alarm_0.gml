@@ -18,20 +18,20 @@ instance_create_layer(x,y,brawlLayerTop,oBrawlHp,{playerId : 1});
 //Mobile Controls
 if global.mobile
 {
-	instance_create_layer(1168,496,brawlLayerTop,oBrawlMobile,{ //Top Right
+	instance_create_layer(974,519,brawlLayerTop,oBrawlMobile,{ //Top Right
 		buttonType : "Punch"
 	});
-	instance_create_layer(976,624,brawlLayerTop,oBrawlMobile,{ //Bottom Right
+	instance_create_layer(1145,626,brawlLayerTop,oBrawlMobile,{ //Bottom Right
 		buttonType : "Jump"
 	});
-	instance_create_layer(976,432,brawlLayerTop,oBrawlMobile,{ //Bottom Right
+	instance_create_layer(1167,455,brawlLayerTop,oBrawlMobile,{ //Bottom Right
 		buttonType : "Block"
 	});
 
-	instance_create_layer(112,496,brawlLayerTop,oBrawlMobile,{ //Top Left
+	instance_create_layer(200,545,brawlLayerTop,oBrawlMobile,{ //Top Left
 		buttonType : "Left"
 	});
-	instance_create_layer(304,624,brawlLayerTop,oBrawlMobile,{ //Bottom Left
+	instance_create_layer(395,545,brawlLayerTop,oBrawlMobile,{ //Bottom Left
 		buttonType : "Right"
 	});
 }

@@ -53,23 +53,8 @@ switch buttonType
 		}
 	break;
 	
-	case "Punch": 
-		image_index = 2; 
-		type = "Press";
-		action = function()
-		{
-			with oBrawlChar
-			{
-				if playerId == 0
-				{
-					actPunch();
-				}
-			}
-		}
-	break;
-
 	case "Jump": 
-		image_index = 3; 
+		image_index = 2; 
 		type = "Press";
 		action = function()
 		{
@@ -83,8 +68,23 @@ switch buttonType
 		}
 	break;
 	
+	case "Punch": 
+		image_index = 3; 
+		type = "Press";
+		action = function()
+		{
+			with oBrawlChar
+			{
+				if playerId == 0
+				{
+					actPunch();
+				}
+			}
+		}
+	break;
+	
 	case "Block": 
-		image_index = 4; 
+		image_index = 3; 
 		type = "Hold";
 		action = function()
 		{

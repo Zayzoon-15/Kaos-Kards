@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"oBrawlMobile",
+  "%Name":"oBrawlMobile_1",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oBrawlMobile",
+  "name":"oBrawlMobile_1",
   "overriddenProperties":[],
   "parent":{
     "name":"Brawl",
@@ -39,8 +39,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sBrawlMobileNew",
-    "path":"sprites/sBrawlMobileNew/sBrawlMobileNew.yy",
+    "name":"sBrawlMobile",
+    "path":"sprites/sBrawlMobile/sBrawlMobile.yy",
   },
   "spriteMaskId":null,
   "visible":true,
