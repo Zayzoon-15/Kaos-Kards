@@ -7,10 +7,10 @@
   },
   "bitDepth":1,
   "channelFormat":1,
-  "compression":1,
+  "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.0,
+  "duration":36.57143,
   "exportDir":"",
   "name":"sgKaos",
   "parent":{

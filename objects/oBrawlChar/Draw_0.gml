@@ -22,7 +22,7 @@ if blocking
 	} else draw_set_colour(#51498D);
 	draw_set_alpha(.7);
 	var _blockX = x + 3*dir;
-	var _blockY = y - sprite_get_height(sBrawlRedIdle)/2;
+	var _blockY = y - sprite_get_height(sBrawlRed)/2;
 	var _blockRad = (blockChance/5)*25;
 
 	//Draw Block
