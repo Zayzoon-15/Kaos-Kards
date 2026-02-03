@@ -36,8 +36,5 @@
     "path":"sprites/sDBInsert/sDBInsert.yy",
   },
   "spriteMaskId":null,
-  "tags":[
-    "DeckBuilder",
-  ],
   "visible":true,
 }

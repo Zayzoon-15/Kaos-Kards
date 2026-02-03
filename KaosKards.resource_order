@@ -178,6 +178,8 @@
     {"name":"SettingsMenus","order":2,"path":"scripts/SettingsMenus/SettingsMenus.yy",},
     {"name":"Voiceover","order":1,"path":"scripts/Voiceover/Voiceover.yy",},
     {"name":"seqFadeOut","order":1,"path":"sequences/seqFadeOut/seqFadeOut.yy",},
+    {"name":"sgDeckBuilder1","order":2,"path":"sounds/sgDeckBuilder1/sgDeckBuilder1.yy",},
+    {"name":"sgDeckBuilder2","order":3,"path":"sounds/sgDeckBuilder2/sgDeckBuilder2.yy",},
     {"name":"sgKetting","order":1,"path":"sounds/sgKetting/sgKetting.yy",},
     {"name":"sgPrepare","order":1,"path":"sounds/sgPrepare/sgPrepare.yy",},
     {"name":"sgPrepareExtended","order":2,"path":"sounds/sgPrepareExtended/sgPrepareExtended.yy",},

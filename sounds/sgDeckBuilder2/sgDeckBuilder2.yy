@@ -1,18 +1,18 @@
 {
   "$GMSound":"v2",
-  "%Name":"sgKenu",
+  "%Name":"sgDeckBuilder2",
   "audioGroupId":{
     "name":"agMusic",
     "path":"audiogroups/agMusic",
   },
   "bitDepth":1,
-  "channelFormat":1,
+  "channelFormat":0,
   "compression":1,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":151.85423,
+  "duration":118.15383,
   "exportDir":"",
-  "name":"sgKenu",
+  "name":"sgDeckBuilder2",
   "parent":{
     "name":"Menus",
     "path":"folders/Sounds/Music/Menus.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sgKenu.ogg",
+  "soundFile":"sgDeckBuilder2.ogg",
   "volume":1.0,
 }

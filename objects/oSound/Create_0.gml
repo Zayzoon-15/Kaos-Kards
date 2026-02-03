@@ -21,7 +21,8 @@ global.soundMixer[? sgRetro2] = .8;
 //Groups
 global.musicGroups = {
 	bg : audioCreateSyncGroup([sgPrepare,sgKaos,sgPrepareExtended]),
-	menu : audioCreateSyncGroup([sgKetting,sgKenu])
+	menu : audioCreateSyncGroup([sgKetting,sgKenu]),
+    deck : audioCreateSyncGroup([sgDeckBuilder1,sgDeckBuilder2]),
 };
 
 //Extended Version Secret

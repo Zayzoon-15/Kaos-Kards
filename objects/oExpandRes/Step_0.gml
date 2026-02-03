@@ -17,6 +17,7 @@ camH = baseH;
 var _camX = room_width/2 - camW/2;
 var _camY = 0;
 
+
 //Resize Screen
 if _winW >= baseW * _scale and _winW >= 200 and _winH >= 200
 {
@@ -24,10 +25,13 @@ if _winW >= baseW * _scale and _winW >= 200 and _winH >= 200
     {
         //Resize Surface
         surface_resize(application_surface, camW, camH);
-        
+
         //Set Camera
         camera_set_view_pos(view_camera[0], _camX, _camY);
         camera_set_view_size(view_camera[0], camW, camH);
+        
+        //Set GUI Size
+        display_set_gui_size(camW, camH);
     }
 } else {
     
@@ -38,7 +42,7 @@ if _winW >= baseW * _scale and _winW >= 200 and _winH >= 200
     _camX = room_width/2 - baseW/2;
     camera_set_view_pos(view_camera[0], _camX, _camY);
     camera_set_view_size(view_camera[0], baseW, baseH);
+    
+    //Set GUI Size
+    display_set_gui_size(baseW, baseH);
 }
-
-//Set GUI Size
-display_set_gui_size(camW, camH);

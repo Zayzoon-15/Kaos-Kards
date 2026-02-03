@@ -1,11 +1,10 @@
+//Can Press
 if touchingMouse() and !instance_exists(oDBSort) and !global.midTrans
 {
     canPress = true;
-} else canPress = false;
-
-if canPress
-{
     image_speed = 1;
 } else {
+    canPress = false;
+    pressed = false;
     image_speed = 0;
 }

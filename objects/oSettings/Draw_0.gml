@@ -24,7 +24,7 @@ if global.paused
 #endregion
 
 //Draw Mobile Button
-if global.mobile and !global.paused
+if global.mobile and !global.paused and !array_contains(disabledRooms,room)
 {
 	//Draw Circle
 	draw_set_colour(c_gray);

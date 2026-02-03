@@ -1,5 +1,5 @@
 //Pause
-if keyCheckPressed(global.keyPause) and !global.midTrans
+if keyCheckPressed(global.keyPause) and !global.midTrans and !array_contains(disabledRooms,room)
 {
 	if global.paused
 	{
@@ -12,7 +12,7 @@ mobilePos.x = getPosToWindow(false,41);
 mobilePos.y = 678;
 
 //Clicked Mobile
-if !global.paused and global.mobile
+if !global.paused and global.mobile and !array_contains(disabledRooms,room)
 {
     if point_in_circle(mouse_x,mouse_y,mobilePos.x,mobilePos.y,mobileRad)
     {	
@@ -27,4 +27,4 @@ if !global.paused and global.mobile
     		mobilePressed = false;
     	}
     } else mobilePressed = false;
-}
+} else mobilePressed = false;
