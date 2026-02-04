@@ -30,7 +30,7 @@ function FiggySetup() {
         Figgy.Button("Music Test Room",function(){room_goto(rTestingMusic)});
         Figgy.Button("Voice Test Room",function(){room_goto(rTestingVoice)});
         Figgy.Button("Menu",function(){transStart(rTournies,oTransSticker)});
-        Figgy.Button("DeckBuilder",function(){room_goto(rDeckBuilder)});
+        Figgy.Button("DeckBuilder",function(){room_goto(rDeckBuilder1)});
         Figgy.Button("Stickers",function(){transStart(room,oTransSticker)});
 		
 		Figgy.Section("Game Stats",false)
