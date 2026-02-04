@@ -5,7 +5,7 @@ depth -= 10;
 fade = true;
 
 //Tween
-TweenEasyScale(1,1,0,0,50,35,EaseInBack);
+TweenEasyScale(1,1,0,0,50/60,35/60,EaseInBack);
 alarm[3] = 90;
 
 //Audio

@@ -5,8 +5,8 @@ image_index = irandom_range(0,image_number-1);
 audioPlaySfx(snBoo,.8,1.2);
 
 //Scale
-TweenEasyScale(0,0,3,3,0,20,EaseOutCubic);
-TweenEasyFade(1,0,10,20,EaseLinear);
+TweenEasyScale(0,0,3,3,0,20/60,EaseOutCubic);
+TweenEasyFade(1,0,10/60,20/60,EaseLinear);
 timeSourceCreate(20,function(){
     instance_destroy();
 },[],time_source_units_frames);

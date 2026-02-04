@@ -1,5 +1,3 @@
-
-
 #region Initialize Info
 
 initDeck();
@@ -61,6 +59,7 @@ enemyActions = ds_list_create();
 playerKaos = undefined;
 enemyKaos = undefined;
 
+
 #region Custom Fonts
 
 //Set Global Vars
@@ -76,6 +75,7 @@ fnDBLetter = font_add_sprite_ext(sDBLetters,"ABCDEFGHIJKLMNOPQRSTUVWXYZ|:",true,
 fnDBNumber = font_add_sprite_ext(sDBNumbers,"/0123456789",true,0);
 
 #endregion
+
 
 //Game State
 globalvar gameState;
@@ -97,6 +97,7 @@ global.gamepad = false;
 
 #endregion
 
+
 //Randomise
 randomise();
 
@@ -110,3 +111,5 @@ saveLoad();
 
 //Set Window
 setWindowToRes();
+
+TweenEasyUseDelta(true);

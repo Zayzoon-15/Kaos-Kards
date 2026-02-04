@@ -15,6 +15,6 @@ if _target != undefined
     var _time = 30;
     followingDice = true;
     
-    TweenEasyMove(x,y,_target.x,_target.y,0,_time,EaseInBack);
+    TweenEasyMove(x,y,_target.x,_target.y,0,_time/60,EaseInBack);
     alarm[2] = _time;
 }

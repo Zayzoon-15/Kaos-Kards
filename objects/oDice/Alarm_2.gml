@@ -24,7 +24,7 @@ if targetSlot != undefined
 {
     var _time = 30;
     
-    TweenEasyMove(x,y,targetSlot.x,targetSlot.y,0,_time,EaseInBack);
+    TweenEasyMove(x,y,targetSlot.x,targetSlot.y,0,_time/60,EaseInBack);
     
     alarm[3] = _time;
 }

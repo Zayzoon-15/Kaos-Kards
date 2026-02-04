@@ -12,7 +12,7 @@ if alpha <= .2 and !audio_is_paused(info.sound)
 }
 
 //Fade
-alpha = lerp(alpha,targetAlpha,.2);
+alpha = lerp_dt(alpha,targetAlpha,.2);
 
 //Pause
 if global.paused

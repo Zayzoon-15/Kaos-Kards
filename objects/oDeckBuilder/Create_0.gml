@@ -31,8 +31,8 @@ startTrans = function()
     //Animate
     var _ease = EaseInOutQuart;
     var _dur = 35;
-    TweenFire(self,_ease,TWEEN_MODE_ONCE,false,0,_dur,"spriteScale",1,2.3);
-    TweenFire(self,_ease,TWEEN_MODE_ONCE,false,0,_dur,"spriteY",0,-(oDBInsertHole.y+100));
+    TweenFire(self,_ease,TWEEN_MODE_ONCE,true,0,_dur/60,"spriteScale",1,2.3);
+    TweenFire(self,_ease,TWEEN_MODE_ONCE,true,0,_dur/60,"spriteY",0,-(oDBInsertHole.y+100));
     
     //Change Room
     timeSourceCreate(_dur*.28,function(){

@@ -5,8 +5,8 @@ event_inherited();
 lifespan = random_range(10,15);
 
 //Movement
-hspeed = random_range(1,1.5)*choose(1,-1);
-vspeed = random_range(1,3)*dir;
+xspd = random_range(1,1.5)*choose(1,-1);
+yspd = random_range(1,3)*dir;
 spinSpd = random_range(1,3);
 
 //Scale

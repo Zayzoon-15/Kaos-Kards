@@ -15,10 +15,10 @@ if global.unfocusMute and !window_has_focus()
 }
 
 //Ease Values
-masterVol = lerp(masterVol,_masterTarget,_ease);
-musicVol = lerp(musicVol,_musicTarget,_ease);
-sfxVol = lerp(sfxVol,_sfxTarget,_ease);
-voiceVol = lerp(voiceVol,_voiceTarget,_ease);
+masterVol = lerp_dt(masterVol,_masterTarget,_ease);
+musicVol = lerp_dt(musicVol,_musicTarget,_ease);
+sfxVol = lerp_dt(sfxVol,_sfxTarget,_ease);
+voiceVol = lerp_dt(voiceVol,_voiceTarget,_ease);
 
 //Update Audio
 audio_master_gain(masterVol);

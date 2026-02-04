@@ -2,9 +2,9 @@
 event_inherited();
 
 //Movement
-gravity = .5;
-vspeed = -random_range(5,8);
-hspeed = random_range(1,5)*dir;
+grav = .5;
+yspd = -random_range(5,8);
+xspd = random_range(1,5)*dir;
 spinSpd = random_range(1,5)*dir;
 
 //Scale

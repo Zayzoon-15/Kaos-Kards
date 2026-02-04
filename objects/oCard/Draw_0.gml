@@ -1,7 +1,7 @@
 //Shake
 var _shakeX = random_range(-1,1)*shake;
 var _shakeY = random_range(-1,1)*shake;
-shake = lerp(shake,0,.3);
+shake = lerp_dt(shake,0,.3);
 
 //Set Exact Value If Following Dice
 if followingDice
@@ -24,7 +24,7 @@ if !canUse
 }
 
 //Draw Value
-rangeScale = lerp(rangeScale,1,.2);
+rangeScale = lerp_dt(rangeScale,1,.2);
 if currentValue != undefined
 {
     textSetup(fnNumberOutline,fa_center,fa_middle);

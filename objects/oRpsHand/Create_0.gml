@@ -18,7 +18,7 @@ image_xscale = handId == 0 ? 1 : -1;
 //Slide In
 var _startX = handId == 0 ? -sprite_width : room_width + sprite_get_width(sprite_index);
 var _targetX = handId == 0 ? -80 : room_width + 80;
-TweenEasyMove(_startX,y,_targetX,y,0,20,EaseOutBack);
+TweenEasyMove(_startX,y,_targetX,y,0,20/60,EaseOutBack);
 
 //Hand Animate
 handDown = 0;
@@ -29,4 +29,4 @@ soundPlayed = false;
 
 //Name Tag
 nameTagAlpha = 1;
-TweenFire(self,EaseLinear,0,false,120,40,"nameTagAlpha",1,0);
+TweenFire(self,EaseLinear,TWEEN_MODE_ONCE,true,120/60,40/60,"nameTagAlpha",1,0);

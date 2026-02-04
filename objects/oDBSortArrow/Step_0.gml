@@ -37,7 +37,7 @@ if doAction and image_index >= 4 {
     
     //Rotate
     var _startRot = !oDBContainer.ascendOrder ? 0 : 180;
-    TweenFire(self,EaseOutBack,TWEEN_MODE_ONCE,false,0,40,"arrowAngle",_startRot,_startRot+180);
+    TweenFire(self,EaseOutBack,TWEEN_MODE_ONCE,true,0,40/60,"arrowAngle",_startRot,_startRot+180);
     
     //Reset
     doAction = false;

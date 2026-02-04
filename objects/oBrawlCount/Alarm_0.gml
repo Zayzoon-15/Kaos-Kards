@@ -1,2 +1,2 @@
 ///@desc Fade Out
-TweenEasyFade(1,0,0,20,EaseOutCubic);
+TweenEasyFade(1,0,0,20/60,EaseOutCubic);

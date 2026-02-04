@@ -61,7 +61,7 @@ function step(_edge, _value) {
 /// @param {Real} b The second value.
 /// @param {Real} amount The amount to interpolate.
 /// @param {Real} dt The delta time.
-function lerp_dt(_a, _b, _amount, _dt) {
+function lerp_dt(_a, _b, _amount, _dt = DELTA_TIME) {
 	return _b + (_a - _b) * exp(-_amount * _dt); // Freya Holmér
 	//return _a + (_b - _a) * (1 - power(1 - _amount, _dt)); // Mozart Junior
 	//return lerp(_a, _b, 1 - power(0.5, _dt * _amount)); // Jonas Tyroller

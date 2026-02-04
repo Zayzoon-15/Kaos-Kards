@@ -2,7 +2,7 @@
 event_inherited();
 
 //Movement
-vspeed = -3;
+yspd = -3;
 
 //Fade
 lifespan = 10;

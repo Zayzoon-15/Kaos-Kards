@@ -40,11 +40,11 @@ if held
 }
 
 //Ease Scale
-xscale = lerp(xscale,targetScale,.2);
-yscale = lerp(yscale,targetScale,.2);
+xscale = lerp_dt(xscale,targetScale,.2);
+yscale = lerp_dt(yscale,targetScale,.2);
 
 //Fade
 if fade
 {
-	image_alpha = lerp(image_alpha,0,.2);
+	image_alpha = lerp_dt(image_alpha,0,.2);
 }

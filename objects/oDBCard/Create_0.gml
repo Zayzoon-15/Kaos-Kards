@@ -42,4 +42,4 @@ cardThickness = 8;
 onMouse = 0;
 
 //Fade
-TweenEasyFade(0,1,0,20,EaseLinear);
+TweenEasyFade(0,1,0,20/60,EaseLinear);

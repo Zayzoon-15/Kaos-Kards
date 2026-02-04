@@ -38,5 +38,5 @@ if !global.holdingCard
 //Info
 if touchingMouse() and !global.holdingCard
 {
-    boxAlpha = lerp(boxAlpha,0,.2);
-} else boxAlpha = lerp(boxAlpha,1,.2);
+    boxAlpha = lerp_dt(boxAlpha,0,.2);
+} else boxAlpha = lerp_dt(boxAlpha,1,.2);

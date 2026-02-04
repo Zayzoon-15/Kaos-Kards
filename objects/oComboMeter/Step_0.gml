@@ -4,7 +4,7 @@ value = floor(value);
 
 //Get Percent
 var _percent = value / 100;
-percent = lerp(percent,_percent,.2);
+percent = lerp_dt(percent,_percent,.2);
 
 //Set Position
 x = getPosToWindow(onRight);

@@ -66,7 +66,7 @@ xscale = 1;
 yscale = 1;
 dir = playerId == 1 ? 1 : -1;
 textAlpha = 1;
-TweenFire(self,EaseLinear,0,false,320,40,"textAlpha",1,0);
+TweenFire(self,EaseLinear,0,true,320/60,40/60,"textAlpha",1,0);
 nameTriFrame = 0;
 
 //Winner

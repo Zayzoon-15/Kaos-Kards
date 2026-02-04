@@ -9,7 +9,7 @@ if !grabbed and !oDeckBuilder.transition and instance_exists(oDBDeck) then gpu_s
 //Shake
 var _shakeX = random_range(-1,1)*shake;
 var _shakeY = random_range(-1,1)*shake;
-shake = lerp(shake,0,.3);
+shake = lerp_dt(shake,0,.3);
 
 //Draw Card
 if grabbed

@@ -16,13 +16,13 @@ if touchingMouse()
 //Selected
 if selected or touchingMouse()
 {
-	boxAlpha = lerp(boxAlpha,0,.2);
-} else boxAlpha = lerp(boxAlpha,.5,.2);
+	boxAlpha = lerp_dt(boxAlpha,0,.2);
+} else boxAlpha = lerp_dt(boxAlpha,.5,.2);
 
 
 //Ease
-boxX = lerp(boxX,targetX,.2);
-boxY = lerp(boxY,targetY,.2);
-xscale = lerp(xscale,image_xscale,scaleTime);
-yscale = lerp(yscale,image_yscale,scaleTime);
-textSize = lerp(textSize,textTargetSize,.3);
+boxX = lerp_dt(boxX,targetX,.2);
+boxY = lerp_dt(boxY,targetY,.2);
+xscale = lerp_dt(xscale,image_xscale,scaleTime);
+yscale = lerp_dt(yscale,image_yscale,scaleTime);
+textSize = lerp_dt(textSize,textTargetSize,.3);

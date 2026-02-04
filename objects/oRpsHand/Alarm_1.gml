@@ -63,7 +63,7 @@ with oRpsHand
         depth = _otherHand.depth - 5;
         
         //Tween
-        TweenEasyScale(image_xscale,1,1.4*sign(image_xscale),1,0,40,EaseOutElastic);
+        TweenEasyScale(image_xscale,1,1.4*sign(image_xscale),1,0,40/60,EaseOutElastic);
         
         //Hurt
         timeSourceCreate(8.5,function() {

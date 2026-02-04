@@ -3,8 +3,8 @@
 sprite_index = dice.sprite;
 
 //Ease
-image_xscale = lerp(image_xscale,scale,.3);
-image_yscale = lerp(image_yscale,scale,.3);
+image_xscale = lerp_dt(image_xscale,scale,.3);
+image_yscale = lerp_dt(image_yscale,scale,.3);
 
 //State
 if state == diceStates.idle
@@ -14,14 +14,14 @@ if state == diceStates.idle
 	
 	//Set Position
 	x = getPosToWindow(false);
-    y = lerp(y,ystart,.2);
+    y = lerp_dt(y,ystart,.2);
 }
 
 //Skipped
 if skipped
 {
     scale = .9;
-    image_alpha = lerp(image_alpha,.7,.3);
+    image_alpha = lerp_dt(image_alpha,.7,.3);
 }
 
 //Sound

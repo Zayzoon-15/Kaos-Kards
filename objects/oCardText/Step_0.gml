@@ -9,14 +9,14 @@ if _nameWidth > width
 }
 
 //Fade Text
-textAlpha = lerp(textAlpha,1,.2);
+textAlpha = lerp_dt(textAlpha,1,.2);
 
 //Go To Parent
 if instance_exists(parent)
 {
     //Set Position    
     x = parent.x;
-    y = lerp(y,parent.bbox_top-20,.2);
+    y = lerp_dt(y,parent.bbox_top-20,.2);
 	
 	//Destory
 	if !parent.hover or !parent.canGrab or global.holdingCard

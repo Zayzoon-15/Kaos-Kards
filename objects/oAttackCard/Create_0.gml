@@ -57,7 +57,7 @@ cardJuice = function(_stars = true,_starSound = false,_angle = true,_angleAmount
 /// @desc Makes the card shake from left to right
 cardShake = function()
 {
-    var _tween = TweenCreate(self,EaseLinear,TWEEN_MODE_ONCE,false,0,10,"curvePos",0,1);
+    var _tween = TweenCreate(self,EaseLinear,TWEEN_MODE_ONCE,false,0,10/60,"curvePos",0,1);
     TweenPlay(_tween);
 }
 

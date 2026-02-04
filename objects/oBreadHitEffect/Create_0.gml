@@ -8,8 +8,8 @@ drawShadow = false;
 dir = choose(-1,1);
 
 //Move Up
-vspeed = -random_range(6,9);
-gravity = .5;
+yspd = -random_range(6,9);
+grav = .5;
 
 //Spin
 spinSpd = random_range(1,5)*dir;

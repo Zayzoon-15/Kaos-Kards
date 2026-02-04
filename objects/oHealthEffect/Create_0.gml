@@ -2,4 +2,4 @@
 event_inherited();
 
 //Move
-vspeed = -random_range(2,4);
+yspd = -random_range(2,4);

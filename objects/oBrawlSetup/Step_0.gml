@@ -13,7 +13,7 @@ if fxLayer == undefined then exit;
 var _params_struct = fx_get_parameters(fxLayer);
 
 //Set Params
-pixelAmount = lerp(pixelAmount,0,.08);
+pixelAmount = lerp_dt(pixelAmount,0,.08);
 _params_struct.g_CellSize = pixelAmount;
 
 //Apply Params

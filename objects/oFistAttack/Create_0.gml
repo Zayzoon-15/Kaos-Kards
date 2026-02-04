@@ -12,8 +12,8 @@ dir = 1;
 if !targetEnemy then dir = -1;
 
 //Show Up
-TweenEasyFade(0,1,0,20,EaseOutCubic);
-TweenEasyScale(1,0,1,1.5*dir,0,30,EaseOutBack);
+TweenEasyFade(0,1,0,20/60,EaseOutCubic);
+TweenEasyScale(1,0,1,1.5*dir,0,30/60,EaseOutBack);
 alarm[1] = 50;
 
 //Action

@@ -1,7 +1,7 @@
 //Shake
 var _shakeX = random_range(-1,1)*shake;
 var _shakeY = random_range(-1,1)*shake;
-shake = lerp(shake,0,.2);
+shake = lerp_dt(shake,0,.2);
 
 //Text
 textSetup(fnMain,fa_center,fa_middle,c_white,image_alpha);

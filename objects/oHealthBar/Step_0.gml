@@ -15,11 +15,11 @@ targetList = playerEffects;
 if target != "Player" then targetList = enemyEffects;
 
 //Set Values
-hp = lerp(hp,_hp,.2);
-tempHp = lerp(tempHp,_tempHp,.2);
+hp = lerp_dt(hp,_hp,.2);
+tempHp = lerp_dt(tempHp,_tempHp,.2);
 
 //Lerp Angle
-angle = lerp(angle,0,.2);
+angle = lerp_dt(angle,0,.2);
 
 #region Info Box
 

@@ -16,8 +16,8 @@ if !canClick then targetScale = 0;
 
 //Fade
 var _alpha = canClick ? 1 : 0;
-image_alpha = lerp(image_alpha,_alpha,.3);
+image_alpha = lerp_dt(image_alpha,_alpha,.3);
 
 //Ease Values
-xscale = lerp(xscale,targetScale,.3);
-yscale = lerp(yscale,targetScale,.3);
+xscale = lerp_dt(xscale,targetScale,.3);
+yscale = lerp_dt(yscale,targetScale,.3);

@@ -16,7 +16,7 @@ for (var k = 0; k < 2; k++) {
 		{
 			with _listValue.healthInst
 			{	
-				if startHitStun then _listValue.value = lerp(_listValue.value,-2,.03);
+				if startHitStun then _listValue.value = lerp_dt(_listValue.value,-2,.03);
                 _listValue.value = clamp(_listValue.value,0,100);
                 _listValue.showPercent = _listValue.value;
 			}
@@ -24,7 +24,7 @@ for (var k = 0; k < 2; k++) {
 		
 		if _listValue.info.type == EFFECT_TYPE.ASS
 		{
-			_listValue.showPercent = lerp(_listValue.showPercent,_listValue.value,0.3);
+			_listValue.showPercent = lerp_dt(_listValue.showPercent,_listValue.value,0.3);
 			if k == 1
 			{
 				global.enemyTempHp = _listValue.value;

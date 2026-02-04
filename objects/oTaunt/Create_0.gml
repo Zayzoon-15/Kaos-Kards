@@ -9,7 +9,7 @@ hitOthers = false;
 setSize(2,2);
 
 //Fade
-TweenEasyFade(1,0,50,60,EaseLinear);
+TweenEasyFade(1,0,50/60,1,EaseLinear);
 timeSourceCreate(110,function(){instance_destroy();},[],time_source_units_frames);
 
 //Give Stuff

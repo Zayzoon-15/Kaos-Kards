@@ -4,3 +4,6 @@ if _loaded and !alarm[0] and room == rSetup
 {
     alarm[0] = 1;
 }
+
+print("OG DELTA",delta_time)
+print("NEW DELTA",DELTA_TIME)

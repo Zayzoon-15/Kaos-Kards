@@ -8,7 +8,7 @@ with oBrawlChar
 }
 
 //Ease Health
-hp = lerp(hp,targetHp,.1);
+hp = lerp_dt(hp,targetHp,.1);
 
 //Ease Shake
-shake = lerp(shake,0,.1);
+shake = lerp_dt(shake,0,.1);

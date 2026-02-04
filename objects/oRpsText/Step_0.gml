@@ -14,13 +14,13 @@ bottomTextX = (cos(timer*3)*2)+xstart;
 bottomTextY = (sin(timer*2)*2.5)+ystart;
 
 //Ease Scale
-image_xscale = lerp(image_xscale,1,.2);
-image_yscale = lerp(image_yscale,1,.2);
+image_xscale = lerp_dt(image_xscale,1,.2);
+image_yscale = lerp_dt(image_yscale,1,.2);
 
 //Fade
 if fade
 {
-	image_alpha = lerp(image_alpha,0,.1);
+	image_alpha = lerp_dt(image_alpha,0,.1);
 	
 	if image_alpha <= 0.5 then instance_destroy();
 }

@@ -21,7 +21,7 @@ if animPos >= .5 and played and currentAnim != action
 if winner
 {
 	var _x = handId == 0 ? 0 : room_width;
-	x = lerp(x,_x,.2);
+	x = lerp_dt(x,_x,.2);
 }
 
 //Play Sound

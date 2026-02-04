@@ -1,3 +1,5 @@
+//Delta
+#macro DELTA_TIME (delta_time / 1000000)/(1/60) 
 
 //Ui
 #macro UIBOX_RAD 4

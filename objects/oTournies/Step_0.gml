@@ -17,16 +17,16 @@ drawTipBox(info.name,true,false,20,1.5);
 //Touching Mouse
 if touchingMouse()
 {
-	boxY = lerp(boxY,-10,.2);
-	shadowY = lerp(shadowY,8,.2);
+	boxY = lerp_dt(boxY,-10,.2);
+	shadowY = lerp_dt(shadowY,8,.2);
 } else {
-	boxY = lerp(boxY,0,.2);
-	shadowY = lerp(shadowY,5,.2);
+	boxY = lerp_dt(boxY,0,.2);
+	shadowY = lerp_dt(shadowY,5,.2);
 }
 
 //Ease
-xscale = lerp(xscale,1,.2);
-yscale = lerp(yscale,1,.2);
+xscale = lerp_dt(xscale,1,.2);
+yscale = lerp_dt(yscale,1,.2);
 
 //Not Shown
 if !layer_get_visible(layer)

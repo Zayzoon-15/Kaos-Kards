@@ -21,7 +21,7 @@ function cardStateHand(){
     //Angle Cards
     var _angle = ((room_width/2) - x)*.02;
     
-    image_angle = lerp(image_angle,_angle,.2);
+    image_angle = lerp_dt(image_angle,_angle,.2);
     image_angle = clamp(image_angle,-15,15);
     
     //Warp Cards
@@ -61,10 +61,10 @@ function cardStateHand(){
     if hover
     {
         cardTargetY = _handY - 10;
-        shadowY = lerp(shadowY,16,.2);
+        shadowY = lerp_dt(shadowY,16,.2);
     } else {
     	cardTargetY = _handY;
-        shadowY = lerp(shadowY,8,.2);
+        shadowY = lerp_dt(shadowY,8,.2);
     }
     
     targetX = _handX;
@@ -76,14 +76,14 @@ function cardStateHand(){
     #region Ease
     
     //Position
-    x = lerp(x,targetX,.2);
-    y = lerp(y,targetY,.2);
+    x = lerp_dt(x,targetX,.2);
+    y = lerp_dt(y,targetY,.2);
     cardX = x;
-    cardY = lerp(cardY,cardTargetY,.2);
+    cardY = lerp_dt(cardY,cardTargetY,.2);
     
     //Scale
-    image_xscale = lerp(image_xscale,1,.2);
-    image_yscale = lerp(image_yscale,1,.2);
+    image_xscale = lerp_dt(image_xscale,1,.2);
+    image_yscale = lerp_dt(image_yscale,1,.2);
 
     #endregion
     
@@ -97,8 +97,8 @@ function cardStateHand(){
     //Shadow
     var _shadowX = (x - (room_width/2))*.03;
     shadowX = clamp(shadowX,-10,10);
-    shadowX = lerp(shadowX,_shadowX,.2);
-    shadowSize = lerp(shadowSize,0.05,.2);
+    shadowX = lerp_dt(shadowX,_shadowX,.2);
+    shadowSize = lerp_dt(shadowSize,0.05,.2);
     
     #endregion
     
@@ -132,18 +132,18 @@ function cardStateGrabbed()
     
     //Rotate
     var _angle = xprevious - x;
-    image_angle = lerp(image_angle,_angle,.2);
+    image_angle = lerp_dt(image_angle,_angle,.2);
     
     //Shadow
     var _shadowX = (x - (room_width/2))*.05;
     shadowX = clamp(shadowX,-10,10);
-    shadowX = lerp(shadowX,_shadowX,.2);
-    shadowY = lerp(shadowY,15,.2);
-    shadowSize = lerp(shadowSize,0.08,.2);
+    shadowX = lerp_dt(shadowX,_shadowX,.2);
+    shadowY = lerp_dt(shadowY,15,.2);
+    shadowSize = lerp_dt(shadowSize,0.08,.2);
     
     //Ease
-    image_xscale = lerp(image_xscale,1.1,.4);
-    image_yscale = lerp(image_yscale,1.1,.4);
+    image_xscale = lerp_dt(image_xscale,1.1,.4);
+    image_yscale = lerp_dt(image_yscale,1.1,.4);
     
     //Shake
     if place_meeting(x,y,oDiscard)
@@ -189,12 +189,12 @@ function cardStatePlaced()
     if hover
     {
         cardTargetY = _cardY - 8;
-        shadowY = lerp(shadowY,15,.2);
-        shadowSize = lerp(shadowSize,0.08,.2);
+        shadowY = lerp_dt(shadowY,15,.2);
+        shadowSize = lerp_dt(shadowSize,0.08,.2);
     } else {
     	cardTargetY = _cardY;
-        shadowY = lerp(shadowY,8,.2);
-        shadowSize = lerp(shadowSize,0.1,.2);
+        shadowY = lerp_dt(shadowY,8,.2);
+        shadowSize = lerp_dt(shadowSize,0.1,.2);
     }
     
     targetX = _cardX;
@@ -206,15 +206,15 @@ function cardStatePlaced()
     #region Ease
     
     //Position
-    x = lerp(x,targetX,.2);
-    y = lerp(y,targetY,.2);
-    image_angle = lerp(image_angle,0,.2);
+    x = lerp_dt(x,targetX,.2);
+    y = lerp_dt(y,targetY,.2);
+    image_angle = lerp_dt(image_angle,0,.2);
     cardX = x;
-    cardY = lerp(cardY,cardTargetY,.2);
+    cardY = lerp_dt(cardY,cardTargetY,.2);
     
     //Scale
-    image_xscale = lerp(image_xscale,1,.2);
-    image_yscale = lerp(image_yscale,1,.2);
+    image_xscale = lerp_dt(image_xscale,1,.2);
+    image_yscale = lerp_dt(image_yscale,1,.2);
 
     #endregion
     
@@ -227,7 +227,7 @@ function cardStatePlaced()
     //Shadow
     var _shadowX = (x - (room_width/2))*.03;
     shadowX = clamp(shadowX,-6,6);
-    shadowX = lerp(shadowX,_shadowX,.2);
+    shadowX = lerp_dt(shadowX,_shadowX,.2);
     
     #endregion
     

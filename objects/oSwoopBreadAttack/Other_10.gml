@@ -13,8 +13,8 @@ turnSpd = random_range(.5,1);
 
 //Tween
 var _speed = 30;
-TweenEasyScale(.5,.5,40,40,0,_speed-5,EaseInQuint);
-TweenEasyMove(_x,room_height,_x,_y,0,_speed,EaseOutCubic);
+TweenEasyScale(.5,.5,40,40,0,(_speed-5)/60,EaseInQuint);
+TweenEasyMove(_x,room_height,_x,_y,0,(_speed)/60,EaseOutCubic);
 
 //Hit
 alarm[0] = _speed-5;

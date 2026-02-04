@@ -1,5 +1,5 @@
 //Animate
-TweenEasyScale(.2,.2,1,1,0,40,EaseOutBack);
+TweenEasyScale(.2,.2,1,1,0,40/60,EaseOutBack);
 image_index = 1;
 
 //Audio

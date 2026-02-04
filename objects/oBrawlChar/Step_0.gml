@@ -1,11 +1,11 @@
 //Increase Block Chance
 if !blocking
 {
-	blockChance += 0.01;
+	blockChance += 0.01 * DELTA_TIME;
 	blockChance = clamp(blockChance,0,5);
 } else
 {
-	blockChance -= 0.01;
+	blockChance -= 0.01 * DELTA_TIME;
 }
 
 //Set Block
@@ -85,7 +85,7 @@ if hitStun <= 0 and (punchStun <= 0 or !onGround) and !blocking
 } else xspd = 0;
 
 //Reduce Knock Back
-knockBack = lerp(knockBack,0,.3);
+knockBack = lerp_dt(knockBack,0,.3);
 
 //Move
 if canMove
@@ -94,7 +94,7 @@ if canMove
 }
 
 //Fall
-yspd += grav;
+yspd += grav * DELTA_TIME;
 if place_meeting(x,y+yspd,oBrawlSolid)
 {
 	while !place_meeting(x,y+sign(yspd),oBrawlSolid)
@@ -104,7 +104,7 @@ if place_meeting(x,y+yspd,oBrawlSolid)
 	yspd = 0;
 	onGround = true;
 } else onGround = false;
-y += yspd;
+y += yspd * DELTA_TIME;
 
 //Clamp
 x = clamp(x,oBrawlSetup.bbox_left+40,oBrawlSetup.bbox_right-40);
@@ -118,10 +118,10 @@ x = clamp(x,oBrawlSetup.bbox_left+40,oBrawlSetup.bbox_right-40);
 hp = clamp(hp,0,100);
 
 //Reduce Stuns
-punchStun --;
-hitStun --;
-invisTime --;
-invisFlash --;
+punchStun -= 1 * DELTA_TIME;
+hitStun -= 1 * DELTA_TIME;
+invisTime -= 1 * DELTA_TIME;
+invisFlash -= 1 * DELTA_TIME;
 
 //Flash
 if invisTime > 0 and invisFlash <= -10

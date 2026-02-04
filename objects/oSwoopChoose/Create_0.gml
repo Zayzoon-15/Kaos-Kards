@@ -11,7 +11,7 @@ if targetEnemy then _angle = 90;
 
 //Tween
 var _time = 70;
-TweenEasyRotate(500,_angle,0,_time,EaseInOutBack);
+TweenEasyRotate(500,_angle,0,_time/60,EaseInOutBack);
 
 //Attack
 alarm[0] = _time + 30;

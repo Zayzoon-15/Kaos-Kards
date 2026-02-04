@@ -8,8 +8,8 @@ if is_method(checkedFunc)
 }
 
 //Ease
-checkXScale = lerp(checkXScale,1,.2);
-checkYScale = lerp(checkYScale,1,.2);
+checkXScale = lerp_dt(checkXScale,1,.2);
+checkYScale = lerp_dt(checkYScale,1,.2);
 
 if checked
 {

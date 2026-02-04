@@ -27,8 +27,8 @@ if healthInst.flipped then targetX = healthInst.bbox_left - 10;
 targetY = _y;
 
 //Ease
-x = lerp(x,targetX,.3);
-y = lerp(y,targetY,.1);
+x = lerp_dt(x,targetX,.3);
+y = lerp_dt(y,targetY,.1);
 
 //Destroy
 if !array_contains_value(targetArray,info)

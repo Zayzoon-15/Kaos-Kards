@@ -33,10 +33,10 @@ if typing
 
 //Ease Speed
 if keyboard_check(vk_up) {
-    songSpeed = lerp(songSpeed,4,.05);
+    songSpeed = lerp_dt(songSpeed,4,.05);
 }  else if keyboard_check(vk_down){
-    songSpeed = lerp(songSpeed,0.003906,.05);
-} else songSpeed = lerp(songSpeed,1,.2);
+    songSpeed = lerp_dt(songSpeed,0.003906,.05);
+} else songSpeed = lerp_dt(songSpeed,1,.2);
 
 //Set Speed
 audio_sound_pitch(global.curSong,songSpeed);

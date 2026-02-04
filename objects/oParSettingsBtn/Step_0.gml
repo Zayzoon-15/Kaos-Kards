@@ -8,11 +8,11 @@ ystart = _y;
 
 //Ease
 x = _x;
-y = lerp(y,ystart + targetY,.15);
-textScaleX = lerp(textScaleX,textTargetScale,.15);
-textScaleY = lerp(textScaleY,textTargetScale,.15);
-rectXScale = lerp(rectXScale,1,.15);
-rectYScale = lerp(rectYScale,1,.15);
+y = lerp_dt(y,ystart + targetY,.15);
+textScaleX = lerp_dt(textScaleX,textTargetScale,.15);
+textScaleY = lerp_dt(textScaleY,textTargetScale,.15);
+rectXScale = lerp_dt(rectXScale,1,.15);
+rectYScale = lerp_dt(rectYScale,1,.15);
 
 //Set Rectangle
 if instance_exists(oSettingsSubMenu)
@@ -39,8 +39,8 @@ if point_in_rectangle(mouse_x,mouse_y,rectX2,y-height,rectX1,y+height) and !disa
 //Fade Color
 if hover
 {
-	rectAlpha = lerp(rectAlpha,1,.2);
-} else rectAlpha = lerp(rectAlpha,0,.2);
+	rectAlpha = lerp_dt(rectAlpha,1,.2);
+} else rectAlpha = lerp_dt(rectAlpha,0,.2);
 
 //Clicked
 if mouse_check_button_pressed(mb_left) and hover
