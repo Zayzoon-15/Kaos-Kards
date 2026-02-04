@@ -17,7 +17,7 @@ mobileRad = 60;
 mobilePressed = false;
 
 //Disabled Rooms (Rooms where settings can not be opened)
-disabledRooms = [rDeckBuilder1,rDeckBuilder2];
+disabledRooms = [rSetup,rDeckBuilder1,rDeckBuilder2];
 
 //Functions
 createSettings = function()

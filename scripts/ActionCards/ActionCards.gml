@@ -50,19 +50,14 @@ actionCards = {
     "Shoots a non physical ghost that ignores shields",
     sCardGhost,[1,4],CARDACT_GENRES.ATTACK,actionGhost),
 	
-    
-    //CONCEPT
     taunt : new createCardAction("Taunt",
     "Taunt your enemy to gain a random amount of combo charge and steal a random amount from them",
-    sCardBlank,[1,4],CARDACT_GENRES.ATTACK,actionTaunt),
+    sCardTaunt,[1,4],CARDACT_GENRES.ATTACK,actionTaunt),
     
+    //CONCEPT
     reckless : new createCardAction("Reckless Attack",
     "Deal high damage to the enemy, but take a small amount of recoil damage",
     sCardPunch,[5,9],CARDACT_GENRES.ATTACK,actionReckless),
-    
-    goon : new createCardAction("Goon Card",
-    "Goon time",
-    sCardBlank,[1,9],CARDACT_GENRES.ATTACK,actionTaunt),
     
 };
 
