@@ -70,7 +70,7 @@ with oRpsHand
             
             //Stars
             var _x = handId == 0 ? bbox_right - 10 : bbox_left + 10;
-            starEffect(_x,y,15,true,50,150,40);
+            effectStar(_x,y,15,true,50,150,40);
             
             //Hurt
             with oRpsHand

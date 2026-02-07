@@ -45,7 +45,7 @@ if playerWon
 		canHover = false;
 		
 		//Stars
-		starEffect(x,y,10,false,10,15);
+		effectStar(x,y,10,false,10,15);
 	}
 	
 	//Start Death

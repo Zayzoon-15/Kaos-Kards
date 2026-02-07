@@ -14,14 +14,14 @@ if global.playerHp <= 0 or global.enemyHp <= 0
 	instance_destroy(oAttackEffect);
 	with oParAttacks
 	{
-		starEffect(x,y,5,false);
+		effectStar(x,y,5,false);
 		instance_destroy();
 	}
 	
 	//Destroy Cards
 	with oAttackCard
 	{
-		starEffect(x,y,10,false,20,25);
+		effectStar(x,y,10,false,20,25);
 		instance_destroy();
 	}
 	

@@ -10,4 +10,4 @@ canClick = true;
 pressed = false;
 
 //Stars
-starEffect(x,y,10,false);
+effectStar(x,y,10,false);

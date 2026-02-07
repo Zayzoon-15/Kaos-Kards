@@ -64,7 +64,7 @@ function diceCardSwapDice(_info,_card,_dice)
                     
                     //Destroy Card
                     _card.slot.used = true;
-					starEffect(_card.x,_card.y,10);
+					effectStar(_card.x,_card.y,10);
                     instance_destroy(_card);
                 }
             }
@@ -141,7 +141,7 @@ function diceCardScrewUp(_info,_card)
         
         //Destroy Card
         _card.slot.used = true;
-        starEffect(_card.x,_card.y,10);
+        effectStar(_card.x,_card.y,10);
         instance_destroy(_card);
     }
     

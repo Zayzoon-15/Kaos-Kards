@@ -19,8 +19,8 @@ function actionHeal(_targetEnemy)
 	
     //Juice
     cardJuice(false);
-    healthEffect(x,y,10,true,10,25,sprite_get_width(sCardBlank),sprite_get_height(sCardBlank));
-    numberEffect(x,y,_value);
+    effectHealth(x,y,10,true,10,25,sprite_get_width(sCardBlank),sprite_get_height(sCardBlank));
+    effectNumber(x,y,_value);
     
     //Give Health
     if _targetEnemy
@@ -162,9 +162,6 @@ function actionGhost(_targetEnemy)
 }
 
 
-
-//Concept
-
 ///@self oAttackCard
 function actionTaunt(_targetEnemy)
 {
@@ -181,6 +178,8 @@ function actionTaunt(_targetEnemy)
     });
 }
 
+
+//Concept
 
 ///@self oAttackCard
 function actionReckless(_targetEnemy)

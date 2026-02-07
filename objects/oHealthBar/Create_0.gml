@@ -56,5 +56,5 @@ hitEffect = function(_lastTemp)
 
 gainEffect = function()
 {
-    healthEffect(x,y,10,false,30,15);
+    effectHealth(x,y,10,false,30,15);
 }

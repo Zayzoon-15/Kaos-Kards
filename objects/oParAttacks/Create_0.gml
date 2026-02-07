@@ -18,14 +18,14 @@ hurtEffect = function(_x = x,_y = y,_starAmount = 5,_stars = true)
     if !_card
     {
         //Number Effect
-        numberEffect(_x,_y,-value);
+        effectNumber(_x,_y,-value);
         
         //Stars
         if _stars
         {
             var _starX = (sprite_width/2)-20;
             var _starY = (sprite_height/2)-25;
-            starEffect(_x,_y,_starAmount,false,20,25);
+            effectStar(_x,_y,_starAmount,false,20,25);
         }
     }
     

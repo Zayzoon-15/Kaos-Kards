@@ -40,7 +40,7 @@ rollDice = function()
         {
             slot.used = true;
             instance_destroy();
-            starEffect(x,y,10);
+            effectStar(x,y,10);
         }
     }
     
@@ -60,7 +60,7 @@ diceJuice = function(_sound = true)
     setSize(image_xscale+1,image_yscale+1);
     
     //Stars
-    starEffect(x,y,5,_sound);
+    effectStar(x,y,5,_sound);
 }
 
 combineValues = function()

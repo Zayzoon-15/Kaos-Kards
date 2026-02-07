@@ -17,7 +17,7 @@ timeSourceCreate(3,function(){
 	setSize(1.4,.3);
 	
 	//Stars
-	if playerWon then starEffect(x,y,10,false);
+	if playerWon then effectStar(x,y,10,false);
 	
 	//Create Button For Now
 	var _xOffset = 120;

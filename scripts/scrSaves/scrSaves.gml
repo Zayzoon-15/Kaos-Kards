@@ -1,5 +1,9 @@
 function saveLoad()
 {	
+    //Load Game
+    
+    
+    
 	//Settings For Now
 	ini_open("Settings.sav");
 	

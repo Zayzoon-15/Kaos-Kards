@@ -5,3 +5,6 @@ life = 0;
 
 //Shadow
 drawShadow = true;
+
+//Movement
+spinSpd = 0;

@@ -26,6 +26,7 @@ function kaosActionSwoop(_targetEnemy)
     timeSourceCreate(4,kaosCardDone);
 }
 
+
 ///@self oAttackCard
 function kaosActionSwap(_targetEnemy)
 {
@@ -52,6 +53,7 @@ function kaosActionSwap(_targetEnemy)
     timeSourceCreate(5,kaosCardDone);
 }
 
+
 ///@self oAttackCard
 function kaosActionHigh(_targetEnemy)
 {
@@ -68,6 +70,7 @@ function kaosActionHigh(_targetEnemy)
     timeSourceCreate(2,kaosCardDone);
 }
 
+
 ///@self oAttackCard
 function kaosActionDestroy(_targetEnemy)
 {
@@ -82,6 +85,7 @@ function kaosActionDestroy(_targetEnemy)
     //Finish
     timeSourceCreate(3,kaosCardDone);
 }
+
 
 ///@self oAttackCard
 function kaosActionFreeze(_targetEnemy)
@@ -113,6 +117,7 @@ function kaosActionFreeze(_targetEnemy)
     timeSourceCreate(2,kaosCardDone);
 }
 
+
 ///@self oAttackCard
 function kaosActionRps(_targetEnemy)
 {
@@ -134,6 +139,7 @@ function kaosActionRps(_targetEnemy)
 	instance_destroy();
 }
 
+
 ///@self oAttackCard
 function kaosActionBrawl(_targetEnemy)
 {
@@ -143,6 +149,7 @@ function kaosActionBrawl(_targetEnemy)
 	//Change Pos
 	targetY += 50;
 }
+
 
 ///@self oAttackCard
 function kaosActionSticky(_targetEnemy)
@@ -173,4 +180,15 @@ function kaosActionSticky(_targetEnemy)
     
     //Finish
     timeSourceCreate(2,kaosCardDone);
+}
+
+
+///@self oAttackCard
+function kaosActionHotdog(_targetEnemy)
+{
+	//Create Map
+	instance_create_layer(0,0,"Attacks",oHotdog);
+	
+	//Change Pos
+	targetY = room_height - sprite_get_height(sCardBlank)*1.2;
 }

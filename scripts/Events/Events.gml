@@ -110,7 +110,7 @@ function kaosCardDone()
         if card.info.type == CARDTYPES.KAOS
         {
             //Stars
-            starEffect(x,y,10,true,20,25);
+            effectStar(x,y,10,true,20,25);
             
             //Destroy
             instance_destroy();
@@ -131,7 +131,7 @@ function comboAttackDone()
         if combo
         {
             //Stars
-            starEffect(x,y,10,true,20,25);
+            effectStar(x,y,10,true,20,25);
             
             //Destroy
             instance_destroy();

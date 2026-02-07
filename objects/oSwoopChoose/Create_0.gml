@@ -1,6 +1,6 @@
 
 //Effect
-starEffect(x,y,8,true,10,15);
+effectStar(x,y,8,true,10,15);
 
 //Get Target
 targetEnemy = choose(0,1);

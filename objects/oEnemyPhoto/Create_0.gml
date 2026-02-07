@@ -29,7 +29,7 @@ win = function(_stars = true)
     enemyPlayAnim("win");
     
     //Stars
-    if _stars then starEffect(x,y,10,false,10,15);
+    if _stars then effectStar(x,y,10,false,10,15);
     
     //Start Reset
     alarm[0] = 40;

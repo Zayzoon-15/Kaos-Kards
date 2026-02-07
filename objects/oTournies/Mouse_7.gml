@@ -1,7 +1,7 @@
 if pressed
 {
 	//Stars
-	starEffect(x,y,15);
+	effectStar(x,y,15);
 	
 	//Set Other As Not Selected
 	with oTournies {selected = false;}

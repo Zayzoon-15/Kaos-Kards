@@ -1,3 +1,5 @@
+//Spin
+image_angle += spinSpd;
 
 //Fade
 if fade

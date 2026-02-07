@@ -9,7 +9,7 @@ repeat 6
 	var _margin = 100;
 	var _x = random_range(camera_get_view_x(view_camera[0])+_margin,camera_get_view_width(view_camera[0])-_margin);
 	var _y = random_range(camera_get_view_y(view_camera[0])+_margin,camera_get_view_height(view_camera[0])-_margin);
-	explosionEffect(_x,_y,false,3.5);
+	effectExplosion(_x,_y,false,3.5);
 }
 
 //Repeat

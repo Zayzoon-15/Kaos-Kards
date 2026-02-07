@@ -8,4 +8,4 @@ hitOthers = false;
 setSize(.3,.3);
 
 //Number Effect
-numberEffect(x,y,value);
+effectNumber(x,y,value);

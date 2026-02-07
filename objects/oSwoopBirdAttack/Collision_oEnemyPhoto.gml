@@ -8,5 +8,5 @@ if state == states.attackEnemy
 	hurtEnemy(value);
 	
 	//Hit Effect
-	numberEffect(x,y,-value);
+	effectNumber(x,y,-value);
 }

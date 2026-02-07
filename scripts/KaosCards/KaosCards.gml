@@ -39,10 +39,11 @@ kaosCards = {
     "Use a sticky hand to steal a card from the enemy",
     sCardSticky,kaosActionSticky),
     
-    //CONCEPT
     hotdog : new createCardKaos("Hotdog!",
     "Compete in a hotdog eating contest with the enemy to gain health",
-    sCardSwoop,kaosActionBrawl),
+    sCardSwoop,kaosActionHotdog),
+    
+    //CONCEPT
     
     time : new createCardKaos("Speedrun",
     "PLACE YOUR CARDS FAST",

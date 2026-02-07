@@ -5,7 +5,7 @@ if state == states.attackEnemy
 	hurtEnemy(value);
 	
 	//Hit Effect
-	numberEffect(x,y,-value);
+	effectNumber(x,y,-value);
 	
 	//Bread Effect
 	instance_create_layer(x,y,"Effects",oBreadHitEffect,{

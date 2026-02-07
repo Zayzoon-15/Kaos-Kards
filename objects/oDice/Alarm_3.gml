@@ -6,7 +6,7 @@ with oCard
     {
         //Juice
         cardJuice();
-        starEffect(x,y,10);
+        effectStar(x,y,10);
         
         //Add Range
         currentValue += other.diceNum;
