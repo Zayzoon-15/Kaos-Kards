@@ -4,7 +4,4 @@ timer = timerMax;
 
 //Start Game
 gameStarted = false;
-alarm[0] = 15;
-
-//End Game
-alarm[1] = timerMax;
+alarm[0] = 25;

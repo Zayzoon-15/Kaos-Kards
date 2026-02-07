@@ -6,8 +6,14 @@ y = ROOM_CENTER.y + 80;
 //Star Effect
 effectStar(x,y-sprite_height/2,15,playerId == 0);
 
+//Hotdog
+hotdogImage = 0;
+
 //Food
 ate = 0;
+winner = false;
+
+//Functions
 
 eatFood = function()
 {
@@ -19,6 +25,8 @@ eatFood = function()
     }
     
     ate ++;
+    
+    effectNumber(x,y,1);
 }
 
 missedFood = function()
@@ -29,5 +37,7 @@ missedFood = function()
         image_index = 0;
         sprite_index = sHotdogGuySad;
     }
+    
+    effectNumber(x,y,-1);
 }
     

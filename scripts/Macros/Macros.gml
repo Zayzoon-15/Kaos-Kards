@@ -11,3 +11,4 @@
 #macro SCREEN_WIDTH camera_get_view_width(view_camera[0])
 #macro SCREEN_HEIGHT camera_get_view_height(view_camera[0])
 #macro CAMERA_POS new Vector2(camera_get_view_x(view_camera[0]),camera_get_view_y(view_camera[0]))
+#macro SCREEN_EDGE {left: camera_get_view_x(view_camera[0]), right: camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0])} 

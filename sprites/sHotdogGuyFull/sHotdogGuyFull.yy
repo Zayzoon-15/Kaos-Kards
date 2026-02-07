@@ -27,8 +27,8 @@
   "nineSlice":null,
   "origin":7,
   "parent":{
-    "name":"KaosKards",
-    "path":"KaosKards.yyp",
+    "name":"Hotdog",
+    "path":"folders/Sprites/Attacks/Kaos/Hotdog.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

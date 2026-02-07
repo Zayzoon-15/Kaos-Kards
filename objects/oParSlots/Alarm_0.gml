@@ -3,7 +3,7 @@
 //Slot Empty
 if !filled and !disabled
 {
-    instance_create_layer(x,bbox_top,"Effects",oSkippedEffect);
+    instance_create_layer(x,bbox_top,"Effects",oEffectSkipped);
     scale += .3;
     used = true;
 } 

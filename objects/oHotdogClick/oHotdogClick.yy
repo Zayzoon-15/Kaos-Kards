@@ -10,8 +10,8 @@
   "name":"oHotdogClick",
   "overriddenProperties":[],
   "parent":{
-    "name":"KaosKards",
-    "path":"KaosKards.yyp",
+    "name":"Hotdog",
+    "path":"folders/Objects/Attacks/Kaos/Hotdog.yy",
   },
   "parentObjectId":null,
   "persistent":false,

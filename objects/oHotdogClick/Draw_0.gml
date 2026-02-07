@@ -6,5 +6,9 @@ draw_set_colour(c_black);
 draw_set_alpha(.5);
 draw_circle(x,y,rad,false);
 
+//Text
+textSetup(fnMain,fa_center,fa_middle);
+draw_text(x,y,"CLICK ME");
+
 //Reset
 drawReset();

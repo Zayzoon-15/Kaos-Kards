@@ -15,7 +15,7 @@ if targetSlot == undefined {
     }
     
     //Animate
-    instance_create_layer(x,bbox_top,"Effects",oSkippedEffect);
+    instance_create_layer(x,bbox_top,"Effects",oEffectSkipped);
     setSize(image_xscale+.5,image_yscale+.5);
 } 
 
