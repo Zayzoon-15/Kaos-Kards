@@ -30,7 +30,7 @@ startTrans = function()
     
     //Animate
     var _ease = EaseInOutQuart;
-    var _dur = 35;
+    var _dur = 30;
     TweenFire(self,_ease,TWEEN_MODE_ONCE,false,0,_dur,"spriteScale",1,2.3);
     TweenFire(self,_ease,TWEEN_MODE_ONCE,false,0,_dur,"spriteY",0,-(oDBInsertHole.y+100));
     

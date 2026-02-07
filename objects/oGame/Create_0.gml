@@ -106,7 +106,8 @@ audio_group_load(agSfx);
 audio_group_load(agVoice);
 
 //Load Save
-saveLoad();
+loadSettings();
+loadGameSave();
 
 //Set Window
 setWindowToRes();

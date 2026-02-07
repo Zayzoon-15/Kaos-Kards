@@ -41,7 +41,7 @@ kaosCards = {
     
     hotdog : new createCardKaos("Hotdog!",
     "Compete in a hotdog eating contest with the enemy to gain health",
-    sCardSwoop,kaosActionHotdog),
+    sCardHotdog,kaosActionHotdog),
     
     //CONCEPT
     

@@ -1,9 +1,132 @@
+#region Config
+
+function ssaveConfigGame() : SSave("kaosSave",true) constructor 
+{
+    //Deck
+    add_value("PlayerDeck",SSAVE_TYPE.ARRAY,playerDeck);
+}
+
+function ssaveConfigSettings() : SSave("settings",false) constructor 
+{
+    //Audio
+    add_value("MasterVolume",SSAVE_TYPE.REAL,50);
+    add_value("MusicVolume",SSAVE_TYPE.REAL,50);
+    add_value("SfxVolume",SSAVE_TYPE.REAL,50);
+    add_value("VoiceVolume",SSAVE_TYPE.REAL,50);
+    add_value("Mute",SSAVE_TYPE.BOOLEAN,true);
+    add_value("Voiceover",SSAVE_TYPE.BOOLEAN,true);
+    add_value("Subtitles",SSAVE_TYPE.BOOLEAN,true);
+    
+    //Video
+    add_value("Resolution",SSAVE_TYPE.REAL,2);
+    add_value("Particle",SSAVE_TYPE.REAL,0);
+    add_value("SubtitleStyle",SSAVE_TYPE.STRUCT,global.subtitlesStyle);
+    
+    //Input
+    add_value("Discard",SSAVE_TYPE.REAL,ord("Z"));
+    add_value("Fullscreen",SSAVE_TYPE.REAL,vk_f11);
+    add_value("Pause",SSAVE_TYPE.REAL,vk_escape);
+    add_value("Debug",SSAVE_TYPE.REAL,220);
+    add_value("MobilePress",SSAVE_TYPE.BOOLEAN,true);
+}
+
+#endregion
+
+
+
+#region Game
+
+
+function saveGameSave()
+{
+    //Get Save
+    var _save = ssave_get(ssaveConfigGame);
+    
+    //Deck
+    _save.set("PlayerDeck",playerDeck);
+    
+    //Save File
+    _save.save();
+}
+
+function loadGameSave()
+{
+    //Get Save
+    var _save = ssave_get(ssaveConfigGame);
+    
+    //Deck
+    playerDeck = _save.get("PlayerDeck");
+}
+
+#endregion
+
+
+#region Settings
+
+
+function saveSettings()
+{
+    //Get Save
+    var _save = ssave_get(ssaveConfigSettings);
+    
+    //Audio
+    _save.set("MasterVolume",global.masterVol);
+    _save.set("MusicVolume",global.musicVol);
+    _save.set("SfxVolume",global.sfxVol);
+    _save.set("VoiceVolume",global.voiceVol);
+    _save.set("Mute",global.unfocusMute);
+    _save.set("Voiceover",global.voiceover);
+    _save.set("Subtitles",global.subtitles);
+    
+    //Video
+    _save.set("Resolution",global.currentRes);
+    _save.set("Particle",global.partSelection);
+    _save.set("SubtitleStyle",global.subtitlesStyle);
+    
+    //Input
+    _save.set("Discard",global.keyDiscard);
+    _save.set("Fullscreen",global.keyFullscreen);
+    _save.set("Pause",global.keyPause);
+    _save.set("Debug",global.keyDebug);
+    _save.set("MobilePress",global.mobilePress);
+    
+    //Save File
+    _save.save();
+}
+
+function loadSettings()
+{
+    //Get Save
+    var _save = ssave_get(ssaveConfigSettings);
+    
+    //Audio
+    global.masterVol = _save.get("MasterVolume");
+    global.musicVol = _save.get("MusicVolume");
+    global.sfxVol = _save.get("SfxVolume");
+    global.voiceVol = _save.get("VoiceVolume");
+    global.unfocusMute = _save.get("Mute");
+    global.voiceover = _save.get("Voiceover");
+    global.subtitles = _save.get("Subtitles");
+    
+    //Video
+    global.currentRes = _save.get("Resolution");
+    global.partSelection = _save.get("Particle");
+    global.subtitlesStyle = _save.get("SubtitleStyle");
+    
+    //Input
+    global.keyDiscard = _save.get("Discard");
+    global.keyFullscreen = _save.get("Fullscreen");
+    global.keyPause = _save.get("Pause");
+    global.keyDebug = _save.get("Debug");
+    global.mobilePress = _save.get("MobilePress");
+}
+
+#endregion
+
+
+/*
 function saveLoad()
 {	
-    //Load Game
-    
-    
-    
 	//Settings For Now
 	ini_open("Settings.sav");
 	
