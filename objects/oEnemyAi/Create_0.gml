@@ -1,5 +1,6 @@
 //Get Info
 info = global.currentEnemy;
+hasHealed = false;
 
 //Set Weights
 weights = {
@@ -82,6 +83,7 @@ enemyDeck = array_concat(cardsHeal,cardsDefend,cardsAct,cardsKaos);
 combo = false;
 var _targetCombo = cardsAct;
 if enemyShouldHeal() then _targetCombo = array_concat(cardsDefend,cardsHeal,cardsAct);
+
 cardsCombo = _targetCombo[irandom_range(0,array_length(_targetCombo)-1)];
 
 //Stats
@@ -143,6 +145,9 @@ heal = function()
     //Get Random Card
     var _index = irandom_range(0,array_length(cardsHeal)-1);
     var _card = cardsHeal[_index];
+    
+    //Healed
+    hasHealed = true;
     
     //Remove From Array
     array_delete(cardsHeal,_index,1);
@@ -214,6 +219,7 @@ var _combo = new enemyActionNode(preformCombo);
 //Set Decisions
 var _healCheck = new enemyDecisionNode(enemyShouldHeal(),_heal,_attack);
 var _healCheckAgain = new enemyDecisionNode(enemyShouldHealAgain(),_heal,_attack)
+var _healCheckLast = new enemyDecisionNode(enemyShouldHealLast(),_heal,_attack)
 var _defendCheck = new enemyDecisionNode(enemyShouldDefend(),_defend,_healCheck);
 var _defendCheckAgain = new enemyDecisionNode(enemyShouldDefend(),_defend,_healCheckAgain);
 var _upgradeDice = new enemyDecisionNode(enemyShouldUpgrade(),_upgrade,_kaos);
@@ -227,7 +233,7 @@ chosenSpecialCard = _rerollDice;
 chosenActionCards = [
 _defendCheck, //Defend Or Heal (if all good then attack)
 _defendCheckAgain, //Defend, Heal or Attack
-_healCheckAgain, //Heal or Attack
+_healCheckLast, //Heal or Attack
 
 ];
 

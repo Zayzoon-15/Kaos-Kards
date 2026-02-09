@@ -1,9 +1,12 @@
+
+
 #region Config
 
-function ssaveConfigGame() : SSave("kaosSave",true) constructor 
+function ssaveConfigGame() : SSave("kaosSave",false) constructor 
 {
     //Deck
     add_value("PlayerDeck",SSAVE_TYPE.ARRAY,playerDeck);
+    print(playerDeck);
 }
 
 function ssaveConfigSettings() : SSave("settings",false) constructor 
@@ -55,7 +58,7 @@ function loadGameSave()
     var _save = ssave_get(ssaveConfigGame);
     
     //Deck
-    playerDeck = _save.get("PlayerDeck");
+    //playerDeck = _save.get("PlayerDeck");
 }
 
 #endregion

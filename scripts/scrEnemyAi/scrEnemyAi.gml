@@ -94,6 +94,14 @@ function enemyShouldHealAgain()
     return hp+15 <= values.heal and enemyCheckChance(weights.heal*.7);
 }
 
+function enemyShouldHealLast()
+{
+    //Just Don't
+    if weights.heal == 0 or array_length(cardsHeal) <= 0 then return false;
+    
+    return hp+20 <= values.heal and enemyCheckChance(weights.heal*.6) and !hasHealed;
+}
+
 function enemyShouldDefendAgain()
 {
     //Just Don't

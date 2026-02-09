@@ -31,6 +31,9 @@ function initSettings()
 	global.keyPause = vk_escape;
 	global.keyDebug = 220;
     
+    //Game
+    global.gameSpeed = 1;
+    
     //Mobile
     global.mobilePress = true;
     

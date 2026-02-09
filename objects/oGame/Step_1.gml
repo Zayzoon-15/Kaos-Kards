@@ -4,3 +4,6 @@ if _loaded and !alarm[0] and room == rSetup
 {
     alarm[0] = 1;
 }
+
+//Set Game Speed
+game_set_speed(global.gameSpeed * 60,gamespeed_fps);

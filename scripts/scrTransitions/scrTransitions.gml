@@ -2,7 +2,7 @@
 global.midTrans = false;
 global.roomTarget = -1;
 
-function transPlaceSequence(_type)
+function transPlaceSequence(_type,_speed)
 {
     if layer_exists("Transitions") then layer_destroy("Transitions");
     var _layer = layer_create(-99999,"Transitions");
@@ -12,6 +12,7 @@ function transPlaceSequence(_type)
 	
     var _seq = layer_sequence_create(_layer,_x,0,_type);
 	layer_sequence_xscale(_seq,_xscale);
+    layer_sequence_speedscale(_seq,_speed);
 }
 
 
@@ -20,7 +21,7 @@ function transPlaceSequence(_type)
 ///@param {Asset.GMRoom} _roomTarget The target room
 ///@param {Asset.GMSequence} _typeOut The transition out
 ///@param {Asset.GMSequence} _typeIn The transition in
-function transStart(_roomTarget,_typeOut = seqFadeOut,_typeIn = seqFadeIn)
+function transStart(_roomTarget,_typeOut = seqFadeOut,_typeIn = seqFadeIn,_transSpeed = global.gameSpeed)
 {
     if !global.midTrans
     {
@@ -30,9 +31,9 @@ function transStart(_roomTarget,_typeOut = seqFadeOut,_typeIn = seqFadeIn)
 		//Transition Is Sequence
 		if asset_get_type(_typeOut) == asset_sequence
 		{
-	        transPlaceSequence(_typeOut);
+	        transPlaceSequence(_typeOut,_transSpeed);
 	        layer_set_target_room(_roomTarget);
-	        transPlaceSequence(_typeIn);
+	        transPlaceSequence(_typeIn,_transSpeed);
 	        layer_reset_target_room();
 		} else {
 			
