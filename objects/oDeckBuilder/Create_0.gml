@@ -29,13 +29,13 @@ startTrans = function()
     depth = -100;
     
     //Animate
-    var _ease = EaseInOutQuart;
+    var _ease = EaseInOutQuad;
     var _dur = 30;
     TweenFire(self,_ease,TWEEN_MODE_ONCE,false,0,_dur,"spriteScale",1,2.3);
     TweenFire(self,_ease,TWEEN_MODE_ONCE,false,0,_dur,"spriteY",0,-(oDBInsertHole.y+100));
     
     //Change Room
-    timeSourceCreate(_dur*.28,function(){
+    timeSourceCreate(_dur*.3,function(){
         
         if room == rDeckBuilder1
         {

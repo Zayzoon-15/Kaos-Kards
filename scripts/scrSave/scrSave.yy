@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"__scr_ssave_util",
+  "%Name":"scrSave",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"__scr_ssave_util",
+  "name":"scrSave",
   "parent":{
-    "name":"Internal",
-    "path":"folders/Extensions/SSave/Internal.yy",
+    "name":"Game",
+    "path":"folders/Scripts/Game.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

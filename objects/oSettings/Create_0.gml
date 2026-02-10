@@ -94,7 +94,7 @@ destroySettings = function()
 	audioPlayGroupSong(global.musicGroups.bg,global.lastSong);
     
     //Save
-    saveSettings(); //Just in case
+    SaveFile.SettingsSave();
 	
 	//Activate
     audio_resume_all();

@@ -98,7 +98,7 @@ function createCardKaos(_name,_desc,_sprite,_action = undefined,_extraArgs = [])
 /// @param {string} _name The cards names
 /// @param {string} _desc The cards description
 /// @param {asset.GMSprite} _sprite The cards sprite
-/// @param {function} _action The cards action (Put undefined of it has no action)
+/// @param {function} _action The cards action (Put NaN of it has no action)
 /// @param {real} _uses The amount of times the card can be used before not being able to use again (Put Nan if infinite)
 /// @param {array} _extraArgs Extra arguments the givin function can use
 /// /// @param {array} _range The cards range Ex: [1,6] min-1 max-6
@@ -121,8 +121,8 @@ function createCardDice(_name,_desc,_sprite,_action = function(){},_uses = NaN,_
     } else range = undefined;
     
     //Get Action
-    var _func = _action;
-    if _action == undefined then _func = function(){};
+    var _func = function(){};
+    if _action != undefined and _action != NaN then _func = _action;
     
     //Set Action
     action = _func;

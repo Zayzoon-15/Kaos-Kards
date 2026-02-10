@@ -1,3 +1,3 @@
 ///@desc Save Game
-saveSettings();
-saveGameSave();
+SaveFile.GameSave();
+SaveFile.SettingsSave();
