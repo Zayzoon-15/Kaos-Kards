@@ -121,8 +121,8 @@ function createCardDice(_name,_desc,_sprite,_action = function(){},_uses = NaN,_
     } else range = undefined;
     
     //Get Action
-    var _func = function(){};
-    if _action != undefined and _action != NaN then _func = _action;
+    var _func = _action;
+    if _action == undefined then _func = function(){};
     
     //Set Action
     action = _func;
