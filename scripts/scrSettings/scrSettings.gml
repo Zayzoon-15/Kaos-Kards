@@ -1,8 +1,10 @@
 function initSettings()
 {
     //Window
+	global.window = "Window";
 	global.resolutions = [new Vector2(640,360),new Vector2(960,540),new Vector2(1280,720),new Vector2(1920,1080)]
 	global.currentRes = 2;
+	global.vSync = true;
 	
 	//Video
 	global.partSelection = 0;
@@ -45,9 +47,21 @@ function initSettings()
 
 function setWindowToRes()
 {
+	//Set Size
 	var _res = global.resolutions[global.currentRes];
 	window_set_size(_res.x,_res.y);
 	window_center();
+	
+	//Apply Window
+	switch global.window
+	{
+		case "Window": window_set_showborder(true); break;
+		case "Fullscreen": window_set_fullscreen(true); break;
+		case "Borderless": window_set_showborder(false); break;
+	}
+	
+	//Apply V-sync
+	display_reset(0,global.vSync);
 }
 
 function keyToString(_key)

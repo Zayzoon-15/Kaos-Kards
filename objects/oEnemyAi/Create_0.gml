@@ -83,7 +83,10 @@ enemyDeck = array_concat(cardsHeal,cardsDefend,cardsAct,cardsKaos);
 combo = false;
 var _comboCards = enemyShouldHeal() ? array_concat(cardsDefend,cardsHeal,cardsAct) : array_concat([],cardsAct);
 var _targetCombo = arrayGetDuplicates(_comboCards,3);
-cardsCombo = _targetCombo[irandom_range(0,array_length(_targetCombo)-1)];
+if array_length(_targetCombo) > 0
+{
+	cardsCombo = _targetCombo[irandom_range(0,array_length(_targetCombo)-1)];
+}
 
 //Stats
 specialUsed = false;

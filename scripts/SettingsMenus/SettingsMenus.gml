@@ -39,6 +39,11 @@ function SettingsMenus()
                 SettingsButtons.Check("Borderless",function()
                 {
                     window_set_showborder(!argument0);
+					if window_get_showborder()
+					{
+						global.window = "Window";
+					} else global.window = "Borderless";
+					
                 },function(){return !window_get_showborder();});
         }
         
@@ -49,6 +54,11 @@ function SettingsMenus()
                 {text : "Low",action:function(){global.partAmount = .2;}}, 
                 {text : "None",action:function(){global.partAmount = 0;}}, 
             ],"partSelection",true);
+			SettingsButtons.Check("V-Sync",function(){
+				global.vSync = argument0;
+				display_reset(0,global.vSync);
+			},global.vSync);
+			
             SettingsButtons.Button("Other Suff Idk");
         
         SettingsButtons.Separator("Subtitles");

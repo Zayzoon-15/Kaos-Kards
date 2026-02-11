@@ -203,6 +203,8 @@ function SaveFile()
         
         //Video
         struct_set(_saveData,"Resolution",global.currentRes);
+        struct_set(_saveData,"Window",global.window);
+        struct_set(_saveData,"Vsync",global.vSync);
         struct_set(_saveData,"Particle",global.partSelection);
         struct_set(_saveData,"SubtitleStyle",global.subtitlesStyle);
         
@@ -239,6 +241,8 @@ function SaveFile()
         
         //Video
         global.currentRes = struct_get_variable(_saveData,"Resolution",2);
+        global.window = struct_get_variable(_saveData,"Window","Window");
+        global.vSync = struct_get_variable(_saveData,"Vsync",true);
         global.partSelection = struct_get_variable(_saveData,"Particle",0);
         global.subtitlesStyle = struct_get_variable(_saveData,"SubtitleStyle",global.subtitlesStyle);
         
