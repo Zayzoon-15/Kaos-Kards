@@ -220,6 +220,7 @@ function randomNonRepeat(_array) {
 
 }
 
+
 ///@desc Swaps to indexes in an array
 ///@param {array} _array The target array
 ///@param {real} _indexA The first index
@@ -232,3 +233,36 @@ function arraySwapIndex(_array,_indexA,_indexB)
 }
 
 
+/// @desc Checks if an array has duplicate values and returns the duplicate values
+/// @param {array} _array The target array
+/// @param {real} [_targetCount] The target amount to be called a duplicate
+/// @returns {array} An array with the duplicates in the given array
+function arrayGetDuplicates(_array,_targetCount = 2) {
+    var _original = _array;
+    // Create a temporary array of unique values
+    var _unique = array_unique(_original);
+    var _duplicates = [];
+    var _count;
+
+    // Loop through the unique values
+    for (var i = 0; i < array_length(_unique); i++) {
+        var _value = _unique[i];
+        _count = 0;
+
+        // Count occurrences of the current unique value in the original array
+        for (var j = 0; j < array_length(_original); j++) {
+            if (_original[j] == _value) {
+                _count++;
+            }
+        }
+
+        // If the value appeared more than once, add it to the duplicates array
+        if (_count >= _targetCount) {
+            // Add the value to the duplicates array. You can add it only once or add every instance depending on need
+            array_push(_duplicates, _value); 
+        }
+    }
+    
+    // Use array_unique() on the result to ensure each duplicate is listed only once in the final array
+    return array_unique(_duplicates);
+}

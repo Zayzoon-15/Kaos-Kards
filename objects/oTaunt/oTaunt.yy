@@ -8,8 +8,8 @@
   "name":"oTaunt",
   "overriddenProperties":[],
   "parent":{
-    "name":"CONCEPT",
-    "path":"folders/Objects/Attacks/CONCEPT.yy",
+    "name":"Actions",
+    "path":"folders/Objects/Attacks/Actions.yy",
   },
   "parentObjectId":{
     "name":"oParAttacks",

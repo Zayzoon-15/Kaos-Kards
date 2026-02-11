@@ -2,10 +2,6 @@
 listW = sprite_width;
 listH = array_length(items) * itemH;
 
-////Set Scale
-//var _scale = open ? 1 : -.1;
-//listScale = lerp(listScale,_scale,.1);
-
 //Touching Drop Down
 if point_in_rectangle(mouse_x,mouse_y,bbox_right-listW,bbox_bottom,bbox_right,bbox_bottom+listH) and open
 {
@@ -67,7 +63,6 @@ if point_in_rectangle(mouse_x,mouse_y,bbox_right-listW,bbox_bottom,bbox_right,bb
         
         if mouse_check_button_released(mb_left) and pressed
         {
-            //TweenFire(self,EaseInBack,TWEEN_MODE_ONCE,false,0,15,"listScale",listScale,0);
             open = false;
             pressed = false;
         }

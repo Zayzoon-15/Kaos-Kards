@@ -120,8 +120,6 @@ function SaveFile()
                 array_push(_deck,_info);
             }
             
-            print(_deck);
-            
             return _deck;
         }
         
@@ -162,7 +160,6 @@ function SaveFile()
                 //Put Card In Deck
                 var _info = struct_get(_struct,_card.key);
                 array_push(_deck,_info);
-                print(_deck);
             }
             
             return _deck;

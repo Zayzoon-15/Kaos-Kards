@@ -11,8 +11,8 @@
   "name":"oTestMusic",
   "overriddenProperties":[],
   "parent":{
-    "name":"Testing",
-    "path":"folders/Objects/Testing.yy",
+    "name":"_Testing",
+    "path":"folders/Objects/_Testing.yy",
   },
   "parentObjectId":null,
   "persistent":false,

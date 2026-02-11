@@ -45,7 +45,7 @@
     {"$GMFolder":"","%Name":"Kaos","folderPath":"folders/Objects/Game/Kaos.yy","name":"Kaos","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Prepare","folderPath":"folders/Objects/Game/Prepare.yy","name":"Prepare","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Slots","folderPath":"folders/Objects/Game/Prepare/Slots.yy","name":"Slots","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Testing","folderPath":"folders/Objects/Testing.yy","name":"Testing","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"_Testing","folderPath":"folders/Objects/_Testing.yy","name":"_Testing","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Ui","folderPath":"folders/Objects/Ui.yy","name":"Ui","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Buttons","folderPath":"folders/Objects/Ui/Buttons.yy","name":"Buttons","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Enemy","folderPath":"folders/Objects/Ui/Buttons/Enemy.yy","name":"Enemy","resourceType":"GMFolder","resourceVersion":"2.0",},

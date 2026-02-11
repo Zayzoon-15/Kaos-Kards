@@ -90,7 +90,7 @@ function SettingsMenus()
             SettingsButtons.Check("Tip Boxes");
         
         SettingsButtons.Separator("Gameplay");
-            SettingsButtons.Slider("Game Speed","gameSpeed",undefined,2,1,4,true,ceil,"X");
+            SettingsButtons.Slider("Game Speed","gameSpeed",undefined,2,1,4,false,undefined,"X");
             SettingsButtons.Button("What Do I Put Here...",function()
             {
                 instance_create_depth(ROOM_CENTER.x,ROOM_CENTER.y,-300,oJumpScare);
