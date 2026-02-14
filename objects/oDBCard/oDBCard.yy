@@ -14,8 +14,8 @@
   "name":"oDBCard",
   "overriddenProperties":[],
   "parent":{
-    "name":"Menu1",
-    "path":"folders/Objects/Ui/Deck Builder/Menu1.yy",
+    "name":"Deck Builder",
+    "path":"folders/Objects/Ui/Deck Builder.yy",
   },
   "parentObjectId":null,
   "persistent":false,

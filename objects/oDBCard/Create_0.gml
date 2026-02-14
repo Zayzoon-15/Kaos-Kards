@@ -14,8 +14,6 @@ cardYOffset = 0;
 uses = info.uses;
 
 //Drawing
-xscale = 1;
-yscale = 1;
 angle = 0;
 shadowX = 0;
 shadowY = 0;
@@ -38,7 +36,6 @@ hoverDir = 0;
 cardFront = sprite_index;
 cardBack  = global.currentDeck.sprite;
 cardAngle = 0;
-cardThickness = 8;
 onMouse = 0;
 
 //Fade

@@ -4,7 +4,7 @@ draw_sprite_ext(sprite_index,3,x,y,image_xscale,image_yscale,angle,image_blend,i
 //Get Values
 var _spriteWidth = 292;
 var _spriteHeight = 41;
-var _hpValue = (hp/100)*_spriteWidth;
+var _hpValue = (hp/maxHp)*_spriteWidth;
 
 //Flip Values
 var _xPos,_yPos;
@@ -65,27 +65,26 @@ for (var i = 0; i < ds_list_size(targetList); i++) {
 	
 	if _list.info.type == EFFECT_TYPE.HARM
 	{
-    _newOffset = _hpValue+_lastValue;
-    var _barLeft = abs(_hpValue-_spriteWidth);
-    
-	_value = _list.value;
-	if _value < 0 then _value = 0;
-	
-	_list.percent = (_value/100)*_spriteWidth;
-    
-    _barX = _maskXOffset + lengthdir_x(_newOffset-1, angle) + lengthdir_x(_maskYOffset, angle - 90);
-    _barY = lengthdir_y(_newOffset-1, angle) + lengthdir_y(_maskYOffset, angle - 90);
-	} else {
-	
-	_newOffset = _lastValue;
-    
-	_value = _list.showPercent;
-	if _value < 0 then _value = 0;
-	
-	_list.percent = (_value/100)*_spriteWidth;
-    
-    _barX = _maskXOffset + lengthdir_x(_newOffset, angle) + lengthdir_x(_maskYOffset, angle - 90);
-    _barY = lengthdir_y(_newOffset, angle) + lengthdir_y(_maskYOffset, angle - 90);
+        _newOffset = _hpValue+_lastValue;
+        var _barLeft = abs(_hpValue-_spriteWidth);
+        
+    	_value = _list.value;
+    	if _value < 0 then _value = 0;
+    	
+    	_list.percent = (_value/100)*_spriteWidth;
+        
+        _barX = _maskXOffset + lengthdir_x(_newOffset-1, angle) + lengthdir_x(_maskYOffset, angle - 90);
+        _barY = lengthdir_y(_newOffset-1, angle) + lengthdir_y(_maskYOffset, angle - 90);
+    } else {
+    	_newOffset = _lastValue;
+        
+    	_value = _list.showPercent;
+    	if _value < 0 then _value = 0;
+    	
+    	_list.percent = (_value/100)*_spriteWidth;
+        
+        _barX = _maskXOffset + lengthdir_x(_newOffset, angle) + lengthdir_x(_maskYOffset, angle - 90);
+        _barY = lengthdir_y(_newOffset, angle) + lengthdir_y(_maskYOffset, angle - 90);
 	}
     
 	draw_sprite_general(sprite_index,6,_xPos,_yPos,_list.percent,_spriteHeight,_barX,_barY,

@@ -43,3 +43,7 @@ tickCooldown --; //Reduce Tick
 //Set Last Value
 lastValue = value;
 lastFrame = image_index;
+
+//Clamp Values
+global.playerComboMeter = clamp(global.playerComboMeter,0,100);
+global.enemyComboMeter = clamp(global.enemyComboMeter,0,100);

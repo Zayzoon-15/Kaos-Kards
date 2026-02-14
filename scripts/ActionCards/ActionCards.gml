@@ -44,7 +44,7 @@ actionCards = {
 	
     mirror : new createCardAction("Mirror Card",
     "Reflects any physical attacks attacking the card\nThe range changes how much more damage the attack does",
-    sCardMirror,[0,2],CARDACT_GENRES.ATTACK,actionMirror),
+    sCardMirror,[0,2],CARDACT_GENRES.DEFEND,actionMirror),
 	
     ghost : new createCardAction("Ghost Card",
     "Shoots a non physical ghost that ignores shields",
@@ -55,6 +55,10 @@ actionCards = {
     sCardTaunt,[1,4],CARDACT_GENRES.ATTACK,actionTaunt),
     
     //CONCEPT
+    steak : new createCardAction("Juicy Steak",
+    "Increase max health by a random amount",
+    sCardBread,[0,5],CARDACT_GENRES.HEAL,actionSteak),
+    
     reckless : new createCardAction("Reckless Attack",
     "Deal high damage to the enemy, but take a small amount of recoil damage",
     sCardPunch,[5,9],CARDACT_GENRES.ATTACK,actionReckless),

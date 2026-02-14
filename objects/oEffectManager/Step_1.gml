@@ -1,15 +1,15 @@
 //Update List
 for (var k = 0; k < 2; k++) {
     
-    var _targetList = playerEffects;
-    if k == 1 then _targetList = enemyEffects;
+    var _targetList = k == 1 ? playerEffects : enemyEffects;
+    var _maxHp = k == 1 ? global.playerMaxHp : global.enemyMaxHp;
     
 	for (var i = 0; i < ds_list_size(_targetList); i++) {
     
         var _listValue = ds_list_find_value(_targetList,i);
 
 		//Clamp
-		_listValue.value = clamp(_listValue.value,-10,100);
+		_listValue.value = clamp(_listValue.value,-10,_maxHp);
 
 		//Ease Percent
 		if _listValue.healthInst != noone and _listValue.info.type == EFFECT_TYPE.HARM
@@ -17,14 +17,14 @@ for (var k = 0; k < 2; k++) {
 			with _listValue.healthInst
 			{	
 				if startHitStun then _listValue.value = lerp(_listValue.value,-2,.03);
-                _listValue.value = clamp(_listValue.value,0,100);
-                _listValue.showPercent = _listValue.value;
+                _listValue.value = clamp(_listValue.value,0,_maxHp);
+                _listValue.showPercent = (_listValue.value/_maxHp)*100;
 			}
 		}
 		
 		if _listValue.info.type == EFFECT_TYPE.ASS
 		{
-			_listValue.showPercent = lerp(_listValue.showPercent,_listValue.value,0.3);
+			_listValue.showPercent = lerp(_listValue.showPercent,(_listValue.value/_maxHp)*100,0.3);
 			if k == 1
 			{
 				global.enemyTempHp = _listValue.value;

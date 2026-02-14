@@ -68,7 +68,7 @@ function effectHealth(_x,_y,_amount = 5,_sound = true,_xOffset = 30,_yOffset = 3
 		var _yOff = random_range(-_effectY,_effectY);
         
 		//Create Effect
-		instance_create_layer(_x+_xOffset,_y+_yOffset,"Effects",oEffectHealth);
+		instance_create_layer(_x+_xOff,_y+_yOff,"Effects",oEffectHealth);
     	
     }
 }

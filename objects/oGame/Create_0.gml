@@ -46,6 +46,8 @@ global.enemyHp = 100;
 global.enemyTempHp = 0;
 global.playerHpIcons = [];
 global.enemyHpIcons = [];
+global.playerMaxHp = 100;
+global.enemyMaxHp = 100;
 
 //Meter
 global.playerComboMeter = 0;

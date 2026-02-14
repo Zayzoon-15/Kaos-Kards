@@ -18,10 +18,11 @@ cardY = y;
 cardTargetX = x;
 cardTargetY = y;
 
-//Shadow
+//Drawing
 shadowX = 0;
 shadowY = 0;
 shadowSize = 0;
+cardAngle = 0;
 
 //Depth
 startDepth = depth;
@@ -51,3 +52,4 @@ with oParSlots
 //Hover
 canGrab = true;
 hover = false;
+onMouse = 0;

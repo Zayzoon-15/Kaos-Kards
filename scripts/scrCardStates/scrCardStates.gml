@@ -62,9 +62,25 @@ function cardStateHand(){
     {
         cardTargetY = _handY - 10;
         shadowY = lerp(shadowY,16,.2);
+        onMouse ++;
     } else {
     	cardTargetY = _handY;
         shadowY = lerp(shadowY,8,.2);
+        
+        //Spin
+        if onMouse <= 2 and onMouse > 0
+        {
+            //Sound
+            audio_stop_sound(snCardHover);
+            audioPlaySfx(snCardFlip,.95,1.05);
+            
+            //Tween
+            var _dir = sign(mouse_x - x);
+            var _start = _dir == -1 ? 0 : 360;
+            var _end = _dir == -1 ? 360 : 0;
+            TweenFire(self,EaseOutBack,TWEEN_MODE_ONCE,false,0,60,"cardAngle",_start,_end);
+        }
+        onMouse = 0;
     }
     
     targetX = _handX;
@@ -191,10 +207,26 @@ function cardStatePlaced()
         cardTargetY = _cardY - 8;
         shadowY = lerp(shadowY,15,.2);
         shadowSize = lerp(shadowSize,0.08,.2);
+        onMouse ++;
     } else {
     	cardTargetY = _cardY;
         shadowY = lerp(shadowY,8,.2);
         shadowSize = lerp(shadowSize,0.1,.2);
+        
+        //Spin
+        if onMouse <= 2 and onMouse > 0
+        {
+            //Sound
+            audio_stop_sound(snCardHover);
+            audioPlaySfx(snCardFlip,.95,1.05);
+            
+            //Tween
+            var _dir = sign(mouse_x - x);
+            var _start = _dir == -1 ? 0 : 360;
+            var _end = _dir == -1 ? 360 : 0;
+            TweenFire(self,EaseOutBack,TWEEN_MODE_ONCE,false,0,60,"cardAngle",_start,_end);
+        }
+        onMouse = 0;
     }
     
     targetX = _cardX;

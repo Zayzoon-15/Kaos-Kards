@@ -167,8 +167,10 @@ function enemyPlayAnim(_anim)
 /// @param {asset.gmsprite} _front The front of the card
 /// @param {asset.gmsprite} _back The back of the card
 /// @param {real} _angle The rotation angle for the 3d effect
-/// @param {real} _thickness The cards edge thickness
-function drawCard3d(_x, _y, _front, _back, _angle, _rot, _thickness, _imageblend = image_blend, _alpha = 1)
+/// @param {real} _thickness The cards edge thickness (Default = 8)
+/// @param {real} _imageblend The image blend for the card (Default = image_blend)
+/// @param {real} _alpha The alpha of the card (Default = image_alpha)
+function drawCard3d(_x, _y, _front, _back, _angle, _rot, _thickness = CARD_THICKNESS, _imageblend = image_blend, _alpha = image_alpha)
 {
     //Function To Rotate The Card
     var _rotatePoint = function(_px, _py, _cx, _cy, _rot)

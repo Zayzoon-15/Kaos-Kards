@@ -114,7 +114,14 @@ function FiggySetup() {
 		Figgy.Section("Health Bar",false);
         Figgy.Separator("Player");
         Figgy.Int("Player Health",100,0,100,FIGGY_INT_DEFAULT_STEP,function(){global.playerHp = argument0;});
+        Figgy.String("Player Max Health",100,function(){
+			if argument0 != "" and real(argument0) > global.playerMaxHp
+			{
+				global.playerMaxHp = real(argument0);
+			}
+		});
 		Figgy.Bool("Killable Player", true,function(){global.debugKillable.player = argument0});
+        Figgy.Button("Heal Player",function(){healPlayer(10)});
         Figgy.Button("Hurt Effect",function(){hurtPlayer(0);});
         Figgy.Button("Apply Shield Player",function(){addEffect(attackEffects.shield,10,false)});
         Figgy.Button("Apply Poison Player",function(){addEffect(attackEffects.poison,10,false)});
@@ -122,7 +129,14 @@ function FiggySetup() {
         
         Figgy.Separator("Enemy");
         Figgy.Int("Enemy Health",100,0,100,FIGGY_INT_DEFAULT_STEP,function(){global.enemyHp = argument0;});
+        Figgy.String("Enemy Max Health",100,function(){
+			if argument0 != "" and real(argument0) > global.enemyMaxHp
+			{
+				global.enemyMaxHp = real(argument0);
+			}
+		});
 		Figgy.Bool("Killable Enemy", true,function(){global.debugKillable.enemy = argument0});
+        Figgy.Button("Heal Enemy",function(){healEnemy(10)});
         Figgy.Button("Hurt Effect",function(){hurtEnemy(0);});
         Figgy.Button("Apply Shield Enemy",function(){addEffect(attackEffects.shield,10,true)});
         Figgy.Button("Apply Poison Enemy",function(){addEffect(attackEffects.poison,10,true)});

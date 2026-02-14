@@ -17,6 +17,8 @@ shadowSize = 0.05;
 shake = 0;
 startDepth = depth;
 sprite_index = info.sprite;
+cardAngle = 0;
+TweenFire(self,EaseOutQuart,TWEEN_MODE_ONCE,false,0,40,"cardAngle",180,0);
 
 //Grabbing
 canGrab = true;
@@ -24,6 +26,7 @@ canMove = true;
 offsetX = 0;
 offsetY = 0;
 hover = false;
+onMouse = 0;
 
 //Placed
 slot = noone;
@@ -59,7 +62,8 @@ enum CARDSTATE
 
 state = CARDSTATE.HAND;
 
-//Functions
+#region Functions
+
 resetSlot = function()
 {
     if wasPlaced
@@ -131,3 +135,5 @@ cardJuice = function()
     //Angle
     image_angle += random_range(5,10)*choose(-1,1);
 }
+
+#endregion

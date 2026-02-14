@@ -1,19 +1,12 @@
-
 //Flip Sprite
 if image_xscale == 1 then flipped = false; else flipped = true;
 if flipped then sprite_index = sHealthBarFlipped; else sprite_index = sHealthBar;
 image_xscale = 1;
 
 //Health
-if target == "Player"
-{
-    hp = global.playerHp;
-	tempHp = global.playerTempHp;
-} else {
-    hp = global.enemyHp;
-	tempHp = global.enemyTempHp;
-}
-
+hp = target == "Player" ? global.playerHp : global.enemyHp;
+tempHp = target == "Player" ? global.playerTempHp : global.enemyTempHp;
+maxHp = target == "Player" ? global.playerMaxHp : global.enemyMaxHp;
 
 //Image Values
 angle = 0;

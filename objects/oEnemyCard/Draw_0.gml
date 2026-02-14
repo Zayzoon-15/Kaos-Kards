@@ -1,9 +1,10 @@
-
 //Draw Shadow
-draw_sprite_ext(sprite_index, image_index, cardX+shadowX, cardY+shadowY, image_xscale-shadowSize, image_yscale-shadowSize, image_angle, c_black, image_alpha*SHADOW_ALPHA);
+var _scaleX = cos(degtorad(cardAngle));
+draw_sprite_ext(sprite_index, image_index, cardX+shadowX, cardY+shadowY, (image_xscale-shadowSize)*_scaleX, image_yscale-shadowSize, image_angle, c_black, SHADOW_ALPHA*image_alpha);
 
-//Draw Self
-draw_sprite_ext(sprite_index, image_index, cardX, cardY, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+//Draw Card
+drawCard3d(cardX, cardY, sprite_index, sDeck, cardAngle, image_angle);
+
 
 //Draw Value
 if value != undefined

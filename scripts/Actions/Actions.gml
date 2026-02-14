@@ -182,6 +182,21 @@ function actionTaunt(_targetEnemy)
 //Concept
 
 ///@self oAttackCard
+function actionSteak(_targetEnemy)
+{
+    //Juice
+    cardJuice(false);
+    effectHealth(x,y,10,true,10,25,sprite_get_width(sCardBlank),sprite_get_height(sCardBlank));
+    effectNumber(x,y,value);
+    
+    //Increase Max Health
+    if _targetEnemy
+    {
+        global.playerMaxHp += value;
+    } else global.enemyMaxHp += value;
+}
+
+///@self oAttackCard
 function actionReckless(_targetEnemy)
 {
     instance_create_layer(x,y,"Attacks",oReckless,{

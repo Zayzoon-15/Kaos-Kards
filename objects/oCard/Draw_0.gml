@@ -10,11 +10,31 @@ if followingDice
     cardY = y;
 }
 
-//Draw Shadow
-draw_sprite_ext(sprite_index, image_index, cardX+shadowX+_shakeX, cardY+shadowY+_shakeY, image_xscale-shadowSize, image_yscale-shadowSize, image_angle, c_black, SHADOW_ALPHA*image_alpha);
+#region Draw Cards
 
-//Draw Self
-draw_sprite_ext(sprite_index, image_index, cardX+_shakeX, cardY+_shakeY, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+//Draw Card Normally
+if state == CARDSTATE.GRABBED or image_xscale > 1
+{
+    //Draw Shadow
+    draw_sprite_ext(sprite_index, image_index, cardX+shadowX+_shakeX, cardY+shadowY+_shakeY, image_xscale-shadowSize, image_yscale-shadowSize, image_angle, c_black, SHADOW_ALPHA*image_alpha);
+    
+    //Draw Self
+    draw_sprite_ext(sprite_index, image_index, cardX+_shakeX, cardY+_shakeY, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+} else { //Draw Card In 3D
+    
+    //Draw Shadow
+    var _scaleX = cos(degtorad(cardAngle));
+    draw_sprite_ext(sprite_index, image_index, cardX+shadowX+_shakeX, cardY+shadowY+_shakeY, (image_xscale-shadowSize)*_scaleX, image_yscale-shadowSize, image_angle, c_black, SHADOW_ALPHA*image_alpha);
+	
+    //Draw Card
+	drawCard3d(cardX+_shakeX, cardY+_shakeY, sprite_index, global.currentDeck.sprite, cardAngle,image_angle);
+    
+}
+
+
+
+#endregion
+
 
 //Draw Disable
 if !canUse

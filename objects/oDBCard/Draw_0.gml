@@ -15,17 +15,17 @@ shake = lerp(shake,0,.3);
 if grabbed
 {
     //Draw Shadow
-    draw_sprite_ext(sprite_index, image_index, cardX+shadowX+_shakeX, cardY+shadowY+_shakeY, (image_xscale* xscale)-shadowSize, (image_yscale*yscale)-shadowSize, image_angle, c_black, SHADOW_ALPHA*image_alpha);
+    draw_sprite_ext(sprite_index, image_index, cardX+shadowX+_shakeX, cardY+shadowY+_shakeY, image_xscale-shadowSize, image_yscale-shadowSize, image_angle, c_black, SHADOW_ALPHA*image_alpha);
     
     //Draw Card
-    draw_sprite_ext(sprite_index, image_index, cardX+_shakeX, cardY+_shakeY, image_xscale*xscale, image_yscale*yscale, image_angle, image_blend, image_alpha);
+    draw_sprite_ext(sprite_index, image_index, cardX+_shakeX, cardY+_shakeY, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 } else {
     //Draw Shadow
     var _scaleX = cos(degtorad(cardAngle));
-    draw_sprite_ext(sprite_index, image_index, cardX+shadowX+_shakeX, cardY+shadowY+_shakeY, ((image_xscale* xscale)-shadowSize)*_scaleX, (image_yscale*yscale)-shadowSize, image_angle, c_black, SHADOW_ALPHA*image_alpha);
+    draw_sprite_ext(sprite_index, image_index, cardX+shadowX+_shakeX, cardY+shadowY+_shakeY, (image_xscale-shadowSize)*_scaleX, image_yscale-shadowSize, image_angle, c_black, SHADOW_ALPHA*image_alpha);
 	
     //Draw Card
-	drawCard3d(cardX+_shakeX, cardY+_shakeY, cardFront, cardBack, cardAngle,image_angle, cardThickness,image_blend,image_alpha);
+	drawCard3d(cardX+_shakeX, cardY+_shakeY, cardFront, cardBack, cardAngle,image_angle);
 }
 
 
