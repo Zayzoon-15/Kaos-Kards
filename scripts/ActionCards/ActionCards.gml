@@ -54,11 +54,11 @@ actionCards = {
     "Taunt your enemy to gain a random amount of combo charge and steal a random amount from them",
     sCardTaunt,[1,4],CARDACT_GENRES.ATTACK,actionTaunt),
     
-    //CONCEPT
     steak : new createCardAction("Juicy Steak",
     "Increase max health by a random amount",
-    sCardBread,[0,5],CARDACT_GENRES.HEAL,actionSteak),
+    sCardSteak,[0,5],CARDACT_GENRES.HEAL,actionSteak),
     
+    //CONCEPT
     reckless : new createCardAction("Reckless Attack",
     "Deal high damage to the enemy, but take a small amount of recoil damage",
     sCardPunch,[5,9],CARDACT_GENRES.ATTACK,actionReckless),

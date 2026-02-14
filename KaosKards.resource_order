@@ -315,6 +315,7 @@
     {"name":"sCardShield","order":2,"path":"sprites/sCardShield/sCardShield.yy",},
     {"name":"sCardSlash","order":8,"path":"sprites/sCardSlash/sCardSlash.yy",},
     {"name":"sCardSlot","order":2,"path":"sprites/sCardSlot/sCardSlot.yy",},
+    {"name":"sCardSteak","order":11,"path":"sprites/sCardSteak/sCardSteak.yy",},
     {"name":"sCardSticky","order":3,"path":"sprites/sCardSticky/sCardSticky.yy",},
     {"name":"sCardTaunt","order":10,"path":"sprites/sCardTaunt/sCardTaunt.yy",},
     {"name":"sChud","order":5,"path":"sprites/sChud/sChud.yy",},

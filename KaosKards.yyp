@@ -517,6 +517,7 @@
     {"id":{"name":"sCardShield","path":"sprites/sCardShield/sCardShield.yy",},},
     {"id":{"name":"sCardSlash","path":"sprites/sCardSlash/sCardSlash.yy",},},
     {"id":{"name":"sCardSlot","path":"sprites/sCardSlot/sCardSlot.yy",},},
+    {"id":{"name":"sCardSteak","path":"sprites/sCardSteak/sCardSteak.yy",},},
     {"id":{"name":"sCardSticky","path":"sprites/sCardSticky/sCardSticky.yy",},},
     {"id":{"name":"sCardSwap","path":"sprites/sCardSwap/sCardSwap.yy",},},
     {"id":{"name":"sCardSwoop","path":"sprites/sCardSwoop/sCardSwoop.yy",},},
