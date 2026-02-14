@@ -192,3 +192,27 @@ function kaosActionHotdog(_targetEnemy)
 	//Change Pos
 	targetY = room_height - sprite_get_height(sCardBlank)*1.2;
 }
+
+
+///@self oAttackCard
+function kaosActionBrokenDefense(_targetEnemy)
+{
+	//Juice
+	cardJuice(true,true);
+    
+    //Remove Health
+    var _value = irandom_range(20,35);
+    if _targetEnemy
+    {
+        global.playerMaxHp -= _value;
+    } else {
+        global.enemyMaxHp -= _value;
+    }
+	
+	//Give Shield
+    var _maxHp = _targetEnemy ? global.playerMaxHp : global.enemyMaxHp;
+    addEffect(attackEffects.shield,_maxHp,!_targetEnemy);
+    
+    //Finish
+    timeSourceCreate(1.5,kaosCardDone);
+}

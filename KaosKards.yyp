@@ -499,6 +499,7 @@
     {"id":{"name":"sCardBlank","path":"sprites/sCardBlank/sCardBlank.yy",},},
     {"id":{"name":"sCardBrawl","path":"sprites/sCardBrawl/sCardBrawl.yy",},},
     {"id":{"name":"sCardBread","path":"sprites/sCardBread/sCardBread.yy",},},
+    {"id":{"name":"sCardBrokenDefense","path":"sprites/sCardBrokenDefense/sCardBrokenDefense.yy",},},
     {"id":{"name":"sCardDestroy","path":"sprites/sCardDestroy/sCardDestroy.yy",},},
     {"id":{"name":"sCardDice","path":"sprites/sCardDice/sCardDice.yy",},},
     {"id":{"name":"sCardDisable","path":"sprites/sCardDisable/sCardDisable.yy",},},

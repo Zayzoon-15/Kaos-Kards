@@ -43,8 +43,11 @@ kaosCards = {
     "Compete in a hotdog eating contest with the enemy to gain health",
     sCardHotdog,kaosActionHotdog),
     
-    //CONCEPT
+    brokenDefense : new createCardKaos("Broken Defense",
+    "Gain 100% of max health as sheild but reduce max health by a random amount",
+    sCardBrokenDefense,kaosActionBrokenDefense),
     
+    //CONCEPT
     time : new createCardKaos("Speedrun",
     "PLACE YOUR CARDS FAST",
     sCardHigh,kaosActionSwoop),

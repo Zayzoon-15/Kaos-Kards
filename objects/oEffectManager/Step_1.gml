@@ -27,8 +27,8 @@ for (var k = 0; k < 2; k++) {
 			_listValue.showPercent = lerp(_listValue.showPercent,(_listValue.value/_maxHp)*100,0.3);
 			if k == 1
 			{
-				global.enemyTempHp = _listValue.value;
-			} else global.playerTempHp = _listValue.value;	
+				global.playerTempHp = _listValue.value;
+			} else global.enemyTempHp = _listValue.value;	
 		}
 		
 		if _listValue.value <= 0

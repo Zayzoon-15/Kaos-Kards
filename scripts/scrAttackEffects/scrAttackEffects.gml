@@ -94,7 +94,7 @@ function reduceAssEffects(_amount,_targetEnemy)
 				global.enemyTempHp -= _amount;
             } else
             {
-                global.enemyTempHp -= _amount;
+                global.playerTempHp -= _amount;
             } 
                 
         }
