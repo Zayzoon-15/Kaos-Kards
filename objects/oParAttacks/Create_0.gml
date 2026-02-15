@@ -10,7 +10,7 @@ isCombo = false; //If the attack is a combo
 
 #region Functions DONT CHANGE
 
-hurtEffect = function(_x = x,_y = y,_starAmount = 5,_stars = true)
+hurtEffect = function(_x = x,_y = y,_starAmount = 5,_stars = true,_value = value)
 {
     //Get Card
     var _card = instance_place(x,y,oAttackCard);
@@ -18,7 +18,7 @@ hurtEffect = function(_x = x,_y = y,_starAmount = 5,_stars = true)
     if !_card
     {
         //Number Effect
-        effectNumber(_x,_y,-value);
+        effectNumber(_x,_y,-_value);
         
         //Stars
         if _stars
@@ -33,7 +33,7 @@ hurtEffect = function(_x = x,_y = y,_starAmount = 5,_stars = true)
     with _card {cardHurt(other.value);}
 }
 
-damageTarget = function()
+damageTarget = function(_value = value)
 {
 	//Status
 	currentlyDamaging = true;
@@ -41,8 +41,8 @@ damageTarget = function()
 	//Damage
     if targetEnemy
     {
-        hurtEnemy(value);
-    } else hurtPlayer(value);
+        hurtEnemy(_value);
+    } else hurtPlayer(_value);
 }
 
 moveToDir = function(_speed = 13,_setAngle = true,_dir = undefined)

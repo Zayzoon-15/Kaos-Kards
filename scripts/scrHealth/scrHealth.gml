@@ -8,22 +8,24 @@ function hurtEnemy(_value,_ignoreShield = false)
     with oEnemyPhoto {hurt();}
 	
     //Give Combo
-    global.playerComboMeter += _value*global.comboMult;
+    global.playerComboMeter += (_value*COMBO_MULT)*global.comboMult;
     
     //Performance
     global.playerPerformance += _value;
     global.enemyPerformance -= _value;
     
-	////Add Mult
-	//_value *= global.valueMult;
+	//Add Mult
+	_value *= global.valueMult*VALUE_MULT;
 	
     //Remove Temp Health
     var _lastTemp = global.enemyTempHp;
     var _tempHp = global.enemyTempHp - _value;
-    global.enemyTempHp = _tempHp;
     
-    //Ignore Temp Hp
-    if _ignoreShield then _tempHp = -_value;
+    //Set Temp Hp
+    if !_ignoreShield
+    {
+        global.enemyTempHp = _tempHp;
+    } else _tempHp = -_value; //Ignore Shield
     
     //Remove Health
     var _lastHp = global.enemyHp;
@@ -55,19 +57,24 @@ function hurtPlayer(_value,_ignoreShield = false)
     with oEnemyPhoto {win();}
     
     //Give Combo
-    global.enemyComboMeter += _value*global.comboMult;
+    global.enemyComboMeter += (_value*COMBO_MULT)*global.comboMult;
     
     //Performance
     global.playerPerformance -= _value;
     global.enemyPerformance += _value;
 
-	////Add Mult
-	//_value *= global.valueMult;
+	//Add Mult
+	_value *= global.valueMult*VALUE_MULT;
     
     //Remove Temp Health
     var _lastTemp = global.playerTempHp;
     var _tempHp = global.playerTempHp - _value;
-    global.playerTempHp = _tempHp;
+    
+    //Set Temp Hp
+    if !_ignoreShield
+    {
+        global.playerTempHp = _tempHp;
+    } else _tempHp = -_value; //Ignore Shield
     
     //Ignore Temp Hp
     if _ignoreShield then _tempHp = -_value;

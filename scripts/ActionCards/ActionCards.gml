@@ -56,7 +56,7 @@ actionCards = {
     
     steak : new createCardAction("Juicy Steak",
     "Increase max health by a random amount",
-    sCardSteak,[0,5],CARDACT_GENRES.HEAL,actionSteak),
+    sCardSteak,[0,8],CARDACT_GENRES.HEAL,actionSteak),
     
     //CONCEPT
     reckless : new createCardAction("Reckless Attack",

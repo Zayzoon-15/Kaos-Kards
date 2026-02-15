@@ -52,8 +52,8 @@ function gameReset()
     
     //Reset Uses
     global.cardUses = {
-    player: [],
-    enemy : []
+        player: [],
+        enemy : []
     };
     
     //Removed

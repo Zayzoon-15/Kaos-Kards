@@ -15,10 +15,7 @@
 function diceCardSwapDice(_info,_card,_dice)
 {	
     //Check If Dice Done
-    if instance_exists(oDice)
-    {
-        _card.canPlace = !oDice.diceFullyDone;
-    }
+    if instance_exists(oDice) then _card.canPlace = !oDice.diceFullyDone;
     
     
     //Swap Dice
@@ -76,10 +73,7 @@ function diceCardSwapDice(_info,_card,_dice)
 function diceCardReroll(_info,_card)
 {	
     //Check If Dice Done
-    if instance_exists(oDice)
-    {
-        _card.canPlace = oDice.diceFullyDone;
-    }
+    if instance_exists(oDice) then _card.canPlace = oDice.diceFullyDone;
     
     //Reroll
     if _card.state == CARDSTATE.PLACED and !oRollButton.canHover
@@ -95,20 +89,20 @@ function diceCardReroll(_info,_card)
 }
 
 
-function diceCardScrewUp(_info,_card)
+function diceCardAllNothin(_info,_card)
 {
     //Check If Dice Done
-    if instance_exists(oDice)
-    {
-        _card.canPlace = !oDice.diceFullyDone;
-    }
+    if instance_exists(oDice) then _card.canPlace = !oDice.diceFullyDone;
     
     //Don't Move
     with oDice
     {
-        if diceId == 3
+        if diceId == 3 and rolling
         {
-            if rolling then _card.canMove = false;
+            if _card.state == CARDSTATE.PLACED 
+            {
+                _card.canMove = false;
+            } else _card.canPlace = false;
         }
     }
     

@@ -140,6 +140,13 @@ function cardStateHand(){
 ///@self oCard
 function cardStateGrabbed()
 {
+    //Grab Double Check
+    if !mouse_check_button(mb_left)
+    {
+        event_perform(ev_mouse,ev_global_left_release);
+        exit;
+    }
+    
     //Follow Mouse
     x = mouse_x - offsetX;
     y = mouse_y - offsetY;

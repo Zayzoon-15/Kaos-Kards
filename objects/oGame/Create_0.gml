@@ -1,4 +1,3 @@
-
 #region Initialize Info
 
 initDeck();
@@ -16,7 +15,7 @@ initSettings();
 
 //Values
 global.valueMult = 1;
-global.comboMult = .7;
+global.comboMult = 1;
 
 //Cards
 global.holdingCard = false;

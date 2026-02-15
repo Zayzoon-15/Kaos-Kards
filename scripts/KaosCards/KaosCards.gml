@@ -47,11 +47,6 @@ kaosCards = {
     "Gain 100% of max health as sheild but reduce max health by a random amount",
     sCardBrokenDefense,kaosActionBrokenDefense),
     
-    //CONCEPT
-    time : new createCardKaos("Speedrun",
-    "PLACE YOUR CARDS FAST",
-    sCardHigh,kaosActionSwoop),
-    
 };
 
 

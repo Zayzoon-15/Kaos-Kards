@@ -50,4 +50,3 @@ if currentValue != undefined
     textSetup(fnNumberOutline,fa_center,fa_middle);
     draw_text_transformed(x,bbox_top - 40,currentValue,rangeScale,rangeScale,image_angle);
 }
-

@@ -55,7 +55,7 @@ diceCards = {
     
     allNothin : new createCardDice("All or Nothin'",
     "If all dice roll higher than half of their maximum value, set all dice to their maximum value. Otherwise, set all dice to 0\nCan only be placed before roll",
-    sCardDice,diceCardScrewUp),
+    sCardAllNothin,diceCardAllNothin),
     
     //Change Dice
     dice8 : new createCardDice("8 Sided Dice",

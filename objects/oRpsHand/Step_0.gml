@@ -8,13 +8,14 @@ animPos += animSpd;
 image_angle = handId == 0 ? _value : -_value;
 
 //Choose Action
-if animPos >= .5 and played and currentAnim != action
+if animPos >= .5 and played
 {
 	//Set Animation
 	currentAnim = action;
-	
+    
 	//Check Who Won
-	alarm[1] = 75;
+	alarm[1] = 55;
+    played = false;
 }
 
 //Move Forward

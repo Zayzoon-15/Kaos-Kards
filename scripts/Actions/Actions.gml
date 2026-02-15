@@ -113,7 +113,7 @@ function actionPoison(_targetEnemy)
     cardJuice(false);
     
     //Apply Poison
-    addEffect(attackEffects.poison,value,_targetEnemy);
+    addEffect(attackEffects.poison,value*.7,_targetEnemy);
     
     //Play Voice
     audioPlayVoice([voiceInfo.poisonInfect,voiceInfo.poisonShip,voiceInfo.poisonSizz],false,3);
@@ -179,8 +179,6 @@ function actionTaunt(_targetEnemy)
 }
 
 
-//Concept
-
 ///@self oAttackCard
 function actionSteak(_targetEnemy)
 {
@@ -195,6 +193,8 @@ function actionSteak(_targetEnemy)
         global.playerMaxHp += value;
     } else global.enemyMaxHp += value;
 }
+
+//Concept
 
 ///@self oAttackCard
 function actionReckless(_targetEnemy)

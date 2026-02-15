@@ -1,3 +1,6 @@
+//Game
+#macro VALUE_MULT .6
+#macro COMBO_MULT 1 
 
 //Ui
 #macro UIBOX_RAD 4

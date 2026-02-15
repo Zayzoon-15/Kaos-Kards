@@ -20,7 +20,7 @@ shadowY = 8;
 shadowSize = 0.05;
 
 //Value
-value = card.value != undefined ? ceil(card.value*.7) : undefined; //Reduce Value
+value = card.value != undefined ? ceil(card.value*VALUE_MULT) : undefined; //Reduce Value
 value = card.value != undefined ? value * global.valueMult : undefined;
 
 //Action

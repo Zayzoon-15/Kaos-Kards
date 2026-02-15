@@ -22,7 +22,7 @@ setSize(3,.85);
 action = function()
 {
     transStart(rTournies);
-    timeSourceCreate(30,function(){
+    timeSourceCreate(15,function(){
         oPause.unpauseGame();
     },[],time_source_units_frames);
 }
