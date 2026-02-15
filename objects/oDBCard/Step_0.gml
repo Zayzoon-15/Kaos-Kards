@@ -24,7 +24,11 @@ if grabbed
     if place_meeting(x,y,oDBInsertHole)
     {
         shake = 1;
-    } else shake = 0;
+        angle = room == rDeckBuilder2 ? 90 : -90;
+    } else {
+        shake = 0;
+        angle = 0;
+    }
     
     //Shadow
     var _shadowX = (x - (room_width/2))*.05;
@@ -36,7 +40,6 @@ if grabbed
     //Ease
     image_xscale = lerp(image_xscale,1.1,.4);
     image_yscale = lerp(image_yscale,1.1,.4);
-    angle = 0;
     
     //Depth
     depth = startDepth - 5;

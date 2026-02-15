@@ -176,6 +176,9 @@ function SaveFile()
         }
         
         
+        //Set Deck Amount
+        global.deckCardAmount = array_length(playerDeck);
+        
     }
     
     #endregion

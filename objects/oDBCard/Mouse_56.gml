@@ -21,9 +21,6 @@ if grabbed
             array_push(playerDeck,info);
             global.deckCardAmount ++;
             
-            //Exit Animation
-            var _coolAnim = true;
-            
             //Create Card Again
             var _inst = instance_create_depth(targetX,targetY,startDepth,oDBCard,{
                 info : info,
@@ -61,6 +58,12 @@ if grabbed
             //Destroy
             instance_destroy();
         }
+        
+        //Exit Animation
+        instance_create_layer(x,y,"Effects",oDBCardTrans,{
+            sprite_index : sprite_index,
+            image_angle : image_angle
+        });
 
     }
 }

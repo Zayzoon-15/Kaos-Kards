@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.42566893,
+  "duration":0.0,
   "exportDir":"",
   "name":"snBrawlWalk",
   "parent":{
@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snBrawlWalk.ogg",
-  "volume":0.32,
+  "volume":0.33,
 }

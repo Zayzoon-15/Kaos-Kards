@@ -49,7 +49,7 @@ createCards = function()
         var _yPos = _startPos.y + (_row * _gap.y);
 
         //Create Card
-        _inst = instance_create_depth(_xPos,_yPos,depth-2,oDBCard,{
+        _inst = instance_create_layer(_xPos,_yPos,"Cards",oDBCard,{
             info : playerDeck[i],
             cardId : i,
             row : _row,

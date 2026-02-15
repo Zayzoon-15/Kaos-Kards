@@ -176,7 +176,7 @@ createCards = function(_sortFunc = currentSort,_types = currentType)
         var _yPos = _startPos.y + (_row * _gap.y);
         
         //Create Card
-        _inst = instance_create_depth(_xPos,_yPos,depth-2,oDBCard,{
+        _inst = instance_create_layer(_xPos,_yPos,"Cards",oDBCard,{
             info : _cards[i]
         });	
         _inst.x = _startPos.x;
