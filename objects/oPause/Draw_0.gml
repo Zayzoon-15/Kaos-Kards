@@ -4,7 +4,9 @@ if global.paused
     //Draw Screenshot
     if screenshot != undefined
     {
+        gpu_set_blendenable(false);
         draw_sprite(screenshot,0,SCREEN_EDGE.left,0);
+        gpu_set_blendenable(true);
     }
     
     //Setup Values
@@ -14,8 +16,12 @@ if global.paused
     var _x2 = SCREEN_EDGE.right - _offset;
     var _y2 = SCREEN_HEIGHT-_offset;
     
-    //Draw Rectangle
+    //Draw Bg
     drawRectOutlined(_x1,_y1,_x2,_y2,0,_offset);
+
+    //Draw Text
+    textSetup(fnMain,fa_center,fa_top);
+    draw_text_transformed(ROOM_CENTER.x,80,"Paused",3,3,0);
     
     //Reset Draw
     drawReset();

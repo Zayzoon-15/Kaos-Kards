@@ -249,7 +249,6 @@
     {"id":{"name":"oRpsHand","path":"objects/oRpsHand/oRpsHand.yy",},},
     {"id":{"name":"oRpsText","path":"objects/oRpsText/oRpsText.yy",},},
     {"id":{"name":"oSettingMenuBtn","path":"objects/oSettingMenuBtn/oSettingMenuBtn.yy",},},
-    {"id":{"name":"oSettings_1","path":"objects/oSettings_1/oSettings_1.yy",},},
     {"id":{"name":"oSettings","path":"objects/oSettings/oSettings.yy",},},
     {"id":{"name":"oSettingsCheck","path":"objects/oSettingsCheck/oSettingsCheck.yy",},},
     {"id":{"name":"oSettingsInput","path":"objects/oSettingsInput/oSettingsInput.yy",},},
@@ -612,9 +611,9 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rSetup","path":"rooms/rSetup/rSetup.yy",},},
+    {"roomId":{"name":"rTournies","path":"rooms/rTournies/rTournies.yy",},},
     {"roomId":{"name":"rDeckBuilder2","path":"rooms/rDeckBuilder2/rDeckBuilder2.yy",},},
     {"roomId":{"name":"rDeckBuilder1","path":"rooms/rDeckBuilder1/rDeckBuilder1.yy",},},
-    {"roomId":{"name":"rTournies","path":"rooms/rTournies/rTournies.yy",},},
     {"roomId":{"name":"rTesting","path":"rooms/rTesting/rTesting.yy",},},
     {"roomId":{"name":"rPrepare","path":"rooms/rPrepare/rPrepare.yy",},},
     {"roomId":{"name":"rMainMenu","path":"rooms/rMainMenu/rMainMenu.yy",},},

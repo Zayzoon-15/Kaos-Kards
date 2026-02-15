@@ -1,5 +1,5 @@
-//Disabled Rooms (Rooms where settings can not be opened)
-disabledRooms = [rSetup,rDeckBuilder1,rDeckBuilder2];
+//Disabled Rooms (Rooms where pause menu can not be opened)
+disabledRooms = [rSetup];
 
 //Screenshot
 screenshot = undefined;
@@ -17,6 +17,7 @@ pauseGame = function()
 {
     global.paused = true;
     
+    //Create Screen Shot
     screenshot = sprite_create_from_surface(application_surface,0,0,surface_get_width(application_surface),surface_get_height(application_surface),false,false,0,0);
     
     #region Deactiveate
@@ -31,9 +32,10 @@ pauseGame = function()
 	#endregion
     
     var _offset = 100;
-    instance_create_depth(ROOM_CENTER.x,ROOM_CENTER.y-_offset,depth-1,oPauseResume);
-    instance_create_depth(ROOM_CENTER.x,ROOM_CENTER.y,depth-1,oPauseSettings);
-    instance_create_depth(ROOM_CENTER.x,ROOM_CENTER.y+_offset,depth-1,oPauseReturn);
+    var _center = ROOM_CENTER.y + 30;
+    instance_create_depth(ROOM_CENTER.x,_center-_offset,depth-1,oPauseResume);
+    instance_create_depth(ROOM_CENTER.x,_center,depth-1,oPauseSettings);
+    instance_create_depth(ROOM_CENTER.x,_center+_offset,depth-1,oPauseReturn);
 }
 
 unpauseGame = function()

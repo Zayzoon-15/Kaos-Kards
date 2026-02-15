@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snKeyClick2.ogg",
-  "volume":0.5,
+  "volume":0.1,
 }
