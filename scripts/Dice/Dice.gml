@@ -60,7 +60,6 @@ function diceCardSwapDice(_info,_card,_dice)
                 {
                     //Add To Uses
                     array_push(global.cardUses.player,_card.info.name);
-                    print(global.cardUses.player);
                     
                     //Destroy Card
                     _card.slot.used = true;

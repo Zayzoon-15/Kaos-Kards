@@ -1,5 +1,5 @@
 //Image
-currentAnim = 3;
+currentAnim = 0;
 frame = 0;
 animationEnd = false;
 

@@ -1,10 +1,7 @@
 //Set Value
 value = variable_global_get(targetVar);
 value = floor(value);
-
-//Get Percent
-var _percent = value / 100;
-percent = lerp(percent,_percent,.2);
+percent = lerp(percent,value / 100,.2);
 
 //Set Position
 x = getPosToWindow(onRight);
@@ -15,7 +12,13 @@ if target == "Enemy" then tipBoxString = $"Enemies Combo Meter\n{value}%";
 drawTipBox(tipBoxString, tipOnTop, true);
 
 //Set Image
-image_index = 6*_percent;
+image_index = 0;
+if value >= 12 then image_index = 1;
+if value >= 30 then image_index = 2;
+if value >= 48 then image_index = 3;
+if value >= 65 then image_index = 4;
+if value >= 83 then image_index = 5;
+if value >= 100 then image_index = 6;
 arrowDir = 165*(percent-.02);
 
 //Sounds
@@ -38,7 +41,8 @@ if value != lastValue
     }
 }
 
-tickCooldown --; //Reduce Tick
+//Reduce Tick
+tickCooldown --;
 
 //Set Last Value
 lastValue = value;

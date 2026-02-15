@@ -27,7 +27,7 @@ global.disabledSlots = {
 global.cardUses = {
     player: [],
     enemy : []
-}
+};
 
 //Enemy
 global.currentEnemy = enemyInfo.bones;

@@ -172,96 +172,103 @@ function enemyPlayAnim(_anim)
 /// @param {real} _alpha The alpha of the card (Default = image_alpha)
 function drawCard3d(_x, _y, _front, _back, _angle, _rot, _thickness = CARD_THICKNESS, _imageblend = image_blend, _alpha = image_alpha)
 {
-    //Function To Rotate The Card
-    var _rotatePoint = function(_px, _py, _cx, _cy, _rot)
+    if _angle != 0
     {
-        var _r = degtorad(-_rot);
-        var _c = cos(_r);
-        var _s = sin(_r);
-        var _dx = _px - _cx;
-        var _dy = _py - _cy;
-        return [
-            _cx + _dx*_c - _dy*_s,
-            _cy + _dx*_s + _dy*_c
-        ];
-    };
-
-    //Sprite Values
-    var _spriteW = sprite_get_width(_front);
-    var _spriteH = sprite_get_height(_front);
-    var _halfW = _spriteW * 0.5;
-    var _halfH = _spriteH * 0.5;
-
-    //3d Flip
-    var _scaleX = cos(degtorad(_angle));
-
-    //Get Sprite To Draw
-    var _sprite = (_scaleX >= 0) ? _front : _back;
-    var _tex = sprite_get_texture(_sprite, 0);
-
-    //Compute Card Corners Before Rotation
-    var _x0 = _x - _halfW*_scaleX;
-    var _y0 = _y - _halfH;
-    var _x1 = _x + _halfW*_scaleX;
-    var _y1 = _y - _halfH;
-    var _x2 = _x + _halfW*_scaleX;
-    var _y2 = _y + _halfH;
-    var _x3 = _x - _halfW*_scaleX;
-    var _y3 = _y + _halfH;
-
-    //Apply Z Rotation
-    var _p;
-    _p = _rotatePoint(_x0,_y0,_x,_y,_rot); _x0=_p[0]; _y0=_p[1];
-    _p = _rotatePoint(_x1,_y1,_x,_y,_rot); _x1=_p[0]; _y1=_p[1];
-    _p = _rotatePoint(_x2,_y2,_x,_y,_rot); _x2=_p[0]; _y2=_p[1];
-    _p = _rotatePoint(_x3,_y3,_x,_y,_rot); _x3=_p[0]; _y3=_p[1];
-
-    //Draw Carrd
-    draw_set_colour(_imageblend);
-    draw_sprite_pos(_sprite,0,_x0,_y0, _x1,_y1, _x2,_y2, _x3,_y3,_alpha);
-
-    //Edge Thickness
-    var _edgeFactor = 1 - abs(_scaleX);
-    if _edgeFactor <= 0.01 then return;
-
-    //Check Which Side To Show
-    var _showRight = (((_angle%360)+360)%360) < 180;
-
-    //Edge UV Coordinates
-    var _u0 = _showRight ? 1 : 0;
-    var _u1 = _u0; 
-    var _v0 = 0;
-    var _v1 = 1;
-
-    //Draw Edge As Triangle Strip
-    draw_set_colour(_imageblend);
-    draw_primitive_begin_texture(pr_trianglestrip, _tex);
-
-    //Draw Edge
-    for (var _i = 0; _i < _thickness; _i++)
-    {
-        var _offset = (_i/_thickness) * _edgeFactor * _thickness;
-        var _baseX = _x + (_showRight ? _halfW*_scaleX : -_halfW*_scaleX);
-        var _topY = _y - _halfH;
-        var _botY = _y + _halfH;
-
-        //Rotate Edge Vertices
-        var _ptTop = _rotatePoint(_baseX, _topY, _x, _y, _rot);
-        var _ptBot = _rotatePoint(_baseX, _botY, _x, _y, _rot);
-
-        //Apply Offset Along Rotated Direction
-        var _rangle = degtorad(-_rot);
-        var _ox = cos(_rangle) * _offset * (_showRight ? 1 : -1);
-        var _oy = sin(_rangle) * _offset * (_showRight ? 1 : -1);
-
-        //Add Vertices To Primitive
-        draw_vertex_texture(_ptTop[0]+_ox, _ptTop[1]+_oy, _u0, _v0);
-        draw_vertex_texture(_ptBot[0]+_ox, _ptBot[1]+_oy, _u0, _v1);
+        //Function To Rotate The Card
+        var _rotatePoint = function(_px, _py, _cx, _cy, _rot)
+        {
+            var _r = degtorad(-_rot);
+            var _c = cos(_r);
+            var _s = sin(_r);
+            var _dx = _px - _cx;
+            var _dy = _py - _cy;
+            return [
+                _cx + _dx*_c - _dy*_s,
+                _cy + _dx*_s + _dy*_c
+            ];
+        };
+    
+        //Sprite Values
+        var _spriteW = sprite_get_width(_front);
+        var _spriteH = sprite_get_height(_front);
+        var _halfW = _spriteW * 0.5;
+        var _halfH = _spriteH * 0.5;
+    
+        //3d Flip
+        var _scaleX = cos(degtorad(_angle));
+    
+        //Get Sprite To Draw
+        var _sprite = (_scaleX >= 0) ? _front : _back;
+        var _tex = sprite_get_texture(_sprite, 0);
+    
+        //Compute Card Corners Before Rotation
+        var _x0 = _x - _halfW*_scaleX;
+        var _y0 = _y - _halfH;
+        var _x1 = _x + _halfW*_scaleX;
+        var _y1 = _y - _halfH;
+        var _x2 = _x + _halfW*_scaleX;
+        var _y2 = _y + _halfH;
+        var _x3 = _x - _halfW*_scaleX;
+        var _y3 = _y + _halfH;
+    
+        //Apply Z Rotation
+        var _p;
+        _p = _rotatePoint(_x0,_y0,_x,_y,_rot); _x0=_p[0]; _y0=_p[1];
+        _p = _rotatePoint(_x1,_y1,_x,_y,_rot); _x1=_p[0]; _y1=_p[1];
+        _p = _rotatePoint(_x2,_y2,_x,_y,_rot); _x2=_p[0]; _y2=_p[1];
+        _p = _rotatePoint(_x3,_y3,_x,_y,_rot); _x3=_p[0]; _y3=_p[1];
+    
+        //Draw Carrd
+        draw_set_colour(_imageblend);
+        draw_sprite_pos(_sprite,0,_x0,_y0, _x1,_y1, _x2,_y2, _x3,_y3,_alpha);
+    
+        //Edge Thickness
+        var _edgeFactor = 1 - abs(_scaleX);
+        if _edgeFactor <= 0.01 then return;
+    
+        //Check Which Side To Show
+        var _showRight = (((_angle%360)+360)%360) < 180;
+    
+        //Edge UV Coordinates
+        var _u0 = _showRight ? 1 : 0;
+        var _u1 = _u0; 
+        var _v0 = 0;
+        var _v1 = 1;
+    
+        //Draw Edge As Triangle Strip
+        draw_set_colour(_imageblend);
+        draw_primitive_begin_texture(pr_trianglestrip, _tex);
+    
+        //Draw Edge
+        for (var _i = 0; _i < _thickness; _i++)
+        {
+            var _offset = (_i/_thickness) * _edgeFactor * _thickness;
+            var _baseX = _x + (_showRight ? _halfW*_scaleX : -_halfW*_scaleX);
+            var _topY = _y - _halfH;
+            var _botY = _y + _halfH;
+    
+            //Rotate Edge Vertices
+            var _ptTop = _rotatePoint(_baseX, _topY, _x, _y, _rot);
+            var _ptBot = _rotatePoint(_baseX, _botY, _x, _y, _rot);
+    
+            //Apply Offset Along Rotated Direction
+            var _rangle = degtorad(-_rot);
+            var _ox = cos(_rangle) * _offset * (_showRight ? 1 : -1);
+            var _oy = sin(_rangle) * _offset * (_showRight ? 1 : -1);
+    
+            //Add Vertices To Primitive
+            draw_vertex_texture(_ptTop[0]+_ox, _ptTop[1]+_oy, _u0, _v0);
+            draw_vertex_texture(_ptBot[0]+_ox, _ptBot[1]+_oy, _u0, _v1);
+        }
+    
+        draw_primitive_end();
+    
+        //Reset Draw
+        drawReset();
+    } else { //Draw If Angle Is Zero
+    	
+        draw_sprite_ext(_front,0,_x,_y,image_xscale,image_yscale,_rot,_imageblend,image_alpha);
+        
     }
-
-    draw_primitive_end();
-
-    //Reset Draw
-    drawReset();
 }
 

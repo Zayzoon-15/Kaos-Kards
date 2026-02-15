@@ -50,6 +50,12 @@ function gameReset()
         enemy : array_create(4,false)
     };
     
+    //Reset Uses
+    global.cardUses = {
+    player: [],
+    enemy : []
+    };
+    
     //Removed
     global.playerRemovedCards = [];
     global.enemyRemovedCards = [];

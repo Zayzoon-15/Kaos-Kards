@@ -11,14 +11,34 @@ curSong = noone;
 //Bg
 bgY = 0;
 
+//Mobile
+mobilePos = new Vector2();
+mobileRad = 60;
+mobilePressed = false;
+
+//Disabled Rooms (Rooms where settings can not be opened)
+disabledRooms = [rSetup,rDeckBuilder1,rDeckBuilder2];
+
 
 //Functions
 createSettings = function()
 {
-	//Setup
+	//Pause
+	//global.paused = true;
     depth = -1;
-	instance_deactivate_object(oParButton);
-
+	
+    instance_deactivate_object(oParButton);
+	//#region Deactiveate
+	////audio_pause_all();
+	//audio_group_stop_all(agSfx);
+	//instance_deactivate_all(true);
+	//instance_activate_object(oGame);
+	//instance_activate_object(oExpandRes);
+    //instance_activate_object(oSound);
+    //instance_activate_object(oSubtitle);
+	//
+	//#endregion
+	
 	//Play Song
 	audioPlayGroupSong(global.musicGroups.menu,sgKetting,300);
 	
@@ -57,17 +77,21 @@ createSettings = function()
 		image_xscale : 11,
 		image_yscale : 12.3
 	}); //Magic Numbers I Know -_-
-    
+	
+	//Create Gear
+	//instance_create_depth(1265,708,_depth-2,oSettingsGear);
 	#endregion
 }
 
 destroySettings = function()
 {
+	//Pause
+	//global.paused = false;
+	
 	//Destroy
 	instance_destroy(oSettingMenuBtn);
 	instance_destroy(oParSettingsBtn);
 	instance_destroy(oSettingsSubMenu);
-    instance_destroy();
 	
 	//Play Song
 	audioPlayGroupSong(global.musicGroups.bg,global.lastSong);
@@ -75,9 +99,11 @@ destroySettings = function()
     //Save
     SaveFile.SettingsSave();
     
-    //Reactivate Pause Menu
-    oPause.settingsLastButton = lastButton;
     instance_activate_object(oPauseResume);
     instance_activate_object(oPauseReturn);
     instance_activate_object(oPauseSettings);
+	
+	////Activate
+    //audio_resume_all();
+	//instance_activate_all();
 }
