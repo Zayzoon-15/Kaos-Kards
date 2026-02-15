@@ -11,6 +11,7 @@ if playerId == 0 and winner
     healPlayer(_healValue);
     
     //Enemy Lost
+    enemyPlayAnim("kaosHotDogLose",180,"idle");
     addEffect(attackEffects.poison,_poisonValue,true);
     
 } else if playerId == 1 and winner

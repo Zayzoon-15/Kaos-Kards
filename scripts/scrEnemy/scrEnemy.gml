@@ -1,3 +1,67 @@
+//function enemyFuncs()
+//{
+    //
+    //static enemyCreateStrat = function(_healWeight = 80,_healVal = 60,_defendWeight = 50,_defendValue = 50,_diceWeight = 80,_diceVal = 2,_comboWeight = 100,_specialWeight = 40,_specialVal = 3,_specialUses = 2) constructor 
+    //{
+        ////Weights
+        //healWeight = _healWeight;
+        //defendWeight = _defendWeight;
+        //diceWeight = _diceWeight;
+        //comboWeight = _comboWeight;
+        //specialWeight = _specialWeight;
+        //
+        ////Values
+        //healValue = _healVal;
+        //defendValue = _defendValue;
+        //diceValue = _diceVal;
+        //specialValue = _specialVal;
+        //specialUses = _specialUses;
+    //}
+    //
+    //
+    //static enemyCreateAnims = function(_idle = 2,_hurt = 2,_win = 2,_death = 2,_extras = {})
+    //{
+        ////Create Clips
+        //var _clip = function(_length,_start=0,_loop = true)
+        //{
+            //return {
+                //start : _start,
+                //length : _length,
+                //loop : _loop,
+            //};
+        //}
+        //
+        ////Create Info
+        //var _info = { 
+            //idle : _clip(_idle),
+            //hurt : _clip(_hurt),
+            //win : _clip(_win),
+            //death: _clip(_death),
+        //}
+        //
+        ////Set Offsets
+        //var _order = ["idle","hurt","win","death"];
+        //var _offset = 0;
+        //
+        //for (var i = 0; i < array_length(_order); i++)
+        //{
+            //var _key = _order[i];
+            //var _anim = struct_get(_info, _key);
+            //
+            //_anim.start = _offset;
+            //_offset += _anim.length;
+            //
+            //struct_set(_info, _key, _anim);
+        //}
+        //
+        ////Return Animation Info
+        //return _info;
+    //}
+    //
+//}
+
+
+
 /// @desc Create the enemies fighting strategy
 /// @param {real} [_healWeight] How important healing is (Default = 80)
 /// @param {real} [_healVal] When should it consider healing (Default = 60)
@@ -26,49 +90,36 @@ function enemyCreateStrat(_healWeight = 80,_healVal = 60,_defendWeight = 50,_def
     specialUses = _specialUses;
 }
 
+
+function enemyCreateAnimClips(_length,_start=0,_loop = true)
+{
+    return {
+        start : _start,
+        length : _length,
+        loop : _loop,
+    };
+}
+
 /// @desc Creates the enemies animation info
 /// @param {real} [_idle] The amount of frames the idle animation has (Default = 2)
 /// @param {real} [_hurt] The amount of frames the hurt animation has (Default = 2)
 /// @param {real} [_win] The amount of frames the win animation has (Default = 2)
 /// @param {real} [_death] The amount of frames the death animation has (Default = 2)
 /// @returns {struct} The animation info
-function enemyCreateAnims(_idle = 2,_hurt = 2,_win = 2,_death = 2) {
-    //Create Clips
-    var _clip = function(_length,_start=0,_loop = true)
-    {
-        return {
-            start : _start,
-            length : _length,
-            loop : _loop,
-        };
-    }
+function enemyCreateAnims(_idle = 2,_hurt = 2,_win = 2,_death = 2,_extraAnims={}) {
     
     //Create Info
     var _info = { 
-        idle : _clip(_idle),
-        hurt : _clip(_hurt),
-        win : _clip(_win),
-        death: _clip(_death),
-    }
-    
-    //Set Offsets
-    var _order = ["idle","hurt","win","death"];
-    var _offset = 0;
-    
-    for (var i = 0; i < array_length(_order); i++)
-    {
-        var _key = _order[i];
-        var _anim = struct_get(_info, _key);
-        
-        _anim.start = _offset;
-        _offset += _anim.length;
-        
-        struct_set(_info, _key, _anim);
+        idle : enemyCreateAnimClips(_idle,0),
+        hurt : enemyCreateAnimClips(_hurt,_idle),
+        win : enemyCreateAnimClips(_win,_hurt+_idle),
+        death: enemyCreateAnimClips(_death,_win+_hurt+_idle),
     }
     
     //Return Animation Info
-    return _info;
+    return structMerge(_info,_extraAnims,false);
 }
+
 
 /// @desc Creates the enemies information
 /// @param {string} _name The name of the enemy

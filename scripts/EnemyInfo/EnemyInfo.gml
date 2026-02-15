@@ -2,7 +2,6 @@ function initEnemyinfo()
 {
 
 
-
 globalvar enemyInfo, enemyDeck;
 
 enemyInfo = {
@@ -19,7 +18,7 @@ enemyInfo = {
     beer : new enemyCreate("Beer the Pickle",sBeer,enemyCreateAnims(),[actionCards.heal,actionCards.heal,actionCards.heal,actionCards.shield,actionCards.shield,actionCards.punch,actionCards.punch,actionCards.punch,actionCards.laser,actionCards.laser],[kaosCards.rps],new enemyCreateStrat(),enemySpecialBeer),
     
     //Retro Crew
-    chud : new enemyCreate("Ichiro Uzumaki the Chud",sChud,enemyCreateAnims(),[actionCards.heal,actionCards.heal,actionCards.shield,actionCards.shield,actionCards.bread,actionCards.bread,actionCards.flamingAce,actionCards.taunt,actionCards.mirror,actionCards.mirror,actionCards.mirror],[kaosCards.brawl]),
+    chud : new enemyCreate("Ichiro Uzumaki the Chud",sChud,enemyCreateAnims(2,2,2,2,{kaosHotDogStart:enemyCreateAnimClips(13,8,false),kaosHotDogLose:enemyCreateAnimClips(3,21,true)}),[actionCards.heal,actionCards.heal,actionCards.shield,actionCards.shield,actionCards.bread,actionCards.bread,actionCards.flamingAce,actionCards.taunt,actionCards.mirror,actionCards.mirror,actionCards.mirror],[kaosCards.brawl]),
     
     handsy : new enemyCreate("Handsy The Hand",sHandsy,enemyCreateAnims(),[actionCards.heal,actionCards.heal,actionCards.shield,actionCards.shield,actionCards.punch,actionCards.punch,actionCards.punch,actionCards.ghost,actionCards.ghost],[kaosCards.sticky]),
     

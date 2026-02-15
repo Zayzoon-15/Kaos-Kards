@@ -266,3 +266,28 @@ function arrayGetDuplicates(_array,_targetCount = 2) {
     // Use array_unique() on the result to ensure each duplicate is listed only once in the final array
     return array_unique(_duplicates);
 }
+
+
+/// @desc Combines two given structs into one
+/// @param {struct} _primary The primary struct
+/// @param {struct} _secondary The second struct
+/// @param {any*} _shared If it should only combine things they share
+/// @returns {struct} The combined structs
+function structMerge(_primary, _secondary, _shared)	{
+	var _returnStruct = _primary;
+	
+	if (_shared)	{
+		var _propertyNames = variable_struct_get_names(_primary);
+		for (var i = 0; i < array_length(_propertyNames); i ++)	{
+			if (variable_struct_exists(_secondary, _propertyNames[i]))	{
+				variable_struct_set(_returnStruct, _propertyNames[i], variable_struct_get(_secondary, _propertyNames[i]));
+			}
+		}
+	}	else	{
+		var _propertyNames = variable_struct_get_names(_secondary);
+		for (var i = 0; i < array_length(_propertyNames); i ++)	{
+			variable_struct_set(_returnStruct, _propertyNames[i], variable_struct_get(_secondary, _propertyNames[i]));
+		}
+	}
+	return _returnStruct;
+}

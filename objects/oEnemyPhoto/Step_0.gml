@@ -16,14 +16,29 @@ if currentAnim != undefined
     //Animate
     if frame >= currentAnim.length
     {
-        animationEnd = true;
-    
         if currentAnim.loop
         {
             frame -= currentAnim.length;
-        } else frame = currentAnim.length - 1;
+        } else {
+            frame = currentAnim.length - 1;
+            
+            if !animationEnd then event_user(0);
+        }
+        
+        animationEnd = true;
     }
+    
     
     //Apply Frame
     image_index = currentAnim.start + frame;  
+}
+
+//Reduce Ignore Time
+if ignoreTime > 0
+{
+    ignoreTime --;
+} else if resetAnim != ""
+{
+    enemyPlayAnim(resetAnim);
+    resetAnim = "";
 }

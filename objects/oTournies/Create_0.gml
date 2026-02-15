@@ -5,9 +5,11 @@ global.currentEnemy = undefined;
 sprite_index = info.sprite;
 
 //Animation
+animInfo = info.animInfo;
 frame = 0;
+currentAnim = 0;
 animationEnd = false;
-curAnim = 0;
+shake = 0;
 
 //Button
 pressed = false;
@@ -22,3 +24,17 @@ boxY = 0;
 
 //Shadow
 shadowY = 0;
+
+changeAnim = function(_anim)
+{
+    //Set clip
+    var _clip = variable_struct_get(info.animInfo, _anim);
+    
+    //Switch Animation
+    if _clip != undefined and currentAnim != _clip
+    {
+        currentAnim = _clip;
+        frame = 0;
+        animationEnd = false;
+    }
+}

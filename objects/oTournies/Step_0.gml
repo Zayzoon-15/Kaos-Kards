@@ -1,6 +1,3 @@
-//Set Animation
-spriteLoopFrames(curAnim,4);
-
 //Set Selected
 if selected
 {
@@ -8,8 +5,10 @@ if selected
 	global.currentEnemy = info;
 	
 	//Change Animation
-	curAnim = 2;
-} else curAnim = 0;
+	changeAnim("win");
+} else changeAnim("idle");
+
+
 
 //Hover
 drawTipBox(info.name,true,false,20,1.5);
@@ -34,3 +33,24 @@ if !layer_get_visible(layer)
     selected = false;
     canHover = false;
 } else canHover = true;
+
+//Animate
+if currentAnim != undefined
+{
+    //Update Frame
+    frame += sprite_get_speed(sprite_index) / 60;
+    
+    //Animate
+    if frame >= currentAnim.length
+    {
+        animationEnd = true;
+    
+        if currentAnim.loop
+        {
+            frame -= currentAnim.length;
+        } else frame = currentAnim.length - 1;
+    }
+    
+    //Apply Frame
+    image_index = currentAnim.start + frame;  
+}

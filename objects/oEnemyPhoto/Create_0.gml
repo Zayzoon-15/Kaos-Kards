@@ -7,6 +7,8 @@ frame = 0;
 currentAnim = 0;
 animationEnd = false;
 shake = 0;
+ignoreTime = 0;
+resetAnim = "";
 enemyPlayAnim("idle");
 
 //Hover
