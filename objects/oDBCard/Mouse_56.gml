@@ -17,6 +17,13 @@ if grabbed
                 exit;
             }
             
+            //Max Card Amount Reached
+            if maxCardAmount-cardAmount <= 0
+            {
+                createAlertMessage("MAX CARD AMOUNT",50,ROOM_CENTER.x,150);
+                exit;
+            }
+            
             //Put In Deck
             array_push(playerDeck,info);
             global.deckCardAmount ++;
@@ -37,6 +44,7 @@ if grabbed
             var _index = array_get_index(playerDeck,info);
             array_delete(playerDeck,_index,1);
             global.deckCardAmount --;
+            print(global.deckCardAmount);
             
             //Reorder Cards
             oDBDeck.lastCardId --;

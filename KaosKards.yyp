@@ -613,11 +613,11 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rSetup","path":"rooms/rSetup/rSetup.yy",},},
+    {"roomId":{"name":"rDeckBuilder1","path":"rooms/rDeckBuilder1/rDeckBuilder1.yy",},},
     {"roomId":{"name":"rPrepare","path":"rooms/rPrepare/rPrepare.yy",},},
     {"roomId":{"name":"rTesting","path":"rooms/rTesting/rTesting.yy",},},
     {"roomId":{"name":"rTournies","path":"rooms/rTournies/rTournies.yy",},},
     {"roomId":{"name":"rDeckBuilder2","path":"rooms/rDeckBuilder2/rDeckBuilder2.yy",},},
-    {"roomId":{"name":"rDeckBuilder1","path":"rooms/rDeckBuilder1/rDeckBuilder1.yy",},},
     {"roomId":{"name":"rMainMenu","path":"rooms/rMainMenu/rMainMenu.yy",},},
     {"roomId":{"name":"rEnemy","path":"rooms/rEnemy/rEnemy.yy",},},
     {"roomId":{"name":"rSettings","path":"rooms/rSettings/rSettings.yy",},},

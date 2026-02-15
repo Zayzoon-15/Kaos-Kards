@@ -2,7 +2,7 @@
 
 //Value
 var _healValue = irandom_range(10,20);
-var _poisonValue = _healValue/5;
+var _poisonValue = _healValue/3;
 
 //Do Outcome
 if playerId == 0 and winner

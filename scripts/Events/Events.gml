@@ -61,6 +61,10 @@ function gameReset()
     global.enemyRemovedCards = [];
     global.playerAddCards = [];
     global.enemyAddCards = [];
+    
+    //Reset Hand Size
+    global.maxHandSize = 6;
+    global.maxDiscards = round(array_length(playerDeck)*.6);
 }
 
 

@@ -28,6 +28,41 @@ function kaosActionSwoop(_targetEnemy)
 
 
 ///@self oAttackCard
+function kaosActionDiscard(_targetEnemy)
+{
+	//Show Message
+	createAlertMessage("Discard Can Cleanded");
+	
+	//Juice
+	cardJuice(true,true);
+	
+	//Double Values
+	global.discards = 0;
+    
+    //Finish
+    timeSourceCreate(2,kaosCardDone);
+}
+
+
+
+///@self oAttackCard
+function kaosActionHandy(_targetEnemy)
+{
+	//Show Message
+	createAlertMessage("Hand Size Increased");
+	
+	//Juice
+	cardJuice(true,true);
+	
+	//Double Values
+	global.maxHandSize += 1;
+    
+    //Finish
+    timeSourceCreate(2,kaosCardDone);
+}
+
+
+///@self oAttackCard
 function kaosActionSwap(_targetEnemy)
 {
 	//Show Message

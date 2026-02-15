@@ -28,3 +28,12 @@ var _args = array_concat([targetEnemy],card.info.extraArgs);
 
 //Do Action
 method_call(card.info.action,_args);
+
+//Reduce Uses
+if card.info.uses != NaN
+{
+    if targetEnemy
+    {
+        array_push(global.cardUses.player,card.info.name);
+    } else array_push(global.cardUses.enemy,card.info.name);
+}

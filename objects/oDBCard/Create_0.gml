@@ -13,6 +13,23 @@ cardYOffset = 0;
 //Info
 uses = info.uses;
 
+//Get Max Amount
+maxCardAmount = 0;
+switch (info.type) {
+	case CARDTYPES.ACTION: maxCardAmount = global.currentDeck.maxActionCards; break;
+    case CARDTYPES.DICE: maxCardAmount = global.currentDeck.maxDiceCards; break;
+	case CARDTYPES.KAOS: maxCardAmount = global.currentDeck.maxKaosCards; break;
+}
+
+//Get Card Amount
+cardAmount = 0;
+for (var i = 0; i < array_length(playerDeck); i++) {
+	if playerDeck[i] == info
+    {
+        cardAmount++;
+    }
+}
+
 //Drawing
 angle = 0;
 shadowX = 0;

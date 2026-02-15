@@ -26,8 +26,24 @@ if grabbed
 	
     //Draw Card
 	drawCard3d(cardX+_shakeX, cardY+_shakeY, cardFront, cardBack, cardAngle,image_angle);
+    
+    //Draw Card Amount
+    if room == rDeckBuilder1
+    {
+        //Values
+        var _amountString = $"{maxCardAmount-cardAmount}x";
+        var _amountPos = new Vector2((cardX+sprite_width/2)-10,(cardY+sprite_height/2)-10);
+        var _amountWidth = 13;
+        var _amountHeight = 12;
+        
+        //Draw Bg
+        drawRectOutlined(_amountPos.x-_amountWidth,_amountPos.y-_amountHeight,_amountPos.x+_amountWidth,_amountPos.y+_amountHeight);
+        
+        //Draw Text
+        textSetup(fnMain,fa_center,fa_middle);
+        draw_text(_amountPos.x+1,_amountPos.y,_amountString);
+    }
 }
-
 
 //Reset Scissor
 gpu_set_scissor(_scissor);

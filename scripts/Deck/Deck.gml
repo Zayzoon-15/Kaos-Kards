@@ -1,11 +1,16 @@
 
 
-function createDeckType(_name,_sprite,_maxCards = 15) constructor
+function createDeckType(_name,_sprite,_maxCards = 15,_maxTypes=[3,1,1]) constructor
 {
     //Info
     name = _name;
     sprite = _sprite;
     maxCards = _maxCards;
+    
+    //Type
+    maxActionCards = _maxTypes[0];
+    maxDiceCards = _maxTypes[1];
+    maxKaosCards = _maxTypes[2];
 }
 
 

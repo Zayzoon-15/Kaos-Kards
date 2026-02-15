@@ -66,14 +66,14 @@ function createCardAction(_name,_desc,_sprite,_range,_genre = CARDACT_GENRES.ATT
 /// @param {asset.GMSprite} _sprite The cards sprite
 /// @param {function} _action The cards action (Put undefined of it has no action)
 /// @param {array} _extraArgs Extra arguments the givin function can use
-function createCardKaos(_name,_desc,_sprite,_action = undefined,_extraArgs = []) constructor
+function createCardKaos(_name,_desc,_sprite,_action = undefined,_extraArgs = [],_uses = NaN) constructor
 {
     //Info
     name = _name;
     desc = _desc;
     sprite = _sprite;
     range = undefined;
-    uses = NaN;
+    uses = _uses;
     date = $"{current_month}/{current_day}/{current_year}/{current_second}";
     
     //Get Action

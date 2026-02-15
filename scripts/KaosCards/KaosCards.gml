@@ -11,6 +11,14 @@ kaosCards = {
     "Targets either the enemy or the player and causes a swarm of birds to attack",
     sCardSwoop,kaosActionSwoop),
     
+    discard : new createCardKaos("Clean Up",
+    "Cleans the discard can",
+    sCardSwoop,kaosActionDiscard),
+    
+    handy : new createCardKaos("Handy Card",
+    "Increases everyones hand size by 1",
+    sCardSwoop,kaosActionHandy,[],4),
+    
     high : new createCardKaos("Inflation",
     "All values are doubled for the current round",
     sCardHigh,kaosActionHigh),
