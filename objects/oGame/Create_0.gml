@@ -16,6 +16,7 @@ initSettings();
 //Values
 global.valueMult = 1;
 global.comboMult = 1;
+global.repeatTimes = 0;
 
 //Cards
 global.holdingCard = false;

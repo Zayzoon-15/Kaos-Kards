@@ -37,3 +37,12 @@ if card.info.uses != NaN
         array_push(global.cardUses.player,card.info.name);
     } else array_push(global.cardUses.enemy,card.info.name);
 }
+
+//Increase Repeated
+repeatedTimes ++;
+
+//Repeat
+if global.repeatTimes >= repeatedTimes and card.info.type == CARDTYPES.ACTION
+{
+    alarm[0] = 60;
+}

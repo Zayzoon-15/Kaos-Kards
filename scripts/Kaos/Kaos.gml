@@ -31,7 +31,7 @@ function kaosActionSwoop(_targetEnemy)
 function kaosActionDiscard(_targetEnemy)
 {
 	//Show Message
-	createAlertMessage("Discard Can Cleanded");
+	createAlertMessage("Discard Bin Cleaned Up");
 	
 	//Juice
 	cardJuice(true,true);
@@ -40,9 +40,8 @@ function kaosActionDiscard(_targetEnemy)
 	global.discards = 0;
     
     //Finish
-    timeSourceCreate(2,kaosCardDone);
+    timeSourceCreate(1.5,kaosCardDone);
 }
-
 
 
 ///@self oAttackCard
@@ -58,7 +57,7 @@ function kaosActionHandy(_targetEnemy)
 	global.maxHandSize += 1;
     
     //Finish
-    timeSourceCreate(2,kaosCardDone);
+    timeSourceCreate(1.5,kaosCardDone);
 }
 
 
@@ -85,7 +84,7 @@ function kaosActionSwap(_targetEnemy)
 	#endregion
     
     //Finish
-    timeSourceCreate(5,kaosCardDone);
+    timeSourceCreate(4,kaosCardDone);
 }
 
 
@@ -102,7 +101,7 @@ function kaosActionHigh(_targetEnemy)
 	global.valueMult *= 2;
     
     //Finish
-    timeSourceCreate(2,kaosCardDone);
+    timeSourceCreate(1.5,kaosCardDone);
 }
 
 
@@ -247,6 +246,23 @@ function kaosActionBrokenDefense(_targetEnemy)
 	//Give Shield
     var _maxHp = _targetEnemy ? global.playerMaxHp : global.enemyMaxHp;
     addEffect(attackEffects.shield,_maxHp,!_targetEnemy);
+    
+    //Finish
+    timeSourceCreate(1.5,kaosCardDone);
+}
+
+
+///@self oAttackCard
+function kaosActionRerun(_targetEnemy)
+{
+	//Show Message
+	createAlertMessage("Retrigger All Cards");
+	
+	//Juice
+	cardJuice(true,true);
+    
+    //Increase Repeat
+    global.repeatTimes += 1;
     
     //Finish
     timeSourceCreate(1.5,kaosCardDone);

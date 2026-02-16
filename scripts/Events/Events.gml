@@ -42,6 +42,8 @@ function gameReset()
 	
 	//Reset Values
 	global.valueMult = 1;
+    global.comboMult = 1;
+    global.repeatTimes = 0;
     global.discards = 0;
 	
 	//Reset Slots

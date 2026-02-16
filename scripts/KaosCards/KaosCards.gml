@@ -12,12 +12,12 @@ kaosCards = {
     sCardSwoop,kaosActionSwoop),
     
     discard : new createCardKaos("Clean Up",
-    "Cleans the discard can",
-    sCardSwoop,kaosActionDiscard),
+    "Cleans the discard bin for all players",
+    sCardDiscard,kaosActionDiscard),
     
     handy : new createCardKaos("Handy Card",
     "Increases everyones hand size by 1",
-    sCardSwoop,kaosActionHandy,[],4),
+    sCardHandy,kaosActionHandy,[],4),
     
     high : new createCardKaos("Inflation",
     "All values are doubled for the current round",
@@ -54,6 +54,10 @@ kaosCards = {
     brokenDefense : new createCardKaos("Broken Defense",
     "Gain 100% of max health as sheild but reduce max health by a random amount",
     sCardBrokenDefense,kaosActionBrokenDefense),
+    
+    rerun : new createCardKaos("Rerun",
+    "Retrigger all cards played this round again",
+    sCardRerun,kaosActionRerun),
     
 };
 

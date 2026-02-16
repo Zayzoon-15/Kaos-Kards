@@ -29,6 +29,10 @@ if card.info.type == CARDTYPES.KAOS then _actTime = 60;
 if combo then _actTime = 80;
 alarm[0] = _actTime;
 
+//Repeat
+repeatedTimes = 0;
+
+
 #region Functions
 
 /// @desc Make the card have juice
