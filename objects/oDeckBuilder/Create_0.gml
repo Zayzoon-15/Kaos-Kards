@@ -29,7 +29,7 @@ startTrans = function()
     depth = -100;
     
     //Animate
-    var _ease = EaseInOutQuad;
+    var _ease = EaseInCubic;
     var _dur = 30;
     TweenFire(self,_ease,TWEEN_MODE_ONCE,false,0,_dur,"spriteScale",1,2.3);
     TweenFire(self,_ease,TWEEN_MODE_ONCE,false,0,_dur,"spriteY",0,-(oDBInsertHole.y+100));

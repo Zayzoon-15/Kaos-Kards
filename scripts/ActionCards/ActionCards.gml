@@ -48,7 +48,7 @@ actionCards = {
 	
     ghost : new createCardAction("Ghost",
     "Shoots a non physical ghost that ignores shields",
-    sCardGhost,[1,4],CARDACT_GENRES.ATTACK,actionGhost),
+    sCardGhost,[1,5],CARDACT_GENRES.ATTACK,actionGhost),
 	
     taunt : new createCardAction("Taunt",
     "Taunt your enemy to gain a random amount of combo charge and steal a random amount from them",
