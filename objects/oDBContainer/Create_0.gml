@@ -21,7 +21,12 @@ sorting = {
             if _current.type != _next.type {
                 return _current.type - _next.type;
             }
-        
+            
+            if struct_exists(_current,"genre") and struct_exists(_next,"genre")
+            {
+                if _current.genre != _next.genre return _current.genre - _next.genre;
+            }
+            
             //Change By Placement Id
             return _next.placementId - _current.placementId;
         },
@@ -32,9 +37,14 @@ sorting = {
             if _current.type != _next.type {
                 return _next.type - _current.type;
             }
+            
+            if struct_exists(_current,"genre") and struct_exists(_next,"genre")
+            {
+                if _current.genre != _next.genre return _next.genre - _current.genre;
+            }
         
             //Change By Placement Id
-            return _next.placementId - _current.placementId;
+            return _current.placementId - _next.placementId;
         },
     },
     
