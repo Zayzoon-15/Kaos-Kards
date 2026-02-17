@@ -24,10 +24,13 @@ global.disabledSlots = {
     player: array_create(4,false),
     enemy : array_create(4,false)
 };
+
 global.cardUses = {
     player: [],
     enemy : []
 };
+
+global.gamelog = ds_list_create();
 
 //Enemy
 global.currentEnemy = enemyInfo.bones;

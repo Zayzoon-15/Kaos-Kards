@@ -31,3 +31,6 @@ fx_set_single_layer(fxLayer,true);
 pixelAmount = 500;
 layer_set_fx(brawlLayerTop, fxLayer);
 layer_set_fx(brawlLayerBottom, fxLayer);
+
+//Scissor
+scissorStruct = {};

@@ -38,6 +38,10 @@ if card.info.uses != NaN
     } else array_push(global.cardUses.enemy,card.info.name);
 }
 
+//Add To Log
+ds_list_add(global.gamelog,card.info.name);
+ds_debug_print(global.gamelog,ds_type_list);
+
 //Increase Repeated
 repeatedTimes ++;
 

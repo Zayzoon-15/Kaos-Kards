@@ -15,7 +15,7 @@
 function actionHeal(_targetEnemy)
 {
 	//Buff Value
-	var _value = value * 1.5;
+	var _value = value*1.2;
 	
     //Juice
     cardJuice(false);
@@ -37,7 +37,7 @@ function actionHeal(_targetEnemy)
 function actionShield(_targetEnemy)
 {
 	//Buff Value
-	var _value = value * 1.5;
+	var _value = value * 1.2;
 	
     //Juice
     cardShake();
@@ -181,7 +181,7 @@ function actionTaunt(_targetEnemy)
 
 ///@self oAttackCard
 function actionSteak(_targetEnemy)
-{
+{	
     //Juice
     cardJuice(false);
     effectHealth(x,y,10,true,10,25,sprite_get_width(sCardBlank),sprite_get_height(sCardBlank));

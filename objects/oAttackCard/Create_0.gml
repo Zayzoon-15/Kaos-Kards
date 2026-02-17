@@ -20,8 +20,13 @@ shadowY = 8;
 shadowSize = 0.05;
 
 //Value
-value = card.value != undefined ? ceil(card.value*VALUE_MULT) : undefined; //Reduce Value
-value = card.value != undefined ? value * global.valueMult : undefined;
+value = card.value != undefined ? ceil(card.value*global.valueMult) : undefined;
+
+//Reduce Attack Values
+if struct_exists(card.info,"genre") and card.info.genre == CARDACT_GENRES.ATTACK and value != undefined
+{
+	value = ceil(value*VALUE_MULT);
+}
 
 //Action
 var _actTime = 30;
@@ -32,6 +37,19 @@ alarm[0] = _actTime;
 //Repeat
 repeatedTimes = 0;
 
+//Set Uses
+uses = card.info.uses;
+var _usesArray = targetEnemy ? global.cardUses.player : global.cardUses.enemy;
+if array_contains(_usesArray,card.info.name)
+{
+    for (var i = 0; i < array_length(_usesArray); i++) {
+    	if _usesArray[i] == card.info.name then uses --;
+    }
+}
+
+//Hover
+canGrab = true;
+hover = false;
 
 #region Functions
 

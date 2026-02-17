@@ -1,3 +1,6 @@
+//Set Scissor Cut
+var _scissor = gpu_get_scissor();
+gpu_set_scissor(oBrawlSetup.scissorStruct);
 
 //Draw Character
 draw_sprite_ext(sprite_index,image_index,x,y,xscale*dir,yscale,image_angle,image_blend,image_alpha);
@@ -53,4 +56,5 @@ draw_text(_x,_y-4,_text);
 draw_sprite(sBrawlTri,nameTriFrame,_x+.5,_y+4);
 
 //Reset Draw
+gpu_set_scissor(_scissor);
 drawReset();

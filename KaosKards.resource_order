@@ -103,7 +103,6 @@
     {"name":"oAttackEffect","order":1,"path":"objects/oAttackEffect/oAttackEffect.yy",},
     {"name":"oBrawlChar","order":1,"path":"objects/oBrawlChar/oBrawlChar.yy",},
     {"name":"oBrawlHp","order":1,"path":"objects/oBrawlHp/oBrawlHp.yy",},
-    {"name":"oBrawlMap","order":2,"path":"objects/oBrawlMap/oBrawlMap.yy",},
     {"name":"oBrawlMobile_1","order":8,"path":"objects/oBrawlMobile_1/oBrawlMobile_1.yy",},
     {"name":"oBrawlMobile","order":7,"path":"objects/oBrawlMobile/oBrawlMobile.yy",},
     {"name":"oBrawlSolid","order":1,"path":"objects/oBrawlSolid/oBrawlSolid.yy",},

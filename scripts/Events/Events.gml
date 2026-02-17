@@ -57,6 +57,9 @@ function gameReset()
         player: [],
         enemy : []
     };
+	
+	//Reset Log
+	ds_list_clear(global.gamelog);
     
     //Removed
     global.playerRemovedCards = [];
@@ -90,6 +93,8 @@ function nextRoundStarted()
 	
 	//Reset Mult
 	global.valueMult = 1;
+    global.comboMult = 1;
+    global.repeatTimes = 0;
     
     //Decrease Discards
     global.discards -= .3;

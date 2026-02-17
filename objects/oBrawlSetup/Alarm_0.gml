@@ -4,9 +4,6 @@
 image_index = 2;
 depth -= 3;
 
-//Create Map
-instance_create_layer(x,y,brawlLayerBottom,oBrawlMap);
-
 //Create Characters
 instance_create_layer(x,y,brawlLayerTop,oBrawlChar);
 instance_create_layer(x,y,brawlLayerTop,oBrawlChar,{playerId : 1});

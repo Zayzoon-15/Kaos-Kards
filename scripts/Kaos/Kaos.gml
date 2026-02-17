@@ -91,14 +91,23 @@ function kaosActionSwap(_targetEnemy)
 ///@self oAttackCard
 function kaosActionHigh(_targetEnemy)
 {
+	//Get Value
+	var _value = 1.1;
+	for (var i = 0; i < ds_list_size(global.gamelog); ++i) {
+		if ds_list_find_value(global.gamelog,i) == kaosCards.high.name
+		{
+			_value += .1;
+		}
+	}
+	
 	//Show Message
-	createAlertMessage("All Values Doubled");
+	createAlertMessage($"All Values Multiplied By {string_format(_value,0,1)}");
 	
 	//Juice
 	cardJuice(true,true);
 	
-	//Double Values
-	global.valueMult *= 2;
+	//Increase Value
+	global.valueMult = _value;
     
     //Finish
     timeSourceCreate(1.5,kaosCardDone);

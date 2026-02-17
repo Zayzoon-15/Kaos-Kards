@@ -22,3 +22,9 @@ image_xscale = lerp(image_xscale,1,.3);
 image_yscale = lerp(image_yscale,1,.3);
 angle = lerp(angle,0,.2);
 shake = lerp(shake,shakeTarget,shakeEase);
+
+//Hover
+hover = touchingMouse() and canGrab and !instance_exists(oTipBox);
+
+//Draw Info
+drawCardText(card.info);

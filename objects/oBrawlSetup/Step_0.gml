@@ -3,7 +3,6 @@ if gameover and alpha >= .9
 {
 	instance_destroy(oBrawlChar);
 	instance_destroy(oBrawlHp);
-	instance_destroy(oBrawlMap);
 }
 
 //No Fxs

@@ -7,7 +7,7 @@ globalvar kaosCards;
 
 kaosCards = {
     
-    swoop : new createCardKaos("Swoop Card",
+    swoop : new createCardKaos("Swoop",
     "Targets either the enemy or the player and causes a swarm of birds to attack",
     sCardSwoop,kaosActionSwoop),
     
@@ -15,15 +15,15 @@ kaosCards = {
     "Cleans the discard bin for all players",
     sCardDiscard,kaosActionDiscard),
     
-    handy : new createCardKaos("Handy Card",
+    handy : new createCardKaos("Handy",
     "Increases everyones hand size by 1",
     sCardHandy,kaosActionHandy,[],4),
     
     high : new createCardKaos("Inflation",
-    "All values are doubled for the current round",
+    "All values are multiplied by 1.1 for the current round\nThe value increases by .1 after every use",
     sCardHigh,kaosActionHigh),
     
-    swap : new createCardKaos("Swap Card",
+    swap : new createCardKaos("Swap",
     "Swaps both the players hands",
     sCardSwap,kaosActionSwap),
 	
