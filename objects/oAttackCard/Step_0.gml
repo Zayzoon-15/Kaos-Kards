@@ -24,7 +24,7 @@ angle = lerp(angle,0,.2);
 shake = lerp(shake,shakeTarget,shakeEase);
 
 //Hover
-hover = touchingMouse() and canGrab and !instance_exists(oTipBox);
+hover = touchingMouse() and canGrab and !instance_exists(oTipBox) and oKaosManager.kaosOver;
 
 //Draw Info
 drawCardText(card.info);

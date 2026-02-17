@@ -11,10 +11,6 @@ scaleTime = .5;
 
 //Info
 infoText = "Press to retry";
-
-//Text
-textTargetSize = 2;
-textSize = textTargetSize;
 text = "Retry";
 
 //Action

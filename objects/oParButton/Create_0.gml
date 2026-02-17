@@ -45,8 +45,10 @@ infoText = "This button does something";
 
 //Text
 sizeToText = false;
+textScaleTime = scaleTime;
 textTargetSize = 2;
-textSize = textTargetSize;
+textXScale = textTargetSize;
+textYScale = textTargetSize;
 text = "Button";
 
 //Sound

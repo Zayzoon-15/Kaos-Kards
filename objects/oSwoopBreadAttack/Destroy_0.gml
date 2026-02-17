@@ -10,7 +10,7 @@ for (var i = 0; i < 5; i++) {
     {
         instance_create_depth(-10,-10,depth-1,oSwoopBirdAttack,{
             targetEnemy : _targetEnemy,
-            value : value/4
+            value : ceil(value/3)
         })
     }
     

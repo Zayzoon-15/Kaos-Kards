@@ -9,11 +9,11 @@ canHover = true;
 
 //Info
 drawInfo = false;
+text = "Resume";
 
 //Text
-textTargetSize = 2;
-textSize = textTargetSize;
-text = "Resume";
+textXScale = 0;
+
 
 //Action
 action = function()

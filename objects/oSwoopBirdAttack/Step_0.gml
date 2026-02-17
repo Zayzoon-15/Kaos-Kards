@@ -1,4 +1,3 @@
-
 if state == states.attackEnemy
 {
 	//Slow Down

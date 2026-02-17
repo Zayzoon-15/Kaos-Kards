@@ -4,7 +4,7 @@
 if !oHotdog.gameStarted then exit;
 
 //Chance
-var _missed = irandom_range(1,20);
+var _missed = irandom_range(1,200);
 var _time = random_range(5,40);
 
 //Eat Or Miss

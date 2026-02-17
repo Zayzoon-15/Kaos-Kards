@@ -2,25 +2,19 @@
 
 //Value
 var _healValue = irandom_range(10,20);
-var _poisonValue = _healValue/3;
+var _poisonValue = _healValue/7;
 
-//Do Outcome
-if playerId == 0 and winner
+//Win Outcome
+if winner
 {
-    //Player Won
-    healPlayer(_healValue);
-    
-    //Enemy Lost
-    enemyPlayAnim("kaosHotDogLose",180,"idle");
-    addEffect(attackEffects.poison,_poisonValue,true);
-    
-} else if playerId == 1 and winner
-{
-    //Enemy Won
-    healEnemy(_healValue);
-    
-    //Player Lost
-    addEffect(attackEffects.poison,_poisonValue,false);
+    if playerId == 0 then healPlayer(_healValue); //Player Won
+    if playerId == 1 then healEnemy(_healValue); //Enemy Won
+} else { //Lose Outcome
+    if playerId == 0 then addEffect(attackEffects.poison,_poisonValue,false); //Player Lost
+    if playerId == 1 { //Enemy Lost
+        enemyPlayAnim("kaosHotDogLose",180,"idle");
+        addEffect(attackEffects.poison,_poisonValue,true);
+    }
 }
 
 //Destroy Hotdog Action

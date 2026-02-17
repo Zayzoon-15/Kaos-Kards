@@ -9,10 +9,6 @@ canHover = true;
 
 //Info
 infoText = "Press to start the match";
-
-//Text
-textTargetSize = 2;
-textSize = textTargetSize;
 text = "Start";
 
 //Action

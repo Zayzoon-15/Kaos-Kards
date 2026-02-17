@@ -6,10 +6,6 @@ canHover = false;
 
 //Info
 infoText = "Press when you are done preparing";
-
-//Text
-textTargetSize = 2;
-textSize = textTargetSize;
 text = "Done";
 
 //Action

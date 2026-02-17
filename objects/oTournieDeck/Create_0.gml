@@ -9,10 +9,6 @@ image_xscale += .5;
 
 //Info
 infoText = "Press to change your deck";
-
-//Text
-textTargetSize = 2;
-textSize = textTargetSize;
 text = "Deck Builder";
 
 //Action

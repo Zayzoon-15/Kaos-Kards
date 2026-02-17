@@ -16,6 +16,7 @@ xOffset = 400;
 timeBetweenCards = 70;
 
 //Start Kaos
+kaosOver = false;
 alarm[0] = 50;
 
 //Voice Line

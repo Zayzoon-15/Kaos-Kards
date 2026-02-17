@@ -9,14 +9,13 @@ canHover = room != rTournies;
 
 //Info
 drawInfo = false;
-
-//Text
-textTargetSize = 2;
-textSize = textTargetSize;
 text = "Return To Menu";
 
-//Size
-setSize(3,.85);
+//Text
+sizeToText = true;
+textXScale = 0;
+textScaleTime = .2;
+scaleTime = .3;
 
 //Action
 action = function()

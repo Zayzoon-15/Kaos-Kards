@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Pause",
-    "path":"folders/Objects/Ui/Pause.yy",
+    "path":"folders/Objects/Ui/Buttons/Pause.yy",
   },
   "parentObjectId":{
     "name":"oParButton",

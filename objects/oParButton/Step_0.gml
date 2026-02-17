@@ -20,7 +20,7 @@ if drawInfo
 //Size To Text
 if sizeToText
 {
-    image_xscale = (string_width(text)/60) * textTargetSize;
+    image_xscale = (string_width(text)/70) * textTargetSize;
 }
 
 //Stick To Screen
@@ -36,4 +36,5 @@ boxY = lerp(boxY,targetY,.2);
 xscale = lerp(xscale,image_xscale,scaleTime);
 yscale = lerp(yscale,image_yscale,scaleTime);
 image_alpha = lerp(image_alpha,alpha,alphaTime);
-textSize = lerp(textSize,textTargetSize,.3);
+textXScale = lerp(textXScale,textTargetSize,textScaleTime);
+textYScale = lerp(textYScale,textTargetSize,textScaleTime);

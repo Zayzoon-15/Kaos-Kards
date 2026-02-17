@@ -9,11 +9,10 @@ canHover = true;
 
 //Info
 drawInfo = false;
+text = "Settings";
 
 //Text
-textTargetSize = 2;
-textSize = textTargetSize;
-text = "Settings";
+textXScale = 0;
 
 //Action
 action = function()

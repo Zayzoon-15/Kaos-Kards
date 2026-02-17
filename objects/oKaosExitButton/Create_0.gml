@@ -10,11 +10,7 @@ alphaTime = .03;
 scaleTime = .5;
 
 //Info
-infoText = "Press to return to the menu";
-
-//Text
-textTargetSize = 2;
-textSize = textTargetSize;
+infoText = "Press to return to the menu"; ;
 text = "Exit";
 
 //Action

@@ -6,10 +6,6 @@ canHover = false;
 
 //Info
 infoText = "Press when you are ready to start the round";
-
-//Text
-textTargetSize = 2;
-textSize = textTargetSize;
 text = "Start";
 
 //Action

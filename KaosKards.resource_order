@@ -28,7 +28,7 @@
     {"name":"Menu2","order":4,"path":"folders/Objects/Ui/Deck Builder/Menu2.yy",},
     {"name":"Game","order":3,"path":"folders/Objects/Ui/Game.yy",},
     {"name":"Info","order":1,"path":"folders/Objects/Ui/Info.yy",},
-    {"name":"Pause","order":7,"path":"folders/Objects/Ui/Pause.yy",},
+    {"name":"Pause","order":4,"path":"folders/Objects/Ui/Buttons/Pause.yy",},
     {"name":"Settings","order":2,"path":"folders/Objects/Ui/Settings.yy",},
     {"name":"Tournies","order":5,"path":"folders/Objects/Ui/Tournies.yy",},
     {"name":"Transitions","order":4,"path":"folders/Objects/Ui/Transitions.yy",},

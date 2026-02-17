@@ -6,8 +6,6 @@ canHover = true;
 drawInfo = false;
 
 //Text
-textTargetSize = 2;
-textSize = textTargetSize;
 text = dir == "Left" ? "Last Page" : "Next Page";
 
 //Action

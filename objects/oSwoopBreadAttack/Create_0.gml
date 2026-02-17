@@ -1,4 +1,3 @@
-
 //Set State
 states = {attackPlayer:0,attackEnemy:1};
 state = targetEnemy;

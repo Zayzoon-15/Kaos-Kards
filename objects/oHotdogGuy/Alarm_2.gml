@@ -16,7 +16,12 @@ with oHotdogGuy
 //Draw
 if _winner == undefined
 {
-    print("HOTDOG DRAW");
+    createAlertMessage("DRAW");
+    
+    //No Winner
+    winner = false;
+    alarm[3] = 30;
+    
     exit;
 }
 

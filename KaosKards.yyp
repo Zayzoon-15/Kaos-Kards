@@ -58,7 +58,7 @@
     {"$GMFolder":"","%Name":"Game","folderPath":"folders/Objects/Ui/Game.yy","name":"Game","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Health","folderPath":"folders/Objects/Ui/Game/Health.yy","name":"Health","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Info","folderPath":"folders/Objects/Ui/Info.yy","name":"Info","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Pause","folderPath":"folders/Objects/Ui/Pause.yy","name":"Pause","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Pause","folderPath":"folders/Objects/Ui/Buttons/Pause.yy","name":"Pause","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Settings","folderPath":"folders/Objects/Ui/Settings.yy","name":"Settings","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Ui Types","folderPath":"folders/Objects/Ui/Settings/Ui Types.yy","name":"Ui Types","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Tournies","folderPath":"folders/Objects/Ui/Tournies.yy","name":"Tournies","resourceType":"GMFolder","resourceVersion":"2.0",},

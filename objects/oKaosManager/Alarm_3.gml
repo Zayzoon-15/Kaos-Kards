@@ -16,9 +16,10 @@ if _attcksExists
 
 //Round Over Message
 createAlertMessage("Round Over",30,room_width/2,(room_height/2)-60);
-
-//Sound
 audioPlaySfx(snRoundEnd);
+
+//Set Kaos Over
+kaosOver = true;
 
 //Create Button
 alarm[4] = 30;

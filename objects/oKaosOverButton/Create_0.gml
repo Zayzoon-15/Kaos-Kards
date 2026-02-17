@@ -11,10 +11,6 @@ scaleTime = .5;
 
 //Info
 infoText = "Press to go to next round";
-
-//Text
-textTargetSize = 2;
-textSize = textTargetSize;
 text = "Continue";
 
 //Action

@@ -7,10 +7,6 @@ stickToScreenRight = false;
 
 //Info
 infoText = "Press to roll the dice";
-
-//Text
-textTargetSize = 2;
-textSize = textTargetSize;
 text = "Roll";
 
 //Action

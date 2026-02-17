@@ -28,10 +28,11 @@ laserSound = noone;
 //Functions
 action = function()
 {
+    var _yCenter = targetEnemy ? y - 250 : y + 250;
     var _x = random_range(-30,30);
     var _y = random_range(-80,80);
     
-    hurtEffect(sprite_width/2+_x,sprite_height/2+_y);
+    hurtEffect(x+_x,_yCenter+_y);
     damageTarget();
 }
 

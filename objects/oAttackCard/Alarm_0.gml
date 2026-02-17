@@ -40,7 +40,6 @@ if card.info.uses != NaN
 
 //Add To Log
 ds_list_add(global.gamelog,card.info.name);
-ds_debug_print(global.gamelog,ds_type_list);
 
 //Increase Repeated
 repeatedTimes ++;
@@ -48,5 +47,5 @@ repeatedTimes ++;
 //Repeat
 if global.repeatTimes >= repeatedTimes and card.info.type == CARDTYPES.ACTION
 {
-    alarm[0] = 60;
+    alarm[0] = 100;
 }
