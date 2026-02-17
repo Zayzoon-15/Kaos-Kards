@@ -1,67 +1,3 @@
-//function enemyFuncs()
-//{
-    //
-    //static enemyCreateStrat = function(_healWeight = 80,_healVal = 60,_defendWeight = 50,_defendValue = 50,_diceWeight = 80,_diceVal = 2,_comboWeight = 100,_specialWeight = 40,_specialVal = 3,_specialUses = 2) constructor 
-    //{
-        ////Weights
-        //healWeight = _healWeight;
-        //defendWeight = _defendWeight;
-        //diceWeight = _diceWeight;
-        //comboWeight = _comboWeight;
-        //specialWeight = _specialWeight;
-        //
-        ////Values
-        //healValue = _healVal;
-        //defendValue = _defendValue;
-        //diceValue = _diceVal;
-        //specialValue = _specialVal;
-        //specialUses = _specialUses;
-    //}
-    //
-    //
-    //static enemyCreateAnims = function(_idle = 2,_hurt = 2,_win = 2,_death = 2,_extras = {})
-    //{
-        ////Create Clips
-        //var _clip = function(_length,_start=0,_loop = true)
-        //{
-            //return {
-                //start : _start,
-                //length : _length,
-                //loop : _loop,
-            //};
-        //}
-        //
-        ////Create Info
-        //var _info = { 
-            //idle : _clip(_idle),
-            //hurt : _clip(_hurt),
-            //win : _clip(_win),
-            //death: _clip(_death),
-        //}
-        //
-        ////Set Offsets
-        //var _order = ["idle","hurt","win","death"];
-        //var _offset = 0;
-        //
-        //for (var i = 0; i < array_length(_order); i++)
-        //{
-            //var _key = _order[i];
-            //var _anim = struct_get(_info, _key);
-            //
-            //_anim.start = _offset;
-            //_offset += _anim.length;
-            //
-            //struct_set(_info, _key, _anim);
-        //}
-        //
-        ////Return Animation Info
-        //return _info;
-    //}
-    //
-//}
-
-
-
 /// @desc Create the enemies fighting strategy
 /// @param {real} [_healWeight] How important healing is (Default = 80)
 /// @param {real} [_healVal] When should it consider healing (Default = 60)
@@ -124,18 +60,24 @@ function enemyCreateAnims(_idle = 2,_hurt = 2,_win = 2,_death = 2,_extraAnims={}
 /// @desc Creates the enemies information
 /// @param {string} _name The name of the enemy
 /// @param {Asset.GMSprite} _sprite The sprite of the enemy
+/// @param {real} _difficulty The enemies difficulty which effects how much damage the enemy takes (The lower the number the more damage they take) (Base = 1)
+/// @param {real} _gameDifficulty The enemies difficulty when it comes to playing game cards like the brawl card (Base = 1)
 /// @param {struct.enemycreateanims} [_animInfo] The animation info for the enemies sprite
 /// @param {array} _actionCards The enemies action cards (Example: [actionCards.bread, actionCards.heal])
 /// @param {array} _kaosCards The enemies kaos cards (Example: [kaosCards.swoop])
 /// @param {struct.enemycreatestrat} [_strat] The enemies figthing strategy
 /// @param {any*} [_special] The enemies special move(leave as undefined if they don't use one)
-function enemyCreate(_name,_sprite,_animInfo = enemyCreateAnims(),_actionCards,_kaosCards,_strat = new enemyCreateStrat(),_special = undefined) constructor
+function enemyCreate(_name,_sprite,_difficulty = 1,_gameDifficulty = 1,_animInfo = enemyCreateAnims(),_actionCards,_kaosCards,_strat = new enemyCreateStrat(),_special = undefined) constructor
 {    
     //Info
     name = _name;
     sprite = _sprite;
     animInfo = _animInfo;
     special = _special;
+    
+    //Difficulty
+    difficulty = _difficulty;
+    gameDifficulty = _gameDifficulty;
     
     //Cards
     cardsAct = _actionCards;

@@ -14,6 +14,9 @@ function hurtEnemy(_value,_ignoreShield = false)
     global.playerPerformance += _value;
     global.enemyPerformance -= _value;
     
+    //Change Value Based On Difficulty
+    _value = floor(_value / global.currentEnemy.difficulty);
+    
 	//Add Mult
 	_value *= global.valueMult*VALUE_MULT;
 	

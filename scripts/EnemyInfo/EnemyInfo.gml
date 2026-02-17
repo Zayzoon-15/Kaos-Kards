@@ -7,23 +7,23 @@ globalvar enemyInfo, enemyDeck;
 enemyInfo = {
     
     //Main Crew
-    dog : new enemyCreate("Dog the Duck",sDog,enemyCreateAnims(),[actionCards.heal,actionCards.heal,actionCards.heal,actionCards.shield,actionCards.shield,actionCards.bread,actionCards.bread,actionCards.bread,actionCards.slash,actionCards.slash],[kaosCards.swoop]),
+    dog : new enemyCreate("Dog the Duck",sDog,.7,.3,enemyCreateAnims(),[actionCards.heal,actionCards.heal,actionCards.heal,actionCards.shield,actionCards.shield,actionCards.bread,actionCards.bread,actionCards.bread,actionCards.slash,actionCards.slash],[kaosCards.swoop],new enemyCreateStrat(30,60,20,70,70,2,80,0)),
     
-    angel : new enemyCreate("Angel the Juvenile",sAngel,enemyCreateAnims(),[actionCards.heal,actionCards.heal,actionCards.heal,actionCards.shield,actionCards.shield,actionCards.flamingAce,actionCards.flamingAce,actionCards.flamingAce,actionCards.laser,actionCards.laser],[kaosCards.high]),
+    angel : new enemyCreate("Angel the Juvenile",sAngel,.75,.5,enemyCreateAnims(),[actionCards.heal,actionCards.heal,actionCards.heal,actionCards.shield,actionCards.shield,actionCards.flamingAce,actionCards.flamingAce,actionCards.flamingAce,actionCards.laser,actionCards.laser],[kaosCards.high],new enemyCreateStrat(40,60,20,60,80,2,90,0)),
     
-    cock : new enemyCreate("Cock the Bug",sCock,enemyCreateAnims(),[actionCards.heal,actionCards.heal,actionCards.heal,actionCards.shield,actionCards.shield,actionCards.poison,actionCards.poison,actionCards.poison,actionCards.bread,actionCards.bread],[kaosCards.destroy]),
+    cock : new enemyCreate("Cock the Bug",sCock,.8,.4,enemyCreateAnims(),[actionCards.heal,actionCards.heal,actionCards.heal,actionCards.shield,actionCards.shield,actionCards.poison,actionCards.poison,actionCards.poison,actionCards.bread,actionCards.bread],[kaosCards.destroy],new enemyCreateStrat(60,70,50,75,70,2,80,0)),
 	
-    alien : new enemyCreate("Alan the Alien",sAlien,enemyCreateAnims(),[actionCards.heal,actionCards.heal,actionCards.heal,actionCards.shield,actionCards.shield,actionCards.laser,actionCards.laser,actionCards.laser,actionCards.bread,actionCards.bread],[kaosCards.swap,kaosCards.freeze]),
+    alien : new enemyCreate("Alan the Alien",sAlien,.9,.8,enemyCreateAnims(),[actionCards.heal,actionCards.heal,actionCards.heal,actionCards.shield,actionCards.shield,actionCards.laser,actionCards.laser,actionCards.laser,actionCards.bread,actionCards.bread],[kaosCards.swap,kaosCards.freeze],new enemyCreateStrat(70,60,40,70,75,2,90,0)),
     
-    beer : new enemyCreate("Beer the Pickle",sBeer,enemyCreateAnims(),[actionCards.heal,actionCards.heal,actionCards.heal,actionCards.shield,actionCards.shield,actionCards.punch,actionCards.punch,actionCards.punch,actionCards.laser,actionCards.laser],[kaosCards.rps],new enemyCreateStrat(),enemySpecialBeer),
+    beer : new enemyCreate("Beer the Pickle",sBeer,1,1,enemyCreateAnims(),[actionCards.heal,actionCards.heal,actionCards.heal,actionCards.shield,actionCards.shield,actionCards.punch,actionCards.punch,actionCards.punch,actionCards.laser,actionCards.laser],[kaosCards.rps],new enemyCreateStrat(80,70,50,75,30,2,100,50,4),enemySpecialBeer),
     
     //Retro Crew
-    chud : new enemyCreate("Ichiro Uzumaki the Chud",sChud,enemyCreateAnims(2,2,2,2,{kaosHotDogStart:enemyCreateAnimClips(13,8,false),kaosHotDogLose:enemyCreateAnimClips(3,21,true)}),[actionCards.heal,actionCards.heal,actionCards.shield,actionCards.shield,actionCards.bread,actionCards.bread,actionCards.flamingAce,actionCards.taunt,actionCards.mirror,actionCards.mirror,actionCards.mirror],[kaosCards.brawl]),
+    chud : new enemyCreate("Ichiro Uzumaki the Chud",sChud,1.2,3,enemyCreateAnims(2,2,2,2,{kaosHotDogStart:enemyCreateAnimClips(13,8,false),kaosHotDogLose:enemyCreateAnimClips(3,21,true)}),[actionCards.heal,actionCards.heal,actionCards.shield,actionCards.shield,actionCards.bread,actionCards.bread,actionCards.flamingAce,actionCards.taunt,actionCards.mirror,actionCards.mirror,actionCards.mirror],[kaosCards.brawl],new enemyCreateStrat(80,80,20,75,65,2,100,0)),
     
-    handsy : new enemyCreate("Handsy The Hand",sHandsy,enemyCreateAnims(),[actionCards.heal,actionCards.heal,actionCards.shield,actionCards.shield,actionCards.punch,actionCards.punch,actionCards.punch,actionCards.ghost,actionCards.ghost],[kaosCards.sticky]),
+    handsy : new enemyCreate("Handsy The Hand",sHandsy,1.3,2,enemyCreateAnims(),[actionCards.heal,actionCards.heal,actionCards.shield,actionCards.shield,actionCards.punch,actionCards.punch,actionCards.punch,actionCards.ghost,actionCards.ghost],[kaosCards.sticky],new enemyCreateStrat(80,70,50,80,80,2,100,0)),
     
     //Spooky Crew
-    bones : new enemyCreate("Jones the Living Bones",sBones,enemyCreateAnims(),[actionCards.heal,actionCards.heal,actionCards.shield,actionCards.shield,actionCards.slash,actionCards.slash,actionCards.flamingAce,actionCards.flamingAce,actionCards.flamingAce],[kaosCards.hotdog]),
+    bones : new enemyCreate("Jones the Living Bones",sBones,1.7,4,enemyCreateAnims(),[actionCards.heal,actionCards.heal,actionCards.shield,actionCards.shield,actionCards.slash,actionCards.slash,actionCards.flamingAce,actionCards.flamingAce,actionCards.flamingAce],[kaosCards.hotdog],new enemyCreateStrat(90,70,80,85,40,2,100,0)),
     
 };
 

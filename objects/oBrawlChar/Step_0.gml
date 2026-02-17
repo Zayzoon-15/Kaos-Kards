@@ -61,9 +61,10 @@ if playerId == 0
 	if keyBlock then actBlock();
 	
 } else { //Enemy Ai
+    
 	if !alarm[0] and !won
 	{
-		alarm[0] = random_range(5,10);
+		alarm[0] = random_range(5,15)/global.currentEnemy.gameDifficulty;
 	}
 	
 	if won
