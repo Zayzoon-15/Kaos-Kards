@@ -1,5 +1,15 @@
 if touchingMouse()
 {
+    //Mouse Dir
+    if mouseDir == 0
+    {
+        mouseDir = sign(x-mouse_x);
+    }
+    
+    //Hover Effect
+    scale = lerp(scale,1.1,.2);
+    arrowAngleOffset = lerp(arrowAngleOffset,5*mouseDir,.2);
+    
     //Pressed
     if mouse_check_button_pressed(mb_left) and !pressed
     {
@@ -16,7 +26,18 @@ if touchingMouse()
     }
     
     
-} else pressed = false;
+} else {
+    //Mouse Dir
+    mouseDir = 0;
+    
+    //Hover Effect
+    scale = lerp(scale,1,.2);
+    arrowAngleOffset = lerp(arrowAngleOffset,0,.2);
+    
+    //Pressed
+    pressed = false;
+}
+
 
 //Set Image
 if image_index >= 3 and pressed
