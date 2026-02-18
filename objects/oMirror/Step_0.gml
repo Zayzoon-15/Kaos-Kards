@@ -11,8 +11,8 @@ if _collide
         if _inst.targetEnemy == targetEnemy then exit;
         
         //Stop If Not Damaging
-        if (!_inst.currentlyDamaging) {damageTarget();}
-        else if (!_inst.currentlyDamaging) { exit;}
+        if (_inst.currentlyDamaging) {with (_inst) {damageTarget();} }
+        else if (!_inst.currentlyDamaging) {exit;}
         
         var _action = function(){};
         
