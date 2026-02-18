@@ -31,20 +31,31 @@ for (var k = 0; k < 2; k++) {
 			} else global.enemyTempHp = _listValue.value;	
 		}
 		
+        
+        //Delete Effect
+        var _effectExists = false;
 		if _listValue.value <= 0
 		{
 			with oAttackEffect
 			{
-				if timeUp
+				if _listValue.info == effect
 				{
-					if _listValue.info == effect
+					if timeUp
                     {
                         ds_list_delete(_targetList,i);
                         instance_destroy();
                     }
+                    
+                    _effectExists = true;
 				}
-				
 			}
+            
+            //Attack Effect Does Not Exist
+            if !_effectExists
+            {
+                print("ATTACK EFFECT NO EXIST");
+                ds_list_delete(_targetList,i);
+            }
 		}
     }
 }

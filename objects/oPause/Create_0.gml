@@ -15,20 +15,21 @@ mobilePressed = false;
 //Functions
 pauseGame = function()
 {
+    //Pause
     global.paused = true;
+    depth = -1;
     
     //Create Screen Shot
     screenshot = sprite_create_from_surface(application_surface,0,0,surface_get_width(application_surface),surface_get_height(application_surface),false,false,0,0);
     
     #region Deactiveate
-	//audio_pause_all();
 	audio_group_stop_all(agSfx);
 	instance_deactivate_all(true);
 	instance_activate_object(oGame);
 	instance_activate_object(oExpandRes);
     instance_activate_object(oSound);
     instance_activate_object(oSubtitle);
-	
+    
 	#endregion
     
     var _offset = 100;
@@ -40,8 +41,10 @@ pauseGame = function()
 
 unpauseGame = function()
 {
+    //Unpause
     global.paused = false;
     
+    //Destroy Menu
     instance_destroy(oPauseResume);
     instance_destroy(oPauseReturn);
     instance_destroy(oPauseSettings);

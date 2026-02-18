@@ -34,6 +34,7 @@ function initSettings()
 	global.keyDebug = 220;
     
     //Game
+    global.showPercentage = true;
     global.gameSpeed = 1;
     
     //Mobile

@@ -10,6 +10,26 @@ image_angle = handId == 0 ? _value : -_value;
 //Choose Action
 if animPos >= .5 and played
 {
+    //Choose If Handsy
+    if global.currentEnemy == enemyInfo.handsy and handId == 0 and irandom_range(1,5) == 1
+    {
+        with oRpsHand
+        {
+            if handId == 1
+            {
+                ///Get Counter
+                //Rock = 0, Paper = 1, Scissor = 2
+                var _counter = action;
+                if action == 0 then _counter = 1;
+                if action == 1 then _counter = 2;
+                if action == 2 then _counter = 0;
+                
+                //Set Action
+                other.action = _counter;
+            }
+        }
+    }
+    
 	//Set Animation
 	currentAnim = action;
     

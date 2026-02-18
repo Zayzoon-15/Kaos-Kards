@@ -4,6 +4,7 @@ if touchingMouse() and !oDeckBuilder.transition and !global.midTrans
     //Hover
     //scale = 1.1;
     yOffset = lerp(yOffset,-3,.3);
+    shadowOffset = lerp(shadowOffset,8,.3);
     
     //Press
     canPress = global.deckCardAmount > 0;
@@ -11,6 +12,7 @@ if touchingMouse() and !oDeckBuilder.transition and !global.midTrans
     //Hover
     scale = 1;
     yOffset = lerp(yOffset,0,.3);
+    shadowOffset = lerp(shadowOffset,5,.3);
     
     //Press
     canPress = false;

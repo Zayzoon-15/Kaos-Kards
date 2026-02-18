@@ -122,7 +122,7 @@ function FiggySetup() {
 		});
 		Figgy.Bool("Killable Player", true,function(){global.debugKillable.player = argument0});
         Figgy.Button("Heal Player",function(){healPlayer(10)});
-        Figgy.Button("Hurt Effect",function(){hurtPlayer(0);});
+        Figgy.Button("Hurt Player",function(){hurtPlayer(irandom_range(1,5));});
         Figgy.Button("Apply Shield Player",function(){addEffect(attackEffects.shield,10,false)});
         Figgy.Button("Apply Poison Player",function(){addEffect(attackEffects.poison,10,false)});
         Figgy.Button("Apply Fire Player",function(){addEffect(attackEffects.fire,10,false)});
@@ -137,7 +137,7 @@ function FiggySetup() {
 		});
 		Figgy.Bool("Killable Enemy", true,function(){global.debugKillable.enemy = argument0});
         Figgy.Button("Heal Enemy",function(){healEnemy(10)});
-        Figgy.Button("Hurt Effect",function(){hurtEnemy(0);});
+        Figgy.Button("Hurt Enemy",function(){hurtEnemy(irandom_range(1,5));});
         Figgy.Button("Apply Shield Enemy",function(){addEffect(attackEffects.shield,10,true)});
         Figgy.Button("Apply Poison Enemy",function(){addEffect(attackEffects.poison,10,true)});
         Figgy.Button("Apply Fire Enemy",function(){addEffect(attackEffects.fire,10,true)});

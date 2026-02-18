@@ -98,6 +98,9 @@ function SettingsMenus()
         SettingsButtons.Separator("User Interface");
             SettingsButtons.Slider("Tip Box Size",undefined,undefined,2,1,5,true,ceil,"X");
             SettingsButtons.Check("Tip Boxes");
+            SettingsButtons.Check("Show Percentage",function(){
+                global.showPercentage = argument0;
+            },global.showPercentage);
         
         SettingsButtons.Separator("Gameplay");
             SettingsButtons.Slider("Game Speed","gameSpeed",undefined,2,1,4,false,undefined,"X");

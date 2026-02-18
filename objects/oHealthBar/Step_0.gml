@@ -17,16 +17,32 @@ angle = lerp(angle,0,.2);
 var _string = target == "Player" ? "Your Health Bar" : "Enemies Health Bar";
 var _dist = tipOnTop ? 5 : 9;
 
-//String
-//tipBoxString = $"{_string}\nHealth:{floor((_hp/maxHp)*100)}%"; OLD PERCENTAGE BASED
-tipBoxString = $"{_string}\nHealth:{floor(_hp)}/{maxHp}";
-for (var i = 0; i < ds_list_size(targetList); ++i) {
-	var _listValue = ds_list_find_value(targetList,i);
-	var _amount = abs(_listValue.value);
-	if _amount > 0
-	{
-		tipBoxString += $"\n{_listValue.info.name}:{round(_listValue.showPercent)}%";
-	}
+///String
+
+//Percentage
+if global.showPercentage
+{
+    tipBoxString = $"{_string}\nHealth:{floor((_hp/maxHp)*100)}%";
+    for (var i = 0; i < ds_list_size(targetList); ++i) {
+    	var _listValue = ds_list_find_value(targetList,i);
+    	var _amount = abs(_listValue.value);
+    	if _amount > 0
+    	{
+    		tipBoxString += $"\n{_listValue.info.name}:{ceil(_listValue.showPercent)}%";
+    	}
+    }
+} else { //Non Percentage
+    
+    tipBoxString = $"{_string}\nHealth:{floor(_hp)}/{maxHp}";
+    for (var i = 0; i < ds_list_size(targetList); ++i) {
+    	var _listValue = ds_list_find_value(targetList,i);
+    	var _amount = abs(_listValue.value);
+    	if _amount > 0
+    	{
+    		tipBoxString += $"\n{_listValue.info.name}:{ceil(_listValue.value)}";
+    	}
+    }
+    
 }
 
 //Draw Info

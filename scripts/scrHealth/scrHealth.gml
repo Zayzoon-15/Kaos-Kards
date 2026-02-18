@@ -43,7 +43,7 @@ function hurtEnemy(_value,_ignoreShield = false)
 	//Remove Assist Effect
 	for (var i = 0; i < ds_list_size(enemyEffects); ++i) {
 	    var _list = ds_list_find_value(enemyEffects,i);
-		if _list.info.type == EFFECT_TYPE.ASS
+		if _list.info.type == EFFECT_TYPE.ASS and !_ignoreShield
 		{
 			_list.value -= _value;
 		}
@@ -79,9 +79,6 @@ function hurtPlayer(_value,_ignoreShield = false)
         global.playerTempHp = _tempHp;
     } else _tempHp = -_value; //Ignore Shield
     
-    //Ignore Temp Hp
-    if _ignoreShield then _tempHp = -_value;
-    
     //Remove Health
     var _lastHp = global.playerHp;
     if _tempHp < 0 then global.playerHp += _tempHp;
@@ -95,7 +92,7 @@ function hurtPlayer(_value,_ignoreShield = false)
 	//Remove Assist Effect
 	for (var i = 0; i < ds_list_size(playerEffects); ++i) {
 	    var _list = ds_list_find_value(playerEffects,i);
-		if _list.info.type == EFFECT_TYPE.ASS
+		if _list.info.type == EFFECT_TYPE.ASS and !_ignoreShield
 		{
 			_list.value -= _value;
 		}

@@ -219,6 +219,7 @@ function SaveFile()
         struct_set(_saveData,"MobilePress",global.mobilePress);
         
         //Game
+        struct_set(_saveData,"ShowPercentage",global.showPercentage);
         struct_set(_saveData,"GameSpeed",global.gameSpeed);
         
         //Save To File
@@ -257,6 +258,7 @@ function SaveFile()
         global.mobilePress = struct_get_variable(_saveData,"MobilePress",true);
         
         //Game
+        global.showPercentage = struct_get_variable(_saveData,"ShowPercentage",true);
         global.gameSpeed = struct_get_variable(_saveData,"GameSpeed",1);
         
     }

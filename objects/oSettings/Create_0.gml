@@ -16,7 +16,6 @@ bgY = 0;
 createSettings = function()
 {
 	//Setup
-    depth = -1;
 	instance_deactivate_object(oParButton);
 
 	//Play Song
