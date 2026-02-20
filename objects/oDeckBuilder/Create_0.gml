@@ -11,8 +11,8 @@ spriteX = 0;
 spriteY = 0;
 
 //Play Song
-var _song = room == rDeckBuilder1 ? sgDeckBuilder1 : sgDeckBuilder2;
-audioPlayGroupSong(global.musicGroups.deck,_song);
+var _song = room == rDeckBuilder1 ? "DeckBuilder1" : "DeckBuilder2";
+audioPlaySong(_song);
 
 //Start Transition
 startTrans = function()

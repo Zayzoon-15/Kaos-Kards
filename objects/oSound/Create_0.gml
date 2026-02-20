@@ -5,26 +5,34 @@ sfxVol = 0;
 voiceVol = 0;
 
 //Current Song
-global.curSong = noone;
-global.lastSong = noone;
-global.curSongGroup = noone;
+global.curSong = "";
+global.curSongAudio = noone;
 
-#region Mixer
+//Last Song
+global.lastSong = "";
+global.lastSongAudio = noone;
 
-global.soundMixer = ds_map_create();
+//Paused
+global.songsPaused = ds_map_create();
 
-global.soundMixer[? sgRetro1] = .9;
-global.soundMixer[? sgRetro2] = .8;
+//Loops
+loops = 0;
+loopSongPoint = 0;
 
-#endregion
+//Song Tracks
+global.songTracks = ds_map_create();
 
-//Groups
-global.musicGroups = {
-	bg : audioCreateSyncGroup([sgPrepare,sgKaos,sgPrepareExtended]),
-	menu : audioCreateSyncGroup([sgKetting,sgKenu]),
-    deck : audioCreateSyncGroup([sgDeckBuilder1,sgDeckBuilder2]),
-};
+//Menu
+audioCreateSongs("Menu",sgKenu);
+audioCreateSongs("Settings",sgKetting);
+audioCreateSongs("DeckBuilder1",sgDeckBuilder1,["DeckBuilder2"]);
+audioCreateSongs("DeckBuilder2",sgDeckBuilder2,["DeckBuilder1"]);
 
-//Extended Version Secret
-prepareTimer = 0;
-prepareLoopCount = 0;
+//Game
+audioCreateSongs("Prepare",sgPrepare,["Kaos"],1,3,"PrepareExtended");
+audioCreateSongs("PrepareExtended",sgPrepareExtended,["Kaos"],1,1,"Prepare");
+audioCreateSongs("Kaos",sgKaos,["Prepare"]);
+
+//Kaos
+audioCreateSongs("Retro1",sgRetro1,[],.9);
+audioCreateSongs("Retro2",sgRetro2,[],.8);

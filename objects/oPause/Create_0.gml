@@ -12,6 +12,9 @@ mobilePos = new Vector2();
 mobileRad = 60;
 mobilePressed = false;
 
+//Song
+lastSong = noone;
+
 //Functions
 pauseGame = function()
 {
@@ -21,6 +24,10 @@ pauseGame = function()
     
     //Create Screen Shot
     screenshot = sprite_create_from_surface(application_surface,0,0,surface_get_width(application_surface),surface_get_height(application_surface),false,false,0,0);
+    
+    //Song
+    lastSong = global.curSong;
+    audioPlaySong(noone,30,"Pause");
     
     #region Deactiveate
 	audio_group_stop_all(agSfx);
@@ -43,6 +50,9 @@ unpauseGame = function()
 {
     //Unpause
     global.paused = false;
+    
+    //Song
+    audioPlaySong(lastSong);
     
     //Destroy Menu
     instance_destroy(oPauseResume);

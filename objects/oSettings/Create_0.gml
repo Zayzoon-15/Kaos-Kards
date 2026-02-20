@@ -19,7 +19,8 @@ createSettings = function()
 	instance_deactivate_object(oParButton);
 
 	//Play Song
-	audioPlayGroupSong(global.musicGroups.menu,sgKetting,300);
+    audioPlaySong("Settings",30,"Pause");
+	//audioPlayGroupSong(global.musicGroups.menu,sgKetting,300);
 	
 	#region Menu
 	var _depth = -10;
@@ -69,7 +70,8 @@ destroySettings = function()
     instance_destroy();
 	
 	//Play Song
-	audioPlayGroupSong(global.musicGroups.bg,global.lastSong);
+    audioPlaySong(noone);
+	//audioPlayGroupSong(global.musicGroups.bg,global.lastSong);
     
     //Save
     SaveFile.SettingsSave();

@@ -7,7 +7,7 @@ audioPlaySfx(snOpenWindow);
 
 //Music
 lastSong = global.curSong;
-audioPlaySong(noone,false,3000);
+audioPlaySong(noone,3000,"Pause");
 
 //Load Game
 alarm[0] = 40;

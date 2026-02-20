@@ -11,7 +11,7 @@ image_index = playerWon;
 image_alpha = 0;
 
 //Stop Music
-audioPlaySong(noone,false,30);
+audioPlaySong(noone,30);
 
 //Play Sound
 audioPlaySfx(snUhOh);

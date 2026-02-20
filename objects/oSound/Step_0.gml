@@ -1,30 +1,17 @@
-//Secret Song (For Felx)
-if room == rPrepare
+//Song Loop
+if audio_is_playing(global.curSongAudio) and global.curSong != noone
 {
-    prepareTimer += delta_time / 1000000; //Seconds
-
-    var _length = audio_sound_length(sgPrepare);
-
-    if prepareTimer >= _length
+    if global.songTracks[? global.curSong].loopTimes > 0
     {
-        prepareTimer = 0;
-        prepareLoopCount++;
-        
-        //Play Secret Song
-        if prepareLoopCount >= 3
+        if loopSongPoint >= audio_sound_length(global.curSongAudio)-.01
         {
-            if global.curSong == sgPrepare
+            loops ++;
+            
+            if loops >= global.songTracks[? global.curSong].loopTimes
             {
-                audioPlayGroupSong(global.musicGroups.bg,sgPrepareExtended);
-            } else if global.curSong == sgPrepareExtended {
-                audioPlayGroupSong(global.musicGroups.bg,sgPrepare);
-                
-                prepareLoopCount = 0;
-                prepareTimer = 0;
+                audioPlaySong(global.songTracks[? global.curSong].swapWith,0);
             }
         }
+        loopSongPoint = audio_sound_get_track_position(global.curSongAudio);
     }
-} else {
-    prepareTimer = 0;
-    prepareLoopCount = 0;
 }

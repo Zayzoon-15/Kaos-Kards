@@ -10,7 +10,7 @@
   "compression":1,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":73.14286,
+  "duration":0.0,
   "exportDir":"",
   "name":"sgPrepareExtended",
   "parent":{

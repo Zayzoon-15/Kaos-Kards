@@ -2,15 +2,15 @@
 
 if room == rPrepare
 {
-	audioPlayGroupSong(global.musicGroups.bg,sgPrepare);
+    audioPlaySong("Prepare");
 }
 
 if room == rKaos
 {
-	audioPlayGroupSong(global.musicGroups.bg,sgKaos);
+    audioPlaySong("Kaos");
 }
 
 if room == rTournies
 {
-	audioPlayGroupSong(global.musicGroups.menu,sgKenu,30,true);
+    audioPlaySong("Menu");
 }

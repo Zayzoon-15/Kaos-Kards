@@ -12,7 +12,7 @@ alarm[3] = 90;
 timeSourceCreate(65,function()
 {	
 	//Play Song
-	audioPlayGroupSong(global.musicGroups.bg,lastSong,120);
+	audioPlaySong(lastSong,120);
 	
 	//Play Sound
 	audioPlaySfx(snCloseWindow);

@@ -26,124 +26,6 @@ function audioPlaySfx(_sound,_low = 1,_high = 1,_gain = 1)
 }
 
 
-/// @desc Creates an audio sync group with the songs given
-/// @param {array} _songs The songs to add to the sync group
-/// @param {bool} [_loop] If the song should loop (Default = true)
-/// @returns {id} The audio sync group
-function audioCreateSyncGroup(_songs,_loop = true)
-{
-	var _audioGroup = audio_create_sync_group(_loop);
-	
-	for (var i = 0; i < array_length(_songs); ++i) {
-	    audio_play_in_sync_group(_audioGroup,_songs[i]);
-		audio_sound_gain(_songs[i],0);
-        audio_start_sync_group(_audioGroup);
-        audio_stop_sync_group(_audioGroup);
-	}
-	
-	return _audioGroup;
-}
-
-
-/// @desc Plays a song that is inside a sync group
-/// @param {id.audiosyncgroup} _audioGroup The target sync group
-/// @param {asset.GMSound} _targetSong The target song
-/// @param {real} [_fadeTime] The fade time for the song (Default = 30)
-/// @param {bool} [_stopLastGroup] If it should completly stop the current song group playing (Default = false)
-function audioPlayGroupSong(_audioGroup,_targetSong,_fadeTime = 30,_stopLastGroup = false)
-{
-    //Exit If Same Song
-    if _targetSong == global.curSong and _targetSong != noone then exit;
-    
-	//Set Last Song
-	global.lastSong = global.curSong;
-    
-    //Pause Last Group
-    if _stopLastGroup
-    {
-        audio_stop_sync_group(global.curSongGroup);
-    } else audio_pause_sync_group(global.curSongGroup);
-	
-	//Play Group Song
-	if !audio_sync_group_is_playing(_audioGroup)
-	{
-		audio_start_sync_group(_audioGroup);
-	}
-	
-	//Unpause Group Song
-	if audio_sync_group_is_paused(_audioGroup)
-	{
-		audio_resume_sync_group(_audioGroup);
-	}
-    
-    //Get Songs Gain
-    var _gain = 1;
-    if ds_map_exists(global.soundMixer,_targetSong)
-    {
-        _gain = global.soundMixer[? _targetSong];
-    }
-	
-	//Fade Out Song
-	audio_sound_gain(global.curSong,0,_fadeTime);
-	
-	//Fade In Song
-	audio_sound_gain(_targetSong,_gain,_fadeTime);
-	
-	//Set Global Var
-	global.curSong = _targetSong;
-	global.curSongGroup = _audioGroup;
-}
-
-
-/// @desc Plays a song and fades out the last song
-/// @param {asset.GMSound} _song The target Song
-/// @param {bool} [_mixSongs] If the song should keep playing in the background (Default = false)
-/// @param {real} [_fadeTime] The time it takes to fade a song out and in (Default = 60)
-/// @param {bool} [_loop] If the song should loop (Default = true)
-function audioPlaySong(_song,_mixSongs = false,_fadeTime = 60,_loop = true)
-{	
-    //Exit If Same Song
-    if _song == global.curSong and _song != noone then exit;
-    
-    //Get Songs Gain
-    var _gain = 1;
-    if ds_map_exists(global.soundMixer,_song)
-    {
-        _gain = global.soundMixer[? _song];
-    }
-    
-	//Fade Out Song
-	audio_sound_gain(global.curSong,0,_fadeTime);
-	
-	//Stop Audio Group
-	timeSourceCreate(_fadeTime,function(_curSong){
-		if global.curSongGroup != noone and _curSong == global.curSong
-		{
-			audio_pause_sync_group(global.curSongGroup);
-			global.curSongGroup = noone;
-		}
-	},[_song],time_source_units_frames);
-	
-    
-	//Check If Song Is Playing
-	if !_mixSongs then audio_stop_sound(_song);
-    
-	//Play Song
-	if _song != noone
-    {
-        audio_play_sound(_song,10,_loop);
-    }
-    
-	//Fade In Song
-	audio_sound_gain(_song,0);
-	audio_sound_gain(_song,_gain,_fadeTime);
-	
-	//Set Global Var
-    global.lastSong = global.curSong;
-	global.curSong = _song;
-}
-
-
 ///@desc Plays the announcers voice line with subtitles
 ///@param {struct.voicecreate} _voiceover The voice over to play (Make sure its a voiceInfo in order to create subtitles)
 ///@param {bool} _stopOthers If set to true it will stop the other voice and play the new one but if it's set to false it will only play the new voice if there is no voices playing (Default = true)
@@ -177,3 +59,121 @@ function audioPlayVoice(_voiceover,_stopOthers = true,_playChance = 1)
     //Play Sound
     return audio_play_sound(_voice.sound,0,false);
 }
+
+
+///// @desc Creates an audio sync group with the songs given
+///// @param {array} _songs The songs to add to the sync group
+///// @param {bool} [_loop] If the song should loop (Default = true)
+///// @returns {id} The audio sync group
+//function audioCreateSyncGroup(_songs,_loop = true)
+//{
+	//var _audioGroup = audio_create_sync_group(_loop);
+	//
+	//for (var i = 0; i < array_length(_songs); ++i) {
+	    //audio_play_in_sync_group(_audioGroup,_songs[i]);
+		//audio_sound_gain(_songs[i],0);
+        //audio_start_sync_group(_audioGroup);
+        //audio_stop_sync_group(_audioGroup);
+	//}
+	//
+	//return _audioGroup;
+//}
+//
+//
+///// @desc Plays a song that is inside a sync group
+///// @param {id.audiosyncgroup} _audioGroup The target sync group
+///// @param {asset.GMSound} _targetSong The target song
+///// @param {real} [_fadeTime] The fade time for the song (Default = 30)
+///// @param {bool} [_stopLastGroup] If it should completly stop the current song group playing (Default = false)
+//function audioPlayGroupSong(_audioGroup,_targetSong,_fadeTime = 30,_stopLastGroup = false)
+//{
+    ////Exit If Same Song
+    //if _targetSong == global.curSong and _targetSong != noone then exit;
+    //
+	////Set Last Song
+	//global.lastSong = global.curSong;
+    //
+    ////Pause Last Group
+    //if _stopLastGroup
+    //{
+        //audio_stop_sync_group(global.curSongGroup);
+    //} else audio_pause_sync_group(global.curSongGroup);
+	//
+	////Play Group Song
+	//if !audio_sync_group_is_playing(_audioGroup)
+	//{
+		//audio_start_sync_group(_audioGroup);
+	//}
+	//
+	////Unpause Group Song
+	//if audio_sync_group_is_paused(_audioGroup)
+	//{
+		//audio_resume_sync_group(_audioGroup);
+	//}
+    //
+    ////Get Songs Gain
+    //var _gain = 1;
+    //if ds_map_exists(global.soundMixer,_targetSong)
+    //{
+        //_gain = global.soundMixer[? _targetSong];
+    //}
+	//
+	////Fade Out Song
+	//audio_sound_gain(global.curSong,0,_fadeTime);
+	//
+	////Fade In Song
+	//audio_sound_gain(_targetSong,_gain,_fadeTime);
+	//
+	////Set Global Var
+	//global.curSong = _targetSong;
+	//global.curSongGroup = _audioGroup;
+//}
+//
+//
+///// @desc Plays a song and fades out the last song
+///// @param {asset.GMSound} _song The target Song
+///// @param {bool} [_mixSongs] If the song should keep playing in the background (Default = false)
+///// @param {real} [_fadeTime] The time it takes to fade a song out and in (Default = 60)
+///// @param {bool} [_loop] If the song should loop (Default = true)
+//function audioPlaySong(_song,_mixSongs = false,_fadeTime = 60,_loop = true)
+//{	
+    ////Exit If Same Song
+    //if _song == global.curSong and _song != noone then exit;
+    //
+    ////Get Songs Gain
+    //var _gain = 1;
+    //if ds_map_exists(global.soundMixer,_song)
+    //{
+        //_gain = global.soundMixer[? _song];
+    //}
+    //
+	////Fade Out Song
+	//audio_sound_gain(global.curSong,0,_fadeTime);
+	//
+	////Stop Audio Group
+	//timeSourceCreate(_fadeTime,function(_curSong){
+		//if global.curSongGroup != noone and _curSong == global.curSong
+		//{
+			//audio_pause_sync_group(global.curSongGroup);
+			//global.curSongGroup = noone;
+		//}
+	//},[_song],time_source_units_frames);
+	//
+    //
+	////Check If Song Is Playing
+	//if !_mixSongs then audio_stop_sound(_song);
+    //
+	////Play Song
+	//if _song != noone
+    //{
+        //audio_play_sound(_song,10,_loop);
+    //}
+    //
+	////Fade In Song
+	//audio_sound_gain(_song,0);
+	//audio_sound_gain(_song,_gain,_fadeTime);
+	//
+	////Set Global Var
+    //global.lastSong = global.curSong;
+	//global.curSong = _song;
+//}

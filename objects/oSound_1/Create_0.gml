@@ -1,0 +1,30 @@
+//Audio
+masterVol = 0;
+musicVol = 0;
+sfxVol = 0;
+voiceVol = 0;
+
+//Current Song
+global.curSong = noone;
+global.lastSong = noone;
+global.curSongGroup = noone;
+
+#region Mixer
+
+global.soundMixer = ds_map_create();
+
+global.soundMixer[? sgRetro1] = .9;
+global.soundMixer[? sgRetro2] = .8;
+
+#endregion
+
+//Groups
+global.musicGroups = {
+	bg : audioCreateSyncGroup([sgPrepare,sgKaos,sgPrepareExtended]),
+	menu : audioCreateSyncGroup([sgKetting,sgKenu]),
+    deck : audioCreateSyncGroup([sgDeckBuilder1,sgDeckBuilder2]),
+};
+
+//Extended Version Secret
+prepareTimer = 0;
+prepareLoopCount = 0;
