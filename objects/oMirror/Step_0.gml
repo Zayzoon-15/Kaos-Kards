@@ -11,9 +11,9 @@ if _collide
         if _inst.targetEnemy == targetEnemy then exit;
         
         //Stop If Not Damaging
-        if (_inst.currentlyDamaging) {with (_inst) {damageTarget();} }
-        else if (!_inst.currentlyDamaging) {exit;}
+        if !_inst.currentlyDamaging then exit;
         
+        //Set Action
         var _action = function(){};
         
         //Reflect Inst
@@ -22,7 +22,7 @@ if _collide
             if !other.reflected
             {
                 //Change Value
-				var _multiplier = (other.card.value * .5)*1.5;
+				var _multiplier = other.card.value * .5;
                 other.card.value += card.value*_multiplier;
                 other.card.value = clamp(other.card.value,1,99);
 				
@@ -42,6 +42,12 @@ if _collide
         
         //Destroy Inst
         instance_destroy(_inst);
+        
+        //Hurt Self
+        if targetEnemy
+        {
+            hurtPlayer(value*.8);
+        } else hurtEnemy(value*.8);
         
         //Juice
         card.cardJuice(true,false,true);

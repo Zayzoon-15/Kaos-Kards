@@ -4,6 +4,7 @@
 sprite_index = card.info.sprite;
 
 //Image
+targetScale = 1;
 shakeTarget = 0;
 shakeEase = .1;
 shake = 0;
@@ -50,6 +51,10 @@ if array_contains(_usesArray,card.info.name)
 //Hover
 canGrab = true;
 hover = false;
+
+//Disable
+disabled = false;
+
 
 #region Functions
 

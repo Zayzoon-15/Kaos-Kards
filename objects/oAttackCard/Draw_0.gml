@@ -8,6 +8,13 @@ draw_sprite_ext(sprite_index, image_index, x+shadowX+_shakeX, y+shadowY+_shakeY,
 //Draw Self
 draw_sprite_ext(sprite_index, image_index, x+_shakeX, y+_shakeY, image_xscale, image_yscale, image_angle+angle, image_blend, image_alpha);
 
+//Draw Disable
+if disabled
+{
+    draw_sprite_ext(sprite_index, image_index, x+_shakeX, y+_shakeY, image_xscale, image_yscale, image_angle, c_red, image_alpha*.2);
+    draw_sprite_ext(sCardDisable,0,x+_shakeX, y+_shakeY, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+}
+
 //Draw Flash
 shader_set(shFlash);
 
@@ -16,4 +23,5 @@ if flashAlpha > 0
     draw_sprite_ext(sprite_index, image_index, x+_shakeX, y+_shakeY, image_xscale, image_yscale, image_angle+angle, flashColor, flashAlpha);
 }
 
+//Reset Shader
 shader_reset();

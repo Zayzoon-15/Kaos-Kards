@@ -194,6 +194,47 @@ function actionSteak(_targetEnemy)
     } else global.enemyMaxHp += value;
 }
 
+
+///@self oAttackCard
+function actionEvasion(_targetEnemy)
+{
+    //No Hit
+    if irandom_range(2,20) < min(value,20)
+    {
+        cardShake();
+        exit;
+    }
+    
+    //Juice
+    cardJuice(true,false,true);
+    cardFlash(.5,c_white);
+    
+    //Neglect Target Card
+    with oAttackCard
+    {
+        if cardId == other.cardId and targetEnemy != _targetEnemy
+        {
+            shake = 1;
+            targetScale = .9;
+            disabled = true;
+        }
+    }
+    
+    //Destroy Attacks
+    var _list = ds_list_create();
+    if collision_rectangle_list(x-10,0,x+10,room_height,oParAttacks,false,true,_list,true)
+    {
+        //Star
+        effectStar(ds_list_find_value(_list,0).x,ds_list_find_value(_list,0).y,5,false);
+        
+        //Destroy
+        instance_destroy(ds_list_find_value(_list,0));
+    }
+    ds_list_destroy(_list);
+    
+}
+
+
 //Concept
 
 ///@self oAttackCard

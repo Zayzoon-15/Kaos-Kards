@@ -40,7 +40,7 @@ if state == CARDSTATE.GRABBED or image_xscale > 1
 if !canUse
 {
     draw_sprite_ext(sprite_index, image_index, cardX+_shakeX, cardY+_shakeY, image_xscale, image_yscale, image_angle, c_red, image_alpha*.2);
-    draw_sprite_ext(sCardDisable,0,cardX+_shakeX, cardY+_shakeY, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
+    draw_sprite_ext(sCardDisable,0,cardX+_shakeX, cardY+_shakeY, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 }
 
 //Draw Value

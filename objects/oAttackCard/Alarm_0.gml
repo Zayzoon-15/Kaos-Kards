@@ -1,5 +1,7 @@
 ///@desc Action
 
+if disabled then exit;
+
 //Combo
 if combo
 {

@@ -43,7 +43,7 @@ actionCards = {
     sCardPoison,[1,4],CARDACT_GENRES.ATTACK,actionPoison),
 	
     mirror : new createCardAction("Mirror",
-    "Reflects any physical attacks attacking the card\nThe range changes how much more damage the attack does",
+    "Reflects any physical attacks attacking the card but you take some damage as well\nThe range changes how much more damage the attack does",
     sCardMirror,[0,2],CARDACT_GENRES.DEFEND,actionMirror),
 	
     ghost : new createCardAction("Ghost",
@@ -57,6 +57,10 @@ actionCards = {
     steak : new createCardAction("Juicy Steak",
     "Increase max health by a random amount",
     sCardSteak,[0,8],CARDACT_GENRES.HEAL,actionSteak),
+    
+    evasion : new createCardAction("Evasion",
+    "A chance to neglect the the card in front of it\nThe higher the value the higher the chance of neglecting the card",
+    sCardMirror,[0,10],CARDACT_GENRES.DEFEND,actionEvasion),
     
     //CONCEPT
     reckless : new createCardAction("Reckless Attack",
