@@ -34,7 +34,7 @@ function gameReset()
 	global.enemyTempHp = 0;
 	global.enemyHpIcons = [];
     global.playerMaxHp = 100;
-    global.enemyMaxHp = 100;
+    global.enemyMaxHp = global.currentEnemy.maxHp;
 	
 	//Remove Actions
 	ds_list_clear(playerActions);

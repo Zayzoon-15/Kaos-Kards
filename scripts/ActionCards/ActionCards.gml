@@ -8,7 +8,7 @@ globalvar actionCards;
 
 actionCards = {
     
-    gato : new createCardAction("Gato","Its a cat",sGato,[1,69],CARDACT_GENRES.ATTACK,actionLaser),
+    gato : new createCardAction("Gato","Its a cat",sGato,[10000000000,10000000001],CARDACT_GENRES.ATTACK,actionLaser),
     
     heal : new createCardAction("Health Pack",
     "Heals you by a random amount",
