@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"sgPrepareExtended",
+  "%Name":"sgTetoPrepare",
   "audioGroupId":{
     "name":"agMusic",
     "path":"audiogroups/agMusic",
@@ -10,17 +10,17 @@
   "compression":1,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":36.57211,
+  "duration":54.923084,
   "exportDir":"",
-  "name":"sgPrepareExtended",
+  "name":"sgTetoPrepare",
   "parent":{
-    "name":"Game",
-    "path":"folders/Sounds/Music/Game.yy",
+    "name":"Enemies",
+    "path":"folders/Sounds/Music/Enemies.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sgPrepareExtended.ogg",
+  "soundFile":"sgTetoPrepare.ogg",
   "volume":1.0,
 }

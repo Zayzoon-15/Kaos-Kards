@@ -5,7 +5,7 @@ var _ease = .3;
 var _masterTarget = global.masterVol/100;
 var _musicTarget = global.musicVol/200;
 var _sfxTarget = global.sfxVol/40;
-var _voiceTarget = global.voiceVol/20;
+var _voiceTarget = global.voiceVol/40;
 
 //Unfocus Mute
 if global.unfocusMute and !window_has_focus()

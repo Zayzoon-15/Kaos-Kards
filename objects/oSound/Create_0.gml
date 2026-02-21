@@ -36,3 +36,7 @@ audioCreateSongs("Kaos",sgKaos,["Prepare"]);
 //Kaos
 audioCreateSongs("Retro1",sgRetro1,[],.9);
 audioCreateSongs("Retro2",sgRetro2,[],.8);
+
+//Enemies
+audioCreateSongs("TetoPrepare",sgTetoPrepare,["TetoKaos"],.9);
+audioCreateSongs("TetoKaos",sgTetoKaos,["TetoPrepare"],.9);

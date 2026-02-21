@@ -2,7 +2,7 @@
 
 //Value
 var _healValue = irandom_range(10,20);
-var _poisonValue = _healValue/7;
+var _poisonValue = clamp(_healValue/5,1,100);
 
 //Win Outcome
 if winner
