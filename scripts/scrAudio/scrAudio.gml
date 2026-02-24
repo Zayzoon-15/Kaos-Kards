@@ -68,7 +68,7 @@ function audioPlayVoice(_voiceover,_stopOthers = true,_playChance = 1)
 /// @param {real} [_volume] The songs volume
 /// @param {real} [_loopTimes] How many times to loop the song before swaping it with another song (leave as -1 if it does not swap)
 /// @param {string } [_sawpWith] The song to swap with
-function audioCreateSongs(_name,_sound,_syncWith=[],_volume = 1,_loopTimes = -1,_sawpWith = noone) 
+function audioCreateSongs(_name,_sound,_syncWith=[],_volume = 1,_loopTimes = -1,_sawpWith = noone,_isIntro = false,_playOnce = true) 
 {
     var _info = {
         name : _name,
@@ -77,6 +77,7 @@ function audioCreateSongs(_name,_sound,_syncWith=[],_volume = 1,_loopTimes = -1,
         volume : _volume,
         loopTimes : _loopTimes,
         swapWith : _sawpWith,
+        isIntro : _isIntro
     }
 
     global.songTracks[? _name] = _info;
@@ -89,6 +90,21 @@ function audioCreateSongs(_name,_sound,_syncWith=[],_volume = 1,_loopTimes = -1,
 /// @param {string} [_lastSongEndMethod] What the song method for the last song should be ("Stop" to stop the song completely, "Pause" to pause the song ) (Default = "Stop")
 function audioPlaySong(_song,_fadeTime = 30,_lastSongEndMethod = "Stop")
 {
+    //Change Song If Intro
+    if ds_map_exists(global.songTracks,_song) and global.songTracks[? _song].isIntro and ds_list_contains_value(global.songIntrosPlayed,_song)
+    {
+        //Get Song
+        var _targetSong = global.songTracks[? _song].swapWith;
+        if is_array(_targetSong)
+        {
+            var _num = irandom_range(0,array_length(_targetSong)-1);
+            _targetSong = global.songTracks[? _song].swapWith[_num];
+        }
+        
+        //Set Song
+        _song = _targetSong;
+    }
+    
     //Exit If Same Song
     if _song == global.curSong and audio_is_playing(global.curSongAudio) then exit;
     
@@ -121,7 +137,7 @@ function audioPlaySong(_song,_fadeTime = 30,_lastSongEndMethod = "Stop")
     }
     
     //Leave If No Song
-    if _song == noone then exit;
+    if _song == noone or !ds_map_exists(global.songTracks,_song) then exit;
     
     //Get Track
     var _track = global.songTracks[? _song];

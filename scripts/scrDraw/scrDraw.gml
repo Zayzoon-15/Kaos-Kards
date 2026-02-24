@@ -134,35 +134,6 @@ function spriteLoopFrames(_frame,_anims = 4)
 }
 
 
-///@desc Plays the enemy animation
-///@param {string} _anim The animation to play
-function enemyPlayAnim(_anim,_ignoreTime = 0,_resetAnim = "",_targetObj = oEnemyPhoto)
-{
-    //Animation Does Not Exist
-    if !variable_struct_exists(global.currentEnemy.animInfo,_anim)
-    {
-        print($"'{_anim}' Does Not Exist");
-        exit;
-    }
-    
-    //Set clip
-    var _clip = variable_struct_get(global.currentEnemy.animInfo, _anim);
-    
-    //Switch Animation
-    with _targetObj
-    {
-        if _clip != undefined and currentAnim != _clip and ignoreTime <= 0
-        {
-            currentAnim = _clip;
-            frame = 0;
-            animationEnd = false;
-            ignoreTime = _ignoreTime;
-            resetAnim = _resetAnim;
-        }
-    }
-}
-
-
 /// @desc Draws a card with a 3d perspective
 /// @param {real} _x The x position
 /// @param {real} _y the y position

@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sgBeerKaos1",
+  "audioGroupId":{
+    "name":"agMusic",
+    "path":"audiogroups/agMusic",
+  },
+  "bitDepth":1,
+  "channelFormat":1,
+  "compression":1,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.0,
+  "exportDir":"",
+  "name":"sgBeerKaos1",
+  "parent":{
+    "name":"Beer",
+    "path":"folders/Sounds/Music/Enemies/Beer.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sgBeerKaos1.ogg",
+  "volume":1.0,
+}

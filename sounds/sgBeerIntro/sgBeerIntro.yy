@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sgBeerIntro",
+  "audioGroupId":{
+    "name":"agMusic",
+    "path":"audiogroups/agMusic",
+  },
+  "bitDepth":1,
+  "channelFormat":1,
+  "compression":1,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":5.818186,
+  "exportDir":"",
+  "name":"sgBeerIntro",
+  "parent":{
+    "name":"Beer",
+    "path":"folders/Sounds/Music/Enemies/Beer.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sgBeerIntro.ogg",
+  "volume":1.0,
+}

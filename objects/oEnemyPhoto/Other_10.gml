@@ -1,19 +1,15 @@
 ///@desc Custom Animation End
 
-//Get String
-var _string = "";
+//Get Animation
 var _array = struct_get_names(animInfo);
 for (var i = 0; i < array_length(_array); i++) {
-	if struct_get(animInfo,_array[i]) == currentAnim
+    
+    //Get Struct
+    var _struct = struct_get(animInfo,_array[i]);
+    
+    //Play Animatiopn
+	if _struct == currentAnim and !_struct.loop and _struct.resetAnim != ""
     {
-        _string = _array[i];
+        enemyPlayAnim(_struct.resetAnim);
     }
-}
-
-
-
-//Hotdog Reset
-if _string == "kaosHotDogStart"
-{
-    enemyPlayAnim("idle");
 }

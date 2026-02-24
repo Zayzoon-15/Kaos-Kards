@@ -70,6 +70,9 @@ function gameReset()
     //Reset Hand Size
     global.maxHandSize = 6;
     global.maxDiscards = round(array_length(playerDeck)*.6);
+    
+    //Audio
+    ds_list_clear(global.songIntrosPlayed); //Clear Song Intros
 }
 
 

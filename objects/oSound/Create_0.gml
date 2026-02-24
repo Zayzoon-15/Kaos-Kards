@@ -1,3 +1,6 @@
+//DEBUG
+showSongs = false;
+
 //Audio
 masterVol = 0;
 musicVol = 0;
@@ -14,6 +17,9 @@ global.lastSongAudio = noone;
 
 //Paused
 global.songsPaused = ds_map_create();
+
+//Intro
+global.songIntrosPlayed = ds_list_create();
 
 //Loops
 loops = 0;
@@ -38,5 +44,10 @@ audioCreateSongs("Retro1",sgRetro1,[],.9);
 audioCreateSongs("Retro2",sgRetro2,[],.8);
 
 //Enemies
+audioCreateSongs("BeerIntro",sgBeerIntro,[],1,1,["BeerKaos1","BeerKaos2"],true,true);
+audioCreateSongs("BeerPrepare",sgBeerPrepare,["BeerKaos1","BeerKaos2"]);
+audioCreateSongs("BeerKaos1",sgBeerKaos1,["BeerPrepare"],1,2,"BeerKaos2");
+audioCreateSongs("BeerKaos2",sgBeerKaos2,["BeerPrepare"],1,2,"BeerKaos1");
+
 audioCreateSongs("TetoPrepare",sgTetoPrepare,["TetoKaos"],.9);
 audioCreateSongs("TetoKaos",sgTetoKaos,["TetoPrepare"],.9);
