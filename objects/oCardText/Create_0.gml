@@ -10,14 +10,32 @@ maxWidth = 230;
 
 //Setup Text
 text = $"\n\n{desc}";
-if range != undefined then text += $"\nRange: {range.min} - {range.max}";
+textSmall = "";
+
+//Add Range
+if range != undefined then textSmall += $"\nRange: {range.min} - {range.max}";
 if !is_nan(uses)
 {
-    if uses > 1
+    //Normal Uses
+    if array_contains([rPrepare,rKaos,rEnemy],room)
     {
-        text += $"\nUses Left: {uses}";
-    } else if uses != 0
-    {
-        text += $"\nUse Left: {uses}";
-    } else text += $"\nNO USES LEFT";
+        if uses > 1
+        {
+            textSmall += $"\n({uses} Uses Left)";
+        } else if uses != 0
+        {
+            textSmall += $"\n({uses} Use Left)";
+        } else textSmall += $"\n(NO USES LEFT)";
+    } else { //Outside Game Uses
+        if uses > 1
+        {
+            textSmall += $"\n({uses} Uses Per Game)";
+        } else if uses != 0
+        {
+            textSmall += $"\n({uses} Use Per Game)";
+        }
+    }
 }
+
+//Combine Text
+text += textSmall;

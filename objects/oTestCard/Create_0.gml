@@ -5,3 +5,8 @@ targetX = x;
 targetY = y;
 
 action();
+
+//Card Vars
+hover = false;
+canGrab = true;
+uses = 10;

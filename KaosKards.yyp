@@ -290,6 +290,7 @@
     {"id":{"name":"rSettings","path":"rooms/rSettings/rSettings.yy",},},
     {"id":{"name":"rSetup","path":"rooms/rSetup/rSetup.yy",},},
     {"id":{"name":"rTesting","path":"rooms/rTesting/rTesting.yy",},},
+    {"id":{"name":"rTestingCard","path":"rooms/rTestingCard/rTestingCard.yy",},},
     {"id":{"name":"rTestingMusic","path":"rooms/rTestingMusic/rTestingMusic.yy",},},
     {"id":{"name":"rTestingVoice","path":"rooms/rTestingVoice/rTestingVoice.yy",},},
     {"id":{"name":"rTournies","path":"rooms/rTournies/rTournies.yy",},},
@@ -627,6 +628,7 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"rSetup","path":"rooms/rSetup/rSetup.yy",},},
     {"roomId":{"name":"rTournies","path":"rooms/rTournies/rTournies.yy",},},
+    {"roomId":{"name":"rTestingCard","path":"rooms/rTestingCard/rTestingCard.yy",},},
     {"roomId":{"name":"rDeckBuilder1","path":"rooms/rDeckBuilder1/rDeckBuilder1.yy",},},
     {"roomId":{"name":"rTesting","path":"rooms/rTesting/rTesting.yy",},},
     {"roomId":{"name":"rPrepare","path":"rooms/rPrepare/rPrepare.yy",},},
