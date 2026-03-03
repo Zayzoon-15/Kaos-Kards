@@ -1,41 +1,5 @@
 function Enemy()
 {
-    
-    /// @desc Creates the enemies information
-    /// @param {string} _name The name of the enemy
-    /// @param {Asset.GMSprite} _sprite The sprite of the enemy
-    /// @param {real} [_difficulty] The enemies difficulty which effects how much damage the enemy takes (The lower the number the more damage they take) (Base = 1)
-    /// @param {real} [_gameDifficulty] The enemies difficulty when it comes to playing game cards like the brawl card (Base = 1)
-    /// @param {real} [_maxHp] Max health of the enemy (Base = 100)
-    /// @param {struct.enemycreateanims} [_animInfo] The animation info for the enemies sprite
-    /// @param {array} [_actionCards] The enemies action cards (Example: [actionCards.bread, actionCards.heal])
-    /// @param {array} [_kaosCards] The enemies kaos cards (Example: [kaosCards.swoop])
-    /// @param {struct.enemycreatestrat} [_strat] The enemies figthing strategy
-    /// @param {any*} [_special] The enemies special move(leave as undefined if they don't use one)
-    /// @param {array.string} _customSong The song the enemy plays (Example: ["Prepare","Kaos"])
-    static Create = function(_name,_sprite,_animInfo = enemyCreateAnims(),_difficulty = 1,_gameDifficulty = 1,_maxHp = 100,_actionCards=[],_kaosCards=[],_strat = new enemyCreateStrat(),_special = undefined,_customSong = ["Prepare","Kaos"]) constructor
-    {    
-        //Info
-        name = _name;
-        sprite = _sprite;
-        animInfo = _animInfo;
-        special = _special;
-        customSong = _customSong;
-        
-        //Difficulty
-        difficulty = _difficulty;
-        gameDifficulty = _gameDifficulty;
-        maxHp = _maxHp;
-        
-        //Cards
-        cardsAct = _actionCards;
-        cardsKaos = _kaosCards;
-        
-        //Strat
-        strat = _strat;
-    }
-    
-    
     ///@desc Creates an animation clip for the enemies animations
     /// @param {real} _start The start of the animation
     /// @param {real} [_length] The length of the animation (Default = 2)
@@ -57,8 +21,9 @@ function Enemy()
     /// @param {real} [_hurt] The amount of frames the hurt animation has (Default = 2)
     /// @param {real} [_win] The amount of frames the win animation has (Default = 2)
     /// @param {real} [_death] The amount of frames the death animation has (Default = 2)
+    /// @param {real} [_talk] The amount of frames the talk animation has (Default = 2)
     /// @returns {struct} The animation info
-    static Anims = function(_idle = 2,_hurt = 2,_win = 2,_death = 2,_extraAnims={}) {
+    static Anims = function(_idle = 2,_hurt = 2,_win = 2,_death = 2,_talk = 4,_extraAnims={}) {
         
         //Create Info
         var _info = { 
@@ -66,6 +31,7 @@ function Enemy()
             hurt : AnimClip(_idle,_hurt),
             win : AnimClip(_hurt+_idle,_win),
             death: AnimClip(_win+_hurt+_idle,_death),
+            talk : AnimClip(_win+_hurt+_idle+_death,_talk),
         }
         
         //Return Animation Info
@@ -104,6 +70,51 @@ function Enemy()
         }
     }
     
+    
+    static Dialogue = function(_talkChance = -1,_dialogue = [])
+    {
+        return {
+            talkChance : _talkChance,
+            text : is_array(_dialogue) ? _dialogue : [_dialogue]
+        }
+    }
+    
+    
+    /// @desc Creates the enemies information
+    /// @param {string} _name The name of the enemy
+    /// @param {Asset.GMSprite} _sprite The sprite of the enemy
+    /// @param {struct.enemycreateanims} [_animInfo] The animation info for the enemies sprite
+    /// @param {any} [_dialogue] The enemies dialogue
+    /// @param {real} [_difficulty] The enemies difficulty which effects how much damage the enemy takes (The lower the number the more damage they take) (Base = 1)
+    /// @param {real} [_gameDifficulty] The enemies difficulty when it comes to playing game cards like the brawl card (Base = 1)
+    /// @param {real} [_maxHp] Max health of the enemy (Base = 100)
+    /// @param {array} [_actionCards] The enemies action cards (Example: [actionCards.bread, actionCards.heal])
+    /// @param {array} [_kaosCards] The enemies kaos cards (Example: [kaosCards.swoop])
+    /// @param {struct.enemycreatestrat} [_strat] The enemies figthing strategy
+    /// @param {any*} [_special] The enemies special move(leave as undefined if they don't use one)
+    /// @param {array.string} _customSong The song the enemy plays (Example: ["Prepare","Kaos"])
+    static Create = function(_name,_sprite,_animInfo = Anims(),_dialogue = undefined,_difficulty = 1,_gameDifficulty = 1,_maxHp = 100,_actionCards=[],_kaosCards=[],_strat = Strat(),_special = undefined,_customSong = ["Prepare","Kaos"]) constructor
+    {    
+        //Info
+        name = _name;
+        sprite = _sprite;
+        animInfo = _animInfo;
+        dialogue = _dialogue;
+        customSong = _customSong;
+        
+        //Difficulty
+        difficulty = _difficulty;
+        gameDifficulty = _gameDifficulty;
+        maxHp = _maxHp;
+        
+        //Cards
+        cardsAct = _actionCards;
+        cardsKaos = _kaosCards;
+        
+        //Combat
+        strat = _strat;
+        special = _special;
+    }
 }
 
 

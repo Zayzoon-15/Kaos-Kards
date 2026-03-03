@@ -26,6 +26,7 @@ function initSettings()
     global.voiceover = true;
     global.subtitles = true;
     global.voicePlaying = false;
+    global.enemyDialogue = true;
 	
 	//Input
 	global.keyDiscard = ord("Z");

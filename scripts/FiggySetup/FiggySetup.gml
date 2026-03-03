@@ -10,7 +10,6 @@ function FiggySetup() {
 			
 	Figgy.Window("Game Info",true,FIGGY_WINDOW_DEFAULT_X,40,FIGGY_WINDOW_DEFAULT_WIDTH,500);
 	   
-        Figgy.Section("Audio");
         Figgy.Bool("Show Current Song",false,function(){
             oSound.showSongs = argument0;
         });

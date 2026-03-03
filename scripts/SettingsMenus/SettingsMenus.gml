@@ -20,6 +20,10 @@ function SettingsMenus()
         {
             global.voiceover = argument0;
         },global.voiceover);
+        SettingsButtons.Check("Enemy Dialogue",function()
+        {
+            global.enemyDialogue = argument0;
+        },global.enemyDialogue);
     }
     
     

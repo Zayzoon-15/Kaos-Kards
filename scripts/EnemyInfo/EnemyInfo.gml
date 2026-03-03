@@ -11,7 +11,8 @@ enemyInfo = {
     #region
     
     dog : new Enemy.Create("Dog the Duck",
-        sDog, Enemy.Anims(), .25, .1, 100,
+        sDog, Enemy.Anims(), Enemy.Dialogue(),
+        .25, .1, 100,
         [
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,
@@ -23,7 +24,8 @@ enemyInfo = {
     ),
     
     angel : new Enemy.Create("Angel the Juvenile",
-        sAngel, Enemy.Anims(), .4, .8, 100,
+        sAngel, Enemy.Anims(), Enemy.Dialogue(),
+        .4, .8, 100,
         [
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,
@@ -35,7 +37,8 @@ enemyInfo = {
     ),
     
     cock : new Enemy.Create("Cock the Bug",
-        sCock, Enemy.Anims(), .55, .4, 100,
+        sCock, Enemy.Anims(), Enemy.Dialogue(),
+        .55, .4, 100,
         [
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,
@@ -47,7 +50,8 @@ enemyInfo = {
     ),
     
     alien : new Enemy.Create("Alan the Alien",
-        sAlien, Enemy.Anims(), .7, .8, 100,
+        sAlien, Enemy.Anims(), Enemy.Dialogue(),
+        .7, .8, 100,
         [
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,
@@ -60,7 +64,8 @@ enemyInfo = {
     
     ///--- BOSS ---///
     beer : new Enemy.Create("Beer the Pickle", 
-        sBeer, Enemy.Anims(), .95, 1, 100,
+        sBeer, Enemy.Anims(), Enemy.Dialogue(),
+        .95, 1, 100,
         [
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,
@@ -79,10 +84,11 @@ enemyInfo = {
     #region
     
     chud : new Enemy.Create("Ichiro Uzumaki the Chud",
-        sChud, Enemy.Anims(2,2,2,2,{
+        sChud, Enemy.Anims(2,2,2,2,4,{
             kaosHotDogStart: Enemy.AnimClip(8,13,false,"idle"),
             kaosHotDogLose : Enemy.AnimClip(21,3,true)
-        }), 1.15, 3, 115,
+        }), Enemy.Dialogue(),
+        1.15, 3, 115,
         [
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,
@@ -94,7 +100,8 @@ enemyInfo = {
     ),
     
     handsy : new Enemy.Create("Handsy the Hand",
-        sHandsy, Enemy.Anims(), 1.25, 2, 100,
+        sHandsy, Enemy.Anims(), Enemy.Dialogue(10,"hey im a hand yo"),
+        1.25, 2, 100,
         [
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,
@@ -112,7 +119,8 @@ enemyInfo = {
     #region
     
     bones : new Enemy.Create("Jones the Living Bones",
-        sBones, Enemy.Anims(), 2, 3, 130,
+        sBones, Enemy.Anims(), Enemy.Dialogue(),
+        2, 3, 130,
         [
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,
@@ -131,7 +139,8 @@ enemyInfo = {
     #region
     
     teto : new Enemy.Create("Kasane Teto the UTAU",
-        sTeto, Enemy.Anims(), 1.4, 2.2, 115,
+        sTeto, Enemy.Anims(), Enemy.Dialogue(),
+        1.4, 2.2, 115,
         [
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,

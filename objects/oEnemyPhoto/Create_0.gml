@@ -14,6 +14,9 @@ enemyPlayAnim("idle");
 //Hover
 canHover = true;
 
+//Talking
+alarm[1] = 80;
+
 //Functions
 hurt = function()
 {
@@ -35,4 +38,23 @@ win = function(_stars = true)
     
     //Start Reset
     alarm[0] = 40;
+}
+
+talk = function()
+{
+    //Get Dialogue
+    var _time = 120;
+    var _text = global.currentEnemy.dialogue.text[0];
+    if array_length(global.currentEnemy.dialogue.text) > 1
+    {
+        _text = global.currentEnemy.dialogue.text[irandom_range(0,array_length(global.currentEnemy.dialogue.text)-1)];
+    }
+    
+    print($"ENEMY TALKING\n==========================\n{_text}");
+    
+    //Play Animation
+    enemyPlayAnim("talk",_time,"idle");
+    
+    //Talk Again
+    alarm[1] = random_range(120,300)+_time;
 }
