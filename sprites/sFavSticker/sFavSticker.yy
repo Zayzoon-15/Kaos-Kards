@@ -26,8 +26,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"KaosKards",
-    "path":"KaosKards.yyp",
+    "name":"Deck Builder",
+    "path":"folders/Sprites/Ui/Deck Builder.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

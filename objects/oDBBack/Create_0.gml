@@ -1,12 +1,25 @@
-//Press
-canPress = false;
-pressed = false;
+//Inherit
+event_inherited();
 
-mousePos = 0;
+//Position
+stickToScreen = true;
+stickToScreenRight = room == rDeckBuilder2;
 
-targetAngle = 0;
-scale = 1;
+//Action
+action = function()
+{
+    //Transition
+    with oDeckBuilder
+    {
+        startTrans();
+    }
+    
+    //Don't Hover
+    canHover = false;
+}
 
-xscale = 1;
-yscale = 1;
-angle = 0;
+//Check Condition
+condition = function()
+{
+    canPress = !instance_exists(oDBCardTrans);
+}

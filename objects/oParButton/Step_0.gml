@@ -6,6 +6,10 @@ if touchingMouse() and canHover
 } else {
     targetY = y;
     shadowY = lerp(shadowY,5,.2);
+    
+    //Reset Pressed
+    pressed = false;
+    mobilePress = false;
 }
 
 //Set Image

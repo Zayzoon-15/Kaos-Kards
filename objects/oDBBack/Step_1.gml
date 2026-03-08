@@ -1,0 +1,1 @@
+canHover = !instance_exists(oDBSort) and !instance_exists(oDBCardTrans);
