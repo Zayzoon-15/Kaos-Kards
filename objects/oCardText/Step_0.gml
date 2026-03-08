@@ -1,22 +1,16 @@
-//Get Text Size
-height = string_height_ext(text,-1,maxWidth);
-width = string_width_ext(text,-1,maxWidth);
-var _nameWidth = string_width_ext(name,-1,maxWidth)*2;
-
-if _nameWidth > width
-{
-    width = _nameWidth;
-}
-
 //Fade Text
 textAlpha = lerp(textAlpha,1,.2);
 
 //Go To Parent
 if instance_exists(parent)
 {
+    //Set Flip Info
+    flipInfo = parent.y < (room_height/2)-100;
+    
     //Set Position    
     x = parent.x;
-    y = lerp(y,parent.bbox_top-20,.2);
+    var _targetY = flipInfo ? parent.bbox_bottom+20 : parent.bbox_top-20;
+    y = lerp(y,_targetY,.2);
 	
 	//Destory
 	if !parent.hover or !parent.canGrab or global.holdingCard
@@ -27,8 +21,3 @@ if instance_exists(parent)
 
 //Depth
 depth = -5;
-
-
-//Keep In Room
-x = clamp(x,width*.6,room_width-(width*.6));
-y = clamp(y,height*1.4,room_height-(height*.15));

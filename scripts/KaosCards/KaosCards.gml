@@ -20,7 +20,7 @@ kaosCards = {
     sCardHandy,kaosActionHandy,[],4),
     
     high : new createCardKaos("Inflation",
-    "All values are multiplied by 1.1 for the current round\nThe value increases by .1 after every use",
+    $"All values are multiplied by [s][m]x [glo]+0.1valueMult[/][/] for the current round[s][lg](The value increases by .1 after every use)",
     sCardHigh,kaosActionHigh),
     
     swap : new createCardKaos("Swap",
@@ -32,7 +32,7 @@ kaosCards = {
     sCardDestroy,kaosActionDestroy),
     
     freeze : new createCardKaos("Freezing Ace",
-    "Freezes a random slot from the enemies side making it unusable",
+    "[aq]Freezes[/] a random slot from the enemies side making it unusable",
     sCardFreeze,kaosActionFreeze),
     
     rps : new createCardKaos("Rock Paper Scissors",
@@ -52,7 +52,7 @@ kaosCards = {
     sCardHotdog,kaosActionHotdog),
     
     brokenDefense : new createCardKaos("Broken Defense",
-    "Gain 100% of max health as sheild but reduce max health by a random amount",
+    "Gain  [m]100%[/]  of [g]max health[/] as [b]shield[/] but reduce [g]max health[/] by a random amount",
     sCardBrokenDefense,kaosActionBrokenDefense),
     
     rerun : new createCardKaos("Rerun",

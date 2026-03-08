@@ -10,6 +10,7 @@ function drawCardText(_info){
             desc : _info.desc,
             range : _info.range,
             uses : variable_instance_exists(self,"uses") ? uses : NaN,
+            type : info.type,
             parent : self.id
         });
     }
@@ -80,7 +81,12 @@ function drawRectOutlined(_x1,_y1,_x2,_y2,_cornerRad = UIBOX_RAD,_outlineWidth=1
 	//Outline Width
 	for (var i = 0; i < _outlineWidth; ++i) {
 		draw_roundrect_ext(_x1-i,_y1-i,_x2+i,_y2+i,_cornerRad+i,_cornerRad+i,true);
-		//draw_roundrect_ext(_x1-i/2,_y1-i/2,_x2+i/2,_y2+i/2,_cornerRad+i/2,_cornerRad+i/2,true);
+        
+        if _outlineWidth > 1
+        {
+            draw_roundrect_ext(_x1-i/2,_y1-i/2,_x2+i/2,_y2+i/2,_cornerRad+i/2,_cornerRad+i/2,true);
+        }
+		
 	}
     
     //Reset Stuff
@@ -132,6 +138,7 @@ function spriteLoopFrames(_frame,_anims = 4)
     image_index = frame + (_frame*_totalFrames);
     image_index = clamp(image_index, 0, image_number-1);
 }
+
 
 
 /// @desc Draws a card with a 3d perspective
@@ -245,3 +252,362 @@ function drawCard3d(_x, _y, _front, _back, _angle, _rot, _thickness = CARD_THICK
     }
 }
 
+
+/// @desc Draws text with tags allowing you to change colors (Ex: "This text is [g]GREEN[/] and this one [b]BLUE[/]")
+/// @param {real} _x The x position of the text
+/// @param {real} _y The y position of the text
+/// @param {string} _string The string
+/// @param {real} [_maxWidth]=250 The max width of the text
+/// @param {Constant.Color} [_boxColor]=#FF4C40 The box color for the tag [m]
+/// @returns {real} The texts bottom position
+function drawTextTagged(_x,_y,_string,_maxWidth = 250,_boxColor = #FF4C40)
+{
+    //Add Colors
+    var _colorDefault = c_white;
+    
+    //Setup
+    var _currentColor = _colorDefault;
+    var _currentBox = false;
+    var _currentSegment = "";
+    var _segments = ds_list_create();
+    var _length = string_length(_string);
+    var i = 1;
+    var _replaceText = false;
+    
+    
+    //Change Text
+    while (i <= _length) {
+    	
+        //Get Copy
+        var _copy = string_copy(_string,i,1);
+        
+        if _copy == "["
+        {
+            //Get Substring
+            var _subString = string_copy(_string,i,(_length-i)+1);
+            var _pos = string_pos("]",_subString);
+            
+            if _pos > 0
+            {
+                //Get Tag
+                var _tagEnd = (_pos+i)-1;
+                var _tag = string_copy(_string,i,(_tagEnd-i)+1);
+                
+                //Set Segment
+                if _currentSegment != ""
+                {
+                    //Change Part Of Segment To Math
+                    var _addToVar = 0;
+                    if string_pos("+",_currentSegment)
+                    {
+                        //Get Value
+                        var _addPos = string_pos("+",_currentSegment);
+                        _addToVar = real(string_copy(_currentSegment,_addPos+1,3));
+                        
+                        //Remove From Segment
+                        _currentSegment = string_delete(_currentSegment,_addPos,4);
+                    } else if string_pos("-",_currentSegment)
+                    {
+                        //Get Value
+                        var _addPos = string_pos("-",_currentSegment);
+                        _addToVar = -real(string_copy(_currentSegment,_addPos+1,3));
+                        
+                        //Remove From Segment
+                        _currentSegment = string_delete(_currentSegment,_addPos,4);
+                    }
+                    
+                    //Change Segment To Variable
+                    if _replaceText and variable_global_exists(_currentSegment)
+                    {
+                        var _value = variable_global_get(_currentSegment);
+                        if is_real(_value) then _value += _addToVar;
+                        _currentSegment = string_format(_value,0,1);
+                        _replaceText = false;
+                    }
+                    
+                    //Add To Map
+                    var _seg = ds_map_create();
+                    _seg[? "text"] = _currentSegment;
+                    _seg[? "color"] = _currentColor;
+                    
+                    if _currentBox then _seg[? "box"] = true;
+                    
+                    //Add Segment To Segments
+                    ds_list_add(_segments,_seg);
+                    _currentSegment = "";
+                }
+                
+                //Change Based On Tag
+                if _tag == "[r]"
+                {
+                    _currentColor = 4214015;
+                    _currentBox = false;
+                }
+                else if _tag == "[g]"
+                {
+                    _currentColor = 8830261;
+                    _currentBox = false;
+                }
+                else if _tag == "[b]"
+                {
+                    _currentColor = 16750080;
+                    _currentBox = false;
+                }
+                else if _tag == "[lg]"
+                {
+                    _currentColor = c_ltgrey;
+                    _currentBox = false;
+                }
+                else if _tag == "[p]"
+                {
+                    _currentColor = 13530270;
+                    _currentBox = false;
+                }
+                else if _tag == "[aq]"
+                {
+                    _currentColor = 13281024;
+                    _currentBox = false;
+                }
+                else if _tag == "[y]"
+                {
+                    _currentColor = 4502261;
+                    _currentBox = false;
+                }
+                else if _tag == "[o]"
+                {
+                    _currentColor = 36863;
+                    _currentBox = false;
+                }
+                else if _tag == "[m]"
+                {
+                    _currentColor = _colorDefault;
+                    _currentBox = true;
+                }
+                else if _tag == "[/]"
+                {
+                    _currentColor = _colorDefault;
+                    _currentBox = false;
+                }
+                else if _tag == "[s]"
+                {
+                    var _nlSeg = ds_map_create();
+                    _nlSeg[? "newline"] = true;
+                    ds_list_add(_segments,_nlSeg);
+                }
+                else if _tag == "[glo]"
+                {
+                    _replaceText = true;
+                }
+                
+                //Continue
+                i = _tagEnd + 1;
+                continue;
+            }
+            
+            
+        }
+        
+        //Go To Next Segment
+        _currentSegment += _copy;
+        i ++;
+    }
+    
+    
+    if _currentSegment != ""
+    {
+        var _seg = ds_map_create();
+        _seg[? "text"] = _currentSegment;
+        _seg[? "color"] = _currentColor;
+        
+        if _currentBox then _seg[? "box"] = true;
+        
+        //Add Segment To Segments
+        ds_list_add(_segments,_seg);
+    }
+    
+    var _words = ds_list_create();
+    
+    //Go Through All Segments
+    for (var s = 0; s < ds_list_size(_segments); s++) {
+    	var _seg = ds_list_find_value(_segments,s);
+        
+        if ds_map_exists(_seg,"newline")
+        {
+            var _marker = ds_map_create();
+            _marker[? "newline"] = true;
+            ds_list_add(_words,_marker);
+            ds_map_destroy(_seg);
+        } else {
+        	var _segText = _seg[? "text"];
+        	var _segColor = _seg[? "color"];
+            var _segBox = ds_map_exists(_seg,"box");
+            var _wordArray = string_split(_segText," ");
+            
+            for (var j = 0; j < array_length(_wordArray); j++) {
+            	var _wordText = _wordArray[j];
+                
+                if _wordText != ""
+                {
+                    var _wordMap = ds_map_create();
+                    _wordMap[? "text"] = _wordText;
+                    _wordMap[? "color"] = _segColor;
+                    
+                    if _segBox then _wordMap[? "box"] = true;
+                    
+                    ds_list_add(_words,_wordMap);
+                }
+                
+                if j < array_length(_wordArray) - 1
+                {
+                    var _spaceMap = ds_map_create();
+                    _spaceMap[? "text"] = " ";
+                    _spaceMap[? "color"] = _segColor;
+                    
+                    if _segBox then _spaceMap[? "box"] = true;
+                    
+                    ds_list_add(_words,_spaceMap);
+                }
+            }
+            
+            ds_map_destroy(_seg);
+        }
+    }
+    
+    ds_list_destroy(_segments);
+    var _line = ds_list_create();
+    var _lineWidth = 0;
+    var _lineHeight = string_height("A1gy");
+    var _currentY = _y;
+    
+    var _drawLine = function(_line,_lineX,_lineY,_boxColor)
+    {
+        var _currentX = _lineX;
+        
+        for (var k = 0; k < ds_list_size(_line); k++) {
+        	var _part = ds_list_find_value(_line,k);
+            var _partText = _part[? "text"];
+            var _partColor = _part[? "color"];
+            
+            if ds_map_exists(_part,"box")
+            {
+                var _textWidth = string_width(_partText);
+                draw_set_colour(_boxColor);
+                if _partText != " "
+                {
+                    draw_roundrect(_currentX-5,_lineY-2,_currentX+_textWidth+2,(_lineY+string_height("A1gy")),false);
+                } else draw_rectangle(_currentX,_lineY-1,_currentX+_textWidth-1,(_lineY+string_height("A1gy")),false);
+                
+            }
+            
+            draw_set_colour(_partColor);
+            draw_text(_currentX,_lineY,_partText);
+            _currentX += string_width(_partText);
+            ds_map_destroy(_part);
+        }
+    };
+    
+    for (var w = 0; w < ds_list_size(_words); w++) {
+    	var _word = ds_list_find_value(_words,w);
+        
+        if ds_map_exists(_word,"newline")
+        {
+            trimLine(_line);
+            _lineWidth = 0;
+            
+            for (var k = 0; k < ds_list_size(_line); k++) {
+            	var _part = ds_list_find_value(_line,k);
+                _lineWidth += string_width(_part[? "text"]);
+            }
+            
+            if ds_list_size(_line) > 0
+            {
+                var _stratX = _x - (_lineWidth/2);
+                _drawLine(_line,_stratX,_currentY,_boxColor);
+            }
+            
+            ds_list_destroy(_line);
+            _currentY += _lineHeight;
+            _line = ds_list_create();
+            _lineWidth = 0;
+            ds_map_destroy(_word);
+        } else {
+        	var _wordText = _word[? "text"];
+            var _wordWidth = string_width(_wordText);
+            
+            if (_lineWidth + _wordWidth) > _maxWidth and _lineWidth > 0
+            {
+                trimLine(_line);
+                _lineWidth = 0;
+                
+                for (var k = 0; k < ds_list_size(_line); k++) {
+                	var _part = ds_list_find_value(_line,k);
+                    _lineWidth += string_width(_part[? "text"]);
+                }
+                
+                var _startX = _x - (_lineWidth/2);
+                _drawLine(_line,_startX,_currentY,_boxColor);
+                ds_list_destroy(_line);
+                _currentY += _lineHeight;
+                _line = ds_list_create();
+                _lineWidth = 0;
+            }
+            
+            ds_list_add(_line,_word);
+            _lineWidth += _wordWidth;
+        }
+    }
+    
+    if ds_list_size(_line) > 0
+    {
+        trimLine(_line);
+        _lineWidth = 0;
+        
+        for (var k = 0; k < ds_list_size(_line); k++) {
+        	var _part = ds_list_find_value(_line,k);
+            _lineWidth += string_width(_part[? "text"]);
+        }
+        
+        var _startX = _x - (_lineWidth/2);
+        _drawLine(_line,_startX,_currentY,_boxColor);
+    }
+    
+    //Destroy Stuff
+    ds_list_destroy(_line);
+    ds_list_destroy(_words);
+    
+    //Return Position
+    return {
+        x : _x,
+        y : _currentY + _lineHeight,
+        w : _lineWidth,
+        h : abs(_y - (_currentY+_lineHeight))
+    };
+}
+
+
+
+/// @desc Trims a text line (Mainly Used Only For drawTextTagged)
+/// @param {id.dslist} _line The target line
+function trimLine(_line)
+{
+    while (ds_list_size(_line)) > 0 {
+    	var _first = ds_list_find_value(_line,0);
+        
+        if _first[? "text"] == " "
+        {
+            ds_map_destroy(_first);
+            ds_list_delete(_line,0);
+        } else break;
+    }
+    
+    while (ds_list_size(_line)) > 0 {
+    	var _lastIndex = ds_list_size(_line)-1;
+        var _last = ds_list_find_value(_line,_lastIndex);
+        
+        if _last[? "text"] == " "
+        {
+            ds_map_destroy(_last);
+            ds_list_delete(_line,_lastIndex);
+        } else break;
+    }
+}

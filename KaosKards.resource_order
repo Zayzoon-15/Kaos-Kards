@@ -112,6 +112,7 @@
     {"name":"oBrawlWinEffect","order":3,"path":"objects/oBrawlWinEffect/oBrawlWinEffect.yy",},
     {"name":"oBreadAttack","order":2,"path":"objects/oBreadAttack/oBreadAttack.yy",},
     {"name":"oCard","order":4,"path":"objects/oCard/oCard.yy",},
+    {"name":"oCardText_1","order":6,"path":"objects/oCardText_1/oCardText_1.yy",},
     {"name":"oComboButton","order":1,"path":"objects/oComboButton/oComboButton.yy",},
     {"name":"oComboChecker","order":5,"path":"objects/oComboChecker/oComboChecker.yy",},
     {"name":"oComboMeter","order":1,"path":"objects/oComboMeter/oComboMeter.yy",},

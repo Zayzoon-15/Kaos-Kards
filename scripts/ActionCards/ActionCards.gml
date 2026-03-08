@@ -8,14 +8,14 @@ globalvar actionCards;
 
 actionCards = {
     
-    gato : new createCardAction("Gato","Its a cat",sGato,[10000000000,10000000001],CARDACT_GENRES.ATTACK,actionLaser),
+    gato : new createCardAction("Gato","It's a cat",sGato,[10000000000,10000000001],CARDACT_GENRES.ATTACK,actionLaser),
     
     heal : new createCardAction("Health Pack",
-    "Heals you by a random amount",
+    "[g]Heals[/] you by a random amount",
     sCardHeal,[1,12],CARDACT_GENRES.HEAL,actionHeal,[],comboHeal),
     
     shield : new createCardAction("Shield",
-    "Grants you temporary health that reduces after every round",
+    "Grants you [b]temporary health[/] that reduces after every round",
     sCardShield,[1,12],CARDACT_GENRES.DEFEND,actionShield,[],comboShield),
     
     slash : new createCardAction("Mighty Sword",
@@ -39,27 +39,27 @@ actionCards = {
     sCardFlaminAce,[1,4],CARDACT_GENRES.ATTACK,actionFlameAce),
     
     poison : new createCardAction("Poison",
-    "Poisons your enemy for a random period of time",
+    "[p]Poisons[/] your enemy for a random period of time",
     sCardPoison,[1,4],CARDACT_GENRES.ATTACK,actionPoison),
 	
     mirror : new createCardAction("Mirror",
-    "Reflects any physical attacks attacking the card but you take some damage as well\nThe range changes how much more damage the attack does",
+    "Reflects any [aq]physical[/] attacks attacking the card but you take some damage as well[s][lg](The range changes how much more damage the attack does)",
     sCardMirror,[0,2],CARDACT_GENRES.DEFEND,actionMirror),
 	
     ghost : new createCardAction("Ghost",
-    "Shoots a non physical ghost that ignores shields",
+    "Shoots a [aq]non physical[/] ghost that ignores [b]shields",
     sCardGhost,[1,5],CARDACT_GENRES.ATTACK,actionGhost),
 	
     taunt : new createCardAction("Taunt",
-    "Taunt your enemy to gain a random amount of combo charge and steal a random amount from them",
+    "Taunt your enemy to gain a random amount of [o]combo[/] charge and steal a random amount from them",
     sCardTaunt,[1,4],CARDACT_GENRES.ATTACK,actionTaunt),
     
     steak : new createCardAction("Juicy Steak",
-    "Increase max health by a random amount",
+    "Increase [g]max health[/] by a random amount",
     sCardSteak,[0,8],CARDACT_GENRES.HEAL,actionSteak),
     
     evasion : new createCardAction("Evasion",
-    "A chance to neglect the the card in front of it\nThe higher the value the higher the chance of neglecting the card",
+    "A chance to neglect the the card in front of it[s]The higher the value the higher the chance of neglecting the card",
     sCardMirror,[0,10],CARDACT_GENRES.DEFEND,actionEvasion),
     
     //CONCEPT

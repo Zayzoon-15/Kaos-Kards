@@ -46,28 +46,28 @@ globalvar diceCards;
 diceCards = {
     
     reroll : new createCardDice("Reroll",
-    "Reroll all the dice\nCan only be placed after roll",
+    "Reroll all the [r]dice[s][o]Can only be placed after roll",
     sCardDice,diceCardReroll),
     
     upgrade : new createCardDice("Dice Upgrade",
-    "Adds a random amount to a random dice roll",
+    "Adds a random amount to a random [r]dice[/] roll",
     sCardDice,undefined,NaN,[],[1,6]),
     
     allNothin : new createCardDice("All or Nothin'",
-    "If all dice roll higher than half of their maximum value, set all dice to their maximum value. Otherwise, set all dice to 0\nCan only be placed before roll",
+    "If all [r]dice[/] roll [o]higher[/] than half of their maximum value, set all [r]dice[/] to their maximum value. Otherwise, set all [r]dice[/] to 0[s][o]Can only be placed before roll",
     sCardAllNothin,diceCardAllNothin),
     
     //Change Dice
     dice8 : new createCardDice("8 Sided Dice",
-    "Changes one random dice to an 8 sided dice\nCan only be placed before roll",
+    "Changes one random dice to an 8 sided [r]dice[s][o]Can only be placed before roll",
     sCardDice,diceCardSwapDice,9,[diceTypes.d8]),
     
     dice12 : new createCardDice("12 Sided Dice",
-    "Changes one random dice to a 12 sided dice\nCan only be placed before roll",
+    "Changes one random dice to a 12 sided [r]dice[s][o]Can only be placed before roll",
     sCardDice,diceCardSwapDice,6,[diceTypes.d12]),
     
     dice20 : new createCardDice("20 Sided Dice",
-    "Changes one random dice to a 20 sided dice\nCan only be placed before roll",
+    "Changes one random dice to a 20 sided [r]dice[s][o]Can only be placed before roll",
     sCardDice,diceCardSwapDice,3,[diceTypes.d20]),
     
 };

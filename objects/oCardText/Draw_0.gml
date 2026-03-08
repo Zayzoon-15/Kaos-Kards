@@ -1,19 +1,34 @@
-//Draw The Box
-var _halfWidth = width/2;
-var _rectRound = UIBOX_RAD;
-drawRectOutlined(x-_halfWidth-widthMargin,y-height-(heightMargin*2),x+_halfWidth+widthMargin,y,_rectRound,1,c_black,c_white,UIBOX_ALPHA*textAlpha,1*textAlpha);
+//Setup
+textSetup(fnMain,fa_center,fa_top);
+var _margin = new Vector2(20,10);
+var _maxWidth = 220;
+var _textH = textInfo.h;
+var _nameH = string_height_ext(name,-1,_maxWidth/2)*2;
+var _totalH = _textH + _nameH;
 
-//Get Text
-var _text = string_replace(text,textSmall,"");
-var _textSmall = string_replace(textSmall,_text,"");
+if !flipInfo
+{
+    //Draw Rectangle
+    drawRectOutlined((x-_maxWidth/2)-_margin.x, y-_totalH-_margin.y-10, (x+_maxWidth/2)+_margin.x, y+_margin.y, 10,1,c_black,c_white,UIBOX_ALPHA*textAlpha,textAlpha);
+    
+    //Draw Text
+    draw_set_alpha(textAlpha);
+    draw_text_ext_transformed(x,y-_totalH-10,name,-1,_maxWidth/2,2,2,0);
+    draw_set_halign(fa_left);
+    textInfo = drawTextTagged(x, y-_textH, text, _maxWidth,boxColor);
+} else {
+    
+    //Draw Rectangle
+    drawRectOutlined((x-_maxWidth/2)-_margin.x, y-_margin.y, (x+_maxWidth/2)+_margin.x, y+_totalH+_margin.y+10, 10,1,c_black,c_white,UIBOX_ALPHA*textAlpha,textAlpha);
+    
+    //Draw Text
+    draw_set_alpha(textAlpha);
+    draw_text_ext_transformed(x,y,name,-1,_maxWidth/2,2,2,0);
+    draw_set_halign(fa_left);
+    textInfo = drawTextTagged(x, y+_margin.y+_nameH, text, _maxWidth,boxColor);
+}
 
-//Draw Text
-textSetup(fnMain,fa_center,fa_top,c_white,textAlpha);
-draw_text_ext_transformed(x,y-height-heightMargin-(heightMargin/2),name,-1,maxWidth,2,2,0);
-draw_text_ext_transformed(x,y-height-heightMargin,_text,-1,maxWidth,1,1,0);
 
-draw_set_colour(c_ltgrey);
-draw_text_ext_transformed(x,y-string_height_ext(_textSmall,-1,maxWidth)-heightMargin,_textSmall,-1,maxWidth,1,1,0); //Small stuff like "(2 Uses Left)"
 
-//Reset
+//Reset Draw
 drawReset();

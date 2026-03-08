@@ -1,19 +1,12 @@
-//DON'T TOUCH THESE
-height = 0;
-width = 0;
-textAlpha = 0;
-
-//Box Setup
-heightMargin = 10;
-widthMargin = 10;
-maxWidth = 230;
-
 //Setup Text
-text = $"\n\n{desc}";
-textSmall = "";
+textAlpha = 0;
+text = desc;
+textInfo = {x:x,y:y,w:0,h:0};
 
-//Add Range
-if range != undefined then textSmall += $"\nRange: {range.min} - {range.max}";
+//Flip
+flipInfo = false;
+
+//Add Uses
 if !is_nan(uses)
 {
     //Normal Uses
@@ -21,21 +14,29 @@ if !is_nan(uses)
     {
         if uses > 1
         {
-            textSmall += $"\n({uses} Uses Left)";
+            text += $"[s][lg]({uses} Uses Left)";
         } else if uses != 0
         {
-            textSmall += $"\n({uses} Use Left)";
-        } else textSmall += $"\n(NO USES LEFT)";
+            text += $"[s][lg]({uses} Use Left)";
+        } else text += $"[s][lg](NO USES LEFT)";
     } else { //Outside Game Uses
         if uses > 1
         {
-            textSmall += $"\n({uses} Uses Per Game)";
+            text += $"[s][lg]({uses} Uses Per Game)";
         } else if uses != 0
         {
-            textSmall += $"\n({uses} Use Per Game)";
+            text += $"[s][lg]({uses} Use Per Game)";
         }
     }
 }
 
-//Combine Text
-text += textSmall;
+//Add Range
+if range != undefined then text += $"[s][s][m]Range: {range.min} - {range.max}";
+
+//Box Color
+boxColor = c_white;
+switch (type) {
+	case CARDTYPES.ACTION: boxColor = #A09BB7 break;
+    case CARDTYPES.DICE: boxColor = #9BADB7 break;
+	case CARDTYPES.KAOS: boxColor = #AEB79B break;
+}

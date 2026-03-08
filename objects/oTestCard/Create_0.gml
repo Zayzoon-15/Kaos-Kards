@@ -9,4 +9,4 @@ action();
 //Card Vars
 hover = false;
 canGrab = true;
-uses = 10;
+uses = info.uses;

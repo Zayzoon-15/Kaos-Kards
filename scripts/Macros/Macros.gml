@@ -3,8 +3,8 @@
 #macro COMBO_MULT 1 
 
 //Ui
-#macro UIBOX_RAD 4
-#macro UIBOX_ALPHA .6 
+#macro UIBOX_RAD 10//4
+#macro UIBOX_ALPHA .7//.6 
 
 //Drawing
 #macro SHADOW_ALPHA .7
