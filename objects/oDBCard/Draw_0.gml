@@ -19,13 +19,25 @@ if grabbed
     
     //Draw Card
     draw_sprite_ext(sprite_index, image_index, cardX+_shakeX, cardY+_shakeY, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+    
+    //Draw Favorite Sticker
+    if favorite
+    {
+        draw_sprite_ext(sFavSticker, 0, cardX+_shakeX, cardY+_shakeY, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+    }
 } else {
     //Draw Shadow
     var _scaleX = cos(degtorad(cardAngle));
     draw_sprite_ext(sprite_index, image_index, cardX+shadowX+_shakeX, cardY+shadowY+_shakeY, (image_xscale-shadowSize)*_scaleX, image_yscale-shadowSize, image_angle, c_black, SHADOW_ALPHA*image_alpha);
-	
+    
     //Draw Card
 	drawCard3d(cardX+_shakeX, cardY+_shakeY, cardFront, cardBack, cardAngle,image_angle);
+    
+    //Draw Favorite Sticker
+    if _scaleX > 0 and favorite
+    {
+        draw_sprite_ext(sFavSticker, 0, cardX+_shakeX, cardY+_shakeY, image_xscale*_scaleX, image_yscale, image_angle, image_blend, image_alpha);
+    }
     
     //Draw Card Amount
     if room == rDeckBuilder1

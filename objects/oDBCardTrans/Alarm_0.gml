@@ -7,3 +7,6 @@ TweenEasyMove(x,y,_x,oDBInsertHole.y,0,20,EaseInBack);
 
 //Fade
 TweenEasyFade(1,0,15,10,EaseLinear);
+
+//Destroy
+timeSourceCreate(25,function(){instance_destroy();},[],time_source_units_frames)

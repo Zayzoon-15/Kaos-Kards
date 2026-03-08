@@ -40,4 +40,7 @@ global.discards = 0;
 //Set Deck Size For Now
 global.deckCardAmount = array_length(playerDeck);
 
+//Favorites
+global.favCards = [];
+
 }

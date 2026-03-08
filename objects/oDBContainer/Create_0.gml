@@ -129,14 +129,34 @@ createCards = function(_sortFunc = currentSort,_types = currentType)
     //Get Target Types
     var _allCards = array_concat(variable_struct_get_names(actionCards),variable_struct_get_names(diceCards),variable_struct_get_names(kaosCards));
     switch (_types) {
+        
     	case types.action:
             _allCards = variable_struct_get_names(actionCards);
         break;
+    
     	case types.dice:
             _allCards = variable_struct_get_names(diceCards);
         break;
+    
     	case types.kaos:
             _allCards = variable_struct_get_names(kaosCards);
+        break;
+    
+        case types.favs:
+            var _favCards = [];
+            for (var i = 0; i < array_length(_allCards); i++) {
+                //Get Card
+                var _info = undefined;
+                if struct_exists(actionCards,_allCards[i]) then _info = struct_get_variable(actionCards,_allCards[i]);
+                if struct_exists(diceCards,_allCards[i]) then _info = struct_get_variable(diceCards,_allCards[i]);
+                if struct_exists(kaosCards,_allCards[i]) then _info = struct_get_variable(kaosCards,_allCards[i]);
+                
+                if array_contains(global.favCards,_info)
+                {
+                    array_push(_favCards,_allCards[i]);
+                }
+            }
+            _allCards = _favCards;
         break;
     }
     

@@ -70,7 +70,8 @@ if grabbed
         //Exit Animation
         instance_create_layer(x,y,"Effects",oDBCardTrans,{
             sprite_index : sprite_index,
-            image_angle : image_angle
+            image_angle : image_angle,
+            favorite : favorite
         });
 
     }

@@ -1,3 +1,6 @@
+//Check Favorite
+favorite = array_contains(global.favCards,info);
+
 //Visible
 cardVisible = false;
 if instance_exists(oDBContainer)
@@ -104,6 +107,12 @@ if grabbed
     y = lerp(y,targetY+cardYOffset,.3);
     cardX = x;
     cardY = lerp(cardY,cardTargetY,.2);
+    
+    //Reset Angle
+    if cardAngle == 360
+    {
+        cardAngle = 0;
+    }
     
     //Ease
     image_xscale = lerp(image_xscale,1,.2);

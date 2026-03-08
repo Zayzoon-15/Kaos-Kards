@@ -362,6 +362,7 @@
     {"name":"sDeck","order":3,"path":"sprites/sDeck/sDeck.yy",},
     {"name":"sDiscard","order":1,"path":"sprites/sDiscard/sDiscard.yy",},
     {"name":"sDog","order":4,"path":"sprites/sDog/sDog.yy",},
+    {"name":"sFavSticker","order":11,"path":"sprites/sFavSticker/sFavSticker.yy",},
     {"name":"sFist","order":4,"path":"sprites/sFist/sFist.yy",},
     {"name":"sFreezeSlot","order":1,"path":"sprites/sFreezeSlot/sFreezeSlot.yy",},
     {"name":"sGameover","order":3,"path":"sprites/sGameover/sGameover.yy",},

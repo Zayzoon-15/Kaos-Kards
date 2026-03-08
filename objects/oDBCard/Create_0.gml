@@ -39,6 +39,7 @@ shake = 0;
 startDepth = depth;
 sprite_index = info != undefined ? info.sprite : sprite_index;
 cardVisible = false;
+favorite = array_contains(global.favCards,info);
 
 //Grabbing
 grabbed = false;

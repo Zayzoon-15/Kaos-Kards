@@ -10,7 +10,7 @@ function drawCardText(_info){
             desc : _info.desc,
             range : _info.range,
             uses : variable_instance_exists(self,"uses") ? uses : NaN,
-            type : info.type,
+            type : _info.type,
             parent : self.id
         });
     }

@@ -20,7 +20,7 @@ function effectStar(_x,_y,_amount = 5,_sound = true,_xOffset = 30,_yOffset = 30,
 	
     //Loop
     for (var i = 0; i < _amount; i++) {
-        		
+        
 		//Get Values
 		var _effectX = (_width/2)-_xOffset;
 		var _effectY = (_height/2)-_yOffset;

@@ -21,5 +21,8 @@ draw_sprite_ext(sprite_index, image_index, x+shadowX, y+shadowY, image_xscale-sh
 //Draw Card
 draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 
+//Draw Favorite Sticker
+draw_sprite_ext(sFavSticker, 0, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 
+//Reset Scissor
 gpu_set_scissor(_scissor);

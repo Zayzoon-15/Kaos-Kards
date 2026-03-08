@@ -75,13 +75,13 @@ function SaveFile()
         var _saveData = {};
         
         //Save Deck Info
-        var _saveDeck = function()
+        var _saveDeck = function(_targetDeck)
         {
             var _deck = [];
-            for (var i = 0; i < array_length(playerDeck); i++) {
+            for (var i = 0; i < array_length(_targetDeck); i++) {
                 
                 //Get Card
-            	var _card = playerDeck[i];
+            	var _card = _targetDeck[i];
                 
                 //Get Correct Struct And Keys
                 var _keys = [];
@@ -127,7 +127,8 @@ function SaveFile()
         ///Save Info
         
         //Deck
-        struct_set(_saveData,"PlayerDeck",_saveDeck());
+        struct_set(_saveData,"PlayerDeck",_saveDeck(playerDeck));
+        struct_set(_saveData,"PlayerFavs",_saveDeck(global.favCards));
         
         
         //Save To File
@@ -141,13 +142,13 @@ function SaveFile()
         
         
         //Load Deck Info
-        var _loadDeck = function()
+        var _loadDeck = function(_targetDeck)
         {
             var _deck = [];
-            for (var i = 0; i < array_length(playerDeck); i++) {
+            for (var i = 0; i < array_length(_targetDeck); i++) {
                 
                 //Get Card
-            	var _card = playerDeck[i];
+            	var _card = _targetDeck[i];
                 
                 //Get Correct Struct
                 var _struct = {};
@@ -172,7 +173,12 @@ function SaveFile()
         if is_struct(_saveData) and struct_exists(_saveData,"PlayerDeck")
         {
             playerDeck = struct_get_variable(_saveData,"PlayerDeck",playerDeck);
-            playerDeck = _loadDeck();
+            playerDeck = _loadDeck(playerDeck);
+        }
+        if is_struct(_saveData) and struct_exists(_saveData,"PlayerFavs")
+        {
+            global.favCards = struct_get_variable(_saveData,"PlayerFavs",global.favCards);
+            global.favCards = _loadDeck(global.favCards);
         }
         
         
