@@ -84,11 +84,14 @@ function audioCreateSongs(_name,_sound,_syncWith=[],_volume = 1,_loopTimes = -1,
 }
 
 
+
 /// @desc Plays a song
 /// @param {string} _song The song to play (Make sure it has been created)
 /// @param {real} [_fadeTime] The fade time for the song (Default = 30)
 /// @param {string} [_lastSongEndMethod] What the song method for the last song should be ("Stop" to stop the song completely, "Pause" to pause the song ) (Default = "Stop")
-function audioPlaySong(_song,_fadeTime = 30,_lastSongEndMethod = "Stop")
+/// @param {bool} [_forcePos] If it should force the song to a certain position (Default = false)
+/// @param {struct} [_forcePosInfo] The information for forcing the song into a certain position (EX: {pos: 0, loops: 0})
+function audioPlaySong(_song,_fadeTime = 30,_lastSongEndMethod = "Stop",_forcePos = false,_forcePosInfo = {pos: 0, loops: 0})
 {
     //Change Song If Intro
     if ds_map_exists(global.songTracks,_song) and global.songTracks[? _song].isIntro and ds_list_contains_value(global.songIntrosPlayed,_song)
@@ -132,7 +135,7 @@ function audioPlaySong(_song,_fadeTime = 30,_lastSongEndMethod = "Stop")
         instance_create_depth(0,0,0,oSongTracker,{
             targetSong : global.lastSongAudio,
             songInfo : global.songTracks[? global.lastSong],
-            endMethod : _lastSongEndMethod
+            endMethod : _lastSongEndMethod,
         });
     }
     
@@ -165,5 +168,16 @@ function audioPlaySong(_song,_fadeTime = 30,_lastSongEndMethod = "Stop")
     {
         var _pos = audio_sound_get_track_position(global.lastSongAudio);
         audio_sound_set_track_position(global.curSongAudio,_pos);
+    }
+    
+    //Force Sync
+    if _forcePos
+    {
+        audio_sound_set_track_position(global.curSongAudio,_forcePosInfo.pos);
+        with oSound
+        {
+            loops = _forcePosInfo.loops;
+            loopSongPoint = _forcePosInfo.pos;
+        }
     }
 }

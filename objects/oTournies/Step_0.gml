@@ -9,9 +9,11 @@ if selected
 } else changeAnim("idle");
 
 
-
 //Hover
-drawTipBox(info.name,true,false,20,1.5);
+if layer_get_visible(layer)
+{
+    drawTipBox(info.name,true,false,20,1.5);
+}
 
 //Touching Mouse
 if touchingMouse()

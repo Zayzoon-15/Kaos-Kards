@@ -12,13 +12,15 @@
     {"name":"inst_240C85CF","path":"rooms/rTournies/rTournies.yy",},
     {"name":"inst_3EA278F0","path":"rooms/rTournies/rTournies.yy",},
     {"name":"inst_6CAD83D4","path":"rooms/rTournies/rTournies.yy",},
-    {"name":"inst_47EC39D1","path":"rooms/rTournies/rTournies.yy",},
     {"name":"inst_580E2AAA","path":"rooms/rTournies/rTournies.yy",},
     {"name":"inst_410F905F","path":"rooms/rTournies/rTournies.yy",},
     {"name":"inst_47FD762C","path":"rooms/rTournies/rTournies.yy",},
-    {"name":"inst_331AECD1","path":"rooms/rTournies/rTournies.yy",},
-    {"name":"inst_172077D8","path":"rooms/rTournies/rTournies.yy",},
     {"name":"inst_4A69ABE9","path":"rooms/rTournies/rTournies.yy",},
+    {"name":"inst_6C0E0243","path":"rooms/rTournies/rTournies.yy",},
+    {"name":"inst_60439BC7","path":"rooms/rTournies/rTournies.yy",},
+    {"name":"inst_27D4AFFF","path":"rooms/rTournies/rTournies.yy",},
+    {"name":"inst_5E83AC29","path":"rooms/rTournies/rTournies.yy",},
+    {"name":"inst_54B5DFA1","path":"rooms/rTournies/rTournies.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -35,21 +37,27 @@
               ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1005.0,"y":200.0,},
             {"$GMRInstance":"v4","%Name":"inst_3EA278F0","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3EA278F0","objectId":{"name":"oTournies","path":"objects/oTournies/oTournies.yy",},"properties":[
                 {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oTournies","path":"objects/oTournies/oTournies.yy",},"propertyId":{"name":"info","path":"objects/oTournies/oTournies.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"enemyInfo.alien",},
-              ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":275.0,"y":468.0,},
+              ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":450.0,"y":450.0,},
             {"$GMRInstance":"v4","%Name":"inst_6CAD83D4","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6CAD83D4","objectId":{"name":"oTournies","path":"objects/oTournies/oTournies.yy",},"properties":[
                 {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oTournies","path":"objects/oTournies/oTournies.yy",},"propertyId":{"name":"info","path":"objects/oTournies/oTournies.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"enemyInfo.beer",},
-              ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":639.5,"y":468.0,},
-            {"$GMRInstance":"v4","%Name":"inst_47EC39D1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_47EC39D1","objectId":{"name":"oTournies","path":"objects/oTournies/oTournies.yy",},"properties":[
-                {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oTournies","path":"objects/oTournies/oTournies.yy",},"propertyId":{"name":"info","path":"objects/oTournies/oTournies.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"enemyInfo.chud",},
-              ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1005.0,"y":468.0,},
+              ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":825.0,"y":450.0,},
           ],"layers":[],"name":"Page1","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
         {"$GMRInstanceLayer":"","%Name":"Page2","depth":400,"effectEnabled":true,"effectType":null,"gridX":25,"gridY":25,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-            {"$GMRInstance":"v4","%Name":"inst_331AECD1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_331AECD1","objectId":{"name":"oTournies","path":"objects/oTournies/oTournies.yy",},"properties":[
+            {"$GMRInstance":"v4","%Name":"inst_6C0E0243","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6C0E0243","objectId":{"name":"oTournies","path":"objects/oTournies/oTournies.yy",},"properties":[
                 {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oTournies","path":"objects/oTournies/oTournies.yy",},"propertyId":{"name":"info","path":"objects/oTournies/oTournies.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"enemyInfo.handsy",},
-              ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":463.0,"y":360.0,},
-            {"$GMRInstance":"v4","%Name":"inst_172077D8","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_172077D8","objectId":{"name":"oTournies","path":"objects/oTournies/oTournies.yy",},"properties":[
+              ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":275.0,"y":200.0,},
+            {"$GMRInstance":"v4","%Name":"inst_60439BC7","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_60439BC7","objectId":{"name":"oTournies","path":"objects/oTournies/oTournies.yy",},"properties":[
                 {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oTournies","path":"objects/oTournies/oTournies.yy",},"propertyId":{"name":"info","path":"objects/oTournies/oTournies.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"enemyInfo.bones",},
-              ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":816.0,"y":360.0,},
+              ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":639.5,"y":200.0,},
+            {"$GMRInstance":"v4","%Name":"inst_27D4AFFF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_27D4AFFF","objectId":{"name":"oTournies","path":"objects/oTournies/oTournies.yy",},"properties":[
+                {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oTournies","path":"objects/oTournies/oTournies.yy",},"propertyId":{"name":"info","path":"objects/oTournies/oTournies.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"enemyInfo.bones",},
+              ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1005.0,"y":200.0,},
+            {"$GMRInstance":"v4","%Name":"inst_5E83AC29","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5E83AC29","objectId":{"name":"oTournies","path":"objects/oTournies/oTournies.yy",},"properties":[
+                {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oTournies","path":"objects/oTournies/oTournies.yy",},"propertyId":{"name":"info","path":"objects/oTournies/oTournies.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"enemyInfo.chud",},
+              ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":825.0,"y":450.0,},
+            {"$GMRInstance":"v4","%Name":"inst_54B5DFA1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_54B5DFA1","objectId":{"name":"oTournies","path":"objects/oTournies/oTournies.yy",},"properties":[
+                {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oTournies","path":"objects/oTournies/oTournies.yy",},"propertyId":{"name":"info","path":"objects/oTournies/oTournies.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"enemyInfo.teto",},
+              ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":450.0,"y":450.0,},
           ],"layers":[],"name":"Page2","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":false,},
       ],"name":"Enemies","properties":[],"resourceType":"GMRLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Buttons","depth":500,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[

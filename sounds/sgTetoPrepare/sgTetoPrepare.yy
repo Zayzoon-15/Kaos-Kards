@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"sgTetoPrepare",
   "parent":{
-    "name":"Enemies",
-    "path":"folders/Sounds/Music/Enemies.yy",
+    "name":"_Teto",
+    "path":"folders/Sounds/Music/Enemies/_Teto.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

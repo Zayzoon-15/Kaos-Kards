@@ -14,6 +14,8 @@ mobilePressed = false;
 
 //Song
 lastSong = noone;
+lastSongLoops = 0;
+lastSongPos = 0;
 
 //Functions
 pauseGame = function()
@@ -25,8 +27,12 @@ pauseGame = function()
     //Create Screen Shot
     screenshot = sprite_create_from_surface(application_surface,0,0,surface_get_width(application_surface),surface_get_height(application_surface),false,false,0,0);
     
-    //Song
+    //Last Song Info
+    lastSongLoops = oSound.loops;
+    lastSongPos = audio_sound_get_track_position(global.curSongAudio);
     lastSong = global.curSong;
+    
+    //Stop Songs
     audioPlaySong(noone,30,"Pause");
     
     #region Deactiveate
@@ -51,8 +57,8 @@ unpauseGame = function()
     //Unpause
     global.paused = false;
     
-    //Song
-    audioPlaySong(lastSong);
+    //Replay Song
+    audioPlaySong(lastSong,30,"Stop",true,{pos:lastSongPos,loops:lastSongLoops});
     
     //Destroy Menu
     instance_destroy(oPauseResume);

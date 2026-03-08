@@ -43,11 +43,21 @@ audioCreateSongs("Kaos",sgKaos,["Prepare"]);
 audioCreateSongs("Retro1",sgRetro1,[],.9);
 audioCreateSongs("Retro2",sgRetro2,[],.8);
 
-//Enemies
+///Enemies
+
+//Beer
 audioCreateSongs("BeerIntro",sgBeerIntro,[],1,1,["BeerKaos1","BeerKaos2"],true,true);
 audioCreateSongs("BeerPrepare",sgBeerPrepare,["BeerKaos1","BeerKaos2"]);
 audioCreateSongs("BeerKaos1",sgBeerKaos1,["BeerPrepare"],1,2,"BeerKaos2");
 audioCreateSongs("BeerKaos2",sgBeerKaos2,["BeerPrepare"],1,2,"BeerKaos1");
 
+//Chud
+audioCreateSongs("ChudIntro",sgChudIntro,[],1,1,["ChudKaos1","ChudKaos3"],true,true);
+audioCreateSongs("ChudPrepare",sgChudPrepare,["ChudKaos1","ChudKaos2","ChudKaos3"]);
+audioCreateSongs("ChudKaos1",sgChudKaos1,["ChudPrepare","ChudKaos2","ChudKaos3"],1,2,"ChudKaos3");
+audioCreateSongs("ChudKaos2",sgChudKaos2,["ChudPrepare","ChudKaos1","ChudKaos3"]);
+audioCreateSongs("ChudKaos3",sgChudKaos3,["ChudPrepare","ChudKaos1","ChudKaos2"],1,2,"ChudKaos1");
+
+//Teto
 audioCreateSongs("TetoPrepare",sgTetoPrepare,["TetoKaos"],.9);
 audioCreateSongs("TetoKaos",sgTetoKaos,["TetoPrepare"],.9);

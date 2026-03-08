@@ -83,6 +83,20 @@ enemyInfo = {
     ///--- RETRO CREW ---///
     #region
     
+    handsy : new Enemy.Create("Handsy the Hand",
+        sHandsy, Enemy.Anims(), Enemy.Dialogue(10,"hey im a hand yo"),
+        1.25, 2, 100,
+        [
+            actionCards.heal, actionCards.heal,
+            actionCards.shield, actionCards.shield,
+            actionCards.punch, actionCards.punch, actionCards.punch,
+            actionCards.ghost, actionCards.ghost,
+        ],
+        [kaosCards.rps],
+        Enemy.Strat(80,75,50,80,75,2,100)
+    ),
+    
+    ///--- BOSS ---///
     chud : new Enemy.Create("Ichiro Uzumaki the Chud",
         sChud, Enemy.Anims(2,2,2,2,4,{
             kaosHotDogStart: Enemy.AnimClip(8,13,false,"idle"),
@@ -96,20 +110,7 @@ enemyInfo = {
             actionCards.taunt, actionCards.bread, actionCards.bread,
         ],
         [kaosCards.brawl],
-        Enemy.Strat(80,80,20,70,60,2,90)
-    ),
-    
-    handsy : new Enemy.Create("Handsy the Hand",
-        sHandsy, Enemy.Anims(), Enemy.Dialogue(10,"hey im a hand yo"),
-        1.25, 2, 100,
-        [
-            actionCards.heal, actionCards.heal,
-            actionCards.shield, actionCards.shield,
-            actionCards.punch, actionCards.punch, actionCards.punch,
-            actionCards.ghost, actionCards.ghost,
-        ],
-        [kaosCards.rps],
-        Enemy.Strat(80,75,50,80,75,2,100)
+        Enemy.Strat(80,80,20,70,60,2,90),function(){},["ChudPrepare","ChudIntro"]
     ),
     
     #endregion

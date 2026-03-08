@@ -34,6 +34,9 @@ startTrans = function()
     TweenFire(self,_ease,TWEEN_MODE_ONCE,false,0,_dur,"spriteScale",1,2.3);
     TweenFire(self,_ease,TWEEN_MODE_ONCE,false,0,_dur,"spriteY",0,-(oDBInsertHole.y+100));
     
+    //Audio
+    audioPlaySfx([snDBTrans1,snDBTrans2]);
+    
     //Change Room
     timeSourceCreate(_dur*.3,function(){
         
