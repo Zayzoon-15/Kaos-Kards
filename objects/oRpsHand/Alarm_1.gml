@@ -52,6 +52,9 @@ if winner
     //End Kaos
     timeSourceCreate(2.5,kaosCardDone);
     
+    //Change Song
+    audioPlaySong(global.currentEnemy.customSong.kaos);
+    
     //Depth
     depth = _otherHand.depth - 5;
     

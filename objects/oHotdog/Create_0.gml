@@ -8,3 +8,6 @@ alarm[0] = 25;
 
 //Enemy Animation
 enemyPlayAnim("kaosHotDogStart");
+
+//Change Song
+audioPlaySong(global.currentEnemy.customSong.minigame);

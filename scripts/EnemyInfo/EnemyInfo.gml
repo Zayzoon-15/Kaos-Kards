@@ -64,7 +64,7 @@ enemyInfo = {
     
     ///--- BOSS ---///
     beer : new Enemy.Create("Beer the Pickle", 
-        sBeer, Enemy.Anims(), Enemy.Dialogue(),
+        sBeer, Enemy.Anims(), Enemy.Dialogue(10,"Bitch"),
         .95, 1, 100,
         [
             actionCards.heal, actionCards.heal,
@@ -84,7 +84,7 @@ enemyInfo = {
     #region
     
     handsy : new Enemy.Create("Handsy the Hand",
-        sHandsy, Enemy.Anims(), Enemy.Dialogue(10,"hey im a hand yo"),
+        sHandsy, Enemy.Anims(), Enemy.Dialogue(5,"Wah wah wah, wah wah wah wah >:)","Wah wah wah! >:D","Wah wah... :("),
         1.25, 2, 100,
         [
             actionCards.heal, actionCards.heal,
@@ -110,7 +110,7 @@ enemyInfo = {
             actionCards.taunt, actionCards.bread, actionCards.bread,
         ],
         [kaosCards.brawl],
-        Enemy.Strat(80,80,20,70,60,2,90),function(){},["ChudPrepare","ChudIntro"]
+        Enemy.Strat(80,80,20,70,60,2,90),function(){},["ChudPrepare","ChudIntro","ChudKaos2"]
     ),
     
     #endregion
@@ -140,7 +140,7 @@ enemyInfo = {
     #region
     
     teto : new Enemy.Create("Kasane Teto the UTAU",
-        sTeto, Enemy.Anims(), Enemy.Dialogue(),
+        sTeto, Enemy.Anims(2,2,2,2,2), Enemy.Dialogue(5,["Man, FUCK Complex bro"]),
         1.4, 2.2, 115,
         [
             actionCards.heal, actionCards.heal,

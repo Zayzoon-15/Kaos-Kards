@@ -42,19 +42,30 @@ win = function(_stars = true)
 
 talk = function()
 {
-    //Get Dialogue
-    var _time = 120;
-    var _text = global.currentEnemy.dialogue.text[0];
-    if array_length(global.currentEnemy.dialogue.text) > 1
+    //Text Box Already Exists
+    if instance_exists(oEnemyTextBox) then exit;
+    
+    //Who Is Winning
+    var _dialouge = global.currentEnemy.dialogue.text;
+    
+    //Choose What Dialouge
+    if irandom_range(1,3) == 1 and global.playerHp != global.enemyHp
     {
-        _text = global.currentEnemy.dialogue.text[irandom_range(0,array_length(global.currentEnemy.dialogue.text)-1)];
+        if global.playerHp > global.enemyHp
+        {
+            _dialouge = global.currentEnemy.dialogue.textLose;
+        } else _dialouge = global.currentEnemy.dialogue.textWin;
     }
     
-    print($"ENEMY TALKING\n==========================\n{_text}");
+    //Get Dialogue
+    var _text = _dialouge[0];
+    if array_length(_dialouge) > 1
+    {
+        _text = _dialouge[irandom_range(0,array_length(_dialouge)-1)];
+    }
     
-    //Play Animation
-    enemyPlayAnim("talk",_time,"idle");
-    
-    //Talk Again
-    alarm[1] = random_range(120,300)+_time;
+    //Create Text Box
+    instance_create_depth(bbox_left - 10,y,depth,oEnemyTextBox,{
+        text : _text
+    });
 }

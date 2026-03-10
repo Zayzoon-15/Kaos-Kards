@@ -2,14 +2,12 @@
 
 if room == rPrepare
 {
-    var _song = global.currentEnemy == undefined ? "Prepare" : global.currentEnemy.customSong[0];
-    audioPlaySong(_song);
+    audioPlaySong(global.currentEnemy.customSong.prepare);
 }
 
 if room == rKaos
 {
-    var _song = global.currentEnemy == undefined ? "Kaos" : global.currentEnemy.customSong[1];
-    audioPlaySong(_song);
+    audioPlaySong(global.currentEnemy.customSong.kaos);
 }
 
 if room == rTournies

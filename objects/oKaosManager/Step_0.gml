@@ -24,6 +24,9 @@ if global.playerHp <= 0 or global.enemyHp <= 0
 		effectStar(x,y,10,false,20,25);
 		instance_destroy();
 	}
+    
+    //Destroy Continue Button Just In Case
+    instance_destroy(oKaosOverButton);
 	
 	//Create Gameover
 	instance_create_layer(0,0,"Manager",oGameOver,{

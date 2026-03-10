@@ -7,6 +7,9 @@ with oHotdogGuy
     instance_destroy();
 }
 
+//Change Song
+audioPlaySong(global.currentEnemy.customSong.kaos);
+
 //End Action
 kaosCardDone();
 

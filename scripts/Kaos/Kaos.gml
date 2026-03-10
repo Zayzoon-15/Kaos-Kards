@@ -164,6 +164,9 @@ function kaosActionFreeze(_targetEnemy)
 ///@self oAttackCard
 function kaosActionRps(_targetEnemy)
 {
+    //Change Song
+    audioPlaySong(global.currentEnemy.customSong.minigame);
+    
 	//Create Text
 	instance_create_layer(0,0,"Attacks",oRpsText);
 	

@@ -47,11 +47,11 @@ diceCards = {
     
     reroll : new createCardDice("Reroll",
     "Reroll all the [r]dice[s][o]Can only be placed after roll",
-    sCardDice,diceCardReroll),
+    sCardReroll,diceCardReroll),
     
     upgrade : new createCardDice("Dice Upgrade",
     "Adds a random amount to a random [r]dice[/] roll",
-    sCardDice,undefined,NaN,[],[1,6]),
+    sCardUpgrade,undefined,NaN,[],[1,6]),
     
     allNothin : new createCardDice("All or Nothin'",
     "If all [r]dice[/] roll [o]higher[/] than half of their maximum value, set all [r]dice[/] to their maximum value. Otherwise, set all [r]dice[/] to 0[s][o]Can only be placed before roll",

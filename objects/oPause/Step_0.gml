@@ -1,5 +1,5 @@
 //Pause
-if keyCheckPressed(global.keyPause) and !global.midTrans and !array_contains(disabledRooms,room) and !instance_exists(oSettings)
+if keyCheckPressed(global.keyPause) and !global.midTrans and !instance_exists(oSettings) and canPause
 {
 	if global.paused
 	{
@@ -13,7 +13,7 @@ mobilePos.x = getPosToWindow(false,41);
 mobilePos.y = 678;
 
 //Clicked Mobile
-if !global.paused and global.mobile and !array_contains(disabledRooms,room)
+if !global.paused and global.mobile and canPause
 {
     if point_in_circle(mouse_x,mouse_y,mobilePos.x,mobilePos.y,mobileRad)
     {	

@@ -99,6 +99,5 @@ draw_surface(barMask,_newX-_maskXOffset,_newY-_maskYOffset);
 draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,angle,image_blend,image_alpha);
 
 //Draw Title
-var _titleNum = 1;
-if target != "Player" then _titleNum = 2;
+var _titleNum = target == "Player" ? 1 : 2;
 draw_sprite_ext(sprite_index,_titleNum,x,y,image_xscale,image_yscale,angle,image_blend,image_alpha);

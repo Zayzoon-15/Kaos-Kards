@@ -21,7 +21,7 @@ function Enemy()
     /// @param {real} [_hurt] The amount of frames the hurt animation has (Default = 2)
     /// @param {real} [_win] The amount of frames the win animation has (Default = 2)
     /// @param {real} [_death] The amount of frames the death animation has (Default = 2)
-    /// @param {real} [_talk] The amount of frames the talk animation has (Default = 2)
+    /// @param {real} [_talk] The amount of frames the talk animation has (Default = 4)
     /// @returns {struct} The animation info
     static Anims = function(_idle = 2,_hurt = 2,_win = 2,_death = 2,_talk = 4,_extraAnims={}) {
         
@@ -71,11 +71,13 @@ function Enemy()
     }
     
     
-    static Dialogue = function(_talkChance = -1,_dialogue = [])
+    static Dialogue = function(_talkChance = -1,_dialogue = [],_dialougeWinning = [],_dialougeLosing = [])
     {
         return {
             talkChance : _talkChance,
-            text : is_array(_dialogue) ? _dialogue : [_dialogue]
+            text : is_array(_dialogue) ? _dialogue : [_dialogue],
+            textWin : is_array(_dialougeWinning) ? _dialougeWinning : [_dialougeWinning],
+            textLose : is_array(_dialougeLosing) ? _dialougeLosing : [_dialougeLosing],
         }
     }
     
@@ -93,14 +95,20 @@ function Enemy()
     /// @param {struct.enemycreatestrat} [_strat] The enemies figthing strategy
     /// @param {any*} [_special] The enemies special move(leave as undefined if they don't use one)
     /// @param {array.string} _customSong The song the enemy plays (Example: ["Prepare","Kaos"])
-    static Create = function(_name,_sprite,_animInfo = Anims(),_dialogue = undefined,_difficulty = 1,_gameDifficulty = 1,_maxHp = 100,_actionCards=[],_kaosCards=[],_strat = Strat(),_special = undefined,_customSong = ["Prepare","Kaos"]) constructor
+    static Create = function(_name,_sprite,_animInfo = Anims(),_dialogue = undefined,_difficulty = 1,_gameDifficulty = 1,_maxHp = 100,_actionCards=[],_kaosCards=[],_strat = Strat(),_special = undefined,_customSong = ["Prepare","Kaos","Kaos"]) constructor
     {    
         //Info
         name = _name;
         sprite = _sprite;
         animInfo = _animInfo;
         dialogue = _dialogue;
-        customSong = _customSong;
+        
+        //Custom Song
+        customSong = {
+            prepare : _customSong[0],
+            kaos : array_length(_customSong) > 1 ? _customSong[1] : "Kaos",
+            minigame : array_length(_customSong) > 2 ? _customSong[2] : _customSong[1],
+        }
         
         //Difficulty
         difficulty = _difficulty;
