@@ -604,6 +604,7 @@
     {"id":{"name":"sHotdogGuyFull","path":"sprites/sHotdogGuyFull/sHotdogGuyFull.yy",},},
     {"id":{"name":"sHotdogGuyIdle","path":"sprites/sHotdogGuyIdle/sHotdogGuyIdle.yy",},},
     {"id":{"name":"sHotdogGuySad","path":"sprites/sHotdogGuySad/sHotdogGuySad.yy",},},
+    {"id":{"name":"sJsg","path":"sprites/sJsg/sJsg.yy",},},
     {"id":{"name":"sJumpscare","path":"sprites/sJumpscare/sJumpscare.yy",},},
     {"id":{"name":"sJumpscare1","path":"sprites/sJumpscare1/sJumpscare1.yy",},},
     {"id":{"name":"sJumpscare2","path":"sprites/sJumpscare2/sJumpscare2.yy",},},

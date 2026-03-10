@@ -153,6 +153,20 @@ enemyInfo = {
         Enemy.Strat(85,80,50,75,45,2,100), undefined, ["TetoPrepare","TetoKaos"]
     ),
     
+    jsg : new Enemy.Create("Just Some Guy",
+        sJsg, Enemy.Anims(), Enemy.Dialogue(),
+        1.4, 2.2, 120,
+        [
+            actionCards.heal, actionCards.heal,
+            actionCards.shield, actionCards.shield,
+            actionCards.bread, actionCards.bread, actionCards.bread,
+            actionCards.punch, actionCards.punch,
+            actionCards.steak, actionCards.steak,
+        ],
+        [kaosCards.hotdog,kaosCards.swoop],
+        Enemy.Strat(85,80,50,75,45,2,100),
+    ),
+    
     
     #endregion
 };

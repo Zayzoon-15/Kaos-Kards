@@ -24,6 +24,12 @@ function FiggySetup() {
         Figgy.String("Enemy Animation","idle",function(){
             enemyPlayAnim(argument0);
         });
+        Figgy.Button("Enemy Talk",function(){
+            with oEnemyPhoto
+            {
+                talk();
+            }
+        });
 	
         Figgy.Section("Rooms");
         Figgy.Button("Reset Room",function(){room_restart()});
