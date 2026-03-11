@@ -1,2 +1,0 @@
-//Shake
-shake = 5;

@@ -35,7 +35,7 @@ actionCards = {
     sCardPunch,[1,6],CARDACT_GENRES.ATTACK,actionPunch),
     
     flamingAce : new createCardAction("Flaming Ace",
-    "Burns your enemy alive",
+    "[o]Burns[/] your enemy [r]alive",
     sCardFlaminAce,[1,4],CARDACT_GENRES.ATTACK,actionFlameAce),
     
     poison : new createCardAction("Poison",
@@ -63,6 +63,10 @@ actionCards = {
     sCardMirror,[0,10],CARDACT_GENRES.DEFEND,actionEvasion),
     
     //CONCEPT
+    burger : new createCardAction("Burger",
+    "[g]Heals[/] you a great amount but the amount it [g]heals[/] [o]decreases[/] every use[s][lg](The healing can go negative, damaging you)",
+    sCardBurger,[6,12],CARDACT_GENRES.HEAL,actionBurger),
+    
     reckless : new createCardAction("Reckless Attack",
     "Deal high damage to the enemy, but take a small amount of recoil damage",
     sCardPunch,[5,9],CARDACT_GENRES.ATTACK,actionReckless),

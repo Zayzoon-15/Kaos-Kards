@@ -84,7 +84,7 @@ function kaosActionSwap(_targetEnemy)
 	#endregion
     
     //Finish
-    timeSourceCreate(4,kaosCardDone);
+    timeSourceCreate(1.5,kaosCardDone);
 }
 
 
@@ -93,12 +93,9 @@ function kaosActionHigh(_targetEnemy)
 {
 	//Get Value
 	var _value = 1.1;
-	for (var i = 0; i < ds_list_size(global.gamelog); ++i) {
-		if ds_list_find_value(global.gamelog,i) == kaosCards.high.name
-		{
-			_value += .1;
-		}
-	}
+    repeat checkCardUses(kaosCards.high.name,"All") {
+    	_value += .1;
+    }
 	
 	//Show Message
 	createAlertMessage($"All Values Multiplied By {string_format(_value,0,1)}");
@@ -275,6 +272,28 @@ function kaosActionRerun(_targetEnemy)
     
     //Increase Repeat
     global.repeatTimes += 1;
+    
+    //Finish
+    timeSourceCreate(1.5,kaosCardDone);
+}
+
+
+///@self oAttackCard
+function kaosActionHotsauce(_targetEnemy)
+{
+	//Show Message
+	createAlertMessage("Hotsauce Applied");
+	
+	//Juice
+	cardJuice(true,true);
+    
+    //Set Effects For All
+    var _func = function(_value,_targetEnemy)
+    {
+        addEffect(attackEffects.fire,ceil(_value*.2),_targetEnemy);
+    }
+    array_push(global.healEffects.player,_func);
+    array_push(global.healEffects.enemy,_func);
     
     //Finish
     timeSourceCreate(1.5,kaosCardDone);

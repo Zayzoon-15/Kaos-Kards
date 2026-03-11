@@ -116,6 +116,14 @@ function healEnemy(_value)
 	//Add Mult
 	_value *= global.valueMult;
     
+    //Check Heal Effects
+    for (var i = 0; i < array_length(global.healEffects.enemy); i++) {
+    	if is_method(global.healEffects.enemy[i])
+        {
+            method_call(global.healEffects.enemy[i],[_value,true]);
+        }
+    }
+    
     //Health Bar
     with oHealthBar
     {
@@ -137,6 +145,14 @@ function healPlayer(_value)
 	
 	//Add Mult
 	_value *= global.valueMult;
+    
+    //Check Heal Effects
+    for (var i = 0; i < array_length(global.healEffects.player); i++) {
+    	if is_method(global.healEffects.player[i])
+        {
+            method_call(global.healEffects.player[i],[_value,false]);
+        }
+    }
     
     //Give Health
     global.playerHp += _value;

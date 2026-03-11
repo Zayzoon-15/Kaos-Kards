@@ -1,8 +1,8 @@
 //Setup Text
-textSetup(fnMain,fa_center,fa_middle);
+textSetup(fnMain,fa_center,fa_middle,c_white,image_alpha);
 
 //Create Surface
-var _surface = surface_create(listW,(listH+sprite_height+5));
+var _surface = surface_create(listW,(listH+sprite_get_height(sprite_index)+5));
 
 //Set Surface Target
 surface_set_target(_surface);
@@ -69,5 +69,8 @@ draw_set_colour(c_white);
 draw_text_transformed(x,y + textYOffset,items[selected].text,_textScale,_textScale,0);
 
 //Draw Title
-textSetup(fnDBLetter,fa_center,fa_bottom);
+textSetup(fnDBLetter,fa_center,fa_bottom,c_white,image_alpha);
 draw_text(x,bbox_top-10,$"{string_upper(title)}:");
+
+//Reset Draw
+drawReset();

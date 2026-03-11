@@ -48,7 +48,7 @@ kaosCards = {
     sCardSticky,kaosActionSticky),
     
     hotdog : new createCardKaos("Hotdog!",
-    "Compete in a hotdog eating contest with the enemy to gain health",
+    "Compete in a hotdog eating contest with the enemy to gain [g]health",
     sCardHotdog,kaosActionHotdog),
     
     brokenDefense : new createCardKaos("Broken Defense",
@@ -58,6 +58,11 @@ kaosCards = {
     rerun : new createCardKaos("Rerun",
     "Retrigger all cards played this round again",
     sCardRerun,kaosActionRerun),
+    
+    //Concept
+    hotsauce : new createCardKaos("Hot Sauce",
+    "All [g]healing[/] cards apply slight [o]fire damage[/] for the round",
+    sCardHotsauce,kaosActionHotsauce),
     
 };
 

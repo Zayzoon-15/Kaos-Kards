@@ -12,7 +12,7 @@ enemyInfo = {
     
     dog : new Enemy.Create("Dog the Duck",
         sDog, Enemy.Anims(), Enemy.Dialogue(),
-        .25, .1, 100,
+        .48, .1, 100,
         [
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,
@@ -25,7 +25,7 @@ enemyInfo = {
     
     angel : new Enemy.Create("Angel the Juvenile",
         sAngel, Enemy.Anims(), Enemy.Dialogue(),
-        .4, .8, 100,
+        .56, .8, 100,
         [
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,
@@ -38,7 +38,7 @@ enemyInfo = {
     
     cock : new Enemy.Create("Cock the Bug",
         sCock, Enemy.Anims(), Enemy.Dialogue(),
-        .55, .4, 100,
+        .67, .4, 100,
         [
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,
@@ -51,7 +51,7 @@ enemyInfo = {
     
     alien : new Enemy.Create("Alan the Alien",
         sAlien, Enemy.Anims(), Enemy.Dialogue(),
-        .7, .8, 100,
+        .75, .8, 100,
         [
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,
@@ -65,7 +65,7 @@ enemyInfo = {
     ///--- BOSS ---///
     beer : new Enemy.Create("Beer the Pickle", 
         sBeer, Enemy.Anims(), Enemy.Dialogue(10,"Bitch"),
-        .95, 1, 100,
+        1, 1, 100,
         [
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,
@@ -85,7 +85,7 @@ enemyInfo = {
     
     handsy : new Enemy.Create("Handsy the Hand",
         sHandsy, Enemy.Anims(), Enemy.Dialogue(5,"Wah wah wah, wah wah wah wah >:)","Wah wah wah! >:D","Wah wah... :("),
-        1.25, 2, 100,
+        1.15, 2, 100,
         [
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,
@@ -102,7 +102,7 @@ enemyInfo = {
             kaosHotDogStart: Enemy.AnimClip(8,13,false,"idle"),
             kaosHotDogLose : Enemy.AnimClip(21,3,true)
         }), Enemy.Dialogue(),
-        1.15, 3, 115,
+        1.25, 3, 115,
         [
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,

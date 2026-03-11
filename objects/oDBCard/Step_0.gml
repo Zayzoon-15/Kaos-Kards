@@ -80,6 +80,12 @@ if grabbed
         onMouse ++;
         angle = 3 * hoverDir;
         
+        //Remove From Deck
+        if keyCheckPressed(global.keyDiscard)
+        {
+            removeCard();
+        }
+        
     } else {
         cardTargetY = y;
         shadowY = lerp(shadowY,8,.2);

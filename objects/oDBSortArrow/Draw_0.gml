@@ -1,8 +1,7 @@
 //Draw Button
 draw_self();
 
-//Setup Text
-textSetup(fnMain,fa_center,fa_middle);
+//Setup Scale
 var _scale = 1 - arrowScaleOffset;
 
 //Draw Shadow

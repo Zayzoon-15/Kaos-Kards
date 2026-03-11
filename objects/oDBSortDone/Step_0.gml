@@ -11,6 +11,13 @@ if touchingMouse()
     //Release
     if mouse_check_button_released(mb_left) and pressed
     {
+        //Animate
+        with oDBSort {TweenEasyScale(1,1,0,0,0,10,EaseInBackSoft);}
+        with oDBSortDropDown {TweenEasyFade(1,0,0,10,EaseOutCubic);}
+        with oDBSortArrow {TweenEasyFade(1,0,0,10,EaseOutCubic);}
+        TweenEasyFade(1,0,0,10,EaseOutCubic);
+        
+        //Set Pressed
         pressed = false;
         doAction = true;
     }
@@ -32,3 +39,7 @@ switch (image_index) {
 	case 4: textYOffset = 0; textScaleOffset = 0; break;
 	case 5: textYOffset = 1;
 }
+
+//Change Position
+x = oDBSort.x + distX;
+y = oDBSort.bbox_bottom + distY;

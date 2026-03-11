@@ -4,7 +4,7 @@
 var _amount = irandom_range(20,30);
 if loser == 1
 {
-	hurtEnemy(_amount*global.currentEnemy.difficulty);
+	hurtEnemy(_amount);
 } else hurtPlayer(_amount);
 
 //Destroy

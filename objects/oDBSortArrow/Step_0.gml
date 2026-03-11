@@ -53,3 +53,7 @@ switch (image_index) {
 	case 4: arrowYOffset = 0; arrowScaleOffset = 0; break;
 	case 5: arrowYOffset = 1;
 }
+
+//Change Position
+x = oDBSort.x + distX;
+y = oDBSort.bbox_bottom + distY;

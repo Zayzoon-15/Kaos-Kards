@@ -83,3 +83,6 @@ instance_create_depth(x - 30,_y,depth-5,oDBSortArrow);
 
 //Create Done
 instance_create_depth(x,bbox_bottom - 40,depth-5,oDBSortDone);
+
+//Animate
+TweenEasyScale(0,0,1,1,0,10,EaseOutBackSoft);

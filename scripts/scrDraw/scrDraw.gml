@@ -100,7 +100,11 @@ function drawRectOutlined(_x1,_y1,_x2,_y2,_cornerRad = UIBOX_RAD,_outlineWidth=1
 ///@arg {real} _lifeSpan The life span of the text (Default : 30)
 ///@arg {real} _x The x position of the text (Default : room_width/2)
 ///@arg {real} _y The y position of the text (Default : 235)
-function createAlertMessage(_text,_lifeSpan = 30,_x=room_width/2,_y=235)
+///@arg {Asset.GMFont} _targetFont The font the text shows up as (Default : fnMain)
+///@arg {real} _targetScale The scale of the text (Default : 2)
+///@arg {real} _shake The shake of the text (Default : 5)
+///@arg {real} _shakeEase The ease of the shake (Default : .2)
+function createAlertMessage(_text,_lifeSpan = 30,_x=room_width/2,_y=235,_targetFont = fnMain,_targetScale = 2,_shake = 5,_shakeEase = .2)
 {
 	//Make Layer
 	if !layer_exists("Ui") then layer_create(-1,"Ui");
@@ -111,7 +115,11 @@ function createAlertMessage(_text,_lifeSpan = 30,_x=room_width/2,_y=235)
 	//Create Message
     instance_create_layer(_x,_y,"Ui",oAlertMessage,{
         text : _text,
-        lifeSpan : _lifeSpan
+        lifeSpan : _lifeSpan,
+        targetFont : _targetFont,
+        targetScale : _targetScale,
+        shake : _shake,
+        shakeEase : _shakeEase
     });
 }
 
@@ -365,12 +373,12 @@ function drawTextTagged(_x,_y,_string,_maxWidth = 250,_boxColor = #FF4C40)
                 }
                 else if _tag == "[aq]"
                 {
-                    _currentColor = 13281024;
+                    _currentColor = #39c3db;
                     _currentBox = false;
                 }
                 else if _tag == "[y]"
                 {
-                    _currentColor = 4502261;
+                    _currentColor = #fbf236;
                     _currentBox = false;
                 }
                 else if _tag == "[o]"

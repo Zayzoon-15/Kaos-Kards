@@ -45,12 +45,7 @@ rangeScale = 1;
 
 //Set Uses
 uses = info.uses;
-if array_contains(global.cardUses.player,info.name)
-{
-    for (var i = 0; i < array_length(global.cardUses.player); i++) {
-    	if global.cardUses.player[i] == info.name then uses --;
-    }
-}
+uses -= checkCardUses(info.name,"Player");
 
 //State
 enum CARDSTATE

@@ -2,7 +2,7 @@
 draw_self();
 
 //Setup Text
-textSetup(fnMain,fa_center,fa_middle);
+textSetup(fnMain,fa_center,fa_middle,c_white,image_alpha);
 var _textScale = 1 - textScaleOffset;
 var _text = "Done";
 

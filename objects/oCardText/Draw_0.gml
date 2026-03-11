@@ -1,7 +1,7 @@
 //Setup
 textSetup(fnMain,fa_center,fa_top);
 var _margin = new Vector2(20,10);
-var _maxWidth = 220;
+var _maxWidth = 230;
 var _textH = textInfo.h;
 var _nameH = string_height_ext(name,-1,_maxWidth/2)*2;
 var _totalH = _textH + _nameH;

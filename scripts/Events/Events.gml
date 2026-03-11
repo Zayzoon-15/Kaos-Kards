@@ -21,6 +21,10 @@ function gameReset()
 	instance_destroy(oHealthIcon);
 	ds_list_clear(playerEffects);
 	ds_list_clear(enemyEffects);
+    global.healEffects = {
+        player: [],
+        enemy : []
+    }
 	
 	//Reset Combo
 	global.playerComboMeter = 0;
@@ -93,6 +97,10 @@ function nextRoundStarted()
 	//Reduce Assist Effects
 	reduceAssEffects(10,true);
 	reduceAssEffects(10,false);
+    global.healEffects = {
+        player: [],
+        enemy : []
+    }
 	
 	//Reset Mult
 	global.valueMult = 1;

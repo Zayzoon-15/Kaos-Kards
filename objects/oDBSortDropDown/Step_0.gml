@@ -1,5 +1,5 @@
 //Set List Values
-listW = sprite_width;
+listW = sprite_get_width(sprite_index);
 listH = array_length(items) * itemH;
 
 //Touching Drop Down
@@ -94,3 +94,8 @@ switch (image_index) {
 	case 4: textYOffset = 0; textScaleOffset = 0; break;
 	case 5: textYOffset = 1;
 }
+
+
+//Change Position
+x = oDBSort.x + distX;
+y = oDBSort.bbox_bottom + distY;

@@ -293,3 +293,28 @@ function structMerge(_primary, _secondary, _shared)	{
 }
 
 
+function checkCardUses(_targetCard = "Name",_targetArray = "All")
+{
+    //Set Uses
+    var _uses = 0;
+    
+    //Get Player Uses
+    for (var i = 0; i < array_length(global.cardUses.player); i++) {
+        if global.cardUses.player[i] == _targetCard and _targetArray != "Enemy"
+        {
+            _uses += 1;
+        }
+    }
+    
+    //Get Enemy Uses
+    for (var i = 0; i < array_length(global.cardUses.enemy); i++) {
+        if global.cardUses.enemy[i] == _targetCard and _targetArray != "Player"
+        {
+            _uses += 1;
+        }
+    }
+    
+    //Return Uses
+    return _uses;
+    
+}
