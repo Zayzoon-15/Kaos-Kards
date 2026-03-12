@@ -10,4 +10,4 @@ if info.range != undefined
 cardJuice();
 
 //Sound
-audioPlaySfx(snCardCombine,.95,1.05);
+audioPlaySfx(snCardValue,.95,1.05);

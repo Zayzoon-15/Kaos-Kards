@@ -65,7 +65,7 @@ actionCards = {
     //CONCEPT
     burger : new createCardAction("Burger",
     "[g]Heals[/] you a great amount but the amount it [g]heals[/] [o]decreases[/] every use[s][lg](The healing can go negative, damaging you)",
-    sCardBurger,[6,12],CARDACT_GENRES.HEAL,actionBurger),
+    sCardBurger,[10,20],CARDACT_GENRES.HEAL,actionBurger,[],undefined,[],actionAfterRangeBurger),
     
     reckless : new createCardAction("Reckless Attack",
     "Deal high damage to the enemy, but take a small amount of recoil damage",

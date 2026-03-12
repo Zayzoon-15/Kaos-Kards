@@ -24,7 +24,7 @@ enum CARDACT_GENRES {
 /// @param {array} _extraArgs Extra arguments the givin function can use
 /// @param {function} _comboAction The cards combo action (Put undefined of it has no action)
 /// @param {array} _comboArgs Extra arguments the givin combo function can use
-function createCardAction(_name,_desc,_sprite,_range,_genre = CARDACT_GENRES.ATTACK,_action = undefined,_extraArgs = [],_comboAction = undefined,_comboArgs = [],_uses = NaN) constructor
+function createCardAction(_name,_desc,_sprite,_range,_genre = CARDACT_GENRES.ATTACK,_action = undefined,_extraArgs = [],_comboAction = undefined,_comboArgs = [],_afterRange = undefined,_afterRangeArgs = [],_uses = NaN) constructor
 {
     //Info
     name = _name;
@@ -48,6 +48,8 @@ function createCardAction(_name,_desc,_sprite,_range,_genre = CARDACT_GENRES.ATT
     extraArgs = _extraArgs;
     comboAction = _funcCombo;
     comboArgs = _comboArgs;
+    afterRange = _afterRange;
+    afterRangeArgs = _afterRangeArgs;
     
     //Set Type
     type = CARDTYPES.ACTION;

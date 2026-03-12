@@ -4,8 +4,8 @@
 state = diceStates.combine;
 
 //Skipped
-if targetSlot == undefined { 
-    
+if targetSlot == undefined
+{ 
     skipped = true;
     
     //Give Combo
@@ -32,5 +32,31 @@ if targetSlot != undefined
 //Finish Prepare
 if diceId == 3
 {
-    oDonePrepButton.alarm[0] = 60;
+    //Setup
+    var _time = 60;
+    var _rangeId = 1;
+    
+    
+    //Do After Range Function
+    var _slotId = 0;
+    repeat (4) {
+        with oCard
+        {
+    
+            if state == CARDSTATE.PLACED and variable_struct_exists(info,"afterRange") and info.afterRange != undefined and slot.slotId == _slotId
+            {
+                _time += 30;
+                alarm[3] = 25 + (_rangeId*30);
+                //timeSourceCreate(30+(_rangeId*30),info.afterRange,[true,currentValue,info.afterRangeArgs],time_source_units_frames);
+                _rangeId += 1;
+            }
+            
+        }
+        _slotId += 1;
+    }
+
+    
+    //Set Button
+    oDonePrepButton.alarm[0] = _time;
 }
+

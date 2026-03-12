@@ -243,10 +243,10 @@ function actionBurger(_targetEnemy)
 	//Buff Value
 	var _value = value*1.2;
 
-    //Change Value Based On Uses
-    var _targetArray = _targetEnemy ? "Player ": "Enemy";
-    _value -= value*.3 * checkCardUses(actionCards.burger.name,_targetArray);
-	
+    ////Change Value Based On Uses
+    //var _targetArray = _targetEnemy ? "Player ": "Enemy";
+    //_value -= value*.3 * checkCardUses(actionCards.burger.name,_targetArray);
+	//
     //Juice
     cardJuice(false);
     effectHealth(x,y,10,true,10,25,sprite_get_width(sCardBlank),sprite_get_height(sCardBlank));

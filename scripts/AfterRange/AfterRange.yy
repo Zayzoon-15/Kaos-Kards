@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"AfterRange",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"AfterRange",
+  "parent":{
+    "name":"Actions",
+    "path":"folders/Scripts/Actions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

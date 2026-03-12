@@ -290,6 +290,16 @@ for (var i = 0; i < array_length(chosenActionCards); i++) {
         } else {
             //Get Card Value
             var _cardValue = irandom_range(_card.range.min,_card.range.min);
+            
+            //Get After Range Value
+            if variable_struct_exists(_card,"afterRange") and _card.afterRange != undefined
+            {
+                print("Old Value",_cardValue);
+                _cardValue = method_call(_card.afterRange,[false,_cardValue,noone,_card.afterRangeArgs]);
+                print("New Value",_cardValue);
+            }
+            
+            //Get Total Value
             var _totalValue = _cardValue + diceOutcome[i];
             
             //Add Enemy Action
