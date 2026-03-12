@@ -34,7 +34,7 @@ actionCards = {
     "Punches your enemy in the flipping face",
     sCardPunch,[1,6],CARDACT_GENRES.ATTACK,actionPunch),
     
-    flamingAce : new createCardAction("Flaming Ace",
+    flaminAce : new createCardAction("Flamin' Ace",
     "[o]Burns[/] your enemy [r]alive",
     sCardFlaminAce,[1,4],CARDACT_GENRES.ATTACK,actionFlameAce),
     
@@ -58,9 +58,21 @@ actionCards = {
     "Increase [g]max health[/] by a random amount",
     sCardSteak,[0,8],CARDACT_GENRES.HEAL,actionSteak),
     
-    evasion : new createCardAction("Evasion",
-    "A chance to neglect the the card in front of it[s]The higher the value the higher the chance of neglecting the card",
-    sCardMirror,[0,10],CARDACT_GENRES.DEFEND,actionEvasion),
+    silence : new createCardAction("Silence",
+    "A chance to silence the the card in front of it[s][lg](The higher the value the higher the chance of silencing the card)",
+    sCardMirror,[0,10],CARDACT_GENRES.DEFEND,actionSilence),
+    
+    jerryCan : new createCardAction("Jerry Can",
+    "All [o]fire effects[/] currently active create an [r]explosion[/] and get removed",
+    sCardFlaminAce,[6,12],CARDACT_GENRES.ATTACK,actionJerryCan),
+    
+    bodyslam : new createCardAction("Body Slam",
+    "Turn half of your shield into damage[s][lg](The higher the value the more damage it adds)",
+    sCardShield,[1,7],CARDACT_GENRES.ATTACK,actionBodySlam),
+    
+    fiary : new createCardAction("Fairy Bottle",
+    "Turn half of your shield into damage[s][lg](The higher the value the more damage it adds)",
+    sCardShield,[1,7],CARDACT_GENRES.ATTACK,actionBodySlam),
     
     //CONCEPT
     burger : new createCardAction("Burger",

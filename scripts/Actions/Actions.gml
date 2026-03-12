@@ -84,6 +84,7 @@ function actionBread(_targetEnemy)
     });
 }
 
+
 ///@self oAttackCard
 function actionLaser(_targetEnemy)
 {
@@ -196,11 +197,12 @@ function actionSteak(_targetEnemy)
 
 
 ///@self oAttackCard
-function actionEvasion(_targetEnemy)
+function actionSilence(_targetEnemy)
 {
     //No Hit
     if irandom_range(2,20) < min(value,20)
     {
+        effectTextSprite(x,_targetEnemy ? bbox_top : bbox_bottom,sNope);
         cardShake();
         exit;
     }
@@ -232,6 +234,91 @@ function actionEvasion(_targetEnemy)
     }
     ds_list_destroy(_list);
     
+}
+
+
+///@self oAttackCard
+function actionJerryCan(_targetEnemy)
+{
+	//Get Effects
+    var _didDamage = false;
+    with oAttackEffect
+    {
+        if info == attackEffects.fire
+        {
+            //Set Did Damage
+            _didDamage = true;
+            
+            //Get Value
+            var _value = value * (other.value*2);
+            
+            //Hurt Target
+            if _targetEnemy
+            {
+                hurtEnemy(_value);
+            } else hurtPlayer(_value);
+            
+            //Remove Effect
+            alarm[0] = -1;
+            alarm[1] = 1;
+        }
+    }
+    
+    //Did Damage
+    if _didDamage
+    {
+        //Explode Health Bar
+        with oHealthBar
+        {
+            for (var i = 0; i < 5; i++) {
+                var _x = 0;
+                var _y = 0;
+                
+                if target == "Player" and !_targetEnemy
+                {
+                    _x = (bbox_right-75) - 60*i;
+                    _y = y + irandom_range(-15,15);
+                    effectExplosion(_x,_y,false);
+                }
+                
+                if target == "Enemy" and _targetEnemy
+                {
+                    _x = (bbox_left+75) + 60*i;
+                    _y = y + irandom_range(-15,15);
+                    effectExplosion(_x,_y,false);
+                }
+                
+            }
+        }
+        
+        //Juice
+        cardJuice(true);
+        
+    } else {
+    	effectTextSprite(x,_targetEnemy ? bbox_top : bbox_bottom,sNope);
+        cardShake();
+    }
+}
+
+
+///@self oAttackCard
+function actionBodySlam(_targetEnemy)
+{
+    //Get Value
+    var _value = _targetEnemy ? global.playerTempHp/2 : global.enemyTempHp/2;
+    _value += value*2.5;
+    
+    //Remove Temp Hp
+    reduceAssEffects(_value,!_targetEnemy);
+    
+    //Hurt Target
+    if _targetEnemy
+    {
+        hurtEnemy(_value);
+    } else hurtPlayer(_value);
+    
+    //Juice
+    shake = 5;
 }
 
 

@@ -616,6 +616,7 @@
     {"id":{"name":"sLaserStart","path":"sprites/sLaserStart/sLaserStart.yy",},},
     {"id":{"name":"sLoadingScreen","path":"sprites/sLoadingScreen/sLoadingScreen.yy",},},
     {"id":{"name":"sMobilePause","path":"sprites/sMobilePause/sMobilePause.yy",},},
+    {"id":{"name":"sNope","path":"sprites/sNope/sNope.yy",},},
     {"id":{"name":"sNumbers","path":"sprites/sNumbers/sNumbers.yy",},},
     {"id":{"name":"sNumbersOutlined","path":"sprites/sNumbersOutlined/sNumbersOutlined.yy",},},
     {"id":{"name":"sPixel","path":"sprites/sPixel/sPixel.yy",},},

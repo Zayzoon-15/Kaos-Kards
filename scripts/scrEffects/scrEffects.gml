@@ -86,6 +86,18 @@ function effectNumber(_x,_y,_value)
 }
 
 
+///@desc Creates a text sprite effect
+///@arg {real} _x The x pos of the effect
+///@arg {real} _y The y pos of the effect
+///@arg {Asset.GMSprite} _sprite TThe sprite
+function effectTextSprite(_x,_y,_sprite = sSkipped)
+{
+    instance_create_layer(_x,_y,"Effects",oEffectSkipped,{
+        sprite_index : _sprite
+    });
+}
+
+
 ///@desc Creates an explosion
 ///@arg {real} _x The x pos of the effect
 ///@arg {real} _y The y pos of the effect

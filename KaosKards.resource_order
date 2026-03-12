@@ -401,6 +401,7 @@
     {"name":"sLaserStart","order":2,"path":"sprites/sLaserStart/sLaserStart.yy",},
     {"name":"sLoadingScreen","order":11,"path":"sprites/sLoadingScreen/sLoadingScreen.yy",},
     {"name":"sMobilePause","order":5,"path":"sprites/sMobilePause/sMobilePause.yy",},
+    {"name":"sNope","order":1,"path":"sprites/sNope/sNope.yy",},
     {"name":"sPixelCenter","order":4,"path":"sprites/sPixelCenter/sPixelCenter.yy",},
     {"name":"sRpsChoice","order":1,"path":"sprites/sRpsChoice/sRpsChoice.yy",},
     {"name":"sRpsHands","order":2,"path":"sprites/sRpsHands/sRpsHands.yy",},

@@ -29,7 +29,7 @@ enemyInfo = {
         [
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,
-            actionCards.flamingAce, actionCards.flamingAce, actionCards.flamingAce,
+            actionCards.flaminAce, actionCards.flaminAce, actionCards.flaminAce,
             actionCards.laser, actionCards.laser
         ],
         [kaosCards.high],
@@ -71,7 +71,7 @@ enemyInfo = {
             actionCards.shield, actionCards.shield,
             actionCards.punch, actionCards.punch, actionCards.punch,
             actionCards.laser, actionCards.laser, actionCards.laser,
-            actionCards.bread, actionCards.flamingAce,
+            actionCards.bread, actionCards.flaminAce,
         ],
         [kaosCards.swoop,kaosCards.high],
         Enemy.Strat(70,60,75,80,67,2,100),enemySpecialBeer,["BeerPrepare","BeerIntro"]
@@ -125,7 +125,7 @@ enemyInfo = {
         [
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,
-            actionCards.flamingAce, actionCards.flamingAce, actionCards.flamingAce,
+            actionCards.flaminAce, actionCards.flaminAce, actionCards.flaminAce,
             actionCards.slash, actionCards.slash
         ],
         [kaosCards.hotdog],
