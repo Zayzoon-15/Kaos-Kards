@@ -1,5 +1,3 @@
-if uses <= 0 then canUse = false;
-
 //Card State
 switch (state) {
 	case CARDSTATE.HAND: cardStateHand(); break;

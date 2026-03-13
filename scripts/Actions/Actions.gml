@@ -305,8 +305,9 @@ function actionJerryCan(_targetEnemy)
 function actionBodySlam(_targetEnemy)
 {
     //Get Value
-    var _value = _targetEnemy ? global.playerTempHp/2 : global.enemyTempHp/2;
-    _value += value*2.5;
+    var _percentage = value/100;
+    var _value = _targetEnemy ? global.playerTempHp*_percentage : global.enemyTempHp*_percentage;
+    _value = floor(_value);
     
     //Remove Temp Hp
     reduceAssEffects(_value,!_targetEnemy);

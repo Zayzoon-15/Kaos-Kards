@@ -9,3 +9,12 @@ if info.type == CARDTYPES.DICE
     //Call Action
     method_call(info.action,_arguments);
 }
+
+//Set Update
+if struct_exists(info,"update")
+{
+    method_call(info.update);
+}
+
+//Check Uses
+if uses <= 0 then canUse = false;

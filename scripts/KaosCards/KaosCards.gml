@@ -17,7 +17,7 @@ kaosCards = {
     
     handy : new createCardKaos("Handy",
     "Increases everyones hand size by 1",
-    sCardHandy,kaosActionHandy,[],4),
+    sCardHandy,kaosActionHandy,[],undefined,4),
     
     high : new createCardKaos("Inflation",
     $"All values are multiplied by [s][m]x [glo]+0.1valueMult[/][/] for the current round[s][lg](The value increases by .1 after every use)",
@@ -45,7 +45,7 @@ kaosCards = {
 	
     sticky : new createCardKaos("Sticky Hand",
     "Use a sticky hand to steal a card from the enemy",
-    sCardSticky,kaosActionSticky),
+    sCardSticky,kaosActionSticky,[],undefined,4),
     
     hotdog : new createCardKaos("Hotdog!",
     "Compete in a hotdog eating contest with the enemy to gain [g]health",
@@ -59,10 +59,18 @@ kaosCards = {
     "Retrigger all cards played this round again",
     sCardRerun,kaosActionRerun),
     
+    vampire : new createCardKaos("Vampire",
+    "Halfs all card values and applies them to the next round",
+    sCardBlank,kaosActionVampire,[],updateKaosVampire),
+    
     //Concept
     hotsauce : new createCardKaos("Hot Sauce",
     "All [g]healing[/] cards apply slight [o]fire damage[/] for the round",
     sCardHotsauce,kaosActionHotsauce),
+    
+    herobrine : new createCardKaos("Herobrine",
+    "[lg]???",
+    sCardBlank,function(){game_end();}),
     
 };
 

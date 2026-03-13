@@ -24,7 +24,7 @@ enum CARDACT_GENRES {
 /// @param {array} _extraArgs Extra arguments the givin function can use
 /// @param {function} _comboAction The cards combo action (Put undefined of it has no action)
 /// @param {array} _comboArgs Extra arguments the givin combo function can use
-function createCardAction(_name,_desc,_sprite,_range,_genre = CARDACT_GENRES.ATTACK,_action = undefined,_extraArgs = [],_comboAction = undefined,_comboArgs = [],_afterRange = undefined,_afterRangeArgs = [],_uses = NaN) constructor
+function createCardAction(_name,_desc,_sprite,_range,_genre = CARDACT_GENRES.ATTACK,_action = undefined,_extraArgs = [],_comboAction = undefined,_comboArgs = [],_afterRange = undefined,_afterRangeArgs = [],_update = undefined,_uses = NaN) constructor
 {
     //Info
     name = _name;
@@ -41,7 +41,8 @@ function createCardAction(_name,_desc,_sprite,_range,_genre = CARDACT_GENRES.ATT
     
     //Get Action
     var _funcAction = _action == undefined ? function(){} : _action;
-    var _funcCombo = _comboAction == undefined ? function(){} : _comboAction;
+    var _funcCombo = _comboAction == undefined ? _funcAction: _comboAction;
+    var _funcUpdate = _update == undefined ? function(){}: _update;
     
     //Set Action
     action = _funcAction;
@@ -50,6 +51,7 @@ function createCardAction(_name,_desc,_sprite,_range,_genre = CARDACT_GENRES.ATT
     comboArgs = _comboArgs;
     afterRange = _afterRange;
     afterRangeArgs = _afterRangeArgs;
+    update = _funcUpdate;
     
     //Set Type
     type = CARDTYPES.ACTION;
@@ -68,7 +70,7 @@ function createCardAction(_name,_desc,_sprite,_range,_genre = CARDACT_GENRES.ATT
 /// @param {asset.GMSprite} _sprite The cards sprite
 /// @param {function} _action The cards action (Put undefined of it has no action)
 /// @param {array} _extraArgs Extra arguments the givin function can use
-function createCardKaos(_name,_desc,_sprite,_action = undefined,_extraArgs = [],_uses = NaN) constructor
+function createCardKaos(_name,_desc,_sprite,_action = undefined,_extraArgs = [],_update = undefined,_uses = NaN) constructor
 {
     //Info
     name = _name;
@@ -79,11 +81,12 @@ function createCardKaos(_name,_desc,_sprite,_action = undefined,_extraArgs = [],
     date = $"{current_month}/{current_day}/{current_year}/{current_second}";
     
     //Get Action
-    var _func = _action;
-    if _action == undefined then _func = function(){};
+    var _func = _action == undefined ? function(){} : _action;
+    var _updateFunc = _update == undefined ? function(){} : _update;
     
     //Set Action
     action = _func;
+    update = _updateFunc;
     extraArgs = _extraArgs;
     
     //Set Type

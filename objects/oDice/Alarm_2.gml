@@ -47,16 +47,15 @@ if diceId == 3
             {
                 _time += 30;
                 alarm[3] = 25 + (_rangeId*30);
-                //timeSourceCreate(30+(_rangeId*30),info.afterRange,[true,currentValue,info.afterRangeArgs],time_source_units_frames);
                 _rangeId += 1;
             }
             
         }
         _slotId += 1;
     }
-
     
     //Set Button
-    oDonePrepButton.alarm[0] = _time;
+    //oDonePrepButton.alarm[0] = _time;
+    timeSourceCreate(_time,allCardValuesGained,[],time_source_units_frames);
 }
 

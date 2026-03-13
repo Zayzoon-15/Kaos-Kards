@@ -11,7 +11,7 @@ actionCards = {
     gato : new createCardAction("Gato","It's a cat",sGato,[10000000000,10000000001],CARDACT_GENRES.ATTACK,actionLaser),
     
     heal : new createCardAction("Health Pack",
-    "[g]Heals[/] you by a random amount",
+    "[g]Heals[/] you depending on cards value",
     sCardHeal,[1,12],CARDACT_GENRES.HEAL,actionHeal,[],comboHeal),
     
     shield : new createCardAction("Shield",
@@ -55,7 +55,7 @@ actionCards = {
     sCardTaunt,[1,4],CARDACT_GENRES.ATTACK,actionTaunt),
     
     steak : new createCardAction("Juicy Steak",
-    "Increase [g]max health[/] by a random amount",
+    "Increase [g]max health[/] by cards value",
     sCardSteak,[0,8],CARDACT_GENRES.HEAL,actionSteak),
     
     silence : new createCardAction("Silence",
@@ -64,14 +64,14 @@ actionCards = {
     
     jerryCan : new createCardAction("Jerry Can",
     "All [o]fire effects[/] currently active create an [r]explosion[/] and get removed",
-    sCardFlaminAce,[6,12],CARDACT_GENRES.ATTACK,actionJerryCan),
+    sCardFlaminAce,[4,9],CARDACT_GENRES.ATTACK,actionJerryCan),
     
     bodyslam : new createCardAction("Body Slam",
-    "Turn half of your shield into damage[s][lg](The higher the value the more damage it adds)",
-    sCardShield,[1,7],CARDACT_GENRES.ATTACK,actionBodySlam),
+    "Turn a percentage of your [b]shield[/] into [r]damage[/]",
+    sCardShield,[35,65],CARDACT_GENRES.ATTACK,actionBodySlam),
     
     fiary : new createCardAction("Fairy Bottle",
-    "Turn half of your shield into damage[s][lg](The higher the value the more damage it adds)",
+    "bottle",
     sCardShield,[1,7],CARDACT_GENRES.ATTACK,actionBodySlam),
     
     //CONCEPT

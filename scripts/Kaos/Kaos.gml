@@ -279,6 +279,41 @@ function kaosActionRerun(_targetEnemy)
 
 
 ///@self oAttackCard
+function kaosActionVampire(_targetEnemy)
+{
+	//Show Message
+    var _string = _targetEnemy ? "Player" : "Enemy";
+	createAlertMessage($"All {_string} Card Values Halfed");
+    
+    //Get Values
+    var _values = [0,0,0];
+    for (var i = 1; i < ds_list_size(playerActions); i++) {
+        if ds_list_find_value(playerActions,i) != undefined
+        {
+        	var _card = ds_list_find_value(playerActions,i);
+            
+            _values[i-1] = floor(_card.value/2);
+            
+            var _newCard = _card;
+            _card.value -= _values[i-1];
+            ds_list_set(playerActions,i,_newCard);
+        }
+    }
+    
+    //Create Vampire Card
+    instance_create_depth(room_width/2,490,300,oVampire,{
+        values : _values
+    });
+	
+	//Juice
+	cardJuice(true,true);
+    
+    //Finish
+    timeSourceCreate(1.5,kaosCardDone);
+}
+
+
+///@self oAttackCard
 function kaosActionHotsauce(_targetEnemy)
 {
 	//Show Message

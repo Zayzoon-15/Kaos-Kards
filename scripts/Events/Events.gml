@@ -174,3 +174,19 @@ function comboAttackDone()
     //Next Kaos
     if instance_exists(oKaosManager) then oKaosManager.alarm[5] = 50;
 }
+
+
+/// @desc This event plays when all cards gain their value
+function allCardValuesGained()
+{
+    //Vampire Card Activate
+    if instance_exists(oVampire)
+    {
+        oVampire.alarm[0] = 30;
+        exit;
+    }
+    
+    
+    //Set Done Button
+    instance_destroy(oDonePrepButton);
+}
