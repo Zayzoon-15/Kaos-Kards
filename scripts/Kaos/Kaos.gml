@@ -302,7 +302,8 @@ function kaosActionVampire(_targetEnemy)
     
     //Create Vampire Card
     instance_create_depth(room_width/2,490,300,oVampire,{
-        values : _values
+        values : _values,
+        targetEnemy : _targetEnemy
     });
 	
 	//Juice

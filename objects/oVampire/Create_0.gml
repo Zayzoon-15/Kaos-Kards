@@ -23,3 +23,6 @@ info.desc = $"{info.desc}[s][lg](Currently active)";
 
 //Target Slot
 targetSlotId = 1;
+
+//Enemy Values
+alarm[1] = 1;

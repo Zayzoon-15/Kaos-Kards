@@ -1,15 +1,23 @@
+//Safe Check
+if room == rMainMenu then instance_destroy();
+
 //Correct Room Check
-if room != rPrepare
+if targetEnemy
 {
-    //Safe Check
-    if room == rMainMenu
+    if room != rPrepare
     {
-        instance_destroy();
-    }
+        visible = false;
+        exit;
+    } else visible = true;
     
-    visible = false;
-    exit;
-} else visible = true;
+} else {
+    if room != rEnemy
+    {
+        visible = false;
+        exit;
+    } else visible = true;
+}
+
 
 
 if grabbed
