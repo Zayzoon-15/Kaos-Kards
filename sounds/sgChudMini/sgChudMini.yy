@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"sgChudKaos3",
+  "%Name":"sgChudMini",
   "audioGroupId":{
     "name":"agMusic",
     "path":"audiogroups/agMusic",
@@ -12,7 +12,7 @@
   "conversionMode":0,
   "duration":21.818186,
   "exportDir":"",
-  "name":"sgChudKaos3",
+  "name":"sgChudMini",
   "parent":{
     "name":"Chud",
     "path":"folders/Sounds/Music/Enemies/Chud.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sgChudKaos3.ogg",
+  "soundFile":"sgChudMini.ogg",
   "volume":1.0,
 }

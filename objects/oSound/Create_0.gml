@@ -54,8 +54,8 @@ audioCreateSongs("BeerKaos2",sgBeerKaos2,["BeerPrepare"],1,2,"BeerKaos1");
 //Chud
 audioCreateSongs("ChudIntro",sgChudIntro,[],1,1,"ChudPrepare",true,true);
 audioCreateSongs("ChudPrepare",sgChudPrepare,["ChudKaos1","ChudKaos2","ChudMini"]);
-audioCreateSongs("ChudKaos1",sgChudKaos1,["ChudPrepare","ChudKaos2","ChudMini"],1,2,"ChudKaos2");
-audioCreateSongs("ChudKaos2",sgChudKaos3,["ChudPrepare","ChudKaos1","ChudMini"],1,2,"ChudKaos1");
+audioCreateSongs("ChudKaos1",sgChudKaos1,["ChudPrepare","ChudMini"],1,2,"ChudKaos2");
+audioCreateSongs("ChudKaos2",sgChudMini,["ChudPrepare","ChudMini"],1,2,"ChudKaos1");
 audioCreateSongs("ChudMini",sgChudKaos2,["ChudPrepare","ChudKaos1","ChudKaos2"]);
 
 //Teto

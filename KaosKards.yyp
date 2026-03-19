@@ -387,7 +387,7 @@
     {"id":{"name":"sgChudIntro","path":"sounds/sgChudIntro/sgChudIntro.yy",},},
     {"id":{"name":"sgChudKaos1","path":"sounds/sgChudKaos1/sgChudKaos1.yy",},},
     {"id":{"name":"sgChudKaos2","path":"sounds/sgChudKaos2/sgChudKaos2.yy",},},
-    {"id":{"name":"sgChudKaos3","path":"sounds/sgChudKaos3/sgChudKaos3.yy",},},
+    {"id":{"name":"sgChudMini","path":"sounds/sgChudMini/sgChudMini.yy",},},
     {"id":{"name":"sgChudPrepare","path":"sounds/sgChudPrepare/sgChudPrepare.yy",},},
     {"id":{"name":"sgDeckBuilder1","path":"sounds/sgDeckBuilder1/sgDeckBuilder1.yy",},},
     {"id":{"name":"sgDeckBuilder2","path":"sounds/sgDeckBuilder2/sgDeckBuilder2.yy",},},

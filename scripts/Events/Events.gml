@@ -31,14 +31,14 @@ function gameReset()
 	global.enemyComboMeter = 0;
 	
 	//Reset Health Bar
-	global.playerHp = 100;
-	global.playerTempHp = 0;
-	global.playerHpIcons = [];
-	global.enemyHp = 100;
-	global.enemyTempHp = 0;
-	global.enemyHpIcons = [];
     global.playerMaxHp = 100;
     global.enemyMaxHp = global.currentEnemy != undefined ? global.currentEnemy.maxHp : 100;
+	global.playerHp = global.playerMaxHp;
+	global.playerTempHp = 0;
+	global.playerHpIcons = [];
+	global.enemyHp = global.enemyMaxHp;
+	global.enemyTempHp = 0;
+	global.enemyHpIcons = [];
 	
 	//Remove Actions
 	ds_list_clear(playerActions);

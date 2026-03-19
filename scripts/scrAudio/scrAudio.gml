@@ -100,6 +100,9 @@ function audioPlaySong(_song,_fadeTime = 30,_lastSongEndMethod = "Stop",_forcePo
         _song = _song[_num];
     }
     
+    //Exit If Same Song
+    if _song == global.curSong and audio_is_playing(global.curSongAudio) then exit;
+    
     
     //Change Song If Intro
     if ds_map_exists(global.songTracks,_song) and global.songTracks[? _song].isIntro and ds_list_contains_value(global.songIntrosPlayed,_song)
@@ -116,9 +119,8 @@ function audioPlaySong(_song,_fadeTime = 30,_lastSongEndMethod = "Stop",_forcePo
         _song = _targetSong;
     }
     
-    //Exit If Same Song
-    if _song == global.curSong and audio_is_playing(global.curSongAudio) then exit;
     
+    //Reset Loops
     with oSound {
     	loops = 0;
         loopSongPoint = 0;
@@ -175,6 +177,14 @@ function audioPlaySong(_song,_fadeTime = 30,_lastSongEndMethod = "Stop",_forcePo
     if ds_map_exists(global.songTracks,global.lastSong) and array_contains(_track.syncWith,global.lastSong)
     {
         var _pos = audio_sound_get_track_position(global.lastSongAudio);
+        
+        //Safe Check If Song Is Longer
+        if _pos > audio_sound_length(global.curSongAudio)
+        {
+            _pos = audio_sound_get_track_position(global.lastSongAudio) - audio_sound_length(global.curSongAudio);
+        }
+        
+        //Set Position
         audio_sound_set_track_position(global.curSongAudio,_pos);
     }
     

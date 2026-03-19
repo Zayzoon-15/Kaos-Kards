@@ -4,7 +4,7 @@ if audio_is_playing(global.curSongAudio) and global.curSong != noone
     if global.songTracks[? global.curSong].loopTimes > 0
     {
         loopSongPoint = audio_sound_get_track_position(global.curSongAudio);
-        if loopSongPoint >= audio_sound_length(global.curSongAudio)-.02
+        if loopSongPoint >= audio_sound_length(global.curSongAudio)-.03
         {
             loops ++;
             
@@ -22,6 +22,8 @@ if audio_is_playing(global.curSongAudio) and global.curSong != noone
                 if global.songTracks[? global.curSong].isIntro
                 {
                     ds_list_add(global.songIntrosPlayed,global.curSong);
+                    print("SONG INTRO DONE");
+                    ds_debug_print(global.songIntrosPlayed,ds_type_list);
                 }
                 
                 //Play Song
@@ -34,12 +36,12 @@ if audio_is_playing(global.curSongAudio) and global.curSong != noone
                 createAlertMessage("SONG LOOPED");
             }
         }
-        
-        //Debug
-        if showSongs
-        {
-            print("SONG POS",loopSongPoint);
-            print("SONG LENGTH",audio_sound_length(global.curSongAudio)-.02);
-        }
+    }
+
+    //Debug
+    if showSongs
+    {
+        print("SONG POS",audio_sound_get_track_position(global.curSongAudio));
+        print("SONG LENGTH",audio_sound_length(global.curSongAudio)-.02);
     }
 }

@@ -216,7 +216,7 @@
     {"name":"sgBeerPrepare","order":3,"path":"sounds/sgBeerPrepare/sgBeerPrepare.yy",},
     {"name":"sgChudKaos1","order":1,"path":"sounds/sgChudKaos1/sgChudKaos1.yy",},
     {"name":"sgChudKaos2","order":2,"path":"sounds/sgChudKaos2/sgChudKaos2.yy",},
-    {"name":"sgChudKaos3","order":3,"path":"sounds/sgChudKaos3/sgChudKaos3.yy",},
+    {"name":"sgChudMini","order":3,"path":"sounds/sgChudMini/sgChudMini.yy",},
     {"name":"sgChudPrepare","order":4,"path":"sounds/sgChudPrepare/sgChudPrepare.yy",},
     {"name":"sgDeckBuilder1","order":2,"path":"sounds/sgDeckBuilder1/sgDeckBuilder1.yy",},
     {"name":"sgDeckBuilder2","order":3,"path":"sounds/sgDeckBuilder2/sgDeckBuilder2.yy",},
