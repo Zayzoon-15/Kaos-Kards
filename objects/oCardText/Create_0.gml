@@ -3,6 +3,12 @@ textAlpha = 0;
 text = desc;
 textInfo = {x:x,y:y,w:0,h:0};
 
+//Get Description
+if is_method(desc)
+{
+    text = method_call(desc);
+}
+
 //Flip
 flipInfo = false;
 

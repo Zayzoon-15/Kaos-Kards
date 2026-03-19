@@ -9,6 +9,7 @@ globalvar actionCards;
 actionCards = {
     
     gato : new createCardAction("Gato","It's a cat",sGato,[10000000000,10000000001],CARDACT_GENRES.ATTACK,actionLaser),
+    perro : new createCardAction("Perro","It's a dog",sPerro,[9360,9360],CARDACT_GENRES.ATTACK,actionLaser),
     
     heal : new createCardAction("Health Pack",
     "[g]Heals[/] you depending on cards value",
@@ -60,7 +61,7 @@ actionCards = {
     
     silence : new createCardAction("Silence",
     "A chance to silence the the card in front of it[s][lg](The higher the value the higher the chance of silencing the card)",
-    sCardMirror,[0,10],CARDACT_GENRES.DEFEND,actionSilence),
+    sCardSilence,[0,10],CARDACT_GENRES.DEFEND,actionSilence),
     
     jerryCan : new createCardAction("Jerry Can",
     "All [o]fire effects[/] currently active create an [r]explosion[/] and get removed",

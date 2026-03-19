@@ -123,7 +123,11 @@ if grabbed
     //Ease
     image_xscale = lerp(image_xscale,1,.2);
     image_yscale = lerp(image_yscale,1,.2);
-    shadowX = lerp(shadowX,0,.2);
+    
+    //Shadow
+    var _shadowX = (x - (room_width/2))*.03;
+    shadowX = clamp(shadowX,-6,6);
+    shadowX = lerp(shadowX,_shadowX,.2);
     
     //Depth
     depth = startDepth;

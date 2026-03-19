@@ -1,29 +1,41 @@
 textSetup(fnMain,fa_center,fa_top);
-draw_text_transformed(x,10,$"Current Song: {global.curSong}\nCurrent Group: {struct_get_names(currentTextGroup)}\nSong Speed: {songSpeed}\nPress Enter To Start",2,2,0);
-
-textSetup(fnMain,fa_center,fa_middle);
-draw_text_transformed(x,y,currentText,2,2,0);
-
-if groupSong then draw_text_transformed(x,y+80,currentTextGroup,2,2,0);
+draw_text_transformed(x,10,$"Current Song: {global.curSong}\nSong Speed: {songSpeed}\nPress Enter To Start",2,2,0);
 
 
-//Draw Button
-var _string = groupSong ? "Group Song: True" : "Group Song: False";
-var _w = 100;
-var _h = 20;
-var _x = x;
-var _y = 600;
-var _buttonX1 = _x - _w;
-var _buttonY1 = _y - _h;
-var _buttonX2 = _x + _w;
-var _buttonY2 = _y + _h;
-draw_button(_buttonX1, _buttonY1, _buttonX2, _buttonY2,!(point_in_rectangle(mouse_x,mouse_y,_buttonX1,_buttonY1,_buttonX2,_buttonY2) and mouse_check_button(mb_left)));
-textSetup(fnMain,fa_center,fa_middle,c_black);
-draw_text(_x,_y,_string);
+textSetup(fnMain,fa_left,fa_bottom);
+draw_text_transformed(20,room_height-20,$"Controls:\n- Space to type a song\n- Up and down to change the speed",2,2,0);
+
+var _text = currentText;
+
+if typing
+{
+    //Change Timer
+    flashTimer += flashDir;
+    
+    //Switch Directions
+    var _flashTime = 15;
+    if flashTimer <= -_flashTime
+    {
+        flashDir = 1;
+    } else if flashTimer >= _flashTime
+    {
+        flashDir = -1;
+    }
+    
+    //Change Text To Flash Bar
+    _text = flashDir == 1 ? $"{currentText}|" : $"{currentText}";
+
+    //Box
+    draw_set_alpha(1);
+    draw_set_colour(c_white);
+    var _margin = 10;
+    draw_rectangle(x-_margin-string_width(currentText),y-20,x+_margin+string_width(currentText),y+20,true);
+} else { //Reset Flash
+    flashTimer = 0;
+    flashDir = 1;
+}
+
+textSetup(fnMain,fa_left,fa_middle);
+draw_text_transformed(x-string_width(currentText),y,_text,2,2,0);
 
 drawReset();
-
-if point_in_rectangle(mouse_x,mouse_y,_buttonX1,_buttonY1,_buttonX2,_buttonY2) and mouse_check_button_pressed(mb_left)
-{
-    groupSong = !groupSong;
-}

@@ -20,7 +20,14 @@ kaosCards = {
     sCardHandy,kaosActionHandy,[],undefined,4),
     
     high : new createCardKaos("Inflation",
-    $"All values are multiplied by [s][m]x [glo]+0.1valueMult[/][/] for the current round[s][lg](The value increases by .1 after every use)",
+    function(){
+        //Get Value
+    	var _value = 1.1;
+        repeat checkCardUses("Inflation","All") {
+        	_value += .1;
+        }
+        
+        return $"All values are multiplied by [s][m]x {string_format(_value,0,1)}[/] for the current round[s][lg](The value increases by .1 after every use)"},
     sCardHigh,kaosActionHigh),
     
     swap : new createCardKaos("Swap",
@@ -61,7 +68,7 @@ kaosCards = {
     
     vampire : new createCardKaos("Vampire",
     "Halfs all card values and applies them to the next round",
-    sCardBlank,kaosActionVampire,[],updateKaosVampire),
+    sCardVampire,kaosActionVampire,[],updateKaosVampire),
     
     //Concept
     hotsauce : new createCardKaos("Hot Sauce",

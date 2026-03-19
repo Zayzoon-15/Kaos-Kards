@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sGato",
-    "path":"sprites/sGato/sGato.yy",
+    "name":"sCardVampire",
+    "path":"sprites/sCardVampire/sCardVampire.yy",
   },
   "spriteMaskId":null,
   "visible":true,

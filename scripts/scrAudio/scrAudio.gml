@@ -93,6 +93,14 @@ function audioCreateSongs(_name,_sound,_syncWith=[],_volume = 1,_loopTimes = -1,
 /// @param {struct} [_forcePosInfo] The information for forcing the song into a certain position (EX: {pos: 0, loops: 0})
 function audioPlaySong(_song,_fadeTime = 30,_lastSongEndMethod = "Stop",_forcePos = false,_forcePosInfo = {pos: 0, loops: 0})
 {
+    //Get Correct Song
+    if is_array(_song)
+    {
+        var _num = irandom_range(0,array_length(_song)-1);
+        _song = _song[_num];
+    }
+    
+    
     //Change Song If Intro
     if ds_map_exists(global.songTracks,_song) and global.songTracks[? _song].isIntro and ds_list_contains_value(global.songIntrosPlayed,_song)
     {

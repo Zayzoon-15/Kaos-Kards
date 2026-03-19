@@ -7,6 +7,7 @@ shadowSize = 0.05;
 startDepth = depth;
 
 //Mouse
+canGrab = false;
 hover = false;
 grabbed = false;
 offsetX = 0;

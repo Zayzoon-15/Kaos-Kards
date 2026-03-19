@@ -3,11 +3,7 @@ if keyboard_check_pressed(vk_space)
 {
     keyboard_string = "";
     typing = true;
-    typingSong = true;
-    if keyboard_check(vk_control)
-    {
-        typingSong = false;
-    }
+
 }
 
 //Type
@@ -20,16 +16,8 @@ if typing
     {
         keyboard_string = "";
     }
-}
-
-//Type
-if typing 
-{
-    if typingSong
-    {
-        currentText = keyboard_string;
-    } else currentTextGroup = keyboard_string;
-}
+    
+}    
 
 //Ease Speed
 if keyboard_check(vk_up) {
@@ -39,4 +27,7 @@ if keyboard_check(vk_up) {
 } else songSpeed = lerp(songSpeed,1,.2);
 
 //Set Speed
-audio_sound_pitch(global.curSong,songSpeed);
+if audio_is_playing(global.curSongAudio)
+{
+    audio_sound_pitch(global.curSongAudio,songSpeed);
+}

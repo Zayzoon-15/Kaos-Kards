@@ -74,7 +74,7 @@ enemyInfo = {
             actionCards.bread, actionCards.flaminAce,
         ],
         [kaosCards.swoop,kaosCards.high],
-        Enemy.Strat(70,60,75,80,67,2,100),enemySpecialBeer,["BeerPrepare","BeerIntro"]
+        Enemy.Strat(70,60,75,80,67,2,100),enemySpecialBeer,["BeerIntro",["BeerKaos1","BeerKaos2"]]
     ),
     
     #endregion
@@ -110,7 +110,7 @@ enemyInfo = {
             actionCards.taunt, actionCards.bread, actionCards.bread,
         ],
         [kaosCards.brawl],
-        Enemy.Strat(80,80,20,70,60,2,90),function(){},["ChudPrepare","ChudIntro","ChudKaos2"]
+        Enemy.Strat(80,80,20,70,60,2,90),function(){},["ChudIntro",["ChudKaos1","ChudKaos2"],"ChudMini"]
     ),
     
     #endregion
@@ -126,7 +126,8 @@ enemyInfo = {
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,
             actionCards.flaminAce, actionCards.flaminAce, actionCards.flaminAce,
-            actionCards.slash, actionCards.slash
+            actionCards.slash, actionCards.slash,
+            actionCards.jerryCan,
         ],
         [kaosCards.hotdog],
         Enemy.Strat(85,75,70,85,40,2,100)
@@ -165,6 +166,22 @@ enemyInfo = {
         ],
         [kaosCards.hotdog,kaosCards.swoop],
         Enemy.Strat(85,80,50,75,45,2,100),
+    ),
+    
+    pug : new Enemy.Create("Loulou the Pug",
+        sPug, {idle : Enemy.AnimClip(0,41,true)}, Enemy.Dialogue(),
+        1.5, 2.1, 85,
+        [
+            actionCards.steak, actionCards.heal,
+            actionCards.shield, actionCards.shield, actionCards.shield,
+            actionCards.bread, actionCards.bread, actionCards.bread,
+            actionCards.laser, actionCards.laser,
+            actionCards.flaminAce, actionCards.flaminAce,
+            actionCards.jerryCan, actionCards.silence,
+            actionCards.perro,
+        ],
+        [kaosCards.high,kaosCards.freeze],
+        Enemy.Strat(20,45,90,90,40,2,100)
     ),
     
     
