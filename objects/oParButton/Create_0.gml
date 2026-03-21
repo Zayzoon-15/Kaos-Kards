@@ -37,6 +37,8 @@ pressed = false;
 canPress = true;
 buttonUsed = false;
 mobilePress = false;
+isMenuButton = false;
+ignore = false;
 
 //Info
 drawInfo = true;

@@ -1,5 +1,10 @@
+//Set Ignore
+if !isMenuButton and global.menuOpen {
+    ignore = true;
+} else ignore = false;
+
 //Hover
-if touchingMouse() and canHover
+if touchingMouse() and canHover and !ignore and !global.holdingCard
 {
     targetY = y - 3;
     shadowY = lerp(shadowY,8,.2);

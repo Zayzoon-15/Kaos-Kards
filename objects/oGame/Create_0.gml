@@ -98,12 +98,14 @@ global.gameRound = 0;
 
 //Managers
 global.paused = false;
+global.menuOpen = false;
 
 //Modes
 global.mobile = os_type == os_android or os_type == os_ios or os_type == os_gxgames;
 global.gamepad = false;
 
 #endregion
+
 
 //Randomise
 randomise();

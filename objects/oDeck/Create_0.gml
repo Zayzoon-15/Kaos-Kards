@@ -6,6 +6,7 @@ if !ds_exists(playerHand,ds_type_list)
 
 //Deck
 deck = playerDeck;
+placedCards = [];
 
 //Remove Cards
 for (var i = 0; i < array_length(global.playerRemovedCards); i++) 
@@ -31,6 +32,20 @@ cardsInPlay = 0;
 //Draw Cards
 drawTime = 10;
 
+//Drawing
+targetX = x;
+targetY = y;
+xscale = 1;
+yscale = 1;
+angle = 0;
+targetXLast = x;
+startDepth = depth;
+
+//Shadow
+shadowX = 0;
+shadowY = 0;
+shadowSize = 0.05;
+
 //Hover
 canHover = true;
 
@@ -40,6 +55,13 @@ width = 0;
 heightMargin = 2;
 widthMargin = 10;
 maxWidth = 300;
+
+//Mouse
+grabbed = false;
+pressed = false;
+heldTime = 0;
+offsetX = 0;
+offsetY = 0;
 
 
 //Functions
@@ -53,6 +75,9 @@ drawCard = function(){
         cardId : currentCard,
         info : _info
     });
+    
+    //Add To Array
+    array_push(placedCards,_info);
     
     //Add To Hand
     ds_list_add(playerHand,_inst);

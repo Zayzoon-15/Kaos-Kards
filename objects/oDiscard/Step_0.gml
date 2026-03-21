@@ -30,13 +30,13 @@ if !isFull
     
 } else _text = "You have no discards left";
 
-if !global.holdingCard
+if !global.holdingCard and !global.menuOpen
 {
     drawTipBox(_text);
 }
 
 //Info
-if touchingMouse() and !global.holdingCard
+if touchingMouse() and !global.holdingCard and !global.menuOpen
 {
     boxAlpha = lerp(boxAlpha,0,.2);
 } else boxAlpha = lerp(boxAlpha,1,.2);

@@ -1,3 +1,6 @@
+//Ignore
+if ignore then exit;
+
 //Mobile Press
 if global.mobile and global.mobilePress and !mobilePress and canPress and !global.midTrans
 {

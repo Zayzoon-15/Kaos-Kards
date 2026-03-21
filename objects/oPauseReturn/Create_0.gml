@@ -1,9 +1,6 @@
 // Inherit the parent event
 event_inherited();
 
-//Page
-curPage = 1;
-
 //Button
 canHover = room != rTournies;
 
@@ -20,8 +17,13 @@ scaleTime = .3;
 //Action
 action = function()
 {
+    //Stop All Music
+    audio_group_stop_all(agMusic);
+    instance_destroy(oSongTracker);
+    
+    //Go To Menu
     transStart(rTournies);
-    timeSourceCreate(15,function(){
+    timeSourceCreate(20,function(){
         oPause.unpauseGame();
     },[],time_source_units_frames);
 }

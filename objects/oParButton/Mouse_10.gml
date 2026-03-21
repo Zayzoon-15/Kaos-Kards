@@ -1,5 +1,5 @@
 ///@desc Hover Sound
-if canHover
+if canHover and !ignore
 {
     audioPlaySfx(soundHover);
 }

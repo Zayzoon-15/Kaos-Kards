@@ -26,10 +26,7 @@ function cardStateHand(){
     
     //Warp Cards
     var _rad = 30;
-    var _ang = 0;
-    
-    if cardId != 0  then _ang = 360/((_handSize-1)*2);
-    
+    var _ang = cardId == 0 ? 0 : 360/((_handSize-1)*2);
     var _handY = (ystart + lengthdir_y(_rad, cardId*_ang));
     
     #endregion
@@ -48,7 +45,7 @@ function cardStateHand(){
 	}
 	
     //Set Hover
-	if touchingMouse() and !global.holdingCard and !_touchingOthers
+	if touchingMouse() and !global.holdingCard and !_touchingOthers and !global.menuOpen
     {
         //Sound
         if !hover then audioPlaySfx(snCardHover);
@@ -119,7 +116,7 @@ function cardStateHand(){
     #endregion
     
     //Can Grab
-    canGrab = !global.holdingCard;
+    canGrab = !global.holdingCard and !global.menuOpen;
     
     //Delete Key
     if hover and gameState == GAMESTATES.PREPARE
@@ -190,7 +187,7 @@ function cardStateGrabbed()
 function cardStatePlaced()
 {
     //Can Grab
-    canGrab = !global.holdingCard;
+    canGrab = !global.holdingCard and !global.menuOpen;
     
     #region Hover
     
@@ -198,7 +195,7 @@ function cardStatePlaced()
     var _cardY = slot.y;
     
     //Set Hover
-	if touchingMouse() and canGrab
+	if touchingMouse() and canGrab and !global.menuOpen
 	{
         //Sound
         if !hover then audioPlaySfx(snCardHover);

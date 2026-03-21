@@ -3,10 +3,11 @@ event_inherited();
 
 //Button
 canHover = true;
+isMenuButton = true;
 
 //Info
 drawInfo = false;
-text = "Resume";
+text = "Done";
 
 //Text
 textXScale = 0;
@@ -15,5 +16,5 @@ textXScale = 0;
 //Action
 action = function()
 {
-    oPause.unpauseGame();
+    instance_destroy(oDeckShowMenu);
 }

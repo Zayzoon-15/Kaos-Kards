@@ -12,6 +12,8 @@ if instance_exists(parent)
     var _targetY = flipInfo ? parent.bbox_bottom+20 : parent.bbox_top-20;
     y = lerp(y,_targetY,.2);
 	
+    depth = parent.depth-5;
+    
 	//Destory
 	if !parent.hover or !parent.canGrab or global.holdingCard
 	{
@@ -20,4 +22,4 @@ if instance_exists(parent)
 } else instance_destroy();
 
 //Depth
-depth = -5;
+//depth = -5;

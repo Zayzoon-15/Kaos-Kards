@@ -1,4 +1,13 @@
-draw_self();
+//Draw Deck
+for (var i = 1; i < cardsLeft; i++) {
+	draw_sprite_ext(sprite_index,image_index,x,y-(i),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+}
+
+//Deck Shadow
+draw_sprite_ext(sprite_index,image_index,targetX+shadowX,targetY+shadowY,xscale-shadowSize,yscale-shadowSize,angle,c_black,image_alpha*SHADOW_ALPHA);
+
+//Draw Top Deck
+draw_sprite_ext(sprite_index,image_index,targetX,targetY,xscale,yscale,angle,image_blend,image_alpha);
 
 
 #region Draw Stats

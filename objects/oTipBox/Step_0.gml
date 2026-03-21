@@ -27,7 +27,7 @@ if instance_exists(parent) and update
 }
 
 //Destory
-if !touchingMouse(parent) or !parent.canHover
+if !touchingMouse(parent) or !parent.canHover or (!menuItem and global.menuOpen) or global.holdingCard
 {
     instance_destroy();
 }

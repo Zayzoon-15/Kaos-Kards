@@ -24,7 +24,7 @@ function drawCardText(_info){
 ///@arg {bool} _update If it should update each frame (Default: false) This would require the variable: tipBoxString 
 ///@arg {real} _distance The distance of the text (Default: 10)
 ///@arg {real} _size The size of the text (Default: 1)
-function drawTipBox(_desc,_top = true,_update = false,_distance = 10,_size = 1){
+function drawTipBox(_desc,_top = true,_update = false,_distance = 10,_size = 1,_menuItem = false){
     
     //Check If Has Variables
     if !variable_instance_exists(self.id,"canHover")
@@ -48,7 +48,8 @@ function drawTipBox(_desc,_top = true,_update = false,_distance = 10,_size = 1){
             top : _top,
             distance : _distance,
             size : _size,
-            update : _update
+            update : _update,
+            menuItem : _menuItem
         });
     }
     
@@ -255,7 +256,7 @@ function drawCard3d(_x, _y, _front, _back, _angle, _rot, _thickness = CARD_THICK
         drawReset();
     } else { //Draw If Angle Is Zero
     	
-        draw_sprite_ext(_front,0,_x,_y,image_xscale,image_yscale,_rot,_imageblend,image_alpha);
+        draw_sprite_ext(_front,0,_x,_y,image_xscale,image_yscale,_rot,_imageblend,_alpha);
         
     }
 }
