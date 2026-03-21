@@ -21,6 +21,14 @@ for (var i = 0; i < array_length(global.playerRemovedCards); i++)
 //Add Cards
 deck = array_concat(deck,global.playerAddCards);
 
+
+//Enemy Deck
+if room == rEnemy
+{
+    deck = array_create(irandom_range(1,5),undefined);
+}
+
+
 //Set Stats
 deck = array_shuffle(deck);
 deckNum = 0;
@@ -63,7 +71,6 @@ heldTime = 0;
 offsetX = 0;
 offsetY = 0;
 
-
 //Functions
 drawCard = function(){
 	
@@ -93,3 +100,6 @@ drawCard = function(){
     audioPlaySfx([snCardDraw1,snCardDraw2,snCardDraw3]);
     
 }
+
+//Setup
+alarm[0] = 5;

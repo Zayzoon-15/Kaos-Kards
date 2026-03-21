@@ -15,7 +15,7 @@ y = ROOM_CENTER.y;
 global.menuOpen = true;
 
 //Get Placed Cards
-var _placedCards = oDeck.placedCards;
+var _placedCards = array_concat(oDeck.placedCards,[]);
 actionIds = 0;
 diceIds = 0;
 kaosIds = 0;

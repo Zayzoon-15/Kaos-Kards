@@ -1,28 +1,32 @@
 //Set Position
 x = getPosToWindow(true);
 
-//Exit If In Enemy Room
-if room == rEnemy then exit;
+////Exit If In Enemy Room
+//if room == rEnemy then exit;
 
-//Draw Cards
-if cardsInPlay < global.maxHandSize and drawTime <= 0 and cardsLeft != 0
+//Player Only
+if room == rPrepare
 {
-    drawCard();
-} else drawTime --;
+    //Draw Cards
+    if cardsInPlay < global.maxHandSize and drawTime <= 0 and cardsLeft != 0
+    {
+        drawCard();
+    } else drawTime --;
+    
+    //Tip Box
+    var _text;
+    if cardsLeft > 1
+    {
+        _text = $"Your deck of cards\nYou have {cardsLeft} cards left";
+    } else _text = $"Your deck of cards\nYou have {cardsLeft} card left";
+    drawTipBox(_text);
+}
 
-//Destroy Deck
+//Hide Deck
 visible = cardsLeft != 0;
 
 //Set Can Hover
 canHover = visible and !global.holdingCard and !global.menuOpen;
-
-//Tip Box
-var _text;
-if cardsLeft > 1
-{
-    _text = $"Your deck of cards\nYou have {cardsLeft} cards left";
-} else _text = $"Your deck of cards\nYou have {cardsLeft} card left";
-drawTipBox(_text);
 
 //Hold Mouse
 if !grabbed
@@ -53,7 +57,7 @@ if !grabbed
         
         if mouse_check_button_released(mb_left) and pressed
         {
-            if heldTime <= 20
+            if heldTime <= 20 and room == rPrepare
             {
                 instance_create_depth(0,0,-5,oDeckShowMenu);
             }

@@ -16,5 +16,5 @@ TweenEasyFade(0,1,0,15,EaseOutCubic);
 
 //Timers
 timeSourceCreate(10,function() {
-   oEnemyTextBox.startTalking = true; 
+   startTalking = true; 
 },[],time_source_units_frames);
