@@ -1,13 +1,20 @@
 //Draw Deck
 for (var i = 1; i < cardsLeft; i++) {
-	draw_sprite_ext(sprite_index,image_index,x,y-(i),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+    
+    var _sep = cardsLeft < 25 ? 5 : 1; 
+    
+    //Draw Deck
+	draw_sprite_ext(sprite_index,image_index,targetX,targetY-(i*_sep),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+    
+    //Draw Dark
+    draw_sprite_ext(sprite_index,image_index,targetX,targetY-(i*_sep),image_xscale,image_yscale,image_angle,c_black,image_alpha*.3);
 }
 
 //Deck Shadow
-draw_sprite_ext(sprite_index,image_index,targetX+shadowX,targetY+shadowY,xscale-shadowSize,yscale-shadowSize,angle,c_black,image_alpha*SHADOW_ALPHA);
+draw_sprite_ext(sprite_index,image_index,x+shadowX,y+shadowY,xscale-shadowSize,yscale-shadowSize,angle,c_black,image_alpha*SHADOW_ALPHA);
 
 //Draw Top Deck
-draw_sprite_ext(sprite_index,image_index,targetX,targetY,xscale,yscale,angle,image_blend,image_alpha);
+draw_sprite_ext(sprite_index,image_index,x,y,xscale,yscale,angle,image_blend,image_alpha);
 
 
 #region Draw Stats
@@ -26,8 +33,8 @@ width = string_width_ext(_text,-1,maxWidth);
 //Setup Box
 var _halfWidth = width/2;
 var _rectRound = UIBOX_RAD;
-var _x = x;
-var _y = y + (sprite_height/2) + 30;
+var _x = targetX;
+var _y = targetY + (sprite_height/2) + 30;
 
 //Draw The Box
 drawRectOutlined(_x-_halfWidth-widthMargin,_y-height-(heightMargin*2),_x+_halfWidth+widthMargin,_y,_rectRound,1,c_black,c_white,UIBOX_ALPHA*image_alpha,1*image_alpha);

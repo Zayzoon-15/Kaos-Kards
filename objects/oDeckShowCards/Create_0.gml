@@ -4,9 +4,10 @@ handSize = 0;
 //Set Position
 switch (info.type) {
 	case CARDTYPES.ACTION: ystart = oDeckShowMenu.bbox_top + sprite_get_height(sCardBlank) - 30; break;
-    case CARDTYPES.DICE: ystart -= 40; break; 
-    case CARDTYPES.KAOS: ystart = oDeckShowMenu.bbox_bottom - 50 - sprite_get_height(sCardBlank); break;
+    case CARDTYPES.DICE: ystart -= 50; break; 
+    case CARDTYPES.KAOS: ystart = oDeckShowMenu.bbox_bottom - 60 - sprite_get_height(sCardBlank); break;
 }
+//ystart -= 40;
 y = ystart;
 
 //Position
@@ -39,6 +40,8 @@ sprite_index = info.sprite;
 shadowSize = 0.05;
 shake = 0;
 startDepth = depth;
+targetScale = 1;
+showPlaced = true;
 
 //Grabbing
 grabbed = false;
@@ -55,4 +58,4 @@ cardAngle = 0;
 onMouse = 0;
 
 //Fade
-//TweenEasyFade(0,1,0,20,EaseLinear);
+TweenEasyFade(0,1,0,10,EaseOutCubic);

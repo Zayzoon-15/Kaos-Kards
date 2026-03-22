@@ -18,6 +18,11 @@ if instance_exists(parent)
     
     x = parent.x;
     y = lerp(y,_y,.2);
+    
+    if variable_instance_exists(parent,"tipBoxTouching")
+    {
+        touching = parent.tipBoxTouching;
+    }
 }
 
 //Update String
@@ -27,7 +32,7 @@ if instance_exists(parent) and update
 }
 
 //Destory
-if !touchingMouse(parent) or !parent.canHover or (!menuItem and global.menuOpen) or global.holdingCard
+if (!touchingMouse(parent) and !touching) or !parent.canHover or (!menuItem and global.menuOpen) or global.holdingCard
 {
     instance_destroy();
 }

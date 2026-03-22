@@ -11,3 +11,5 @@ maxWidth = 150;
 //Setup Text
 text = desc;
 
+//Touching
+touching = false;

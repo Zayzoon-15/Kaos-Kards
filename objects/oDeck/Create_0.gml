@@ -63,6 +63,7 @@ width = 0;
 heightMargin = 2;
 widthMargin = 10;
 maxWidth = 300;
+tipBoxTouching = false;
 
 //Mouse
 grabbed = false;

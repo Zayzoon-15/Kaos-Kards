@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sPixelCenter",
-    "path":"sprites/sPixelCenter/sPixelCenter.yy",
+    "name":"sDeckMenu",
+    "path":"sprites/sDeckMenu/sDeckMenu.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -24,6 +24,8 @@ function drawCardText(_info){
 ///@arg {bool} _update If it should update each frame (Default: false) This would require the variable: tipBoxString 
 ///@arg {real} _distance The distance of the text (Default: 10)
 ///@arg {real} _size The size of the text (Default: 1)
+///@arg {bool} _menuItem If the object is a menu item (Default: false)
+///@arg {bool} _touching If the object is being touched (Defualt: false)
 function drawTipBox(_desc,_top = true,_update = false,_distance = 10,_size = 1,_menuItem = false){
     
     //Check If Has Variables
@@ -39,8 +41,14 @@ function drawTipBox(_desc,_top = true,_update = false,_distance = 10,_size = 1,_
         game_end();
     }
     
+    var _touching = false;
+    if variable_instance_exists(self.id,"tipBoxTouching")
+    {
+        _touching = tipBoxTouching;
+    }
+
     //Create Tip Box
-    if !instance_exists(oTipBox) and touchingMouse()
+    if !instance_exists(oTipBox) and (touchingMouse() or _touching)
     {	
         instance_create_depth(x,y,depth,oTipBox,{ 
             desc : _desc,
@@ -159,7 +167,7 @@ function spriteLoopFrames(_frame,_anims = 4)
 /// @param {real} _thickness The cards edge thickness (Default = 8)
 /// @param {real} _imageblend The image blend for the card (Default = image_blend)
 /// @param {real} _alpha The alpha of the card (Default = image_alpha)
-function drawCard3d(_x, _y, _front, _back, _angle, _rot, _thickness = CARD_THICKNESS, _imageblend = image_blend, _alpha = image_alpha)
+function drawCard3d(_x, _y, _front, _back, _angle, _rot, _thickness = CARD_THICKNESS, _imageblend = image_blend, _alpha = image_alpha,_xscale=image_xscale,_yscale=image_yscale)
 {
     if _angle != 0
     {
@@ -178,8 +186,8 @@ function drawCard3d(_x, _y, _front, _back, _angle, _rot, _thickness = CARD_THICK
         };
     
         //Sprite Values
-        var _spriteW = sprite_get_width(_front);
-        var _spriteH = sprite_get_height(_front);
+        var _spriteW = sprite_get_width(_front)*_xscale;
+        var _spriteH = sprite_get_height(_front)*_yscale;
         var _halfW = _spriteW * 0.5;
         var _halfH = _spriteH * 0.5;
     
@@ -207,10 +215,23 @@ function drawCard3d(_x, _y, _front, _back, _angle, _rot, _thickness = CARD_THICK
         _p = _rotatePoint(_x2,_y2,_x,_y,_rot); _x2=_p[0]; _y2=_p[1];
         _p = _rotatePoint(_x3,_y3,_x,_y,_rot); _x3=_p[0]; _y3=_p[1];
     
-        //Draw Carrd
-        draw_set_colour(_imageblend);
-        draw_sprite_pos(_sprite,0,_x0,_y0, _x1,_y1, _x2,_y2, _x3,_y3,_alpha);
-    
+        //Setup Blend For Card
+        if _imageblend != image_blend
+        {
+            shader_set(shForceBlend);
+            var _shaderParam = shader_get_uniform(shForceBlend, "blendColor");
+            shader_set_uniform_f_array(_shaderParam, [
+                colour_get_red(_imageblend),
+                colour_get_green(_imageblend),
+                colour_get_blue(_imageblend),
+                _alpha
+            ]);
+            
+            //Draw Card
+            draw_sprite_pos(_sprite,0,_x0,_y0, _x1,_y1, _x2,_y2, _x3,_y3,_alpha);
+            shader_reset();
+        } else draw_sprite_pos(_sprite,0,_x0,_y0, _x1,_y1, _x2,_y2, _x3,_y3,_alpha); //Draw Card Normally
+        
         //Edge Thickness
         var _edgeFactor = 1 - abs(_scaleX);
         if _edgeFactor <= 0.01 then return;
@@ -225,7 +246,6 @@ function drawCard3d(_x, _y, _front, _back, _angle, _rot, _thickness = CARD_THICK
         var _v1 = 1;
     
         //Draw Edge As Triangle Strip
-        draw_set_colour(_imageblend);
         draw_primitive_begin_texture(pr_trianglestrip, _tex);
     
         //Draw Edge
@@ -246,19 +266,18 @@ function drawCard3d(_x, _y, _front, _back, _angle, _rot, _thickness = CARD_THICK
             var _oy = sin(_rangle) * _offset * (_showRight ? 1 : -1);
     
             //Add Vertices To Primitive
-            draw_vertex_texture(_ptTop[0]+_ox, _ptTop[1]+_oy, _u0, _v0);
-            draw_vertex_texture(_ptBot[0]+_ox, _ptBot[1]+_oy, _u0, _v1);
+            draw_vertex_texture_colour(_ptTop[0]+_ox, _ptTop[1]+_oy, _u0, _v0,_imageblend,_alpha);
+            draw_vertex_texture_colour(_ptBot[0]+_ox, _ptBot[1]+_oy, _u0, _v1,_imageblend,_alpha);
         }
-    
+        
         draw_primitive_end();
-    
-        //Reset Draw
-        drawReset();
     } else { //Draw If Angle Is Zero
     	
         draw_sprite_ext(_front,0,_x,_y,image_xscale,image_yscale,_rot,_imageblend,_alpha);
         
     }
+    
+    drawReset();
 }
 
 

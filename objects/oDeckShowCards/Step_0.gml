@@ -6,6 +6,12 @@ if instance_exists(oDeckShowMenu)
     	case CARDTYPES.DICE: handSize = oDeckShowMenu.diceIds; break;
     	case CARDTYPES.KAOS: handSize = oDeckShowMenu.kaosIds; break;
     }
+    
+    //Set Start Depth
+    startDepth = -(array_length(playerDeck)+oDeckShowMenu.depth+1);
+    
+    //Set Show Placed
+    showPlaced = oDeckShowMenu.showPlaced;
 }
 
 //Set Position
@@ -13,7 +19,6 @@ if handSize >= 10
 {
     targetX = cardHandMush(handSize,cardId,xstart,boxWidth);
 } else targetX = cardHandSep(handSize,cardId,xstart);
-
 
 //Card Grabbed
 if grabbed
@@ -39,18 +44,28 @@ if grabbed
     shadowSize = lerp(shadowSize,0.08,.2);
     
     //Ease
-    image_xscale = lerp(image_xscale,1.1,.4);
-    image_yscale = lerp(image_yscale,1.1,.4);
+    image_xscale = lerp(image_xscale,targetScale+.1,.4);
+    image_yscale = lerp(image_yscale,targetScale+.1,.4);
     
     //Depth
     depth = startDepth - 5;
 } else { //Card Idle
     
     //Can Grab
-    canGrab = !global.holdingCard
+    canGrab = !global.holdingCard;
+    
+    //Other Cards
+	var _touchingOthers = false;
+	with oDeckShowCards
+	{
+		if hover and id != other.id
+		{
+            _touchingOthers = cardId < other.cardId;
+		}
+	}
 
 	//Set Hover
-    if touchingMouse() and !global.holdingCard and canGrab
+    if touchingMouse() and !global.holdingCard and canGrab and !_touchingOthers
     {
         //Sound
         if !hover {
@@ -104,8 +119,8 @@ if grabbed
     }
     
     //Ease
-    image_xscale = lerp(image_xscale,1,.2);
-    image_yscale = lerp(image_yscale,1,.2);
+    image_xscale = lerp(image_xscale,targetScale,.2);
+    image_yscale = lerp(image_yscale,targetScale,.2);
     
     //Shadow
     var _shadowX = (x - (room_width/2))*.03;
@@ -113,7 +128,8 @@ if grabbed
     shadowX = lerp(shadowX,_shadowX,.2);
     
     //Depth
-    depth = startDepth;
+    depth = startDepth + (cardId*.5);
+    //if depth > startDepth then depth = startDepth;
     
     //Info Box
     if hover then drawCardText(info);

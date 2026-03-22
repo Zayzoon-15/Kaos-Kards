@@ -1,16 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"oDeckShowBtn",
+  "%Name":"oDeckShowFullBtn",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":27,"eventType":9,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oDeckShowBtn",
+  "name":"oDeckShowFullBtn",
   "overriddenProperties":[],
   "parent":{
-    "name":"Deck",
-    "path":"folders/Objects/Ui/Game/Deck.yy",
+    "name":"Buttons",
+    "path":"folders/Objects/Ui/Game/Deck/Buttons.yy",
   },
   "parentObjectId":{
     "name":"oParButton",
