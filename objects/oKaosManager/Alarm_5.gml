@@ -7,6 +7,10 @@ var _createCombo = function(_card,_targetEnemy)
     var _startY = _targetEnemy ? room_height+sprite_get_height(sCardBlank) : -sprite_get_height(sCardBlank);
     var _targetY = _targetEnemy ? room_height - yOffset : yOffset;
     
+    //Change Value
+    _card.value *= global.valueMult;
+    
+    //Create Cards
     for (var i = 0; i < 3; i++) {
         instance_create_layer(room_width/2,_startY,"Cards",oAttackCard,{
             card : _card,

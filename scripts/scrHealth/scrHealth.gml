@@ -18,7 +18,7 @@ function hurtEnemy(_value,_ignoreShield = false)
     _value = floor(_value / global.currentEnemy.difficulty);
     
 	//Add Mult
-	_value *= global.valueMult*VALUE_MULT;
+	_value *= VALUE_MULT;
 	
     //Remove Temp Health
     var _lastTemp = global.enemyTempHp;
@@ -67,7 +67,7 @@ function hurtPlayer(_value,_ignoreShield = false)
     global.enemyPerformance += _value;
 
 	//Add Mult
-	_value *= global.valueMult*VALUE_MULT;
+	_value *= VALUE_MULT;
     
     //Remove Temp Health
     var _lastTemp = global.playerTempHp;
@@ -112,9 +112,6 @@ function healEnemy(_value)
         //Health Effect
         effectHealth(x,y,10,false,10,15);
     }
-	
-	//Add Mult
-	_value *= global.valueMult;
     
     //Check Heal Effects
     for (var i = 0; i < array_length(global.healEffects.enemy); i++) {
@@ -142,9 +139,6 @@ function healPlayer(_value)
     {
         if target == "Player" then gainEffect();
     }
-	
-	//Add Mult
-	_value *= global.valueMult;
     
     //Check Heal Effects
     for (var i = 0; i < array_length(global.healEffects.player); i++) {

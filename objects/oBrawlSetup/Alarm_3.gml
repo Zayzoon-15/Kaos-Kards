@@ -1,7 +1,7 @@
 ///@desc Kaos Done
 
 //Hurt Loser
-var _amount = irandom_range(20,30);
+var _amount = irandom_range(20,30)*global.valueMult;
 if loser == 1
 {
 	hurtEnemy(_amount);

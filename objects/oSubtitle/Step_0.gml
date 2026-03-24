@@ -20,13 +20,13 @@ if global.paused
     //Pause Sound
     audio_pause_sound(sound);
     
-    //Pause Time Sources
-    for (var i = 0; i < array_length(timeSources); i++) {
-        if time_source_exists(timeSources[i])
-        {
-            time_source_pause(timeSources[i]);
-        }
-    }
+    ////Pause Time Sources
+    //for (var i = 0; i < array_length(timeSources); i++) {
+        //if time_source_exists(timeSources[i])
+        //{
+            //time_source_pause(timeSources[i]);
+        //}
+    //}
     
     //Set Pause
     paused = true;
@@ -35,14 +35,14 @@ if global.paused
     //Resume Sound
     audio_resume_sound(sound);
     
-    //Resume Time Sources
-    for (var i = 0; i < array_length(timeSources); i++) {
-        if time_source_exists(timeSources[i])
-        {
-            time_source_resume(timeSources[i]);
-        }
-    }
-    
+    ////Resume Time Sources
+    //for (var i = 0; i < array_length(timeSources); i++) {
+        //if time_source_exists(timeSources[i])
+        //{
+            //time_source_resume(timeSources[i]);
+        //}
+    //}
+    //
     //Set Pause
     paused = false;
 }

@@ -222,6 +222,11 @@ function SaveFile()
         struct_set(_saveData,"KeyFullscreen",global.keyFullscreen);
         struct_set(_saveData,"KeyPause",global.keyPause);
         struct_set(_saveData,"KeyDebug",global.keyDebug);
+        struct_set(_saveData,"KeyMoveLeft",global.keyMoveLeft);
+        struct_set(_saveData,"KeyMoveRight",global.keyMoveRight);
+        struct_set(_saveData,"keyJump",global.keyJump);
+        struct_set(_saveData,"keyAttack",global.keyAttack);
+        struct_set(_saveData,"keyBlock",global.keyBlock);
         struct_set(_saveData,"MobilePress",global.mobilePress);
         
         //Game
@@ -261,6 +266,11 @@ function SaveFile()
         global.keyFullscreen = struct_get_variable(_saveData,"KeyFullscreen",vk_f11);
         global.keyPause = struct_get_variable(_saveData,"KeyPause",vk_escape);
         global.keyDebug = struct_get_variable(_saveData,"KeyDebug",220);
+        global.keyMoveLeft = struct_get_variable(_saveData,"KeyMoveLeft",vk_left);
+        global.keyMoveRight = struct_get_variable(_saveData,"KeyMoveRight",vk_right);
+        global.keyJump = struct_get_variable(_saveData,"keyJump",vk_up);
+        global.keyAttack = struct_get_variable(_saveData,"keyAttack",ord("Z"));
+        global.keyBlock = struct_get_variable(_saveData,"keyBlock",ord("X"));
         global.mobilePress = struct_get_variable(_saveData,"MobilePress",true);
         
         //Game

@@ -1,11 +1,16 @@
 //Pause
-if keyCheckPressed(global.keyPause) and !global.midTrans and !instance_exists(oSettings) and canPause
+if keyCheckPressed(global.keyPause) and !global.midTrans and !instance_exists(oSettings) and canPause and pauseDelay <= 0
 {
 	if global.paused
 	{
 		unpauseGame();
 	} else pauseGame();
+    
+    pauseDelay = 10;
 }
+
+//Reduce Delay
+pauseDelay --;
 
 
 //Mobile Position

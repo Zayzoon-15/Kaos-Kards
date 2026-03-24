@@ -15,5 +15,8 @@ textXScale = 0;
 //Action
 action = function()
 {
-    oPause.unpauseGame();
+    if global.paused
+    {
+        oPause.unpauseGame();
+    }
 }

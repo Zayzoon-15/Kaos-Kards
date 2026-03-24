@@ -127,10 +127,18 @@ function SettingsMenus()
                 SettingsButtons.Input("Pause","keyPause");
                 SettingsButtons.Input("Debug Mode","keyDebug");
             
-            SettingsButtons.Separator("Gamepad (Maybe)");
-                SettingsButtons.Check("Gamepad");
-                SettingsButtons.Button("Accept");
-                SettingsButtons.Button("Discard");
+            SettingsButtons.Separator("Kaos Games");
+                SettingsButtons.Input("Move Left","keyMoveLeft");
+                SettingsButtons.Input("Move Right","keyMoveRight");
+                SettingsButtons.Input("Brawler Jump","keyJump");
+                SettingsButtons.Input("Brawler Attack","keyAttack");
+                SettingsButtons.Input("Brawler Block","keyBlock");
+            
+            //Removed For Now
+            //SettingsButtons.Separator("Gamepad (Maybe)");
+                //SettingsButtons.Check("Gamepad");
+                //SettingsButtons.Button("Accept");
+                //SettingsButtons.Button("Discard");
         } else { //Mobile Input
             SettingsButtons.Check("Double Tap For Buttons",function()
             {

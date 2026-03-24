@@ -44,15 +44,15 @@ if oBrawlSetup.gameover and oBrawlSetup.loser != playerId
 if playerId == 0
 {
 	//Inputs
-	var _keyPunch = keyboard_check_pressed(ord("Z")) or keyboard_check_pressed(ord("L"));
-	var _keyJump = keyboard_check_pressed(ord("K")) or keyboard_check_pressed(ord("X")) or keyboard_check_pressed(vk_up) or keyboard_check_pressed(ord("W")) or keyboard_check_pressed(vk_space);
+	var _keyPunch = keyboard_check_pressed(global.keyAttack);
+	var _keyJump = keyboard_check_pressed(global.keyJump);
 	
 	//Movement
 	if !global.mobile
 	{
-		keyLeft = keyboard_check(ord("A")) or keyboard_check(vk_left);
-		keyRight = keyboard_check(ord("D")) or keyboard_check(vk_right);
-		keyBlock = keyboard_check(ord("C")) or keyboard_check(ord("J"));
+		keyLeft = keyboard_check(global.keyMoveLeft);
+		keyRight = keyboard_check(global.keyMoveRight);
+		keyBlock = keyboard_check(global.keyBlock);
 	}
 	
 	//Actions

@@ -1,5 +1,6 @@
 //Change Value
-if info.type == EFFECT_TYPE.HARM then value *= .8;
+value *= global.valueMult;
+if info.type == EFFECT_TYPE.HARM then value *= VALUE_MULT+.2;
 value = clamp(value,1,99);
 
 //Effect

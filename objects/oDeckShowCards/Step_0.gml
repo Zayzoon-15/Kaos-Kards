@@ -15,9 +15,9 @@ if instance_exists(oDeckShowMenu)
 }
 
 //Set Position
-if handSize >= 10
+if handSize >= 6
 {
-    targetX = cardHandMush(handSize,cardId,xstart,boxWidth);
+    targetX = cardHandMush(handSize,cardId,xstart,boxWidth-30);
 } else targetX = cardHandSep(handSize,cardId,xstart);
 
 //Card Grabbed
@@ -48,7 +48,7 @@ if grabbed
     image_yscale = lerp(image_yscale,targetScale+.1,.4);
     
     //Depth
-    depth = startDepth - 5;
+    depth = startDepth - array_length(playerDeck);
 } else { //Card Idle
     
     //Can Grab
@@ -128,11 +128,11 @@ if grabbed
     shadowX = lerp(shadowX,_shadowX,.2);
     
     //Depth
-    depth = startDepth + (cardId*.5);
-    //if depth > startDepth then depth = startDepth;
+    depth = startDepth + (cardId-(handSize-1));
+    if depth > startDepth then depth = startDepth;
     
     //Info Box
-    if hover then drawCardText(info);
+    if hover then drawCardText(info,array_length(playerDeck));
 }
 
 //Rotate

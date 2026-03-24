@@ -12,8 +12,8 @@
   "name":"oSubtitle",
   "overriddenProperties":[],
   "parent":{
-    "name":"Info",
-    "path":"folders/Objects/Ui/Info.yy",
+    "name":"Game",
+    "path":"folders/Objects/Ui/Game.yy",
   },
   "parentObjectId":{
     "name":"oParInfoBox",

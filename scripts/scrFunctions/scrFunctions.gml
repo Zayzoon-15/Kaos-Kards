@@ -168,10 +168,15 @@ function broadcastSequence(_message,_func)
 /// @returns {Id.TimeSource} The time source
 function timeSourceCreate(_time,_action,_args = [],_units = time_source_units_seconds,_source = time_source_game)
 {
+    //Setup Time Source
     var _timeSource = time_source_create(_source, _time, _units, _action,_args);
     time_source_start(_timeSource);
     
-    return _timeSource;
+    //Add To Global Array
+    array_push(global.timeSources,_timeSource);
+    
+    //Return Time Source
+    return {source:_timeSource,id:array_length(global.timeSources)-1};
 }
 
 

@@ -69,9 +69,8 @@ if winner
         effectStar(_x,y,15,true,50,150,40);
         
         //Hurt
-        var _amount = irandom_range(10,15);
-        print(_amount);
-            
+        var _amount = irandom_range(10,15)*global.valueMult;
+        
         if handId == 1
         {
             hurtEnemy(_amount);

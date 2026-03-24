@@ -28,11 +28,24 @@ function initSettings()
     global.voicePlaying = false;
     global.enemyDialogue = true;
 	
-	//Input
+	#region Input
+    
+    //Game
 	global.keyDiscard = ord("Z");
 	global.keyFullscreen = vk_f11;
 	global.keyPause = vk_escape;
 	global.keyDebug = 220;
+    
+    //Kaos Games
+    global.keyMoveLeft = vk_left;
+    global.keyMoveRight = vk_right;
+    
+    //Brawler
+    global.keyJump = vk_up;
+    global.keyAttack = ord("Z");
+    global.keyBlock = ord("X");
+    
+    #endregion
     
     //Game
     global.showPercentage = true;
@@ -85,6 +98,10 @@ function keyToString(_key)
 		case vk_f10: return "F10";		
 		case vk_f11: return "F11";		
 		case vk_f12: return "F12";		
+        case vk_up: return "Up Arrow";
+		case vk_down: return "Down Arrow";
+		case vk_left: return "Left Arrow";
+		case vk_right: return "Right Arrow";
 		case 220: return "Backslash";
 		case 1: return "Left Mouse";
 		case 2: return "Right Mouse";

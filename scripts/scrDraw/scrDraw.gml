@@ -1,7 +1,7 @@
 
 
 ///@self oCard
-function drawCardText(_info){
+function drawCardText(_info,_depthChange = 5){
     
     if !instance_exists(oCardText) and touchingMouse()
     {
@@ -11,7 +11,8 @@ function drawCardText(_info){
             range : _info.range,
             uses : variable_instance_exists(self,"uses") ? uses : NaN,
             type : _info.type,
-            parent : self.id
+            parent : self.id,
+            depthChange : _depthChange
         });
     }
 }

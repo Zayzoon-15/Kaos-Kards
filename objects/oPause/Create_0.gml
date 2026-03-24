@@ -17,6 +17,9 @@ lastSong = noone;
 lastSongLoops = 0;
 lastSongPos = 0;
 
+//Pause Delay
+pauseDelay = 0;
+
 //Functions
 pauseGame = function()
 {
@@ -35,13 +38,31 @@ pauseGame = function()
     //Stop Songs
     audioPlaySong(noone,30,"Pause");
     
-    #region Deactiveate
+    #region Deactivate
+    
+    //Stop Sounds
 	audio_group_stop_all(agSfx);
+    
+    //Deactivate Objects
 	instance_deactivate_all(true);
+    
+    //Reactivate Objects
 	instance_activate_object(oGame);
 	instance_activate_object(oExpandRes);
     instance_activate_object(oSound);
     instance_activate_object(oSubtitle);
+    
+    //Pause Timers
+    for (var i = 0; i < array_length(global.timeSources); i++) {
+        //Check If Exists
+        if time_source_exists(global.timeSources[i]) continue;
+        
+        //Pause Timers
+        if time_source_get_state(global.timeSources[i]) == time_source_state_active
+        {
+            time_source_pause(global.timeSources[i]);
+        }
+    }
     
 	#endregion
     
@@ -65,7 +86,25 @@ unpauseGame = function()
     instance_destroy(oPauseReturn);
     instance_destroy(oPauseSettings);
     
-    //Activate
+    #region Activate
+    
+    //Resume Audio
     audio_resume_all();
+    
+    //Activate Objects
 	instance_activate_all();
+    
+    //Resume Timers
+    for (var i = 0; i < array_length(global.timeSources); i++) {
+        //Check If Exists
+        if time_source_exists(global.timeSources[i]) continue;
+        
+        //Resume Timers
+        if time_source_get_state(global.timeSources[i]) == time_source_state_paused
+        {
+            time_source_resume(global.timeSources[i]);
+        }
+    }
+    
+    #endregion
 }

@@ -14,7 +14,10 @@ textXScale = 0;
 //Action
 action = function()
 {
-    instance_create_depth(0,0,depth-2,oSettings);
-    oSettings.lastButton = oPause.settingsLastButton;
-    oSettings.createSettings();
+    if global.paused
+    {
+        instance_create_depth(0,0,depth-2,oSettings);
+        oSettings.lastButton = oPause.settingsLastButton;
+        oSettings.createSettings();
+    }
 }
