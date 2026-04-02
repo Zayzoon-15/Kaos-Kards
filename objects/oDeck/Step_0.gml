@@ -3,7 +3,7 @@ targetX = getPosToWindow(true);
 targetY = ystart;
 
 //Touching Stack
-var _touchingStack = point_in_rectangle(mouse_x,mouse_y,x-sprite_width/2,y-sprite_height/2,x+sprite_width/2,targetY+sprite_height/2);
+touchingStack = point_in_rectangle(mouse_x,mouse_y,x-sprite_width/2,y-sprite_height/2,x+sprite_width/2,targetY+sprite_height/2);
 
 //Player Only
 if room == rPrepare
@@ -20,20 +20,23 @@ if room == rPrepare
     {
         _text = $"Your deck of cards\nYou have {cardsLeft} cards left";
     } else _text = $"Your deck of cards\nYou have {cardsLeft} card left";
-    tipBoxTouching = _touchingStack;
+    tipBoxTouching = touchingStack;
     drawTipBox(_text);
 }
 
+//Set Card Seperation
+currentCardSep = cardsLeft < 25 ? 2 : 1; 
+
 //Hide Deck
-visible = cardsLeft != 0;
+//visible = cardsLeft != 0;
 
 //Set Can Hover
-canHover = visible and !global.holdingCard and !global.menuOpen;
+canHover =  !global.holdingCard and !global.menuOpen;
 
 //Hold Mouse
 if !grabbed
 {
-    if (touchingMouse() or _touchingStack) and canHover
+    if (touchingMouse() or touchingStack) and canHover
     {
         if mouse_check_button_pressed(mb_left)
         {
@@ -46,7 +49,7 @@ if !grabbed
         }
         
         //Grab
-        if heldTime > 20 and touchingMouse()
+        if heldTime > 20 and touchingMouse() and cardsLeft != 0
         {
             grabbed = true;
             global.holdingCard = true;
@@ -59,7 +62,7 @@ if !grabbed
         
         if mouse_check_button_released(mb_left) and pressed
         {
-            if heldTime <= 20 and room == rPrepare
+            if (heldTime <= 20 or cardsLeft <= 0) and room == rPrepare
             {
                 instance_create_depth(0,0,-5,oDeckShowMenu);
             }
@@ -73,9 +76,8 @@ if !grabbed
     }
     
     //Set Position
-    var _sep = cardsLeft < 25 ? 5 : 1; 
     x = lerp(x,targetX,.3);
-    y = lerp(y,ystart - cardsLeft*_sep,.3);
+    y = lerp(y,ystart - cardsLeft*currentCardSep,.3);
     
     //Shadow
     shadowX = lerp(shadowX,0,.2);

@@ -12,6 +12,13 @@ if instance_exists(oDeckShowMenu)
     
     //Set Show Placed
     showPlaced = oDeckShowMenu.showPlaced;
+    
+    //Reset Text
+    textInfo = struct_copy(info);
+    if showPlaced
+    { 
+        setText();
+    }
 }
 
 //Set Position
@@ -132,7 +139,7 @@ if grabbed
     if depth > startDepth then depth = startDepth;
     
     //Info Box
-    if hover then drawCardText(info,array_length(playerDeck));
+    if hover then drawCardText(textInfo,array_length(playerDeck));
 }
 
 //Rotate

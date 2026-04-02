@@ -59,29 +59,19 @@ diceCards = {
     
     //Change Dice
     dice8 : new createCardDice("8 Sided Dice",
-    "Changes one random dice to an 8 sided [aq]dice[s][lg](Can ONLY be placed before roll)",
-    sCardDice,diceCardSwapDice,9,[diceTypes.d8]),
+    "Changes one random [aq]dice[/] to an 8 sided [aq]dice[s][lg](Can ONLY be placed before roll)",
+    sCardDice8,diceCardSwapDice,9,[diceTypes.d8]),
     
     dice12 : new createCardDice("12 Sided Dice",
-    "Changes one random dice to a 12 sided [aq]dice[s][lg](Can ONLY be placed before roll)",
-    sCardDice,diceCardSwapDice,6,[diceTypes.d12]),
+    "Changes one random [aq]dice[/] to a 12 sided [aq]dice[s][lg](Can ONLY be placed before roll)",
+    sCardDice12,diceCardSwapDice,6,[diceTypes.d12]),
     
     dice20 : new createCardDice("20 Sided Dice",
-    "Changes one random dice to a 20 sided [aq]dice[s][lg](Can ONLY be placed before roll)",
-    sCardDice,diceCardSwapDice,3,[diceTypes.d20]),
+    "Changes one random [aq]dice[/] to a 20 sided [aq]dice[s][lg](Can ONLY be placed before roll)",
+    sCardDice20,diceCardSwapDice,4,[diceTypes.d20]),
     
 };
 
 
 
 }
-
-//All or Nothin’
-
-//Double or Dead
-//
-//Fate Flip
-//
-//Zero or God Roll
-//
-//Max or Bust

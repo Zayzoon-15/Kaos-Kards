@@ -59,3 +59,17 @@ onMouse = 0;
 
 //Fade
 TweenEasyFade(0,1,0,10,EaseOutCubic);
+
+//Set Text
+textInfo = "";
+setText = function()
+{
+    textInfo = struct_copy(info);
+    if discarded
+    {
+        textInfo.desc += "[s][lg](Card was discarded)";
+    } else if placed {
+        textInfo.desc += "[s][lg](Card is in use)";
+    }
+}
+setText();

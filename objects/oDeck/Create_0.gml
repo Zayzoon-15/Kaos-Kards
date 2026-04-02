@@ -34,6 +34,7 @@ deck = array_shuffle(deck);
 deckNum = 0;
 totalCards = array_length(deck);
 cardsLeft = totalCards;
+cardsDiscarded = [];
 currentCard = 0;
 cardsInPlay = 0;
 
@@ -56,6 +57,7 @@ shadowSize = 0.05;
 
 //Hover
 canHover = true;
+currentCardSep = 1;
 
 //Ui Box Stats
 height = 0;
@@ -71,6 +73,7 @@ pressed = false;
 heldTime = 0;
 offsetX = 0;
 offsetY = 0;
+touchingStack = false;
 
 //Functions
 drawCard = function(){
@@ -101,6 +104,8 @@ drawCard = function(){
     audioPlaySfx([snCardDraw1,snCardDraw2,snCardDraw3]);
     
 }
+
+sprite_index = global.currentDeck.sprite;
 
 //Setup
 alarm[0] = 5;

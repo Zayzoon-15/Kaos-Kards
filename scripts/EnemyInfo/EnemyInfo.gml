@@ -184,6 +184,21 @@ enemyInfo = {
         Enemy.Strat(20,45,90,90,40,2,100)
     ),
     
+    dumbass : new Enemy.Create("Dumbass",
+        sDumbass, Enemy.Anims(), Enemy.Dialogue(1,"hi"),
+        1.5, 2.1, 85,
+        [
+            actionCards.steak, actionCards.heal,
+            actionCards.shield, actionCards.shield, actionCards.shield,
+            actionCards.bread, actionCards.bread, actionCards.bread,
+            actionCards.laser, actionCards.laser,
+            actionCards.flaminAce, actionCards.flaminAce,
+            actionCards.jerryCan, actionCards.silence,
+        ],
+        [kaosCards.high,kaosCards.freeze],
+        Enemy.Strat(20,45,90,90,40,2,100)
+    ),
+    
     
     #endregion
 };

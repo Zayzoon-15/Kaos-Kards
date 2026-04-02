@@ -52,6 +52,7 @@ createCards = function()
 {
     //Get Placed Cards
     var _placedCards = array_concat(oDeck.placedCards,[]);
+    var _discardedCards = array_concat(oDeck.cardsDiscarded,[]);
     actionIds = 0;
     diceIds = 0;
     kaosIds = 0;
@@ -130,9 +131,19 @@ createCards = function()
             }
         }
         
+        //Get Discarded
+        var _discarded = false;
+        if array_contains(_discardedCards,_deck[i])
+        {
+            var _index = array_get_index(_discardedCards,_deck[i]);
+            array_delete(_discardedCards,_index,1);
+            _discarded = true;
+        }
+        
         instance_create_depth(boxPos.x,y,depth-1,oDeckShowCards,{
             info : _deck[i],
             placed : _placed,
+            discarded : _discarded,
             cardId : _cardId,
             boxWidth : boxWidth
         });

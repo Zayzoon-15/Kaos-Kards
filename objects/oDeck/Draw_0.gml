@@ -1,21 +1,27 @@
-//Draw Deck
-for (var i = 1; i < cardsLeft; i++) {
-    
-    var _sep = cardsLeft < 25 ? 5 : 1; 
-    
-    //Draw Deck
-	draw_sprite_ext(sprite_index,image_index,targetX,targetY-(i*_sep),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-    
-    //Draw Dark
-    draw_sprite_ext(sprite_index,image_index,targetX,targetY-(i*_sep),image_xscale,image_yscale,image_angle,c_black,image_alpha*.3);
+//Draw Hidden Deck
+if cardsLeft <= 0
+{
+    drawRectOutlined(bbox_left,bbox_top,bbox_right,bbox_bottom,UIBOX_RAD,0,c_black,c_white,.3*image_alpha,0);
 }
 
-//Deck Shadow
-draw_sprite_ext(sprite_index,image_index,x+shadowX,y+shadowY,xscale-shadowSize,yscale-shadowSize,angle,c_black,image_alpha*SHADOW_ALPHA);
+//Draw Deck
+for (var i = 1; i < cardsLeft; i++) {
+    //Draw Deck
+	draw_sprite_ext(sprite_index,image_index,targetX,targetY-(i*currentCardSep),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+    
+    //Draw Dark
+    draw_sprite_ext(sprite_index,image_index,targetX,targetY-(i*currentCardSep),image_xscale,image_yscale,image_angle,c_black,image_alpha*.3);
+}
 
-//Draw Top Deck
-draw_sprite_ext(sprite_index,image_index,x,y,xscale,yscale,angle,image_blend,image_alpha);
-
+if cardsLeft != 0
+{
+    //Deck Shadow
+    draw_sprite_ext(sprite_index,image_index,x+shadowX,y+shadowY,xscale-shadowSize,yscale-shadowSize,angle,c_black,image_alpha*SHADOW_ALPHA);
+    
+    //Draw Top Deck
+    draw_sprite_ext(sprite_index,image_index,x,y,xscale,yscale,angle,image_blend,image_alpha);
+    
+}
 
 #region Draw Stats
 
@@ -42,6 +48,19 @@ drawRectOutlined(_x-_halfWidth-widthMargin,_y-height-(heightMargin*2),_x+_halfWi
 //Draw Text
 textSetup(fnMain,fa_center,fa_top,c_white,image_alpha);
 draw_text_ext_transformed(_x,_y-height-(heightMargin/2),_text,-1,maxWidth,1,1,0);
+
+//Draw Box Hover
+if (touchingMouse() or touchingStack) and !grabbed and !global.holdingCard and !global.menuOpen
+{
+    //Draw Box
+    var _w = 30;
+    var _h = 30;
+    drawRectOutlined(x-_w,y-_h,x+_w,y+_h,UIBOX_RAD,0,c_black,c_white,.6*image_alpha,0);
+    
+    //Draw Text
+    textSetup(fnMain,fa_center,fa_middle,c_white,image_alpha);
+    draw_text_transformed(x,y,"View\nDeck",1,1,0);
+}
 
 //Reset Draw
 drawReset();

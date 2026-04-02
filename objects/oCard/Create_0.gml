@@ -101,6 +101,8 @@ removeCardFromHand = function()
             }
         }
         
+        //Set Deck
+        array_push(oDeck.cardsDiscarded,info);
         oDeck.currentCard --;
     }
 }

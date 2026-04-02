@@ -4,7 +4,7 @@ function gameReset()
 {	
     //Set Seed
     randomise();
-    random_set_seed(random(999999));
+    random_set_seed(random(999999),true);
     print("Game Seed",random_get_seed());
     
 	//Set Gamestate
