@@ -7,7 +7,7 @@ gameStarted = false;
 alarm[0] = 25;
 
 //Enemy Animation
-enemyPlayAnim("kaosHotDogStart");
+Enemy.PlayAnim("kaosHotDogStart");
 
 //Change Song
 audioPlaySong(global.currentEnemy.customSong.minigame);

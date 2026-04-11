@@ -48,18 +48,18 @@
 #macro FIGGY_CONTROLS_NAME "[CONTROLS]"
 
 // Whether the Controls section starts open (true) or not (false).
-#macro FIGGY_CONTROLS_OPEN true
+#macro FIGGY_CONTROLS_OPEN false
 
 // Whether to include the Controls section in every window (true) or not (false).
 // If set to false, the Controls section will only be included in the first window.
-#macro FIGGY_CONTROLS_IN_EVERY_WINDOW true
+#macro FIGGY_CONTROLS_IN_EVERY_WINDOW false
 
 #endregion
 #region Scope Widgets
 
 // A. The name of the default window that's created if no .Window()s are used.
 // B. The prefix used for custom .Window()s (e.g. "Figgy: Player").
-#macro FIGGY_WINDOW_NAME "Figgy"
+#macro FIGGY_WINDOW_NAME "Kaos"
 
 // Whether Figgy windows start visible by default (true) or not (false).
 #macro FIGGY_WINDOW_DEFAULT_START_VISIBLE false
@@ -91,7 +91,7 @@
 
 // Whether to include -/+ cycling buttons for .Int() and .Float() Value Widgets (true) or not (false).
 // NOTE: If true, might slow down FiggySetup() at scale.
-#macro FIGGY_SLIDER_BUTTONS false
+#macro FIGGY_SLIDER_BUTTONS true
 
 // Default step increment for .Int() Value Widgets.
 #macro FIGGY_INT_DEFAULT_STEP 1

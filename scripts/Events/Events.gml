@@ -32,7 +32,7 @@ function gameReset()
 	
 	//Reset Health Bar
     global.playerMaxHp = 100;
-    global.enemyMaxHp = global.currentEnemy != undefined ? global.currentEnemy.maxHp : 100;
+    global.enemyMaxHp = global.currentEnemy != undefined ? global.currentEnemy.difficulty.maxHp : 100;
 	global.playerHp = global.playerMaxHp;
 	global.playerTempHp = 0;
 	global.playerHpIcons = [];

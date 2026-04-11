@@ -9,7 +9,7 @@ animationEnd = false;
 shake = 0;
 ignoreTime = 0;
 resetAnim = "";
-enemyPlayAnim("idle");
+Enemy.PlayAnim("idle");
 
 //Hover
 canHover = true;
@@ -21,7 +21,7 @@ alarm[1] = 80;
 hurt = function()
 {
     //Play Animation
-    enemyPlayAnim("hurt");
+    Enemy.PlayAnim("hurt");
     shake += 15;
     
     //Start Reset
@@ -31,7 +31,7 @@ hurt = function()
 win = function(_stars = true)
 {
     //Play Animation
-    enemyPlayAnim("win");
+    Enemy.PlayAnim("win");
     
     //Stars
     if _stars then effectStar(x,y,10,false,10,15);

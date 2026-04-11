@@ -7,7 +7,7 @@
 */
 
 function FiggySetup() {
-			
+    
 	Figgy.Window("Game Info",true,FIGGY_WINDOW_DEFAULT_X,40,FIGGY_WINDOW_DEFAULT_WIDTH,500);
 	   
         Figgy.Bool("Show Current Song",false,function(){
@@ -22,7 +22,7 @@ function FiggySetup() {
             }});
         //Figgy.Int("Enemy Frame",0,0,3,1,function(){with oEnemyPhoto {currentAnim = argument0}});
         Figgy.String("Enemy Animation","idle",function(){
-            enemyPlayAnim(argument0);
+            Enemy.PlayAnim(argument0);
         });
         Figgy.Button("Enemy Talk",function(){
             with oEnemyPhoto
@@ -157,6 +157,5 @@ function FiggySetup() {
 			global.disabledSlots.player[1] = true;
 			global.disabledSlots.enemy[1] = true;
 		});
-    
     
 }

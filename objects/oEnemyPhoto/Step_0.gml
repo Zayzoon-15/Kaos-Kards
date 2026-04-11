@@ -39,6 +39,6 @@ if ignoreTime > 0
     ignoreTime --;
 } else if resetAnim != ""
 {
-    enemyPlayAnim(resetAnim);
+    Enemy.PlayAnim(resetAnim);
     resetAnim = "";
 }

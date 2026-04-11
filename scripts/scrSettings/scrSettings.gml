@@ -65,6 +65,7 @@ function setWindowToRes()
 	//Set Size
 	var _res = global.resolutions[global.currentRes];
 	window_set_size(_res.x,_res.y);
+    window_set_fullscreen(false);
 	window_center();
 	
 	//Apply Window

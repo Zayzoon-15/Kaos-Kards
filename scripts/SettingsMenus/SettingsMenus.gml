@@ -39,6 +39,13 @@ function SettingsMenus()
                 SettingsButtons.Check("Fullscreen",function()
                 {
                     window_set_fullscreen(argument0);
+                    
+                    //Set Correct Window
+                    if window_get_showborder()
+					{
+						global.window = "Window";
+					} else global.window = "Borderless";
+                    global.window = argument0 ? "Fullscreen" : global.window;
                 },function(){return window_get_fullscreen();});
                 SettingsButtons.Check("Borderless",function()
                 {

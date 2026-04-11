@@ -64,7 +64,7 @@ if playerId == 0
     
 	if !alarm[0] and !won
 	{
-		alarm[0] = random_range(5,15)/global.currentEnemy.gameDifficulty;
+		alarm[0] = random_range(5,15)/global.currentEnemy.difficulty.gameSkill;
 	}
 	
 	if won

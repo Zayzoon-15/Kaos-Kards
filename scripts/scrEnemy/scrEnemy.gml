@@ -40,37 +40,49 @@ function Enemy()
     
     
     
-    /// @desc Create the enemies fighting strategy
-    /// @param {real} [_healWeight] How important healing is (Default = 80)
-    /// @param {real} [_healVal] When should it consider healing (Default = 60)
-    /// @param {real} [_defendWeight] How important defending is (Default = 50)
-    /// @param {real} [_defendValue] When should it consider defending (Default = 50)
-    /// @param {real} [_diceWeight] How important the dice are if low a kaos card will be placed (Default = 80)
-    /// @param {real} [_diceVal] How many low dice before upgrading (Default = 2)
-    /// @param {real} [_comboWeight] How important it is to combo (Default = 100)
-    /// @param {real} [_specialWeight] How important it is to use the special move (Default = 40)
-    /// @param {real} [_specialVal] How many rounds in before using special move (Default = 3)
-    /// @param {real} [_specialUses] How many uses before they stop completely (Default = 2)
-    static Strat = function(_healWeight = 80,_healVal = 60,_defendWeight = 50,_defendValue = 50,_diceWeight = 80,_diceVal = 2,_comboWeight = 100,_specialWeight = 40,_specialVal = 3,_specialUses = 2) 
+    /// @desc Creates the enemy fighting strategy (1 is the base for all)
+    /// @param {real} _aggression How much they attack
+    /// @param {real} _defense How much they defend
+    /// @param {real} _healBias How much would they rather heal
+    /// @param {real} _blockBias How much would they rather block
+    /// @param {real} _kaosLove How much they use kaos cards
+    static Strat = function(_aggression = 1,_defense = 1,_healBias = 1,_blockBias = 1,_kaosLove = 1) 
     {
         return {
-            //Weights
-            healWeight : _healWeight,
-            defendWeight : _defendWeight,
-            diceWeight : _diceWeight,
-            comboWeight : _comboWeight,
-            specialWeight : _specialWeight,
-            
-            //Values
-            healValue : _healVal,
-            defendValue : _defendValue,
-            diceValue : _diceVal,
-            specialValue : _specialVal,
-            specialUses : _specialUses,
+            aggression : _aggression,
+            defense : _defense,
+            healBias : _healBias,
+            blockBias : _blockBias,
+            kaosLove : _kaosLove,
         }
     }
     
     
+    
+    /// @desc Creates the difficulty for the enemies (1 is the base for all)
+    /// @param {real} _overallSkill How smart they are
+    /// @param {real} _gameskill How good are they at mini games
+    /// @param {real} _maxHp Their Max Health
+    /// @param {real} _defenedBuff How much less damage they take
+    /// @param {real} _attackBuff How much more damage they deal
+    static Difficulty = function(_overallSkill = 1,_gameskill = 1,_maxHp = 100,_defenedBuff = 1,_attackBuff = 1)
+    {
+        return {
+            skill : _overallSkill,
+            gameSkill : _gameskill,
+            maxHp : _maxHp,
+            defendBuff : _defenedBuff,
+            attackBuff : _attackBuff,
+        }
+    }
+    
+    
+    
+    /// @desc Creates the dialouge for the enemies
+    /// @param {real} _talkChance How much they talk
+    /// @param {array<string>} _dialogue The enemies dialouge
+    /// @param {array<string>} _dialougeWinning The enemies dialouge if they are winning
+    /// @param {array<string>} _dialougeLosing The enemies dialouge if they are losing
     static Dialogue = function(_talkChance = -1,_dialogue = [],_dialougeWinning = [],_dialougeLosing = [])
     {
         return {
@@ -80,6 +92,7 @@ function Enemy()
             textLose : is_array(_dialougeLosing) ? _dialougeLosing : [_dialougeLosing],
         }
     }
+    
     
     
     /// @desc Creates the enemies information
@@ -95,7 +108,7 @@ function Enemy()
     /// @param {struct.enemycreatestrat} [_strat] The enemies figthing strategy
     /// @param {any*} [_special] The enemies special move(leave as undefined if they don't use one)
     /// @param {array.string} _customSong The song the enemy plays (Example: ["Prepare","Kaos"])
-    static Create = function(_name,_sprite,_animInfo = Anims(),_dialogue = undefined,_difficulty = 1,_gameDifficulty = 1,_maxHp = 100,_actionCards=[],_kaosCards=[],_strat = Strat(),_special = undefined,_customSong = ["Prepare","Kaos","Kaos"]) constructor
+    static Create = function(_name,_sprite,_animInfo = Anims(),_dialogue = Dialouge(),_difficulty = Difficulty(),_actionCards=[],_kaosCards=[],_strat = Strat(),_special = undefined,_customSong = ["Prepare","Kaos","Kaos"]) constructor
     {    
         //Info
         name = _name;
@@ -112,8 +125,6 @@ function Enemy()
         
         //Difficulty
         difficulty = _difficulty;
-        gameDifficulty = _gameDifficulty;
-        maxHp = _maxHp;
         
         //Cards
         cardsAct = _actionCards;
@@ -123,80 +134,61 @@ function Enemy()
         strat = _strat;
         special = _special;
     }
-}
-
-
-
-///@self oEnemyAi
-///@desc Adds an enemy card to the room
-///@arg {real} _slotId The slot id
-///@arg {struct} _info The cards info
-///@arg {real} _value The cards value
-///@arg {bool} _used If the slot is used
-///@arg {bool} _disabled If the slot is disabled
-function enemyAddCard(_slotId,_info,_value,_used = false,_disabled = false)
-{
-    //Get Inst
-    var _slotInst = _slotId != 0 ? oActionSlot : oSpecialSlot;
-
-    //Get Pos
-    var _x, _y;
-    switch (_slotId) {
-    	case 0: _x = 160; _y = 512; break;
-    	case 1: _x = 440; _y = 360; break;
-    	case 2: _x = 640; _y = 360; break;
-    	case 3: _x = 840; _y = 360; break;
-    }
     
-    //Skipped
-    if !_used and !_disabled and _info == undefined
-    {
-        global.enemyComboMeter += irandom_range(3,4);
-    }
-
-    //Create Slot
-    var _slot = instance_create_layer(_x,_y,"Slots",_slotInst,{slotId : _slotId,});
-    _slot.used = _used; //Set Used
-    _slot.disabled = _disabled; //Set Disabled
     
-    //Create Card
-    if !_used 
-    {
-        instance_create_layer(_x,_y,"Cards",oEnemyCard,{
-            info : _info,
-            value : _value,
-            slotId : _slotId,
-			slot : _slot
-        });
-    }
-}
-
-
-
-///@desc Plays the enemy animation
-///@param {string} _anim The animation to play
-function enemyPlayAnim(_anim,_ignoreTime = 0,_resetAnim = "",_targetObj = oEnemyPhoto)
-{
-    //Animation Does Not Exist
-    if !variable_struct_exists(global.currentEnemy.animInfo,_anim)
-    {
-        print($"'{_anim}' Does Not Exist");
-        exit;
-    }
     
-    //Set clip
-    var _clip = variable_struct_get(global.currentEnemy.animInfo, _anim);
-    
-    //Switch Animation
-    with _targetObj
+    static PlayAnim = function(_anim,_ignoreTime = 0,_resetAnim = "",_targetObj = oEnemyPhoto)
     {
-        if _clip != undefined and currentAnim != _clip and ignoreTime <= 0
+        //Animation Does Not Exist
+        if !variable_struct_exists(global.currentEnemy.animInfo,_anim)
         {
-            currentAnim = _clip;
-            frame = 0;
-            animationEnd = false;
-            ignoreTime = _ignoreTime;
-            resetAnim = _resetAnim;
+            print($"'{_anim}' Does Not Exist");
+            exit;
+        }
+        
+        //Set clip
+        var _clip = variable_struct_get(global.currentEnemy.animInfo, _anim);
+        
+        //Switch Animation
+        with _targetObj
+        {
+            if _clip != undefined and currentAnim != _clip and ignoreTime <= 0
+            {
+                currentAnim = _clip;
+                frame = 0;
+                animationEnd = false;
+                ignoreTime = _ignoreTime;
+                resetAnim = _resetAnim;
+            }
         }
     }
 }
+
+
+/////@desc Plays the enemy animation
+/////@param {string} _anim The animation to play
+//function enemyPlayAnim(_anim,_ignoreTime = 0,_resetAnim = "",_targetObj = oEnemyPhoto)
+//{
+    ////Animation Does Not Exist
+    //if !variable_struct_exists(global.currentEnemy.animInfo,_anim)
+    //{
+        //print($"'{_anim}' Does Not Exist");
+        //exit;
+    //}
+    //
+    ////Set clip
+    //var _clip = variable_struct_get(global.currentEnemy.animInfo, _anim);
+    //
+    ////Switch Animation
+    //with _targetObj
+    //{
+        //if _clip != undefined and currentAnim != _clip and ignoreTime <= 0
+        //{
+            //currentAnim = _clip;
+            //frame = 0;
+            //animationEnd = false;
+            //ignoreTime = _ignoreTime;
+            //resetAnim = _resetAnim;
+        //}
+    //}
+//}

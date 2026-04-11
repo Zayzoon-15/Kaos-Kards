@@ -10,6 +10,6 @@ for (var i = 0; i < array_length(_array); i++) {
     //Play Animatiopn
 	if _struct == currentAnim and !_struct.loop and _struct.resetAnim != ""
     {
-        enemyPlayAnim(_struct.resetAnim);
+        Enemy.PlayAnim(_struct.resetAnim);
     }
 }

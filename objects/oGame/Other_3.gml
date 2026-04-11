@@ -2,7 +2,7 @@
 
 if window_get_fullscreen()
 {
-	global.window = "Fullscreen";
+    global.window = "Fullscreen";
 }
 
 SaveFile.GameSave();

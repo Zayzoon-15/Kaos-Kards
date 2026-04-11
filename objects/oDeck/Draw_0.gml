@@ -53,8 +53,8 @@ draw_text_ext_transformed(_x,_y-height-(heightMargin/2),_text,-1,maxWidth,1,1,0)
 if (touchingMouse() or touchingStack) and !grabbed and !global.holdingCard and !global.menuOpen
 {
     //Draw Box
-    var _w = 30;
-    var _h = 30;
+    var _w = 20;
+    var _h = 20;
     drawRectOutlined(x-_w,y-_h,x+_w,y+_h,UIBOX_RAD,0,c_black,c_white,.6*image_alpha,0);
     
     //Draw Text
