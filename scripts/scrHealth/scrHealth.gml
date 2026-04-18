@@ -39,15 +39,26 @@ function hurtEnemy(_value,_ignoreShield = false)
     {
         if target == "Enemy" then hitEffect(_lastTemp);
     }
+    
+    //Remove Assist Effect
+    with (oAttackEffect) {
+        if info.type == EFFECT_TYPE.ASS and targetEnemy
+        {
+            value -= _value;
+            effectValue -= _value;
+        }
+    }
 	
-	//Remove Assist Effect
-	for (var i = 0; i < ds_list_size(enemyEffects); ++i) {
-	    var _list = ds_list_find_value(enemyEffects,i);
-		if _list.info.type == EFFECT_TYPE.ASS and !_ignoreShield
-		{
-			_list.value -= _value;
-		}
-	}
+	////Remove Assist Effect
+	//for (var i = 0; i < ds_list_size(enemyEffects); ++i) {
+	    //var _list = ds_list_find_value(enemyEffects,i);
+		//if _list.info.type == EFFECT_TYPE.ASS and !_ignoreShield
+		//{
+			//_list.value -= _value;
+		//}
+	//}
+    
+    return _value;
 }
 
 
@@ -92,14 +103,16 @@ function hurtPlayer(_value,_ignoreShield = false)
         if target == "Player" then hitEffect(_lastTemp);
     }
 	
-	//Remove Assist Effect
-	for (var i = 0; i < ds_list_size(playerEffects); ++i) {
-	    var _list = ds_list_find_value(playerEffects,i);
-		if _list.info.type == EFFECT_TYPE.ASS and !_ignoreShield
-		{
-			_list.value -= _value;
-		}
-	}
+    //Remove Assist Effect
+    with (oAttackEffect) {
+        if info.type == EFFECT_TYPE.ASS and !targetEnemy
+        {
+            value -= _value;
+            effectValue -= _value;
+        }
+    }
+    
+    return _value;
    
 }
 

@@ -310,7 +310,7 @@ function actionBodySlam(_targetEnemy)
     _value = floor(_value);
     
     //Remove Temp Hp
-    reduceAssEffects(_value,!_targetEnemy);
+    attackEffectReduce(NaN,_value,!_targetEnemy);
     
     //Hurt Target
     if _targetEnemy

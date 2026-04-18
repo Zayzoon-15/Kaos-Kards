@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scrAddActions",
   "parent":{
-    "name":"Setups",
-    "path":"folders/Scripts/Actions/Setups.yy",
+    "name":"_Setups",
+    "path":"folders/Scripts/Actions/_Setups.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

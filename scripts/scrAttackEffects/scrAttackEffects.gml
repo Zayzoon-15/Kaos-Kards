@@ -17,89 +17,56 @@ function createAttackEffect(_name,_sprite,_color,_type,_timeBetween = undefined,
 }
 
 
-
-
-function addEffect(_effect,_value,_targetEnemy=false)
+function attackEffectAdd(_effect = effectInfo.fire,_value = 1,_targetEnemy = true)
 {
-    //Get Target
-    var _targetList = playerEffects;
-    if _targetEnemy then _targetList = enemyEffects;
-	
+    //Get Target Map
+    var _map = _targetEnemy ? enemyEffects : playerEffects;
     
-    //Get Starting Value
-    var _startValue = _value;
-    if _effect.totalTime != undefined then _startValue = 2;
-    
-    //Create Struct
-    var _struct = {info:_effect,value:0,percent:0,showPercent:0,healthInst:noone};
-    
-    //Replace If Value Exists
-    for (var i = 0; i < ds_list_size(_targetList); i++) {
-    	if ds_list_find_value(_targetList,i).info == _struct.info
-        {
-            _struct = ds_list_find_value(_targetList,i);
-
-            with oAttackEffect
+    //Check If Effect Already Exists
+    if ds_map_exists(_map,_effect.name)
+    {
+        with (oAttackEffect) {
+        	if info == _effect
             {
-                if effect == _struct.info
-                {
-					//Set Time
-					setupTime();
-					
-					//Setup Icon
-					setupIcons();
-					
-					//Set Value
-                    value = _value;
-					
-					//Effect
-                    applyEffect();
-                }
+                //Change Icon Id
+                iconId = 0;
+                
+                //Add Value
+                value += _value;
+                
+                //Apply Effect Again
+                alarm[0] = 1;
+                
+                //Reset Destroy Time
+                alarm[1] = info.totalTime == undefined ? 2 : random_range(info.totalTime[0],info.totalTime[1])*60;
             }
-            
-            ds_list_delete(_targetList,i);
-            ds_list_insert(_targetList,i,_struct);
-            
-            exit;
         }
+    } else { //Create Effect
+    	
+        instance_create_depth(0,0,0,oAttackEffect,{ 
+            info :  _effect,
+            targetEnemy : _targetEnemy,
+            value : _value
+        });
+        
     }
-    
-    //Add To List
-    ds_list_insert(_targetList,0,_struct);
-    
-    //Create Object To Do Effect
-    instance_create_depth(0,0,0,oAttackEffect,{
-        effect : _effect,
-        value : _value,
-        targetEnemy : _targetEnemy,
-		info : _effect
-    });
-
 }
 
-
-function reduceAssEffects(_amount,_targetEnemy)
+function attackEffectReduce(_targetEffect = NaN,_amount = 1,_targetEnemy = false)
 {
-    var _targetList = playerEffects;
-    if _targetEnemy then _targetList = enemyEffects;
-    
-    for (var i = 0; i < ds_list_size(_targetList); i++) {
-        var _struct = ds_list_find_value(_targetList,i);
-        _struct.value -= _amount;
-        
-        if _struct.info.type == EFFECT_TYPE.ASS
+    with (oAttackEffect) {
+        if (_targetEffect == NaN or _targetEffect == info) and targetEnemy == _targetEnemy
         {
-            if _targetEnemy
+        	effectValue -= _amount;
+            value -= _amount;
+            
+            if info.type == EFFECT_TYPE.ASS
             {
-				global.enemyTempHp -= _amount;
-            } else
-            {
-                global.playerTempHp -= _amount;
-            } 
-                
+                if _targetEnemy
+                {
+                    global.enemyTempHp -= _amount;
+                } else global.playerTempHp -= _amount;
+            }
         }
-        
-        ds_list_replace(_targetList,i,_struct);
     }
-    
 }

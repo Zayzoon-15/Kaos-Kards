@@ -1,9 +1,19 @@
-///@desc Remove Icons
+///@desc Remove Effect
 
-//Get Array
-var _array = global.playerHpIcons;
-if targetEnemy then _array = global.enemyHpIcons;
+//Move Icon
+with oAttackEffect
+{
+    if iconId > other.iconId
+    {
+        iconId --;
+    }
+}
 
-//Delete Index
-var _index = array_get_index(_array,effect);
-array_delete(_array,_index,1);
+//Exit Animation
+instance_create_depth(x,y,depth,oHealthIconExit,{
+    healthInst : targetHealthBar,
+    sprite_index : sprite_index
+})
+
+//Delete From Map
+ds_map_delete(mapId,info.name);

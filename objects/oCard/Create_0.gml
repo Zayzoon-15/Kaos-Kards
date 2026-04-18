@@ -117,7 +117,7 @@ deleteCard = function()
     resetSlot();
     
     //Sound
-    audioPlaySfx([snDiscard1,snDiscard2,snDiscard3]);
+    audioPlaySfx([snDiscard1,snDiscard2,snDiscard3,snDiscard4,snDiscard5]);
     
     //Destroy
     instance_destroy();

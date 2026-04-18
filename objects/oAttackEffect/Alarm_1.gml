@@ -1,2 +1,3 @@
-///@desc Times Up
-timeUp = true;
+///@desc Destroy Effect
+
+effectDone = true;

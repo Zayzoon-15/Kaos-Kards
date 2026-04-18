@@ -1,7 +1,7 @@
 //Get Values
 var _hp = target == "Player" ? global.playerHp : global.enemyHp;
 var _tempHp = target == "Player" ? global.playerTempHp : global.enemyTempHp;
-targetList = target == "Player" ? playerEffects : enemyEffects;
+targetMap = target == "Player" ? playerEffects : enemyEffects;
 maxHp = target == "Player" ? global.playerMaxHp : global.enemyMaxHp;
 
 //Set Values
@@ -17,32 +17,34 @@ angle = lerp(angle,0,.2);
 var _string = target == "Player" ? "Your Health Bar" : "Enemies Health Bar";
 var _dist = tipOnTop ? 5 : 9;
 
-///String
-
-//Percentage
+//String
 if global.showPercentage
 {
-    tipBoxString = $"{_string}\nHealth:{floor((_hp/maxHp)*100)}%";
-    for (var i = 0; i < ds_list_size(targetList); ++i) {
-    	var _listValue = ds_list_find_value(targetList,i);
-    	var _amount = abs(_listValue.value);
-    	if _amount > 0
-    	{
-    		tipBoxString += $"\n{_listValue.info.name}:{ceil(_listValue.showPercent)}%";
-    	}
+    tipBoxString = $"{_string}\nHealth: {floor((_hp/maxHp)*100)}%";
+    
+    var _array = ds_map_keys_to_array(targetMap);
+    for (var i = 0; i < array_length(_array); i++) {
+        var _effect = targetMap[? _array[i]];
+    	var _value = (_effect.showValue/100)*100;
+        if _value > 0
+        {
+            tipBoxString += $"\n{_effect.name}: {round(_value)}%";
+        }
     }
+    
 } else { //Non Percentage
     
-    tipBoxString = $"{_string}\nHealth:{floor(_hp)}/{maxHp}";
-    for (var i = 0; i < ds_list_size(targetList); ++i) {
-    	var _listValue = ds_list_find_value(targetList,i);
-    	var _amount = abs(_listValue.value);
-    	if _amount > 0
-    	{
-    		tipBoxString += $"\n{_listValue.info.name}:{ceil(_listValue.value)}";
-    	}
-    }
+    tipBoxString = $"{_string}\nHealth: {floor(_hp)}/{maxHp}";
     
+    var _array = ds_map_keys_to_array(targetMap);
+    for (var i = 0; i < array_length(_array); i++) {
+        var _effect = targetMap[? _array[i]];
+    	var _value = _effect.showValue;
+        if _value > 0
+        {
+            tipBoxString += $"\n{_effect.name}: {round(_value)}";
+        }
+    }
 }
 
 //Draw Info

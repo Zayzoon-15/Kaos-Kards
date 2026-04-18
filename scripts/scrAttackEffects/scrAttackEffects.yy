@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scrAttackEffects",
   "parent":{
-    "name":"Setups",
-    "path":"folders/Scripts/Actions/Setups.yy",
+    "name":"Effects",
+    "path":"folders/Scripts/Actions/Effects.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

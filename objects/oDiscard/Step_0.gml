@@ -32,7 +32,7 @@ if !isFull
 
 if !global.holdingCard and !global.menuOpen
 {
-    drawTipBox(_text);
+    drawTipBox(_text,true,false,-10);
 }
 
 //Info

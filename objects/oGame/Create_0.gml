@@ -56,6 +56,11 @@ global.enemyHpIcons = [];
 global.playerMaxHp = 100;
 global.enemyMaxHp = 100;
 
+//Create Lists
+globalvar playerEffects,enemyEffects;
+playerEffects = ds_map_create();
+enemyEffects = ds_map_create();
+
 //Meter
 global.playerComboMeter = 0;
 global.enemyComboMeter = 0;

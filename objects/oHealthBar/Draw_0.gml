@@ -34,62 +34,113 @@ if !surface_exists(barMask) then barMask = surface_create(_spriteWidth+_maskXOff
 surface_set_target(barMask);
 draw_clear_alpha(c_black,0);
 
-for (var i = 0; i < ds_list_size(targetList); i++) {
+var _array = ds_map_keys_to_array(targetMap);
+for (var i = 0; i < array_length(_array); i++) {
     
-    var _list = ds_list_find_value(targetList,i);
-	
-	_list.healthInst = self.id;
-	
-    var _lastList = undefined;
+    //Effect
+	var _effect = targetMap[? _array[i]];
+    var _percent = (_effect.showValue/100)*_spriteWidth;
+    
+    //Get Last Value
     var _lastValue = 0;
     
-    for (var k = 0; k < ds_list_size(targetList); k++) {
-        var _foundList = ds_list_find_value(targetList,k);
-    	if _foundList.info.type == _list.info.type and _foundList.info != _list.info and k < i
+    for (var k = 0; k < array_length(_array); k++) {
+    	var _index = targetMap[? _array[k]];
+        
+        if _index.name != _effect.name and _index.type == _effect.type and k < i
         {
-            _lastList = _foundList;
+            _lastValue = (_index.showValue/100)*_spriteWidth;
         }
+        
     }
     
-    if _lastList != undefined
-    {
-        if _lastList.info.type == _list.info.type
-        {
-            _lastValue = _lastList.percent;
-        }
-    }
-	
-	//if flipped then _xPos -= 1; else _xPos += 1;
-    var _newOffset,_value,_barX,_barY;
-	var _color = _list.info.color;
-	
-	if _list.info.type == EFFECT_TYPE.HARM
-	{
-        _newOffset = _hpValue+_lastValue;
-        var _barLeft = abs(_hpValue-_spriteWidth);
-        
-    	_value = _list.value;
-    	if _value < 0 then _value = 0;
-    	
-    	_list.percent = (_value/100)*_spriteWidth;
-        
-        _barX = _maskXOffset + lengthdir_x(_newOffset-1, angle) + lengthdir_x(_maskYOffset, angle - 90);
-        _barY = lengthdir_y(_newOffset-1, angle) + lengthdir_y(_maskYOffset, angle - 90);
-    } else {
-    	_newOffset = _lastValue;
-        
-    	_value = _list.showPercent;
-    	if _value < 0 then _value = 0;
-    	
-    	_list.percent = (_value/100)*_spriteWidth;
-        
-        _barX = _maskXOffset + lengthdir_x(_newOffset, angle) + lengthdir_x(_maskYOffset, angle - 90);
-        _barY = lengthdir_y(_newOffset, angle) + lengthdir_y(_maskYOffset, angle - 90);
-	}
+    //Position
+    var _newOffset = _effect.type == EFFECT_TYPE.HARM ? _hpValue + _lastValue : _lastValue;
+    //var _barLeft = abs(_hpValue - _spriteWidth);
     
-	draw_sprite_general(sprite_index,6,_xPos,_yPos,_list.percent,_spriteHeight,_barX,_barY,
-    image_xscale, image_yscale, angle, _color, _color, _color, _color, image_alpha);
+    
+    
+    var _bar = _effect.type == EFFECT_TYPE.HARM ? 
+        new Vector2(
+        _maskXOffset + lengthdir_x(_newOffset-1, angle) + lengthdir_x(_maskYOffset, angle - 90),
+        lengthdir_y(_newOffset-1, angle) + lengthdir_y(_maskYOffset, angle - 90)) :
+        new Vector2(
+        _maskXOffset + lengthdir_x(_newOffset, angle) + lengthdir_x(_maskYOffset, angle - 90),
+        lengthdir_y(_newOffset, angle) + lengthdir_y(_maskYOffset, angle - 90));
+    
+    
+    draw_sprite_general(sprite_index,6,_xPos,_yPos,_percent,_spriteHeight,_bar.x,_bar.y,
+    image_xscale, image_yscale, angle, _effect.color, _effect.color, _effect.color, _effect.color, image_alpha);
+    
 }
+
+    	//_newOffset = _lastValue;
+        //
+    	//_value = _list.showPercent;
+    	//if _value < 0 then _value = 0;
+    	//
+    	//_list.percent = (_value/100)*_spriteWidth;
+        //
+        //_barX = _maskXOffset + lengthdir_x(_newOffset, angle) + lengthdir_x(_maskYOffset, angle - 90);
+        //_barY = lengthdir_y(_newOffset, angle) + lengthdir_y(_maskYOffset, angle - 90);
+
+//
+//for (var i = 0; i < ds_list_size(targetList); i++) {
+    //
+    //var _list = ds_list_find_value(targetList,i);
+	//
+	//_list.healthInst = self.id;
+	//
+    //var _lastList = undefined;
+    //var _lastValue = 0;
+    //
+    //for (var k = 0; k < ds_list_size(targetList); k++) {
+        //var _foundList = ds_list_find_value(targetList,k);
+    	//if _foundList.info.type == _list.info.type and _foundList.info != _list.info and k < i
+        //{
+            //_lastList = _foundList;
+        //}
+    //}
+    //
+    //if _lastList != undefined
+    //{
+        //if _lastList.info.type == _list.info.type
+        //{
+            //_lastValue = _lastList.percent;
+        //}
+    //}
+	//
+	////if flipped then _xPos -= 1; else _xPos += 1;
+    //var _newOffset,_value,_barX,_barY;
+	//var _color = _list.info.color;
+	//
+	//if _list.info.type == EFFECT_TYPE.HARM
+	//{
+        //_newOffset = _hpValue+_lastValue;
+        //var _barLeft = abs(_hpValue-_spriteWidth);
+        //
+    	//_value = _list.value;
+    	//if _value < 0 then _value = 0;
+    	//
+    	//_list.percent = (_value/100)*_spriteWidth;
+        //
+        //_barX = _maskXOffset + lengthdir_x(_newOffset-1, angle) + lengthdir_x(_maskYOffset, angle - 90);
+        //_barY = lengthdir_y(_newOffset-1, angle) + lengthdir_y(_maskYOffset, angle - 90);
+    //} else {
+    	//_newOffset = _lastValue;
+        //
+    	//_value = _list.showPercent;
+    	//if _value < 0 then _value = 0;
+    	//
+    	//_list.percent = (_value/100)*_spriteWidth;
+        //
+        //_barX = _maskXOffset + lengthdir_x(_newOffset, angle) + lengthdir_x(_maskYOffset, angle - 90);
+        //_barY = lengthdir_y(_newOffset, angle) + lengthdir_y(_maskYOffset, angle - 90);
+	//}
+    //
+	//draw_sprite_general(sprite_index,6,_xPos,_yPos,_list.percent,_spriteHeight,_barX,_barY,
+    //image_xscale, image_yscale, angle, _color, _color, _color, _color, image_alpha);
+//}
 
 //Draw Surface
 surface_reset_target();

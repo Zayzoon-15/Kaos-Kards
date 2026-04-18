@@ -40,7 +40,7 @@ width = string_width_ext(_text,-1,maxWidth);
 var _halfWidth = width/2;
 var _rectRound = UIBOX_RAD;
 var _x = targetX;
-var _y = targetY + (sprite_height/2) + 30;
+var _y = targetY + (sprite_height/2) + 25;
 
 //Draw The Box
 drawRectOutlined(_x-_halfWidth-widthMargin,_y-height-(heightMargin*2),_x+_halfWidth+widthMargin,_y,_rectRound,1,c_black,c_white,UIBOX_ALPHA*image_alpha,1*image_alpha);

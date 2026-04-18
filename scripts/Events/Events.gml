@@ -18,9 +18,8 @@ function gameReset()
     
 	//Destroy All Effects
 	instance_destroy(oAttackEffect);
-	instance_destroy(oHealthIcon);
-	ds_list_clear(playerEffects);
-	ds_list_clear(enemyEffects);
+	ds_map_clear(playerEffects);
+	ds_map_clear(enemyEffects);
     global.healEffects = {
         player: [],
         enemy : []
@@ -95,8 +94,8 @@ function nextRoundStarted()
     ds_list_clear(enemyActions);
     
 	//Reduce Assist Effects
-	reduceAssEffects(10,true);
-	reduceAssEffects(10,false);
+	attackEffectReduce(NaN,10,true);
+	attackEffectReduce(NaN,10,false);
     global.healEffects = {
         player: [],
         enemy : []

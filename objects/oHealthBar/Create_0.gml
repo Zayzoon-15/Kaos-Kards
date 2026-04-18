@@ -7,6 +7,7 @@ image_xscale = 1;
 hp = target == "Player" ? global.playerHp : global.enemyHp;
 tempHp = target == "Player" ? global.playerTempHp : global.enemyTempHp;
 maxHp = target == "Player" ? global.playerMaxHp : global.enemyMaxHp;
+targetMap = playerEffects;
 
 //Image Values
 angle = 0;
@@ -18,9 +19,6 @@ tipBoxString = "";
 //Icons
 icons = [];
 iconId = 0;
-
-//List
-targetList = playerEffects;
 
 //Hit Stun
 startHitStun = false;

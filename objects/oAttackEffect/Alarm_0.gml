@@ -1,17 +1,25 @@
 ///@desc Apply Effect
 
-//Times Up
-if timeUp then exit;
 
-//Reduce Value
-value *= .6;
-value = clamp(value,1,999);
+//Change Useful Vars
+timesUsed ++;
+hitStun = 120;
 
-//Effect
-applyEffect();
+//Change Value
+if info.type == EFFECT_TYPE.HARM
+{
+    effectValue += targetEnemy ? round(hurtEnemy(value,info.ignoreShield)) : round(hurtPlayer(value,info.ignoreShield));
+} else {
+    effectValue += round(value);
+    if targetEnemy
+    {
+        global.enemyTempHp += round(value);
+    } else global.playerTempHp += round(value);
+}
 
-//Set Time
-timeBetween = random_range(info.timeBetween[0],info.timeBetween[1])*60;
 
-//Start Time Again
-alarm[0] = timeBetween;
+//Repeat
+if info.timeBetween != undefined and !effectDone
+{
+    alarm[0] = random_range(info.timeBetween[0],info.timeBetween[1])*60;
+}
