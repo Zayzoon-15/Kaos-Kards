@@ -29,7 +29,7 @@ if drawInfo
 //Size To Text
 if sizeToText
 {
-    image_xscale = (string_width(text)/70) * textTargetSize;
+    image_xscale = ((string_width(text)/70) * textTargetSize)+.2;
 }
 
 //Stick To Screen

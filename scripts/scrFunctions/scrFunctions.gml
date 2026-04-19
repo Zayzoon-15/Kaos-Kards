@@ -111,6 +111,17 @@ function keyCheckPressed(_key)
 	
 }
 
+///@desc Checks of the given input key is held
+///@arg {real} _key The input key
+function keyCheckHeld(_key)
+{
+	if keyboard_check(_key) or mouse_check_button(_key)
+	{
+		return true;
+	} else return false;
+	
+}
+
 
 ///@desc Checks to see if the message given is received
 ///@arg {string} _message The message to receive

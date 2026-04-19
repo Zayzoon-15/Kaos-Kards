@@ -26,7 +26,20 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v2","%Name":"drawFront","filters":[],"listItems":[],"multiselect":false,"name":"drawFront","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"True","varType":3,},
+    {"$GMObjectProperty":"v2","%Name":"frontSprite","filters":[
+        "GMSprite",
+      ],"listItems":[],"multiselect":false,"name":"frontSprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"sBgFront","path":"sprites/sBgFront/sBgFront.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"sBgFront","varType":5,},
+    {"$GMObjectProperty":"v2","%Name":"extraSprite","filters":[
+        "GMSprite",
+      ],"listItems":[],"multiselect":false,"name":"extraSprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":5,},
+    {"$GMObjectProperty":"v2","%Name":"extraSpritePos","filters":[],"listItems":[
+        "\"Keep Centered\"",
+        "\"Follow Camera\"",
+      ],"multiselect":false,"name":"extraSpritePos","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"\"Keep Centered\"","varType":6,},
+    {"$GMObjectProperty":"v2","%Name":"exrtaSpriteStretch","filters":[],"listItems":[],"multiselect":false,"name":"exrtaSpriteStretch","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"True","varType":3,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,

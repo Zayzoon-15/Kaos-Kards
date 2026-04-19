@@ -49,7 +49,7 @@ function actionShield(_targetEnemy)
     });
     
     //Give Temp Health
-    addEffect(attackEffects.shield,_value,!_targetEnemy);
+    attackEffectAdd(effectInfo.shield,_value,!_targetEnemy);
     
     //Play Voice
     audioPlayVoice(voiceInfo.shield,false,3);
@@ -114,7 +114,7 @@ function actionPoison(_targetEnemy)
     cardJuice(false);
     
     //Apply Poison
-    addEffect(attackEffects.poison,value*.7,_targetEnemy);
+    attackEffectAdd(effectInfo.poison,value*.7,_targetEnemy);
     
     //Play Voice
     audioPlayVoice([voiceInfo.poisonInfect,voiceInfo.poisonShip,voiceInfo.poisonSizz],false,3);

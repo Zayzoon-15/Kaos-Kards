@@ -32,7 +32,7 @@ action = function()
     audioPlaySfx(snFire2,.95,1.05);
     
     //Effects
-	addEffect(attackEffects.fire,_effectValue,targetEnemy);
+	attackEffectAdd(effectInfo.fire,_effectValue,targetEnemy);
 	
     //Destroy
     instance_destroy();

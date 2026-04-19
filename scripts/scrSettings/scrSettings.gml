@@ -36,9 +36,11 @@ function initSettings()
 	global.keyPause = vk_escape;
 	global.keyDebug = 220;
     
-    //Kaos Games
+    //Input
     global.keyMoveLeft = vk_left;
     global.keyMoveRight = vk_right;
+    global.keyMoveUp = vk_up;
+    global.keyMoveDown = vk_down;
     
     //Brawler
     global.keyJump = vk_up;

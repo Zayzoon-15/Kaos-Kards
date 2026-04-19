@@ -10,10 +10,10 @@ if winner
     if playerId == 0 then healPlayer(_healValue); //Player Won
     if playerId == 1 then healEnemy(_healValue); //Enemy Won
 } else { //Lose Outcome
-    if playerId == 0 then addEffect(attackEffects.poison,_poisonValue,false); //Player Lost
+    if playerId == 0 then attackEffectAdd(effectInfo.poison,_poisonValue,false); //Player Lost
     if playerId == 1 { //Enemy Lost
         Enemy.PlayAnim("kaosHotDogLose",180,"idle");
-        addEffect(attackEffects.poison,_poisonValue,true);
+        attackEffectAdd(effectInfo.poison,_poisonValue,true);
     }
 }
 

@@ -6,6 +6,7 @@ initDiceTypes();
 initDiceCards();
 initKaosCards();
 initEnemyinfo();
+initTourney();
 initPlayerStats();
 initSettings();
 

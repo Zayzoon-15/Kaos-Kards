@@ -128,15 +128,21 @@ function SettingsMenus()
         //Create Buttons
         if !global.mobile
         {
-            SettingsButtons.Separator("Keyboard And Mouse");
+
+            SettingsButtons.Separator("Game");
                 SettingsButtons.Input("Discard","keyDiscard");
-                SettingsButtons.Input("Fullscreen","keyFullscreen");
-                SettingsButtons.Input("Pause","keyPause");
                 SettingsButtons.Input("Debug Mode","keyDebug");
             
-            SettingsButtons.Separator("Kaos Games");
+            SettingsButtons.Separator("Input");
+                SettingsButtons.Input("Fullscreen","keyFullscreen");
+                SettingsButtons.Input("Pause","keyPause");
                 SettingsButtons.Input("Move Left","keyMoveLeft");
                 SettingsButtons.Input("Move Right","keyMoveRight");
+                SettingsButtons.Input("Move Up","keyMoveUp");
+                SettingsButtons.Input("Move Down","keyMoveDown");
+
+            
+            SettingsButtons.Separator("Kaos Games");
                 SettingsButtons.Input("Brawler Jump","keyJump");
                 SettingsButtons.Input("Brawler Attack","keyAttack");
                 SettingsButtons.Input("Brawler Block","keyBlock");

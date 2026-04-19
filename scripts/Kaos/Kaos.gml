@@ -248,13 +248,16 @@ function kaosActionBrokenDefense(_targetEnemy)
     if _targetEnemy
     {
         global.playerMaxHp -= _value;
+        global.playerMaxHp = min(global.playerMaxHp,25);
     } else {
         global.enemyMaxHp -= _value;
+        global.enemyMaxHp = min(global.enemyMaxHp,25);
     }
+    
 	
 	//Give Shield
     var _maxHp = _targetEnemy ? global.playerMaxHp : global.enemyMaxHp;
-    addEffect(attackEffects.shield,_maxHp,!_targetEnemy);
+    attackEffectAdd(effectInfo.shield,_maxHp,!_targetEnemy);
     
     //Finish
     timeSourceCreate(1.5,kaosCardDone);
@@ -326,7 +329,7 @@ function kaosActionHotsauce(_targetEnemy)
     //Set Effects For All
     var _func = function(_value,_targetEnemy)
     {
-        addEffect(attackEffects.fire,ceil(_value*.2),_targetEnemy);
+        attackEffectAdd(effectInfo.fire,ceil(_value*.2),_targetEnemy);
     }
     array_push(global.healEffects.player,_func);
     array_push(global.healEffects.enemy,_func);
