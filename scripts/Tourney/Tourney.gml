@@ -13,10 +13,13 @@ function Tourney(_name = "Tourney Name",_art = sTourneyArtBorder,_enemies = [ene
 
 function initTourney(){
     
-    
+    //Set Up Vars
     globalvar tourneyInfo;
     global._tourneyPlacement = 0;
+    global.currentTourney = undefined;
+    global.tourneyEnemiesBeaten = 0;
     
+    //Info
     tourneyInfo = {
         
         debut : new Tourney("Debut Tournament", sTourneyArt1, [

@@ -2,14 +2,15 @@
 sprite_index = global.currentEnemy.sprite;
 
 //Animation
-animInfo = global.currentEnemy.animInfo;
-frame = 0;
-currentAnim = 0;
-animationEnd = false;
-shake = 0;
-ignoreTime = 0;
-resetAnim = "";
-Enemy.PlayAnim("idle");
+Enemy.SetupAnims(true);
+//animInfo = global.currentEnemy.animInfo;
+//frame = 0;
+//currentAnim = 0;
+//animationEnd = false;
+//shake = 0;
+//ignoreTime = 0;
+//resetAnim = "";
+//Enemy.PlayAnim("idle");
 
 //Hover
 canHover = true;

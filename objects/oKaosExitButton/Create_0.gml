@@ -10,13 +10,20 @@ alphaTime = .03;
 scaleTime = .5;
 
 //Info
-infoText = "Press to return to the menu"; ;
-text = "Exit";
+infoText = global.currentTourney == undefined ? "Press to return to the menu" : "Press to go to break room";
+text = global.currentTourney == undefined ? "Exit" : "Continue";
 
 //Action
 action = function()
 {
     //Leave Game
-	transStart(rTournies);
-	timeSourceCreate(.3,gameReset);
+    if global.currentTourney == undefined
+    {
+    	transStart(rTournies);
+    	timeSourceCreate(.3,gameReset,[true]);
+    } else {
+        transStart(rTourneyBreak);
+    	timeSourceCreate(.3,gameReset,[false]);
+        global.tourneyEnemiesBeaten ++;
+    }
 }

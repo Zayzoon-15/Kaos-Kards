@@ -30,6 +30,7 @@
     {"$GMObjectProperty":"v2","%Name":"action","filters":[],"listItems":[],"multiselect":false,"name":"action","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"function(){}","varType":4,},
     {"$GMObjectProperty":"v2","%Name":"hoverCard","filters":[],"listItems":[],"multiselect":false,"name":"hoverCard","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
     {"$GMObjectProperty":"v2","%Name":"info","filters":[],"listItems":[],"multiselect":false,"name":"info","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"actionCards.bread","varType":4,},
+    {"$GMObjectProperty":"v2","%Name":"args","filters":[],"listItems":[],"multiselect":false,"name":"args","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[]","varType":4,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

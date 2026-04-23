@@ -12,8 +12,8 @@ text = "Start";
 action = function()
 {
     //Start Game
-    transStart(rPrepare);
-    gameReset();
+    transStart(rTourneyBreak);
+    gameReset(true);
     
     //Don't Hover
     canHover = false;

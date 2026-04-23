@@ -137,17 +137,17 @@ function Enemy()
     
     
     
-    static PlayAnim = function(_anim,_ignoreTime = 0,_resetAnim = "",_targetObj = oEnemyPhoto)
+    static PlayAnim = function(_anim,_ignoreTime = 0,_resetAnim = "",_targetObj = oEnemyPhoto,_info = global.currentEnemy)
     {
         //Animation Does Not Exist
-        if !variable_struct_exists(global.currentEnemy.animInfo,_anim)
+        if !variable_struct_exists(_info.animInfo,_anim)
         {
             print($"'{_anim}' Does Not Exist");
             exit;
         }
         
         //Set clip
-        var _clip = variable_struct_get(global.currentEnemy.animInfo, _anim);
+        var _clip = variable_struct_get(_info.animInfo, _anim);
         
         //Switch Animation
         with _targetObj
@@ -161,6 +161,83 @@ function Enemy()
                 resetAnim = _resetAnim;
             }
         }
+    }
+    
+    ///@desc Sets up the enemy animations to be used in the object
+    ///@param {bool} _create If true it will setup the vars (use in create event)
+    /// If false it will update the system (use in step event)
+    ///@param {struct} _info The enemy info
+    ///@param {Asset.GMObject} _targetObj The target object
+    static SetupAnims = function(_create = true,_info = global.currentEnemy,_targetObj = oEnemyPhoto) 
+    {
+        
+        with _targetObj
+        {
+            
+            if _create
+            {
+                animInfo = _info.animInfo;
+                frame = 0;
+                currentAnim = 0;
+                animationEnd = false;
+                shake = 0;
+                ignoreTime = 0;
+                resetAnim = "";
+                Enemy.PlayAnim("idle",0,"",_targetObj,_info);
+            } else {
+                //Animate
+                if currentAnim != undefined
+                {
+                    //Update Frame
+                    frame += sprite_get_speed(sprite_index) / 60;
+                    
+                    //Animate
+                    if frame >= currentAnim.length
+                    {
+                        if currentAnim.loop
+                        {
+                            frame -= currentAnim.length;
+                        } else {
+                            frame = currentAnim.length - 1;
+                            
+                            if !animationEnd
+                            {
+                                //Get Animation
+                                var _array = struct_get_names(animInfo);
+                                for (var i = 0; i < array_length(_array); i++) {
+                                    
+                                    //Get Struct
+                                    var _struct = struct_get(animInfo,_array[i]);
+                                    
+                                    //Play Animatiopn
+                                    if _struct == currentAnim and !_struct.loop and _struct.resetAnim != ""
+                                    {
+                                        Enemy.PlayAnim(_struct.resetAnim,0,"",_targetObj,_info);
+                                    }
+                                }
+                            }
+                        }
+                        
+                        animationEnd = true;
+                    }
+                    
+                    
+                    //Apply Frame
+                    image_index = currentAnim.start + frame;  
+                }
+                
+                //Reduce Ignore Time
+                if ignoreTime > 0
+                {
+                    ignoreTime --;
+                } else if resetAnim != ""
+                {
+                    Enemy.PlayAnim(resetAnim,0,"",_targetObj,_info);
+                    resetAnim = "";
+                }
+            }
+        }
+        
     }
 }
 

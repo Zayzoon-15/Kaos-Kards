@@ -46,24 +46,8 @@ keyHeld = undefined;
 keyHoldFrames = 0;
 keyHoldTime = 30;
 
-//Tourney
-curTourney = undefined;
-
 //Get Art
 var _art = layer_sprite_get_id("Assets","graphicTourneyArt");
 artPos = new Vector2(layer_sprite_get_x(_art), layer_sprite_get_y(_art));
 artScale = new Vector2(1,1);
 layer_sprite_destroy(_art);
-
-//Functions
-changeTourney = function()
-{
-    //Get Tourney
-    with oTourneyCapsule
-    {
-        if selected
-        {
-            other.curTourney = info;
-        }
-    }
-}

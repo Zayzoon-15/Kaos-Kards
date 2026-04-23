@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"voHurtOugh",
+  "%Name":"voHurtOh",
   "audioGroupId":{
     "name":"agVoice",
     "path":"audiogroups/agVoice",
@@ -10,9 +10,9 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.7211565,
+  "duration":0.0,
   "exportDir":"",
-  "name":"voHurtOugh",
+  "name":"voHurtOh",
   "parent":{
     "name":"Hurt",
     "path":"folders/Sounds/VoiceOver/Hurt.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"voHurtOugh.ogg",
+  "soundFile":"voHurtOh.ogg",
   "volume":1.0,
 }

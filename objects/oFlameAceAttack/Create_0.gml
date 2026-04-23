@@ -21,9 +21,6 @@ audioPlaySfx(snFire1,.95,1.05);
 //Action
 action = function()
 {
-    var _effectValue = value*.2;
-    value *= .5;
-    
     //Damage
     damageTarget();
     hurtEffect(x,y);
@@ -32,7 +29,7 @@ action = function()
     audioPlaySfx(snFire2,.95,1.05);
     
     //Effects
-	attackEffectAdd(effectInfo.fire,_effectValue,targetEnemy);
+	attackEffectAdd(effectInfo.fire,value,targetEnemy);
 	
     //Destroy
     instance_destroy();

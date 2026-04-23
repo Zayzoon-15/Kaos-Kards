@@ -8,6 +8,6 @@ var _voiceline = [];
 if global.playerPerformance > global.enemyPerformance {
     _voiceline = [voiceInfo.dank,voiceInfo.bringinKaos,voiceInfo.hurtPretty,voiceInfo.hurtMark]; 
 }else {
-    _voiceline = [voiceInfo.mild,voiceInfo.tryHarder,voiceInfo.hurtCheck,voiceInfo.hurtOugh]; 
+    _voiceline = [voiceInfo.mild,voiceInfo.tryHarder,voiceInfo.hurtCheck,voiceInfo.hurtOh]; 
 }
 audioPlayVoice(_voiceline,false,3);

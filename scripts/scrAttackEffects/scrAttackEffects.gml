@@ -42,7 +42,7 @@ function attackEffectAdd(_effect = effectInfo.fire,_value = 1,_targetEnemy = tru
             }
         }
     } else { //Create Effect
-    	
+        
         instance_create_depth(0,0,0,oAttackEffect,{ 
             info :  _effect,
             targetEnemy : _targetEnemy,

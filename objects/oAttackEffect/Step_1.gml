@@ -1,7 +1,7 @@
 //Get Target Health Bar
 targetHealthBar = noone;
 with (oHealthBar) {
-	if target == "Enemy" and other.targetEnemy
+	if (target == "Enemy" and other.targetEnemy) or (target == "Player" and !other.targetEnemy)
     {
         other.targetHealthBar = self.id;
     }

@@ -244,7 +244,7 @@ function actionJerryCan(_targetEnemy)
     var _didDamage = false;
     with oAttackEffect
     {
-        if info == attackEffects.fire
+        if info == effectInfo.fire
         {
             //Set Did Damage
             _didDamage = true;

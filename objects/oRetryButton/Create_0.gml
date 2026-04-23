@@ -18,5 +18,5 @@ action = function()
 {
     //Start Game Again
 	transStart(rPrepare);
-	timeSourceCreate(.3,gameReset);
+	timeSourceCreate(.3,gameReset,[false]);
 }

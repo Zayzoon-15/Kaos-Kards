@@ -1,5 +1,3 @@
-global.currentEnemy = enemyInfo.dog;
-
 //Get Info
 info = global.currentEnemy;
 ai = structMerge(info.difficulty,info.strat,false);
@@ -239,8 +237,13 @@ _applySkill = function(_array)
             var _a = irandom_range(0,array_length(_array)-1);
             var _b = irandom_range(0,array_length(_array)-1);
             
+            while _b == _a
+            {
+                _b = irandom_range(0,array_length(_array)-1);
+            }
+            
             var _temp = _array[_a].card;
-            _array[_a].card = _array[b].card;
+            _array[_a].card = _array[_b].card;
             _array[_b].card = _temp;
         }
         

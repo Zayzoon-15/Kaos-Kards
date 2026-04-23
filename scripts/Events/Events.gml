@@ -1,11 +1,20 @@
 
-///@desc This event plays when the player resets the match
-function gameReset()
+/// @desc  This event plays when the player resets the match
+/// @param {bool} [_hardReset] If on it resets the game fully as if the tournament reset
+/// While off it resets the game as if finished fighting an enemy
+function gameReset(_hardReset = true)
 {	
-    //Set Seed
-    randomise();
-    random_set_seed(random(999999),true);
-    print("Game Seed",random_get_seed());
+   
+    if _hardReset
+    {
+        //Set Seed
+        randomise();
+        random_set_seed(random(999999),true);
+        print("Game Seed",random_get_seed());
+        
+        //Set Tourney
+        global.tourneyEnemiesBeaten = 0;
+    }
     
 	//Set Gamestate
 	gameState = GAMESTATES.PREPARE;

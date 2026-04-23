@@ -1,5 +1,6 @@
 //Set Target Enemy
 global.currentEnemy = undefined;
+global.currentTourney = undefined;
 
 //Setup Character
 sprite_index = info.sprite;

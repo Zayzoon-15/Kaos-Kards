@@ -38,5 +38,5 @@ if touchingMouse()
 //Change Toruney
 if selected
 {
-    oTourneySelector.changeTourney();
+    global.currentTourney = info;
 }

@@ -35,7 +35,7 @@ voiceInfo = {
     //Hurt
     hurtCheck : new voiceCreate(voHurtCheck,"Ugh... might want to get that checked out."),
     hurtMark : new voiceCreate(voHurtMark,"Ooh- that's gonna leave a mark."),
-    hurtOugh : new voiceCreate(voHurtOugh,"Oh!"),
+    hurtOh : new voiceCreate(voHurtOh,"Oh!"),
     hurtPretty : new voiceCreate(voHurtPretty,"That wasn't pretty!"),
     
     #region Actions
