@@ -61,14 +61,15 @@ function audioPlayVoice(_voiceover,_stopOthers = true,_playChance = 1)
 }
 
 
-/// @desc Creates a song (ONLY USE INSIDE SOUND OBJECT)
+/// @desc Creates a song
 /// @param {string} _name The song name
 /// @param {Asset.GMSound} _sound The sound to play
 /// @param {array} [_syncWith] The songs this song can sync with (put [] if none)
 /// @param {real} [_volume] The songs volume
 /// @param {real} [_loopTimes] How many times to loop the song before swaping it with another song (leave as -1 if it does not swap)
-/// @param {string } [_sawpWith] The song to swap with
-function audioCreateSongs(_name,_sound,_syncWith=[],_volume = 1,_loopTimes = -1,_sawpWith = noone,_isIntro = false,_playOnce = true) 
+/// @param {string} [_sawpWith] The song to swap with
+/// @param {bool} [_isIntro] If the song is an intro
+function audioCreateSongs(_name,_sound,_syncWith=[],_volume = 1,_loopTimes = -1,_sawpWith = noone,_isIntro = false) 
 {
     var _info = {
         name : _name,

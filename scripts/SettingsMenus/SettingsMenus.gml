@@ -54,6 +54,8 @@ function SettingsMenus()
 					{
 						global.window = "Window";
 					} else global.window = "Borderless";
+                    
+                    window_center();
 					
                 },function(){return !window_get_showborder();});
         }
@@ -69,8 +71,6 @@ function SettingsMenus()
 				global.vSync = argument0;
 				display_reset(0,global.vSync);
 			},global.vSync);
-			
-            SettingsButtons.Button("Other Suff Idk");
         
         SettingsButtons.Separator("Subtitles");
             SettingsButtons.Check("Subtitles",function()

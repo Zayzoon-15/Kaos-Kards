@@ -128,6 +128,7 @@ if grabbed
     var _shadowX = (x - (room_width/2))*.03;
     shadowX = clamp(shadowX,-6,6);
     shadowX = lerp(shadowX,_shadowX,.2);
+    shadowSize = lerp(shadowSize,0.05,.2);
     
     //Depth
     depth = startDepth;

@@ -15,6 +15,9 @@ voiceInfo = {
     
     likeKaos : new voiceCreate(voLikeKoas,"Hey! Do you like chaos? Do you like cards?"),
     
+    
+    #region Fighting
+    
     //Start Match
     kaosBegin : new voiceCreate(voKaosBegin,"Let the chaos... begin."),
     downForKaos : new voiceCreate(voDownForKaos,"Who's down for some chaos!"),
@@ -22,21 +25,29 @@ voiceInfo = {
     //Great Job
     dank : new voiceCreate(voDank,"That was DANK!"),
     bringinKaos : new voiceCreate(voBringinKaos,["Woah!", "These cards sure are bringing some...", "chaos.", "See what I did there?"],[0,.5,2.8,4.2]),
+    touchDial : new voiceCreate(voTouchDial,["Don't touch that dial!","Things are getting heated!"],[0,1.15]),
     
     //Bad Job
     mild : new voiceCreate(voMild,["And the crowd goes...","mild."],[0,1.5]),
     tryHarder : new voiceCreate(voTryHarder,"Gonna have to try a little harder than that if you wanna win."),
     
+    //Neutral
+    noQuip : new voiceCreate(voNoQuip,["I.. couldn't...","Think of a", "Quipy catchphrase to say I'm sorry...", "Good job though."],[0,1,2,4.40]),
+    
     //Combo
     comboNice : new voiceCreate(voComboNice,"Nice combo!"),
     comboSweet : new voiceCreate(voComboSweet,"Sweet combo!"),
     womboCombo : new voiceCreate(voWomboCombo,"WOMBO COMBO!!!"),
+    comboBurp : new voiceCreate(voComboBurp,["Oooh! Nice combo!","*Loud Burp*","Oh My! Ugh... sorry."],[0,1.38,1.95]),
     
     //Hurt
     hurtCheck : new voiceCreate(voHurtCheck,"Ugh... might want to get that checked out."),
     hurtMark : new voiceCreate(voHurtMark,"Ooh- that's gonna leave a mark."),
     hurtOh : new voiceCreate(voHurtOh,"Oh!"),
     hurtPretty : new voiceCreate(voHurtPretty,"That wasn't pretty!"),
+    
+    #endregion
+    
     
     #region Actions
     

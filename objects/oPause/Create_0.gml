@@ -19,6 +19,10 @@ lastSongPos = 0;
 
 //Pause Delay
 pauseDelay = 0;
+heldCard = false;
+
+//Timers
+pausedTimers = [];
 
 //Functions
 pauseGame = function()
@@ -26,6 +30,10 @@ pauseGame = function()
     //Pause
     global.paused = true;
     depth = -1;
+    
+    //Held Card
+    heldCard = global.holdingCard;
+    global.holdingCard = false;
     
     //Create Screen Shot
     screenshot = sprite_create_from_surface(application_surface,0,0,surface_get_width(application_surface),surface_get_height(application_surface),false,false,0,0);
@@ -54,13 +62,11 @@ pauseGame = function()
     
     //Pause Timers
     for (var i = 0; i < array_length(global.timeSources); i++) {
-        //Check If Exists
-        if time_source_exists(global.timeSources[i]) continue;
-        
         //Pause Timers
         if time_source_get_state(global.timeSources[i]) == time_source_state_active
         {
             time_source_pause(global.timeSources[i]);
+            array_push(pausedTimers,global.timeSources[i]);
         }
     }
     
@@ -77,6 +83,9 @@ unpauseGame = function()
 {
     //Unpause
     global.paused = false;
+    
+    //Held Card
+    global.holdingCard = heldCard;
     
     //Replay Song
     audioPlaySong(lastSong,30,"Stop",true,{pos:lastSongPos,loops:lastSongLoops});
@@ -95,16 +104,10 @@ unpauseGame = function()
 	instance_activate_all();
     
     //Resume Timers
-    for (var i = 0; i < array_length(global.timeSources); i++) {
-        //Check If Exists
-        if time_source_exists(global.timeSources[i]) continue;
-        
-        //Resume Timers
-        if time_source_get_state(global.timeSources[i]) == time_source_state_paused
-        {
-            time_source_resume(global.timeSources[i]);
-        }
+    for (var i = 0; i < array_length(pausedTimers); i++) {
+        time_source_resume(pausedTimers[i]);
     }
+    pausedTimers = [];
     
     #endregion
 }

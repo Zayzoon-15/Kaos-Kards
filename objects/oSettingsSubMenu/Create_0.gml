@@ -13,6 +13,7 @@ updateScissorValue = function()
 //Scroll
 scroll = 0;
 scrollVel = 0;
+maxScrollDist = 0;
 
 //Mobile
 mobileTouch = false;

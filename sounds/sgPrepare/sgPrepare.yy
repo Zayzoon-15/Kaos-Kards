@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"sgPrepare",
   "parent":{
-    "name":"Game",
-    "path":"folders/Sounds/Music/Game.yy",
+    "name":"Main",
+    "path":"folders/Sounds/Music/Game/Main.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sgBreakRoom",
+  "audioGroupId":{
+    "name":"agMusic",
+    "path":"audiogroups/agMusic",
+  },
+  "bitDepth":1,
+  "channelFormat":1,
+  "compression":1,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":117.25191,
+  "exportDir":"",
+  "name":"sgBreakRoom",
+  "parent":{
+    "name":"BreakRoom",
+    "path":"folders/Sounds/Music/Game/BreakRoom.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sgBreakRoom.ogg",
+  "volume":1.0,
+}

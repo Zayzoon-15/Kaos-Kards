@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"voNoQuip",
+  "audioGroupId":{
+    "name":"agVoice",
+    "path":"audiogroups/agVoice",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":5.589297,
+  "exportDir":"",
+  "name":"voNoQuip",
+  "parent":{
+    "name":"Neutral",
+    "path":"folders/Sounds/VoiceOver/Neutral.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"voNoQuip.ogg",
+  "volume":1.0,
+}

@@ -4,10 +4,13 @@
 instance_create_layer(room_width/2,room_height/2,"Buttons",oKaosOverButton);
 
 //Voice Line
-var _voiceline = [];
-if global.playerPerformance > global.enemyPerformance {
-    _voiceline = [voiceInfo.dank,voiceInfo.bringinKaos,voiceInfo.hurtPretty,voiceInfo.hurtMark]; 
-}else {
-    _voiceline = [voiceInfo.mild,voiceInfo.tryHarder,voiceInfo.hurtCheck,voiceInfo.hurtOh]; 
+var _voiceline = voiceNeutral;
+if irandom_range(1,3) == 1
+{
+    if global.playerPerformance > global.enemyPerformance
+    {
+        _voiceline = voiceWinning;
+    } else _voiceline = voiceLosing;
 }
+
 audioPlayVoice(_voiceline,false,3);

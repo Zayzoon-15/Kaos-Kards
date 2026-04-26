@@ -7,6 +7,24 @@ with (oHealthBar) {
     }
 }
 
+//Change Id Placement
+with (oAttackEffect) {
+	if self.id != other.id
+    {
+        if iconId <= 0
+        {
+            while (iconId == other.iconId) {
+            	iconId ++;
+            }
+        } else if iconId >= ds_map_size(mapId)
+        {
+            while (iconId == other.iconId) {
+            	iconId --;
+            }
+        }
+    }
+}
+
 //Move Position
 if targetHealthBar != noone
 {

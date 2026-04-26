@@ -22,8 +22,20 @@ action = function()
     	transStart(rTournies);
     	timeSourceCreate(.3,gameReset,[true]);
     } else {
-        transStart(rTourneyBreak);
-    	timeSourceCreate(.3,gameReset,[false]);
         global.tourneyEnemiesBeaten ++;
+        
+        if global.tourneyEnemiesBeaten >= array_length(global.currentTourney.enemies)
+        {
+            transStart(rTournies);
+            timeSourceCreate(.3,gameReset,[true]);
+        } else {
+            transStart(rTourneyBreak);
+            timeSourceCreate(.3,gameReset,[false]);
+        }
+        
+        
+        
+    	
+        
     }
 }

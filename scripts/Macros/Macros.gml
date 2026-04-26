@@ -8,7 +8,8 @@
 
 //Drawing
 #macro SHADOW_ALPHA .7
-#macro CARD_THICKNESS 8 
+#macro CARD_THICKNESS 8
+#macro SHADOW_ALPHA_BREAK_ROOM .4  
 
 //Screen
 #macro ROOM_CENTER new Vector2(room_width/2,room_height/2)

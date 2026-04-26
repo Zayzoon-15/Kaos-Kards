@@ -19,10 +19,6 @@ timeBetweenCards = 70;
 kaosOver = false;
 alarm[0] = 50;
 
-//Voice Line
-var _voicelines = [voiceInfo.kaosBegin,voiceInfo.downForKaos];
-timeSourceCreate(10,audioPlayVoice,[_voicelines,false,3],time_source_units_frames);
-
 //Functions
 getXPos = function(_index)
 {
@@ -32,3 +28,37 @@ getXPos = function(_index)
         case 2: return (room_width/2)+xOffset;
     }
 }
+
+
+
+#region Voice Lines
+
+voiceStarting = [
+    voiceInfo.kaosBegin,
+    voiceInfo.downForKaos
+];
+
+voiceWinning = [
+    voiceInfo.dank,
+    voiceInfo.bringinKaos,
+    voiceInfo.hurtPretty,
+    voiceInfo.hurtMark,
+    voiceInfo.touchDial
+];
+
+voiceLosing = [
+    voiceInfo.mild,
+    voiceInfo.tryHarder,
+    voiceInfo.hurtCheck,
+    voiceInfo.hurtOh
+];
+
+voiceNeutral = [
+    voiceInfo.dank
+];
+
+
+//Play Starting Voice
+timeSourceCreate(10,audioPlayVoice,[voiceStarting,false,3],time_source_units_frames);
+
+#endregion

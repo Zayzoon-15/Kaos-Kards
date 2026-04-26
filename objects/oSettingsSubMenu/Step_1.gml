@@ -5,13 +5,13 @@ x = getPosToWindow(true);
 updateScissorValue();
 
 //Get Scroll Distance
-var _maxScrollDist = 0;
+maxScrollDist = 0;
 with oParSettingsBtn
 {
     if btnId == global.settingsBtnId-1
     {
-        _maxScrollDist = ystart - other.scissorStuct.h -10;
-        _maxScrollDist = max(0,_maxScrollDist);
+        other.maxScrollDist = ystart - other.scissorStuct.h - 10;
+        other.maxScrollDist = max(0,other.maxScrollDist);
     }
 }
 
@@ -87,7 +87,7 @@ if !mobileTouch
 //}
 
 //Clamp Scroll
-scroll = clamp(scroll,0,_maxScrollDist);
+scroll = clamp(scroll,0,maxScrollDist);
 
 
 //Update Button Ui

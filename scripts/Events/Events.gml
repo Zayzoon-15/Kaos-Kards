@@ -177,7 +177,7 @@ function comboAttackDone()
     }
     
     //Voiceover
-    audioPlayVoice([voiceInfo.womboCombo,voiceInfo.comboNice,voiceInfo.comboSweet],false);
+    audioPlayVoice([voiceInfo.womboCombo,voiceInfo.comboNice,voiceInfo.comboSweet,voiceInfo.comboBurp],false);
     
     //Next Kaos
     if instance_exists(oKaosManager) then oKaosManager.alarm[5] = 50;
