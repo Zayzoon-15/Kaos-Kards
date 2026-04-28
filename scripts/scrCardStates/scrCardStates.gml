@@ -17,13 +17,6 @@ function cardStateHand(){
         _handX = cardHandMush();
     } else _handX = cardHandSep();
     
-    
-    //Angle Cards
-    var _angle = ((room_width/2) - x)*.02;
-    
-    image_angle = lerp(image_angle,_angle,.2);
-    image_angle = clamp(image_angle,-15,15);
-    
     //Warp Cards
     var _rad = 30;
     var _ang = cardId == 0 ? 0 : 360/((_handSize-1)*2);
@@ -100,6 +93,20 @@ function cardStateHand(){
 
     #endregion
     
+    #region Angle
+    
+    //Move Angle
+    var _moveAngle = xprevious - x;
+    
+    //Angle Cards
+    var _angle = ((room_width/2) - x)*.02;
+    
+    //Change Image Angle
+    image_angle = lerp(image_angle,_angle + _moveAngle,.2);
+    //image_angle = clamp(image_angle,-15,15);
+    
+    
+    #endregion
     
     #region Drawing
     

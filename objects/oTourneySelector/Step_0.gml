@@ -15,7 +15,7 @@ if mouse_wheel_down() then selectedCapsule += .6;
 #region Keyboard Scrolling
 
 //Move Up
-if keyCheckPressed(global.keyMoveUp) or (keyHeld == global.keyMoveUp and keyHoldFrames >= keyHoldTime)  {
+if (keyCheckPressed(global.keyMoveUp) or keyCheckPressed(vk_up)) or (keyHeld == global.keyMoveUp and keyHoldFrames >= keyHoldTime)  {
     //Change Selected
     selectedCapsule --;
     
@@ -30,7 +30,7 @@ if keyCheckPressed(global.keyMoveUp) or (keyHeld == global.keyMoveUp and keyHold
 }
 
 //Move Down
-if keyCheckPressed(global.keyMoveDown) or (keyHeld == global.keyMoveDown and keyHoldFrames >= keyHoldTime) {
+if (keyCheckPressed(global.keyMoveDown) or keyCheckPressed(vk_down)) or (keyHeld == global.keyMoveDown and keyHoldFrames >= keyHoldTime) {
     //Change Selected
     selectedCapsule ++;
     
@@ -45,7 +45,7 @@ if keyCheckPressed(global.keyMoveDown) or (keyHeld == global.keyMoveDown and key
 }
 
 //Key Held Down For Fast Scrolling
-if keyCheckHeld(global.keyMoveUp)
+if keyCheckHeld(global.keyMoveUp) or keyCheckHeld(vk_up)
 {
     if keyHeld != global.keyMoveUp
     {
@@ -56,7 +56,7 @@ if keyCheckHeld(global.keyMoveUp)
     keyHoldFrames += 1;
 }
 
-if keyCheckHeld(global.keyMoveDown)
+if keyCheckHeld(global.keyMoveDown) or keyCheckHeld(vk_down)
 {
     if keyHeld != global.keyMoveDown
     {

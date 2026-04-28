@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sgShopAfter",
+  "audioGroupId":{
+    "name":"agMusic",
+    "path":"audiogroups/agMusic",
+  },
+  "bitDepth":1,
+  "channelFormat":1,
+  "compression":1,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":87.15279,
+  "exportDir":"",
+  "name":"sgShopAfter",
+  "parent":{
+    "name":"Shop",
+    "path":"folders/Sounds/Music/Game/Shop.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sgShopAfter.ogg",
+  "volume":1.0,
+}

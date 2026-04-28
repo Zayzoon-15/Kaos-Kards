@@ -318,6 +318,17 @@ function kaosActionVampire(_targetEnemy)
 
 
 ///@self oAttackCard
+function kaosActionSpeedrun(_targetEnemy)
+{
+	//Show Message
+	createAlertMessage("Hotsauce Applied");
+
+    //Finish
+    timeSourceCreate(1.5,kaosCardDone);
+}
+
+
+///@self oAttackCard
 function kaosActionHotsauce(_targetEnemy)
 {
 	//Show Message

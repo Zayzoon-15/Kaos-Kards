@@ -11,3 +11,9 @@ shadowOffset = new Vector2(0,15);
 
 //Info
 tipInfo = "Go To Shop";
+
+//Action
+action = function()
+{
+    transStart(rShop);
+}

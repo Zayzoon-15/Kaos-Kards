@@ -8,13 +8,33 @@
 
 function FiggySetup() {
     
-	Figgy.Window("Game Info",true,FIGGY_WINDOW_DEFAULT_X,40,FIGGY_WINDOW_DEFAULT_WIDTH,500);
+	Figgy.Window("Game Info",true,FIGGY_WINDOW_DEFAULT_X,25,FIGGY_WINDOW_DEFAULT_WIDTH,680);
 	   
-        Figgy.Bool("Show Current Song",false,function(){
-            oSound.showSongs = argument0;
-        });
+        Figgy.Section("Rooms",false); #region
     
-		Figgy.Section("Enemy Info");
+        Figgy.Separator("Resets");
+        Figgy.Button("Reset Room",function(){room_restart()});
+        Figgy.Button("Stickers",function(){transStart(room,oTransSticker)});
+        Figgy.Separator("Main Game");
+        Figgy.Button("Prepare",function(){room_goto(rPrepare)});
+        Figgy.Button("Enemy",function(){room_goto(rEnemy)});
+        Figgy.Button("Kaos",function(){room_goto(rKaos)});
+        Figgy.Button("Break Room",function(){room_goto(rBreakRoom)});
+        Figgy.Separator("Menus");
+        Figgy.Button("Menu",function(){room_goto(rTournies)});
+        Figgy.Button("Tourney Selector",function(){room_goto(rTourneySelector)});
+        Figgy.Button("DeckBuilder",function(){room_goto(rDeckBuilder2)});
+        Figgy.Separator("Testing");
+        Figgy.Button("Test Room",function(){room_goto(rTesting)});
+        Figgy.Button("Music Test Room",function(){room_goto(rTestingMusic)});
+        Figgy.Button("Voice Test Room",function(){room_goto(rTestingVoice)});
+        Figgy.Button("Card Test Room",function(){room_goto(rTestingCard)});
+    
+        #endregion
+    
+		Figgy.Section("Game Info",false); #region
+    
+        Figgy.Separator("Enemy");
 	    Figgy.String("Current Enemy", "dog", function(){
             if struct_exists(enemyInfo,argument0) {
                 global.currentEnemy = struct_get(enemyInfo,argument0);
@@ -30,20 +50,33 @@ function FiggySetup() {
                 talk();
             }
         });
-	
-        Figgy.Section("Rooms");
-        Figgy.Button("Reset Room",function(){room_restart()});
-        Figgy.Button("Prepare",function(){room_goto(rPrepare)});
-        Figgy.Button("Enemy",function(){room_goto(rEnemy)});
-        Figgy.Button("Kaos",function(){room_goto(rKaos)});
-        Figgy.Button("Test Room",function(){room_goto(rTesting)});
-        Figgy.Button("Music Test Room",function(){room_goto(rTestingMusic)});
-        Figgy.Button("Voice Test Room",function(){room_goto(rTestingVoice)});
-        Figgy.Button("Menu",function(){room_goto(rTournies)});
-        Figgy.Button("DeckBuilder",function(){room_goto(rDeckBuilder1)});
-        Figgy.Button("Stickers",function(){transStart(room,oTransSticker)});
+    
+        Figgy.Separator("Tournament");
+	    Figgy.String("Current Tournament", "debut", function(){
+            if struct_exists(tourneyInfo,argument0) {
+                global.currentTourney = struct_get(tourneyInfo,argument0);
+                global.tourneyEnemiesBeaten = 0;
+                createAlertMessage("Tournament Changed");
+            }
+        });
+	    Figgy.String("Enemies Beaten", 0, function(){
+            global.tourneyEnemiesBeaten = argument0;
+        });
+    
+        #endregion
+    
+        Figgy.Section("Audio",false); #region
+        
+        Figgy.Bool("Show Current Song",false,function(){
+            oSound.showSongs = argument0;
+        });
+        Figgy.Button("Print Song Intros",function(){ds_debug_print(global.songIntrosPlayed,ds_type_list);});
+    
+        #endregion
 		
-		Figgy.Section("Game Stats",false)
+		Figgy.Section("Game Stats",false); #region
+        
+        Figgy.Separator("Hand");
 		Figgy.String("Discards",10,function(){
 			if argument0 != ""
 			{
@@ -56,6 +89,7 @@ function FiggySetup() {
 				global.maxHandSize = real(argument0);
 			}
 		});
+    
 		Figgy.Separator("Cards");
 		Figgy.String("Card To Give", "NONE",function(){
 			global.debugCard = argument0;
@@ -116,12 +150,15 @@ function FiggySetup() {
 			//No Cards
 			show_message($"Card '{global.debugCard}' Does Not Exist");
 		});
-		
-		Figgy.Section("Combo",false);
+         
+        Figgy.Separator("Combo"); 
 		Figgy.Int("Player Combo",0,0,100,1,function(){global.playerComboMeter = argument0});
 		Figgy.Int("Enemy Combo",0,0,100,1,function(){global.enemyComboMeter = argument0});
+    
+        #endregion
 		
-		Figgy.Section("Health Bar",false);
+		Figgy.Section("Health Bar",false); #region
+    
         Figgy.Separator("Player");
         Figgy.Int("Player Health",100,0,100,FIGGY_INT_DEFAULT_STEP,function(){global.playerHp = argument0;});
         Figgy.String("Player Max Health",100,function(){
@@ -151,11 +188,7 @@ function FiggySetup() {
         Figgy.Button("Apply Shield Enemy",function(){attackEffectAdd(effectInfo.shield,10,true)});
         Figgy.Button("Apply Poison Enemy",function(){attackEffectAdd(effectInfo.poison,10,true)});
         Figgy.Button("Apply Fire Enemy",function(){attackEffectAdd(effectInfo.fire,10,true)});
-		
-		Figgy.Section("Kaos Effects",false);
-		Figgy.Button("Freeze Slots",function(){
-			global.disabledSlots.player[1] = true;
-			global.disabledSlots.enemy[1] = true;
-		});
+    
+        #endregion
     
 }

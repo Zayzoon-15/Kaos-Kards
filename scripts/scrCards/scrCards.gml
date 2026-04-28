@@ -24,13 +24,15 @@ enum CARDACT_GENRES {
 /// @param {array} _extraArgs Extra arguments the givin function can use
 /// @param {function} _comboAction The cards combo action (Put undefined of it has no action)
 /// @param {array} _comboArgs Extra arguments the givin combo function can use
-function createCardAction(_name,_desc,_sprite,_range,_genre = CARDACT_GENRES.ATTACK,_action = undefined,_extraArgs = [],_comboAction = undefined,_comboArgs = [],_afterRange = undefined,_afterRangeArgs = [],_update = undefined,_uses = NaN) constructor
+/// @param {bool} _banned If the card is banned always
+function createCardAction(_name,_desc,_sprite,_range,_genre = CARDACT_GENRES.ATTACK,_action = undefined,_extraArgs = [],_comboAction = undefined,_comboArgs = [],_afterRange = undefined,_afterRangeArgs = [],_update = undefined,_uses = NaN,_banned = false) constructor
 {
     //Info
     name = _name;
     desc = _desc;
     sprite = _sprite;
     uses = _uses;
+    banned = _banned;
     date = $"{current_month}/{current_day}/{current_year}/{current_second}";
     
     //Set Range
@@ -70,7 +72,8 @@ function createCardAction(_name,_desc,_sprite,_range,_genre = CARDACT_GENRES.ATT
 /// @param {asset.GMSprite} _sprite The cards sprite
 /// @param {function} _action The cards action (Put undefined of it has no action)
 /// @param {array} _extraArgs Extra arguments the givin function can use
-function createCardKaos(_name,_desc,_sprite,_action = undefined,_extraArgs = [],_update = undefined,_uses = NaN) constructor
+/// @param {bool} _banned If the card is banned always
+function createCardKaos(_name,_desc,_sprite,_action = undefined,_extraArgs = [],_update = undefined,_uses = NaN,_banned = false) constructor
 {
     //Info
     name = _name;
@@ -78,6 +81,7 @@ function createCardKaos(_name,_desc,_sprite,_action = undefined,_extraArgs = [],
     sprite = _sprite;
     range = undefined;
     uses = _uses;
+    banned = _banned;
     date = $"{current_month}/{current_day}/{current_year}/{current_second}";
     
     //Get Action
@@ -106,8 +110,9 @@ function createCardKaos(_name,_desc,_sprite,_action = undefined,_extraArgs = [],
 /// @param {function} _action The cards action (Put NaN of it has no action)
 /// @param {real} _uses The amount of times the card can be used before not being able to use again (Put Nan if infinite)
 /// @param {array} _extraArgs Extra arguments the givin function can use
-/// /// @param {array} _range The cards range Ex: [1,6] min-1 max-6
-function createCardDice(_name,_desc,_sprite,_action = function(){},_uses = NaN,_extraArgs = [],_range = []) constructor
+/// @param {array} _range The cards range Ex: [1,6] min-1 max-6
+/// @param {bool} _banned If the card is banned always
+function createCardDice(_name,_desc,_sprite,_action = function(){},_uses = NaN,_extraArgs = [],_range = [],_banned = false) constructor
 {
     //Info
     name = _name;
@@ -115,6 +120,7 @@ function createCardDice(_name,_desc,_sprite,_action = function(){},_uses = NaN,_
     sprite = _sprite;
     uses = _uses;
     date = $"{current_month}/{current_day}/{current_year}/{current_second}";
+    banned = _banned;
     
     //Set Range
     if array_length(_range) > 0

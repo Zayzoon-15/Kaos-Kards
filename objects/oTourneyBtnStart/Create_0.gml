@@ -12,7 +12,7 @@ text = "Start";
 action = function()
 {
     //Start Game
-    transStart(rTourneyBreak);
+    transStart(rBreakRoom);
     gameReset(true);
     
     //Don't Hover

@@ -30,6 +30,12 @@ if !touchingMouse()
     {
         grabbed = true;
     }
+    
+    //Pressed
+    if mouse_check_button_released(mb_left) and grabbed
+    {
+        action();
+    }
 }
 
 //Grab
@@ -42,14 +48,12 @@ if grabbed
     angleVel = _diff;
     
     //Can Hover
-    canHover = false;
     global.holdingCard = true;
     
     //Let Go
     if !mouse_check_button(mb_left)
     {
         grabbed = false;
-        canHover = true;
         global.holdingCard = false;
     }
     

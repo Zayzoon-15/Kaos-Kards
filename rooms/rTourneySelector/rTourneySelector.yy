@@ -10,6 +10,7 @@
     {"name":"inst_4F81EEFA","path":"rooms/rTourneySelector/rTourneySelector.yy",},
     {"name":"inst_12C5833","path":"rooms/rTourneySelector/rTourneySelector.yy",},
     {"name":"inst_545763A5","path":"rooms/rTourneySelector/rTourneySelector.yy",},
+    {"name":"inst_494D03C9","path":"rooms/rTourneySelector/rTourneySelector.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -19,7 +20,8 @@
       ],"layers":[],"name":"Ui","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Buttons","depth":200,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_12C5833","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_12C5833","objectId":{"name":"oTourneyCapsule","path":"objects/oTourneyCapsule/oTourneyCapsule.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":110.0,"y":187.0,},
-        {"$GMRInstance":"v4","%Name":"inst_545763A5","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_545763A5","objectId":{"name":"oTourneyButton","path":"objects/oTourneyButton/oTourneyButton.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":791.0,"y":576.0,},
+        {"$GMRInstance":"v4","%Name":"inst_545763A5","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_545763A5","objectId":{"name":"oTourneyBtnStart","path":"objects/oTourneyBtnStart/oTourneyBtnStart.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":791.0,"y":553.0,},
+        {"$GMRInstance":"v4","%Name":"inst_494D03C9","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_494D03C9","objectId":{"name":"oTourneyBtnInfo","path":"objects/oTourneyBtnInfo/oTourneyBtnInfo.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":791.0,"y":634.0,},
       ],"layers":[],"name":"Buttons","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Assets","assets":[
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_EDAA422","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_EDAA422","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"StickyNotes","path":"sprites/StickyNotes/StickyNotes.yy",},"x":0.0,"y":0.0,},

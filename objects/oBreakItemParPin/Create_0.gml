@@ -20,3 +20,9 @@ shadowSize = 0.05;
 
 //Info
 tipInfo = "Item";
+
+//Action
+action = function()
+{
+    
+}

@@ -1,19 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"oTourneyButton",
+  "%Name":"oShopBack",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oTourneyButton",
+  "name":"oShopBack",
   "overriddenProperties":[],
   "parent":{
-    "name":"Tournies",
-    "path":"folders/Objects/Ui/Tournies.yy",
+    "name":"Shop",
+    "path":"folders/Objects/Game/Shop.yy",
   },
   "parentObjectId":{
-    "name":"oParButton",
-    "path":"objects/oParButton/oParButton.yy",
+    "name":"oParBackButton",
+    "path":"objects/oParBackButton/oParBackButton.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sButton",
-    "path":"sprites/sButton/sButton.yy",
+    "name":"sButtonBack",
+    "path":"sprites/sButtonBack/sButtonBack.yy",
   },
   "spriteMaskId":null,
   "visible":true,

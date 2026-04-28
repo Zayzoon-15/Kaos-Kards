@@ -29,7 +29,7 @@ action = function()
             transStart(rTournies);
             timeSourceCreate(.3,gameReset,[true]);
         } else {
-            transStart(rTourneyBreak);
+            transStart(rBreakRoom);
             timeSourceCreate(.3,gameReset,[false]);
         }
         

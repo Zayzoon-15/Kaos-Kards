@@ -1,5 +1,18 @@
 ///@desc Apply Effect
 
+//Shield Countered
+var _shieldValue = targetEnemy ? global.enemyTempHp : global.playerTempHp;
+if info.shieldCounter and floor(_shieldValue) > 0
+{
+    //DEBUG
+    print(info.name,"EFFECT COUNTERD BY SHIELD");
+    
+    //Destroy Effect
+    instance_destroy();
+    
+    //Exit Code
+    exit;
+}
 
 //Change Useful Vars
 timesUsed ++;

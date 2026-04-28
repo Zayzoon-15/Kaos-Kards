@@ -270,8 +270,8 @@ function SaveFile()
         global.keyDebug = struct_get_variable(_saveData,"KeyDebug",220);
         global.keyMoveLeft = struct_get_variable(_saveData,"KeyMoveLeft",vk_left);
         global.keyMoveRight = struct_get_variable(_saveData,"KeyMoveRight",vk_right);
-        global.keyMoveUp = struct_get_variable(_saveData,"KeyMoveUp",vk_up);
-        global.keyMoveDown = struct_get_variable(_saveData,"KeyMoveDown",vk_down);
+        global.keyMoveUp = struct_get_variable(_saveData,"KeyMoveUp",ord("W"));
+        global.keyMoveDown = struct_get_variable(_saveData,"KeyMoveDown",ord("S"));
         global.keyJump = struct_get_variable(_saveData,"keyJump",vk_up);
         global.keyAttack = struct_get_variable(_saveData,"keyAttack",ord("Z"));
         global.keyBlock = struct_get_variable(_saveData,"keyBlock",ord("X"));

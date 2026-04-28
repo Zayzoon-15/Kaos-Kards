@@ -21,8 +21,13 @@ function initSongs() {
     audioCreateSongs("Kaos",sgKaos,["Prepare"]);
     
     //Break Room
-    audioCreateSongs("BreakRoomIntro",sgBreakRoomIntro,[],1,1,"BreakRoom",true);
-    audioCreateSongs("BreakRoom",sgBreakRoom,[],1,1,"BreakRoom",true);
+    audioCreateSongs("BreakRoomIntro",sgBreakRoomIntro,[],1.5,1,"BreakRoom",true);
+    audioCreateSongs("BreakRoom",sgBreakRoom,[],1.5);
+    
+    //Shop
+    audioCreateSongs("ShopIntro",sgShopIntro,[],1,1,"Shop",true);
+    audioCreateSongs("Shop",sgShop,["ShopAfter"]);
+    audioCreateSongs("ShopAfter",sgShopAfter,["Shop"]);
     
     //Retro Brawler Card
     audioCreateSongs("Retro1",sgRetro1,[],.9);

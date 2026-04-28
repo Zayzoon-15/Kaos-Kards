@@ -70,6 +70,10 @@ kaosCards = {
     "Halfs all card values and applies them to the next round",
     sCardVampire,kaosActionVampire,[],updateKaosVampire),
     
+    speedrun : new createCardKaos("Speedrun",
+    "Halfs the timer the enemy has to play cards",
+    sCardRerun,kaosActionSpeedrun,[],undefined,NaN,true),
+    
     //Concept
     hotsauce : new createCardKaos("Hot Sauce",
     "All [g]healing[/] cards apply slight [o]fire damage[/] for the round",
