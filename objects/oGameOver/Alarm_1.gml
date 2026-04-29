@@ -1,5 +1,6 @@
 ///@desc Enemy Death
 
+
 //Animate Photo
 with oEnemyPhoto
 {
@@ -10,14 +11,17 @@ with oEnemyPhoto
 	audioPlaySfx(snExplosion,.9,1.1);
 	
 	//Create Explosions
-	repeat 2
-	{
-		var _margin = 80;
-		var _x = random_range(x-_margin,x+_margin);
-		var _y = random_range(y-_margin,y+_margin);
-		effectExplosion(_x,_y,false);
-	}
+    if global.explosionsAfter
+    {
+    	repeat 2
+    	{
+    		var _margin = 80;
+    		var _x = random_range(x-_margin,x+_margin);
+    		var _y = random_range(y-_margin,y+_margin);
+    		effectExplosion(_x,_y,false);
+    	}
+    } else effectExplosion(x,y,false,3.2);
 }
 
 //Repeat
-if !deathDone then alarm[1] = 10;
+if !deathDone and global.explosionsAfter then alarm[1] = 10;

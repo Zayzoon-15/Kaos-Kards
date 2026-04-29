@@ -3,5 +3,5 @@ image_xscale = boxW;
 image_yscale = boxH;
 
 //Set Position
-targetX = x - playerInst.x;
-targetY = y - playerInst.y;
+targetX = instance_exists(playerInst) ? x - playerInst.x : 0;
+targetY = instance_exists(playerInst) ? y - playerInst.y : 0;

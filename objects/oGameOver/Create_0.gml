@@ -16,9 +16,13 @@ audioPlaySong(noone,30);
 //Play Sound
 audioPlaySfx(snUhOh);
 
+
 //Player Won
 if playerWon
 {
+    var _enemyDeathTime = global.explosionsAfter ? 5 : 1.6;
+    //var _startDeathTime = 90; 
+    
 	//Set Enemy Photo
 	with oEnemyPhoto
 	{
@@ -27,7 +31,7 @@ if playerWon
 		canHover = false;
 		
 		//Set Death Photo
-		timeSourceCreate(5,function(){
+		timeSourceCreate(_enemyDeathTime,function(){
 			Enemy.PlayAnim("death");
 		});
 	}
@@ -54,4 +58,4 @@ if playerWon
 
 
 //Start Death Timer
-alarm[0] = 60*7;
+alarm[0] = global.explosionsAfter ? 60*7 : 50;
