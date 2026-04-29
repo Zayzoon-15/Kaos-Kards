@@ -9,7 +9,7 @@ with (oHealthBar) {
 
 //Change Id Placement
 with (oAttackEffect) {
-	if self.id != other.id
+	if self.id != other.id and targetEnemy == other.targetEnemy
     {
         if iconId <= 0
         {
@@ -52,7 +52,7 @@ mapId[? info.name] = structMerge(info,{
 },false);
 
 //Debug
-ds_debug_print(mapId,ds_type_map);
+//ds_debug_print(mapId,ds_type_map);
 
 //Destroy
 if effectDone and effectValue <= 0

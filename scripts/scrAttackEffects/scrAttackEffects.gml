@@ -39,7 +39,7 @@ function attackEffectAdd(_effect = effectInfo.fire,_value = 1,_targetEnemy = tru
     if ds_map_exists(_map,_effect.name)
     {
         with (oAttackEffect) {
-        	if info == _effect
+        	if info == _effect and targetEnemy == _targetEnemy
             {
                 //Change Icon Id
                 iconId = 0;

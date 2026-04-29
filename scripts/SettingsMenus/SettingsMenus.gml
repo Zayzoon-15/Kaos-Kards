@@ -5,13 +5,17 @@ function SettingsMenus()
     static Audio = function()
     {
         //Create Buttons
-        SettingsButtons.Slider("Master","masterVol");
-        SettingsButtons.Slider("Music","musicVol");
-        SettingsButtons.Slider("SFX","sfxVol");
-        SettingsButtons.Slider("Announcer","voiceVol",undefined,2,0,100,true,undefined,"%",function()
-        {
-            return !global.voiceover;
-        },"Announcer Voice Disabled");
+        SettingsButtons.Separator("Volume");
+            SettingsButtons.Slider("Master","masterVol");
+            SettingsButtons.Slider("Music","musicVol");
+            SettingsButtons.Slider("SFX","sfxVol");
+            SettingsButtons.Slider("Announcer","voiceVol",undefined,2,0,100,true,undefined,"%",function()
+            {
+                return !global.voiceover;
+            },"Announcer Voice Disabled");
+            
+        
+        SettingsButtons.Separator("Control");
         SettingsButtons.Check("Unfocus Mute",function()
         {
             global.unfocusMute = argument0;
@@ -20,10 +24,7 @@ function SettingsMenus()
         {
             global.voiceover = argument0;
         },global.voiceover);
-        SettingsButtons.Check("Enemy Dialogue",function()
-        {
-            global.enemyDialogue = argument0;
-        },global.enemyDialogue);
+        SettingsButtons.Check("Enemy Dialogue Sounds");
     }
     
     
@@ -114,6 +115,15 @@ function SettingsMenus()
             },global.showPercentage);
         
         SettingsButtons.Separator("Gameplay");
+            
+            SettingsButtons.Check("Explosions After Match",function(){
+                global.explosionsAfter = argument0; 
+            },global.explosionsAfter);
+            SettingsButtons.Check("Enemy Dialogue",function()
+            {
+                global.enemyDialogue = argument0;
+            },global.enemyDialogue);
+        
             //SettingsButtons.Slider("Game Speed","gameSpeed",undefined,2,1,4,false,undefined,"X");
             SettingsButtons.Button("What Do I Put Here...",function()
             {

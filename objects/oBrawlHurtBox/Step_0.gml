@@ -1,7 +1,10 @@
+//Leave If Player Is Not Real
+if !instance_exists(playerInst) then exit;
+
+
 //Go To Characters
 x = playerInst.x + targetX;
 y = playerInst.y + targetY;
-
 
 //Hit Another Box (Characters Collide Attacks)
 var _hurtbox = instance_place(x,y,oBrawlHurtBox);

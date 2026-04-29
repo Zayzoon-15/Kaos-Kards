@@ -21,7 +21,7 @@ targetHealthBar = noone;
 //Change Other Icon Ids
 with oAttackEffect
 {
-    if self.id != other.id
+    if self.id != other.id and targetEnemy == other.targetEnemy
     {
         iconId ++;
     }

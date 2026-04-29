@@ -39,7 +39,8 @@ if state == CARDSTATE.GRABBED or image_xscale > 1
 //Draw Disable
 if !canUse
 {
-    draw_sprite_ext(sprite_index, image_index, cardX+_shakeX, cardY+_shakeY, image_xscale, image_yscale, image_angle, c_red, image_alpha*.2);
+    drawCard3d(cardX+_shakeX, cardY+_shakeY, sprite_index, global.currentDeck.sprite, cardAngle, image_angle,CARD_THICKNESS,c_red,image_alpha*.2);
+    //draw_sprite_ext(sprite_index, image_index, cardX+_shakeX, cardY+_shakeY, image_xscale, image_yscale, image_angle, c_red, image_alpha*.2);
     draw_sprite_ext(sCardDisable,0,cardX+_shakeX, cardY+_shakeY, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 }
 

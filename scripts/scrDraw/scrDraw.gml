@@ -230,6 +230,7 @@ function drawCard3d(_x, _y, _front, _back, _angle, _rot, _thickness = CARD_THICK
             
             //Draw Card
             draw_sprite_pos(_sprite,0,_x0,_y0, _x1,_y1, _x2,_y2, _x3,_y3,_alpha);
+            
             shader_reset();
         } else draw_sprite_pos(_sprite,0,_x0,_y0, _x1,_y1, _x2,_y2, _x3,_y3,_alpha); //Draw Card Normally
         
@@ -274,7 +275,21 @@ function drawCard3d(_x, _y, _front, _back, _angle, _rot, _thickness = CARD_THICK
         draw_primitive_end();
     } else { //Draw If Angle Is Zero
     	
-        draw_sprite_ext(_front,0,_x,_y,image_xscale,image_yscale,_rot,_imageblend,_alpha);
+        if _imageblend != image_blend
+        {
+            shader_set(shForceBlend);
+            var _shaderParam = shader_get_uniform(shForceBlend, "blendColor");
+            shader_set_uniform_f_array(_shaderParam, [
+                colour_get_red(_imageblend),
+                colour_get_green(_imageblend),
+                colour_get_blue(_imageblend),
+                _alpha
+            ]);
+            
+            draw_sprite_ext(_front,0,_x,_y,image_xscale,image_yscale,_rot,_imageblend,_alpha);
+            
+            shader_reset();
+        } else draw_sprite_ext(_front,0,_x,_y,image_xscale,image_yscale,_rot,_imageblend,_alpha);
         
     }
     

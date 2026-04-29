@@ -234,6 +234,7 @@ function SaveFile()
         //Game
         struct_set(_saveData,"ShowPercentage",global.showPercentage);
         struct_set(_saveData,"GameSpeed",global.gameSpeed);
+        struct_set(_saveData,"ExplosionsAfter",global.explosionsAfter);
         
         //Save To File
         _saveFile(_saveData,"SettingsSave.kaos");
@@ -280,6 +281,7 @@ function SaveFile()
         //Game
         global.showPercentage = struct_get_variable(_saveData,"ShowPercentage",true);
         global.gameSpeed = struct_get_variable(_saveData,"GameSpeed",1);
+        global.explosionsAfter = struct_get_variable(_saveData,"ExplosionsAfter",true);
         
     }
     
