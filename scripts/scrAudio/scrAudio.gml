@@ -167,6 +167,9 @@ function audioPlaySong(_song,_fadeTime = 30,_lastSongEndMethod = "Stop",_forcePo
         
         //Remove From Paused Map
         ds_map_delete(global.songsPaused,_track.name);
+		
+		//global.curSongAudio = audio_play_sound(_track.sound,10,true);
+		
         
     } else global.curSongAudio = audio_play_sound(_track.sound,10,true); //Play Song
     

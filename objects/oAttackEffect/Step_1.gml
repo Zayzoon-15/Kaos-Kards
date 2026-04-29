@@ -48,7 +48,7 @@ mapId[? info.name] = structMerge(info,{
     effectDone : effectDone,
     timesUsed : timesUsed,
     hitStun : hitStun,
-    showValue : clamp(showValue,0,100)
+    showValue : clamp(showValue,0,targetEnemy ? global.enemyMaxHp : global.playerMaxHp)
 },false);
 
 //Debug
@@ -59,3 +59,5 @@ if effectDone and effectValue <= 0
 {
     instance_destroy();
 }
+
+print("PLAYER TEMP HP",global.playerTempHp);

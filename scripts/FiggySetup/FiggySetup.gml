@@ -8,7 +8,7 @@
 
 function FiggySetup() {
     
-	Figgy.Window("Game Info",true,FIGGY_WINDOW_DEFAULT_X,25,FIGGY_WINDOW_DEFAULT_WIDTH,680);
+	Figgy.Window("Debug Menu",true,FIGGY_WINDOW_DEFAULT_X,25,FIGGY_WINDOW_DEFAULT_WIDTH,680);
 	   
         Figgy.Section("Rooms",false); #region
     
@@ -17,8 +17,8 @@ function FiggySetup() {
         Figgy.Button("Stickers",function(){transStart(room,oTransSticker)});
         Figgy.Separator("Main Game");
         Figgy.Button("Prepare",function(){room_goto(rPrepare)});
-        Figgy.Button("Enemy",function(){room_goto(rEnemy)});
-        Figgy.Button("Kaos",function(){room_goto(rKaos)});
+        Figgy.Button("Enemy",function(){if global.currentEnemy == undefined {global.currentEnemy = enemyInfo.dog} room_goto(rEnemy)});
+        Figgy.Button("Kaos",function(){if global.currentEnemy == undefined {global.currentEnemy = enemyInfo.dog} room_goto(rKaos)});
         Figgy.Button("Break Room",function(){room_goto(rBreakRoom)});
         Figgy.Separator("Menus");
         Figgy.Button("Menu",function(){room_goto(rTournies)});

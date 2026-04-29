@@ -74,6 +74,10 @@ kaosCards = {
     "Halfs the timer the enemy has to play cards",
     sCardRerun,kaosActionSpeedrun,[],undefined,NaN,true),
     
+    hpShare : new createCardKaos("Sharing Is Caring",
+    "Both players share a health bar",
+    sCardSwoop,kaosActionSpeedrun,[],undefined,NaN,true),
+    
     //Concept
     hotsauce : new createCardKaos("Hot Sauce",
     "All [g]healing[/] cards apply slight [o]fire damage[/] for the round",

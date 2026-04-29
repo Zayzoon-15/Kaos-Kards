@@ -45,7 +45,10 @@ function attackEffectAdd(_effect = effectInfo.fire,_value = 1,_targetEnemy = tru
                 iconId = 0;
                 
                 //Add Value
-                value += _value;
+				if info.totalTime == undefined 
+				{
+					value = _value;
+				} else value += _value;
                 
                 //Apply Effect Again
                 alarm[0] = 1;
@@ -83,7 +86,13 @@ function attackEffectReduce(_targetEffect = NaN,_amount = 1,_targetEnemy = false
                 if _targetEnemy
                 {
                     global.enemyTempHp -= _amount;
-                } else global.playerTempHp -= _amount;
+					effectValue = global.enemyTempHp;
+					value = global.enemyTempHp;
+                } else {
+					global.playerTempHp -= _amount;
+					effectValue = global.playerTempHp;
+					value = global.playerTempHp;
+				}
             }
         }
     }

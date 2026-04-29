@@ -40,7 +40,7 @@ for (var i = 0; i < array_length(_array); i++) {
     
     //Effect
 	var _effect = targetMap[? _array[i]];
-    var _percent = struct_exists(_effect,"showValue") ? (_effect.showValue/100)*_spriteWidth : 0;
+    var _percent = struct_exists(_effect,"showValue") ? (_effect.showValue/maxHp)*_spriteWidth : 0;
     
     //Get Last Value
     var _lastValue = 0;
@@ -50,7 +50,7 @@ for (var i = 0; i < array_length(_array); i++) {
         
         if _index.name != _effect.name and _index.type == _effect.type and k < i
         {
-            _lastValue = struct_exists(_effect,"showValue") ? (_index.showValue/100)*_spriteWidth : 0;
+            _lastValue = struct_exists(_effect,"showValue") ? (_index.showValue/maxHp)*_spriteWidth : 0;
         }
         
     }
