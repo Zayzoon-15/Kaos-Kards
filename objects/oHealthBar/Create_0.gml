@@ -20,25 +20,14 @@ tipBoxString = "";
 icons = [];
 iconId = 0;
 
-//Hit Stun
-startHitStun = false;
-lastTemp = tempHp;
-
 //Mask
 barMask = undefined;
 
 //Functions
-hitEffect = function(_lastTemp)
+hitEffect = function()
 {
     //Sound
     audioPlaySfx([snHurt1,snHurt2],.9,1.1);
-    
-    //Hit Stun
-    startHitStun = false;
-    alarm[0] = 60;
-	
-	//TempHp
-	lastTemp = _lastTemp;
     
     //Angle
     var _dir = choose(-1,1);

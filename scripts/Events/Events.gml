@@ -85,6 +85,7 @@ function gameReset(_hardReset = true)
     
     //Audio
     ds_list_clear(global.songIntrosPlayed); //Clear Song Intros
+	ds_map_clear(global.songsPaused); //Clear Songs Paused
 }
 
 

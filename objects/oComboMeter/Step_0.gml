@@ -7,8 +7,11 @@ percent = lerp(percent,value / 100,.2);
 x = getPosToWindow(onRight);
 
 //Draw Info
-tipBoxString = $"Your Combo Meter\n{value}%";
-if target == "Enemy" then tipBoxString = $"Enemies Combo Meter\n{value}%";
+if global.showPercentage
+{
+	tipBoxString = target == "Enemy" ? $"Enemies Combo Meter\n{value}%" : $"Your Combo Meter\n{value}%";
+} else tipBoxString = target == "Enemy" ? $"Enemies Combo Meter\n{value}/100" : $"Your Combo Meter\n{value}/100"
+
 drawTipBox(tipBoxString, tipOnTop, true);
 
 //Set Image

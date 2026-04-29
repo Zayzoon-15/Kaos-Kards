@@ -16,7 +16,7 @@ function initSongs() {
     #region Game
     
     //Main Game Loop
-    audioCreateSongs("Prepare",sgPrepare,["Kaos"],1,3,"PrepareExtended");
+    audioCreateSongs("Prepare",sgPrepare,["Kaos"],1,1,"PrepareExtended");
     audioCreateSongs("PrepareExtended",sgPrepareExtended,["Kaos"],1,1,"Prepare");
     audioCreateSongs("Kaos",sgKaos,["Prepare"]);
     
