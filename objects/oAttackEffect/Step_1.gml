@@ -42,6 +42,9 @@ if hitStun <= 0 and info.type == EFFECT_TYPE.HARM then effectValue = lerp(effect
 //Show Value
 showValue = lerp(showValue,effectValue,.2);
 
+//Clamp Value
+effectValue = clamp(effectValue,0,targetEnemy ? global.enemyMaxHp : global.playerMaxHp);
+
 //Update Info
 mapId[? info.name] = structMerge(info,{
     value : effectValue,

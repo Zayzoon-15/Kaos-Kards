@@ -25,7 +25,7 @@ if global.showPercentage
     var _array = ds_map_keys_to_array(targetMap);
     for (var i = 0; i < array_length(_array); i++) {
         var _effect = targetMap[? _array[i]];
-    	var _value = struct_exists(_effect,"showValue") ? (_effect.showValue/100)*100 : 0;
+    	var _value = struct_exists(_effect,"showValue") ? (_effect.showValue/maxHp)*100 : 0;
         if _value > 0
         {
             tipBoxString += $"\n{_effect.name}: {round(_value)}%";

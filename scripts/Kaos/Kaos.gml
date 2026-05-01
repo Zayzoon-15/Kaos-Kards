@@ -244,14 +244,15 @@ function kaosActionBrokenDefense(_targetEnemy)
 	cardJuice(true,true);
     
     //Remove Health
-    var _value = irandom_range(20,35);
+    var _value = irandom_range(10,20);
     if _targetEnemy
     {
-        global.playerMaxHp -= _value;
-        global.playerMaxHp = min(global.playerMaxHp,25);
+        if global.playerMaxHp > 25 then global.playerMaxHp -= _value;
+        global.playerMaxHp = max(global.playerMaxHp,25);
+        
     } else {
-        global.enemyMaxHp -= _value;
-        global.enemyMaxHp = min(global.enemyMaxHp,25);
+        if global.enemyMaxHp > 25 then global.enemyMaxHp -= _value;
+        global.enemyMaxHp = max(global.enemyMaxHp,25);
     }
     
 	

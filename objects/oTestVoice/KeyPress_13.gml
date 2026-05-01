@@ -6,7 +6,7 @@ var _voiceLine = struct_get(voiceInfo,currentText);
 //Line Does Not Exist
 if !struct_exists(voiceInfo,currentText)
 {
-    show_message($"Song Group '{currentText}' Does Not Exist");
+    show_message($"Voice Over '{currentText}' Does Not Exist");
     exit;
 }
 

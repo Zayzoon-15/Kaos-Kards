@@ -1,8 +1,11 @@
+//Text
 currentText = "Press Space To Type A Song";
-
+startingText = currentText;
 typing = false;
 
-songSpeed = 1;
+//Set Position
+x = ROOM_CENTER.x;
+y = ROOM_CENTER.y - 10;
 
-flashTimer = 0;
-flashDir = 1;
+//Speed
+songSpeed = 1;

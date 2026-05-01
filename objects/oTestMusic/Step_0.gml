@@ -1,9 +1,18 @@
 //Input
 if keyboard_check_pressed(vk_space)
 {
-    keyboard_string = "";
+    if currentText == startingText
+    {
+        currentText = "";
+    }
+    
+    keyboard_string = currentText;
     typing = true;
-
+    typingSong = true;
+    if keyboard_check(vk_control)
+    {
+        typingSong = false;
+    }
 }
 
 //Type
@@ -16,13 +25,12 @@ if typing
     {
         keyboard_string = "";
     }
-    
-}    
+}
 
 //Ease Speed
 if keyboard_check(vk_up) {
     songSpeed = lerp(songSpeed,4,.05);
-}  else if keyboard_check(vk_down){
+} else if keyboard_check(vk_down){
     songSpeed = lerp(songSpeed,0.003906,.05);
 } else songSpeed = lerp(songSpeed,1,.2);
 
