@@ -64,7 +64,11 @@ TweenEasyFade(0,1,0,10,EaseOutCubic);
 textInfo = "";
 setText = function()
 {
+	//Get Text
     textInfo = struct_copy(info);
+	if is_method(info.desc) then textInfo.desc = info.desc();
+
+	//Add Info To Text
     if discarded
     {
         textInfo.desc += "[s][lg](Card was discarded)";

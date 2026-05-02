@@ -102,7 +102,6 @@ removeCardFromHand = function()
         }
         
         //Set Deck
-        array_push(oDeck.cardsDiscarded,info);
         oDeck.currentCard --;
     }
 }
@@ -110,6 +109,7 @@ removeCardFromHand = function()
 deleteCard = function()
 {
     //Set Values
+	array_push(oDeck.cardsDiscarded,info);
     oDeck.cardsInPlay --;
     global.discards ++;
     

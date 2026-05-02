@@ -27,6 +27,7 @@ function gameReset(_hardReset = true)
     
 	//Destroy All Effects
 	instance_destroy(oAttackEffect);
+	instance_destroy(oHealthIconExit);
 	ds_map_clear(playerEffects);
 	ds_map_clear(enemyEffects);
     global.healEffects = {

@@ -246,7 +246,6 @@
     {"id":{"name":"oEffectNum","path":"objects/oEffectNum/oEffectNum.yy",},},
     {"id":{"name":"oEffectSkipped","path":"objects/oEffectSkipped/oEffectSkipped.yy",},},
     {"id":{"name":"oEffectStar","path":"objects/oEffectStar/oEffectStar.yy",},},
-    {"id":{"name":"oEnemyAi_OLD","path":"objects/oEnemyAi_OLD/oEnemyAi_OLD.yy",},},
     {"id":{"name":"oEnemyAi","path":"objects/oEnemyAi/oEnemyAi.yy",},},
     {"id":{"name":"oEnemyCard","path":"objects/oEnemyCard/oEnemyCard.yy",},},
     {"id":{"name":"oEnemyPhoto","path":"objects/oEnemyPhoto/oEnemyPhoto.yy",},},

@@ -22,7 +22,7 @@ if global.paused
     //Draw Text
     textSetup(fnMain,fa_center,fa_top);
     draw_text_transformed(ROOM_CENTER.x,80,"Paused",3,3,0);
-    
+	
     //Reset Draw
     drawReset();
     

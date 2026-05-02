@@ -1,6 +1,13 @@
 //Inherit
 event_inherited();
 
+//Destroy
+if !array_contains([rPrepare,rKaos,rEnemy],room)
+{
+	instance_destroy();
+}
+
+//Move Towards Health Bar
 if instance_exists(healthInst)
 {
     

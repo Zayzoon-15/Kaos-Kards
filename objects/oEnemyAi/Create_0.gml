@@ -9,6 +9,38 @@ diceVals = [0,0,0];
 hand = array_concat(info.cardsAct,info.cardsKaos);
 chosenCards = [undefined];
 
+//Add Enemy Cards
+hand = array_concat(hand,global.enemyAddCards);
+
+//Remove Cards
+var _removeCards = array_concat([],global.enemyRemovedCards);
+
+for (var i = 0; i < array_length(hand); ++i) {
+    if hand[i].uses != NaN
+	{
+		//Set Uses
+		var _uses = hand[i].uses;
+		_uses -= checkCardUses(hand[i].name,"Enemy");
+		if _uses <= 0
+		{
+			array_push(_removeCards,hand[i]);
+			print($"CARD {hand[i].name} IS PAST ITS USED LIMIT");
+		}
+		
+	}
+}
+
+for (var i = 0; i < array_length(_removeCards); ++i) {
+	
+	//Remove Card
+	if array_contains(hand,_removeCards[i])
+	{
+		var _index = array_get_index(hand,_removeCards[i]);
+		array_delete(hand,_index,1);
+		print($"REMOVED {_removeCards[i].name} FROM ENEMY HAND");
+	}
+}
+
 
 #region Functions For Ai
 

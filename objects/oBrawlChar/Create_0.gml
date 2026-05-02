@@ -37,6 +37,7 @@ punchStun = 0;
 //Blocking
 blocking = false;
 blockChance = 5;
+aiBlockTime = 0;
 
 //Hit
 hitStun = 0;

@@ -67,6 +67,12 @@ if playerId == 0
 		alarm[0] = random_range(5,15)/global.currentEnemy.difficulty.gameSkill;
 	}
 	
+	if aiBlockTime > 0
+	{
+		blocking = true;
+		aiBlockTime --;
+	}
+	
 	if won
 	{
 		keyLeft = 0;

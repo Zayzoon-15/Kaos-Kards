@@ -27,6 +27,7 @@ action = function()
         transStart(rTournies);
         timeSourceCreate(20,function(){
             oPause.unpauseGame();
+			gameReset(true);
         },[],time_source_units_frames);
     }
 }

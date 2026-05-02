@@ -59,7 +59,7 @@ talk = function()
     }
     
     //Get Dialogue
-    var _text = _dialouge[0]
+    var _text = _dialouge[0];
     if array_length(_dialouge) > 1
     {
         _text = _dialouge[irandom_range(0,array_length(_dialouge)-1)];

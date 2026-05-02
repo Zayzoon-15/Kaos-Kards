@@ -21,4 +21,7 @@ if irandom_range(1,4) == 1 then actJump();
 if irandom_range(1,3) == 1 then actPunch();
 
 //Block
-if irandom_range(1,10) == 1 then actBlock();
+if irandom_range(1,10) == 1 {
+	aiBlockTime = irandom_range(5,60);
+	actBlock();
+}

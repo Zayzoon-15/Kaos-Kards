@@ -42,11 +42,11 @@ enemyInfo = {
         [
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,
-            actionCards.poison, actionCards.poison, actionCards.poison,
+            actionCards.punch, actionCards.punch, actionCards.punch,
             actionCards.bread, actionCards.bread
         ],
-        [kaosCards.brokenDefense],
-        Enemy.Strat(.5,.9,.7,.8,.5)
+        [kaosCards.destroy],
+        Enemy.Strat(.5,.6,.7,.4,.4)
     ),
     
     alien : new Enemy.Create("Alan the Alien",
@@ -74,7 +74,7 @@ enemyInfo = {
             actionCards.bread, actionCards.flaminAce,
         ],
         [kaosCards.swoop,kaosCards.high],
-        Enemy.Strat(.6,.5,.7,.4,.5),
+        Enemy.Strat(.6,.5,.7,.4,.6),
         enemySpecialBeer,["BeerIntro",["BeerKaos1","BeerKaos2"]]
     ),
     
@@ -108,10 +108,10 @@ enemyInfo = {
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,
             actionCards.punch, actionCards.punch, actionCards.punch,
-            actionCards.taunt, actionCards.bread, actionCards.bread,
+            actionCards.taunt, actionCards.laser, actionCards.laser,
         ],
         [kaosCards.brawl],
-        Enemy.Strat(.7,.5,.8,.3,.8),
+        Enemy.Strat(.7,.5,.8,.3,.7),
         function(){},["ChudIntro",["ChudKaos1","ChudKaos2"],"ChudMini"]
     ),
     
@@ -128,11 +128,11 @@ enemyInfo = {
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,
             actionCards.flaminAce, actionCards.flaminAce, actionCards.flaminAce,
-            actionCards.slash, actionCards.slash,
-            actionCards.jerryCan,
+            actionCards.jerryCan, actionCards.jerryCan,
+            actionCards.mirror,
         ],
         [kaosCards.hotdog],
-        Enemy.Strat(.9,.6,.8,.5,1),
+        Enemy.Strat(.95,.6,.8,.4,1),
     ),
     
     
@@ -153,7 +153,7 @@ enemyInfo = {
             actionCards.steak, actionCards.steak,
         ],
         [kaosCards.hotdog,kaosCards.swoop],
-        Enemy.Strat(.6,.5,.7,.4,.5),
+        Enemy.Strat(.7,.5,.7,.4,.5),
         undefined, ["TetoPrepare","TetoKaos"]
     ),
     
@@ -165,7 +165,7 @@ enemyInfo = {
             actionCards.shield, actionCards.shield,
             actionCards.bread, actionCards.bread, actionCards.bread,
             actionCards.punch, actionCards.punch,
-            actionCards.steak, actionCards.steak,
+            actionCards.burger,
         ],
         [kaosCards.hotdog,kaosCards.swoop],
         Enemy.Strat(.7,.5,.7,.4,.7)
@@ -193,11 +193,12 @@ enemyInfo = {
         [
             actionCards.steak, actionCards.heal,
             actionCards.shield, actionCards.shield, actionCards.shield,
-            actionCards.bread, actionCards.bread, actionCards.bread,
             actionCards.silence, actionCards.silence,
             actionCards.taunt, actionCards.taunt,
+            actionCards.poison, actionCards.poison, actionCards.poison,
+            actionCards.bread, actionCards.slash
         ],
-        [kaosCards.high],
+        [kaosCards.high,kaosCards.destroy],
         Enemy.Strat()
     ),
     

@@ -161,7 +161,6 @@
     {"name":"oDeckShowFullBtn","order":1,"path":"objects/oDeckShowFullBtn/oDeckShowFullBtn.yy",},
     {"name":"oDeckShowRemainBtn","order":2,"path":"objects/oDeckShowRemainBtn/oDeckShowRemainBtn.yy",},
     {"name":"oDice","order":1,"path":"objects/oDice/oDice.yy",},
-    {"name":"oEnemyAi_OLD","order":2,"path":"objects/oEnemyAi_OLD/oEnemyAi_OLD.yy",},
     {"name":"oEnemyTextBox","order":1,"path":"objects/oEnemyTextBox/oEnemyTextBox.yy",},
     {"name":"oExpandRes","order":1,"path":"objects/oExpandRes/oExpandRes.yy",},
     {"name":"oFistAttack","order":6,"path":"objects/oFistAttack/oFistAttack.yy",},

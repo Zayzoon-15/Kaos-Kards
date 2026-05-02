@@ -1,3 +1,10 @@
+//Destroy
+if !array_contains([rPrepare,rKaos,rEnemy],room)
+{
+	instance_destroy();
+	print("WRONG ROOM FOR EFFECTS");
+}
+
 //Get Target Health Bar
 targetHealthBar = noone;
 with (oHealthBar) {
@@ -39,11 +46,11 @@ if hitStun > 0 then hitStun --;
 //Decrease Attack Value
 if hitStun <= 0 and info.type == EFFECT_TYPE.HARM then effectValue = lerp(effectValue,-1,.02);
 
-//Show Value
-showValue = lerp(showValue,effectValue,.2);
-
 //Clamp Value
 effectValue = clamp(effectValue,0,targetEnemy ? global.enemyMaxHp : global.playerMaxHp);
+
+//Show Value
+showValue = lerp(showValue,effectValue,.2);
 
 //Update Info
 mapId[? info.name] = structMerge(info,{
@@ -51,7 +58,7 @@ mapId[? info.name] = structMerge(info,{
     effectDone : effectDone,
     timesUsed : timesUsed,
     hitStun : hitStun,
-    showValue : clamp(showValue,0,targetEnemy ? global.enemyMaxHp : global.playerMaxHp)
+    showValue : showValue
 },false);
 
 //Debug
@@ -61,6 +68,5 @@ mapId[? info.name] = structMerge(info,{
 if effectDone and effectValue <= 0
 {
     instance_destroy();
+	print("EFFECT DONE");
 }
-
-print("PLAYER TEMP HP",global.playerTempHp);

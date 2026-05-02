@@ -85,11 +85,28 @@ function Enemy()
     /// @param {array<string>} _dialougeLosing The enemies dialouge if they are losing
     static Dialogue = function(_talkChance = -1,_dialogue = [],_dialougeWinning = [],_dialougeLosing = [])
     {
+		var _text = [], _textWin = [], _textLose = []
+		
+		//Set Normal Text
+		_text = is_array(_dialogue) ? _dialogue : [_dialogue];
+		
+		//Set Winning Text
+		if array_is_empty(_dialougeWinning)
+		{
+			_textWin = _text;
+		} else _textWin = is_array(_dialougeWinning) ? _dialougeWinning : [_dialougeWinning];
+		
+		//Set Winning Text
+		if array_is_empty(_dialougeLosing)
+		{
+			_textLose = _text;
+		} else _textLose = is_array(_dialougeLosing) ? _dialougeLosing : [_dialougeLosing];
+		
         return {
             talkChance : _talkChance,
-            text : is_array(_dialogue) ? _dialogue : [_dialogue],
-            textWin : is_array(_dialougeWinning) ? _dialougeWinning : [_dialougeWinning],
-            textLose : is_array(_dialougeLosing) ? _dialougeLosing : [_dialougeLosing],
+            text : _text,
+            textWin : _textWin,
+            textLose : _textLose,
         }
     }
     
