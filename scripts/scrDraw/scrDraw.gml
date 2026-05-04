@@ -297,13 +297,14 @@ function drawCard3d(_x, _y, _front, _back, _angle, _rot, _thickness = CARD_THICK
 }
 
 
+
 /// @desc Draws text with tags allowing you to change colors (Ex: "This text is [g]GREEN[/] and this one [b]BLUE[/]")
 /// @param {real} _x The x position of the text
 /// @param {real} _y The y position of the text
 /// @param {string} _string The string
 /// @param {real} [_maxWidth]=250 The max width of the text
 /// @param {Constant.Color} [_boxColor]=#FF4C40 The box color for the tag [m]
-/// @returns {real} The texts bottom position
+/// @returns {real} A struct containing the x and y position of the bottom of the text and the width and height of the text (x,y,w,h)
 function drawTextTagged(_x,_y,_string,_maxWidth = 250,_boxColor = #FF4C40)
 {
     //Add Colors

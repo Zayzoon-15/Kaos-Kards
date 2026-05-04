@@ -1,5 +1,8 @@
 function initSettings()
 {
+    //DEBUG
+    global.showGameVer = true;
+    
     //Window
 	global.window = "Window";
 	global.resolutions = [new Vector2(640,360),new Vector2(960,540),new Vector2(1280,720),new Vector2(1920,1080)]

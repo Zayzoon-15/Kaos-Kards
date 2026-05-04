@@ -11,5 +11,5 @@ text = "Rules";
 //Action
 action = function()
 {
-    
+    instance_create_depth(0,0,-1,oTourneyInfo);
 }

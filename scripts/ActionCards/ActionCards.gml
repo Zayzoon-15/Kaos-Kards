@@ -57,7 +57,7 @@ actionCards = {
     
     steak : new createCardAction("Juicy Steak",
     "Increase [g]max health[/] by cards value",
-    sCardSteak,[0,8],CARDACT_GENRES.HEAL,actionSteak),
+    sCardSteak,[0,7],CARDACT_GENRES.HEAL,actionSteak),
     
     silence : new createCardAction("Silence",
     "A chance to silence the the card in front of it[s][lg](The higher the value the higher the chance of silencing the card)",

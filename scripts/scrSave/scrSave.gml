@@ -201,6 +201,9 @@ function SaveFile()
         
         ///Save Info
         
+        //DEBUG
+        struct_set(_saveData,"GameVer",global.showGameVer);
+        
         //Audio
         struct_set(_saveData,"MasterVol",global.masterVol);
         struct_set(_saveData,"SfxVol",global.sfxVol);
@@ -247,6 +250,9 @@ function SaveFile()
         
         
         ///Load Info
+        
+        //DEBUG
+        global.showGameVer = struct_get_variable(_saveData,"GameVer",true);
         
         //Audio
         global.masterVol = struct_get_variable(_saveData,"MasterVol",50);

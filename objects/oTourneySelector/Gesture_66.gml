@@ -1,5 +1,8 @@
 ///@desc Drag Scrolling Start
 
+//Menu Open
+if global.menuOpen then exit;
+
 //Set Dragging
 dragging = true;
 

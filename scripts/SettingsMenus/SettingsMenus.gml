@@ -113,6 +113,9 @@ function SettingsMenus()
             SettingsButtons.Check("Show Percentage",function(){
                 global.showPercentage = argument0;
             },global.showPercentage);
+            SettingsButtons.Check("Show Game Version",function(){
+				global.showGameVer = argument0;
+			},global.showGameVer);
         
         SettingsButtons.Separator("Gameplay");
             

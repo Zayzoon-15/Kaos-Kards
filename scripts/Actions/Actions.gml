@@ -116,8 +116,14 @@ function actionPoison(_targetEnemy)
     //Apply Poison
     attackEffectAdd(effectInfo.poison,value*.7,_targetEnemy);
     
-    //Play Voice
-    audioPlayVoice([voiceInfo.poisonInfect,voiceInfo.poisonShip,voiceInfo.poisonSizz],false,3);
+    //Get Current Temp Health
+    var _tempHp = _targetEnemy ? global.enemyTempHp : global.playerTempHp
+    
+    //Play Voice If Not Blocked
+    if _tempHp <= 0
+    {
+        audioPlayVoice([voiceInfo.poisonInfect,voiceInfo.poisonShip,voiceInfo.poisonSizz],false,3);
+    }
 }
 
 

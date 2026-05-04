@@ -15,7 +15,7 @@ selected = capsuleId == round(oTourneySelector.selectedCapsule);
 image_index = selected;
 
 //Press
-if touchingMouse()
+if touchingMouse() and !global.menuOpen
 {
     if mouse_check_button_pressed(mb_left) and !oTourneySelector.dragging
     {

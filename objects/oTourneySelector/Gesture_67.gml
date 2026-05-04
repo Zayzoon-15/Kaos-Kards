@@ -1,5 +1,8 @@
 ///@desc Drag Scrolling
 
+//Menu Open
+if global.menuOpen then exit;
+
 //Get Positions
 var _x = event_data[?"posX"];
 var _y = event_data[?"posY"];

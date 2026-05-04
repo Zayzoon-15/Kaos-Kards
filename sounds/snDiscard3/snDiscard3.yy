@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.0,
+  "duration":0.21333334,
   "exportDir":"",
   "name":"snDiscard3",
   "parent":{

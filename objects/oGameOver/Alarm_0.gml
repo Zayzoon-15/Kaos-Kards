@@ -22,6 +22,15 @@ timeSourceCreate(3,function(){
 	//Create Button For Now
 	var _xOffset = 120;
 	var _y = ROOM_CENTER.y + 50;
-	instance_create_layer(ROOM_CENTER.x + _xOffset,_y,"Ui",oRetryButton);
-	instance_create_layer(ROOM_CENTER.x - _xOffset,_y,"Ui",oKaosExitButton);
+    
+    if global.currentTourney == undefined or playerWon
+    {   
+        instance_create_layer(ROOM_CENTER.x + _xOffset,_y,"Ui",oRetryButton); 
+        instance_create_layer(ROOM_CENTER.x - _xOffset,_y,"Ui",oKaosExitButton);
+    } else if !playerWon and global.currentTourney != undefined
+    {
+        instance_create_layer(ROOM_CENTER.x + _xOffset,_y,"Ui",oRetryButton); 
+        instance_create_layer(ROOM_CENTER.x - _xOffset,_y,"Ui",oKaosExitButton,{quit : true});
+    }
+
 });

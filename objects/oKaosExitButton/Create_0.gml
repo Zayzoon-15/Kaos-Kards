@@ -11,11 +11,33 @@ scaleTime = .5;
 
 //Info
 infoText = global.currentTourney == undefined ? "Press to return to the menu" : "Press to go to break room";
-text = global.currentTourney == undefined ? "Exit" : "Continue";
+text = global.currentTourney == undefined ? "Exit" : "Break Room";
+
+//LAST MATCH
+if global.currentTourney != undefined and array_length(global.currentTourney.enemies) <= global.tourneyEnemiesBeaten+1
+{
+    text = "Exit";
+    infoText = "You won now leave"
+}
+
+//Quit
+if quit
+{
+    text = "Quit";
+    infoText = "Exit to main menu";
+}
 
 //Action
 action = function()
 {
+    if quit
+    {
+        transStart(rTournies);
+    	timeSourceCreate(.3,gameReset,[true]);
+        
+        exit;
+    }
+    
     //Leave Game
     if global.currentTourney == undefined
     {
@@ -32,10 +54,6 @@ action = function()
             transStart(rBreakRoom);
             timeSourceCreate(.3,gameReset,[false]);
         }
-        
-        
-        
-    	
         
     }
 }
