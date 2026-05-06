@@ -71,6 +71,7 @@ function FiggySetup() {
             oSound.showSongs = argument0;
         });
         Figgy.Button("Print Song Intros",function(){ds_debug_print(global.songIntrosPlayed,ds_type_list);});
+        Figgy.Button("Play Sound",function(){audioPlaySfx(snBoo)});
     
         #endregion
 		

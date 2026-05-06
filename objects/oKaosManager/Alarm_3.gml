@@ -4,13 +4,13 @@
 var _attcksExists = instance_exists(oParAttacks);
 with oAttackEffect
 {
-	if info.type == EFFECT_TYPE.HARM then _attcksExists = true;
+	if info.type == EFFECT_TYPE.HARM and !effectDone then _attcksExists = true;
 }
 
 //Loop Again If There Are Attacks Left
 if _attcksExists
 {
-	alarm[3] = 60;
+	alarm[3] = 30;
 	exit;
 }
 

@@ -85,16 +85,18 @@ _scoreCard = function(_card)
         	case "SURVIVE":
                 if _card.genre == CARDACT_GENRES.HEAL { 
                     _score += 8 * ai.healBias;
+                    _score -= ai.skill < 1 ? (1 - ai.skill) * 6 : 0;
                 }
                 
                 if _card.genre == CARDACT_GENRES.DEFEND { 
                     _score += 8 * ai.blockBias;
+                    _score -= ai.skill < 1 ? (1 - ai.skill) * 6 : 0;
                 }
             break;
             
         	case "FINISH":
                 if _card.genre == CARDACT_GENRES.ATTACK { 
-                    _score += 15;
+                    _score += 15 * ai.skill;
                 }
             break;
         }
@@ -102,32 +104,15 @@ _scoreCard = function(_card)
         //Situation Boosts
         if global.enemyHp <= 15 and _card.genre != CARDACT_GENRES.ATTACK
         {
-            _score += 5;
+            _score += 5 * ai.skill;
         }
         
         if global.playerHp <= 15 and _card.genre == CARDACT_GENRES.ATTACK
         {
-            _score += 5;
+            _score += 5 * ai.skill;
         }
         
-    } /*else if _card.type == CARDTYPES.KAOS {
-        
-        //Increase Desire
-    	_score += 10 * ai.kaosLove;
-        
-        //If Losing Use Kaos
-        if global.enemyHp < global.playerHp - 10
-        {
-            _score += 3;
-        }
-        
-        //About To Win Don't Use Kaos
-        if global.playerHp <= 15
-        {
-            _score -= 10;
-        }
-        
-    }*/
+    }
     
     //Random
     _score += irandom_range(-2,2);
@@ -190,10 +175,10 @@ _aiChoosePreAction = function()
     _avg /= array_length(diceVals);
     
     //Low Roll
-    if _avg < 3 then _rerollScore += 20;
+    if _avg < 3 then _rerollScore += 20 * ai.skill;
     
     //One Bad Die Upgrade
-    if _lowest < 3 then _upgradeScore += 10;
+    if _lowest < 3 then _upgradeScore += 10 * ai.skill;
     
     //Strat Influence
     _rerollScore += (1 - ai.kaosLove) * 5;
@@ -257,15 +242,15 @@ _applySkill = function(_array)
     //Smart Boy
     if ai.skill >= 1 return _array;
     
-    //Mess Up Small
-    if ai.skill > 0.6 {
-        if random(1) < 0.7 return _array;
-    }
+    ////Mess Up Small
+    //if ai.skill > 0.6 {
+        //if random(1) < 0.7 * (ai.skill+.4) return _array;
+    //}
     
     //Mess Up
-    if ai.skill > 0.3
+    if ai.skill >= 0.2
     {
-        if random(1) < 0.5 {
+        if random(1) < 0.4 * (ai.skill+.4) {
             var _a = irandom_range(0,array_length(_array)-1);
             var _b = irandom_range(0,array_length(_array)-1);
             

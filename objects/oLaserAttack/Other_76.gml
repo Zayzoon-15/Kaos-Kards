@@ -1,4 +1,4 @@
-broadcastSprite("laserSetShake",function(){
+broadcastSprite("laserSetShake",function() {
     laserSound = audioPlaySfx(snLaser);
 	card.cardSetShake(6);
 	

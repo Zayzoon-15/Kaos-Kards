@@ -28,7 +28,7 @@ if global.showPercentage
     	var _value = struct_exists(_effect,"showValue") ? (_effect.showValue/maxHp)*100 : 0;
         if _value > 0
         {
-            tipBoxString += $"\n{_effect.name}: {round(_value)}%";
+            tipBoxString += $"\n{_effect.name}: {ceil(_value)}%";
         }
     }
     
@@ -42,7 +42,7 @@ if global.showPercentage
     	var _value = struct_exists(_effect,"showValue") ? _effect.showValue : 0;
         if _value > 0
         {
-            tipBoxString += $"\n{_effect.name}: {round(_value)}";
+            tipBoxString += $"\n{_effect.name}: {ceil(_value)}";
         }
     }
 }

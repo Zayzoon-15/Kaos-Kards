@@ -56,8 +56,11 @@ for (var i = 0; i < array_length(_array); i++) {
     }
     
     //Position
-    var _newOffset = _effect.type == EFFECT_TYPE.HARM ? _hpValue + _lastValue : _lastValue;
-    //var _barLeft = abs(_hpValue - _spriteWidth);
+    var _newOffset = _lastValue;
+    if _effect.type == EFFECT_TYPE.HARM
+    {
+        _newOffset = ceil(tempHp) > 0 ? (ceil(tempHp)/maxHp)*_spriteWidth + _lastValue : _hpValue + _lastValue;
+    }
     
     var _bar = _effect.type == EFFECT_TYPE.HARM ? 
         new Vector2(

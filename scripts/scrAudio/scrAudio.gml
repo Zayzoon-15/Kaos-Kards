@@ -19,7 +19,7 @@ function audioPlaySfx(_sound,_low = 1,_high = 1,_gain = 1)
     {
         _asset = array_get_random(_sound);
     }
-    
+
     //Play Sound
     return audio_play_sound(_asset,0,false,_gain,0,_pitch);
     //audio_play_sound_at(_asset, _x, _y, 0, 1500, 100, 1, false, 0,  1,0,_pitch);

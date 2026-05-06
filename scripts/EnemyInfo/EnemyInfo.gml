@@ -23,6 +23,19 @@ enemyInfo = {
         Enemy.Strat(.7,0.3,0.3,.6,.7)
     ),
     
+    cock : new Enemy.Create("Cock the Bug",
+        sCock, Enemy.Anims(), Enemy.Dialogue(),
+        Enemy.Difficulty(.1,.2,90,.8,.8),
+        [
+            actionCards.heal, actionCards.heal,
+            actionCards.shield, actionCards.shield,
+            actionCards.punch, actionCards.punch, actionCards.punch,
+            actionCards.bread, actionCards.bread
+        ],
+        [kaosCards.destroy],
+        Enemy.Strat(.5,.6,.7,.4,.4)
+    ),
+    
     angel : new Enemy.Create("Angel the Juvenile",
         sAngel, Enemy.Anims(), Enemy.Dialogue(),
         Enemy.Difficulty(.2,.4,100,.8,.9),
@@ -36,22 +49,9 @@ enemyInfo = {
         Enemy.Strat(.8,.4,.7,.7,.9)
     ),
     
-    cock : new Enemy.Create("Cock the Bug",
-        sCock, Enemy.Anims(), Enemy.Dialogue(),
-        Enemy.Difficulty(.2,.3,100,.8,.9),
-        [
-            actionCards.heal, actionCards.heal,
-            actionCards.shield, actionCards.shield,
-            actionCards.punch, actionCards.punch, actionCards.punch,
-            actionCards.bread, actionCards.bread
-        ],
-        [kaosCards.destroy],
-        Enemy.Strat(.5,.6,.7,.4,.4)
-    ),
-    
     alien : new Enemy.Create("Alan the Alien",
         sAlien, Enemy.Anims(), Enemy.Dialogue(),
-        Enemy.Difficulty(.4,.4,100,.85,.9),
+        Enemy.Difficulty(.35,.4,100,.85,.9),
         [
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,
@@ -65,7 +65,7 @@ enemyInfo = {
     ///--- BOSS ---///
     beer : new Enemy.Create("Beer the Pickle", 
         sBeer, Enemy.Anims(), Enemy.Dialogue(10,"Bitch"),
-        Enemy.Difficulty(.6,.6,115,.95,1),
+        Enemy.Difficulty(.5,.6,115,.95,1),
         [
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,
@@ -86,7 +86,7 @@ enemyInfo = {
     
     handsy : new Enemy.Create("Handsy the Hand",
         sHandsy, Enemy.Anims(), Enemy.Dialogue(5,"Wah wah wah, wah wah wah wah >:)","Wah wah wah! >:D","Wah wah... :("),
-        Enemy.Difficulty(.8,.9,100,1,1),
+        Enemy.Difficulty(.6,.9,100,.95,1),
         [
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,
@@ -123,7 +123,7 @@ enemyInfo = {
     
     bones : new Enemy.Create("Jones the Living Bones",
         sBones, Enemy.Anims(), Enemy.Dialogue(),
-        Enemy.Difficulty(5,5,135,1.5,1.5),
+        Enemy.Difficulty(1,5,135,3,3),
         [
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,
