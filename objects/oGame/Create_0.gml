@@ -129,3 +129,23 @@ SaveFile.SettingsLoad();
 
 //Set Window
 setWindowToRes();
+
+
+//Load Game Version
+gameVersion = "";
+if GM_build_type == "run"
+{
+    var _date = date_current_datetime();
+    var _version = $"{date_get_year(_date)}.{date_get_month(_date)}.{date_get_day(_date)}.{date_get_hour(_date)}";
+
+    var _file = file_text_open_write("GameVersion.kaos");
+    file_text_write_string(_file, _version);
+    file_text_close(_file);
+
+    gameVersion = _version;
+} else if file_exists("GameVersion.kaos")
+{
+    var _file = file_text_open_read("GameVersion.kaos");
+    gameVersion = file_text_read_string(_file);
+    file_text_close(_file);
+}

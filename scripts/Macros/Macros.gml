@@ -1,5 +1,3 @@
-#macro GAMEVER "1.2.0.2"
-
 //Game
 #macro VALUE_MULT .6
 #macro COMBO_MULT 1 
