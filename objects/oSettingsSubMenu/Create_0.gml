@@ -21,6 +21,28 @@ mobileTouchLast = 0;
 mobileTouchVel = 0;
 mobileCanDrag = true;
 
+//Scroll Box
+scrollBoxH = 30;
+scrollBoxW = 8;
+scrollBoxMargin = 20;
+scrollBoxX = 0;
+scrollBoxY = 0;
+scrollBoxLastMouse = new Vector2(0,0);
+scrollBoxRect = {one: new Vector2(), two : new Vector2()};
+scrollFollow = false;
+
+updateScrollBox = function(_reset = false)
+{
+    if _reset
+    {
+        scrollBoxX = bbox_right + 18;
+    }
+    
+    scrollBoxY = ( bbox_top + 25 ) + ( (scroll/maxScrollDist) * ( (bbox_bottom - bbox_top) - 48 ) );
+    scrollBoxRect = {one : new Vector2(scrollBoxX-scrollBoxMargin/2,bbox_top), two : new Vector2(scrollBoxX+scrollBoxMargin/2,bbox_bottom)};
+}
+updateScrollBox(true);
+
 #region Scroll Tuning
 
 scrollFriction = 0.88; //How Quickly Momentum Slows Down | Big = Stops Faster  Small = Glides Longer

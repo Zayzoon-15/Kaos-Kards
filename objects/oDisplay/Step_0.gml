@@ -46,3 +46,4 @@ if _winW >= baseW * _scale and _winW >= 200 and _winH >= 200
     //Set GUI Size
     display_set_gui_size(baseW, baseH);
 }
+

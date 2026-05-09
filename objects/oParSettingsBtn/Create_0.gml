@@ -23,6 +23,7 @@ canHover = true;
 mobileDragging = false;
 
 //Pressed
+pressed = false;
 ignoreMobile = false;
 mobilePress = false;
 

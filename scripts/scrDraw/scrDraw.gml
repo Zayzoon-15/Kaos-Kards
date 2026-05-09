@@ -24,10 +24,10 @@ function drawCardText(_info,_depthChange = 5){
 ///@arg {bool} _top Whether to draw at the top or bottom (Default: true)
 ///@arg {bool} _update If it should update each frame (Default: false) This would require the variable: tipBoxString 
 ///@arg {real} _distance The distance of the text (Default: 10)
+///@arg {real} _offset The offset of the tipbox (Default: Vector2(0,0))
 ///@arg {real} _size The size of the text (Default: 1)
 ///@arg {bool} _menuItem If the object is a menu item (Default: false)
-///@arg {bool} _touching If the object is being touched (Defualt: false)
-function drawTipBox(_desc,_top = true,_update = false,_distance = 10,_size = 1,_menuItem = false){
+function drawTipBox(_desc,_top = true,_update = false,_distance = 10,_offset = new Vector2(0),_size = 1,_menuItem = false){
     
     //Check If Has Variables
     if !variable_instance_exists(self.id,"canHover")
@@ -58,7 +58,8 @@ function drawTipBox(_desc,_top = true,_update = false,_distance = 10,_size = 1,_
             distance : _distance,
             size : _size,
             update : _update,
-            menuItem : _menuItem
+            menuItem : _menuItem,
+            offset : _offset
         });
     }
     

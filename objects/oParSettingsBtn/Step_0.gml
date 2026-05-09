@@ -45,6 +45,11 @@ if hover
 //Clicked
 if mouse_check_button_pressed(mb_left) and hover
 {
+    pressed = true;
+}
+
+if mouse_check_button_released(mb_left) and pressed
+{
     if global.mobile and global.mobilePress and !mobilePress and !ignoreMobile
     {
         mobilePress = true;
@@ -52,6 +57,8 @@ if mouse_check_button_pressed(mb_left) and hover
     	action();
         mobilePress = false;
     }
+    
+    pressed = false;
 }
 
 //Check If Disabled

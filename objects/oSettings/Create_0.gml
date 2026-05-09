@@ -1,5 +1,5 @@
 //Set Position
-x = 462;
+x = 460//462;
 y = 360;
 
 //Menu
@@ -53,7 +53,8 @@ createSettings = function()
 	#endregion
 
 	//Create Sub Menu
-	instance_create_depth(967,372,_depth,oSettingsSubMenu,{
+    //967
+	instance_create_depth(964,372,_depth,oSettingsSubMenu,{
 		image_xscale : 11,
 		image_yscale : 12.3
 	}); //Magic Numbers I Know -_-

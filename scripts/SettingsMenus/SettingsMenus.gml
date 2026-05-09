@@ -72,6 +72,9 @@ function SettingsMenus()
 				global.vSync = argument0;
 				display_reset(0,global.vSync);
 			},global.vSync);
+			SettingsButtons.Check("Animated UI Elements",function(){
+				global.animatedUi = argument0;
+			},global.animatedUi);
         
         SettingsButtons.Separator("Subtitles");
             SettingsButtons.Check("Subtitles",function()

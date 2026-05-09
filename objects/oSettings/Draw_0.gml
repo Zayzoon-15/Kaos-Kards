@@ -8,7 +8,7 @@ draw_rectangle(_x1,0,_x2,room_height,false);
 draw_set_color(c_white);
 draw_set_alpha(.5);
 draw_sprite_tiled(sSettingsCards,0,0,bgY);
-bgY += 0.2;
+if global.animatedUi then bgY += 0.2;
 
 //Reset Draw
 drawReset();

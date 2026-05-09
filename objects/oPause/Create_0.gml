@@ -56,7 +56,7 @@ pauseGame = function()
     
     //Reactivate Objects
 	instance_activate_object(oGame);
-	instance_activate_object(oExpandRes);
+	instance_activate_object(oDisplay);
     instance_activate_object(oSound);
     instance_activate_object(oSubtitle);
     

@@ -219,6 +219,7 @@ function SaveFile()
         struct_set(_saveData,"Vsync",global.vSync);
         struct_set(_saveData,"Particle",global.partSelection);
         struct_set(_saveData,"SubtitleStyle",global.subtitlesStyle);
+        struct_set(_saveData,"AnimatedUi",global.animatedUi);
         
         //Input
         struct_set(_saveData,"KeyDiscard",global.keyDiscard);
@@ -269,6 +270,7 @@ function SaveFile()
         global.vSync = struct_get_variable(_saveData,"Vsync",true);
         global.partSelection = struct_get_variable(_saveData,"Particle",0);
         global.subtitlesStyle = struct_get_variable(_saveData,"SubtitleStyle",global.subtitlesStyle);
+        global.animatedUi = struct_get_variable(_saveData,"AnimatedUi",global.animatedUi);
         
         //Input
         global.keyDiscard = struct_get_variable(_saveData,"KeyDiscard",ord("Z"));

@@ -3,6 +3,8 @@ dropDownCurSelection = [0,0];
 
 //Pressed
 focused = false;
+canHover = true;
+tipBoxTouching = false;
 
 //Text
 text = "";

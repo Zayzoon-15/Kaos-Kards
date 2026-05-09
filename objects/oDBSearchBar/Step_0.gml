@@ -1,3 +1,8 @@
+//Icon Hover
+tipBoxTouching = point_in_rectangle(mouse_x,mouse_y,bbox_left+10,bbox_top,bbox_left+45,bbox_bottom);
+canHover = tipBoxTouching and !instance_exists(oDBSort);
+drawTipBox("Right click for sorting options",false,false,10,new Vector2(60,0));
+
 //Set Focused
 if touchingMouse() and mouse_check_button_pressed(mb_left)
 {

@@ -1,5 +1,5 @@
-
 //Get Text Size
+draw_set_font(fnMain);
 height = string_height_ext(text,-1,maxWidth)*size;
 width = string_width_ext(text,-1,maxWidth)*size;
 
@@ -16,8 +16,8 @@ if instance_exists(parent)
         _y = parent.bbox_top-distance;
     } else _y = parent.bbox_bottom+distance;
     
-    x = parent.x;
-    y = lerp(y,_y,.2);
+    x = parent.x + offset.x;
+    y = lerp(y,_y + offset.y,.2);
     
     if variable_instance_exists(parent,"tipBoxTouching")
     {
