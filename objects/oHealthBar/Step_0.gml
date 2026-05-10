@@ -48,7 +48,7 @@ if global.showPercentage
 }
 
 //Draw Info
-drawTipBox(tipBoxString,tipOnTop,true,_dist,1);
+drawTipBox(tipBoxString,tipOnTop,true,_dist);
 
 #endregion
 

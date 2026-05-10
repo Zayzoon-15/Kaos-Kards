@@ -12,7 +12,7 @@ if selected
 //Hover
 if layer_get_visible(layer)
 {
-    drawTipBox(info.name,true,false,20,1.5);
+    drawTipBox(info.name,true,false,20,new Vector2(0),1.5);
 }
 
 //Touching Mouse

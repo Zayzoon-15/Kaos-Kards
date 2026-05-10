@@ -117,6 +117,10 @@ function kaosActionDestroy(_targetEnemy)
 	//Juice
 	cardJuice(false);
 	
+    //instance_create_depth(x,y,depth,oDeckWreckerCard);
+    
+    //targetX += _targetEnemy ? -200 : 200;
+    
 	//Take From Someone
 	instance_create_layer(0,0,"Attacks",oDestroyedCard,{
 		targetEnemy : _targetEnemy

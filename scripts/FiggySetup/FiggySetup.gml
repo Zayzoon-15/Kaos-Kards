@@ -191,5 +191,6 @@ function FiggySetup() {
         Figgy.Button("Apply Fire Enemy",function(){attackEffectAdd(effectInfo.fire,10,true)});
     
         #endregion
+ 
     
 }

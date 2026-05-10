@@ -39,7 +39,7 @@ cardJuice = function(_stars = true,_starSound = false,_angle = true,_angleAmount
     //Angle
 	if _angle
 	{
-		angle += random_range(_angleAmount[0],_angleAmount[1])*choose(-1,1);
+		image_angle += random_range(_angleAmount[0],_angleAmount[1])*choose(-1,1);
 	}
 }
 

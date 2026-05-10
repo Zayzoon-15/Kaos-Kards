@@ -243,6 +243,7 @@
     {"id":{"name":"oDeckShowFullBtn","path":"objects/oDeckShowFullBtn/oDeckShowFullBtn.yy",},},
     {"id":{"name":"oDeckShowMenu","path":"objects/oDeckShowMenu/oDeckShowMenu.yy",},},
     {"id":{"name":"oDeckShowRemainBtn","path":"objects/oDeckShowRemainBtn/oDeckShowRemainBtn.yy",},},
+    {"id":{"name":"oDeckWreckerCard","path":"objects/oDeckWreckerCard/oDeckWreckerCard.yy",},},
     {"id":{"name":"oDestroyedCard","path":"objects/oDestroyedCard/oDestroyedCard.yy",},},
     {"id":{"name":"oDice","path":"objects/oDice/oDice.yy",},},
     {"id":{"name":"oDiscard","path":"objects/oDiscard/oDiscard.yy",},},
@@ -759,6 +760,7 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"rSetup","path":"rooms/rSetup/rSetup.yy",},},
     {"roomId":{"name":"rTournies","path":"rooms/rTournies/rTournies.yy",},},
+    {"roomId":{"name":"rTesting","path":"rooms/rTesting/rTesting.yy",},},
     {"roomId":{"name":"rDeckBuilder1","path":"rooms/rDeckBuilder1/rDeckBuilder1.yy",},},
     {"roomId":{"name":"rBreakRoom","path":"rooms/rBreakRoom/rBreakRoom.yy",},},
     {"roomId":{"name":"rTourneySelector","path":"rooms/rTourneySelector/rTourneySelector.yy",},},
@@ -766,7 +768,6 @@
     {"roomId":{"name":"rTestingVoice","path":"rooms/rTestingVoice/rTestingVoice.yy",},},
     {"roomId":{"name":"rPrepare","path":"rooms/rPrepare/rPrepare.yy",},},
     {"roomId":{"name":"rKaos","path":"rooms/rKaos/rKaos.yy",},},
-    {"roomId":{"name":"rTesting","path":"rooms/rTesting/rTesting.yy",},},
     {"roomId":{"name":"rEnemy","path":"rooms/rEnemy/rEnemy.yy",},},
     {"roomId":{"name":"rTestingCard","path":"rooms/rTestingCard/rTestingCard.yy",},},
     {"roomId":{"name":"rDeckBuilder2","path":"rooms/rDeckBuilder2/rDeckBuilder2.yy",},},
