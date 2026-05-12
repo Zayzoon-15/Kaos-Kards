@@ -1,1 +1,1 @@
-mobileDragging = true;
+mobileDragging = ignoreDrag ? false : global.mobile;

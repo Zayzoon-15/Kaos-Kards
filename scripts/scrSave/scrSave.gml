@@ -58,7 +58,7 @@ function SaveFile()
             //Return Save
             return json_parse(_string);
             
-        } else return undefined;
+        } else return {};
     }
     
     

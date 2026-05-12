@@ -18,12 +18,16 @@ if instance_exists(parent)
     
     x = parent.x + offset.x;
     y = lerp(y,_y + offset.y,.2);
-    
+
     if variable_instance_exists(parent,"tipBoxTouching")
     {
         touching = parent.tipBoxTouching;
     }
 }
+
+//Keep In Room
+x = clamp(x,CAMERA_POS.x+((width/2)+widthMargin),SCREEN_EDGE.right - ((width/2)+widthMargin));
+y = clamp(y,CAMERA_POS.y+(top ? height + heightMargin*2 : 0),SCREEN_HEIGHT - (top ? 0 : height + heightMargin*2));
 
 //Update String
 if instance_exists(parent) and update

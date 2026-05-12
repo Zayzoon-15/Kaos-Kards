@@ -21,11 +21,12 @@ textScaleY = 1;
 hover = false;
 canHover = true;
 mobileDragging = false;
+ignoreDrag = false;
 
 //Pressed
 pressed = false;
-ignoreMobile = false;
 mobilePress = false;
+pressType = "released";
 
 #region Functions
 

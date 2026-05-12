@@ -7,7 +7,10 @@ currentAmount = 50;
 //Drag
 dragging = false;
 playSound = false;
-ignoreMobile = true;
+ignoreDrag = true;
+
+//Press
+pressType = "pressed";
 
 //Slider Box
 sliderBoxX1 = 0;
@@ -45,8 +48,10 @@ drawBtn = function()
     drawBox();
     
     //Slider Value
-    var _sliderText = roundText ? $"{ceil(currentAmount)}{textIcon}" : $"{currentAmount}{textIcon}";
-    
+	var _amount = currentAmount;
+	if roundText then _amount = roundFunc != undefined ? roundFunc(_amount) : ceil(_amount);
+	var _sliderText = $"{_amount}{textIcon}";
+	
     //Draw Slider Value
     textSetup(fnMain,fa_center,fa_middle,c_white,image_alpha);
     draw_text_transformed(sliderBoxX1+sliderBoxWidth/2,y,_sliderText,1,1,0);

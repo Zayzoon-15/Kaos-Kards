@@ -23,7 +23,7 @@ if canHover then image_index = 0; else image_index = 1;
 //Info
 if drawInfo
 {
-    drawTipBox(infoText,showInfoTop,false,11);
+    drawTipBox(infoText,showInfoTop,false,11,new Vector2(0),1,false,isMenuButton);
 }
 
 //Size To Text

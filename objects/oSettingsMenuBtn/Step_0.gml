@@ -2,8 +2,7 @@
 x = getPosToWindow(false);
 
 //Offset
-var _boxOffset = 0;
-if selected then _boxOffset = 10;
+var _boxOffset = selected ? 10 : 0;
 
 //Hover
 if touchingMouse()

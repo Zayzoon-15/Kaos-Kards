@@ -45,12 +45,15 @@ if hover
 //Clicked
 if mouse_check_button_pressed(mb_left) and hover
 {
-    pressed = true;
+	if pressType == "released"
+	{
+		pressed = true;
+	} else action();
 }
 
-if mouse_check_button_released(mb_left) and pressed
+if mouse_check_button_released(mb_left) and pressed and pressType == "released"
 {
-    if global.mobile and global.mobilePress and !mobilePress and !ignoreMobile
+    if global.mobile and global.mobilePress and !mobilePress
     {
         mobilePress = true;
     } else {

@@ -43,7 +43,7 @@ createSettings = function()
 		var _y = _center - _top + (i * _gap);
     
 		//Create Buttons
-		instance_create_depth(167,_y,_depth,oSettingMenuBtn,{
+		instance_create_depth(167,_y,_depth,oSettingsMenuBtn,{
 			targetMenu : _mainButtons[i],
 			selected : _selected,
             btnId : i
@@ -65,7 +65,7 @@ createSettings = function()
 destroySettings = function()
 {
 	//Destroy
-	instance_destroy(oSettingMenuBtn);
+	instance_destroy(oSettingsMenuBtn);
 	instance_destroy(oParSettingsBtn);
 	instance_destroy(oSettingsSubMenu);
     instance_destroy();

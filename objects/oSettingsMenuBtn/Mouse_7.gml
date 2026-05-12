@@ -2,7 +2,7 @@
 if pressed
 {
 	//Set Selected
-	oSettingMenuBtn.selected = false;
+	oSettingsMenuBtn.selected = false;
 	selected = true;
     
     //Do Action
