@@ -17,5 +17,4 @@ touching = false;
 //Set Size
 if !forceSize {
 	size *= global.tipBoxSize;
-print(size,global.tipBoxSize);
 }

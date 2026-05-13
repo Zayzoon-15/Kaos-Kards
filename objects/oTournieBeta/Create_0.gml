@@ -14,7 +14,7 @@ action = function()
 {
     //Go To Room
     transStart(rTourneySelector );
-    gameReset();
+    eventGameReset();
     
     //Don't Hover
     canHover = false;

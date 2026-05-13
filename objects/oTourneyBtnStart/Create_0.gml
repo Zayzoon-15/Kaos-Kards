@@ -13,7 +13,7 @@ action = function()
 {
     //Start Game
     transStart(rBreakRoom);
-    gameReset(true);
+    eventGameReset(true);
     
     //Don't Hover
     canHover = false;

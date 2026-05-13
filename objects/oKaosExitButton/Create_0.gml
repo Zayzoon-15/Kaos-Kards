@@ -33,7 +33,7 @@ action = function()
     if quit
     {
         transStart(rTournies);
-    	timeSourceCreate(.3,gameReset,[true]);
+    	timeSourceCreate(.3,eventGameReset,[true]);
         
         exit;
     }
@@ -42,17 +42,17 @@ action = function()
     if global.currentTourney == undefined
     {
     	transStart(rTournies);
-    	timeSourceCreate(.3,gameReset,[true]);
+    	timeSourceCreate(.3,eventGameReset,[true]);
     } else {
         global.tourneyEnemiesBeaten ++;
         
         if global.tourneyEnemiesBeaten >= array_length(global.currentTourney.enemies)
         {
             transStart(rTournies);
-            timeSourceCreate(.3,gameReset,[true]);
+            timeSourceCreate(.3,eventGameReset,[true]);
         } else {
             transStart(rBreakRoom);
-            timeSourceCreate(.3,gameReset,[false]);
+            timeSourceCreate(.3,eventGameReset,[false]);
         }
         
     }

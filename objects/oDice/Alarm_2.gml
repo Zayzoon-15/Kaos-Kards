@@ -56,6 +56,6 @@ if diceId == 3
     
     //Set Button
     //oDonePrepButton.alarm[0] = _time;
-    timeSourceCreate(_time,allCardValuesGained,[],time_source_units_frames);
+    timeSourceCreate(_time,eventAllCardValuesGained,[],time_source_units_frames);
 }
 

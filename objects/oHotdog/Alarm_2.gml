@@ -11,7 +11,7 @@ with oHotdogGuy
 audioPlaySong(global.currentEnemy.customSong.kaos);
 
 //End Action
-kaosCardDone();
+eventKaosCardDone();
 
 //Destroy Self
 instance_destroy();

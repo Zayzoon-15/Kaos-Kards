@@ -2,7 +2,7 @@
 /// @desc  This event plays when the player resets the match
 /// @param {bool} [_hardReset] If on it resets the game fully as if the tournament reset
 /// While off it resets the game as if finished fighting an enemy
-function gameReset(_hardReset = true)
+function eventGameReset(_hardReset = true)
 {	
    
     if _hardReset
@@ -91,7 +91,7 @@ function gameReset(_hardReset = true)
 
 
 ///@desc This event plays when the next round starts
-function nextRoundStarted()
+function eventNextRoundStarted()
 {
     //Set Gamestate
     gameState = GAMESTATES.PREPARE;
@@ -128,7 +128,7 @@ function nextRoundStarted()
 
 
 ///@desc This event plays when the kaos part of the match starts
-function kaosRoundStarted()
+function eventKaosRoundStarted()
 {
     //Set Gamestate
     gameState = GAMESTATES.KAOS;
@@ -142,7 +142,7 @@ function kaosRoundStarted()
 
 
 ///@desc This event plays when the played kaos card is complete
-function kaosCardDone()
+function eventKaosCardDone()
 {
     //Destroy Kaos Card
     with oAttackCard
@@ -163,7 +163,7 @@ function kaosCardDone()
 
 
 ///@desc This event plays when the played combo attack is complete
-function comboAttackDone()
+function eventComboAttackDone()
 {
     //Destroy Kaos Card
     with oAttackCard
@@ -187,7 +187,7 @@ function comboAttackDone()
 
 
 /// @desc This event plays when all cards gain their value
-function allCardValuesGained()
+function eventAllCardValuesGained()
 {
     //Vampire Card Activate
     if instance_exists(oVampire)

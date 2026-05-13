@@ -12,4 +12,4 @@ instance_destroy();
 instance_destroy(oBrawlMobile);
 
 //Finish
-kaosCardDone();
+eventKaosCardDone();

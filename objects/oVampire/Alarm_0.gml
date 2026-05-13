@@ -5,7 +5,7 @@ if targetSlotId > 3
 {
     effectStar(x,y,10,true,20,25);
     instance_destroy();
-    timeSourceCreate(30,allCardValuesGained,[],time_source_units_frames);
+    timeSourceCreate(30,eventAllCardValuesGained,[],time_source_units_frames);
     exit;
 }
 

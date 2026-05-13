@@ -1,5 +1,5 @@
 //Safe Check
-if room == rMainMenu then instance_destroy();
+if room == rMainMenu or room == rBreakRoom then instance_destroy();
 
 //Correct Room Check
 if targetEnemy

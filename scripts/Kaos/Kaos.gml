@@ -7,8 +7,8 @@
 /* HOW TO
  * All functions should look like this
  * function kaosActionTemp(_targetEnemy)
- * All actions have to call kaosCardDone to show that they are done
- * MAKE SURE ALL KAOS ACTIONS HAVE A WAY TO CALL KaosCardDone TO FINISH THE ACTION
+ * All actions have to call eventKaosCardDone to show that they are done
+ * MAKE SURE ALL KAOS ACTIONS HAVE A WAY TO CALL eventKaosCardDone TO FINISH THE ACTION
 */
 
 
@@ -23,7 +23,7 @@ function kaosActionSwoop(_targetEnemy)
 	cardJuice(true);
     
     //Finish
-    timeSourceCreate(4,kaosCardDone);
+    timeSourceCreate(4,eventKaosCardDone);
 }
 
 
@@ -40,7 +40,7 @@ function kaosActionDiscard(_targetEnemy)
 	global.discards = 0;
     
     //Finish
-    timeSourceCreate(1.5,kaosCardDone);
+    timeSourceCreate(1.5,eventKaosCardDone);
 }
 
 
@@ -57,7 +57,7 @@ function kaosActionHandy(_targetEnemy)
 	global.maxHandSize += 1;
     
     //Finish
-    timeSourceCreate(1.5,kaosCardDone);
+    timeSourceCreate(1.5,eventKaosCardDone);
 }
 
 
@@ -84,7 +84,7 @@ function kaosActionSwap(_targetEnemy)
 	#endregion
     
     //Finish
-    timeSourceCreate(1.5,kaosCardDone);
+    timeSourceCreate(1.5,eventKaosCardDone);
 }
 
 
@@ -107,27 +107,23 @@ function kaosActionHigh(_targetEnemy)
 	global.valueMult = _value;
     
     //Finish
-    timeSourceCreate(1.5,kaosCardDone);
+    timeSourceCreate(1.5,eventKaosCardDone);
 }
 
 
 ///@self oAttackCard
 function kaosActionDestroy(_targetEnemy)
 {
-	//Juice
-	cardJuice(false);
+	//Move Card    
+    targetX += _targetEnemy ? -200 : 200;
 	
-    //instance_create_depth(x,y,depth,oDeckWreckerCard);
-    
-    //targetX += _targetEnemy ? -200 : 200;
-    
-	//Take From Someone
-	instance_create_layer(0,0,"Attacks",oDestroyedCard,{
+	//Create Card
+    instance_create_depth(ROOM_CENTER.x,-200,depth,oDeckWreckerCard,{
 		targetEnemy : _targetEnemy
 	});
-    
+
     //Finish
-    timeSourceCreate(3,kaosCardDone);
+    timeSourceCreate(3,eventKaosCardDone);
 }
 
 
@@ -158,7 +154,7 @@ function kaosActionFreeze(_targetEnemy)
     _array[_slot] = true; 
     
     //Finish
-    timeSourceCreate(2,kaosCardDone);
+    timeSourceCreate(2,eventKaosCardDone);
 }
 
 
@@ -226,7 +222,7 @@ function kaosActionSticky(_targetEnemy)
     createAlertMessage("Imagine A Sticky Hand Grabbing A Card");
     
     //Finish
-    timeSourceCreate(2,kaosCardDone);
+    timeSourceCreate(2,eventKaosCardDone);
 }
 
 
@@ -265,7 +261,7 @@ function kaosActionBrokenDefense(_targetEnemy)
     attackEffectAdd(effectInfo.shield,_maxHp,!_targetEnemy);
     
     //Finish
-    timeSourceCreate(1.5,kaosCardDone);
+    timeSourceCreate(1.5,eventKaosCardDone);
 }
 
 
@@ -282,7 +278,7 @@ function kaosActionRerun(_targetEnemy)
     global.repeatTimes += 1;
     
     //Finish
-    timeSourceCreate(1.5,kaosCardDone);
+    timeSourceCreate(1.5,eventKaosCardDone);
 }
 
 
@@ -318,7 +314,7 @@ function kaosActionVampire(_targetEnemy)
 	cardJuice(true,true);
     
     //Finish
-    timeSourceCreate(1.5,kaosCardDone);
+    timeSourceCreate(1.5,eventKaosCardDone);
 }
 
 
@@ -329,7 +325,7 @@ function kaosActionSpeedrun(_targetEnemy)
 	createAlertMessage("Hotsauce Applied");
 
     //Finish
-    timeSourceCreate(1.5,kaosCardDone);
+    timeSourceCreate(1.5,eventKaosCardDone);
 }
 
 
@@ -351,5 +347,5 @@ function kaosActionHotsauce(_targetEnemy)
     array_push(global.healEffects.enemy,_func);
     
     //Finish
-    timeSourceCreate(1.5,kaosCardDone);
+    timeSourceCreate(1.5,eventKaosCardDone);
 }

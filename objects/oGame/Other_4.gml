@@ -3,11 +3,11 @@
 //Round Started
 if room == rPrepare
 {
-	nextRoundStarted();
+	eventNextRoundStarted();
 }
 
 //Kaos Started
 if room == rKaos
 {
-    kaosRoundStarted();
+    eventKaosRoundStarted();
 }

@@ -50,7 +50,7 @@ if outcome == "Draw"
 if winner
 {
     //End Kaos
-    timeSourceCreate(2.5,kaosCardDone);
+    timeSourceCreate(2.5,eventKaosCardDone);
     
     //Change Song
     audioPlaySong(global.currentEnemy.customSong.kaos);

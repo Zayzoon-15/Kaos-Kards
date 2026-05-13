@@ -164,7 +164,7 @@
     {"name":"oDeckShowCards","order":2,"path":"objects/oDeckShowCards/oDeckShowCards.yy",},
     {"name":"oDeckShowFullBtn","order":1,"path":"objects/oDeckShowFullBtn/oDeckShowFullBtn.yy",},
     {"name":"oDeckShowRemainBtn","order":2,"path":"objects/oDeckShowRemainBtn/oDeckShowRemainBtn.yy",},
-    {"name":"oDeckWreckerCard","order":10,"path":"objects/oDeckWreckerCard/oDeckWreckerCard.yy",},
+    {"name":"oDeckWreckerCard","order":6,"path":"objects/oDeckWreckerCard/oDeckWreckerCard.yy",},
     {"name":"oDice","order":1,"path":"objects/oDice/oDice.yy",},
     {"name":"oDisplay","order":1,"path":"objects/oDisplay/oDisplay.yy",},
     {"name":"oEnemyTextBox","order":1,"path":"objects/oEnemyTextBox/oEnemyTextBox.yy",},

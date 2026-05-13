@@ -16,7 +16,7 @@ action = function()
 {
     //Go To Room
     transStart(rPrepare);
-    gameReset();
+    eventGameReset();
     
     //Don't Hover
     canHover = false;
