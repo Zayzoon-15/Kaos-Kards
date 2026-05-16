@@ -30,35 +30,5 @@ getXPos = function(_index)
 }
 
 
-
-#region Voice Lines
-
-voiceStarting = [
-    voiceInfo.kaosBegin,
-    voiceInfo.downForKaos
-];
-
-voiceWinning = [
-    voiceInfo.dank,
-    voiceInfo.bringinKaos,
-    voiceInfo.hurtPretty,
-    voiceInfo.hurtMark,
-    voiceInfo.touchDial
-];
-
-voiceLosing = [
-    voiceInfo.mild,
-    voiceInfo.tryHarder,
-    voiceInfo.hurtCheck,
-    voiceInfo.hurtOh
-];
-
-voiceNeutral = [
-    voiceInfo.dank
-];
-
-
 //Play Starting Voice
-timeSourceCreate(10,audioPlayVoice,[voiceStarting,false,3],time_source_units_frames);
-
-#endregion
+timeSourceCreate(10,audioPlayVoice,[voicePack.kaosStarting,false,3],time_source_units_frames);

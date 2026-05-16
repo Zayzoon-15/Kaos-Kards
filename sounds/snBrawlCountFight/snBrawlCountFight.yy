@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snBrawlCountFight",
   "parent":{
-    "name":"Kaos",
-    "path":"folders/Sounds/Sfx/Kaos.yy",
+    "name":"Brawl",
+    "path":"folders/Sounds/Sfx/Kaos/Brawl.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

@@ -11,19 +11,12 @@ if !ds_list_empty(_list)
 		_targetNum = irandom_range(1,ds_list_size(_list)-1);
 		targetCard = ds_list_find_value(_list,_targetNum);
 	}
-	
-	print("OLD LIST");
-	ds_debug_print(_list,ds_type_list);
-	
+
 	//Remove Card From List
 	ds_list_delete(_list,_targetNum);
 	
 	//DEBUG TEST
 	print($"REMOVED A CARD FROM {targetEnemy ? "ENEMY" : "PLAYER"}",$"TARGET INDEX: {_targetNum}");
-	if targetEnemy
-	{
-		ds_debug_print(enemyActions,ds_type_list);
-	} else ds_debug_print(playerActions,ds_type_list);
 
 	//Set Sprite
 	sprite_index = targetCard.info.sprite;

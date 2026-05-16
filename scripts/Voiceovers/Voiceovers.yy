@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"Voiceover",
+  "%Name":"Voiceovers",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Voiceover",
+  "name":"Voiceovers",
   "parent":{
     "name":"Audio",
     "path":"folders/Scripts/Audio.yy",

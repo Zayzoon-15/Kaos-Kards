@@ -9,6 +9,7 @@ initEnemyinfo();
 initTourney();
 initPlayerStats();
 initSettings();
+initVoices();
 
 #endregion
 

@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snRpsShoot",
   "parent":{
-    "name":"Kaos",
-    "path":"folders/Sounds/Sfx/Kaos.yy",
+    "name":"Rps",
+    "path":"folders/Sounds/Sfx/Kaos/Rps.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"snBrawlHit2",
+  "%Name":"snRipcard5",
   "audioGroupId":{
     "name":"agSfx",
     "path":"audiogroups/agSfx",
@@ -10,17 +10,17 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.44643992,
+  "duration":0.75,
   "exportDir":"",
-  "name":"snBrawlHit2",
+  "name":"snRipcard5",
   "parent":{
-    "name":"Brawl",
-    "path":"folders/Sounds/Sfx/Kaos/Brawl.yy",
+    "name":"Deck Wrecker",
+    "path":"folders/Sounds/Sfx/Kaos/Deck Wrecker.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snBrawlHit2.ogg",
-  "volume":1.0,
+  "soundFile":"snRipcard5.ogg",
+  "volume":0.25,
 }
