@@ -4,9 +4,9 @@
 /// @param {asset.gmsprite} [_art] The tournaments art
 /// @param {array<any>} [_enemies] All the enemies for the tournament
 /// @param {array<struct.rule>} [_rules] The tournaments rules
-/// @param {real} [_timeLimit] The time limit of the tournament in seconds (5 * 60 = 5 Minutes)
+/// @param {real} [_timeLimit] The time limit of the tournament in minutes
 /// @param {array<Asset.GMObject>} [_items] The items the player recieves after winning
-function Tourney(_name = "Tourney Name",_art = sTourneyArtBorder,_enemies = [enemyInfo.dog],_rules = [ruleInfo.deckShuffle],_timeLimit = 5*60,_items = []) constructor {
+function Tourney(_name = "Tourney Name",_art = sTourneyArtBorder,_enemies = [enemyInfo.dog],_rules = [ruleInfo.deckShuffle],_timeLimit = -1,_items = []) constructor {
     
     //Info
     name = _name;
@@ -15,7 +15,7 @@ function Tourney(_name = "Tourney Name",_art = sTourneyArtBorder,_enemies = [ene
     
     //Rules
     rules = _rules;
-    timeLimit = _timeLimit;
+    timeLimit = _timeLimit * 60;
     
     //Item
     items = is_array(_items) ? _items : [_items];
@@ -44,26 +44,26 @@ function initTourney(){
         debut : new Tourney("Debut Tournament", sTourneyArt1, [
             enemyInfo.dog, enemyInfo.angel, enemyInfo.cock,
             enemyInfo.alien, enemyInfo.beer
-        ], [], 0, [oBRShop,oBRPickle]),
+        ], [], -1, [oBRShop,oBRPickle]),
         
         retro : new Tourney("Retro Tournament", sTourneyArt2, [
             enemyInfo.handsy, enemyInfo.chud,
         ], [
             ruleInfo.deckShuffle, ruleInfo.timeLimit
-        ], 5 * 60, [oBRTv,oBRWand]),
+        ], 5, [oBRTv,oBRWand]),
         
         spooky : new Tourney("Spooky Tournament", sTourneyArt3, [
             enemyInfo.bones, enemyInfo.fungi,
         ], [
             ruleInfo.deckShuffle, ruleInfo.timeLimit
-        ], 5 * 60),
+        ], 1.5),
         
         cameos : new Tourney("Extras", sTourneyArt4, [
             enemyInfo.jsg, enemyInfo.pug, enemyInfo.fungi,
             enemyInfo.teto,
         ],[
             ruleInfo.deckShuffle, ruleInfo.timeLimit
-        ], 5 * 60, [oBRBoombox]),
+        ], 1, [oBRBoombox]),
         
     }
     

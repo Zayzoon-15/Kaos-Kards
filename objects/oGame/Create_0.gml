@@ -76,6 +76,9 @@ enemyActions = ds_list_create();
 playerKaos = undefined;
 enemyKaos = undefined;
 
+//Time
+global.gameTimer = 0;
+
 #region Custom Fonts
 
 //Set Global Vars

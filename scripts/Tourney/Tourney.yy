@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Tourney",
   "parent":{
-    "name":"Enemy",
-    "path":"folders/Scripts/Enemy.yy",
+    "name":"Tourneys",
+    "path":"folders/Scripts/Tourneys.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

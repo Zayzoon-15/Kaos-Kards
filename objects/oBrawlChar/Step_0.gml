@@ -67,7 +67,7 @@ if playerId == 0
 		alarm[0] = random_range(5,15)/global.currentEnemy.difficulty.gameSkill;
 	}
 	
-	if aiBlockTime > 0
+	if aiBlockTime > 0 and canMove
 	{
 		blocking = true;
 		aiBlockTime --;

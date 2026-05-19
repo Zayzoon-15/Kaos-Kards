@@ -10,3 +10,16 @@ if keyCheckPressed(global.keyFullscreen)
     } else global.window = "Borderless";
     global.window = window_get_fullscreen() ? "Fullscreen" : global.window;
 }
+
+//Game Rules
+if array_contains([rPrepare,rKaos],room) and global.currentTourney != undefined
+{
+    //Get Rules
+    var _rules = global.currentTourney.rules;
+    for (var i = 0; i < array_length(_rules); i++) {
+    	if _rules[i].event == ACTION_EVENTS.STEP
+        {
+            _rules[i].action();
+        }
+    }
+}

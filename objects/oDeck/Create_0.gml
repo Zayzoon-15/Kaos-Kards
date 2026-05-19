@@ -30,7 +30,7 @@ if room == rEnemy
 
 
 //Set Stats
-deck = array_shuffle(deck);
+//deck = array_shuffle(deck);
 deckNum = 0;
 totalCards = array_length(deck);
 cardsLeft = totalCards;
@@ -108,4 +108,4 @@ drawCard = function(){
 sprite_index = global.currentDeck.sprite;
 
 //Setup
-alarm[0] = 5;
+alarm[0] = 1;

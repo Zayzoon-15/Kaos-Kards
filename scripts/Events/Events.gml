@@ -4,7 +4,6 @@
 /// While off it resets the game as if finished fighting an enemy
 function eventGameReset(_hardReset = true)
 {	
-   
     if _hardReset
     {
         //Set Seed
@@ -87,6 +86,18 @@ function eventGameReset(_hardReset = true)
     //Audio
     ds_list_clear(global.songIntrosPlayed); //Clear Song Intros
 	ds_map_clear(global.songsPaused); //Clear Songs Paused
+    
+    //Apply Rules
+    if room == rPrepare and global.currentTourney != undefined
+    {
+        var _rules = global.currentTourney.rules;
+        for (var i = 0; i < array_length(_rules); i++) {
+        	if _rules[i].event == ACTION_EVENTS.MATCH_START
+            {
+                _rules[i].action();
+            }
+        }
+    }
 }
 
 
@@ -124,6 +135,19 @@ function eventNextRoundStarted()
     //Reset Performance
     global.playerPerformance = 0;
     global.enemyPerformance = 0;
+    
+    //Apply Rules
+    if global.currentTourney != undefined
+    {
+        var _rules = global.currentTourney.rules;
+        for (var i = 0; i < array_length(_rules); i++) {
+        	if _rules[i].event == ACTION_EVENTS.EVERY_ROUND
+            {
+                _rules[i].action();
+            }
+        }
+    }
+    
 }
 
 

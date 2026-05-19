@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Rules",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Tourneys",
+    "path":"folders/Scripts/Tourneys.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

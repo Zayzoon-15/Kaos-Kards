@@ -104,7 +104,6 @@ function audioPlaySong(_song,_fadeTime = 30,_lastSongEndMethod = "Stop",_forcePo
     //Exit If Same Song
     if _song == global.curSong and audio_is_playing(global.curSongAudio) then exit;
     
-    
     //Change Song If Intro
     if ds_map_exists(global.songTracks,_song) and global.songTracks[? _song].isIntro and ds_list_contains_value(global.songIntrosPlayed,_song)
     {

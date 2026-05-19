@@ -12,6 +12,7 @@ for (var i = 1; i < cardsLeft; i++) {
     //Draw Dark
     draw_sprite_ext(sprite_index,image_index,targetX,targetY-(i*currentCardSep),image_xscale,image_yscale,image_angle,c_black,image_alpha*.3);
 }
+//draw_sprite_stretched_ext(sDeckExtened,0,targetX - sprite_width/2,y - sprite_height/2,sprite_width,sprite_height + (cardsLeft),image_blend,image_alpha);
 
 if cardsLeft != 0
 {
@@ -46,7 +47,6 @@ var _y = targetY + (sprite_height/2) + 25;
 drawRectOutlined(_x-_halfWidth-widthMargin,_y-height-(heightMargin*2),_x+_halfWidth+widthMargin,_y,_rectRound,1,c_black,c_white,UIBOX_ALPHA*image_alpha,1*image_alpha);
 
 //Draw Text
-textSetup(fnMain,fa_center,fa_top,c_white,image_alpha);
 draw_text_ext_transformed(_x,_y-height-(heightMargin/2),_text,-1,maxWidth,1,1,0);
 
 //Draw Box Hover
