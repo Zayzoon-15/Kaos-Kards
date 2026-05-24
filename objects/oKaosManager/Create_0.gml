@@ -31,4 +31,4 @@ getXPos = function(_index)
 
 
 //Play Starting Voice
-timeSourceCreate(10,audioPlayVoice,[voicePack.kaosStarting,false,3],time_source_units_frames);
+timeSourceCreate(10,audioPlayVoice,[voicePack.kaosStarting,false,2],time_source_units_frames);

@@ -4,25 +4,26 @@ if cardsLeft <= 0
     drawRectOutlined(bbox_left,bbox_top,bbox_right,bbox_bottom,UIBOX_RAD,0,c_black,c_white,.3*image_alpha,0);
 }
 
-//Draw Deck
-for (var i = 1; i < cardsLeft; i++) {
-    //Draw Deck
-	draw_sprite_ext(sprite_index,image_index,targetX,targetY-(i*currentCardSep),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
-    
-    //Draw Dark
-    draw_sprite_ext(sprite_index,image_index,targetX,targetY-(i*currentCardSep),image_xscale,image_yscale,image_angle,c_black,image_alpha*.3);
-}
-//draw_sprite_stretched_ext(sDeckExtened,0,targetX - sprite_width/2,y - sprite_height/2,sprite_width,sprite_height + (cardsLeft),image_blend,image_alpha);
+//Draw Deck Extended
+var _extendedYscale = (targetY - (targetY - cardsLeft*cardSep))/sprite_get_height(sDeckExtened);
+draw_sprite_ext(sDeckExtened,0,targetX,targetY+sprite_height/2,1,_extendedYscale,0,image_blend,image_alpha);
 
+//Draw Deck
 if cardsLeft != 0
 {
-    //Deck Shadow
+    //Draw Bottom Card
+	draw_sprite_ext(sprite_index,image_index,targetX,targetY-(cardsLeft*cardSep),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+    
+    //Draw Bottom Card Dark
+    draw_sprite_ext(sprite_index,image_index,targetX,targetY-(cardsLeft*cardSep),image_xscale,image_yscale,image_angle,c_black,image_alpha*.3);
+    
+    //Deck Deck Shadow
     draw_sprite_ext(sprite_index,image_index,x+shadowX,y+shadowY,xscale-shadowSize,yscale-shadowSize,angle,c_black,image_alpha*SHADOW_ALPHA);
     
     //Draw Top Deck
     draw_sprite_ext(sprite_index,image_index,x,y,xscale,yscale,angle,image_blend,image_alpha);
-    
 }
+
 
 #region Draw Stats
 

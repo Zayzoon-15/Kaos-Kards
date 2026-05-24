@@ -11,20 +11,17 @@ function SettingsMenus()
             SettingsButtons.Slider("SFX","sfxVol");
             SettingsButtons.Slider("Announcer","voiceVol",undefined,2,0,100,true,undefined,"%",function()
             {
-                return !global.voiceover;
+                return global.voiceover <= 0;
             },"Announcer Voice Disabled");
             
         
         SettingsButtons.Separator("Control");
-        SettingsButtons.Check("Unfocus Mute",function()
-        {
-            global.unfocusMute = argument0;
-        },global.unfocusMute);
-        SettingsButtons.Check("Announcer Voice",function()
-        {
-            global.voiceover = argument0;
-        },global.voiceover);
-        SettingsButtons.Check("Enemy Dialogue Sounds");
+            SettingsButtons.Check("Unfocus Mute",function()
+            {
+                global.unfocusMute = argument0;
+            },global.unfocusMute);
+            SettingsButtons.Slider("Announcer Frequency","voiceover",undefined,1.5);
+            SettingsButtons.Check("Enemy Dialogue Sounds");
     }
     
     
@@ -80,15 +77,15 @@ function SettingsMenus()
             SettingsButtons.Check("Subtitles",function()
             {
                 global.subtitles = argument0;
-            },global.subtitles);
+            },global.subtitles,function(){return global.voiceover <= 0},"Voiceover Disabled");
             SettingsButtons.Slider("Text Scale",global.subtitlesStyle.textScale,function(){global.subtitlesStyle.textScale = argument0;},2,.5,2,false,undefined,"X",function(){
-                return !global.subtitles;
+                return !global.subtitles or global.voiceover <= 0;
             },"Subtitles Disabled");
             SettingsButtons.Slider("Box Alpha",global.subtitlesStyle.boxAlpha*100,function(){global.subtitlesStyle.boxAlpha = argument0/100;},2,0,100,true,undefined,"%",function(){
-                return !global.subtitles;
+                return !global.subtitles or global.voiceover <= 0;
             },"Subtitles Disabled");
             SettingsButtons.Slider("Outline Thickness",global.subtitlesStyle.outlineThickness,function(){global.subtitlesStyle.outlineThickness = argument0;},1.6,0,5,true,ceil,"X",function(){
-                return !global.subtitles;
+                return !global.subtitles or global.voiceover <= 0;
             },"Subtitles Disabled");
             SettingsButtons.Button("Reset Subtitles",function(){
                 global.subtitlesStyle = {
@@ -102,7 +99,7 @@ function SettingsMenus()
                 oSettingsSubMenu.scroll = 0;
                 global.settingsBtnId = 0;
                 SettingsMenus.Video();
-            },function(){return !global.subtitles;},"Subtitles Disabled");
+            },function(){return !global.subtitles or global.voiceover <= 0;},"Subtitles Disabled");
         
     }
     

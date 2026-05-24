@@ -1,7 +1,7 @@
 ///@desc Play Sound
 
 //Play Voice
-if global.voiceover
+if global.voiceover > 0 and global.voiceVol > 0
 {
     switch count
     {

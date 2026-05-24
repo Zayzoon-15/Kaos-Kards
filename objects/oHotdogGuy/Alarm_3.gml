@@ -2,7 +2,7 @@
 
 //Value
 var _healValue = irandom_range(10,20)*global.valueMult;
-var _poisonValue = clamp(_healValue/5,1,100)*global.valueMult;
+var _poisonValue = clamp(_healValue/5,5,100)*global.valueMult;
 
 //Win Outcome
 if winner

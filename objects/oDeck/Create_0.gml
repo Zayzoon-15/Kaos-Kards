@@ -57,7 +57,7 @@ shadowSize = 0.05;
 
 //Hover
 canHover = true;
-currentCardSep = 1;
+cardSep = 2;
 
 //Ui Box Stats
 height = 0;

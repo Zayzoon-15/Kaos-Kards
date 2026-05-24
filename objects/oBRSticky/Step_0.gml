@@ -2,7 +2,7 @@
 x = getPosToWindow(true);
 
 //Press
-if touchingMouse()
+if touchingMouse() and !global.menuOpen
 {
     if mouse_check_button_pressed(mb_left)
     {

@@ -60,7 +60,7 @@ function FiggySetup() {
             }
         });
 	    Figgy.String("Enemies Beaten", 0, function(){
-            global.tourneyEnemiesBeaten = argument0;
+            if argument0 != "" then global.tourneyEnemiesBeaten = real(argument0);
         });
     
         #endregion

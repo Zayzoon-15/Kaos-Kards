@@ -29,21 +29,23 @@ function audioPlaySfx(_sound,_low = 1,_high = 1,_gain = 1)
 ///@desc Plays the announcers voice line with subtitles
 ///@param {struct.voicecreate} _voiceover The voice over to play (Make sure its a voiceInfo in order to create subtitles)
 ///@param {bool} _stopOthers If set to true it will stop the other voice and play the new one but if it's set to false it will only play the new voice if there is no voices playing (Default = true)
-///@param {real} _playChance The chance the audio plays 1 in X (Default = 1) which is always
-function audioPlayVoice(_voiceover,_stopOthers = true,_playChance = 1)
+///@param {real} _playChance The chance the audio plays 1 in X (Default = 0) which is always no matter the voice frequency
+function audioPlayVoice(_voiceover,_stopOthers = true,_playChance = 0)
 {
     //No Voice Over
-    if !global.voiceover then return noone;
+    if global.voiceover <= 0 then return noone;
     
     //Play Chance
-    if irandom_range(1,_playChance) != 1 then return noone;
+    if irandom_range(1,_playChance) != 1 or global.voiceover < irandom_range(0,100)
+    {
+        if _playChance > 0 then return noone;
+    }
     
     //Stop Other Voice
     if _stopOthers
     {
         audio_group_stop_all(agVoice);
     } else if global.voicePlaying then return noone;
-    
     
     //Get Voice Info
     var _voice = _voiceover;
@@ -170,7 +172,7 @@ function audioPlaySong(_song,_fadeTime = 30,_lastSongEndMethod = "Stop",_forcePo
 		//global.curSongAudio = audio_play_sound(_track.sound,10,true);
 		
         
-    } else global.curSongAudio = audio_play_sound(_track.sound,10,true); //Play Song
+    } else global.curSongAudio = audio_play_sound(_track.sound,10,false); //Play Song
     
     //Fade In Song
     audio_sound_gain(global.curSongAudio,0,0);

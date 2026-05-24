@@ -11,10 +11,10 @@ scaleTime = .5;
 
 //Info
 infoText = global.currentTourney == undefined ? "Press to return to the menu" : "Press to go to break room";
-text = global.currentTourney == undefined ? "Exit" : "Break Room";
+text = global.currentTourney == undefined ? "Exit" : "Continue";
 
 //LAST MATCH
-if global.currentTourney != undefined and array_length(global.currentTourney.enemies) <= global.tourneyEnemiesBeaten+1
+if global.currentTourney != undefined and array_length(global.currentTourney.enemies) <= global.tourneyEnemiesBeaten + 1
 {
     text = "Exit";
     infoText = "You won now leave"
@@ -45,8 +45,8 @@ action = function()
     	timeSourceCreate(.3,eventGameReset,[true]);
     } else {
         global.tourneyEnemiesBeaten ++;
-        
-        if global.tourneyEnemiesBeaten >= array_length(global.currentTourney.enemies)
+
+        if global.tourneyEnemiesBeaten + 1 >= array_length(global.currentTourney.enemies)
         {
             transStart(rTournies);
             timeSourceCreate(.3,eventGameReset,[true]);

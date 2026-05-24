@@ -1,6 +1,9 @@
 //Set Position
 x = getPosToWindow(true);
 
+//Set can Hover
+canHover = !global.menuOpen;
+
 //Mouse Hover
 if !touchingMouse()
 {

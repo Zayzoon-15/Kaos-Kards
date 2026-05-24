@@ -261,7 +261,7 @@ function SaveFile()
         global.musicVol = struct_get_variable(_saveData,"MusicVol",50);
         global.voiceVol = struct_get_variable(_saveData,"VoiceVol",50);
         global.unfocusMute = struct_get_variable(_saveData,"Mute",true);
-        global.voiceover = struct_get_variable(_saveData,"Voiceover",true);
+        global.voiceover = struct_get_variable(_saveData,"Voiceover",100);
         global.subtitles = struct_get_variable(_saveData,"Subtitles",true);
         
         //Video

@@ -23,14 +23,16 @@ timeSourceCreate(3,function(){
 	var _xOffset = 120;
 	var _y = ROOM_CENTER.y + 50;
     
-    if global.currentTourney == undefined or playerWon
+    if global.currentTourney == undefined
     {   
         instance_create_layer(ROOM_CENTER.x + _xOffset,_y,"Ui",oRetryButton); 
         instance_create_layer(ROOM_CENTER.x - _xOffset,_y,"Ui",oKaosExitButton);
-    } else if !playerWon and global.currentTourney != undefined
-    {
-        instance_create_layer(ROOM_CENTER.x + _xOffset,_y,"Ui",oRetryButton); 
-        instance_create_layer(ROOM_CENTER.x - _xOffset,_y,"Ui",oKaosExitButton,{quit : true});
+    } else {
+        if !playerWon
+        {
+            instance_create_layer(ROOM_CENTER.x + _xOffset,_y,"Ui",oRetryButton); 
+            instance_create_layer(ROOM_CENTER.x - _xOffset,_y,"Ui",oKaosExitButton,{quit : true});
+        } else instance_create_layer(ROOM_CENTER.x,_y,"Ui",oKaosExitButton);
     }
 
 });

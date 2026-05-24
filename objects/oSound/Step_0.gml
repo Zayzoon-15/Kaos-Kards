@@ -1,51 +1,47 @@
 //Song Loop
-if global.curSong != noone and audio_is_playing(global.curSongAudio)
+if global.curSong != noone and global.curSongAudio != noone
 {
-    if global.songTracks[? global.curSong].loopTimes > 0
+    var _curSong = global.songTracks[? global.curSong];
+    
+    //Song Ended
+    if !audio_is_playing(global.curSongAudio) and !audio_is_paused(global.curSongAudio)
     {
-        loopSongPoint = audio_sound_get_track_position(global.curSongAudio);
-        if loopSongPoint >= audio_sound_length(global.curSongAudio)-.02
+        //Replay Song
+        global.curSongAudio = audio_play_sound(_curSong.sound,10,false);
+        
+        //Song Has Limited Loops
+        if _curSong.loopTimes > 0
         {
+            //Increase Loops
             loops ++;
-            print("SONG LOOPS",loops)
             
-            if loops >= global.songTracks[? global.curSong].loopTimes
+            //Switch Song Out
+            if loops >= _curSong.loopTimes
             {
                 //Get Song
-                var _song = global.songTracks[? global.curSong].swapWith;
+                var _song = _curSong.swapWith;
                 if is_array(_song)
                 {
                     var _num = irandom_range(0,array_length(_song)-1);
-                    _song = global.songTracks[? global.curSong].swapWith[_num];
+                    _song = _curSong.swapWith[_num];
                 }
                 
                 //Add To Intros Played
-                if global.songTracks[? global.curSong].isIntro
+                if _curSong.isIntro
                 {
                     ds_list_add(global.songIntrosPlayed,global.curSong);
                 }
                 
-                //Debug
-				print("SONG LOOPED",global.curSong);
-				print("SONG PLAYING",_song);
+                print("Song Looped",global.curSong);
+                print("Song Playing",_song);
                 
-                //Play Song
                 audioPlaySong(_song,0);
-                loopSongPoint = 0;
             }
             
-            //Debug
             if showSongs
             {
                 createAlertMessage("SONG LOOPED");
             }
         }
-    }
-
-    //Debug
-    if showSongs
-    {
-        //print("SONG POS",audio_sound_get_track_position(global.curSongAudio));
-        //print("SONG LENGTH",audio_sound_length(global.curSongAudio)-.02);
     }
 }

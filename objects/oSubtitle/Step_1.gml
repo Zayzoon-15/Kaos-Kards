@@ -1,5 +1,5 @@
 //No Voice Over
-if !global.voiceover
+if global.voiceover <= 0
 {
     audio_stop_sound(info.sound);
     instance_destroy();

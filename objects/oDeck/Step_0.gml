@@ -24,12 +24,6 @@ if room == rPrepare
     drawTipBox(_text);
 }
 
-//Set Card Seperation
-currentCardSep = cardsLeft < 25 ? 2 : 1; 
-
-//Hide Deck
-//visible = cardsLeft != 0;
-
 //Set Can Hover
 canHover =  !global.holdingCard and !global.menuOpen;
 
@@ -77,7 +71,7 @@ if !grabbed
     
     //Set Position
     x = lerp(x,targetX,.3);
-    y = lerp(y,ystart - cardsLeft*currentCardSep,.3);
+    y = lerp(y,ystart - cardsLeft*cardSep,.3);
     
     //Shadow
     shadowX = lerp(shadowX,0,.2);

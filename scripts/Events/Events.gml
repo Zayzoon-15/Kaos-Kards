@@ -4,6 +4,7 @@
 /// While off it resets the game as if finished fighting an enemy
 function eventGameReset(_hardReset = true)
 {	
+    //Hard Resets
     if _hardReset
     {
         //Set Seed
@@ -20,6 +21,9 @@ function eventGameReset(_hardReset = true)
 	
     //Reset Round
     global.gameRound = 0;
+    
+    //Set Rewards For Break Room
+    global.gaveReward = false;
     
     //Reset Uses
     global.enemySpecialUses = 0;

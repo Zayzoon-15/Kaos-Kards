@@ -69,7 +69,7 @@ if playerId == 0
 	
 	if aiBlockTime > 0 and canMove
 	{
-		blocking = true;
+		actBlock();
 		aiBlockTime --;
 	}
 	

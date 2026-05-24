@@ -8,6 +8,3 @@ if global.currentTourney == undefined
 info = global.currentTourney.enemies[global.tourneyEnemiesBeaten];
 sprite_index = info.sprite;
 Enemy.SetupAnims(true,info,object_index);
-
-//Change Song For Now
-audioPlaySong("BreakRoomIntro");

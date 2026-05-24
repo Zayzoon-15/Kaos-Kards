@@ -17,9 +17,3 @@ if hoverCard
 {
     drawCardText(info);
 }
-
-if keyboard_check_pressed(vk_left)
-{
-    global.valueMult += .1;
-    print("VAR",global.valueMult);
-}

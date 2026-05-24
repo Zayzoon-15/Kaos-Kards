@@ -21,7 +21,7 @@ function comboHeal(_targetEnemy)
 	}
 	
 	//Finish Attack
-	timeSourceCreate(2,eventeventComboAttackDone);
+	timeSourceCreate(2,eventComboAttackDone);
 }
 
 
@@ -35,7 +35,7 @@ function comboShield(_targetEnemy)
 	}
 	
 	//Finish Attack
-	timeSourceCreate(2,eventeventComboAttackDone);
+	timeSourceCreate(2,eventComboAttackDone);
 }
 
 

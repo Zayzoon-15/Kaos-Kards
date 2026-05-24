@@ -23,7 +23,7 @@ if !ds_list_empty(_list)
 }
 
 //Intro Animation
-TweenEasyMove(x,targetEnemy ? SCREEN_HEIGHT + sprite_height : -sprite_height,x,ROOM_CENTER.y,0,18,EaseOutBack);
+TweenEasyMove(x,targetEnemy ? -sprite_height : SCREEN_HEIGHT + sprite_height,x,ROOM_CENTER.y,0,18,EaseOutBack);
 
 //Start Rip Animation
 alarm[0] = 50;

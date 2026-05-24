@@ -20,7 +20,7 @@ enemyInfo = {
             actionCards.slash, actionCards.slash
         ],
         [kaosCards.swoop],
-        Enemy.Strat(.7,0.3,0.3,.6,.7)
+        Enemy.Strat(.7,0.3,0.3,.6,.7), [actionCards.bread,actionCards.bread,kaosCards.swoop]
     ),
     
     cock : new Enemy.Create("Cock the Bug",
@@ -33,7 +33,7 @@ enemyInfo = {
             actionCards.bread, actionCards.bread
         ],
         [kaosCards.destroy],
-        Enemy.Strat(.5,.6,.7,.4,.4)
+        Enemy.Strat(.5,.6,.7,.4,.4), [actionCards.bread,actionCards.bread,kaosCards.destroy]
     ),
     
     angel : new Enemy.Create("Angel the Juvenile",
@@ -46,7 +46,7 @@ enemyInfo = {
             actionCards.laser, actionCards.laser
         ],
         [kaosCards.high],
-        Enemy.Strat(.8,.4,.7,.7,.9)
+        Enemy.Strat(.8,.4,.7,.7,.9), [actionCards.flaminAce,actionCards.flaminAce,kaosCards.high]
     ),
     
     alien : new Enemy.Create("Alan the Alien",
@@ -59,7 +59,7 @@ enemyInfo = {
             actionCards.slash, actionCards.slash
         ],
         [kaosCards.swap],
-        Enemy.Strat(.6,.5,.7,.4,.5)
+        Enemy.Strat(.6,.5,.7,.4,.5), [actionCards.laser,actionCards.laser,kaosCards.swap]
     ),
     
     ///--- BOSS ---///
@@ -74,7 +74,7 @@ enemyInfo = {
             actionCards.bread, actionCards.flaminAce,
         ],
         [kaosCards.swoop,kaosCards.high],
-        Enemy.Strat(.6,.5,.7,.4,.6),
+        Enemy.Strat(.6,.5,.7,.4,.6), [actionCards.punch,actionCards.punch,kaosCards.high],
         enemySpecialBeer,["BeerIntro",["BeerKaos1","BeerKaos2"]]
     ),
     
@@ -94,7 +94,7 @@ enemyInfo = {
             actionCards.ghost, actionCards.ghost,
         ],
         [kaosCards.rps],
-        Enemy.Strat(.6,.5,.7,.4,.5),
+        Enemy.Strat(.6,.5,.7,.4,.5), [actionCards.punch,actionCards.punch,kaosCards.rps]
     ),
     
     ///--- BOSS ---///
@@ -111,7 +111,7 @@ enemyInfo = {
             actionCards.taunt, actionCards.laser, actionCards.laser,
         ],
         [kaosCards.brawl],
-        Enemy.Strat(.7,.5,.8,.3,.7),
+        Enemy.Strat(.7,.5,.8,.3,.7), [actionCards.taunt,actionCards.taunt,kaosCards.brawl],
         function(){},["ChudIntro",["ChudKaos1","ChudKaos2"],"ChudMini"]
     ),
     
@@ -132,7 +132,7 @@ enemyInfo = {
             actionCards.mirror,
         ],
         [kaosCards.hotdog],
-        Enemy.Strat(.95,.6,.8,.4,1),
+        Enemy.Strat(.95,.6,.8,.4,1), [actionCards.taunt,actionCards.taunt,actionCards.taunt]
     ),
     
     
@@ -143,8 +143,8 @@ enemyInfo = {
     #region
     
     teto : new Enemy.Create("Kasane Teto the UTAU",
-        sTeto, Enemy.Anims(2,2,2,2,2), Enemy.Dialogue(5,["Man, FUCK Complex bro"]),
-        Enemy.Difficulty(.7,.6,110,1.1,1),
+        sTeto, Enemy.Anims(2,2,2,2,2), Enemy.Dialogue(5,["Man, FUCK Complex bro","MAN FUCK YOU","MMMMM Bread..."]),
+        Enemy.Difficulty(.75,1.1,110,1.1,1),
         [
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,
@@ -153,7 +153,7 @@ enemyInfo = {
             actionCards.steak, actionCards.steak,
         ],
         [kaosCards.hotdog,kaosCards.swoop],
-        Enemy.Strat(.7,.5,.7,.4,.5),
+        Enemy.Strat(.7,.5,.7,.4,.5), [actionCards.taunt,actionCards.taunt,actionCards.taunt],
         undefined, ["TetoPrepare","TetoKaos"]
     ),
     
@@ -168,7 +168,7 @@ enemyInfo = {
             actionCards.burger,
         ],
         [kaosCards.hotdog,kaosCards.swoop],
-        Enemy.Strat(.7,.5,.7,.4,.7)
+        Enemy.Strat(.7,.5,.7,.4,.7), [actionCards.taunt,actionCards.taunt,actionCards.taunt]
     ),
     
     pug : new Enemy.Create("Loulou the Pug",
@@ -184,7 +184,7 @@ enemyInfo = {
             actionCards.perro,
         ],
         [kaosCards.high,kaosCards.freeze],
-        Enemy.Strat()
+        Enemy.Strat(), [actionCards.taunt,actionCards.taunt,actionCards.taunt]
     ),
     
     fungi : new Enemy.Create("Fungi",
@@ -199,7 +199,7 @@ enemyInfo = {
             actionCards.bread, actionCards.slash
         ],
         [kaosCards.high,kaosCards.destroy],
-        Enemy.Strat()
+        Enemy.Strat(), [actionCards.taunt,actionCards.taunt,actionCards.taunt]
     ),
     
     

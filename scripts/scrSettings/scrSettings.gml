@@ -27,7 +27,7 @@ function initSettings()
 	global.sfxVol = 50;
 	global.voiceVol = 50;
 	global.unfocusMute = false;
-    global.voiceover = true;
+    global.voiceover = 100;
     global.subtitles = true;
     global.voicePlaying = false;
     global.enemyDialogue = true;

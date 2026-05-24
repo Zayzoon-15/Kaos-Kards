@@ -22,6 +22,7 @@
     {"name":"inst_76F2C10D","path":"rooms/rBreakRoom/rBreakRoom.yy",},
     {"name":"inst_6C907079","path":"rooms/rBreakRoom/rBreakRoom.yy",},
     {"name":"inst_6BB3344","path":"rooms/rBreakRoom/rBreakRoom.yy",},
+    {"name":"inst_7C495BFB","path":"rooms/rBreakRoom/rBreakRoom.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -31,6 +32,7 @@
         {"$GMRInstance":"v4","%Name":"inst_5CCC60A0","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5CCC60A0","objectId":{"name":"oBRButton","path":"objects/oBRButton/oBRButton.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":558.5,"y":641.0,},
         {"$GMRInstance":"v4","%Name":"inst_633D5086","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_633D5086","objectId":{"name":"oBRNext","path":"objects/oBRNext/oBRNext.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1175.0,"y":600.0,},
         {"$GMRInstance":"v4","%Name":"inst_6BB3344","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6BB3344","objectId":{"name":"oTournieDeck","path":"objects/oTournieDeck/oTournieDeck.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":762.0,"y":641.0,},
+        {"$GMRInstance":"v4","%Name":"inst_7C495BFB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7C495BFB","objectId":{"name":"oBRManager","path":"objects/oBRManager/oBRManager.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":-50.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Speaker","depth":300,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_3CA5D5C8","colour":4294967295,"frozen":true,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3CA5D5C8","objectId":{"name":"oBRSpeaker","path":"objects/oBRSpeaker/oBRSpeaker.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":421.0,"y":66.0,},

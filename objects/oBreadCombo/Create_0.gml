@@ -33,5 +33,5 @@ action = function()
     instance_destroy();
 	
 	//Finish Combo
-	timeSourceCreate(1,eventeventComboAttackDone);
+	timeSourceCreate(1,eventComboAttackDone);
 }

@@ -34,6 +34,7 @@ function initTourney(){
     global.currentTourney = undefined;
     global.tourneyEnemiesBeaten = 0;
     global.BRItems = [oBRPickle,oBRShop];
+    global.gaveReward = false;
     
     //Init Rules
     initRules();
