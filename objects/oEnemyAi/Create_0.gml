@@ -60,7 +60,8 @@ _aiChooseGoal = function()
     var _hpRatio = global.enemyHp / ai.maxHp;
     
     //Choose Goal
-    if _hpRatio < 0.3 return "SURVIVE";
+    if _hpRatio < 0.5 * ai.skill return "SURVIVE";
+    if global.enemyComboMeter >= 100 return "COMBO";
     if global.playerHp < 10 return "FINISH"; //Player can die in one hit
     if random(1) < ai.kaosLove * 0.2 return "KAOS";
     return "ATTACK";
@@ -73,7 +74,7 @@ _scoreCard = function(_card)
     //Choose Based On Goal
     if _card.type == CARDTYPES.ACTION
     {
-        switch (_aiChooseGoal()) {
+        switch (goal) {
             
         	case "ATTACK":
                 if _card.genre == CARDACT_GENRES.ATTACK { 
@@ -99,6 +100,12 @@ _scoreCard = function(_card)
                     _score += 15 * ai.skill;
                 }
             break;
+        
+            case "COMBO":
+                if _card.genre == CARDACT_GENRES.ATTACK { 
+                    _score += 25 * ai.skill;
+                }
+            break;
         }
         
         //Situation Boosts
@@ -109,13 +116,12 @@ _scoreCard = function(_card)
         
         if global.playerHp <= 15 and _card.genre == CARDACT_GENRES.ATTACK
         {
-            _score += 5 * ai.skill;
+            _score += (5 * ai.skill) * clamp((ai.aggression-.2)+1,1,10); 
         }
         
-    }
-    
-    //Random
-    _score += irandom_range(-2,2);
+        //Random
+        _score += irandom_range(-2,2) / ai.skill; 
+    } else _score -= 30;
 
     //Return Score
     return _score;
@@ -152,14 +158,16 @@ _aiChoosePreAction = function()
     //Kaos Score
     for (var i = 0; i < array_length(info.cardsKaos); i++) {
         
-        _kaosScore += 10 * ai.kaosLove;
+        _kaosScore += 6 * ai.kaosLove;
         
-        if global.enemyHp < global.playerHp - 10
+        //Player Has Combo
+        if global.playerComboMeter >= 100
         {
             _kaosScore += 5;
         }
         
-        if irandom_range(1,8) == 1
+        //Random Addition
+        if irandom_range(1,3 / ai.kaosLove) == 1
         {
             _kaosScore += 2;
         }
@@ -175,17 +183,21 @@ _aiChoosePreAction = function()
     _avg /= array_length(diceVals);
     
     //Low Roll
-    if _avg < 3 then _rerollScore += 20 * ai.skill;
+    if _avg < 3 then _rerollScore += 15 * ai.skill;
     
     //One Bad Die Upgrade
     if _lowest < 3 then _upgradeScore += 10 * ai.skill;
     
     //Strat Influence
-    _rerollScore += (1 - ai.kaosLove) * 5;
-    _upgradeScore += (ai.aggression * 3)  - abs(1-ai.kaosLove);
+    _rerollScore += (1 - ai.kaosLove) * 8;
+    _upgradeScore += (ai.aggression * 5)  - abs(1-ai.kaosLove);
+    
+    print("REROLL SCORE",_rerollScore);
+    print("UPGRADE SCORE",_upgradeScore);
+    print("KAOS SCORE",_kaosScore);
 
     //Choose Best Option
-    if _kaosScore > _rerollScore and _kaosScore > _upgradeScore {
+    if _kaosScore > _rerollScore and _kaosScore > _upgradeScore and goal != "COMBO" {
         return "KAOS";
     }
     
@@ -340,11 +352,11 @@ _addCard = function(_slotId,_info,_used = false,_disabled = false)
 //Roll Dice
 _rollDice(); 
 
+//Set Goal
+goal = _aiChooseGoal();
+
 //Pre Choice
 _aiApplyPreAction();
-
-//Goal
-_aiChooseGoal();
 
 //Choose Slot Placement
 var _assignment = array_create(3,undefined);
@@ -353,7 +365,7 @@ for (var i = 0; i < array_length(diceVals); i++) {
     //Setup Values
 	var _val = diceVals[i];
     var _bestScore = -1;
-    var _bestIndex = -1;
+    var _bestIndex = 0;
     
     //Get Best Card
     for (var k = 0; k < array_length(hand); k++) {
@@ -361,7 +373,7 @@ for (var i = 0; i < array_length(diceVals); i++) {
         
         var _score = _scoreCard(_card);
         
-        if _score > _bestScore
+        if _score > _bestScore and _card.type == CARDTYPES.ACTION
         {
             _bestScore = _score;
             _bestIndex = k;
@@ -385,6 +397,16 @@ _assignment = _applySkill(_assignment);
 //Add To Chosen Cards
 chosenCards = array_concat(chosenCards,_assignment);
 
+//Set Combo Card
+if goal == "COMBO" and chosenCards[1].card.genre == CARDACT_GENRES.ATTACK
+{
+    print("DO COMBO");
+    for (var i = 1; i < array_length(chosenCards); i++) {
+    	array_set(chosenCards,i,chosenCards[1]);
+    }
+    ds_list_set(enemyActions,0,true);
+}
+
 //Show Cards
 for (var i = 0; i < array_length(chosenCards); i++) {
 
@@ -394,7 +416,6 @@ for (var i = 0; i < array_length(chosenCards); i++) {
         {
             _addCard(i,chosenCards[i],true,false);
         } else _addCard(i,chosenCards[i]);
-        
         
     } else _addCard(i,undefined,true,true);
 }

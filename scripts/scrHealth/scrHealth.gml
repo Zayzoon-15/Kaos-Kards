@@ -2,13 +2,17 @@
 ///@desc Hurts the enemy by the given amount
 ///@param {real} _value The amount of damage
 ///@param {bool} _ignoreShield If it should ignore shield the shield and affect the health
-function hurtEnemy(_value,_ignoreShield = false)
+///@param {bool} _giveCombo If it should give combo
+function hurtEnemy(_value,_ignoreShield = false,_giveCombo = true)
 {	
     //Enemy Photo
     with oEnemyPhoto {hurt();}
 	
     //Give Combo
-    global.playerComboMeter += (_value*COMBO_MULT)*global.comboMult;
+    if _giveCombo
+    {
+        global.playerComboMeter += (_value*COMBO_MULT)*global.comboMult;
+    }
     
     //Performance
     global.playerPerformance += _value;
@@ -56,13 +60,17 @@ function hurtEnemy(_value,_ignoreShield = false)
 ///@desc Hurts the player by the given amount
 ///@param {real} _value The amount of damage
 ///@param {bool} _ignoreShield If it should ignore shield the shield and affect the health
-function hurtPlayer(_value,_ignoreShield = false)
+///@param {bool} _giveCombo If it should give combo
+function hurtPlayer(_value,_ignoreShield = false,_giveCombo = true)
 {
     //Enemy Photo
     with oEnemyPhoto {win();}
     
     //Give Combo
-    global.enemyComboMeter += (_value*COMBO_MULT)*global.comboMult;
+    if _giveCombo
+    {
+        global.enemyComboMeter += (_value*COMBO_MULT)*global.comboMult;
+    }
     
     //Performance
     global.playerPerformance -= _value;

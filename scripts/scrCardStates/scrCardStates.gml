@@ -184,6 +184,15 @@ function cardStateGrabbed()
         shake = 2;
     }
     
+    //Set Dice
+    with oDice
+    {
+        if isTargeted and other.wasPlaced
+        {
+            isTargeted = false;
+        }
+    }
+    
     //Depth
     depth = -2;
 }
@@ -278,6 +287,18 @@ function cardStatePlaced()
     slot.filled = true;
     wasPlaced = true;
     wasOnSlot = true;
+    
+    //Dice
+    if info.type == CARDTYPES.DICE and info.targetsDice
+    {
+        with oDice
+        {
+            if diceId == other.targetDice
+            {
+                if !isTargeted then isTargeted = true;
+            } else isTargeted = false;
+        }
+    }
     
     //Info Box
     if canGrab then drawCardText(info);

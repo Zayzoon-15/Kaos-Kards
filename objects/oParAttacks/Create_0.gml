@@ -7,6 +7,7 @@ newYPos = [card.bbox_top,card.bbox_bottom]; //[targetEnemy,targetPlayer];
 hitOthers = false; //If It Should Damage Cards
 currentlyDamaging = false; //If Currrently Damaging
 isCombo = false; //If the attack is a combo
+ignoreShield = false; //If the attack should ignore the targets shield
 
 #region Functions DONT CHANGE
 
@@ -36,8 +37,8 @@ damageTarget = function(_value = value)
 	//Damage
     if targetEnemy
     {
-        hurtEnemy(_value);
-    } else hurtPlayer(_value);
+        hurtEnemy(_value,ignoreShield,!isCombo);
+    } else hurtPlayer(_value,ignoreShield,!isCombo);
 }
 
 moveToDir = function(_speed = 13,_setAngle = true,_dir = undefined)

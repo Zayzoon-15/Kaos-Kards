@@ -108,16 +108,18 @@ function createCardKaos(_name,_desc,_sprite,_action = undefined,_extraArgs = [],
 /// @param {string} _desc The cards description (You can put a function with a return and that would also work EX: function(){return "My string"}
 /// @param {asset.GMSprite} _sprite The cards sprite
 /// @param {function} _action The cards action (Put NaN of it has no action)
+/// @param {bool} _targetsDice If it effects a target dice
 /// @param {real} _uses The amount of times the card can be used before not being able to use again (Put Nan if infinite)
 /// @param {array} _extraArgs Extra arguments the givin function can use
 /// @param {array} _range The cards range Ex: [1,6] min-1 max-6
 /// @param {bool} _banned If the card is banned always
-function createCardDice(_name,_desc,_sprite,_action = function(){},_uses = NaN,_extraArgs = [],_range = [],_banned = false) constructor
+function createCardDice(_name,_desc,_sprite,_action = function(){},_targetsDice = false,_uses = NaN,_extraArgs = [],_range = [],_banned = false) constructor
 {
     //Info
     name = _name;
     desc = _desc;
     sprite = _sprite;
+    targetsDice = _targetsDice
     uses = _uses;
     date = $"{current_month}/{current_day}/{current_year}/{current_second}";
     banned = _banned;

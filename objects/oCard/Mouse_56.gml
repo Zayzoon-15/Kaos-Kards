@@ -86,6 +86,16 @@ if state == CARDSTATE.GRABBED
                 
                 state = CARDSTATE.PLACED;
             } else putCardInHand();
+            
+            //Set Dice
+            with oDice
+            {
+                if isTargeted
+                {
+                    isTargeted = false;
+                }
+            }
+            
         } else putCardInHand(); //Not Touching Any Slots
     } 
     

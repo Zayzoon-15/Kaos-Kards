@@ -230,7 +230,7 @@ function kaosActionSticky(_targetEnemy)
 function kaosActionHotdog(_targetEnemy)
 {
 	//Create Map
-	instance_create_layer(0,0,"Attacks",oHotdog);
+    instance_create_layer(0,0,"Attacks",oHotdog_1);
 	
 	//Change Pos
 	targetY = room_height - sprite_get_height(sCardBlank)*1.2;

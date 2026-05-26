@@ -1,13 +1,22 @@
-//Set Timer
-var _value = (timer / timerMax) * 100;
+//Get Positions
+var _top = CAMERA_POS.y;
+var _bottom = SCREEN_HEIGHT;
+var _right = SCREEN_EDGE.right;
+var _left = SCREEN_EDGE.left;
 
-//Draw Timer
-var _height = 20;
-var _width = 200;
-var _x = ROOM_CENTER.x;
-var _y = 120;
-draw_healthbar(_x - _width,_y - _height,_x + _width,_y + _height,_value,c_black,c_red,c_aqua,0,true,true);
+//Draw Bg Color
+draw_set_colour(#403F4C);
+draw_rectangle(_left,_top,_right,_bottom,false);
+draw_set_colour(c_white);
 
-//Draw Text
-textSetup(fnMain,fa_center,fa_middle);
-draw_text(_x,_y,timer/60);
+//Draw Triangle Thing
+draw_sprite(sHotdogBgTri,0,0,0);
+
+//Draw Brick Wall
+draw_sprite_stretched(sHotdogBrick,0,_left,_top,SCREEN_WIDTH,SCREEN_HEIGHT);
+
+//Draw Lights
+draw_sprite_stretched(sHotdogLights,0,_left,_top,SCREEN_WIDTH,SCREEN_HEIGHT);
+
+//Draw Banner
+draw_sprite(sHotdogBanner,0,0,0);

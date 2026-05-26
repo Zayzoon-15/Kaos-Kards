@@ -1,26 +1,58 @@
+
+#region Get And Remove Target Card
+
 //Get Target List
 var _list = targetEnemy ? enemyActions : playerActions;
 
-//Get Target Card
-if !ds_list_empty(_list)
+//Get New List
+var _newList = ds_list_create();
+ds_list_copy(_newList,_list);
+
+//Cancel Combo
+ds_list_set(_list,0,false);
+
+//Remove First Entry (Combo Entry)
+ds_list_delete(_newList,0);
+
+//Remove Any Undefined Values
+while ds_list_find_index(_newList,undefined) != -1
 {
-	var _targetNum = 1;
-	targetCard = undefined;
-	while targetCard == undefined
-	{
-		_targetNum = irandom_range(1,ds_list_size(_list)-1);
-		targetCard = ds_list_find_value(_list,_targetNum);
-	}
-
-	//Remove Card From List
-	ds_list_delete(_list,_targetNum);
-	
-	//DEBUG TEST
-	print($"REMOVED A CARD FROM {targetEnemy ? "ENEMY" : "PLAYER"}",$"TARGET INDEX: {_targetNum}");
-
-	//Set Sprite
-	sprite_index = targetCard.info.sprite;
+    ds_list_delete(_newList,ds_list_find_index(_newList,undefined));
 }
+
+//List Is Empty
+if ds_list_is_empty(_newList)
+{
+    //Show Message
+    createAlertMessage($"{targetEnemy ? "Enemy" : "Player"} Has No Cards Played",60);
+    
+    //Destroy List
+    ds_list_destroy(_newList);
+    
+    //Destroy Self
+    instance_destroy();
+    timeSourceCreate(1,eventKaosCardDone);
+    
+    //Exit Code
+    exit;
+}
+
+//Get Target card
+targetCard = ds_list_get_random(_newList);
+
+//Remove Card From List
+ds_list_delete(_list,ds_list_find_index(_list,targetCard));
+
+//DEBUG TEST
+print($"REMOVED A CARD FROM {targetEnemy ? "ENEMY" : "PLAYER"}",$"TARGET CARD: {targetCard.info.name}");
+
+//Set Sprite
+sprite_index = targetCard.info.sprite;
+
+//Destroy List
+ds_list_destroy(_newList);
+
+#endregion
 
 //Intro Animation
 TweenEasyMove(x,targetEnemy ? -sprite_height : SCREEN_HEIGHT + sprite_height,x,ROOM_CENTER.y,0,18,EaseOutBack);
