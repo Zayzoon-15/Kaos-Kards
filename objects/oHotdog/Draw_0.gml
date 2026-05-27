@@ -15,8 +15,14 @@ draw_sprite(sHotdogBgTri,0,0,0);
 //Draw Brick Wall
 draw_sprite_stretched(sHotdogBrick,0,_left,_top,SCREEN_WIDTH,SCREEN_HEIGHT);
 
+//Draw Floorr
+draw_sprite_stretched(sHotdogFloor,0,_left,_top,SCREEN_WIDTH,SCREEN_HEIGHT);
+
 //Draw Lights
 draw_sprite_stretched(sHotdogLights,0,_left,_top,SCREEN_WIDTH,SCREEN_HEIGHT);
 
 //Draw Banner
 draw_sprite(sHotdogBanner,0,0,0);
+
+//DRAW TABLE FOR NOW
+draw_sprite(sHotdogTable,0,0,0);

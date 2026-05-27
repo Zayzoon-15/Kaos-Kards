@@ -1,5 +1,5 @@
 //Destroy
-if !array_contains([rPrepare,rKaos,rEnemy],room)
+if !array_contains([rPrepare,rKaos,rEnemy,rTesting],room)
 {
 	instance_destroy();
 	print("WRONG ROOM FOR EFFECTS");

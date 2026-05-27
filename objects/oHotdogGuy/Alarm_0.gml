@@ -1,7 +1,7 @@
 ///@desc Create Click Me's
 
 //Should Not Create
-if !oHotdog.gameStarted then exit;
+if !oHotdog_old.gameStarted then exit;
 
 //Create Click
 var _margin = new Vector2(150,200);

@@ -20,5 +20,5 @@ if winner
 //Destroy Hotdog Action
 if playerId == 0
 {
-    oHotdog.alarm[2] = 120;
+    oHotdog_old.alarm[2] = 120;
 }

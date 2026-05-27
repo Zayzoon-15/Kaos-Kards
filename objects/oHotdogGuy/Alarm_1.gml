@@ -1,7 +1,7 @@
 ///@desc Enemy Ai
 
 //Game Not Started
-if !oHotdog.gameStarted then exit;
+if !oHotdog_old.gameStarted then exit;
 
 //Chance
 var _missed = irandom_range(1,30*global.currentEnemy.difficulty.gameSkill);
