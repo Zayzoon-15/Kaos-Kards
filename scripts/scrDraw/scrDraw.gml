@@ -659,3 +659,68 @@ function trimLine(_line)
         } else break;
     }
 }
+
+
+/// @desc Draws a circular progress bar
+/// @param {real} _x The x position of the circle
+/// @param {real} _y The y position of the circle
+/// @param {real} _value The current value of the circle
+/// @param {Constant.Color} _color The color of the circle
+/// @param {real} _radius The radius of the circle
+/// @param {real} _width The width of the circle
+/// @param {real} _alpha The alpha of the circle
+/// @param {real} _sections The amount of sections the circle has
+function drawCircularBar(_x, _y, _value, _color, _radius, _width = 5,_outline = 0,_alpha = image_alpha,_sections = 60)
+{
+    //Set Local Vars
+    var _length = 0;
+    var _circX = 0;
+    var _circY = 0;
+    var _progress = _value * _sections;
+    var _sectionSize = 360/_sections;
+    
+    //Draw Circle
+    if _progress > 1 { 
+        
+        //Create Surface
+        var _surface = surface_create(_radius*2,_radius*2)
+        draw_set_colour(_color);
+        draw_set_alpha(_alpha);
+        
+        //Set Surface
+        surface_set_target(_surface);
+        draw_clear_alpha(c_blue,0.7);
+        draw_clear_alpha(c_black,0);
+        
+        //Start Circle
+        draw_primitive_begin(pr_trianglefan);
+        draw_vertex(_radius, _radius);
+        
+        //Draw Vertexs
+        for (var i = 0; i <= _value; i++) {
+        	_length = (i * _sectionSize) + 90;
+            _circX = lengthdir_x(_radius, _length);
+            _circY = lengthdir_y(_radius, _length);
+            draw_vertex(_radius + _circX, _radius + _circY);
+        }
+        
+        //Stop Primitive
+        draw_primitive_end();
+        draw_set_alpha(1);
+        
+        //Remove Inner Circle
+        gpu_set_blendmode(bm_subtract);
+        draw_set_colour(c_black);
+        draw_circle(_radius-1, _radius-1,_radius-_width,false);
+        gpu_set_blendmode(bm_normal);
+        
+        //Reset And Draw Surface
+        surface_reset_target();
+        draw_surface(_surface,_x-_radius, _y-_radius);
+        surface_free(_surface);
+    }
+    
+    //Reset Color
+    draw_set_color(c_white);
+    
+}

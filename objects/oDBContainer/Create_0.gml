@@ -160,6 +160,23 @@ createCards = function(_sortFunc = currentSort,_types = currentType)
         break;
     }
     
+    //Remove Cards That Are Not In Full Deck
+    var _fullDeck = [];
+    for (var i = 0; i < array_length(_allCards); i++) {
+        //Get Card
+        var _info = undefined;
+        if struct_exists(actionCards,_allCards[i]) then _info = struct_get_variable(actionCards,_allCards[i]);
+        if struct_exists(diceCards,_allCards[i]) then _info = struct_get_variable(diceCards,_allCards[i]);
+        if struct_exists(kaosCards,_allCards[i]) then _info = struct_get_variable(kaosCards,_allCards[i]);
+        
+        //Remove Card
+        if array_contains(global.playerFullDeck,_info)
+        {
+            array_push(_fullDeck,_allCards[i]);
+        }
+    }
+    _allCards = _fullDeck;
+
     //Get Cards
     var _cards = [];
     for (var i = 0; i < array_length(_allCards); i++) {

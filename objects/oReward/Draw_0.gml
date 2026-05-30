@@ -17,13 +17,4 @@ var _scale = 3;
 textSetup(fnMain,fa_center,fa_bottom);
 draw_text_transformed(x,bbox_top - _dist,"You Got Uhhh...",_scale,_scale,0);
 
-//Bottom Text
-textSetup(fnMain,fa_center,fa_top);
-draw_text_transformed(x,bbox_bottom + _dist,"Click Anywhere To Close",_scale,_scale,0);
-
-
-//TEXT FOR NOW
-textSetup(fnMain,fa_center,fa_middle,c_black);
-draw_text_transformed(x,y,"nothing loser",2,2,0);
-
 #endregion

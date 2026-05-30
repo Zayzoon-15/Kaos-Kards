@@ -133,6 +133,28 @@ function SettingsMenus()
                 instance_create_depth(ROOM_CENTER.x,ROOM_CENTER.y,-300,oJumpScare);
             });
         
+        SettingsButtons.Separator("Game Save");
+            SettingsButtons.Button("Delete Save File",function(){
+                instance_destroy(oGame);
+                file_delete("GameSave.kaos");
+                game_restart();
+            });
+            SettingsButtons.Button("Unlock All Cards",function()
+            {
+                global.playerFullDeck = [];
+                var _allCards = array_concat(variable_struct_get_names(actionCards),variable_struct_get_names(diceCards),variable_struct_get_names(kaosCards));
+                for (var i = 0; i < array_length(_allCards); i++) {
+                    
+                    //Get Card
+                    var _info = undefined;
+                    if struct_exists(actionCards,_allCards[i]) then _info = struct_get_variable(actionCards,_allCards[i]);
+                    if struct_exists(diceCards,_allCards[i]) then _info = struct_get_variable(diceCards,_allCards[i]);
+                    if struct_exists(kaosCards,_allCards[i]) then _info = struct_get_variable(kaosCards,_allCards[i]);
+                    
+                    array_push(global.playerFullDeck,_info);
+                }
+                
+            });
     }
     
     

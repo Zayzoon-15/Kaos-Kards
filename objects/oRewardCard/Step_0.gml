@@ -1,25 +1,3 @@
-//Safe Check
-if room == rMainMenu or room == rBreakRoom then instance_destroy();
-
-//Correct Room Check
-if targetEnemy
-{
-    if room != rPrepare
-    {
-        visible = false;
-        exit;
-    } else visible = true;
-    
-} else {
-    if room != rEnemy
-    {
-        visible = false;
-        exit;
-    } else visible = true;
-}
-
-
-
 if grabbed
 {
     //Grab Double Check
@@ -34,7 +12,7 @@ if grabbed
     y = mouse_y - offsetY;
     
     //Depth
-    depth = -2;
+    depth = -10;
     
     //Rotate
     var _angle = xprevious - x;
@@ -45,11 +23,11 @@ if grabbed
     shadowX = clamp(shadowX,-10,10);
     shadowX = lerp(shadowX,_shadowX,.2);
     shadowY = lerp(shadowY,15,.2);
-    shadowSize = lerp(shadowSize,0.08,.2);
+    shadowSize = lerp(shadowSize,0.05,.2);
     
     //Ease
-    image_xscale = lerp(image_xscale,1.1,.4);
-    image_yscale = lerp(image_yscale,1.1,.4);
+    image_xscale = lerp(image_xscale,startScale + .1,.4);
+    image_yscale = lerp(image_yscale,startScale + .1,.4);
 } else {
     //Can Grab
     canGrab = !global.holdingCard;
@@ -70,7 +48,7 @@ if grabbed
     {
         targetY = ystart - 8;
         shadowY = lerp(shadowY,15,.2);
-        shadowSize = lerp(shadowSize,0.08,.2);
+        shadowSize = lerp(shadowSize,0.05,.2);
     } else {
         targetY = ystart;
         shadowY = lerp(shadowY,8,.2);
@@ -83,16 +61,24 @@ if grabbed
     shadowX = clamp(shadowX,-6,6);
     shadowX = lerp(shadowX,_shadowX,.2);
     
+    //Increase Sine Times
+    sineTimes.x += .01;
+    sineTimes.y += .01;
+    sineTimes.angle += .02;
+    
+    //Move Position
+    sineX = sineBetween(sineTimes.x,5,-5,5);
+    sineY = sineBetween(sineTimes.y,5,-5,5);
+    
     //Ease
-    x = lerp(x,targetX,.3);
-    y = lerp(y,targetY,.3);
-    image_xscale = lerp(image_xscale,1,.4);
-    image_yscale = lerp(image_yscale,1,.4);
+    x = lerp(x,targetX + sineX,.3);
+    y = lerp(y,targetY + sineY,.3);
+    image_xscale = lerp(image_xscale,startScale,.4);
+    image_yscale = lerp(image_yscale,startScale,.4);
     
     //Rotate
     var _angle = xprevious - x;
-    sineTime += .02;
-    image_angle = lerp(image_angle,_angle+sineWave(current_time/1000,5,5,0),.2);
+    image_angle = lerp(image_angle,_angle+sineWave(sineTimes.angle,5,3,0),.2);
     
     //Depth
     depth = startDepth;

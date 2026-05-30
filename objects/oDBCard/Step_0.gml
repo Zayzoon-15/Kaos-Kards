@@ -1,6 +1,13 @@
 //Check Favorite
 favorite = array_contains(global.favCards,info);
 
+//Check New Card
+newCard = !array_contains(global.playerSeenCards,info);
+if (favorite or grabbed) and newCard
+{
+    array_push(global.playerSeenCards,info);
+}
+
 //Visible
 cardVisible = false;
 if instance_exists(oDBContainer)

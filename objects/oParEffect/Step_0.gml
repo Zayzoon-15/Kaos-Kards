@@ -8,7 +8,7 @@ if fade
 	//Check Life Span
 	if life > lifespan
 	{
-	    image_alpha -= .05;
+	    image_alpha -= fadeSpd;
 	} else life += 1;
 
 	//Destroy

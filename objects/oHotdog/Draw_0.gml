@@ -9,9 +9,6 @@ draw_set_colour(#403F4C);
 draw_rectangle(_left,_top,_right,_bottom,false);
 draw_set_colour(c_white);
 
-//Draw Triangle Thing
-draw_sprite(sHotdogBgTri,0,0,0);
-
 //Draw Brick Wall
 draw_sprite_stretched(sHotdogBrick,0,_left,_top,SCREEN_WIDTH,SCREEN_HEIGHT);
 

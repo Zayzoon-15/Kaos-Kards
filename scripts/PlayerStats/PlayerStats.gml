@@ -32,6 +32,10 @@ playerDeck = [
 
 ];
 
+//Set Full Deck
+global.playerFullDeck = playerDeck;
+global.playerSeenCards = playerDeck;
+
 //Stats
 global.maxHandSize = 6;
 global.maxDiscards = round(array_length(playerDeck)*.6);

@@ -12,6 +12,7 @@ cardYOffset = 0;
 
 //Info
 uses = info.uses;
+newCard = false;
 
 //Get Max Amount
 maxCardAmount = 0;
@@ -40,6 +41,8 @@ startDepth = depth;
 sprite_index = info != undefined ? info.sprite : sprite_index;
 cardVisible = false;
 favorite = false;
+newTextScale = 1;
+newTextSine = 0;
 
 //Grabbing
 grabbed = false;

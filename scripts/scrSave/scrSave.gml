@@ -61,8 +61,6 @@ function SaveFile()
         } else return {};
     }
     
-    
-    
     #endregion
     
     
@@ -129,6 +127,8 @@ function SaveFile()
         //Deck
         struct_set(_saveData,"PlayerDeck",_saveDeck(playerDeck));
         struct_set(_saveData,"PlayerFavs",_saveDeck(global.favCards));
+        struct_set(_saveData,"PlayerFullDeck",_saveDeck(global.playerFullDeck));
+        struct_set(_saveData,"PlayerSeenCards",_saveDeck(global.playerSeenCards));
         
         
         //Save To File
@@ -167,6 +167,7 @@ function SaveFile()
         }
         
         
+        
         ///Load Info
         
         //Deck
@@ -179,6 +180,16 @@ function SaveFile()
         {
             global.favCards = struct_get_variable(_saveData,"PlayerFavs",global.favCards);
             global.favCards = _loadDeck(global.favCards);
+        }
+        if is_struct(_saveData) and struct_exists(_saveData,"PlayerFullDeck")
+        {
+            global.playerFullDeck = struct_get_variable(_saveData,"PlayerFullDeck",global.playerFullDeck);
+            global.playerFullDeck = _loadDeck(global.playerFullDeck);
+        }
+        if is_struct(_saveData) and struct_exists(_saveData,"PlayerSeenCards")
+        {
+            global.playerSeenCards = struct_get_variable(_saveData,"PlayerSeenCards",global.playerSeenCards);
+            global.playerSeenCards = _loadDeck(global.playerSeenCards);
         }
         
         

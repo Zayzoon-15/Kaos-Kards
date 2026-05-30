@@ -5,6 +5,7 @@ shadowSize = 0.05;
 
 //Drawing
 startDepth = depth;
+sineTime = 0;
 
 //Mouse
 canGrab = false;

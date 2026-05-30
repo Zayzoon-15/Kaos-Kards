@@ -39,6 +39,15 @@ if grabbed
         draw_sprite_ext(sFavSticker, 0, cardX+_shakeX, cardY+_shakeY, image_xscale*_scaleX, image_yscale, image_angle, image_blend, image_alpha);
     }
     
+    //Draw New Icon
+    if newCard
+    {
+        newTextSine += .04;
+        newTextScale = sineBetween(newTextSine,8,.4,.6);
+        draw_sprite_ext(sDBNew,0,(cardX+sprite_width/2)-10,(cardY-sprite_height/2)+10,newTextScale,newTextScale,0,c_white,image_alpha);
+    }
+
+    
     //Draw Card Amount
     if room == rDeckBuilder1
     {

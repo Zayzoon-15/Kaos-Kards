@@ -88,7 +88,10 @@ unpauseGame = function()
     global.holdingCard = heldCard;
     
     //Replay Song
-    audioPlaySong(lastSong,30,"Stop",true,{pos:lastSongPos,loops:lastSongLoops});
+    if lastSong != noone
+    {
+        audioPlaySong(lastSong,30,"Stop",true,{pos:lastSongPos,loops:lastSongLoops});
+    }
     
     //Destroy Menu
     instance_destroy(oPauseResume);

@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Hotdog",
-    "path":"folders/Sprites/Attacks/Kaos/Hotdog.yy",
+    "name":"Background",
+    "path":"folders/Sprites/Attacks/Kaos/Hotdog/Background.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
