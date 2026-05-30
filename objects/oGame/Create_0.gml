@@ -82,7 +82,7 @@ global.gameTimer = 0;
 #region Custom Fonts
 
 //Set Global Vars
-globalvar fnNumber,fnNumberOutline,fnDBLetter,fnDBNumber;
+globalvar fnNumber,fnNumberOutline,fnDBLetter,fnDBNumber,fnTRNumber;
 
 //Game Numbers
 var _numString = "0123456789+-";
@@ -92,6 +92,9 @@ fnNumberOutline = font_add_sprite_ext(sNumbersOutlined, _numString, true, 0);
 //Deck Builder
 fnDBLetter = font_add_sprite_ext(sDBLetters,"ABCDEFGHIJKLMNOPQRSTUVWXYZ|:",true,0);
 fnDBNumber = font_add_sprite_ext(sDBNumbers,"/0123456789",true,0);
+
+//Trophy
+fnTRNumber = font_add_sprite_ext(sTRFont, "0123456789", true, -3);
 
 #endregion
 
