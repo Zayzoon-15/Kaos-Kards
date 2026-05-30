@@ -46,11 +46,11 @@ if grabbed
     //Hovered
     if hover
     {
-        targetY = ystart - 8;
+        cardY = lerp(cardY,-8,.3);
         shadowY = lerp(shadowY,15,.2);
         shadowSize = lerp(shadowSize,0.05,.2);
     } else {
-        targetY = ystart;
+        cardY = lerp(cardY,0,.3);
         shadowY = lerp(shadowY,8,.2);
         shadowSize = lerp(shadowSize,0.1,.2);
     }
@@ -71,8 +71,8 @@ if grabbed
     sineY = sineBetween(sineTimes.y,5,-5,5);
     
     //Ease
-    x = lerp(x,targetX + sineX,.3);
-    y = lerp(y,targetY + sineY,.3);
+    x = lerp(x,targetX,.3);
+    y = lerp(y,targetY,.3);
     image_xscale = lerp(image_xscale,startScale,.4);
     image_yscale = lerp(image_yscale,startScale,.4);
     

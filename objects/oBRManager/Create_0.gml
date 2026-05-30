@@ -10,7 +10,7 @@ if beatEnemy
 {
     //Create Menu
     instance_create_layer(0,0,"Ui",oReward,{
-        cards : global.currentTourney.enemies[global.tourneyEnemiesBeaten].rewards
+        cards : global.currentTourney.enemies[global.tourneyEnemiesBeaten-1].rewards
     });
     
     //Set Global Var

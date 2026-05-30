@@ -11,3 +11,40 @@ if room == rKaos
 {
     eventKaosRoundStarted();
 }
+
+//Give Reward
+if room == rTournies and global.tourneyReward != undefined
+{
+    //Get All Cards
+    var _allCards = [];
+    for (var i = 0; i < array_length(global.tourneyReward.enemies); i++) {
+        //Get Enemy
+        var _enemy = global.tourneyReward.enemies[i];
+        
+        //Remove Duplicates
+        var _cards = [];
+        for (var k = 0; k < array_length(_enemy.rewards); k++) {
+            if !array_contains(_cards,_enemy.rewards[k])
+            {
+                array_push(_cards,_enemy.rewards[k]);
+            }
+        }
+        
+        //Combine Cards
+        for (var k = 0; k < array_length(_cards); k++) {
+            if !array_contains(_allCards,_cards[k])
+            {
+                array_push(_allCards,_cards[k]);
+            }
+        }
+    }
+    
+    //Create Rewards
+    instance_create_layer(0,0,"Ui",oReward,{
+        cards : _allCards,
+        extra : undefined
+    });
+    
+    //Set Tourney Reward
+    global.tourneyReward = undefined;
+}

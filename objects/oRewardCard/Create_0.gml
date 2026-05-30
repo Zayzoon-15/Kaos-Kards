@@ -33,3 +33,5 @@ offsetY = 0;
 //Position
 targetX = x;
 targetY = y;
+cardY = 0;
+cardX = 0;

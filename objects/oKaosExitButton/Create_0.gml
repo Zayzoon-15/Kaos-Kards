@@ -49,7 +49,8 @@ action = function()
         if global.tourneyEnemiesBeaten + 1 >= array_length(global.currentTourney.enemies)
         {
             transStart(rTournies);
-            timeSourceCreate(.3,eventGameReset,[true]);
+            timeSourceCreate(.3,eventGameReset,[true]); //Reset Game
+            global.tourneyReward = global.currentTourney;
         } else {
             transStart(rBreakRoom);
             timeSourceCreate(.3,eventGameReset,[false]);
