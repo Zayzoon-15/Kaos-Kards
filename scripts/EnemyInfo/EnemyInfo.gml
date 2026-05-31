@@ -12,7 +12,7 @@ enemyInfo = {
     
     dog : new Enemy.Create("Dog the Duck",
         sDog, Enemy.Anims(), Enemy.Dialogue(),
-        Enemy.Difficulty(.1,.2,100,.7,.7),
+        Enemy.Difficulty(.1,.2,100,.62,.6),
         [
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,
@@ -20,7 +20,7 @@ enemyInfo = {
             actionCards.slash, actionCards.slash
         ],
         [kaosCards.swoop],
-        Enemy.Strat(.7,0.3,0.3,.6,.7), [actionCards.bread,actionCards.bread,kaosCards.swoop]
+        Enemy.Strat(.7,0.3,0.3,.6,1.3), [actionCards.bread,actionCards.bread,kaosCards.swoop]
     ),
     
     cock : new Enemy.Create("Cock the Bug",
