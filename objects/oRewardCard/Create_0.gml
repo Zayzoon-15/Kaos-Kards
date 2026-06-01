@@ -5,8 +5,8 @@ info ??= actionCards.bread;
 sprite_index = info.sprite;
 
 //Scale
-setSize(.7);
-startScale = image_xscale;
+TweenEasyScale(0,0,.7,.7,0,30,EaseOutBack);
+startScale = .7;
 
 //Shadow
 shadowX = 0;

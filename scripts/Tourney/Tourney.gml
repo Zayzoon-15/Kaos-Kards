@@ -47,7 +47,7 @@ function initTourney(){
     tourneyInfo = {
         
         debut : new Tourney("Debut Tournament", sTourneyArt1, [
-            enemyInfo.dog, enemyInfo.angel, enemyInfo.cock,
+            enemyInfo.dog, enemyInfo.cock, enemyInfo.angel,
             enemyInfo.alien, enemyInfo.beer
         ], [], -1, [oBRShop,oBRPickle],[oRewardShop]),
         

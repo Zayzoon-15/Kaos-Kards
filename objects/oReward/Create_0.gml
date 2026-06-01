@@ -8,12 +8,24 @@ global.menuOpen = true;
 //Create Button
 instance_create_depth(ROOM_CENTER.x,SCREEN_HEIGHT - 100,depth-1,oRewardButton);
 
+cards = [
+    actionCards.bread,
+    actionCards.slash,
+    actionCards.laser,
+]
+
+//Angle
+TweenEasyScale(0,0,1,1,0,30,EaseOutBack);
+image_angle = 180;
+targetAngle = 0;
+angleSpd = .1;
+
 //Effect
 effectPlayed = false;
 
 //Create Area
 center = new Vector2(ROOM_CENTER.x,ROOM_CENTER.y);
-maxWidth = sprite_width * .6;
+maxWidth = sprite_get_width(sprite_index) * .6;
 heightSep = sprite_get_height(sCardBlank)*.8;
 maxPerRow = 4;
 
@@ -22,7 +34,7 @@ if !array_is_empty(extra)
 {
     //Create New Area
     center.x = ROOM_CENTER.x + 75;
-    maxWidth = sprite_width * .4;
+    maxWidth = sprite_get_width(sprite_index) * .4;
     heightSep = 130;
     maxPerRow = 1;
     

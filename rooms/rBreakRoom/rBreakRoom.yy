@@ -23,6 +23,7 @@
     {"name":"inst_6C907079","path":"rooms/rBreakRoom/rBreakRoom.yy",},
     {"name":"inst_6BB3344","path":"rooms/rBreakRoom/rBreakRoom.yy",},
     {"name":"inst_7C495BFB","path":"rooms/rBreakRoom/rBreakRoom.yy",},
+    {"name":"inst_7838CE24","path":"rooms/rBreakRoom/rBreakRoom.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -36,6 +37,7 @@
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Speaker","depth":300,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_3CA5D5C8","colour":4294967295,"frozen":true,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3CA5D5C8","objectId":{"name":"oBRSpeaker","path":"objects/oBRSpeaker/oBRSpeaker.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":421.0,"y":66.0,},
+        {"$GMRInstance":"v4","%Name":"inst_7838CE24","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7838CE24","objectId":{"name":"oBRBubble","path":"objects/oBRBubble/oBRBubble.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":432.0,"y":64.0,},
       ],"layers":[],"name":"Speaker","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"TableTop","depth":400,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_76F2C10D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_76F2C10D","objectId":{"name":"oBRBoombox","path":"objects/oBRBoombox/oBRBoombox.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":836.0,"y":363.0,},

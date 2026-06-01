@@ -1,0 +1,10 @@
+//Draw Bubble
+draw_sprite_ext(sprite_index,image_index,x+8,y+13,image_xscale-0.05,image_yscale-0.05,image_angle,c_black,SHADOW_ALPHA_BREAK_ROOM*image_alpha);
+draw_self();
+
+//Draw Text
+textSetup(fnBreakRoom,fa_left,fa_top,c_white,image_alpha);
+draw_text_ext_transformed(bbox_left,bbox_top,textShow,20,maxWidth/textScale,textScale,textScale,image_angle);
+
+//Reset
+drawReset();

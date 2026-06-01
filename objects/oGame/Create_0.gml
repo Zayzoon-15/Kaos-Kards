@@ -82,7 +82,7 @@ global.gameTimer = 0;
 #region Custom Fonts
 
 //Set Global Vars
-globalvar fnNumber,fnNumberOutline,fnDBLetter,fnDBNumber,fnTRNumber;
+globalvar fnNumber,fnNumberOutline,fnDBLetter,fnDBNumber,fnTRNumber,fnBreakRoom;
 
 //Game Numbers
 var _numString = "0123456789+-";
@@ -95,6 +95,9 @@ fnDBNumber = font_add_sprite_ext(sDBNumbers,"/0123456789",true,0);
 
 //Trophy
 fnTRNumber = font_add_sprite_ext(sTRFont, "0123456789", true, -3);
+
+//Break Room
+fnBreakRoom = font_add_sprite_ext(sBRFont,"ABCDEFGHIJKLMNOPQRSTUVWXYZ !",true,-.5);
 
 #endregion
 

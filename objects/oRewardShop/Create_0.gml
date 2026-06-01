@@ -1,6 +1,5 @@
 //Scale
-setSize(.6);
-startScale = image_xscale;
+startScale = .6;
 
 //Shadow
 shadowX = 0;
@@ -39,4 +38,4 @@ if shopMenu
     
     //Scale
     TweenFire(self,EaseOutBack,TWEEN_MODE_ONCE,false,0,25,"startScale",image_xscale,1);
-}
+} else TweenEasyScale(0,0,.6,.6,0,30,EaseOutBack);
