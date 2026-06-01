@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snPaperHover3",
+  "audioGroupId":{
+    "name":"agSfx",
+    "path":"audiogroups/agSfx",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.21333334,
+  "exportDir":"",
+  "name":"snPaperHover3",
+  "parent":{
+    "name":"Ui",
+    "path":"folders/Sounds/Sfx/Ui.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snPaperHover3.ogg",
+  "volume":0.35,
+}

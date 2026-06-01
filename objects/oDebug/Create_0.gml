@@ -2,8 +2,9 @@ debugMode = false;
 show_debug_overlay(debugMode);
 
 
-//For Adding Cards
+//Debug Vars
 global.debugCard = "NONE";
+global.debugBRItem = "NONE";
 
 //For Hurting Players
 global.debugKillable = {

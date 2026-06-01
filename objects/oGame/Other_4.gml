@@ -13,7 +13,7 @@ if room == rKaos
 }
 
 //Give Reward
-if room == rTournies and global.tourneyReward != undefined
+if room == rTournies and global.tourneyReward != undefined and !array_contains(global.tourneysBeaten,global.tourneyReward)
 {
     //Get All Cards
     var _allCards = [];
@@ -42,8 +42,14 @@ if room == rTournies and global.tourneyReward != undefined
     //Create Rewards
     instance_create_layer(0,0,"Ui",oReward,{
         cards : _allCards,
-        extra : undefined
+        extra : global.tourneyReward.rewards
     });
+    
+    //Set Tournament As Beaten
+    array_push(global.tourneysBeaten,global.tourneyReward);
+    
+    //Give Break Room Items
+    global.BRItems = array_concat(global.BRItems,global.tourneyReward.items);
     
     //Set Tourney Reward
     global.tourneyReward = undefined;

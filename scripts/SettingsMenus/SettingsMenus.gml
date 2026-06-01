@@ -171,6 +171,7 @@ function SettingsMenus()
             SettingsButtons.Separator("Input");
                 SettingsButtons.Input("Fullscreen","keyFullscreen");
                 SettingsButtons.Input("Pause","keyPause");
+                SettingsButtons.Input("Deck Builder Favorite","keyFav");
                 SettingsButtons.Input("Move Left","keyMoveLeft");
                 SettingsButtons.Input("Move Right","keyMoveRight");
                 SettingsButtons.Input("Move Up","keyMoveUp");

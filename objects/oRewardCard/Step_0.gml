@@ -47,12 +47,12 @@ if grabbed
     if hover
     {
         cardY = lerp(cardY,-8,.3);
-        shadowY = lerp(shadowY,15,.2);
-        shadowSize = lerp(shadowSize,0.05,.2);
+        shadowY = lerp(shadowY,12,.2);
+        shadowSize = lerp(shadowSize,0.02,.2);
     } else {
         cardY = lerp(cardY,0,.3);
-        shadowY = lerp(shadowY,8,.2);
-        shadowSize = lerp(shadowSize,0.1,.2);
+        shadowY = lerp(shadowY,5,.2);
+        shadowSize = lerp(shadowSize,0.03,.2);
     }
     
     
@@ -84,5 +84,5 @@ if grabbed
     depth = startDepth;
     
     //Info Box
-    if canGrab then drawCardText(info);
+    if canGrab and image_alpha >= 1 then drawCardText(info);
 }

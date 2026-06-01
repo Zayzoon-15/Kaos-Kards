@@ -488,6 +488,21 @@ function draw_text_wave_rainbow(_x, _y, _str, _strWidth, _waveAmplitude=3, _wave
 	}
 }
 
+function draw_text_wave_transformed(_x, _y, _str, _strWidth, _waveAmplitude=3, _waveSpeed=0.01,_xscale = 1,_yscale = 1,_angle = 0) {
+	var _xx = _x, _yy = _y;
+	var i = 1, _isize = string_length(_str);
+    _strWidth *= _xscale;
+    
+	repeat(_isize) {
+		var _char = string_char_at(_str, i);
+		var _ww = string_width(_char) * _xscale;
+		var _wf = (_strWidth == 0) ? 0 : _strWidth / 2;
+        draw_text_transformed(_xx - _wf, _yy + sin(i + current_time * _waveSpeed) * _waveAmplitude, _char, _xscale, _yscale, _angle);
+		_xx += _ww;
+		i++;
+	}
+}
+
 function draw_text_rainbow(_x, _y, _str, _strWidth, _colorSpeed=0.1) {
 	var _xx = _x, _yy = _y;
 	var i = 1, _isize = string_length(_str);

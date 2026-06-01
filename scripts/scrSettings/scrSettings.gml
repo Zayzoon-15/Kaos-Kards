@@ -41,6 +41,7 @@ function initSettings()
 	global.keyDebug = 220;
     
     //Input
+    global.keyFav = mb_right;
     global.keyMoveLeft = vk_left;
     global.keyMoveRight = vk_right;
     global.keyMoveUp = vk_up;
