@@ -1,5 +1,5 @@
 //Song Loop
-if global.curSong != noone and global.curSongAudio != noone
+if global.curSong != noone and global.curSongAudio != noone and global.curSong != undefined and global.curSongAudio != undefined
 {
     var _curSong = global.songTracks[? global.curSong];
     

@@ -4,6 +4,8 @@ audioPlaySong("BreakRoomIntro");
 //Beat Enemy Prior
 beatEnemy = global.currentTourney.enemies[0] != global.currentTourney.enemies[global.tourneyEnemiesBeaten] and !global.gaveReward;
 
+//Destroy Items
+alarm[0] = 1;
 
 //Give Player Rewards
 if beatEnemy

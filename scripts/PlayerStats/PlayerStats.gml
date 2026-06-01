@@ -11,6 +11,7 @@ playerDeck = [
 	//Action
     actionCards.heal,
     actionCards.heal,
+    actionCards.heal,
     actionCards.shield,
     actionCards.shield,
     actionCards.shield,
@@ -18,16 +19,9 @@ playerDeck = [
     actionCards.slash,
     actionCards.slash,
     actionCards.slash,
-    actionCards.bread,
-    actionCards.bread,
-    actionCards.bread,
-    
-    //Kaos
-    kaosCards.swoop,
 	
     //Dice
     diceCards.reroll,
-    diceCards.dice8,
     diceCards.upgrade,
 
 ];

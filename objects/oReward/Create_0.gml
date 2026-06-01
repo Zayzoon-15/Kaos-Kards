@@ -11,15 +11,66 @@ instance_create_depth(ROOM_CENTER.x,SCREEN_HEIGHT - 100,depth-1,oRewardButton);
 //Effect
 effectPlayed = false;
 
+//Create Area
+center = new Vector2(ROOM_CENTER.x,ROOM_CENTER.y);
+maxWidth = sprite_width * .6;
+heightSep = sprite_get_height(sCardBlank)*.8;
+maxPerRow = 4;
+
+//Create Extra Rewards
+if !array_is_empty(extra)
+{
+    //Create New Area
+    center.x = ROOM_CENTER.x + 75;
+    maxWidth = sprite_width * .4;
+    heightSep = 130;
+    maxPerRow = 1;
+    
+    //Create Awards
+    var _row = 0;
+    var _rowId = 0;
+    var _totalRows = ceil(array_length(extra) / maxPerRow);
+    for (var i = 0; i < array_length(extra); i++) {
+        
+        //Set Current Row
+        var _curRow = i div maxPerRow;
+    
+        //Loop Row
+        if (_row != _curRow)
+        {
+            _rowId = 0;
+            _row = _curRow;
+        }
+    
+        //Get Total Items In Row
+        var _itemsInRow = min(maxPerRow,array_length(extra) - (_curRow*maxPerRow));
+    
+        //Get Target Positions
+        var _x = cardHandMush(_itemsInRow,_rowId,center.x,maxWidth); // + random_range(-15,15);
+        var _y = cardHandSep(_totalRows,_curRow,center.y,heightSep); // + random_range(-15,15);
+    
+        //Create Items
+        instance_create_depth(_x, _y, depth - 2, extra[i]);
+    
+        //Increase Row Id
+        _rowId++;
+    }
+    
+    //Set Card Area
+    maxPerRow = 3;
+    center.x = ROOM_CENTER.x - 75;
+    heightSep = sprite_get_height(sCardBlank)*.8;
+}
+
+
 //Create Cards
-var _maxPerRow = 4;
 var _row = 0;
 var _rowId = 0;
-var _totalRows = ceil(array_length(cards) / _maxPerRow);
+var _totalRows = ceil(array_length(cards) / maxPerRow);
 for (var i = 0; i < array_length(cards); i++) {
     
     //Set Current Row
-    var _curRow = i div _maxPerRow;
+    var _curRow = i div maxPerRow;
 
     //Loop Row
     if (_row != _curRow)
@@ -29,11 +80,11 @@ for (var i = 0; i < array_length(cards); i++) {
     }
 
     //Get Total Cards In Row
-    var _cardsInRow = min(_maxPerRow,array_length(cards) - (_curRow*_maxPerRow));
+    var _cardsInRow = min(maxPerRow,array_length(cards) - (_curRow*maxPerRow));
 
     //Get Target Positions
-    var _x = cardHandMush(_cardsInRow,_rowId,ROOM_CENTER.x,sprite_width*.6);
-    var _y = cardHandSep(_totalRows,_curRow,ROOM_CENTER.y,sprite_get_height(sCardBlank)*.8)//cardHandMush(_totalRows,_curRow,ROOM_CENTER.y,sprite_height*.8);
+    var _x = cardHandMush(_cardsInRow,_rowId,center.x,maxWidth);
+    var _y = cardHandSep(_totalRows,_curRow,center.y,heightSep);
 
     //Create Card
     instance_create_depth(_x, _y, depth - 2, oRewardCard, {

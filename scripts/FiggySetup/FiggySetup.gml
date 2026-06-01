@@ -25,10 +25,10 @@ function FiggySetup() {
         Figgy.Button("Tourney Selector",function(){room_goto(rTourneySelector)});
         Figgy.Button("DeckBuilder",function(){room_goto(rDeckBuilder2)});
         Figgy.Separator("Testing");
-        Figgy.Button("Test Room",function(){room_goto(rTesting)});
+        Figgy.Button("Card Test Room",function(){room_goto(rTestingCard)});
         Figgy.Button("Music Test Room",function(){room_goto(rTestingMusic)});
         Figgy.Button("Voice Test Room",function(){room_goto(rTestingVoice)});
-        Figgy.Button("Card Test Room",function(){room_goto(rTestingCard)});
+        Figgy.Button("Test Room",function(){room_goto(rTesting)});
     
         #endregion
     
@@ -75,6 +75,35 @@ function FiggySetup() {
     
         #endregion
 		
+        Figgy.Section("Save",false); #region
+        
+        Figgy.Separator("Break Room Items");
+        Figgy.String("Break Item", "NONE",function(){
+            global.debugBRItem = argument0;
+        });
+        Figgy.Button("Give Break Item",function(){
+            
+            var _string = $"oBR{global.debugBRItem}";
+            var _index = asset_get_index(_string);
+            
+            if _index
+            {
+                array_push(global.BRItems,_index);
+            } else show_message($"Item '{global.debugBRItem}' Does Not Exist\nMake sure to only type the name not 'oBR'\nExample: Pickle");
+        });
+        Figgy.Button("Give All Break Items",function(){
+            
+            global.BRItems = [
+                oBRPickle,
+                oBRShop,
+                oBRTv,
+                oBRWand,
+                oBRBoombox,
+            ]
+        });
+    
+        #endregion
+    
 		Figgy.Section("Game Stats",false); #region
         
         Figgy.Separator("Hand");

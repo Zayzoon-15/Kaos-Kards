@@ -152,7 +152,7 @@ function audioPlaySong(_song,_fadeTime = 30,_lastSongEndMethod = "Stop",_forcePo
     }
     
     //Leave If No Song
-    if _song == noone or !ds_map_exists(global.songTracks,_song) then exit;
+    if _song == noone or _song == undefined or !ds_map_exists(global.songTracks,_song) then exit;
     
     //Get Track
     var _track = global.songTracks[? _song];

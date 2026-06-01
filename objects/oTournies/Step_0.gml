@@ -8,15 +8,14 @@ if selected
 	changeAnim("win");
 } else changeAnim("idle");
 
-
 //Hover
-if layer_get_visible(layer)
+if layer_get_visible(layer) and !global.menuOpen
 {
     drawTipBox(info.name,true,false,20,new Vector2(0),1.5);
 }
 
 //Touching Mouse
-if touchingMouse()
+if touchingMouse() and canHover
 {
 	boxY = lerp(boxY,-10,.2);
 	shadowY = lerp(shadowY,8,.2);
@@ -30,7 +29,7 @@ xscale = lerp(xscale,1,.2);
 yscale = lerp(yscale,1,.2);
 
 //Not Shown
-if !layer_get_visible(layer)
+if !layer_get_visible(layer) or global.menuOpen
 {
     selected = false;
     canHover = false;

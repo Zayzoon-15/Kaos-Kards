@@ -121,6 +121,43 @@ function SaveFile()
             return _deck;
         }
         
+        //Save Struct Info
+        var _saveStruct = function(_targetStruct,_struct)
+        {
+            var _result = [];
+            for (var i = 0; i < array_length(_targetStruct); i++) {
+                
+                //Get Info
+            	var _target = _targetStruct[i];
+                var _keys = struct_get_names(_struct);
+                
+                //Set Info
+                var _targetKey = noone;
+                for (var k = 0; k < array_length(_keys); k++) {
+                	var _id = struct_get_variable(_struct,_keys[k]);
+                    
+                    //Set Name Stuff
+                    if struct_exists(_struct,"name")
+                    {
+                        if _id.name == _target.name
+                        {
+                            _targetKey = _keys[k];
+                        }
+                    } else { //No Name To Set To
+                        if _id == _target
+                        {
+                            _targetKey = _keys[k];
+                        }
+                    }
+                }
+                
+                //Push key
+                array_push(_result,_targetKey);
+            }
+            
+            return _result;
+        }
+        
         
         ///Save Info
         
@@ -129,6 +166,12 @@ function SaveFile()
         struct_set(_saveData,"PlayerFavs",_saveDeck(global.favCards));
         struct_set(_saveData,"PlayerFullDeck",_saveDeck(global.playerFullDeck));
         struct_set(_saveData,"PlayerSeenCards",_saveDeck(global.playerSeenCards));
+        
+        //Tournaments
+        struct_set(_saveData,"TourneysBeaten",_saveStruct(global.tourneysBeaten,tourneyInfo));
+        
+        //Items
+        struct_set(_saveData,"BreakItems",global.BRItems);
         
         
         //Save To File
@@ -166,6 +209,23 @@ function SaveFile()
             return _deck;
         }
         
+        //Load Struct Info
+        var _loadStruct = function(_targetStruct,_struct)
+        {
+            var _result = [];
+            for (var i = 0; i < array_length(_targetStruct); i++) {
+                
+                //Get Target
+            	var _target = _targetStruct[i];
+                
+                //Put Card In Deck
+                var _info = struct_get(_struct,_target);
+                array_push(_result,_info);
+            }
+            
+            return _result;
+        }
+        
         
         
         ///Load Info
@@ -191,7 +251,14 @@ function SaveFile()
             global.playerSeenCards = struct_get_variable(_saveData,"PlayerSeenCards",global.playerSeenCards);
             global.playerSeenCards = _loadDeck(global.playerSeenCards);
         }
+        if is_struct(_saveData) and struct_exists(_saveData,"TourneysBeaten")
+        {
+            global.tourneysBeaten = struct_get_variable(_saveData,"TourneysBeaten",[]);
+            global.tourneysBeaten = _loadStruct(global.tourneysBeaten,tourneyInfo);
+        }
         
+        //Items
+        global.BRItems = struct_get_variable(_saveData,"BreakItems",[]);
         
         //Set Deck Amount
         global.deckCardAmount = array_length(playerDeck);
@@ -237,6 +304,7 @@ function SaveFile()
         struct_set(_saveData,"KeyFullscreen",global.keyFullscreen);
         struct_set(_saveData,"KeyPause",global.keyPause);
         struct_set(_saveData,"KeyDebug",global.keyDebug);
+        struct_set(_saveData,"KeyFavorite",global.keyFav);
         struct_set(_saveData,"KeyMoveLeft",global.keyMoveLeft);
         struct_set(_saveData,"KeyMoveRight",global.keyMoveRight);
         struct_set(_saveData,"KeyMoveUp",global.keyMoveUp);
@@ -288,6 +356,7 @@ function SaveFile()
         global.keyFullscreen = struct_get_variable(_saveData,"KeyFullscreen",vk_f11);
         global.keyPause = struct_get_variable(_saveData,"KeyPause",vk_escape);
         global.keyDebug = struct_get_variable(_saveData,"KeyDebug",220);
+        global.keyFav = struct_get_variable(_saveData,"KeyFavorite",mb_right);
         global.keyMoveLeft = struct_get_variable(_saveData,"KeyMoveLeft",vk_left);
         global.keyMoveRight = struct_get_variable(_saveData,"KeyMoveRight",vk_right);
         global.keyMoveUp = struct_get_variable(_saveData,"KeyMoveUp",ord("W"));

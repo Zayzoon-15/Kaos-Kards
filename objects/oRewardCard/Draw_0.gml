@@ -1,3 +1,4 @@
+//Get Position
 var _x = x + sineX + cardX;
 var _y = y + sineY + cardY;
 
