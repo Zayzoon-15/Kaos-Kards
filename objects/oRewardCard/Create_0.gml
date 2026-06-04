@@ -25,6 +25,7 @@ sineY = 0;
 
 //Mouse
 canGrab = false;
+canHover = true;
 hover = false;
 grabbed = false;
 offsetX = 0;

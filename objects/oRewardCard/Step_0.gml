@@ -1,7 +1,7 @@
 if grabbed
 {
     //Grab Double Check
-    if !mouse_check_button(mb_left)
+    if !mouse_check_button(mb_left) or !canHover
     {
         event_perform(ev_mouse,ev_global_left_release);
         exit;
@@ -30,7 +30,7 @@ if grabbed
     image_yscale = lerp(image_yscale,startScale + .1,.4);
 } else {
     //Can Grab
-    canGrab = !global.holdingCard;
+    canGrab = !global.holdingCard and canHover;
     
     //Set Hover
     if touchingMouse() and canGrab
@@ -44,7 +44,7 @@ if grabbed
     } else hover = false;
     
     //Hovered
-    if hover
+    if hover and canHover
     {
         cardY = lerp(cardY,-8,.3);
         shadowY = lerp(shadowY,12,.2);
@@ -62,9 +62,12 @@ if grabbed
     shadowX = lerp(shadowX,_shadowX,.2);
     
     //Increase Sine Times
-    sineTimes.x += .01;
-    sineTimes.y += .01;
-    sineTimes.angle += .02;
+    if oReward.canInteract
+    {
+        sineTimes.x += .01;
+        sineTimes.y += .01;
+        sineTimes.angle += .02;
+    }
     
     //Move Position
     sineX = sineBetween(sineTimes.x,5,-5,5);

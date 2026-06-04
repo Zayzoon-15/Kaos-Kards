@@ -1,13 +1,14 @@
 //Draw Hidden Deck
-if cardsLeft <= 0
+if cardsLeft <= 1
 {
-    drawRectOutlined(bbox_left,bbox_top,bbox_right,bbox_bottom,UIBOX_RAD,0,c_black,c_white,.3*image_alpha,0);
+    //drawRectOutlined(bbox_left,bbox_top,bbox_right,bbox_bottom,UIBOX_RAD,0,c_black,c_white,.3*image_alpha,0);
+    drawRectOutlined(targetX-sprite_width/2,targetY-sprite_height/2,targetX+sprite_width/2,targetY+sprite_height/2,UIBOX_RAD,0,c_black,c_white,.3*image_alpha,0);
 }
 
 //Draw Deck Extended
 if cardsLeft > 1
 {
-    var _extendedYscale = (targetY - (targetY - cardsLeft*cardSep))/sprite_get_height(sDeckExtened);
+    var _extendedYscale = (targetY - (targetY - cardsLeft*cardSep))/sprite_get_height(sDeckExtened)+.2;
     draw_sprite_ext(sDeckExtened,0,targetX,targetY+sprite_height/2,1,_extendedYscale,0,image_blend,image_alpha);
 }
 
@@ -30,7 +31,6 @@ if cardsLeft != 0
     //Draw Top Deck
     draw_sprite_ext(sprite_index,image_index,x,y,xscale,yscale,angle,image_blend,image_alpha);
 }
-
 
 #region Draw Stats
 

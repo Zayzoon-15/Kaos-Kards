@@ -21,9 +21,11 @@ if room == rTournies and global.tourneyReward != undefined and !array_contains(g
         //Get Enemy
         var _enemy = global.tourneyReward.enemies[i];
         
+        
         //Remove Duplicates
         var _cards = [];
         for (var k = 0; k < array_length(_enemy.rewards); k++) {
+            
             if !array_contains(_cards,_enemy.rewards[k])
             {
                 array_push(_cards,_enemy.rewards[k]);
@@ -42,7 +44,8 @@ if room == rTournies and global.tourneyReward != undefined and !array_contains(g
     //Create Rewards
     instance_create_layer(0,0,"Ui",oReward,{
         cards : _allCards,
-        extra : global.tourneyReward.rewards
+        extra : global.tourneyReward.rewards,
+        tourney : global.tourneyReward
     });
     
     //Set Tournament As Beaten

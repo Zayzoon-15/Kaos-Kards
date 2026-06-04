@@ -123,6 +123,7 @@ function Enemy()
     /// @param {array} [_actionCards] The enemies action cards (Example: [actionCards.bread, actionCards.heal])
     /// @param {array} [_kaosCards] The enemies kaos cards (Example: [kaosCards.swoop])
     /// @param {struct.enemycreatestrat} [_strat] The enemies figthing strategy
+    /// @param {array} [_rewards] The cards the enemy gives (Example: [actionCards.bread, actionCards.heal])
     /// @param {any*} [_special] The enemies special move(leave as undefined if they don't use one)
     /// @param {array.string} _customSong The song the enemy plays (Example: ["Prepare","Kaos"])
     static Create = function(_name,_sprite,_animInfo = Anims(),_dialogue = Dialouge(),_difficulty = Difficulty(),_actionCards=[],_kaosCards=[],_strat = Strat(),_rewards=[actionCards.bread],_special = undefined,_customSong = ["Prepare","Kaos","Kaos"]) constructor

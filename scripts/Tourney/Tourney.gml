@@ -49,7 +49,7 @@ function initTourney(){
         debut : new Tourney("Debut Tournament", sTourneyArt1, [
             enemyInfo.dog, enemyInfo.cock, enemyInfo.angel,
             enemyInfo.alien, enemyInfo.beer
-        ], [], -1, [oBRShop,oBRPickle],[oRewardShop]),
+        ], [], -1, [oBRShop,oBRPickle]),
         
         retro : new Tourney("Retro Tournament", sTourneyArt2, [
             enemyInfo.handsy, enemyInfo.chud,

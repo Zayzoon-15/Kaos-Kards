@@ -4,15 +4,13 @@ y = ROOM_CENTER.y;
 
 //Set Menu
 global.menuOpen = true;
+canInteract = true;
+
+//Set Special If Have Extras
+if !array_is_empty(extra) then special = true;
 
 //Create Button
 instance_create_depth(ROOM_CENTER.x,SCREEN_HEIGHT - 100,depth-1,oRewardButton);
-
-cards = [
-    actionCards.bread,
-    actionCards.slash,
-    actionCards.laser,
-]
 
 //Angle
 TweenEasyScale(0,0,1,1,0,30,EaseOutBack);
@@ -110,3 +108,21 @@ for (var i = 0; i < array_length(cards); i++) {
 
 //Give Cards To Player
 global.playerFullDeck = array_concat(global.playerFullDeck,cards);
+
+
+//Uncle Pickle Show Up
+if global.tourneyReward == tourneyInfo.debut or room == rTesting
+{
+    instance_create_depth(0,0,depth-4,oRewardUnc);
+    special = true;
+}
+
+//Testing And Such
+if room == rTesting
+{
+    cards = [
+        actionCards.bread,
+        actionCards.gato,
+        actionCards.perro,
+    ];
+}

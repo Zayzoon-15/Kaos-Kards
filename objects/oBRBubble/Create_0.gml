@@ -7,6 +7,7 @@ text = string_upper(text);
 textShow = "";
 textChars = 0;
 textScale = 1;
+textOffset = new Vector2();
 
 //Text Area
 maxWidth = bbox_right - bbox_left;
