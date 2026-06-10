@@ -2,7 +2,7 @@
 drawTipBox(global.currentEnemy.name, false);
 
 //Set To Right Side
-x = getPosToWindow(true);
+x = global.stickUiToScreen ? getPosToWindow(true) : xstart;
 
 //Set Sprite
 sprite_index = global.currentEnemy.sprite;

@@ -1,0 +1,75 @@
+//Draw Bubble
+draw_self();
+
+
+//Text Setup
+textShow += textShowSpd;
+textSetup(fnBRThink,fa_center,fa_top);
+var _string = string_copy(text,0,textShow);
+var _maxWidth = bbox_right - bbox_left;
+var _charWidth = 30;
+var _charHeight = 45;
+var _cursorX = 0;
+var _cursorY = 0;
+
+//Draw Text
+for (var i = 1; i < string_length(_string)+1; i++) {
+	
+    //Get Character
+    var _char = string_copy(_string,i,1);
+    
+    //Wrap Next Line
+    if _cursorX + _charWidth > maxWidth
+    {
+        _cursorX = 0;
+        _cursorY += _charHeight;
+    }
+    
+    //Add Animations
+    if array_length(textAnims)-1 < i {
+        array_set(textAnims,i,{
+            curvePos : 0,
+            playedSound : false
+        });
+    }
+    
+    //Set Animation
+    var _curvePos = textAnims[i].curvePos;
+    _curvePos += curveSpd;
+    textAnims[i].curvePos = _curvePos;
+    
+    //Play Sound
+    if _curvePos >= .4 and !textAnims[i].playedSound
+    {
+        audioPlaySfx(snComboUsed,1.4,1.6,.2);
+        audio_stop_sound(snComboTick);
+        textAnims[i].playedSound = true;
+    }
+    
+    //Get Values
+    var _x = bbox_left + _cursorX;
+    var _y = bbox_top + _cursorY + animGetValue(AnimationCurve8,_curvePos,"y")*20;
+    var _xscale = animGetValue(AnimationCurve8,_curvePos,"xscale");
+    var _yscale = animGetValue(AnimationCurve8,_curvePos,"yscale");
+    draw_set_alpha(animGetValue(AnimationCurve8,_curvePos,"alpha")*image_alpha);
+
+    //Draw Text
+    draw_text_transformed(_x,_y,_char,_xscale,_yscale,0);
+    
+    //Reset Alpha
+    draw_set_alpha(1);
+    
+    //Set Cursor
+    _cursorX += _charWidth;
+}
+
+//Draw Click Thing
+if textShow > string_length(text)+10
+{
+    textSetup(fnMain,fa_right,fa_bottom,c_white,clickAlpha*image_alpha);
+    clickAlpha += .05;
+    draw_text(bbox_right,bbox_bottom,"Click To Close");
+}
+
+//Reset Draw
+drawReset();

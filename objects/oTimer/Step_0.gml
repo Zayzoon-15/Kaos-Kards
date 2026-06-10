@@ -1,5 +1,5 @@
 //Stick To Screen
-x = getPosToWindow(true);
+x = global.stickItemsToScreen ? getPosToWindow(true) : xstart;
 
 //Info
 drawTipBox("The game timer\nAct quickly!");

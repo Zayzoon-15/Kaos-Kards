@@ -35,7 +35,7 @@ function initTourney(){
     global._tourneyPlacement = 0;
     global.currentTourney = undefined;
     global.tourneyEnemiesBeaten = 0;
-    global.BRItems = [];
+    global.BRItems = [oBRBeanbag];
     global.gaveReward = false;
     global.tourneyReward = undefined;
     global.tourneysBeaten = [];

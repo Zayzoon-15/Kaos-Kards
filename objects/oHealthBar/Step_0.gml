@@ -56,8 +56,8 @@ drawTipBox(tipBoxString,tipOnTop,true,_dist);
 //Move To Correct Position
 if flipped
 {
-	x = getPosToWindow(true);
-} else x = getPosToWindow(false);
+	x = global.stickUiToScreen ? getPosToWindow(true) : xstart;
+} else x = global.stickUiToScreen ? getPosToWindow(false) : xstart;
 
 
 //Clamp Stuff

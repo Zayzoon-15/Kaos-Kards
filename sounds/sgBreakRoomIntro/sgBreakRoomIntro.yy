@@ -10,7 +10,7 @@
   "compression":1,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.0,
+  "duration":7.3282537,
   "exportDir":"",
   "name":"sgBreakRoomIntro",
   "parent":{

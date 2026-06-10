@@ -1,5 +1,5 @@
 //Set Position
-x = getPosToWindow(true);
+x = global.stickItemsToScreen ? getPosToWindow(true) : xstart;
 
 //Exit If In Enemy Room
 if room == rEnemy then exit;

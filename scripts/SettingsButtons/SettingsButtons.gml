@@ -41,7 +41,7 @@ function SettingsButtons()
     
     ///@desc Creates A Check Box Button
     ///@param {string} _text The button name
-    ///@param {function} _action The button action (argument0 is if the button is checked or not)
+    ///@param {function} _action The button action (argument0 is if the button is checked or not) **This argument can be a string to change a global variable to true or false**
     ///@param {function} _checked The function to check if the button is checked (can be a bool to)
     ///@param {function} _disabled The function to check if the button is disabled (can be a bool to)
     ///@param {string} _reason The reason for why the button is disabled

@@ -1,5 +1,5 @@
 //Set Position
-targetX = getPosToWindow(true);
+targetX = global.stickItemsToScreen ? getPosToWindow(true) : xstart;
 targetY = ystart;
 
 //Touching Stack

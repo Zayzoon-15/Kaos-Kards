@@ -13,7 +13,7 @@ if state == diceStates.idle
 	scale = 1;
 	
 	//Set Position
-	x = getPosToWindow(false);
+	x = global.stickItemsToScreen ? getPosToWindow(false) : xstart;
     y = lerp(y,ystart,.2);
 }
 

@@ -13,6 +13,7 @@ if room == rKaos
 }
 
 //Give Reward
+//global.tourneyReward = tourneyInfo.debut
 if room == rTournies and global.tourneyReward != undefined and !array_contains(global.tourneysBeaten,global.tourneyReward)
 {
     //Get All Cards
@@ -42,11 +43,14 @@ if room == rTournies and global.tourneyReward != undefined and !array_contains(g
     }
     
     //Create Rewards
-    instance_create_layer(0,0,"Ui",oReward,{
-        cards : _allCards,
-        extra : global.tourneyReward.rewards,
-        tourney : global.tourneyReward
-    });
+    timeSourceCreate(3,function(_cards,_tourney){
+        
+        instance_create_layer(0,0,"Ui",oReward,{
+            cards : _cards,
+            extra : _tourney.rewards,
+            tourney : _tourney
+        });
+    },[_allCards,global.tourneyReward],time_source_units_frames);
     
     //Set Tournament As Beaten
     array_push(global.tourneysBeaten,global.tourneyReward);

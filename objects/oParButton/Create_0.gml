@@ -3,9 +3,12 @@ timeSourceCreate(2,function()
 {
 	if stickToScreen
 	{
-		x = getPosToWindow(stickToScreenRight,stickToScreenOffset);
-		targetX = x;
-		boxX = x;
+        if isMenuButton and !global.stickUiToScreen then exit;
+        if !isMenuButton and !global.stickItemsToScreen then exit;
+        
+        x = getPosToWindow(stickToScreenRight,stickToScreenOffset);
+        targetX = x;
+        boxX = x;
 	}
 	
 },[],time_source_units_frames);

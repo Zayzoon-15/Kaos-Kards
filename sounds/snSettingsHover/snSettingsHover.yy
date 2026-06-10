@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snSettingsHover",
   "parent":{
-    "name":"Ui",
-    "path":"folders/Sounds/Sfx/Ui.yy",
+    "name":"Settings",
+    "path":"folders/Sounds/Sfx/Ui/Settings.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

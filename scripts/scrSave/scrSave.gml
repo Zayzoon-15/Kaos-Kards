@@ -258,7 +258,7 @@ function SaveFile()
         }
         
         //Items
-        global.BRItems = struct_get_variable(_saveData,"BreakItems",[]);
+        global.BRItems = struct_get_variable(_saveData,"BreakItems",[oBRBeanbag]);
         
         //Set Deck Amount
         global.deckCardAmount = array_length(playerDeck);
@@ -300,6 +300,7 @@ function SaveFile()
         struct_set(_saveData,"AnimatedUi",global.animatedUi);
         
         //Input
+        struct_set(_saveData,"KeyPlace",global.keyPlace);
         struct_set(_saveData,"KeyDiscard",global.keyDiscard);
         struct_set(_saveData,"KeyFullscreen",global.keyFullscreen);
         struct_set(_saveData,"KeyPause",global.keyPause);
@@ -318,6 +319,9 @@ function SaveFile()
         struct_set(_saveData,"ShowPercentage",global.showPercentage);
         struct_set(_saveData,"GameSpeed",global.gameSpeed);
         struct_set(_saveData,"ExplosionsAfter",global.explosionsAfter);
+        struct_set(_saveData,"EnemyDialogue",global.enemyDialogue);
+        struct_set(_saveData,"ItemsStick",global.stickItemsToScreen);
+        struct_set(_saveData,"UiStick",global.stickUiToScreen);
         
         //Save To File
         _saveFile(_saveData,"SettingsSave.kaos");
@@ -352,6 +356,7 @@ function SaveFile()
         global.animatedUi = struct_get_variable(_saveData,"AnimatedUi",global.animatedUi);
         
         //Input
+        global.keyPlace = struct_get_variable(_saveData,"KeyPlace",ord("X"));
         global.keyDiscard = struct_get_variable(_saveData,"KeyDiscard",ord("Z"));
         global.keyFullscreen = struct_get_variable(_saveData,"KeyFullscreen",vk_f11);
         global.keyPause = struct_get_variable(_saveData,"KeyPause",vk_escape);
@@ -370,6 +375,9 @@ function SaveFile()
         global.showPercentage = struct_get_variable(_saveData,"ShowPercentage",true);
         global.gameSpeed = struct_get_variable(_saveData,"GameSpeed",1);
         global.explosionsAfter = struct_get_variable(_saveData,"ExplosionsAfter",true);
+        global.enemyDialogue = struct_get_variable(_saveData,"EnemyDialogue",true);
+        global.stickItemsToScreen = struct_get_variable(_saveData,"ItemsStick",true);
+        global.stickUiToScreen = struct_get_variable(_saveData,"UiStick",true);
         
     }
     

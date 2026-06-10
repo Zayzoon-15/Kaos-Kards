@@ -13,7 +13,6 @@ if isTargeted and state == diceStates.idle
 {
     //Frames
     lockOnFrames += sprite_get_speed(sDiceLockOn)/60;
-    print(sprite_get_speed(sDiceLockOn)/60);
     
     //Alpha
     lockOnAlpha = lerp(lockOnAlpha,1,.3);

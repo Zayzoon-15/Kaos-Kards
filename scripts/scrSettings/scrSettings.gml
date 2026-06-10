@@ -35,6 +35,7 @@ function initSettings()
 	#region Input
     
     //Game
+    global.keyPlace = ord("X");
 	global.keyDiscard = ord("Z");
 	global.keyFullscreen = vk_f11;
 	global.keyPause = vk_escape;
@@ -55,6 +56,8 @@ function initSettings()
     #endregion
     
     //Game
+    global.stickItemsToScreen = true;
+    global.stickUiToScreen = true;
     global.showPercentage = true;
     global.gameSpeed = 1;
     global.explosionsAfter = true;

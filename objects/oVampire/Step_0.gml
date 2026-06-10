@@ -92,7 +92,7 @@ if grabbed
     //Rotate
     var _angle = xprevious - x;
     sineTime += .02;
-    image_angle = lerp(image_angle,_angle+sineWave(current_time/1000,5,5,0),.2);
+    image_angle = lerp(image_angle,_angle+sineWave(sineTime,5,5,0),.2); //current_time/1000
     
     //Depth
     depth = startDepth;

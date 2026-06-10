@@ -1,3 +1,13 @@
+//Destroy If Enemy No Exist
+if !instance_exists(oEnemyPhoto){
+    instance_destroy();
+    exit;
+}
+
+//Set Correct Position
+x = (oEnemyPhoto.bbox_left - 10) - sprite_width;
+y = oEnemyPhoto.y - floor(sprite_height/2);
+
 //Show Text
 if startTalking
 {

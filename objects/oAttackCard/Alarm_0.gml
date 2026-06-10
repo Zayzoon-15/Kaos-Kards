@@ -11,14 +11,18 @@ if combo
         global.playerComboMeter = 0;
     } else global.enemyComboMeter = 0;
     
+    //Set Shake
+    cardSetShake(6,.02);
+    
+    //Sound
+    audio_stop_sound(snComboTick);
+    if !audio_is_playing(snComboUsed) then audioPlaySfx(snComboUsed);
+    
     //Preform Combo
     if cardId == 1
     {
-        //Arguments
-        var _args = array_concat([targetEnemy],card.info.comboArgs);
-        
         //Do Action
-        method_call(card.info.comboAction,_args);
+        alarm[1] = 140;
     }
     
     //Exit Code

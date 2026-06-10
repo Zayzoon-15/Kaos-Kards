@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snBtnPress",
   "parent":{
-    "name":"Ui",
-    "path":"folders/Sounds/Sfx/Ui.yy",
+    "name":"Button",
+    "path":"folders/Sounds/Sfx/Ui/Button.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

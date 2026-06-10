@@ -1,3 +1,3 @@
 //Set Can't Interact
-oRewardButton.canHover = canInteract;
-oRewardCard.canHover = canInteract;
+if instance_exists(oRewardButton) then oRewardButton.canHover = canInteract;
+if instance_exists(oRewardCard) then oRewardCard.canHover = canInteract;

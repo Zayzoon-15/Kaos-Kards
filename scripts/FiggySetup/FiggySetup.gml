@@ -99,6 +99,7 @@ function FiggySetup() {
                 oBRTv,
                 oBRWand,
                 oBRBoombox,
+                oBRBeanbag,
             ]
         });
     

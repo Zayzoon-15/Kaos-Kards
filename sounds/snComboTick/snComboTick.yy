@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snComboTick",
   "parent":{
-    "name":"Ui",
-    "path":"folders/Sounds/Sfx/Ui.yy",
+    "name":"Combo",
+    "path":"folders/Sounds/Sfx/Ui/Combo.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

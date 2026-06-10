@@ -16,10 +16,7 @@ function SettingsMenus()
             
         
         SettingsButtons.Separator("Control");
-            SettingsButtons.Check("Unfocus Mute",function()
-            {
-                global.unfocusMute = argument0;
-            },global.unfocusMute);
+            SettingsButtons.Check("Unfocus Mute","unfocusMute",global.unfocusMute);
             SettingsButtons.Slider("Announcer Frequency","voiceover",undefined,1.5);
             SettingsButtons.Check("Enemy Dialogue Sounds");
     }
@@ -69,15 +66,10 @@ function SettingsMenus()
 				global.vSync = argument0;
 				display_reset(0,global.vSync);
 			},global.vSync);
-			SettingsButtons.Check("Animated UI Elements",function(){
-				global.animatedUi = argument0;
-			},global.animatedUi);
+			SettingsButtons.Check("Animated UI Elements","animatedUi",global.animatedUi);
         
         SettingsButtons.Separator("Subtitles");
-            SettingsButtons.Check("Subtitles",function()
-            {
-                global.subtitles = argument0;
-            },global.subtitles,function(){return global.voiceover <= 0},"Voiceover Disabled");
+            SettingsButtons.Check("Subtitles","subtitles",global.subtitles,function(){return global.voiceover <= 0},"Voiceover Disabled");
             SettingsButtons.Slider("Text Scale",global.subtitlesStyle.textScale,function(){global.subtitlesStyle.textScale = argument0;},2,.5,2,false,undefined,"X",function(){
                 return !global.subtitles or global.voiceover <= 0;
             },"Subtitles Disabled");
@@ -106,26 +98,17 @@ function SettingsMenus()
     
     static Game = function()
     {
-        //Create Buttons
         SettingsButtons.Separator("User Interface");
             SettingsButtons.Slider("Tip Box Size","tipBoxSize",undefined,2,1,3,false,roundHalf,"X");
             SettingsButtons.Check("Tip Boxes");
-            SettingsButtons.Check("Show Percentage",function(){
-                global.showPercentage = argument0;
-            },global.showPercentage);
-            SettingsButtons.Check("Show Game Version",function(){
-				global.showGameVer = argument0;
-			},global.showGameVer);
-        
+            SettingsButtons.Check("Show Percentage","showPercentage",global.showPercentage);
+            SettingsButtons.Check("Ui Stick To Sides Of Screen","stickUiToScreen",global.stickUiToScreen);
+            SettingsButtons.Check("Show Game Version","showGameVer",global.showGameVer);
+
         SettingsButtons.Separator("Gameplay");
-            
-            SettingsButtons.Check("Explosions After Match",function(){
-                global.explosionsAfter = argument0; 
-            },global.explosionsAfter);
-            SettingsButtons.Check("Enemy Dialogue",function()
-            {
-                global.enemyDialogue = argument0;
-            },global.enemyDialogue);
+            SettingsButtons.Check("Items Stick To Sides Of Screen","stickItemsToScreen",global.stickItemsToScreen);
+            SettingsButtons.Check("Explosions After Match","explosionsAfter",global.explosionsAfter);
+            SettingsButtons.Check("Enemy Dialogue","enemyDialogue",global.enemyDialogue);
 		
             //SettingsButtons.Slider("Game Speed","gameSpeed",undefined,2,1,4,false,undefined,"X");
             SettingsButtons.Button("What Do I Put Here...",function()
@@ -165,6 +148,7 @@ function SettingsMenus()
         {
 
             SettingsButtons.Separator("Game");
+                SettingsButtons.Input("Place","keyPlace");
                 SettingsButtons.Input("Discard","keyDiscard");
                 SettingsButtons.Input("Debug Mode","keyDebug");
             
@@ -189,10 +173,7 @@ function SettingsMenus()
                 //SettingsButtons.Button("Accept");
                 //SettingsButtons.Button("Discard");
         } else { //Mobile Input
-            SettingsButtons.Check("Double Tap For Buttons",function()
-            {
-                global.mobilePress = argument0;
-            },global.mobilePress);
+            SettingsButtons.Check("Double Tap For Buttons","mobilePress",global.mobilePress);
             SettingsButtons.Slider("Haptic Feedback",undefined,undefined,1.8,0,10,true,ceil,"X");
         }
         

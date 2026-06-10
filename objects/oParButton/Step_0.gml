@@ -35,8 +35,16 @@ if sizeToText
 //Stick To Screen
 if stickToScreen
 {
-	x = getPosToWindow(stickToScreenRight,stickToScreenOffset);
-	targetX = x;
+    var _stick = true;
+    
+    if isMenuButton and !global.stickUiToScreen then _stick = false;
+    if !isMenuButton and !global.stickItemsToScreen then _stick = false;
+    
+    if _stick {
+        x = getPosToWindow(stickToScreenRight,stickToScreenOffset); 
+    } else x = xstart;
+    
+    targetX = x;
 }
 
 //Ease

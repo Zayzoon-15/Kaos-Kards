@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snCardDraw3",
   "parent":{
-    "name":"Game",
-    "path":"folders/Sounds/Sfx/Game.yy",
+    "name":"Card",
+    "path":"folders/Sounds/Sfx/Game/Card.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

@@ -81,23 +81,26 @@ global.gameTimer = 0;
 
 #region Custom Fonts
 
-//Set Global Vars
-globalvar fnNumber,fnNumberOutline,fnDBLetter,fnDBNumber,fnTRNumber,fnBreakRoom;
 
 //Game Numbers
+globalvar fnNumber, fnNumberOutline;
 var _numString = "0123456789+-";
 fnNumber = font_add_sprite_ext(sNumbers, _numString, true, 0);
 fnNumberOutline = font_add_sprite_ext(sNumbersOutlined, _numString, true, 0);
 
 //Deck Builder
+globalvar fnDBLetter, fnDBNumber;
 fnDBLetter = font_add_sprite_ext(sDBLetters,"ABCDEFGHIJKLMNOPQRSTUVWXYZ|:",true,0);
 fnDBNumber = font_add_sprite_ext(sDBNumbers,"/0123456789",true,0);
 
 //Trophy
+globalvar fnTRNumber;
 fnTRNumber = font_add_sprite_ext(sTRFont, "0123456789", true, -3);
 
 //Break Room
-fnBreakRoom = font_add_sprite_ext(sBRFont,"ABCDEFGHIJKLMNOPQRSTUVWXYZ !",true,-.5);
+globalvar fnBRSpeaker, fnBRThink;
+fnBRSpeaker = font_add_sprite_ext(sBRSpeakerFont,"ABCDEFGHIJKLMNOPQRSTUVWXYZ !",true,-.5);
+fnBRThink = font_add_sprite_ext(sBRThinkFont,"AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz ,!?",true,0);
 
 #endregion
 

@@ -1,3 +1,13 @@
+//Testing And Such
+if room == rTesting
+{
+    cards = [
+        actionCards.bread,
+        actionCards.gato,
+        actionCards.perro,
+    ];
+}
+
 //Set Position
 x = ROOM_CENTER.x;
 y = ROOM_CENTER.y;
@@ -111,18 +121,8 @@ global.playerFullDeck = array_concat(global.playerFullDeck,cards);
 
 
 //Uncle Pickle Show Up
-if global.tourneyReward == tourneyInfo.debut or room == rTesting
+if tourney == tourneyInfo.debut or room == rTesting
 {
     instance_create_depth(0,0,depth-4,oRewardUnc);
     special = true;
-}
-
-//Testing And Such
-if room == rTesting
-{
-    cards = [
-        actionCards.bread,
-        actionCards.gato,
-        actionCards.perro,
-    ];
 }

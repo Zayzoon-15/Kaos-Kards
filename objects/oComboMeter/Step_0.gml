@@ -4,7 +4,7 @@ value = floor(value);
 percent = lerp(percent,value / 100,.2);
 
 //Set Position
-x = getPosToWindow(onRight);
+x = global.stickUiToScreen ? getPosToWindow(onRight) : xstart;
 
 //Draw Info
 if global.showPercentage

@@ -42,23 +42,13 @@ function comboShield(_targetEnemy)
 ///@self oAttackCard
 function comboBread(_targetEnemy)
 {
-	//Charge Card
-	with oAttackCard
-	{
-		cardSetShake(6,.02);
-	}
 
-	//Create Attack
-	var _attack = function(_targetEnemy,_card) {
-		instance_create_layer(x,y,"Attacks",oBreadCombo,{
-		    targetEnemy : _targetEnemy,
-		    value : _card.value,
-		    card : _card
-		});
-	}
-	
-	//Start Time To Create Attack
-	timeSourceCreate(2,_attack,[_targetEnemy,self.id])
+    instance_create_layer(x,y,"Attacks",oBreadCombo,{
+        targetEnemy : _targetEnemy,
+        value : value,
+        card : self.id
+    });
+
 }
 
 

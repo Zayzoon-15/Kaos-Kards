@@ -24,6 +24,10 @@ function initSongs() {
     audioCreateSongs("BreakRoomIntro",sgBreakRoomIntro,[],1.5,1,"BreakRoom",true);
     audioCreateSongs("BreakRoom",sgBreakRoom,[],1.5);
     
+    //Boombox
+    audioCreateSongs("Boombox1",sgBoombox1,[],8);
+    audioCreateSongs("Boombox2",sgBoombox2,[],2);
+    
     //Shop
     audioCreateSongs("ShopIntro",sgShopIntro,[],1,1,"Shop",true);
     audioCreateSongs("Shop",sgShop,["ShopAfter"]);

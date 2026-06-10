@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"snPaperHover1",
   "parent":{
-    "name":"Ui",
-    "path":"folders/Sounds/Sfx/Ui.yy",
+    "name":"Reward",
+    "path":"folders/Sounds/Sfx/Ui/Reward.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

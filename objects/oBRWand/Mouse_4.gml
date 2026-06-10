@@ -1,0 +1,1 @@
+effectStar(bbox_right-10,y,5,true,0,0,10,5);

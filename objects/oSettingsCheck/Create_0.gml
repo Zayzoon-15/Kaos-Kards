@@ -65,6 +65,12 @@ action = function()
 		audioPlaySfx(snSettingsCheck);
 	} else audioPlaySfx(snSettingsUnCheck);
     
-    //Action
-    btnAction(checked);
+    //Change Method
+    if is_method(btnAction)
+    {
+        btnAction(checked); //Normal Function Thing
+    } else if is_string(btnAction)
+    {
+        variable_global_set(btnAction,checked); //Change Global Variable
+    }
 }

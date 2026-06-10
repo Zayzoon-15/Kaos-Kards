@@ -2,4 +2,4 @@
 event_inherited();
 
 //Set Position
-x = getPosToWindow(false);
+x = global.stickItemsToScreen ? getPosToWindow(false) : xstart;

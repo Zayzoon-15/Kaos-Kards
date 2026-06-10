@@ -11,7 +11,7 @@ switch image_index {
 }
 
 //Draw Text
-textSetup(fnBreakRoom,fa_left,fa_top,c_white,image_alpha);
+textSetup(fnBRSpeaker,fa_left,fa_top,c_white,image_alpha);
 draw_text_ext_transformed(bbox_left + textOffset.x,bbox_top + textOffset.y,textShow,20,maxWidth/textScale,textScale,textScale,image_angle);
 
 //Reset

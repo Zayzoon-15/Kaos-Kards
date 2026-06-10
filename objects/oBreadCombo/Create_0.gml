@@ -35,7 +35,8 @@ action = function()
     if damageTimes >= damageTotalTimes
     {
         instance_destroy();
-        timeSourceCreate(1,eventComboAttackDone);
+        effectExplosion(x,y + targetEnemy ? -20 : 20,true,4);
+        timeSourceCreate(2,eventComboAttackDone);
     }
     
     //Reduce Damage Frames
