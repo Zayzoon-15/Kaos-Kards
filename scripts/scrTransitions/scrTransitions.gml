@@ -53,6 +53,10 @@ function transStart(_roomTarget,_typeOut = seqFadeOut,_typeIn = seqFadeIn,_trans
 
 function transChangeRoom()
 {
+    //Transition Event
+    //eventTransitioned(global.roomTarget,room);
+    
+    //Change Room
     room_goto(global.roomTarget);
 }
 

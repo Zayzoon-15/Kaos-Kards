@@ -3,7 +3,7 @@ event_inherited();
 
 //Position
 stickToScreen = true;
-stickToScreenRight = room == rDeckBuilder2;
+stickToScreenRight = room == rDeckBuilder1;
 
 //Action
 action = function()

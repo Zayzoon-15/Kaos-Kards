@@ -15,7 +15,7 @@ text = "Deck Builder";
 action = function()
 {
     //Go To Room
-    transStart(rDeckBuilder2);
+    transStart(rDeckBuilder1);
     
     //Don't Hover
     canHover = false;

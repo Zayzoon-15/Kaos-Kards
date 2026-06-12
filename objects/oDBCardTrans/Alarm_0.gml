@@ -2,7 +2,7 @@
 
 //Move
 var _offset = 50;
-var _x = room == rDeckBuilder1 ? oDBInsertHole.x - _offset : oDBInsertHole.x + _offset;
+var _x = room == rDeckBuilder2 ? oDBInsertHole.x - _offset : oDBInsertHole.x + _offset;
 TweenEasyMove(x,y,_x,oDBInsertHole.y,0,20,EaseInBack);
 
 //Fade

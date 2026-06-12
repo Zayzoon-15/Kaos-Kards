@@ -8,7 +8,7 @@ if canPress and pressed
     //Reset Card Amount
     with oDBCard {cardAmount = 0;}
     
-    if room == rDeckBuilder2
+    if room == rDeckBuilder1
     {
         oDBDeck.createCards();
     }

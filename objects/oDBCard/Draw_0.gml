@@ -49,7 +49,7 @@ if grabbed
 
     
     //Draw Card Amount
-    if room == rDeckBuilder1
+    if room == rDeckBuilder2
     {
         //Values
         var _amountString = $"{maxCardAmount-cardAmount}x";

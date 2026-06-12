@@ -66,7 +66,7 @@ TweenEasyFade(0,1,0,20,EaseLinear);
 //Remove From Deck
 removeCard = function()
 {
-    if room == rDeckBuilder1
+    if room == rDeckBuilder2
     {
         //Max Cards Reached
         if global.deckCardAmount >= global.currentDeck.maxCards

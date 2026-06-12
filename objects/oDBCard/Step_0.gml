@@ -41,7 +41,7 @@ if grabbed
     if place_meeting(x,y,oDBInsertHole)
     {
         shake = 1;
-        angle = room == rDeckBuilder2 ? 90 : -90;
+        angle = room == rDeckBuilder1 ? 90 : -90;
     } else {
         shake = 0;
         angle = 0;

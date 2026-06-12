@@ -11,7 +11,7 @@ spriteX = 0;
 spriteY = 0;
 
 //Play Song
-var _song = room == rDeckBuilder1 ? "DeckBuilder1" : "DeckBuilder2";
+var _song = room == rDeckBuilder2 ? "DeckBuilder1" : "DeckBuilder2";
 audioPlaySong(_song);
 
 //Start Transition
@@ -22,7 +22,7 @@ startTrans = function()
     
     //Set Position
     spriteX = CAMERA_POS.x;
-    xOffset = room == rDeckBuilder1 ? oDBInsertHole.x - CAMERA_POS.x : oDBInsertHole.x - CAMERA_POS.x;
+    xOffset = room == rDeckBuilder2 ? oDBInsertHole.x - CAMERA_POS.x : oDBInsertHole.x - CAMERA_POS.x;
     
     //Set Sprite
     sprite = sprite_create_from_surface(application_surface,0,0,surface_get_width(application_surface),surface_get_height(application_surface),false,false,xOffset,0);
@@ -40,11 +40,11 @@ startTrans = function()
     //Change Room
     timeSourceCreate(_dur*.3,function(){
         
-        if room == rDeckBuilder1
+        if room == rDeckBuilder2
         {
-            transStart(rDeckBuilder2);
-        } else {
             transStart(rDeckBuilder1);
+        } else {
+            transStart(rDeckBuilder2);
         }
         
     },[],time_source_units_frames);

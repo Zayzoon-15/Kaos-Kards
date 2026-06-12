@@ -65,6 +65,9 @@ startStickerTrans = function()
 	//Start Transition
 	timeSourceCreate(80,function()
 	{
+        //Transition Event
+        eventTransitioned(global.roomTarget,room);
+        
 		//Change Room
 		room_goto(global.roomTarget);
 	

@@ -14,7 +14,7 @@ layer_sprite_index(_sprite,1);
 layer_sprite_xscale(_sprite,image_xscale);
 
 //Draw Text
-if room == rDeckBuilder1
+if room == rDeckBuilder2
 {
     var _text = layer_sprite_create(_layer,x,y,sprite_index);
     layer_sprite_index(_text,4);

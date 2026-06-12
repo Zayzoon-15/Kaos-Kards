@@ -130,7 +130,7 @@
     {"name":"oTournieTrophy","order":11,"path":"objects/oTournieTrophy/oTournieTrophy.yy",},
     {"name":"oTransSticker","order":1,"path":"objects/oTransSticker/oTransSticker.yy",},
     {"name":"oVampire","order":5,"path":"objects/oVampire/oVampire.yy",},
-    {"name":"rDeckBuilder2","order":1,"path":"rooms/rDeckBuilder2/rDeckBuilder2.yy",},
+    {"name":"rDeckBuilder1","order":1,"path":"rooms/rDeckBuilder1/rDeckBuilder1.yy",},
     {"name":"rEnemy","order":1,"path":"rooms/rEnemy/rEnemy.yy",},
     {"name":"rKaos","order":2,"path":"rooms/rKaos/rKaos.yy",},
     {"name":"rMainMenu","order":1,"path":"rooms/rMainMenu/rMainMenu.yy",},

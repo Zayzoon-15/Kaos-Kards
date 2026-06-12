@@ -23,7 +23,7 @@ function FiggySetup() {
         Figgy.Separator("Menus");
         Figgy.Button("Menu",function(){room_goto(rTournies)});
         Figgy.Button("Tourney Selector",function(){room_goto(rTourneySelector)});
-        Figgy.Button("DeckBuilder",function(){room_goto(rDeckBuilder2)});
+        Figgy.Button("DeckBuilder",function(){room_goto(rDeckBuilder1)});
         Figgy.Separator("Testing");
         Figgy.Button("Card Test Room",function(){room_goto(rTestingCard)});
         Figgy.Button("Music Test Room",function(){room_goto(rTestingMusic)});

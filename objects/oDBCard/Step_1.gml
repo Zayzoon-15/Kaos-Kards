@@ -1,5 +1,5 @@
 //Order In Deck
-if room == rDeckBuilder2
+if room == rDeckBuilder1
 {
     var _leftEdge = (maxRow - 1)*(gap.x/2);
     targetX = startPos.x - _leftEdge + (rowId * gap.x);

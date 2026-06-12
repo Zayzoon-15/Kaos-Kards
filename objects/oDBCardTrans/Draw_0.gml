@@ -8,7 +8,7 @@ var _struct = {
     h : 500,
 }
 
-if room == rDeckBuilder2
+if room == rDeckBuilder1
 {
     _struct.x = (SCREEN_WIDTH/2) - (oDBInsertHole.bbox_left-190)+1182//(SCREEN_WIDTH/2) - (oDBInsertHole.bbox_left-300)+514
 }

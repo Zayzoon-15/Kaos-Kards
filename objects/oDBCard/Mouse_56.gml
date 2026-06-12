@@ -12,7 +12,7 @@ if grabbed
     }
     
     //Swap Places
-    if room == rDeckBuilder2
+    if room == rDeckBuilder1
     {
         //Get Touching Instances
         var _list = ds_list_create();
