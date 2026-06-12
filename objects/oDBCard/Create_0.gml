@@ -71,14 +71,14 @@ removeCard = function()
         //Max Cards Reached
         if global.deckCardAmount >= global.currentDeck.maxCards
         {
-            createAlertMessage("MAX CARDS IN DECK",50,ROOM_CENTER.x,150,fnDBLetter,1,4,.4);
+            createAlertMessage("MAX CARDS IN DECK",50,ROOM_CENTER.x,150,fonts.DBLetter,1,4,.4);
             exit;
         }
         
         //Max Card Amount Reached
         if maxCardAmount-cardAmount <= 0
         {
-            createAlertMessage("MAX CARD AMOUNT",50,ROOM_CENTER.x,150,fnDBLetter,1,4,.4);
+            createAlertMessage("MAX CARD AMOUNT",50,ROOM_CENTER.x,150,fonts.DBLetter,1,4,.4);
             exit;
         }
         
@@ -130,4 +130,7 @@ removeCard = function()
         image_angle : image_angle,
         favorite : favorite
     });
+    
+    //Set As Seen
+    if newCard then array_push(global.playerSeenCards,info);
 }

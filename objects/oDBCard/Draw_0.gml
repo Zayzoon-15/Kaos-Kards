@@ -43,7 +43,7 @@ if grabbed
     if newCard
     {
         newTextSine += .04;
-        newTextScale = sineBetween(newTextSine,8,.4,.6);
+        newTextScale = sineBetween(newTextSine,8,.8,1.1);
         draw_sprite_ext(sDBNew,0,(cardX+sprite_width/2)-10,(cardY-sprite_height/2)+10,newTextScale,newTextScale,0,c_white,image_alpha);
     }
 

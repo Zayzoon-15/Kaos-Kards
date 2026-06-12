@@ -9,16 +9,14 @@ textAlpha = lerp(textAlpha,1,.2);
 //Go To Parent
 if instance_exists(parent)
 {
-    var _y;
-
-    if top 
-    {
-        _y = parent.bbox_top-distance;
-    } else _y = parent.bbox_bottom+distance;
+    //Get Y
+    var _y = top ? parent.bbox_top-distance : parent.bbox_bottom+distance;
     
+    //Go To Parent
     x = parent.x + offset.x;
     y = lerp(y,_y + offset.y,.2);
 
+    //Check If Touching
     if variable_instance_exists(parent,"tipBoxTouching")
     {
         touching = parent.tipBoxTouching;

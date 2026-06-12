@@ -24,6 +24,14 @@ if touchingMouse() and canGrab
         
         //Leave Unc Dam
         oRewardUnc.alarm[2] = 90;
+        oRewardUnc.handImage = 1;
+        
+        //Hand Juice
+        with oRewardUnc
+        {
+            TweenFire(self,EaseOutCubic,TWEEN_MODE_ONCE,false,0,15,"handXScale",1.1,1);
+            TweenFire(self,EaseOutCubic,TWEEN_MODE_ONCE,false,0,15,"handYScale",.9,1);
+        }
         
         //Destroy
         instance_destroy();

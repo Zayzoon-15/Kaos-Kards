@@ -222,6 +222,55 @@ function FiggySetup() {
     
         #endregion
  
-    
+    Figgy.Window("WAND Menu",true,FIGGY_WINDOW_DEFAULT_X,25,FIGGY_WINDOW_DEFAULT_WIDTH,680);
+        Figgy.Int("WAND xOffset",6,-50,50,FIGGY_INT_DEFAULT_STEP,function()
+        {
+            with oBRWand
+            {
+                xOffset = argument0;
+            }
+        });
+        Figgy.Int("WAND yOffset",13,-50,50,FIGGY_INT_DEFAULT_STEP,function()
+        {
+            with oBRWand
+            {
+                yOffset = argument0;
+            }
+        });
+        Figgy.Int("WAND skewX",3,-50,50,FIGGY_INT_DEFAULT_STEP,function()
+        {
+            with oBRWand
+            {
+                skewX = argument0;
+            }
+        });
+        Figgy.Int("WAND skewY",-1,-50,50,FIGGY_INT_DEFAULT_STEP,function()
+        {
+            with oBRWand
+            {
+                skewY = argument0;
+            }
+        });
+        Figgy.Int("WAND angle",0,-10,10,FIGGY_INT_DEFAULT_STEP,function()
+        {
+            with oBRWand
+            {
+                skewAngle = argument0;
+            }
+        });
+        Figgy.Int("WAND scaleX",1,0,50,FIGGY_INT_DEFAULT_STEP,function()
+        {
+            with oBRWand
+            {
+                skewScaleX = argument0 * .1;
+            }
+        });
+        Figgy.Int("WAND scaleY",1,0,50,FIGGY_INT_DEFAULT_STEP,function()
+        {
+            with oBRWand
+            {
+                skewScaleY = argument0 * .1;
+            }
+        });
 }
 

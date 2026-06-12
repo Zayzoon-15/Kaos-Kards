@@ -4,16 +4,17 @@ y = 704;
 
 //Set Menu
 global.menuOpen = true;
+
+//Pressed
 pressed = false;
+close = false;
 
 //Text Setup
+forceShow = false;
 textShow = 0;
 textAnims = [];
 clickAlpha = 0;
 maxWidth = bbox_right - bbox_left;
-
-//Sound
-textSound = 0;
 
 //Animation
 curveSpd = .04;

@@ -13,7 +13,7 @@ broadcastSprite("laserSetShake",function() {
     var _gain = 1 - (_insts*.05);
     
     //Play Sound
-    laserSound = audioPlaySfx(snLaser);
+    laserSound = audioPlaySfx(snLaser,1,1,1,1,.1);
     
     
     //Juice

@@ -61,7 +61,7 @@ diceJuice = function(_sound = true)
     y += 10;
     
     //Set Size
-    setSize(image_xscale+1,image_yscale+1);
+    setSize(scale+1,scale+1);
     
     //Stars
     effectStar(x,y,5,_sound);
@@ -94,4 +94,14 @@ combineValues = function()
     
     //Next
     alarm[2] = 30*(diceId+_diceCardExtra);
+}
+
+setTarget = function(_card = noone,_target)
+{
+    isTargeted = _target;
+    
+    if _card != noone and _card.info.targetSound
+    {
+        audioPlaySfx(_target ? _card.info.targetSound.on : _card.info.targetSound.off);
+    }
 }

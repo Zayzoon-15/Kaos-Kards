@@ -1,4 +1,3 @@
-
 //Set Sprite
 sprite_index = dice.sprite;
 

@@ -11,10 +11,16 @@ if touchingMouse() and !global.menuOpen
     
     if mouse_check_button_released(mb_left) and pressed
     {
+        //Get String
         var _array = isTip ? tips : funFacts;
         var _choice = _array[irandom_range(0,array_length(_array)-1)];
         
-        show_message(_choice);
+        //Create Bubble
+        if !instance_exists(oBRThinkBubble){
+            instance_create_layer(0,0,"Ui",oBRThinkBubble,{
+                text : _choice
+            });
+        }
     }
     
 } else pressed = false;

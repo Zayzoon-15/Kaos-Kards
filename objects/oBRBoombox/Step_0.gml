@@ -1,7 +1,8 @@
+event_inherited();
 
+//Bounce To Beat
 if curSong != songs[0]
 {
-    
     //Update Curve
     var _delta = (delta_time / 1000000)/(1/60);
     curvePos += 1 / (60*_delta * time_bpm_to_seconds(curSong[1]));

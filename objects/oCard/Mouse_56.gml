@@ -43,7 +43,6 @@ if state == CARDSTATE.GRABBED
         } else if _specialSlot and !_specialSlot.used and info.type != CARDTYPES.ACTION and canPlace and canUse
         {
         	
-            
             var _stopSwap = false;
             
             with oCard
@@ -73,9 +72,18 @@ if state == CARDSTATE.GRABBED
                                 var _targetSlot = other.slot;
                                 other.slot = slot;
                                 slot = _targetSlot;
+                                
                             } else {
                             	other.slot = slot;
                                 putCardInHand();
+                                
+                                //Set Dice
+                                with oDice
+                                {
+                                    if isTargeted {
+                                        setTarget(other.id,false);
+                                    }
+                                }
                             }
                         }
                     }
@@ -90,8 +98,7 @@ if state == CARDSTATE.GRABBED
             //Set Dice
             with oDice
             {
-                if isTargeted
-                {
+                if isTargeted {
                     isTargeted = false;
                 }
             }

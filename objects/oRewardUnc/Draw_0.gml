@@ -9,3 +9,6 @@ draw_sprite_ext(handSprite,handImage,handX,handY,handXScale,handYscale,handAngle
 
 //Draw Pickle
 draw_self();
+
+//Draw Blush
+draw_sprite_ext(sRewardUncBlush,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,blushAlpha * image_alpha);

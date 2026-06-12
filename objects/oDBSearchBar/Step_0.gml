@@ -16,7 +16,7 @@ if (mouse_check_button_pressed(mb_left) and !touchingMouse()) or keyboard_check_
 }
 
 //Get Width
-draw_set_font(fnDBLetter);
+draw_set_font(fonts.DBLetter);
 var _stringWidth = string_width(text);
 
 //Set Text

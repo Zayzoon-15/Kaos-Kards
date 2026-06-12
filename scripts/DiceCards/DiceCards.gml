@@ -51,7 +51,7 @@ diceCards = {
     
     upgrade : new createCardDice("Dice Upgrade",
     "Adds a random amount to a random [aq]dice[/] roll",
-    sCardUpgrade,undefined,true,NaN,[],[1,6]),
+    sCardUpgrade,undefined,true,true,NaN,[],[1,6]),
     
     allNothin : new createCardDice("All or Nothin'",
     "If all [aq]dice[/] roll [o]higher[/] than half of their maximum value, set all [aq]dice[/] to their maximum value. Otherwise, set all [aq]dice[/] to 0[s][lg](Can ONLY be placed before roll)",
@@ -60,15 +60,15 @@ diceCards = {
     //Change Dice
     dice8 : new createCardDice("8 Sided Dice",
     "Changes one random [aq]dice[/] to an 8 sided [aq]dice[s][lg](Can ONLY be placed before roll)",
-    sCardDice8,diceCardSwapDice,true,9,[diceTypes.d8]),
+    sCardDice8,diceCardSwapDice,true,false,9,[diceTypes.d8]),
     
     dice12 : new createCardDice("12 Sided Dice",
     "Changes one random [aq]dice[/] to a 12 sided [aq]dice[s][lg](Can ONLY be placed before roll)",
-    sCardDice12,diceCardSwapDice,true,6,[diceTypes.d12]),
+    sCardDice12,diceCardSwapDice,true,false,6,[diceTypes.d12]),
     
     dice20 : new createCardDice("20 Sided Dice",
     "Changes one random [aq]dice[/] to a 20 sided [aq]dice[s][lg](Can ONLY be placed before roll)",
-    sCardDice20,diceCardSwapDice,true,4,[diceTypes.d20]),
+    sCardDice20,diceCardSwapDice,true,false,4,[diceTypes.d20]),
     
 };
 

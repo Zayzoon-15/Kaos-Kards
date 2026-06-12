@@ -10,11 +10,11 @@
 ///@arg {real} _width The width (Default = sprite_width)
 ///@arg {real} _height The height (Default = sprite_height)
 ///@arg {string} _layer The layer to make the effect on (Default = "Effects")
-///@arg {real} _depthOveride The depth of the effect
+///@arg {real} _depthOveride The depth of the effect (Default = undefined)
 function effectStar(_x,_y,_amount = 5,_sound = true,_xOffset = 30,_yOffset = 30,_width = sprite_width,_height = sprite_height,_layer = "Effects",_depthOveride = undefined)
 {
     //Play Sound
-    if _sound then audioPlaySfx([snStars1,snStars2]);
+    if _sound then audioPlaySfx([snStars1,snStars2],1,1,1,1,.04);
     
 	//Set Amount
 	_amount *= global.partAmount;

@@ -8,7 +8,10 @@
 ///@param {real} [_low] The lowest the pitch can be (Default = 1)
 ///@param {real} [_high] The highest the pitch can be (Default = 1)
 ///@param {real} _gain The gain of the sound (Default = 1)
-function audioPlaySfx(_sound,_low = 1,_high = 1,_gain = 1)
+///@param {real} _maxSounds The max amount of sounds that can play at once, set as -1 for infinite (Default = -1)
+///@param {real} _lowerRate The amount the gain gets lowered per sound played (Default = .05)
+///@param {real} _lowestGain The lowest amoun the gain can get (Default = .1)
+function audioPlaySfx(_sound,_low = 1,_high = 1,_gain = 1,_maxSounds = -1,_lowerRate = .05,_lowestGain = .1)
 {
     //Get Pitch
     var _pitch = random_range(_low,_high);
@@ -19,10 +22,31 @@ function audioPlaySfx(_sound,_low = 1,_high = 1,_gain = 1)
     {
         _asset = array_get_random(_sound);
     }
+    
+    //Lower Volume If Too Many Sounds
+    if _maxSounds != -1
+    {
+        if audioIsPlaying(_sound) > _maxSounds
+        {
+            repeat (audioIsPlaying(_sound)) {
+                if _gain > _lowestGain
+                {
+                    _gain -= _lowerRate;
+                }
+            }
+        }
+    }
 
     //Play Sound
-    return audio_play_sound(_asset,0,false,_gain,0,_pitch);
-    //audio_play_sound_at(_asset, _x, _y, 0, 1500, 100, 1, false, 0,  1,0,_pitch);
+    var _audio = audio_play_sound(_asset,0,false,_gain,0,_pitch);
+    
+    //Add Audio To Array If Volume Is On
+    if global.sfxVol > 0 and global.masterVol > 0 {
+        array_push(global.allSfx,_audio);
+    }
+    
+    //Return Audio
+    return _audio;
 }
 
 
@@ -203,4 +227,33 @@ function audioPlaySong(_song,_fadeTime = 30,_lastSongEndMethod = "Stop",_forcePo
             loopSongPoint = _forcePosInfo.pos;
         }
     }
+}
+
+
+///@desc Returns the amount of sounds playing (will return 0 if none duh)
+///@param {Asset.GMSound} _sound The sound asset (Can be an array of sounds)
+///@param {bool} _forceStop If it should stop all these sounds if true (Default = false)
+function audioIsPlaying(_sound,_forceStop = false)
+{
+    //Setup Vars
+    var _array = is_array(_sound) ? _sound : [_sound];
+    var _amountPlaying = 0;
+    
+    //Get Playing Amount
+    for (var i = 0; i < array_length(global.allSfx); i++) {
+        
+        if array_contains(_array,audio_sound_get_asset(global.allSfx[i])) and audio_is_playing(global.allSfx[i])
+        {
+            _amountPlaying ++;
+            
+            if _forceStop
+            {
+                audio_stop_sound(global.allSfx[i]);
+            }
+        }
+
+    }
+    
+    //Return
+    return _amountPlaying;
 }

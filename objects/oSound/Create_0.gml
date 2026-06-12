@@ -7,6 +7,9 @@ musicVol = 0;
 sfxVol = 0;
 voiceVol = 0;
 
+//Sfx
+global.allSfx = [];
+
 //Current Song
 global.curSong = "";
 global.curSongAudio = noone;

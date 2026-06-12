@@ -9,7 +9,7 @@ handY = y - 150;
 TweenFire(self,EaseOutCubic,TWEEN_MODE_ONCE,false,0,130,"handX",x,bbox_left - 500);
 
 //Rotate Hand
-TweenFire(self,EaseInOutBackSofter,TWEEN_MODE_ONCE,false,150,60,"handAngle",0,180);
+TweenFire(self,EaseInOutBackSofter,TWEEN_MODE_ONCE,false,150,50,"handAngle",0,180);
 
 //Open Hand
-alarm[1] = 300;
+alarm[1] = 250;

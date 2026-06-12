@@ -189,7 +189,7 @@ function cardStateGrabbed()
     {
         if isTargeted and other.wasPlaced
         {
-            isTargeted = false;
+            setTarget(other.id,false);
         }
     }
     
@@ -288,14 +288,16 @@ function cardStatePlaced()
     wasPlaced = true;
     wasOnSlot = true;
     
-    //Dice
+    //Set Target Dice
     if info.type == CARDTYPES.DICE and info.targetsDice
     {
         with oDice
         {
             if diceId == other.targetDice
             {
-                if !isTargeted then isTargeted = true;
+                if !isTargeted {
+                    setTarget(other.id,true);
+                }
             } else isTargeted = false;
         }
     }

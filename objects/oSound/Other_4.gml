@@ -16,7 +16,7 @@ if room == rKaos
     audioPlaySong(global.currentEnemy.customSong.kaos);
 }
 
-if room == rTournies
+if room == rTournies or room == rTourneySelector
 {
     audioPlaySong("Menu");
 }

@@ -11,5 +11,5 @@ while (string_length(formattedString) < 4) {
 }
 
 //Draw Text
-textSetup(fnTRNumber, fa_center, fa_middle, c_white, image_alpha);
+textSetup(fonts.TRNumber, fa_center, fa_middle, c_white, image_alpha);
 draw_text_transformed(x+54, y-15, formattedString, 1, 1, 0);

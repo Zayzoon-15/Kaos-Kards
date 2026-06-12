@@ -1,4 +1,4 @@
-///@desc Set Audio
+///@desc Set Volume
 
 //Set Targets
 var _ease = .3;

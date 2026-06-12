@@ -7,4 +7,4 @@ var _keys = [snKeyClick1,snKeyClick2,snKeyClick3,
 snKeyClick4,snKeyClick5,snKeyClick6,snKeyClick7,
 snKeyClick8];
 
-audioPlaySfx(_keys);
+audioPlaySfx(_keys,1,1,1,100,.001);

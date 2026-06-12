@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snDiceLockOn4",
+  "audioGroupId":{
+    "name":"agSfx",
+    "path":"audiogroups/agSfx",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":1.3794558,
+  "exportDir":"",
+  "name":"snDiceLockOn4",
+  "parent":{
+    "name":"Dice Lock",
+    "path":"folders/Sounds/Sfx/Game/Dice Lock.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snDiceLockOn4.ogg",
+  "volume":1.0,
+}

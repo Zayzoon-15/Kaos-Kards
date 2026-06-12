@@ -1,6 +1,6 @@
 
 //Setup
-textSetup(fnNumberOutline,fa_center,fa_middle,c_white,image_alpha);
+textSetup(fonts.numberOutline,fa_center,fa_middle,c_white,image_alpha);
 
 //Get String
 var _string;

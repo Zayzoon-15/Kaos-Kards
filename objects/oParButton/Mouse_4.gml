@@ -28,6 +28,6 @@ if canHover and canPress and !global.midTrans
     mobilePress = false;
     
 } else {
-    audioPlaySfx(snDeny);
+    audioPlaySfx([snDeny1,snDeny2]);
     shake += 5;
 }

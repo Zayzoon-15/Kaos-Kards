@@ -21,5 +21,10 @@ handImage = 0;
 handXScale = 1;
 handYscale = 1;
 
+//Blush
+blushTargetAlpha = -1;
+blushAlpha = blushTargetAlpha;
+lastMousDir = 0;
+
 //Show Hand
 alarm[0] = 230;

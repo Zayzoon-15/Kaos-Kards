@@ -113,7 +113,7 @@ function createCardKaos(_name,_desc,_sprite,_action = undefined,_extraArgs = [],
 /// @param {array} _extraArgs Extra arguments the givin function can use
 /// @param {array} _range The cards range Ex: [1,6] min-1 max-6
 /// @param {bool} _banned If the card is banned always
-function createCardDice(_name,_desc,_sprite,_action = function(){},_targetsDice = false,_uses = NaN,_extraArgs = [],_range = [],_banned = false) constructor
+function createCardDice(_name,_desc,_sprite,_action = function(){},_targetsDice = false,_targetSound = true,_uses = NaN,_extraArgs = [],_range = [],_banned = false) constructor
 {
     //Info
     name = _name;
@@ -132,6 +132,16 @@ function createCardDice(_name,_desc,_sprite,_action = function(){},_targetsDice 
             max : _range[1]
         }
     } else range = undefined;
+    
+    //Set Sound
+    if _targetSound and !is_struct(_targetSound)
+    {
+        targetSound = {
+            on  : [snDiceLockOn1,snDiceLockOn2,snDiceLockOn3,snDiceLockOn4],
+            off : [snDiceLockOff1,snDiceLockOff2,snDiceLockOff3,snDiceLockOff4],
+        }
+        
+    } else targetSound = _targetSound;
     
     //Get Action
     var _func = _action;

@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snDeny2",
+  "audioGroupId":{
+    "name":"agSfx",
+    "path":"audiogroups/agSfx",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.9598186,
+  "exportDir":"",
+  "name":"snDeny2",
+  "parent":{
+    "name":"Button",
+    "path":"folders/Sounds/Sfx/Ui/Button.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snDeny2.ogg",
+  "volume":1.0,
+}

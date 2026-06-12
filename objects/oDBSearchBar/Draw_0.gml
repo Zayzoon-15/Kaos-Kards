@@ -37,7 +37,7 @@ draw_self();
 if focused then draw_sprite_ext(sprite_index,1,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha);
 
 //Setup Text
-textSetup(fnDBLetter,fa_left,fa_middle);
+textSetup(fonts.DBLetter,fa_left,fa_middle);
 var _text = $"{text}";
 
 //Flash Bar
