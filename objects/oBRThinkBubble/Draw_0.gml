@@ -6,7 +6,6 @@ draw_self();
 textShow += textShowSpd;
 textSetup(fonts.BRThink,fa_center,fa_top);
 var _string = string_copy(text,0,textShow);
-var _maxWidth = bbox_right - bbox_left;
 var _charWidth = 30;
 var _charHeight = 45;
 var _cursorX = 0;
@@ -18,15 +17,8 @@ for (var i = 1; i < string_length(_string)+1; i++) {
     //Get Character
     var _char = string_copy(_string,i,1);
     
-    //Wrap Next Line
-    if _cursorX + _charWidth > maxWidth
-    {
-        _cursorX = 0;
-        _cursorY += _charHeight;
-    }
-    
     //Wrap Around If Word Too Big
-    if _char != " " and i == 1 or string_copy(_string,i-1,1) == " "
+    if _char != " " and (i == 1 or string_copy(_string,i-1,1) == " ")
     {
         var _word = "";
         var _k = i;
@@ -44,8 +36,9 @@ for (var i = 1; i < string_length(_string)+1; i++) {
         }
         
         //Move To Next Line If Word Too Big
-        if _cursorX + string_width(_word) > _maxWidth
+        if _cursorX + string_width(_word) > maxWidth
         {
+            
             _cursorX = 0;
             _cursorY += _charHeight;
         }

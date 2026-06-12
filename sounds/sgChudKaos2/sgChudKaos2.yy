@@ -6,7 +6,7 @@
     "path":"audiogroups/agMusic",
   },
   "bitDepth":1,
-  "channelFormat":1,
+  "channelFormat":0,
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
