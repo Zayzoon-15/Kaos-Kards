@@ -2,6 +2,9 @@
 canHover = true;
 pressed = false;
 
+//Position
+stickToRight = true;
+
 //Enteractions
 createBubbleOnClick = false;
 bubbleText = "No Text";

@@ -1,5 +1,5 @@
 //Click Item
-if touchingMouse() and !global.menuOpen and canHover
+if touchingMouse() and !global.menuOpen and canHover and !touchingMouse(oParButton)
 {
     if mouse_check_button_pressed(mb_left)
     {
@@ -11,6 +11,9 @@ if touchingMouse() and !global.menuOpen and canHover
         action();
     }
 } else pressed = false;
+
+//Stick To Screen
+x = getPosToWindow(stickToRight);
 
 //Draw Tipbox
 if tipBox
