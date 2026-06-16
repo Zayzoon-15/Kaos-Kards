@@ -189,8 +189,8 @@
   "swatchColours":null,
   "swfPrecision":0.5,
   "textureGroupId":{
-    "name":"Default",
-    "path":"texturegroups/Default",
+    "name":"DeckBuilder",
+    "path":"texturegroups/DeckBuilder",
   },
   "type":0,
   "VTile":false,

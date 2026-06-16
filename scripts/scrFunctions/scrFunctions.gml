@@ -343,3 +343,38 @@ function roundHalf(_number)
 }
 
 
+/// @desc Loads a texture group for use if the current room is one of the target rooms.
+/// If the current room is not listed it will unload the texture.
+/// @param {string} [_group] The target texture group
+/// @param {array<asset.gmroom>} [_targetRooms] The rooms to load said texture group in.
+/// @param {asset.gmroom} [_curRoom] The room that will load in
+function textureGroupLoad(_group = "group",_targetRooms = [rSetup],_curRoom = global.roomTarget)
+{
+    //Get Status
+    var _status = texturegroup_get_status(_group)
+    
+    //Load Texture
+    if array_contains(_targetRooms,_curRoom)
+    {
+        //Debug Print
+        print($"Loading The Texture Group: '{_group}'");
+        
+        //Load
+        if _status != texturegroup_status_fetched {
+            texturegroup_load(_group);
+        }
+        
+        //Debug Print
+        print($"Texture Group: '{_group}' Was Loaded");
+        
+    } else { //Unload Texture
+    	
+        if _status != texturegroup_status_unloaded {
+            texturegroup_unload(_group);
+        }
+        
+        //Debug Print
+        print($"Texture Group: '{_group}' Was UnLoaded");
+    }
+    
+}

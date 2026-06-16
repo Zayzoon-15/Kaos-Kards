@@ -209,7 +209,7 @@
     {"name":"TGMX_9_Settings","order":10,"path":"scripts/TGMX_9_Settings/TGMX_9_Settings.yy",},
     {"name":"TGMX_Experimental","order":11,"path":"scripts/TGMX_Experimental/TGMX_Experimental.yy",},
     {"name":"TGMX_System","order":1,"path":"scripts/TGMX_System/TGMX_System.yy",},
-    {"name":"Tourney","order":1,"path":"scripts/Tourney/Tourney.yy",},
+    {"name":"Tourneys","order":1,"path":"scripts/Tourneys/Tourneys.yy",},
     {"name":"VoiceInfo","order":2,"path":"scripts/VoiceInfo/VoiceInfo.yy",},
     {"name":"Voiceovers","order":3,"path":"scripts/Voiceovers/Voiceovers.yy",},
     {"name":"seqFadeOut","order":1,"path":"sequences/seqFadeOut/seqFadeOut.yy",},

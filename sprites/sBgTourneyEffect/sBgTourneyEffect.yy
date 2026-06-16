@@ -100,8 +100,8 @@
   "swatchColours":null,
   "swfPrecision":0.5,
   "textureGroupId":{
-    "name":"Default",
-    "path":"texturegroups/Default",
+    "name":"Tourney",
+    "path":"texturegroups/Tourney",
   },
   "type":0,
   "VTile":false,

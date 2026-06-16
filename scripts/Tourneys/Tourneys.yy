@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"Tourney",
+  "%Name":"Tourneys",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Tourney",
+  "name":"Tourneys",
   "parent":{
     "name":"Tourneys",
     "path":"folders/Scripts/Tourneys.yy",

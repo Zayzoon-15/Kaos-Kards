@@ -78,12 +78,14 @@ if state == CARDSTATE.GRABBED
                                 putCardInHand();
                                 
                                 //Set Dice
-                                with oDice
+                                if info.type == CARDTYPES.DICE
                                 {
-                                    if isTargeted {
-                                        setTarget(other.id,false);
+                                    with oDice
+                                    {
+                                        if isTargeted then setTarget(other.id,false);
                                     }
                                 }
+
                             }
                         }
                     }
@@ -96,12 +98,14 @@ if state == CARDSTATE.GRABBED
             } else putCardInHand();
             
             //Set Dice
-            with oDice
+            if info.type == CARDTYPES.DICE
             {
-                if isTargeted {
-                    isTargeted = false;
+                with oDice
+                {
+                    if isTargeted then isTargeted = false;
                 }
             }
+
             
         } else putCardInHand(); //Not Touching Any Slots
     } 

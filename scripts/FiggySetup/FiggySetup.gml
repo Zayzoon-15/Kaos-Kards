@@ -16,19 +16,19 @@ function FiggySetup() {
         Figgy.Button("Reset Room",function(){room_restart()});
         Figgy.Button("Stickers",function(){transStart(room,oTransSticker)});
         Figgy.Separator("Main Game");
-        Figgy.Button("Prepare",function(){room_goto(rPrepare)});
+        Figgy.Button("Prepare",function(){transStart(rPrepare)});
         Figgy.Button("Enemy",function(){if global.currentEnemy == undefined {global.currentEnemy = enemyInfo.dog} room_goto(rEnemy)});
         Figgy.Button("Kaos",function(){if global.currentEnemy == undefined {global.currentEnemy = enemyInfo.dog} room_goto(rKaos)});
-        Figgy.Button("Break Room",function(){room_goto(rBreakRoom)});
+        Figgy.Button("Break Room",function(){transStart(rBreakRoom)});
         Figgy.Separator("Menus");
-        Figgy.Button("Menu",function(){room_goto(rTournies)});
-        Figgy.Button("Tourney Selector",function(){room_goto(rTourneySelector)});
-        Figgy.Button("DeckBuilder",function(){room_goto(rDeckBuilder1)});
+        Figgy.Button("Menu",function(){transStart(rTournies)});
+        Figgy.Button("Tourney Selector",function(){transStart(rTourneySelector)});
+        Figgy.Button("DeckBuilder",function(){transStart(rDeckBuilder1)});
         Figgy.Separator("Testing");
-        Figgy.Button("Card Test Room",function(){room_goto(rTestingCard)});
-        Figgy.Button("Music Test Room",function(){room_goto(rTestingMusic)});
-        Figgy.Button("Voice Test Room",function(){room_goto(rTestingVoice)});
-        Figgy.Button("Test Room",function(){room_goto(rTesting)});
+        Figgy.Button("Card Test Room",function(){transStart(rTestingCard)});
+        Figgy.Button("Music Test Room",function(){transStart(rTestingMusic)});
+        Figgy.Button("Voice Test Room",function(){transStart(rTestingVoice)});
+        Figgy.Button("Test Room",function(){transStart(rTesting)});
     
         #endregion
     

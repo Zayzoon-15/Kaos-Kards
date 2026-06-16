@@ -100,7 +100,7 @@ setTarget = function(_card = noone,_target)
 {
     isTargeted = _target;
     
-    if _card != noone and _card.info.targetSound
+    if _card != noone and _card.info.type == CARDTYPES.DICE and _card.info.targetSound
     {
         audioPlaySfx(_target ? _card.info.targetSound.on : _card.info.targetSound.off);
     }

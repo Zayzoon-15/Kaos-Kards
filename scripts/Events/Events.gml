@@ -231,26 +231,33 @@ function eventAllCardValuesGained()
 
 
 /// @desc This event plays when a room transition has occured
-/// @param {asset.gmroom} [_curRoom] The room transitioned to
+///Note that this event plays a few frames before the room switches
+/// @param {asset.gmroom} [_nextRoom] The room transitioned to
 /// @param {asset.gmroom} [_lastRoom] The room before the transition
-function eventTransitioned(_curRoom = global.roomTarget,_lastRoom = room)
+function eventTransitioned(_nextRoom = global.roomTarget,_lastRoom = room)
 {
     
     #region Load Textures
     
+    //Cards
+    textureGroupLoad("Cards",[
+        rPrepare,
+        rEnemy,
+        rKaos,
+        rDeckBuilder1,
+        rDeckBuilder2,
+    ]);
     
-    //Deck Builder
-    if _curRoom == rDeckBuilder1
-    {
-        texturegroup_load("DeckBuilder");
-    } else if _curRoom != rDeckBuilder2
-    {
-        texturegroup_unload("DeckBuilder");
-    }
+    //Menus
+    textureGroupLoad("DeckBuilder",[rDeckBuilder1,rDeckBuilder2]);
+    textureGroupLoad("Tourney",[rTourneySelector]);
+    textureGroupLoad("Enemies",[rTournies,rEnemy,rKaos,rPrepare]);
+    
+    //Game
+    textureGroupLoad("Game",[rPrepare,rEnemy,rKaos]);
+    textureGroupLoad("BreakRoom",[rBreakRoom]);
     
     #endregion
     
 
-    
-    
 }

@@ -7,7 +7,7 @@
 /// @param {real} [_timeLimit] The time limit of the tournament in minutes
 /// @param {array<Asset.GMObject>} [_items] The items the player recieves after winning (Shows up in the break room)
 /// @param {array<Asset.GMObject>} [_rewards] The reward the player recieves after winning (Shows up in the reward ui)
-function Tourney(_name = "Tourney Name",_art = sTourneyArtBorder,_enemies = [enemyInfo.dog],_rules = [ruleInfo.deckShuffle],_timeLimit = -1,_items = [],_rewards = []) constructor {
+function createTourney(_name = "Tourney Name",_art = sTourneyArtBorder,_enemies = [enemyInfo.dog],_rules = [ruleInfo.deckShuffle],_timeLimit = -1,_items = [],_rewards = []) constructor {
     
     //Info
     name = _name;
@@ -46,24 +46,24 @@ function initTourney(){
     //Info
     tourneyInfo = {
         
-        debut : new Tourney("Debut Tournament", sTourneyArt1, [
+        debut : new createTourney("Debut Tournament", sTourneyArt1, [
             enemyInfo.dog, enemyInfo.cock, enemyInfo.angel,
             enemyInfo.alien, enemyInfo.beer
         ], [], -1, [oBRShop,oBRPickle]),
         
-        retro : new Tourney("Retro Tournament", sTourneyArt2, [
+        retro : new createTourney("Retro Tournament", sTourneyArt2, [
             enemyInfo.handsy, enemyInfo.chud,
         ], [
             ruleInfo.deckShuffle, ruleInfo.timeLimit
         ], 5, [oBRTv,oBRWand]),
         
-        spooky : new Tourney("Spooky Tournament", sTourneyArt3, [
+        spooky : new createTourney("Spooky Tournament", sTourneyArt3, [
             enemyInfo.bones, enemyInfo.fungi,
         ], [
             ruleInfo.deckShuffle, ruleInfo.timeLimit
         ], 1.5),
         
-        cameos : new Tourney("Extras", sTourneyArt4, [
+        cameos : new createTourney("Extras", sTourneyArt4, [
             enemyInfo.jsg, enemyInfo.pug, enemyInfo.fungi,
             enemyInfo.teto,
         ],[

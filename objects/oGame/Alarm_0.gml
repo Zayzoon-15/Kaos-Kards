@@ -4,4 +4,5 @@
 instance_create_depth(0,0,depth,oSound);
 
 //Start Game
-room_goto_next();
+transStart(room_next(room));
+//room_goto_next();
