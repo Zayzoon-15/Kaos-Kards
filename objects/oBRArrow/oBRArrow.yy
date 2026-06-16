@@ -1,17 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"oBRNext",
+  "%Name":"oBRArrow",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oBRNext",
+  "name":"oBRArrow",
   "overriddenProperties":[],
   "parent":{
-    "name":"Ui",
-    "path":"folders/Objects/Game/BreakRoom/Ui.yy",
+    "name":"Elements",
+    "path":"folders/Objects/Game/BreakRoom/Elements.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -32,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sDog",
-    "path":"sprites/sDog/sDog.yy",
+    "name":"sBRArrow",
+    "path":"sprites/sBRArrow/sBRArrow.yy",
   },
   "spriteMaskId":null,
   "visible":true,

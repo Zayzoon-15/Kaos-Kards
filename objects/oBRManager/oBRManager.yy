@@ -9,8 +9,8 @@
   "name":"oBRManager",
   "overriddenProperties":[],
   "parent":{
-    "name":"Break Room",
-    "path":"folders/Objects/Game/Break Room.yy",
+    "name":"BreakRoom",
+    "path":"folders/Objects/Game/BreakRoom.yy",
   },
   "parentObjectId":null,
   "persistent":false,

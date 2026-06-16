@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Elements",
-    "path":"folders/Objects/Game/Break Room/Elements.yy",
+    "path":"folders/Objects/Game/BreakRoom/Elements.yy",
   },
   "parentObjectId":null,
   "persistent":false,

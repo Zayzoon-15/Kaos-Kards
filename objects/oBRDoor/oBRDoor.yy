@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Elements",
-    "path":"folders/Objects/Game/Break Room/Elements.yy",
+    "path":"folders/Objects/Game/BreakRoom/Elements.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -29,10 +29,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"sBRDoor",
-    "path":"sprites/sBRDoor/sBRDoor.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

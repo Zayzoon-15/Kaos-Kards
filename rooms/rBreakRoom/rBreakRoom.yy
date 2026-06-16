@@ -25,6 +25,7 @@
     {"name":"inst_7C495BFB","path":"rooms/rBreakRoom/rBreakRoom.yy",},
     {"name":"inst_7838CE24","path":"rooms/rBreakRoom/rBreakRoom.yy",},
     {"name":"inst_3FC849D0","path":"rooms/rBreakRoom/rBreakRoom.yy",},
+    {"name":"inst_5C3A12C9","path":"rooms/rBreakRoom/rBreakRoom.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -43,6 +44,7 @@
     {"$GMRInstanceLayer":"","%Name":"TableTop","depth":400,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_76F2C10D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_76F2C10D","objectId":{"name":"oBRBoombox","path":"objects/oBRBoombox/oBRBoombox.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":838.0,"y":327.0,},
         {"$GMRInstance":"v4","%Name":"inst_6C907079","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6C907079","objectId":{"name":"oBRWand","path":"objects/oBRWand/oBRWand.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":511.0,"y":336.0,},
+        {"$GMRInstance":"v4","%Name":"inst_5C3A12C9","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5C3A12C9","objectId":{"name":"oBRArrow","path":"objects/oBRArrow/oBRArrow.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":162.5,"y":165.0,},
       ],"layers":[],"name":"TableTop","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"BoardItems","depth":500,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_23F8D6B9","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_23F8D6B9","objectId":{"name":"oBRSticky","path":"objects/oBRSticky/oBRSticky.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":717.0,"y":108.0,},

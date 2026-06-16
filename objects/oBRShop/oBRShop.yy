@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Items",
-    "path":"folders/Objects/Game/Break Room/Items.yy",
+    "path":"folders/Objects/Game/BreakRoom/Items.yy",
   },
   "parentObjectId":{
     "name":"oParBRItemPin",

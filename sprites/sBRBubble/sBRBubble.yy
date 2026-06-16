@@ -47,8 +47,8 @@
   },
   "origin":9,
   "parent":{
-    "name":"Break Room",
-    "path":"folders/Sprites/Game/Break Room.yy",
+    "name":"BreakRoom",
+    "path":"folders/Sprites/Game/BreakRoom.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Ui",
-    "path":"folders/Objects/Game/Break Room/Ui.yy",
+    "path":"folders/Objects/Game/BreakRoom/Ui.yy",
   },
   "parentObjectId":null,
   "persistent":false,
