@@ -1,3 +1,10 @@
+//DEBUG
+if is_debug_overlay_open()
+{
+    instance_destroy();
+    exit;
+}
+
 //Set Position
 x = ROOM_CENTER.x;
 y = 704;

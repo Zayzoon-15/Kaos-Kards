@@ -236,28 +236,6 @@ function eventAllCardValuesGained()
 /// @param {asset.gmroom} [_lastRoom] The room before the transition
 function eventTransitioned(_nextRoom = global.roomTarget,_lastRoom = room)
 {
-    
-    #region Load Textures
-    
-    //Cards
-    textureGroupLoad("Cards",[
-        rPrepare,
-        rEnemy,
-        rKaos,
-        rDeckBuilder1,
-        rDeckBuilder2,
-    ]);
-    
-    //Menus
-    textureGroupLoad("DeckBuilder",[rDeckBuilder1,rDeckBuilder2]);
-    textureGroupLoad("Tourney",[rTourneySelector]);
-    textureGroupLoad("Enemies",[rTournies,rEnemy,rKaos,rPrepare]);
-    
-    //Game
-    textureGroupLoad("Game",[rPrepare,rEnemy,rKaos]);
-    textureGroupLoad("BreakRoom",[rBreakRoom]);
-    
-    #endregion
-    
+
 
 }
