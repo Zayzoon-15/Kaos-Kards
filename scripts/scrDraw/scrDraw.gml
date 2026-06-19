@@ -142,11 +142,19 @@ function createAlertMessage(_text,_lifeSpan = 30,_x=room_width/2,_y=235,_targetF
 ///Make sure to have these variables: "frame", "animationEnd"
 ///@arg {real} _frame The animation frame
 ///@arg {real} _anims The amount of animations (Default = 4)
-function spriteLoopFrames(_frame,_anims = 4)
+/// @param {asset.gmsprite} [_targetSprite] The target sprite to check the animations for (Default = sprite_index)
+/// @param {bool} [_changeMe] If it should change the current objects sprite (Default = true)
+function spriteLoopFrames(_frame,_anims = 4,_targetSprite = sprite_index,_changeMe = true)
 {
+    //Create Required Variables
+    if !variable_instance_exists(self.id,"frame")
+    {
+        variable_instance_set(self.id,"frame",0);
+    }
+    
     //Set Frame
-    var _totalFrames = image_number / _anims;
-    frame += sprite_get_speed(sprite_index)/60;
+    var _totalFrames = sprite_get_number(_targetSprite) / _anims;
+    frame += sprite_get_speed(_targetSprite)/60;
     
     //Loop Animation
     if frame >= _totalFrames
@@ -155,9 +163,15 @@ function spriteLoopFrames(_frame,_anims = 4)
         frame -= _totalFrames;
     } else animationEnd = false;
     
+    //Final Frame
+    var _finalFrame = frame + (_frame*_totalFrames);
+    _finalFrame = clamp(_finalFrame, 0, sprite_get_number(_targetSprite)-1);
+    
     //Update Sprte
-    image_index = frame + (_frame*_totalFrames);
-    image_index = clamp(image_index, 0, image_number-1);
+    if _changeMe
+    {
+        image_index = _finalFrame;
+    } else return _finalFrame;
 }
 
 
@@ -723,4 +737,18 @@ function drawCircularBar(_x, _y, _value, _color, _radius, _width = 5,_outline = 
     //Reset Color
     draw_set_color(c_white);
     
+}
+
+
+/// @desc Draws a rectangle based on the 2D Vectors given
+/// @param {struct.vector2} [_p1] The top left point
+/// @param {struct.vector2} [_p2] The bottom left point
+/// @param {struct.vector2} [_p3] The top right point
+/// @param {struct.vector2} [_p4] The bottom right point
+/// @param {bool} [_outline] If the rectangle is an outline or solid
+function drawRectPos(_p1 = new Vector2(),_p2 = new Vector2(),_p3 = new Vector2(),_p4 = new Vector2(),_outline = false)
+{
+    //Draw Rectangle
+    draw_triangle(_p1.x,_p1.y,_p2.x,_p2.y,_p4.x,_p4.y,_outline);
+    draw_triangle(_p4.x,_p4.y,_p3.x,_p3.y,_p1.x,_p1.y,_outline);
 }

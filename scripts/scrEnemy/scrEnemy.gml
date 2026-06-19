@@ -171,6 +171,7 @@ function Enemy()
         //Switch Animation
         with _targetObj
         {
+            //Switch Animation
             if _clip != undefined and currentAnim != _clip and ignoreTime <= 0
             {
                 currentAnim = _clip;

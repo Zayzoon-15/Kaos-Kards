@@ -1,0 +1,1 @@
+global.menuOpen = false;

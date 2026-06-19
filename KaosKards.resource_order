@@ -1,5 +1,8 @@
 {
-  "FolderOrderSettings":[],
+  "FolderOrderSettings":[
+    {"name":"MiniBoss","order":3,"path":"folders/Objects/Game/MiniBoss.yy",},
+    {"name":"EnemyIntro","order":1,"path":"folders/Objects/Ui/EnemyIntro.yy",},
+  ],
   "ResourceOrderSettings":[
     {"name":"acBRWand","order":1,"path":"animcurves/acBRWand/acBRWand.yy",},
     {"name":"acCard","order":2,"path":"animcurves/acCard/acCard.yy",},
