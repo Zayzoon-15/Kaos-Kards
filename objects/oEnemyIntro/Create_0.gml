@@ -5,6 +5,10 @@ global.menuOpen = true;
 easeTime = 0;
 TweenFire(self,EaseOutBack,TWEEN_MODE_ONCE,false,0,60,"easeTime",0,1);
 
+//Bg
+bgAlpha = 0;
+TweenFire(self,EaseOutCubic,TWEEN_MODE_ONCE,false,0,60,"bgAlpha",0,1);
+
 //Flash
 flashAlpha = 0;
 

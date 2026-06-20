@@ -13,4 +13,4 @@ with (oEnemyIntroBtn) {
 	TweenFire(self,EaseInBack,TWEEN_MODE_ONCE,false,0,_time,"y",y,SCREEN_HEIGHT + 50);
 }
 
-timeSourceCreate(_time+10,instance_destroy,[self]);
+timeSourceCreate(_time+10,instance_destroy,[self],time_source_units_frames);
