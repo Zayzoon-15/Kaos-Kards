@@ -1,9 +1,12 @@
 //Inherit
 event_inherited();
 
+//Secret hehehe
+if irandom_range(1,100) == 1 then sprite_index = sBRChud;
+
 //Info
 tipBox = true;
-tipBoxString = "A Wand";
+tipBoxString = sprite_index == sBRChud ? "A Chud Plush..." : "A Wand";
 
 //Animation Curve
 curvePos = 1;
@@ -27,5 +30,9 @@ action = function()
     angleDir = choose(-1,1);
     
     //Effect
-    effectStar(bbox_right-10,y,5,true,0,0,10,5);
+    if sprite_index == sBRWand
+    {
+        effectStar(bbox_right-10,y,5,true,0,0,10,5);
+    } else effectStar(x,y - sprite_height/2,5);
+    
 }

@@ -49,7 +49,7 @@ if (touchingMouse() and !global.menuOpen and !global.midTrans) or image_speed ==
     shadowX = lerp(shadowX,-2,.2);
     
     //Angle
-    angle = lerp(angle,5 * angleDir,.2);
+    angle = lerp(angle,3 * angleDir,.2);
 } else {
     
     //Press
