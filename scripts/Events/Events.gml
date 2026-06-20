@@ -111,6 +111,12 @@ function eventNextRoundStarted()
     //Set Gamestate
     gameState = GAMESTATES.PREPARE;
     
+    //Enemy Show
+    if global.gameRound == 0 and global.currentTourney != undefined
+    {
+        instance_create_depth(0,0,-1,oEnemyIntro);
+    }
+    
     //Increase Round
     global.gameRound ++;
     print("Game Round",global.gameRound)

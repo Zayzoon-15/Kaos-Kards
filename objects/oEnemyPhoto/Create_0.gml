@@ -2,7 +2,8 @@
 sprite_index = global.currentEnemy.sprite;
 
 //Animation
-Enemy.SetupAnims(true);
+anim = new animManager(global.currentEnemy);
+anim.play("idle");
 
 //Hover
 canHover = true;
@@ -14,7 +15,7 @@ alarm[1] = 80;
 hurt = function()
 {
     //Play Animation
-    Enemy.PlayAnim("hurt");
+    anim.play("hurt");
     shake += 15;
     
     //Start Reset
@@ -24,7 +25,7 @@ hurt = function()
 win = function(_stars = true)
 {
     //Play Animation
-    Enemy.PlayAnim("win");
+    anim.play("win");
     
     //Stars
     if _stars then effectStar(x,y,10,false,10,15);

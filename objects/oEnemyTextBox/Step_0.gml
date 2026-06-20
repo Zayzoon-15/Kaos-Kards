@@ -18,7 +18,7 @@ if startTalking
 //Animate Enemy
 if textPos < string_length(text)+15
 {
-    Enemy.PlayAnim("talk");
+    oEnemyPhoto.anim.play("talk");
 }
 
 //Text Done
@@ -27,7 +27,7 @@ if textPos >= string_length(text)+15 and !doneTalking
     //Set Enemy
     with oEnemyPhoto
     {
-        Enemy.PlayAnim("idle");
+        anim.play("idle");
         alarm[1] = irandom_range(120,300);
     }
     

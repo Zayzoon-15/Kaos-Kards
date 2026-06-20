@@ -8,4 +8,4 @@ x = global.stickUiToScreen ? getPosToWindow(true) : xstart;
 sprite_index = global.currentEnemy.sprite;
 
 //Animate
-Enemy.SetupAnims(false);
+anim.update();

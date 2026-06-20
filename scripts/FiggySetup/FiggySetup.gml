@@ -25,10 +25,11 @@ function FiggySetup() {
         Figgy.Button("Tourney Selector",function(){transStart(rTourneySelector)});
         Figgy.Button("DeckBuilder",function(){transStart(rDeckBuilder1)});
         Figgy.Separator("Testing");
+        Figgy.Button("Test Room",function(){transStart(rTesting)});
         Figgy.Button("Card Test Room",function(){transStart(rTestingCard)});
         Figgy.Button("Music Test Room",function(){transStart(rTestingMusic)});
         Figgy.Button("Voice Test Room",function(){transStart(rTestingVoice)});
-        Figgy.Button("Test Room",function(){transStart(rTesting)});
+        Figgy.Button("Enemy Test Room",function(){transStart(rTestingEnemy)});
     
         #endregion
     
@@ -42,7 +43,10 @@ function FiggySetup() {
             }});
         //Figgy.Int("Enemy Frame",0,0,3,1,function(){with oEnemyPhoto {currentAnim = argument0}});
         Figgy.String("Enemy Animation","idle",function(){
-            Enemy.PlayAnim(argument0);
+            with oEnemyPhoto
+            {
+                anim.play(argument0);
+            }
         });
         Figgy.Button("Enemy Talk",function(){
             with oEnemyPhoto

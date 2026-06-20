@@ -27,12 +27,12 @@ if playerWon
 	with oEnemyPhoto
 	{
 		//Set Animation
-		Enemy.PlayAnim("hurt");
+        anim.play("hurt");
 		canHover = false;
 		
 		//Set Death Photo
 		timeSourceCreate(_enemyDeathTime,function(){
-			Enemy.PlayAnim("death");
+            oEnemyPhoto.anim.play("death");
 		});
 	}
 	
@@ -45,7 +45,7 @@ if playerWon
 	with oEnemyPhoto
 	{
 		//Set Animation
-		Enemy.PlayAnim("win");
+        anim.play("win");
 		canHover = false;
 		
 		//Stars

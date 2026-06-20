@@ -1,5 +1,5 @@
 //Enemy Animation
-Enemy.PlayAnim("kaosHotDogStart");
+oEnemyPhoto.anim.play("kaosHotDogStart");
 
 //Change Song
 audioPlaySong(global.currentEnemy.customSong.minigame);

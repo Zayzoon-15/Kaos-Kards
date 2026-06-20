@@ -12,11 +12,11 @@ draw_sprite_ext(sprite_index,image_index,boxX+_shakeX,boxY+_shakeY,xscale,yscale
 
 //Draw Text
 textSetup(fnMain,fa_center,fa_middle,c_white,image_alpha);
-draw_text_transformed(boxX+_shakeX,boxY+_shakeY,text,textXScale,textYScale,0);
+draw_text_transformed(boxX+_shakeX,boxY+_shakeY,text,textXScale,textYScale,image_angle);
 
 
 //Draw X
-if !canHover then draw_sprite(sButtonX,0,boxX+_shakeX,boxY+_shakeY);
+if !canHover then draw_sprite_ext(sButtonX,0,boxX+_shakeX,boxY+_shakeY,1,1,image_angle,c_white,1);
 
 //Reset
 drawReset();

@@ -11,7 +11,7 @@ enemyInfo = {
     #region
     
     dog : new Enemy.Create("Dog the Duck",
-        sDog, Enemy.Anims(), Enemy.Dialogue(),
+        sDog, Enemy.Anims(2,2,2,2,2), Enemy.Dialogue(),
         Enemy.Difficulty(.1,.2,100,.62,.6),
         [
             actionCards.heal, actionCards.heal,

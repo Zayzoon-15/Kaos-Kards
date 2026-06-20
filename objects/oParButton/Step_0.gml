@@ -48,8 +48,8 @@ if stickToScreen
 }
 
 //Ease
-boxX = lerp(boxX,targetX,.2);
-boxY = lerp(boxY,targetY,.2);
+boxX = lerp(boxX,targetX,posEaseTime);
+boxY = lerp(boxY,targetY,posEaseTime);
 xscale = lerp(xscale,image_xscale,scaleTime);
 yscale = lerp(yscale,image_yscale,scaleTime);
 image_alpha = lerp(image_alpha,alpha,alphaTime);

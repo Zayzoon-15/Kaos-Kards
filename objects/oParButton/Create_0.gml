@@ -18,6 +18,7 @@ boxX = x;
 boxY = y;
 targetX = x;
 targetY = y;
+posEaseTime = .2;
 stickToScreen = false; //Makes the position change based on the screen
 stickToScreenRight = true; //If it should stick the the right side or left side of the screen
 stickToScreenOffset = xstart; //The offset of the x position to the screen

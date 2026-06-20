@@ -12,7 +12,7 @@ if winner
 } else { //Lose Outcome
     if playerId == 0 then attackEffectAdd(effectInfo.poison,_poisonValue,false); //Player Lost
     if playerId == 1 { //Enemy Lost
-        Enemy.PlayAnim("kaosHotDogLose",180,"idle");
+        oEnemyPhoto.anim.play("kaosHotDogLose","idle",180);
         attackEffectAdd(effectInfo.poison,_poisonValue,true);
     }
 }
