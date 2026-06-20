@@ -2,6 +2,7 @@
 sprite_index = global.currentEnemy.sprite;
 
 //Animation
+shake = 0;
 anim = new animManager(global.currentEnemy);
 anim.play("idle");
 
