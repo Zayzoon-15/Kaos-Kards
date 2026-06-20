@@ -21,7 +21,7 @@ text = " Start Battle ";
 //Action
 action = function()
 {
-    oEnemyIntro.alarm[2] = 50;
+    oEnemyIntro.alarm[2] = 20;
     
     //Don't Hover
     canHover = false;
