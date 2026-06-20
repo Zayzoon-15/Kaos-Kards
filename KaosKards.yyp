@@ -548,6 +548,7 @@
     {"id":{"name":"snDiscard1","path":"sounds/snDiscard1/snDiscard1.yy",},},
     {"id":{"name":"snDiscard2","path":"sounds/snDiscard2/snDiscard2.yy",},},
     {"id":{"name":"snDiscard3","path":"sounds/snDiscard3/snDiscard3.yy",},},
+    {"id":{"name":"snEnemyIntro","path":"sounds/snEnemyIntro/snEnemyIntro.yy",},},
     {"id":{"name":"snExplosion","path":"sounds/snExplosion/snExplosion.yy",},},
     {"id":{"name":"snFire1","path":"sounds/snFire1/snFire1.yy",},},
     {"id":{"name":"snFire2","path":"sounds/snFire2/snFire2.yy",},},
@@ -850,9 +851,9 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"rSetup","path":"rooms/rSetup/rSetup.yy",},},
     {"roomId":{"name":"rTournies","path":"rooms/rTournies/rTournies.yy",},},
+    {"roomId":{"name":"rTesting","path":"rooms/rTesting/rTesting.yy",},},
     {"roomId":{"name":"rBreakRoom","path":"rooms/rBreakRoom/rBreakRoom.yy",},},
     {"roomId":{"name":"rPrepare","path":"rooms/rPrepare/rPrepare.yy",},},
-    {"roomId":{"name":"rTesting","path":"rooms/rTesting/rTesting.yy",},},
     {"roomId":{"name":"rTestingEnemy","path":"rooms/rTestingEnemy/rTestingEnemy.yy",},},
     {"roomId":{"name":"rDeckBuilder2","path":"rooms/rDeckBuilder2/rDeckBuilder2.yy",},},
     {"roomId":{"name":"rDeckBuilder1","path":"rooms/rDeckBuilder1/rDeckBuilder1.yy",},},

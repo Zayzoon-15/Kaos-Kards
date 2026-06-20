@@ -2,6 +2,11 @@
   "FolderOrderSettings":[
     {"name":"MiniBoss","order":3,"path":"folders/Objects/Game/MiniBoss.yy",},
     {"name":"EnemyIntro","order":1,"path":"folders/Objects/Ui/EnemyIntro.yy",},
+    {"name":"Effects","order":1,"path":"folders/Sounds/Sfx/Effects.yy",},
+    {"name":"Game","order":2,"path":"folders/Sounds/Sfx/Game.yy",},
+    {"name":"Kaos","order":3,"path":"folders/Sounds/Sfx/Kaos.yy",},
+    {"name":"Transitions","order":4,"path":"folders/Sounds/Sfx/Transitions.yy",},
+    {"name":"Ui","order":5,"path":"folders/Sounds/Sfx/Ui.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"acBRWand","order":1,"path":"animcurves/acBRWand/acBRWand.yy",},
@@ -283,6 +288,7 @@
     {"name":"snDiscard1","order":6,"path":"sounds/snDiscard1/snDiscard1.yy",},
     {"name":"snDiscard2","order":7,"path":"sounds/snDiscard2/snDiscard2.yy",},
     {"name":"snDiscard3","order":8,"path":"sounds/snDiscard3/snDiscard3.yy",},
+    {"name":"snEnemyIntro","order":6,"path":"sounds/snEnemyIntro/snEnemyIntro.yy",},
     {"name":"snFire1","order":1,"path":"sounds/snFire1/snFire1.yy",},
     {"name":"snFire2","order":2,"path":"sounds/snFire2/snFire2.yy",},
     {"name":"snFreeze","order":2,"path":"sounds/snFreeze/snFreeze.yy",},

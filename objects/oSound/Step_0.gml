@@ -4,7 +4,7 @@ if global.curSong != noone and global.curSongAudio != noone and global.curSong !
     var _curSong = global.songTracks[? global.curSong];
     
     //Song Ended
-    if !audio_is_playing(global.curSongAudio) and !audio_is_paused(global.curSongAudio)
+    if ds_map_exists(global.songTracks,global.curSong) and !audio_is_playing(global.curSongAudio) and !audio_is_paused(global.curSongAudio)
     {
         //Replay Song
         global.curSongAudio = audio_play_sound(_curSong.sound,10,false);

@@ -1,13 +1,17 @@
 //Set Menu
 global.menuOpen = true;
+audioPlaySong(noone);
+
+//Delay
+var _delay = 30;
 
 //Ease In
 easeTime = 0;
-TweenFire(self,EaseOutBack,TWEEN_MODE_ONCE,false,0,60,"easeTime",0,1);
+TweenFire(self,EaseOutBack,TWEEN_MODE_ONCE,false,_delay,60,"easeTime",0,1);
 
 //Bg
 bgAlpha = 0;
-TweenFire(self,EaseOutCubic,TWEEN_MODE_ONCE,false,0,60,"bgAlpha",0,1);
+TweenFire(self,EaseOutCubic,TWEEN_MODE_ONCE,false,_delay,60,"bgAlpha",0,1);
 
 //Flash
 flashAlpha = 0;
@@ -29,8 +33,13 @@ anims.play("idle");
 
 //Intro Animation
 var _time = 60;
-TweenFire(self,EaseOutCubic,TWEEN_MODE_ONCE,false,0,_time,"enemyX",enemyX,ROOM_CENTER.x - 100);
-TweenFire(self,EaseOutBack,TWEEN_MODE_ONCE,false,0,_time,"enemyY",enemyY,ROOM_CENTER.y);
-TweenFire(self,EaseOutBack,TWEEN_MODE_ONCE,false,0,_time,"enemyXScale",enemyXScale,1.5);
-TweenFire(self,EaseOutBack,TWEEN_MODE_ONCE,false,0,_time,"enemyYScale",enemyYScale,1.5);
-alarm[0] = _time+20;
+TweenFire(self,EaseOutCubic,TWEEN_MODE_ONCE,false,_delay,_time,"enemyX",enemyX,ROOM_CENTER.x - 100);
+TweenFire(self,EaseOutBack,TWEEN_MODE_ONCE,false,_delay,_time,"enemyY",enemyY,ROOM_CENTER.y);
+TweenFire(self,EaseOutBack,TWEEN_MODE_ONCE,false,_delay,_time,"enemyXScale",enemyXScale,1.5);
+TweenFire(self,EaseOutBack,TWEEN_MODE_ONCE,false,_delay,_time,"enemyYScale",enemyYScale,1.5);
+alarm[0] = _time+_delay+20;
+
+//Sound
+timeSourceCreate(_delay,function(){
+    audioPlaySfx(snEnemyIntro);audioPlaySfx(snEnemyIntro);
+},[],time_source_units_frames);

@@ -8,7 +8,12 @@ if room == rPrepare
         global.currentEnemy = enemyInfo.dog;
     }
     
+    //Dont Play Song
+    if global.currentTourney != undefined and global.gameRound <= 1 then exit;
+    
+    //Play Prepare
     audioPlaySong(global.currentEnemy.customSong.prepare);
+    
 }
 
 if room == rKaos
