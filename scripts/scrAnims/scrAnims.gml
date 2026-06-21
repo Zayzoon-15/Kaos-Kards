@@ -26,6 +26,7 @@ function animManager(_info = enemyInfo.dog) constructor {
                 if currentAnim.loop 
                 {
                     frame -= currentAnim.length;
+                    frame = max(frame,0);
                 } else {
                 	//frame = currentAnim.length - 1;
                     

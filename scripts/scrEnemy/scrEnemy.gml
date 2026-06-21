@@ -126,7 +126,8 @@ function Enemy()
     /// @param {array} [_rewards] The cards the enemy gives (Example: [actionCards.bread, actionCards.heal])
     /// @param {any*} [_special] The enemies special move(leave as undefined if they don't use one)
     /// @param {array.string} _customSong The song the enemy plays (Example: ["Prepare","Kaos"])
-    static Create = function(_name,_sprite,_animInfo = Anims(),_dialogue = Dialouge(),_difficulty = Difficulty(),_actionCards=[],_kaosCards=[],_strat = Strat(),_rewards=[actionCards.bread],_special = undefined,_customSong = ["Prepare","Kaos","Kaos"]) constructor
+    /// @param {asset.GMSound} _introSong The song that plays in the enemies intro
+    static Create = function(_name,_sprite,_animInfo = Anims(),_dialogue = Dialouge(),_difficulty = Difficulty(),_actionCards=[],_kaosCards=[],_strat = Strat(),_rewards=[actionCards.bread],_special = undefined,_customSong = ["Prepare","Kaos","Kaos"],_introSong = sgBattleIntro) constructor
     {    
         //Info
         name = _name;
@@ -140,6 +141,7 @@ function Enemy()
             kaos : array_length(_customSong) > 1 ? _customSong[1] : "Kaos",
             minigame : array_length(_customSong) > 2 ? _customSong[2] : _customSong[1],
         }
+        introSong = _introSong;
         
         //Difficulty
         difficulty = _difficulty;

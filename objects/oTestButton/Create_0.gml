@@ -14,7 +14,7 @@ action = function()
         break;
     
     	case "Enemy Intro":
-            instance_create_depth(0,0,-1,oEnemyIntro);
+            instance_create_depth(0,0,-1,oBattleIntro);
         break;
     }
 

@@ -19,4 +19,5 @@ TweenEasyFade(0,1,0,10,EaseOutCubic);
 action = function()
 {
     instance_destroy(oDeckShowMenu);
+    audioPlaySfx(snCloseMenu);
 }

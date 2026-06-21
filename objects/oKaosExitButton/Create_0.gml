@@ -46,7 +46,7 @@ action = function()
     } else {
         global.tourneyEnemiesBeaten ++;
 
-        if global.tourneyEnemiesBeaten + 1 >= array_length(global.currentTourney.enemies)
+        if global.tourneyEnemiesBeaten >= array_length(global.currentTourney.enemies)
         {
             transStart(rTournies);
             timeSourceCreate(.3,eventGameReset,[true]); //Reset Game

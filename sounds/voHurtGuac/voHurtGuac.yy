@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"voFresh",
+  "%Name":"voHurtGuac",
   "audioGroupId":{
     "name":"agVoice",
     "path":"audiogroups/agVoice",
@@ -10,9 +10,9 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":2.142857,
+  "duration":1.6071428,
   "exportDir":"",
-  "name":"voFresh",
+  "name":"voHurtGuac",
   "parent":{
     "name":"Neutral",
     "path":"folders/Sounds/VoiceOver/Neutral.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"voFresh.ogg",
+  "soundFile":"voHurtGuac.ogg",
   "volume":1.0,
 }

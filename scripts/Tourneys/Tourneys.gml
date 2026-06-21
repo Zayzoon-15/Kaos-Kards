@@ -64,7 +64,7 @@ function initTourney(){
         ], 1.5),
         
         cameos : new createTourney("Extras", sTourneyArt4, [
-            enemyInfo.jsg, enemyInfo.pug, enemyInfo.fungi,
+            enemyInfo.jsg, enemyInfo.pug, enemyInfo.fungi, enemyInfo.bf,
             enemyInfo.teto,
         ],[
             ruleInfo.deckShuffle, ruleInfo.timeLimit

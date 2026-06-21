@@ -75,7 +75,7 @@ enemyInfo = {
         ],
         [kaosCards.swoop,kaosCards.high],
         Enemy.Strat(.6,.5,.7,.4,.6), [actionCards.punch,actionCards.punch,kaosCards.high],
-        enemySpecialBeer,["BeerIntro",["BeerKaos1","BeerKaos2"]]
+        enemySpecialBeer,["BeerIntro",["BeerKaos1","BeerKaos2"]],sgBattleIntroBeer
     ),
     
     #endregion
@@ -112,7 +112,7 @@ enemyInfo = {
         ],
         [kaosCards.brawl],
         Enemy.Strat(.7,.5,.8,.3,.7), [actionCards.taunt,actionCards.taunt,kaosCards.brawl],
-        function(){},["ChudIntro",["ChudKaos1","ChudKaos2"],"ChudMini"]
+        function(){},["ChudIntro",["ChudKaos1","ChudKaos2"],"ChudMini"],sgBattleIntroChud
     ),
     
     #endregion
@@ -200,6 +200,20 @@ enemyInfo = {
         ],
         [kaosCards.high,kaosCards.destroy],
         Enemy.Strat(), [actionCards.taunt,actionCards.taunt,actionCards.taunt]
+    ),
+    
+    bf : new Enemy.Create("Boyfriend From Fnf",
+        sWoah, Enemy.Anims(3,3,3,3), Enemy.Dialogue(),
+        Enemy.Difficulty(.6,2,100,1.5,1.2),
+        [
+            actionCards.heal, actionCards.steak, actionCards.burger,
+            actionCards.shield, actionCards.shield,
+            actionCards.laser, actionCards.taunt, actionCards.taunt,
+            actionCards.laser, actionCards.punch, actionCards.punch,
+            actionCards.flaminAce, actionCards.flaminAce, actionCards.jerryCan
+        ],
+        [kaosCards.rerun,kaosCards.high],
+        Enemy.Strat(1.3,.7,.5,.7,.8), [actionCards.taunt,actionCards.taunt,actionCards.taunt]
     ),
     
     
