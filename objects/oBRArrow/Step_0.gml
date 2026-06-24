@@ -48,6 +48,9 @@ if (touchingMouse() and !global.menuOpen and !global.midTrans) or image_speed ==
     shadowY = lerp(shadowY,10,.2);
     shadowX = lerp(shadowX,-2,.2);
     
+    //Outline
+    outlineAlpha = lerp(outlineAlpha,1.0,.2);
+    
     //Angle
     angle = lerp(angle,3 * angleDir,.2);
 } else {
@@ -63,6 +66,9 @@ if (touchingMouse() and !global.menuOpen and !global.midTrans) or image_speed ==
     //Shadow
     shadowY = lerp(shadowY,7,.2);
     shadowX = lerp(shadowX,0,.2);
+    
+    //Outline
+    outlineAlpha = lerp(outlineAlpha,0.0,.2);
     
     //Angle
     angle = lerp(angle,0,.2);

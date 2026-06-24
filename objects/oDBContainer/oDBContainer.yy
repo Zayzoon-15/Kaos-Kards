@@ -10,8 +10,8 @@
   "name":"oDBContainer",
   "overriddenProperties":[],
   "parent":{
-    "name":"Menu1",
-    "path":"folders/Objects/Ui/Deck Builder/Menu1.yy",
+    "name":"Menu2",
+    "path":"folders/Objects/Ui/Deck Builder/Menu2.yy",
   },
   "parentObjectId":null,
   "persistent":false,

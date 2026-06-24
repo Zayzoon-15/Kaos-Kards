@@ -9,8 +9,8 @@ function initFonts(){
         numberOutline : font_add_sprite_ext(sNumbersOutlined,"0123456789+-",true,0),
         
         //Deck Builder
-        DBLetter : font_add_sprite_ext(sDBLetters,"ABCDEFGHIJKLMNOPQRSTUVWXYZ|:",true,0),
-        DBNumber : font_add_sprite_ext(sDBNumbers,"/0123456789",true,0),
+        DBLetter : font_add_sprite_ext(sDBLetters,"ABCDEFGHIJKLMNOPQRSTUVWXYZ|:",true,-5),
+        DBNumber : font_add_sprite_ext(sDBNumbers,"/0123456789",true,-10),
         
         //Trophy Room
         TRNumber : font_add_sprite_ext(sTRFont, "0123456789", true, -3),

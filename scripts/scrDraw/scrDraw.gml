@@ -1,5 +1,4 @@
 
-
 ///@self oCard
 function drawCardText(_info,_depthChange = 5){
     
@@ -16,6 +15,7 @@ function drawCardText(_info,_depthChange = 5){
         });
     }
 }
+
 
 
 ///@desc Creates a tip box that appears on top of the object
@@ -66,6 +66,7 @@ function drawTipBox(_desc,_top = true,_update = false,_distance = 10,_offset = n
     }
     
 }
+
 
 
 ///@desc Draws a rectangle with an outline
@@ -675,6 +676,7 @@ function trimLine(_line)
 }
 
 
+
 /// @desc Draws a circular progress bar
 /// @param {real} _x The x position of the circle
 /// @param {real} _y The y position of the circle
@@ -740,6 +742,7 @@ function drawCircularBar(_x, _y, _value, _color, _radius, _width = 5,_outline = 
 }
 
 
+
 /// @desc Draws a rectangle based on the 2D Vectors given
 /// @param {struct.vector2} [_p1] The top left point
 /// @param {struct.vector2} [_p2] The bottom left point
@@ -751,4 +754,32 @@ function drawRectPos(_p1 = new Vector2(),_p2 = new Vector2(),_p3 = new Vector2()
     //Draw Rectangle
     draw_triangle(_p1.x,_p1.y,_p2.x,_p2.y,_p4.x,_p4.y,_outline);
     draw_triangle(_p4.x,_p4.y,_p3.x,_p3.y,_p1.x,_p1.y,_outline);
+}
+
+
+/// @desc Sets up the outline shader
+/// @param {real} [_thickness] The thickness of the outline (Default = 2.0)
+/// @param {constant.color} [_color] The color of the outline (Default = c_white)
+/// @param {real} [_alpha] The alpha of the outline (Default = 1.0)
+/// @param {asset.gmsprite} [_sprite] The sprite to take the texture from (Default = sprite_index)
+/// @param {real} [_image] The image_index to take the texture from (Default = image_index)
+function setupOutline(_thickness = 2.0,_color = c_white,_alpha = 1.0,_sprite = sprite_index,_image = image_index)
+{
+    //Set Shader
+    shader_set(shOutline);
+    
+    //Set Texture
+    var _texture  = sprite_get_texture(_sprite, _image);
+    var _textureW = texture_get_texel_width(_texture);
+    var _textureH = texture_get_texel_height(_texture);
+    var _uniTexture = shader_get_uniform(shOutline, "texturePixel");
+    shader_set_uniform_f(_uniTexture, _textureW, _textureH);
+    
+    //Set Outline Thickness
+    var _uniThickness = shader_get_uniform(shOutline, "thickness");
+    shader_set_uniform_f(_uniThickness, _thickness);
+    
+    //Set Color
+    var _uniColor = shader_get_uniform(shOutline, "outlineColor");
+    shader_set_uniform_f(_uniColor, color_get_red(_color), color_get_green(_color), color_get_blue(_color), _alpha);
 }

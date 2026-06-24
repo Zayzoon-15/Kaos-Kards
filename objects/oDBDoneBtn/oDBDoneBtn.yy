@@ -13,8 +13,8 @@
   "name":"oDBDoneBtn",
   "overriddenProperties":[],
   "parent":{
-    "name":"Menu2",
-    "path":"folders/Objects/Ui/Deck Builder/Menu2.yy",
+    "name":"Menu1",
+    "path":"folders/Objects/Ui/Deck Builder/Menu1.yy",
   },
   "parentObjectId":null,
   "persistent":false,

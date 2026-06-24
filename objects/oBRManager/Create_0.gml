@@ -1,6 +1,11 @@
 //Play Song
 audioPlaySong("BreakRoomIntro");
 
+if global.currentTourney == undefined
+{
+    global.currentTourney = tourneyInfo.debut;
+}
+
 //Beat Enemy Prior
 beatEnemy = global.currentTourney.enemies[0] != global.currentTourney.enemies[global.tourneyEnemiesBeaten] and !global.gaveReward;
 

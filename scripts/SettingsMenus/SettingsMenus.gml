@@ -146,7 +146,26 @@ function SettingsMenus()
         //Create Buttons
         if !global.mobile
         {
-
+            //SettingsButtons.Separator("Type");
+                //SettingsButtons.Options("Input Type",[
+                    //{text : "Keyboard",action:function(){
+                        //
+                        ////Reset Menu
+                        //instance_destroy(oParSettingsBtn);
+                        //oSettingsSubMenu.scroll = 0;
+                        //global.settingsBtnId = 0;
+                        //SettingsMenus.Input();
+                        //
+                    //}}, 
+                    //{text : "Gamepad",action:function(){
+                        ////Reset Menu
+                        //instance_destroy(oParSettingsBtn);
+                        //oSettingsSubMenu.scroll = 0;
+                        //global.settingsBtnId = 0;
+                        //SettingsMenus.Input();
+                    //}}, 
+            //]);
+            
             SettingsButtons.Separator("Game");
                 SettingsButtons.Input("Place","keyPlace");
                 SettingsButtons.Input("Discard","keyDiscard");

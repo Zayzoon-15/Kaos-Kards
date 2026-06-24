@@ -122,8 +122,51 @@ function cardStateHand(){
     
     #endregion
     
-    //Can Grab
-    canGrab = !global.holdingCard and !global.menuOpen;
+    #region Input
+    
+    //Place Key
+    if hover and gameState == GAMESTATES.PREPARE
+    {
+        if keyCheckPressed(global.keyPlace)
+        {
+            //Get Target Slot
+            var _slot = noone, _lastId = 99;
+            with oParSlots {
+            	
+                //Same Type
+                if targetType1 == other.info.type or targetType2 == other.info.type 
+                {
+                    //Get Closest Slot
+                    for (var i = -1; i < 4; i++) {
+                    	
+                        if !filled and !used and !disabled and slotId == i and _lastId > i
+                        {
+                            _slot = self.id;
+                            _lastId = i;
+                        }
+                    }
+                    
+                }
+                
+            }
+            
+            //Go To Slot
+            if _slot != noone
+            {
+                //Switch State
+                removeCardFromHand();
+                state = CARDSTATE.GRABBED;
+                
+                //Go To Slot
+                x = _slot.x;
+                y = _slot.y;
+                
+                //Preform Let Go Event
+                event_perform(ev_global_left_release,0);
+            } else createAlertMessage("No Slots Available");
+            
+        }
+    }
     
     //Delete Key
     if hover and gameState == GAMESTATES.PREPARE
@@ -134,6 +177,11 @@ function cardStateHand(){
             deleteCard();
         }
     }
+    
+    #endregion
+    
+    //Can Grab
+    canGrab = !global.holdingCard and !global.menuOpen;
     
     //Info Box
     if hover then drawCardText(info);
@@ -301,6 +349,19 @@ function cardStatePlaced()
             } else isTargeted = false;
         }
     }
+    
+    #region Input
+    
+    //Place Key
+    if hover and gameState == GAMESTATES.PREPARE
+    {
+        if keyCheckPressed(global.keyPlace)
+        {
+            putCardInHand();
+        }
+    }
+    
+    #endregion
     
     //Info Box
     if canGrab then drawCardText(info);

@@ -7,5 +7,5 @@ bubbleText = "Thats your beanbag chair, it looks like its been used for a very l
 
 //TipBox
 tipBoxString = "A beanbag chair";
-tipBoxDistance = -90;
-tipBoxOffset = new Vector2(0,-60);
+tipBoxDistance = -120;
+tipBoxOffset = new Vector2(0,-110);
