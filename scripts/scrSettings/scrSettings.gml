@@ -61,6 +61,7 @@ function initSettings()
     global.showPercentage = true;
     global.gameSpeed = 1;
     global.explosionsAfter = true;
+    global.tipBox = true;
 	global.tipBoxSize = 1;
     
     //Mobile

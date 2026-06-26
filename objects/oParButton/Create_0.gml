@@ -19,6 +19,7 @@ boxY = y;
 targetX = x;
 targetY = y;
 posEaseTime = .2;
+easePos = true;
 stickToScreen = false; //Makes the position change based on the screen
 stickToScreenRight = true; //If it should stick the the right side or left side of the screen
 stickToScreenOffset = xstart; //The offset of the x position to the screen
@@ -32,6 +33,7 @@ alphaTime = .3;
 shake = 0;
 shadowX = 0;
 shadowY = 0;
+drawShadow = true;
 
 //Hover
 canHover = true;

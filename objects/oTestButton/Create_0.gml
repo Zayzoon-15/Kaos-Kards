@@ -10,12 +10,15 @@ action = function()
 {
     switch (button) {
     	case "Reward":
-            instance_create_depth(0,0,-1,oReward);
+            instance_create_layer(0,0,"Ui",oReward);
         break;
     
     	case "Enemy Intro":
-            instance_create_depth(0,0,-1,oBattleIntro);
+            instance_create_layer(0,0,"Ui",oBattleIntro);
+        break;
+    
+    	case "MiniBoss":
+            instance_create_layer(0,0,"Ui",oMiniBossAlert);
         break;
     }
-
 }

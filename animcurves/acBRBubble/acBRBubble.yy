@@ -1,6 +1,6 @@
 {
   "$GMAnimCurve":"",
-  "%Name":"AnimationCurve8",
+  "%Name":"acBRBubble",
   "channels":[
     {"$GMAnimCurveChannel":"","%Name":"y","colour":4290799884,"name":"y","points":[
         {"th0":-0.25,"th1":0.24595869,"tv0":0.0,"tv1":-1.5510328,"x":0.0,"y":1.0,},
@@ -21,7 +21,7 @@
       ],"resourceType":"GMAnimCurveChannel","resourceVersion":"2.0","visible":true,},
   ],
   "function":2,
-  "name":"AnimationCurve8",
+  "name":"acBRBubble",
   "parent":{
     "name":"Animation Curves",
     "path":"folders/Animation Curves.yy",

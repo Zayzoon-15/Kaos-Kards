@@ -322,6 +322,8 @@ function SaveFile()
         struct_set(_saveData,"EnemyDialogue",global.enemyDialogue);
         struct_set(_saveData,"ItemsStick",global.stickItemsToScreen);
         struct_set(_saveData,"UiStick",global.stickUiToScreen);
+        struct_set(_saveData,"TipBoxSize",global.tipBoxSize);
+        struct_set(_saveData,"TipBox",global.tipBox);
         
         //Save To File
         _saveFile(_saveData,"SettingsSave.kaos");
@@ -378,6 +380,8 @@ function SaveFile()
         global.enemyDialogue = struct_get_variable(_saveData,"EnemyDialogue",true);
         global.stickItemsToScreen = struct_get_variable(_saveData,"ItemsStick",true);
         global.stickUiToScreen = struct_get_variable(_saveData,"UiStick",true);
+        global.tipBoxSize = struct_get_variable(_saveData,"TipBoxSize",true);
+        global.tipBox = struct_get_variable(_saveData,"TipBox",true);
         
     }
     

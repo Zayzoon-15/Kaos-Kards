@@ -77,10 +77,10 @@ for (var i = 1; i < string_length(_string)+1; i++) {
     
     //Get Values
     var _x = bbox_left + _cursorX;
-    var _y = bbox_top + _cursorY + animGetValue(AnimationCurve8,_curvePos,"y")*20;
-    var _xscale = animGetValue(AnimationCurve8,_curvePos,"xscale");
-    var _yscale = animGetValue(AnimationCurve8,_curvePos,"yscale");
-    draw_set_alpha(animGetValue(AnimationCurve8,_curvePos,"alpha")*image_alpha);
+    var _y = bbox_top + _cursorY + animGetValue(acBRBubble,_curvePos,"y")*20;
+    var _xscale = animGetValue(acBRBubble,_curvePos,"xscale");
+    var _yscale = animGetValue(acBRBubble,_curvePos,"yscale");
+    draw_set_alpha(animGetValue(acBRBubble,_curvePos,"alpha")*image_alpha);
 
     //Draw Text
     draw_text_transformed(_x + textAnims[i].xOffset,_y + textAnims[i].yOffset,_char,_xscale,_yscale,0);

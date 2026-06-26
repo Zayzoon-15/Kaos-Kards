@@ -203,7 +203,7 @@ enemyInfo = {
     ),
     
     bf : new Enemy.Create("Boyfriend From Fnf",
-        sWoah, Enemy.Anims(3,3,3,3), Enemy.Dialogue(),
+        sWoah, Enemy.Anims(), Enemy.Dialogue(),
         Enemy.Difficulty(.6,2,100,1.5,1.2),
         [
             actionCards.heal, actionCards.steak, actionCards.burger,

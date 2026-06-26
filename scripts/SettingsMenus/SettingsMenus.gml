@@ -99,9 +99,9 @@ function SettingsMenus()
     static Game = function()
     {
         SettingsButtons.Separator("User Interface");
-            SettingsButtons.Slider("Tip Box Size","tipBoxSize",undefined,2,1,3,false,roundHalf,"X");
-            SettingsButtons.Check("Tip Boxes");
-            SettingsButtons.Check("Show Percentage","showPercentage",global.showPercentage);
+            SettingsButtons.Check("Tip Boxes","tipBox",global.tipBox);
+            SettingsButtons.Slider("Tip Box Size","tipBoxSize",undefined,2,1,3,false,roundHalf,"X",function(){return !global.tipBox},"Tip Boxes Disabled");
+            SettingsButtons.Check("Show Percentage","showPercentage",global.showPercentage);    
             SettingsButtons.Check("Ui Stick To Sides Of Screen","stickUiToScreen",global.stickUiToScreen);
             SettingsButtons.Check("Show Game Version","showGameVer",global.showGameVer);
 
