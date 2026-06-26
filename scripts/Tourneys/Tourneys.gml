@@ -3,16 +3,18 @@
 /// @param {string} [_name] The tournaments name
 /// @param {asset.gmsprite} [_art] The tournaments art
 /// @param {array<any>} [_enemies] All the enemies for the tournament
+/// @param {bool} [_miniBosses] If there will be mini bosses
 /// @param {array<struct.rule>} [_rules] The tournaments rules
 /// @param {real} [_timeLimit] The time limit of the tournament in minutes
 /// @param {array<Asset.GMObject>} [_items] The items the player recieves after winning (Shows up in the break room)
 /// @param {array<Asset.GMObject>} [_rewards] The reward the player recieves after winning (Shows up in the reward ui)
-function createTourney(_name = "Tourney Name",_art = sTourneyArtBorder,_enemies = [enemyInfo.dog],_rules = [ruleInfo.deckShuffle],_timeLimit = -1,_items = [],_rewards = []) constructor {
+function createTourney(_name = "Tourney Name",_art = sTourneyArtBorder,_enemies = [enemyInfo.dog],_miniBosses = false,_rules = [ruleInfo.deckShuffle],_timeLimit = -1,_items = [],_rewards = []) constructor {
     
     //Info
     name = _name;
     sprite = _art;
     enemies = _enemies;
+    miniBosses = _miniBosses;
     
     //Rules
     rules = _rules;
@@ -39,6 +41,7 @@ function initTourney(){
     global.gaveReward = false;
     global.tourneyReward = undefined;
     global.tourneysBeaten = [];
+    global.isMiniBoss = false;
     
     //Init Rules
     initRules();
@@ -49,26 +52,26 @@ function initTourney(){
         debut : new createTourney("Debut Tournament", sTourneyArt1, [
             enemyInfo.dog, enemyInfo.cock, enemyInfo.angel,
             enemyInfo.alien, enemyInfo.beer
-        ], [], -1, [oBRShop,oBRPickle]),
+        ], false, [], -1, [oBRShop,oBRPickle]),
         
         retro : new createTourney("Retro Tournament", sTourneyArt2, [
             enemyInfo.handsy, enemyInfo.chud,
         ], [
             ruleInfo.deckShuffle, ruleInfo.timeLimit
-        ], 5, [oBRTv,oBRWand]),
+        ], false, 5, [oBRTv,oBRWand]),
         
         spooky : new createTourney("Spooky Tournament", sTourneyArt3, [
             enemyInfo.bones, enemyInfo.fungi,
         ], [
             ruleInfo.deckShuffle, ruleInfo.timeLimit
-        ], 1.5),
+        ], false, 1.5),
         
         cameos : new createTourney("Extras", sTourneyArt4, [
             enemyInfo.jsg, enemyInfo.pug, enemyInfo.fungi, enemyInfo.bf,
             enemyInfo.teto,
         ],[
             ruleInfo.deckShuffle, ruleInfo.timeLimit
-        ], 1, [oBRBoombox]),
+        ], true, 1, [oBRBoombox]),
         
     }
     

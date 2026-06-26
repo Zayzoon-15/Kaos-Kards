@@ -4,6 +4,9 @@ draw_sprite_ext(sprite_index,image_index,x+shadowX,y+shadowY,shadowScale,shadowS
 //Set Outline
 setupOutline(2.0,c_white,outlineAlpha);
 
+//Set Outline
+//setupOutline(2.0,c_black,outlineAlpha);
+
 //Draw Sprite
 draw_sprite_ext(sprite_index,image_index,x,y,scale,scale,angle,image_blend,image_alpha);
 

@@ -53,6 +53,9 @@ function transStart(_roomTarget,_typeOut = seqFadeOut,_typeIn = seqFadeIn,_trans
 
 function transChangeRoom()
 {
+    //Close Menus
+    global.menuOpen = false;
+    
     //Change Room
     room_goto(global.roomTarget);
 }

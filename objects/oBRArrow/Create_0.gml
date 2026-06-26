@@ -9,7 +9,6 @@ image_index = image_number - 1;
 //Image
 scale = 1;
 angle = 0;
-angleDir = 0;
 outlineAlpha = 0;
 
 //Shadow

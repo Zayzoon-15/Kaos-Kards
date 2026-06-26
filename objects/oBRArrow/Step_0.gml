@@ -7,8 +7,6 @@ if (touchingMouse() and !global.menuOpen and !global.midTrans) or image_speed ==
     //Hover
     if !hover
     {
-        //Angle Direction
-        angleDir = choose(-1,1);
         
         //Set Hover
         hover = true;
@@ -30,6 +28,9 @@ if (touchingMouse() and !global.menuOpen and !global.midTrans) or image_speed ==
         //Action
         timeSourceCreate(10,function()
         {
+            //Check If Miniboss
+            //var _chance = 
+            
             //Change Enemy
             global.currentEnemy = global.currentTourney.enemies[global.tourneyEnemiesBeaten];
             
@@ -41,18 +42,15 @@ if (touchingMouse() and !global.menuOpen and !global.midTrans) or image_speed ==
     }
     
     //Scale
-    scale = lerp(scale,1.05,.2);
-    shadowScale = lerp(shadowScale,.97,.2);
+    scale = lerp(scale,1.08,.2);
+    shadowScale = lerp(shadowScale,.95,.2);
     
     //Shadow
-    shadowY = lerp(shadowY,10,.2);
-    shadowX = lerp(shadowX,-2,.2);
+    shadowY = lerp(shadowY,7,.2);
+    shadowX = lerp(shadowX,0,.2);
     
     //Outline
     outlineAlpha = lerp(outlineAlpha,1.0,.2);
-    
-    //Angle
-    angle = lerp(angle,3 * angleDir,.2);
 } else {
     
     //Press
@@ -69,7 +67,4 @@ if (touchingMouse() and !global.menuOpen and !global.midTrans) or image_speed ==
     
     //Outline
     outlineAlpha = lerp(outlineAlpha,0.0,.2);
-    
-    //Angle
-    angle = lerp(angle,0,.2);
 }

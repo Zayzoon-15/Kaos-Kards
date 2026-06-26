@@ -40,6 +40,6 @@ TweenFire(self,EaseOutBack,TWEEN_MODE_ONCE,false,_delay,_time,"enemyYScale",enem
 alarm[0] = _time+_delay+20;
 
 //Sound
-timeSourceCreate(_delay,function(){
+timeSourceCreate(_delay+10,function(){
     audio_play_sound(info.introSong,10,false);
 },[],time_source_units_frames);
