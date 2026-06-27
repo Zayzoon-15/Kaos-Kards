@@ -14,6 +14,8 @@ function eventGameReset(_hardReset = true)
         
         //Set Tourney
         global.tourneyEnemiesBeaten = 0;
+        global.miniBossesBeaten = 0;
+        global.isMiniBoss = false;
     }
     
 	//Set Gamestate
@@ -114,7 +116,11 @@ function eventNextRoundStarted()
     //Enemy Show
     if global.gameRound == 0 and global.currentTourney != undefined
     {
-        instance_create_depth(0,0,-1,oBattleIntro);
+        if global.isMiniBoss
+        {
+            instance_create_depth(0,0,-1,oMiniBossAlert);
+        } else instance_create_depth(0,0,-1,oBattleIntro);
+        
     }
     
     //Increase Round

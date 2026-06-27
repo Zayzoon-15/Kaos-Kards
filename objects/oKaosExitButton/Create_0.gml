@@ -44,7 +44,11 @@ action = function()
     	transStart(rTournies);
     	timeSourceCreate(.3,eventGameReset,[true]);
     } else {
-        global.tourneyEnemiesBeaten ++;
+
+        if global.isMiniBoss
+        {
+            global.miniBossesBeaten ++;
+        } else global.tourneyEnemiesBeaten ++;
 
         if global.tourneyEnemiesBeaten >= array_length(global.currentTourney.enemies)
         {

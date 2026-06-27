@@ -41,6 +41,7 @@ function initTourney(){
     global.gaveReward = false;
     global.tourneyReward = undefined;
     global.tourneysBeaten = [];
+    global.miniBossesBeaten = 0;
     global.isMiniBoss = false;
     
     //Init Rules
@@ -56,22 +57,22 @@ function initTourney(){
         
         retro : new createTourney("Retro Tournament", sTourneyArt2, [
             enemyInfo.handsy, enemyInfo.chud,
-        ], [
+        ], false, [
             ruleInfo.deckShuffle, ruleInfo.timeLimit
-        ], false, 5, [oBRTv,oBRWand]),
+        ], 5, [oBRTv,oBRWand]),
         
         spooky : new createTourney("Spooky Tournament", sTourneyArt3, [
             enemyInfo.bones, enemyInfo.fungi,
-        ], [
+        ], false, [
             ruleInfo.deckShuffle, ruleInfo.timeLimit
-        ], false, 1.5),
+        ], 1.5),
         
         cameos : new createTourney("Extras", sTourneyArt4, [
             enemyInfo.jsg, enemyInfo.pug, enemyInfo.fungi, enemyInfo.bf,
             enemyInfo.teto,
-        ],[
+        ],true , [
             ruleInfo.deckShuffle, ruleInfo.timeLimit
-        ], true, 1, [oBRBoombox]),
+        ], 1, [oBRBoombox]),
         
     }
     
