@@ -78,7 +78,7 @@ if (touchingMouse() and !global.menuOpen and !global.midTrans) or image_speed ==
     
     //Scale
     scale = lerp(scale,1.08,.2);
-    shadowScale = lerp(shadowScale,.95,.2);
+    shadowScale = lerp(shadowScale,.94,.2);
     
     //Shadow
     shadowY = lerp(shadowY,7,.2);

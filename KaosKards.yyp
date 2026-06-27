@@ -866,8 +866,8 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rSetup","path":"rooms/rSetup/rSetup.yy",},},
-    {"roomId":{"name":"rTournies","path":"rooms/rTournies/rTournies.yy",},},
     {"roomId":{"name":"rBreakRoom","path":"rooms/rBreakRoom/rBreakRoom.yy",},},
+    {"roomId":{"name":"rTournies","path":"rooms/rTournies/rTournies.yy",},},
     {"roomId":{"name":"rTesting","path":"rooms/rTesting/rTesting.yy",},},
     {"roomId":{"name":"rTourneySelector","path":"rooms/rTourneySelector/rTourneySelector.yy",},},
     {"roomId":{"name":"rPrepare","path":"rooms/rPrepare/rPrepare.yy",},},

@@ -24,10 +24,10 @@ for (var i = 1; i < string_length(_string)+1; i++) {
         var _k = i;
         
         //Get Full Word
-        while _k <= string_length(_string)
+        while _k <= string_length(text)
         {
             //Get Character
-            var _nextChar = string_copy(_string,_k,1);
+            var _nextChar = string_copy(text,_k,1);
             if _nextChar == " " then break;
             
             //Add To Word
@@ -35,10 +35,11 @@ for (var i = 1; i < string_length(_string)+1; i++) {
             _k ++;
         }
         
+        print(_word,_cursorX);
+        
         //Move To Next Line If Word Too Big
         if _cursorX + string_width(_word) > maxWidth
         {
-            
             _cursorX = 0;
             _cursorY += _charHeight;
         }
@@ -73,7 +74,6 @@ for (var i = 1; i < string_length(_string)+1; i++) {
     textAnims[i].offsetSineY += 0.03;
     textAnims[i].xOffset = sineBetween(textAnims[i].offsetSineY,5,-2,2);
     textAnims[i].yOffset = sineBetween(textAnims[i].offsetSineX,5,-2,2);
-    
     
     //Get Values
     var _x = bbox_left + _cursorX;

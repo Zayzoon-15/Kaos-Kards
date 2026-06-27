@@ -21,7 +21,7 @@ forceShow = false;
 textShow = 0;
 textAnims = [];
 clickAlpha = 0;
-maxWidth = bbox_right - bbox_left;
+maxWidth = sprite_width - 10;
 
 //Animation
 curveSpd = .04;
