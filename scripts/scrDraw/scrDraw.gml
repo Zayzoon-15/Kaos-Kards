@@ -757,29 +757,83 @@ function drawRectPos(_p1 = new Vector2(),_p2 = new Vector2(),_p3 = new Vector2()
 }
 
 
+
 /// @desc Sets up the outline shader
 /// @param {real} [_thickness] The thickness of the outline (Default = 2.0)
 /// @param {constant.color} [_color] The color of the outline (Default = c_white)
 /// @param {real} [_alpha] The alpha of the outline (Default = 1.0)
 /// @param {asset.gmsprite} [_sprite] The sprite to take the texture from (Default = sprite_index)
 /// @param {real} [_image] The image_index to take the texture from (Default = image_index)
-function setupOutline(_thickness = 2.0,_color = c_white,_alpha = 1.0,_sprite = sprite_index,_image = image_index)
-{
+/// @param {real} [_accuracy] The accuracy of the outline (Default = 16)
+/// @param {real} [_tolerance] The tolerance of the outline (Default = 0)
+function outlineSetup(_thickness = 2.0,_color = c_white,_alpha = image_alpha,_sprite = sprite_index,_image = image_index,_accuracy = 16,_tolerance = 0) {
+
     //Set Shader
     shader_set(shOutline);
+
+    //Get Texel
+    var _texel = sprite_get_texture(_sprite,_image);
+	var _w = texture_get_texel_width(_texel);
+	var _h = texture_get_texel_height(_texel);
     
-    //Set Texture
-    var _texture  = sprite_get_texture(_sprite, _image);
-    var _textureW = texture_get_texel_width(_texture);
-    var _textureH = texture_get_texel_height(_texture);
-    var _uniTexture = shader_get_uniform(shOutline, "texturePixel");
-    shader_set_uniform_f(_uniTexture, _textureW, _textureH);
-    
-    //Set Outline Thickness
-    var _uniThickness = shader_get_uniform(shOutline, "thickness");
-    shader_set_uniform_f(_uniThickness, _thickness);
-    
-    //Set Color
-    var _uniColor = shader_get_uniform(shOutline, "outlineColor");
-    shader_set_uniform_f(_uniColor, color_get_red(_color), color_get_green(_color), color_get_blue(_color), _alpha);
+    //Get Uniforms
+    var _uSize = shader_get_uniform(shOutline, "size");
+	var _uThick = shader_get_uniform(shOutline, "thick");
+	var _uColor = shader_get_uniform(shOutline, "oColor");
+	var _uAcc = shader_get_uniform(shOutline, "accuracy");
+	var _uTol = shader_get_uniform(shOutline, "tol");
+	var _uUvs = shader_get_uniform(shOutline, "uvs");
+
+    //Set Uniforms
+	shader_set_uniform_f(_uSize, _w, _h);
+	shader_set_uniform_f(_uThick, _thickness);
+	shader_set_uniform_f(_uColor, color_get_red(_color)/255, color_get_green(_color)/255, color_get_blue(_color)/255,_alpha);
+	shader_set_uniform_f(_uAcc, _accuracy);
+	shader_set_uniform_f(_uTol, _tolerance);
+
+    //Set Uvs
+	var _uvs = sprite_get_uvs(_sprite, _image);
+	shader_set_uniform_f(_uUvs, _uvs[0], _uvs[1], _uvs[2], _uvs[3]);
+
 }
+
+
+
+/// @desc Sets up the outline shader
+/// @param {real} [_thickness] The thickness of the outline (Default = 2.0)
+/// @param {constant.color} [_color] The color of the outline (Default = c_white)
+/// @param {real} [_alpha] The alpha of the outline (Default = 1.0)
+/// @param {id.surface} [_surface] The surface to apply the shader to (Defualt = surface_get_target())
+/// @param {real} [_accuracy] The accuracy of the outline (Default = 16)
+/// @param {real} [_tolerance] The tolerance of the outline (Default = 0)
+function outlineSurfaceSetup(_thickness = 2.0,_color = c_white,_alpha = 1.0,_surface = surface_get_target(),_accuracy = 16,_tolerance = 0) {
+
+    //Set Shader
+	shader_set(shOutline);
+    
+    //Get Texture
+	var _tex = surface_get_texture(_surface);
+	var _w = texture_get_texel_width(_tex);
+	var _h = texture_get_texel_height(_tex);
+    
+    //Get Uniforms
+    var _uSize = shader_get_uniform(shOutline, "size");
+	var _uThick = shader_get_uniform(shOutline, "thick");
+	var _uColor = shader_get_uniform(shOutline, "oColor");
+	var _uAcc = shader_get_uniform(shOutline, "accuracy");
+	var _uTol = shader_get_uniform(shOutline, "tol");
+	var _uUvs = shader_get_uniform(shOutline, "uvs");
+
+    //Set Uniforms
+	shader_set_uniform_f(_uSize, _w, _h);
+	shader_set_uniform_f(_uThick, _thickness);
+	shader_set_uniform_f(_uColor, color_get_red(_color)/255, color_get_green(_color)/255, color_get_blue(_color)/255,_alpha);
+	shader_set_uniform_f(_uAcc, _accuracy);
+	shader_set_uniform_f(_uTol, _tolerance);
+
+    //Set Uvs
+	var _uvs = texture_get_uvs(_surface);
+	shader_set_uniform_f(_uUvs, _uvs[0], _uvs[1], _uvs[2], _uvs[3]);
+
+}
+

@@ -1,31 +1,39 @@
+//
+// Simple passthrough fragment shader
+//
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 
-uniform vec2 texturePixel;
-uniform float thickness;
-uniform vec4 outlineColor;
+uniform vec2 size;
+uniform float thick;
+uniform vec4 oColor;
+uniform float accuracy;
+uniform float tol;
+uniform vec4 uvs;
+
+const float rad_circle = 6.28319;
 
 void main()
 {
-    
-    vec2 outlineTexture = texturePixel * thickness;
-    vec4 endPixel = v_vColour * texture2D(gm_BaseTexture, v_vTexcoord);
-    
-    if ( texture2D(gm_BaseTexture, v_vTexcoord).a <= 0.0 ) {
-        
-        float alpha = 0.0;
-        alpha = max(alpha, texture2D(gm_BaseTexture, vec2(v_vTexcoord.x - outlineTexture.x, v_vTexcoord.y)).a);
-        alpha = max(alpha, texture2D(gm_BaseTexture, vec2(v_vTexcoord.x + outlineTexture.x, v_vTexcoord.y)).a);
-        alpha = max(alpha, texture2D(gm_BaseTexture, vec2(v_vTexcoord.x, v_vTexcoord.y - outlineTexture.y)).a);
-        alpha = max(alpha, texture2D(gm_BaseTexture, vec2(v_vTexcoord.x, v_vTexcoord.y + outlineTexture.y)).a);
-        
-        if (alpha != 0.0)
-        {
-            endPixel = outlineColor;
+    gl_FragColor = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
+    bool outline = false;
+ 
+    for(float i=1.0; i<=thick; i++){
+        for(float d=0.0; d<rad_circle; d+=rad_circle/accuracy){
+			vec2 check_pos = v_vTexcoord + i*vec2(cos(d)*size.x, -sin(d)*size.y);
+            vec4 datPixel =  v_vColour * texture2D( gm_BaseTexture, check_pos);
+            
+			bool out_bound = check_pos.x < uvs.r || check_pos.y < uvs.g || check_pos.x > uvs.b || check_pos.y > uvs.a; 
+			
+            if (datPixel.a>tol && gl_FragColor.a<=tol && !out_bound){
+                outline = true;
+                break;
+            }
         }
-        
+		if (outline) break;
     }
     
-    gl_FragColor = endPixel;
+    if (outline) gl_FragColor = vec4(oColor.r, oColor.g, oColor.b, oColor.a);
 }
+
 
