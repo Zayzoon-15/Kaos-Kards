@@ -18,8 +18,9 @@ handY = y;
 handAngle = 0;
 handSprite = sRewardUncHandClosed;
 handImage = 0;
-handXScale = 1;
-handYscale = 1;
+handTargetScale = 1;
+handXScale = handTargetScale;
+handYscale = handTargetScale;
 
 //Blush
 blushTargetAlpha = -1;
@@ -28,3 +29,6 @@ lastMousDir = 0;
 
 //Show Hand
 alarm[0] = 230;
+
+//Play Intro Sound
+audioPlaySong("ShopBeforeIntro",120*10);

@@ -20,6 +20,9 @@ TweenEasyMove(x,y,x,SCREEN_HEIGHT + sprite_height + 20,110,200,EaseInCubic);
 //Fade Bg
 TweenFire(self,EaseLinear,TWEEN_MODE_ONCE,false,110,150,"bgAlpha",bgAlpha,0);
 
+//Play Intro Sound
+timeSourceCreate(3,audioPlaySong,[noone,120*25]);
+
 //Destroy Unc
 alarm[3] = 130;
 

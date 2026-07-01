@@ -1,18 +1,18 @@
 {
   "$GMSound":"v2",
-  "%Name":"sgShop",
+  "%Name":"sgShopBeforeIntro",
   "audioGroupId":{
     "name":"agMusic",
     "path":"audiogroups/agMusic",
   },
   "bitDepth":1,
-  "channelFormat":0,
+  "channelFormat":1,
   "compression":1,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":64.007256,
+  "duration":1.0,
   "exportDir":"",
-  "name":"sgShop",
+  "name":"sgShopBeforeIntro",
   "parent":{
     "name":"Shop",
     "path":"folders/Sounds/Music/Game/Shop.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sgShop.ogg",
+  "soundFile":"sgShopBeforeIntro.ogg",
   "volume":1.0,
 }

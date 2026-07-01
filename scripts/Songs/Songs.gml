@@ -29,9 +29,9 @@ function initSongs() {
     audioCreateSongs("Boombox2",sgBoombox2,[],2);
     
     //Shop
-    audioCreateSongs("ShopIntro",sgShopIntro,[],1,1,"Shop",true);
-    audioCreateSongs("Shop",sgShop,["ShopAfter"]);
-    audioCreateSongs("ShopAfter",sgShopAfter,["Shop"]);
+    audioCreateSongs("ShopBeforeIntro",sgShopBeforeIntro,[],1,1,"ShopBefore");
+    audioCreateSongs("ShopBefore",sgShopBefore,["ShopAfter"]);
+    audioCreateSongs("ShopAfter",sgShopAfter,["ShopBefore"]);
     
     //Retro Brawler Card
     audioCreateSongs("Retro1",sgRetro1,[],.9);

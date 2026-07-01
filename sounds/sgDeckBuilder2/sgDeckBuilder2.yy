@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"sgDeckBuilder2",
   "parent":{
-    "name":"Menus",
-    "path":"folders/Sounds/Music/Menus.yy",
+    "name":"DeckBuilder",
+    "path":"folders/Sounds/Music/Menus/DeckBuilder.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

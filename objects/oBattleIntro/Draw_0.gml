@@ -1,16 +1,16 @@
-//Draw Background
-draw_set_color(c_black);
-draw_set_alpha(.8*image_alpha*bgAlpha);
-draw_rectangle(SCREEN_EDGE.left,0,SCREEN_EDGE.right,SCREEN_HEIGHT,false);
-drawReset(); //Quick Reset
-
 //Draw Falling Cards
-draw_set_alpha(.5*image_alpha*bgAlpha);
+draw_set_alpha(.7*image_alpha*bgAlpha);
 draw_sprite_tiled(sSettingsCards,0,cardsX,cardsY);
 if global.animatedUi {
     cardsX += 0.2;
     cardsY += 0.2;
 }
+drawReset(); //Quick Reset
+
+//Draw Background
+draw_set_color(c_black);
+draw_set_alpha(.8*image_alpha*bgAlpha);
+draw_rectangle(SCREEN_EDGE.left,0,SCREEN_EDGE.right,SCREEN_HEIGHT,false);
 drawReset(); //Quick Reset
 
 //Draw Bars
