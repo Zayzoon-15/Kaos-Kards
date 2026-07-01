@@ -8,18 +8,19 @@ timeSourceCreate(2,function()
         
         x = getPosToWindow(stickToScreenRight,stickToScreenOffset);
         targetX = x;
-        boxX = x;
 	}
 	
 },[],time_source_units_frames);
 
 //Position
-boxX = x;
-boxY = y;
+boxX = 0;
+boxY = 0;
 targetX = x;
 targetY = y;
 posEaseTime = .2;
+boxEaseTime = .2;
 easePos = true;
+easeBoxPos = true;
 stickToScreen = false; //Makes the position change based on the screen
 stickToScreenRight = true; //If it should stick the the right side or left side of the screen
 stickToScreenOffset = xstart; //The offset of the x position to the screen
@@ -34,6 +35,8 @@ shake = 0;
 shadowX = 0;
 shadowY = 0;
 drawShadow = true;
+boxXScaleOffset = 0; //The amount the box grows more on the x axis
+boxYScaleOffset = 0; //The amount the box grows more on the y axis
 
 //Hover
 canHover = true;

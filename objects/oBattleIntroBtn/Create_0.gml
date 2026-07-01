@@ -11,12 +11,14 @@ isMenuButton = true;
 drawInfo = false;
 
 //Image
+boxYScaleOffset = .1;
 image_angle = 5;
 TweenEasyFade(0,1,0,30,EaseOutCubic);
 
 //Text
 sizeToText = true;
-text = " Start Battle ";
+textTargetSize = 3;
+text = "Start Battle";
 
 //Action
 action = function()

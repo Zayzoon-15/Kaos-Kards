@@ -6,10 +6,10 @@ if !isMenuButton and global.menuOpen {
 //Hover
 if touchingMouse() and canHover and !ignore and !global.holdingCard
 {
-    targetY = y - 3;
+    boxY = easeBoxPos ? lerp(boxY,-3,boxEaseTime) : -3;
     shadowY = lerp(shadowY,8,.2);
 } else {
-    targetY = y;
+    boxY = easeBoxPos ? lerp(boxY,0,boxEaseTime) : 0;
     shadowY = lerp(shadowY,5,.2);
     
     //Reset Pressed
@@ -43,15 +43,15 @@ if stickToScreen
     if _stick {
         x = getPosToWindow(stickToScreenRight,stickToScreenOffset); 
     } else x = xstart;
-    
-    targetX = x;
 }
 
 //Ease
-boxX = easePos ? lerp(boxX,targetX,posEaseTime) : targetX;
-boxY = easePos ? lerp(boxY,targetY,posEaseTime) : targetY;
-xscale = lerp(xscale,image_xscale,scaleTime);
-yscale = lerp(yscale,image_yscale,scaleTime);
-image_alpha = lerp(image_alpha,alpha,alphaTime);
+targetX = easePos ? lerp(targetX,x,posEaseTime) : x;
+targetY = easePos ? lerp(targetY,y,posEaseTime) : y;
+
+xscale = lerp(xscale,image_xscale+boxXScaleOffset,scaleTime);
+yscale = lerp(yscale,image_yscale+boxYScaleOffset,scaleTime);
 textXScale = lerp(textXScale,textTargetSize,textScaleTime);
 textYScale = lerp(textYScale,textTargetSize,textScaleTime);
+
+image_alpha = lerp(image_alpha,alpha,alphaTime);

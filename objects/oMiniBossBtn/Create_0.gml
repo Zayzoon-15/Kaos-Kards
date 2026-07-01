@@ -7,13 +7,15 @@ drawInfo = false;
 
 //Text
 sizeToText = true;
-text = " Start Battle ";
+textTargetSize = 3;
+text = "Start Battle";
 
 //Image
 drawShadow = false;
 image_alpha = 0;
 alpha = 1;
 alphaTime = .05;
+boxYScaleOffset = .1;
 //TweenEasyFade(0,1,10,20,EaseLinear);
 
 //Anim Curve

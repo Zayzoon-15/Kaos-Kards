@@ -11,6 +11,8 @@ TweenFire(self,EaseOutBack,TWEEN_MODE_ONCE,false,_delay,60,"easeTime",0,1);
 
 //Bg
 bgAlpha = 0;
+cardsX = 0;
+cardsY = 0;
 TweenFire(self,EaseOutCubic,TWEEN_MODE_ONCE,false,_delay,60,"bgAlpha",0,1);
 
 //Flash
