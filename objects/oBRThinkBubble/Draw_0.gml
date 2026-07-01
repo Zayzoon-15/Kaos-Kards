@@ -35,8 +35,6 @@ for (var i = 1; i < string_length(_string)+1; i++) {
             _k ++;
         }
         
-        print(_word,_cursorX);
-        
         //Move To Next Line If Word Too Big
         if _cursorX + string_width(_word) > maxWidth
         {
@@ -63,11 +61,12 @@ for (var i = 1; i < string_length(_string)+1; i++) {
     textAnims[i].curvePos = _curvePos;
     
     //Play Sound
-    if _curvePos >= .4 and !textAnims[i].playedSound and !forceShow
-    {
-        audioPlaySfx(snComboTick,1.4,1.6,.2);
-        textAnims[i].playedSound = true;
-    }
+    //if _curvePos >= .4 and !textAnims[i].playedSound and !forceShow
+    //{
+        //audioPlaySfx(snComboUsed,1.4,1.6,.2);
+        //audio_stop_sound(snComboTick);
+        //textAnims[i].playedSound = true;
+    //}
     
     //Set Offset
     textAnims[i].offsetSineX += 0.03;

@@ -1,11 +1,11 @@
 {
   "$GMSprite":"v2",
   "%Name":"sBRArrow",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":101,
   "bbox_left":38,
   "bbox_right":226,
-  "bbox_top":17,
+  "bbox_top":34,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,

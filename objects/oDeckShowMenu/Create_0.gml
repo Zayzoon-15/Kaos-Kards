@@ -7,6 +7,9 @@ image_yscale = 3.5;
 x = ROOM_CENTER.x;
 y = ROOM_CENTER.y;
 
+//Sound
+audioPlaySfx(snCloseMenu);
+
 //Setup Box
 boxWidth = (oDeckShowMenu.bbox_right - oDeckShowMenu.bbox_left)*.5;
 boxHeight = (oDeckShowMenu.bbox_bottom - oDeckShowMenu.bbox_top)-120;
