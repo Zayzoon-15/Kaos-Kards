@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"snBattleIntroClose",
+  "%Name":"snShake",
   "audioGroupId":{
     "name":"agSfx",
     "path":"audiogroups/agSfx",
@@ -10,9 +10,9 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":1.7961224,
+  "duration":0.5,
   "exportDir":"",
-  "name":"snBattleIntroClose",
+  "name":"snShake",
   "parent":{
     "name":"BattleIntro",
     "path":"folders/Sounds/Sfx/Ui/BattleIntro.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snBattleIntroClose.ogg",
+  "soundFile":"snShake.wav",
   "volume":1.0,
 }

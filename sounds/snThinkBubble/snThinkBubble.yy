@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"snBattleIntroClose",
+  "%Name":"snThinkBubble",
   "audioGroupId":{
     "name":"agSfx",
     "path":"audiogroups/agSfx",
@@ -10,17 +10,17 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":1.7961224,
+  "duration":1.9062585,
   "exportDir":"",
-  "name":"snBattleIntroClose",
+  "name":"snThinkBubble",
   "parent":{
-    "name":"BattleIntro",
-    "path":"folders/Sounds/Sfx/Ui/BattleIntro.yy",
+    "name":"Sfx",
+    "path":"folders/Sounds/Sfx.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snBattleIntroClose.ogg",
+  "soundFile":"snThinkBubble.ogg",
   "volume":1.0,
 }
