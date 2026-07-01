@@ -49,9 +49,11 @@ if touchingMouse() and canGrab
 if hover
 {
     targetScale = 1.05;
+    image_index = 1;
     //showY = lerp(showY,-8,.3);
 } else {
     //showY = lerp(showY,0,.3);
+    image_index = 0;
     targetScale = 1;
 }
 

@@ -1,6 +1,6 @@
 //Draw Bg
 draw_set_colour(c_black);
-draw_set_alpha(.8 * image_alpha);
+draw_set_alpha(.9 * image_alpha);
 draw_rectangle(SCREEN_EDGE.left,0,SCREEN_EDGE.right,SCREEN_HEIGHT,false);
 
 //Rotate

@@ -12,3 +12,8 @@ draw_self();
 
 //Draw Blush
 draw_sprite_ext(sRewardUncBlush,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,blushAlpha * image_alpha);
+
+//Draw Darkness
+draw_set_alpha(bgAlpha);
+draw_sprite_stretched(sRewardDarkeness,0,0,0,SCREEN_WIDTH,SCREEN_HEIGHT);
+drawReset(); //Quick Reset
