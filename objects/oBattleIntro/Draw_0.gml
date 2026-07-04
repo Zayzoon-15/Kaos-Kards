@@ -1,5 +1,5 @@
 //Draw Falling Cards
-draw_set_alpha(.7*image_alpha*bgAlpha);
+draw_set_alpha(.7*cardAlpha);
 draw_sprite_tiled(sSettingsCards,0,cardsX,cardsY);
 if global.animatedUi {
     cardsX += 0.2;

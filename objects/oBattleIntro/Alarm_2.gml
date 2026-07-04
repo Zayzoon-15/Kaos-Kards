@@ -7,7 +7,9 @@ TweenFire(self,EaseInBack,TWEEN_MODE_ONCE,false,0,_time,"enemyY",enemyY,ROOM_CEN
 TweenFire(self,EaseInBack,TWEEN_MODE_ONCE,false,0,_time,"enemyXScale",enemyXScale,1);
 TweenFire(self,EaseInBack,TWEEN_MODE_ONCE,false,0,_time,"enemyYScale",enemyYScale,1);
 TweenFire(self,EaseInBack,TWEEN_MODE_ONCE,false,0,_time,"easeTime",1,0);
+TweenFire(self,EaseLinear,TWEEN_MODE_ONCE,false,0,_time-5,"cardAlpha",1,0);
 TweenEasyFade(1,0,0,_time+10,EaseInCubic);
+
 
 with (oBattleIntroBtn) {
 	TweenFire(self,EaseInBack,TWEEN_MODE_ONCE,false,0,_time,"y",y,SCREEN_HEIGHT + 50);

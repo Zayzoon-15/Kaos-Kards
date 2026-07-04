@@ -15,5 +15,6 @@ draw_sprite_ext(sRewardUncBlush,image_index,x,y,image_xscale,image_yscale,image_
 
 //Draw Darkness
 draw_set_alpha(bgAlpha);
-draw_sprite_stretched(sRewardDarkeness,0,0,0,SCREEN_WIDTH,SCREEN_HEIGHT);
+darknessScale = sineBetween(current_time/10000,.6,-15,90);
+draw_sprite_stretched(sRewardDarkeness,0,SCREEN_EDGE.left-darknessScale,-darknessScale,SCREEN_WIDTH+darknessScale,SCREEN_HEIGHT+darknessScale);
 drawReset(); //Quick Reset

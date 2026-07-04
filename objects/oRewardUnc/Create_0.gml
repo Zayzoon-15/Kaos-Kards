@@ -12,6 +12,11 @@ TweenEasyMove(x,y,x,SCREEN_HEIGHT,20,200,EaseOutCubic);
 bgAlpha = 0;
 TweenFire(self,EaseLinear,TWEEN_MODE_ONCE,false,5,150,"bgAlpha",0,.7);
 
+//Darkness
+darknessX = 0;
+darknessY = 0;
+darknessScale = 0;
+
 //Hand Values
 handX = x;
 handY = y;
