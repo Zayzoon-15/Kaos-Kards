@@ -63,8 +63,7 @@ for (var i = 1; i < string_length(_string)+1; i++) {
     //Play Sound
     if _curvePos >= .4 and !textAnims[i].playedSound and !forceShow
     {
-        audioPlaySfx(snThinkBubble,1,1,.2);
-        audio_stop_sound(snComboTick);
+        audioPlaySfx(snComboTick,.98,1.02,.4);
         textAnims[i].playedSound = true;
     }
     
