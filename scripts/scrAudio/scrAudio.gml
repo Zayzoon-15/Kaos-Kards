@@ -187,8 +187,11 @@ function audioPlaySong(_song,_fadeTime = 30,_lastSongEndMethod = "Stop",_forcePo
         //Set Current Song
         global.curSongAudio = global.songsPaused[? _track.name]; 
         
-        //Resume
-        audio_resume_sound(global.curSongAudio);
+        //If Undefined (No song for some reason)
+        if global.curSongAudio == undefined
+        {
+            global.curSongAudio = audio_play_sound(_track.sound,10,true);
+        } else audio_resume_sound(global.curSongAudio); //Resume Song
         
         //Remove From Paused Map
         ds_map_delete(global.songsPaused,_track.name);

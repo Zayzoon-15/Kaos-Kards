@@ -123,7 +123,7 @@ enemyInfo = {
     
     bones : new Enemy.Create("Jones the Living Bones",
         sBones, Enemy.Anims(), Enemy.Dialogue(),
-        Enemy.Difficulty(1,5,135,3,3),
+        Enemy.Difficulty(1,5,135,3,2),
         [
             actionCards.heal, actionCards.heal,
             actionCards.shield, actionCards.shield,

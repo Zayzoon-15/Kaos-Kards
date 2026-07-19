@@ -50,24 +50,24 @@ function initTourney(){
     //Info
     tourneyInfo = {
         
-        debut : new createTourney("Debut Tournament", sTourneyArt1, [
+        debut : new createTourney("Debut Tournament", sTourneyArtDebut, [
             enemyInfo.dog, enemyInfo.cock, enemyInfo.angel,
             enemyInfo.alien, enemyInfo.beer
         ], false, [], -1, [oBRShop,oBRPickle]),
         
-        retro : new createTourney("Retro Tournament", sTourneyArt2, [
+        retro : new createTourney("Retro Tournament", sTourneyArtRetro, [
             enemyInfo.handsy, enemyInfo.chud,
         ], false, [
             ruleInfo.deckShuffle, ruleInfo.timeLimit
         ], 5, [oBRTv,oBRWand]),
         
-        spooky : new createTourney("Spooky Tournament", sTourneyArt3, [
+        spooky : new createTourney("Spooky Tournament", sTourneyArtDebut, [
             enemyInfo.bones, enemyInfo.fungi,
         ], false, [
             ruleInfo.deckShuffle, ruleInfo.timeLimit
         ], 1.5),
         
-        cameos : new createTourney("Extras", sTourneyArt4, [
+        cameos : new createTourney("Extras", sTourneyArtDebut, [
             enemyInfo.jsg, enemyInfo.pug, enemyInfo.fungi, enemyInfo.bf,
             enemyInfo.teto,
         ],true , [

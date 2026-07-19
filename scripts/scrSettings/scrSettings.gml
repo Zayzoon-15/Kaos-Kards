@@ -115,7 +115,13 @@ function keyToString(_key)
         case vk_up: return "Up Arrow";
 		case vk_down: return "Down Arrow";
 		case vk_left: return "Left Arrow";
-		case vk_right: return "Right Arrow";
+		case vk_right: return "Right Arrow"; 
+        case vk_space: return "Space";	
+        case vk_control: return "Control";	
+        case vk_alt: return "Alt";	
+        case vk_backspace: return "Backspace";	
+        case vk_enter: return "Enter";	
+        case vk_shift: return "Shift";	
 		case 220: return "Backslash";
 		case 1: return "Left Mouse";
 		case 2: return "Right Mouse";

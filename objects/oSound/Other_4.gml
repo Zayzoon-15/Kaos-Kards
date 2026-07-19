@@ -25,3 +25,9 @@ if room == rTournies or room == rTourneySelector
 {
     audioPlaySong("Menu");
 }
+
+//Test Room
+if array_contains([rMainMenu_1,rTesting,rTestingCard,rTestingEnemy,rTestingVoice],room)
+{
+    audioPlaySong("Test");
+}
