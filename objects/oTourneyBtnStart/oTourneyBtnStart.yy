@@ -8,8 +8,8 @@
   "name":"oTourneyBtnStart",
   "overriddenProperties":[],
   "parent":{
-    "name":"Tournies",
-    "path":"folders/Objects/Ui/Tournies.yy",
+    "name":"Tourney Menu",
+    "path":"folders/Objects/Ui/Tourney Menu.yy",
   },
   "parentObjectId":{
     "name":"oParButton",

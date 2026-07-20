@@ -1,6 +1,6 @@
 {
   "$GMSprite":"v2",
-  "%Name":"sTourneyArtRetro",
+  "%Name":"sTourneyArtSpooky",
   "bboxMode":0,
   "bbox_bottom":343,
   "bbox_left":0,
@@ -12,16 +12,16 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"ee6d9ff5-3e31-4aa7-bafe-75319f5cdec4","name":"ee6d9ff5-3e31-4aa7-bafe-75319f5cdec4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"c82337a1-a3b8-4094-86ab-aa6d0bdb6b7d","name":"c82337a1-a3b8-4094-86ab-aa6d0bdb6b7d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":344,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"93de90d4-76fe-47b1-8f86-177e68e53515","blendMode":0,"displayName":"default","isLocked":false,"name":"93de90d4-76fe-47b1-8f86-177e68e53515","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"b92ccb38-2fe5-4731-950a-77e32b42afa4","blendMode":0,"displayName":"default","isLocked":false,"name":"b92ccb38-2fe5-4731-950a-77e32b42afa4","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"sTourneyArtRetro",
+  "name":"sTourneyArtSpooky",
   "nineSlice":null,
   "origin":9,
   "parent":{
@@ -33,7 +33,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"sTourneyArtRetro",
+    "%Name":"sTourneyArtSpooky",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -57,7 +57,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"sTourneyArtRetro",
+    "name":"sTourneyArtSpooky",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ee6d9ff5-3e31-4aa7-bafe-75319f5cdec4","path":"sprites/sTourneyArtRetro/sTourneyArtRetro.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"4b0fc75b-e3c0-41e6-b104-fac5c4cc12ff","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c82337a1-a3b8-4094-86ab-aa6d0bdb6b7d","path":"sprites/sTourneyArtSpooky/sTourneyArtSpooky.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"ef262dd5-2a0b-4398-be40-b39cafdcc634","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

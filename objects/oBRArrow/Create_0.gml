@@ -24,45 +24,42 @@ action = function()
     global.currentEnemy = global.currentTourney.enemies[global.tourneyEnemiesBeaten];
     
     //Check If Miniboss
-    var _chance = global.miniBossesBeaten < 2 ? irandom_range(1,1) : 0;
+    var _chance = global.miniBossesBeaten < 2 ? irandom_range(1,10) : 0;
     
     //Go To Room
     global.menuOpen = false;
     transStart(rPrepare);
     eventGameReset(false);
     
+    print("MINI BOSSES",global.currentTourney.miniBosses);
+    print("LAST WAS MINI",global.lastWasMini);
+    print("ENMIES BEATEN",global.tourneyEnemiesBeaten);
+    print("CHANCE",_chance);
+    
     //Do Miniboss
-    if _chance == 1 and global.currentTourney.miniBosses
+    if _chance == 1 and global.currentTourney.miniBosses and global.tourneyEnemiesBeaten > 0 and !global.lastWasMini
     {
-        //Get Random Enemy
+        print("DO MINI BOSS")
+        
+        //Setup Enemy Lists
         var _enemyList = struct_get_names(enemyInfo);
-        var _targetIndexs = [];
+        var _targetEnemies = [];
         
+        //Get A Random Enemy
         for (var i = 0; i < array_length(_enemyList); i++) {
-            
-            for (var k = 0; k < array_length(global.currentTourney.enemies); k++) {
-                //Has Same Enemies
-                if global.currentTourney.enemies[k].name == struct_get(enemyInfo,_enemyList[i]).name
-                {
-                    array_push(_targetIndexs,i);
-                }
-            }
-            
-            //Delete If Boss
-            if struct_get(enemyInfo,_enemyList[i]).special != undefined
+            var _enemyInfo = struct_get(enemyInfo,_enemyList[i]);
+        	if !array_contains(global.currentTourney.enemies,_enemyInfo) and _enemyInfo.special == undefined
             {
-                array_push(_targetIndexs,i);
+                array_push(_targetEnemies,_enemyList[i]);
+                
+                //In here later we can change it so u can only fight enemies you have fought before
             }
         }
         
-        //Delete Indexs
-        for (var i = 0; i < array_length(_targetIndexs); i++) {
-            array_delete(_enemyList,_targetIndexs[i],1);
-        }
-        delete _targetIndexs;
-        
+        //Set Info
         global.isMiniBoss = true;
-        global.currentEnemy = struct_get(enemyInfo,array_get_random(_enemyList)); //Get Random Enemy
-    }
+        global.lastWasMini = true;
+        global.currentEnemy = struct_get(enemyInfo,array_get_random(_targetEnemies)); //Get Random Enemy
+    } else global.lastWasMini = false;
     
 }

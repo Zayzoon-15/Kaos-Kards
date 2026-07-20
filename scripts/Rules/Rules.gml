@@ -1,10 +1,4 @@
-enum ACTION_EVENTS
-{
-    MATCH_START,
-    EVERY_ROUND,
-    STEP,
-    
-}
+
 
 function Rule(_desc = "Blank Rule", _action = function(){}, _actionEvent = ACTION_EVENTS.EVERY_ROUND) constructor {
     desc = _desc;
@@ -21,7 +15,6 @@ function initRules(){
             with oDeck
             {
                 deck = array_shuffle(deck);
-                print("Deck Shuffled");
             }
         }),
         

@@ -49,11 +49,13 @@ if global.curSong != noone and global.curSongAudio != noone and global.curSong !
 //Remove Sound Effects
 if global.sfxVol > 0 and global.masterVol > 0 and array_length(global.allSfx) > 0
 {
-    print(array_length(global.allSfx));
     for (var i = 0; i < array_length(global.allSfx); i++) {
-    	if !audio_is_playing(global.allSfx[i]) and !audio_is_paused(global.allSfx[i])
+    	if audio_exists(global.allSfx[i]) and !audio_is_playing(global.allSfx[i]) and !audio_is_paused(global.allSfx[i])
         {
             audio_stop_sound(global.allSfx[i]);
+            array_delete(global.allSfx,i,1);
+        } else if !audio_exists(global.allSfx[i])
+        {
             array_delete(global.allSfx,i,1);
         }
     }

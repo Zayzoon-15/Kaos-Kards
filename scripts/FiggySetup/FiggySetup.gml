@@ -17,8 +17,8 @@ function FiggySetup() {
         Figgy.Button("Stickers",function(){transStart(room,oTransSticker)});
         Figgy.Separator("Main Game");
         Figgy.Button("Prepare",function(){transStart(rPrepare)});
-        Figgy.Button("Enemy",function(){if global.currentEnemy == undefined {global.currentEnemy = enemyInfo.dog} room_goto(rEnemy)});
-        Figgy.Button("Kaos",function(){if global.currentEnemy == undefined {global.currentEnemy = enemyInfo.dog} room_goto(rKaos)});
+        Figgy.Button("Enemy",function(){if global.currentEnemy == undefined {global.currentEnemy = enemyInfo.dog} transStart(rEnemy)});
+        Figgy.Button("Kaos",function(){if global.currentEnemy == undefined {global.currentEnemy = enemyInfo.dog} transStart(rKaos)});
         Figgy.Button("Break Room",function(){transStart(rBreakRoom)});
         Figgy.Separator("Menus");
         Figgy.Button("Menu",function(){transStart(rTournies)});

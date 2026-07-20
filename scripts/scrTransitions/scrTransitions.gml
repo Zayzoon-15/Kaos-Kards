@@ -1,6 +1,7 @@
 
 global.midTrans = false;
 global.roomTarget = -1;
+global.lastRoom = noone;
 
 function transPlaceSequence(_type,_speed)
 {
@@ -25,6 +26,8 @@ function transStart(_roomTarget,_typeOut = seqFadeOut,_typeIn = seqFadeIn,_trans
 {
     if !global.midTrans
     {
+        
+        //Set Transition
         global.midTrans = true;
         global.roomTarget = _roomTarget;
 		
@@ -55,6 +58,9 @@ function transChangeRoom()
 {
     //Close Menus
     global.menuOpen = false;
+
+    //Set Last Room
+    global.lastRoom = room;
     
     //Change Room
     room_goto(global.roomTarget);

@@ -13,7 +13,7 @@ text = "Tournaments";
 action = function()
 {
     //Go To Room
-    transStart(rTourneySelector);
+    transStart(rTourneyMenu);
     eventGameReset();
     
     //Don't Hover

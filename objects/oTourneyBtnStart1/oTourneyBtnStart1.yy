@@ -1,18 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"oTourneyMenuPaper",
+  "%Name":"oTourneyBtnStart1",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oTourneyMenuPaper",
+  "name":"oTourneyBtnStart1",
   "overriddenProperties":[],
   "parent":{
-    "name":"Tourney Menu",
-    "path":"folders/Objects/Ui/Tourney Menu.yy",
+    "name":"Tournies",
+    "path":"folders/Objects/Ui/Tournies.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oParButton",
+    "path":"objects/oParButton/oParButton.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sTourneyArtDebut",
-    "path":"sprites/sTourneyArtDebut/sTourneyArtDebut.yy",
+    "name":"sButton",
+    "path":"sprites/sButton/sButton.yy",
   },
   "spriteMaskId":null,
   "visible":true,

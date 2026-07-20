@@ -24,7 +24,7 @@ action = function()
         instance_destroy(oSongTracker);
         
         //Go To Menu
-        transStart(rTourneySelector);
+        transStart(rTournies);
         timeSourceCreate(20,function(){
             oPause.unpauseGame();
 			eventGameReset(true);

@@ -16,6 +16,7 @@ function eventGameReset(_hardReset = true)
         global.tourneyEnemiesBeaten = 0;
         global.miniBossesBeaten = 0;
         global.isMiniBoss = false;
+        global.lastWasMini = false;
     }
     
 	//Set Gamestate
@@ -23,6 +24,7 @@ function eventGameReset(_hardReset = true)
 	
     //Reset Round
     global.gameRound = 0;
+    global.isMiniBoss = false;
     
     //Set Rewards For Break Room
     global.gaveReward = false;

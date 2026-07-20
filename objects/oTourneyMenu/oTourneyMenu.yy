@@ -8,8 +8,8 @@
   "name":"oTourneyMenu",
   "overriddenProperties":[],
   "parent":{
-    "name":"KaosKards",
-    "path":"KaosKards.yyp",
+    "name":"Tourney Menu",
+    "path":"folders/Objects/Ui/Tourney Menu.yy",
   },
   "parentObjectId":null,
   "persistent":false,

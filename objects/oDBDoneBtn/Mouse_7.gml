@@ -1,8 +1,12 @@
 //Start Transition
 if canPress and pressed
 {
-    if global.currentTourney == undefined
+    var _room = variable_global_get("DBSavedRoom");
+    
+    if _room == rBreakRoom
     {
-        transStart(rTournies,oTransSticker);
-    } else transStart(rBreakRoom);
+        transStart(rBreakRoom);
+    } else {
+    	transStart(_room,oTransSticker);
+    }
 }

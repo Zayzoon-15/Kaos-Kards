@@ -1,6 +1,6 @@
 ruleString = "-Rules\n";
 
-change = function(_info = tourneyInfo.cameos)
+change = function(_info = tourneyInfo.cameos,_dir = 0)
 {
     //Clear Rules
     ruleString = "";

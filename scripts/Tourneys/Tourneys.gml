@@ -43,6 +43,7 @@ function initTourney(){
     global.tourneysBeaten = [];
     global.miniBossesBeaten = 0;
     global.isMiniBoss = false;
+    global.lastWasMini = false;
     
     //Init Rules
     initRules();
@@ -61,13 +62,13 @@ function initTourney(){
             ruleInfo.deckShuffle, ruleInfo.timeLimit
         ], 5, [oBRTv,oBRWand]),
         
-        spooky : new createTourney("Spooky Tournament", sTourneyArtDebut, [
+        spooky : new createTourney("Spooky Tournament", sTourneyArtSpooky, [
             enemyInfo.bones, enemyInfo.fungi,
         ], false, [
             ruleInfo.deckShuffle, ruleInfo.timeLimit
         ], 1.5),
         
-        cameos : new createTourney("Extras", sTourneyArtDebut, [
+        cameos : new createTourney("Extras", sTourneyArtCameo, [
             enemyInfo.jsg, enemyInfo.pug, enemyInfo.fungi, enemyInfo.bf,
             enemyInfo.teto,
         ],true , [

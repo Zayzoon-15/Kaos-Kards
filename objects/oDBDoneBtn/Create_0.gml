@@ -11,3 +11,9 @@ scale = 1;
 xOffset = 0;
 yOffset = 0;
 shadowOffset = 0;
+
+//Set A Global Var
+if global.lastRoom != rDeckBuilder1 and global.lastRoom != rDeckBuilder2
+{
+    variable_global_set("DBSavedRoom",global.lastRoom);
+}

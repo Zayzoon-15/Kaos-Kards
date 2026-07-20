@@ -1,0 +1,20 @@
+// Inherit the parent event
+event_inherited();
+
+//Button
+canHover = true;
+
+//Info
+infoText = "Press to start the tournament";
+text = "Start";
+
+//Action
+action = function()
+{
+    //Start Game
+    transStart(rBreakRoom);
+    eventGameReset(true);
+    
+    //Don't Hover
+    canHover = false;
+}

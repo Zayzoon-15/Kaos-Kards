@@ -44,8 +44,8 @@ changeTourney = function(_dir = 1,_setTo = undefined)
     global.currentTourney = curTourney;
     
     //Change Visuals
-    oTourneyMenuRules.change(curTourney);
-    oTourneyMenuPaper.change(curTourney);
+    oTourneyMenuRules.change(curTourney,_dir);
+    oTourneyMenuPaper.change(curTourney,_dir);
 }
 changeTourney(0,curTourney);
 

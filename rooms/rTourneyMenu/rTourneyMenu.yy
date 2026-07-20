@@ -1,20 +1,25 @@
 {
   "$GMRoom":"v1",
-  "%Name":"rMainMenu_1",
-  "creationCodeFile":"rooms/rMainMenu_1/RoomCreationCode.gml",
+  "%Name":"rTourneyMenu",
+  "creationCodeFile":"rooms/rTourneyMenu/RoomCreationCode.gml",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
-    {"name":"inst_138349E4","path":"rooms/rMainMenu_1/rMainMenu_1.yy",},
-    {"name":"inst_4905F3A1","path":"rooms/rMainMenu_1/rMainMenu_1.yy",},
-    {"name":"inst_3B43B1F2","path":"rooms/rMainMenu_1/rMainMenu_1.yy",},
-    {"name":"inst_65D00864","path":"rooms/rMainMenu_1/rMainMenu_1.yy",},
-    {"name":"inst_1BF9093E","path":"rooms/rMainMenu_1/rMainMenu_1.yy",},
+    {"name":"inst_138349E4","path":"rooms/rTourneyMenu/rTourneyMenu.yy",},
+    {"name":"inst_4905F3A1","path":"rooms/rTourneyMenu/rTourneyMenu.yy",},
+    {"name":"inst_3B43B1F2","path":"rooms/rTourneyMenu/rTourneyMenu.yy",},
+    {"name":"inst_65D00864","path":"rooms/rTourneyMenu/rTourneyMenu.yy",},
+    {"name":"inst_1BF9093E","path":"rooms/rTourneyMenu/rTourneyMenu.yy",},
+    {"name":"inst_6AF06EE0","path":"rooms/rTourneyMenu/rTourneyMenu.yy",},
+    {"name":"inst_10EF86E6","path":"rooms/rTourneyMenu/rTourneyMenu.yy",},
   ],
   "isDnd":false,
   "layers":[
-    {"$GMRInstanceLayer":"","%Name":"Effects","depth":0,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Effects","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+    {"$GMRInstanceLayer":"","%Name":"Effects","depth":0,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+        {"$GMRInstance":"v4","%Name":"inst_6AF06EE0","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6AF06EE0","objectId":{"name":"oTourneyBtnStart","path":"objects/oTourneyBtnStart/oTourneyBtnStart.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":960.0,"y":368.0,},
+        {"$GMRInstance":"v4","%Name":"inst_10EF86E6","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_10EF86E6","objectId":{"name":"oTourneyBtnDeck","path":"objects/oTourneyBtnDeck/oTourneyBtnDeck.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1040.0,"y":512.0,},
+      ],"layers":[],"name":"Effects","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Ui","depth":100,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_3B43B1F2","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3B43B1F2","objectId":{"name":"oTourneyArrow","path":"objects/oTourneyArrow/oTourneyArrow.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":48.0,"y":224.0,},
         {"$GMRInstance":"v4","%Name":"inst_65D00864","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":1,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_65D00864","objectId":{"name":"oTourneyArrow","path":"objects/oTourneyArrow/oTourneyArrow.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1230.0,"y":224.0,},
@@ -31,7 +36,7 @@
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4287727237,"depth":500,"effectEnabled":true,"effectType":null,"gridX":8,"gridY":8,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
-  "name":"rMainMenu_1",
+  "name":"rTourneyMenu",
   "parent":{
     "name":"Menus",
     "path":"folders/Rooms/Menus.yy",

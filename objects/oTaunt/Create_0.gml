@@ -19,9 +19,15 @@ if targetEnemy
 {
     global.playerComboMeter += _value;
     global.enemyComboMeter -= _stealValue;
+    
+    //Enemy Get Mad
+    oEnemyPhoto.anim.play("hurt");
 } else {
     global.playerComboMeter -= _stealValue;
     global.enemyComboMeter += _value;
+    
+    //Enemy Get Happy
+    oEnemyPhoto.anim.play("win");
 }
 
 //Sound

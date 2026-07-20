@@ -1,22 +1,5 @@
-//Rotate
-angleVel = 0;
-damping = .75;
-stiffness = .07;
-limit = 80;
-mouseDrag = .03;
-
-//Mouse
-lastMouseX = x;
-touched = false;
-
-//Grab
-grabbed = false;
-wasGrabbed = false;
-canHover = true;
-
-
-change = function(_info = tourneyInfo.cameos)
+change = function(_info = tourneyInfo.cameos,_dir = 0)
 {
     sprite_index = _info.sprite;
-    image_angle = 35;
+    image_angle = -25 * _dir;
 }
