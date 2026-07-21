@@ -47,3 +47,10 @@ alarm[0] = _time+_delay+20;
 timeSourceCreate(_delay+10,function(){
     audio_play_sound(info.introSong,10,false);
 },[],time_source_units_frames);
+
+//Chance To Fight John Rod
+if irandom_range(1,1000) == 1
+{
+    global.currentEnemy = enemyInfo.rod;
+    info = enemyInfo.rod;
+}

@@ -216,6 +216,18 @@ enemyInfo = {
         Enemy.Strat(1.3,.7,.5,.7,.8), [actionCards.taunt,actionCards.taunt,actionCards.taunt]
     ),
     
+    rod : new Enemy.Create("John Rod",
+        sRod, Enemy.Anims(), Enemy.Dialogue(),
+        Enemy.Difficulty(100,100,1000,100,100),
+        [
+            actionCards.laser, actionCards.laser, actionCards.laser,
+            actionCards.laser, actionCards.laser, actionCards.laser,
+            actionCards.laser, actionCards.laser, actionCards.laser,
+        ],
+        [kaosCards.rerun,kaosCards.high],
+        Enemy.Strat(10,0,0,0,0), [kaosCards.herobrine]
+    ),
+    
     
     #endregion
 };
