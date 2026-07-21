@@ -15,4 +15,4 @@ action = function()
 }
 
 //Play Song For Now
-audioPlaySong("ShopIntro",30,"Pause");
+audioPlaySong("ShopIntro",SONG_FADE_TIME,"Pause");

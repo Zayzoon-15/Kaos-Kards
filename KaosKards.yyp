@@ -487,6 +487,7 @@
     {"id":{"name":"Voiceovers","path":"scripts/Voiceovers/Voiceovers.yy",},},
     {"id":{"name":"seqFadeIn","path":"sequences/seqFadeIn/seqFadeIn.yy",},},
     {"id":{"name":"seqFadeOut","path":"sequences/seqFadeOut/seqFadeOut.yy",},},
+    {"id":{"name":"seqFadeOutLonger","path":"sequences/seqFadeOutLonger/seqFadeOutLonger.yy",},},
     {"id":{"name":"shFlash","path":"shaders/shFlash/shFlash.yy",},},
     {"id":{"name":"shForceBlend","path":"shaders/shForceBlend/shForceBlend.yy",},},
     {"id":{"name":"shOutline","path":"shaders/shOutline/shOutline.yy",},},
@@ -888,8 +889,8 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rSetup","path":"rooms/rSetup/rSetup.yy",},},
-    {"roomId":{"name":"rTournies","path":"rooms/rTournies/rTournies.yy",},},
     {"roomId":{"name":"rBreakRoom","path":"rooms/rBreakRoom/rBreakRoom.yy",},},
+    {"roomId":{"name":"rTournies","path":"rooms/rTournies/rTournies.yy",},},
     {"roomId":{"name":"rTourneyMenu","path":"rooms/rTourneyMenu/rTourneyMenu.yy",},},
     {"roomId":{"name":"rPrepare","path":"rooms/rPrepare/rPrepare.yy",},},
     {"roomId":{"name":"rTestingMusic","path":"rooms/rTestingMusic/rTestingMusic.yy",},},

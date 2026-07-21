@@ -279,6 +279,7 @@
     {"name":"VoiceInfo","order":2,"path":"scripts/VoiceInfo/VoiceInfo.yy",},
     {"name":"Voiceovers","order":3,"path":"scripts/Voiceovers/Voiceovers.yy",},
     {"name":"seqFadeOut","order":1,"path":"sequences/seqFadeOut/seqFadeOut.yy",},
+    {"name":"seqFadeOutLonger","order":2,"path":"sequences/seqFadeOutLonger/seqFadeOutLonger.yy",},
     {"name":"shForceBlend","order":1,"path":"shaders/shForceBlend/shForceBlend.yy",},
     {"name":"shOutline","order":3,"path":"shaders/shOutline/shOutline.yy",},
     {"name":"sgBattleIntroBeer","order":1,"path":"sounds/sgBattleIntroBeer/sgBattleIntroBeer.yy",},

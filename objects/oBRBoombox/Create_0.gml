@@ -42,6 +42,6 @@ action = function()
     if curSong == songs[0]
     {
         audioPlaySong(curSong[0]);
-    } else audioPlaySong(curSong[0],30,"Pause");
+    } else audioPlaySong(curSong[0],SONG_FADE_TIME,"Pause");
     
 }

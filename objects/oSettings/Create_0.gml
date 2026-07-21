@@ -19,7 +19,7 @@ createSettings = function()
 	instance_deactivate_object(oParButton);
 
 	//Play Song
-    audioPlaySong("Settings",30,"Pause");
+    audioPlaySong("Settings",SONG_FADE_TIME,"Pause");
 	//audioPlayGroupSong(global.musicGroups.menu,sgKetting,300);
 	
 	#region Menu

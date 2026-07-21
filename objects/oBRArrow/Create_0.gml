@@ -1,6 +1,7 @@
 //Mouse
 hover = false;
 pressed = false;
+clicked = false;
 
 //Animate
 image_speed = 0;
@@ -17,12 +18,33 @@ shadowScale = 1;
 shadowY = 7;
 shadowX = 0;
 
+//Reverb
+reverbMix = 0;
+
 //Action
 action = function()
 {
-    //Reverb
+    clicked = true;
+    audioSetEffect(AudioEffectType.Reverb1,{
+        mix : 0,
+        damp : .23,
+        release : .10,
+        rate : .33,
+        size : .50,
+        locut : .16,
+        hicut : .23,
+        
+    },-1);
     
+    transStart(rPrepare,seqFadeOutLonger,seqFadeIn,.2);
     
+    //30 120 * 15
+    timeSourceCreate(50,audioPlaySong,[noone,120*30],time_source_units_frames); //Fade Song
+    timeSourceCreate(4.5, function()
+    {
+        print("BE GONE FOUL BEST")
+        audio_bus_main.effects = [];
+    });
     
     ////Change Enemy
     //global.currentEnemy = global.currentTourney.enemies[global.tourneyEnemiesBeaten];

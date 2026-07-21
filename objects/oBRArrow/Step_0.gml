@@ -68,3 +68,10 @@ if (touchingMouse() and !global.menuOpen and !global.midTrans) or image_speed ==
     //Angle
     angle = lerp(angle,0,.2);
 }
+
+//Fade Mix
+if clicked
+{
+    audio_bus_main.effects[0].mix = reverbMix;
+    reverbMix = approach(reverbMix,.66,.009);
+}

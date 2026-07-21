@@ -114,11 +114,11 @@ function audioCreateSongs(_name,_sound,_syncWith=[],_volume = 1,_loopTimes = -1,
 
 /// @desc Plays a song
 /// @param {string} _song The song to play (Make sure it has been created)
-/// @param {real} [_fadeTime] The fade time for the song (Default = 30)
+/// @param {real} [_fadeTime] The fade time for the song (Default = SONG_FADE_TIME)
 /// @param {string} [_lastSongEndMethod] What the song method for the last song should be ("Stop" to stop the song completely, "Pause" to pause the song ) (Default = "Stop")
 /// @param {bool} [_forcePos] If it should force the song to a certain position (Default = false)
 /// @param {struct} [_forcePosInfo] The information for forcing the song into a certain position (EX: {pos: 0, loops: 0})
-function audioPlaySong(_song,_fadeTime = 30,_lastSongEndMethod = "Stop",_forcePos = false,_forcePosInfo = {pos: 0, loops: 0})
+function audioPlaySong(_song,_fadeTime = SONG_FADE_TIME,_lastSongEndMethod = "Stop",_forcePos = false,_forcePosInfo = {pos: 0, loops: 0})
 {
     //Get Correct Song
     if is_array(_song)
@@ -259,4 +259,30 @@ function audioIsPlaying(_sound,_forceStop = false)
     
     //Return
     return _amountPlaying;
+}
+
+
+
+/// @desc Adds an audio effect to the entire game
+/// @param {enum.AudioEffectType} [_effectType] The effect to apply to the game (Default = AudioEffectType.Reverb1)
+/// @param {struct} [_params] The paramaters of the effect (Default = {size : .6,damping : .3,mix : .5})
+/// @param {real} [_clearTime] The time it takes to clear out all the effects (Default = 20)
+/// @param {constant.timesourceunits} [_timeUnits] The time units to use for the clear time (Default = time_source_units_seconds)
+function audioSetEffect(_effectType = AudioEffectType.Reverb1,_params = {size : .6,damping : .3,mix : .5},_clearTime = 20,_timeUnits = time_source_units_seconds)
+{
+    //Create Effect
+    var _effect = audio_effect_create(AudioEffectType.Reverb1,_params);
+    
+    //Apply Effect
+    audio_bus_main.effects[0] = _effect;
+    delete _effect;
+    
+    //Clear
+    if _clearTime != -1
+    {
+        timeSourceCreate(_clearTime,function()
+        {
+            audio_bus_main.effects[0] = [];
+        },[],_timeUnits);
+    }
 }

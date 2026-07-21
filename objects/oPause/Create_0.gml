@@ -44,7 +44,7 @@ pauseGame = function()
     lastSong = global.curSong;
     
     //Stop Songs
-    audioPlaySong(noone,30,"Pause");
+    audioPlaySong(noone,SONG_FADE_TIME,"Pause");
     
     #region Deactivate
     
@@ -90,7 +90,7 @@ unpauseGame = function()
     //Replay Song
     if lastSong != noone
     {
-        audioPlaySong(lastSong,30,"Stop",true,{pos:lastSongPos,loops:lastSongLoops});
+        audioPlaySong(lastSong,SONG_FADE_TIME,"Stop",true,{pos:lastSongPos,loops:lastSongLoops});
     }
     
     //Destroy Menu

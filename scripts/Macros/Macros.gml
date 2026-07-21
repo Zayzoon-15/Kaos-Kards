@@ -18,6 +18,9 @@
 #macro CAMERA_POS new Vector2(camera_get_view_x(view_camera[0]),camera_get_view_y(view_camera[0]))
 #macro SCREEN_EDGE {left: camera_get_view_x(view_camera[0]), right: camera_get_view_x(view_camera[0]) + camera_get_view_width(view_camera[0])} 
 
+//Audio
+#macro SONG_FADE_TIME 80 
+
 //Events
 enum ACTION_EVENTS
 {
