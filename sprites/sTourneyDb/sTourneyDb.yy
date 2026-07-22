@@ -26,7 +26,7 @@
   "origin":1,
   "parent":{
     "name":"Buttons",
-    "path":"folders/Sprites/Tourney Menu/Buttons.yy",
+    "path":"folders/Sprites/Ui/Tourney Menu/Buttons.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

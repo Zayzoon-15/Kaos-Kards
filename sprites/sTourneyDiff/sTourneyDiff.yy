@@ -26,7 +26,7 @@
   "origin":4,
   "parent":{
     "name":"Tourney Menu",
-    "path":"folders/Sprites/Tourney Menu.yy",
+    "path":"folders/Sprites/Ui/Tourney Menu.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

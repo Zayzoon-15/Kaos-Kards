@@ -26,7 +26,7 @@
   "origin":1,
   "parent":{
     "name":"Paper Art",
-    "path":"folders/Sprites/Tourney Menu/Paper Art.yy",
+    "path":"folders/Sprites/Ui/Tourney Menu/Paper Art.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
