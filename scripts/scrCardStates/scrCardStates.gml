@@ -124,10 +124,25 @@ function cardStateHand(){
     
     #region Input
     
-    //Place Key
-    if hover and gameState == GAMESTATES.PREPARE
+    //Input Keys
+    if hover and gameState == GAMESTATES.PREPARE and canGrab and !global.holdingCard and canMove
     {
-        if keyCheckPressed(global.keyPlace)
+        //Delete Card
+        if keyCheckPressed(global.keyDiscard) and !oDiscard.isFull
+        {
+            call_later(1,time_source_units_frames,removeCardFromHand);
+            call_later(1,time_source_units_frames,deleteCard);
+        }
+        
+        //Error On Place
+        if keyCheckPressed(global.keyPlace) and !canPlace
+        {
+            shake += 5;
+            createAlertMessage("Can't Place Card Yet");
+        }
+        
+        //Place Card
+        if keyCheckPressed(global.keyPlace) and canPlace
         {
             //Get Target Slot
             var _slot = noone, _lastId = 99;
@@ -163,18 +178,11 @@ function cardStateHand(){
                 
                 //Preform Let Go Event
                 event_perform(ev_global_left_release,0);
-            } else createAlertMessage("No Slots Available");
+            } else {
+                createAlertMessage("No Slots Available");
+                shake += 5;
+            }
             
-        }
-    }
-    
-    //Delete Key
-    if hover and gameState == GAMESTATES.PREPARE
-    {
-        if keyCheckPressed(global.keyDiscard) and !oDiscard.isFull
-        {
-            removeCardFromHand();
-            deleteCard();
         }
     }
     

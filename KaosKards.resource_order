@@ -526,7 +526,7 @@
     {"name":"sFungi","order":8,"path":"sprites/sFungi/sFungi.yy",},
     {"name":"sGameover","order":5,"path":"sprites/sGameover/sGameover.yy",},
     {"name":"sGato","order":10,"path":"sprites/sGato/sGato.yy",},
-    {"name":"sGhost","order":3,"path":"sprites/sGhost/sGhost.yy",},
+    {"name":"sGhost","order":10,"path":"sprites/sGhost/sGhost.yy",},
     {"name":"sHandsy","order":9,"path":"sprites/sHandsy/sHandsy.yy",},
     {"name":"sHealth","order":2,"path":"sprites/sHealth/sHealth.yy",},
     {"name":"sHealthBar","order":1,"path":"sprites/sHealthBar/sHealthBar.yy",},
