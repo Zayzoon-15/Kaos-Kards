@@ -188,7 +188,7 @@ function spriteLoopFrames(_frame,_anims = 4,_targetSprite = sprite_index,_change
 /// @param {real} _alpha The alpha of the card (Default = image_alpha)
 function drawCard3d(_x, _y, _front, _back, _angle, _rot, _thickness = CARD_THICKNESS, _imageblend = image_blend, _alpha = image_alpha,_xscale=image_xscale,_yscale=image_yscale)
 {
-    if _angle != 0
+    if _angle != 0 and global.cardFlip
     {
         //Function To Rotate The Card
         var _rotatePoint = function(_px, _py, _cx, _cy, _rot)

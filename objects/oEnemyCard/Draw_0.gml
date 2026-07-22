@@ -1,5 +1,5 @@
 //Draw Shadow
-var _scaleX = cos(degtorad(cardAngle));
+var _scaleX = global.cardFlip ? cos(degtorad(cardAngle)) : 1;
 draw_sprite_ext(sprite_index, image_index, cardX+shadowX, cardY+shadowY, (image_xscale-shadowSize)*_scaleX, image_yscale-shadowSize, image_angle, c_black, SHADOW_ALPHA*image_alpha);
 
 //Draw Card

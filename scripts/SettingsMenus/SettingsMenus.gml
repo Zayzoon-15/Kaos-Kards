@@ -109,8 +109,11 @@ function SettingsMenus()
             SettingsButtons.Check("Items Stick To Sides Of Screen","stickItemsToScreen",global.stickItemsToScreen);
             SettingsButtons.Check("Explosions After Match","explosionsAfter",global.explosionsAfter);
             SettingsButtons.Check("Enemy Dialogue","enemyDialogue",global.enemyDialogue);
-		
             //SettingsButtons.Slider("Game Speed","gameSpeed",undefined,2,1,4,false,undefined,"X");
+		
+        SettingsButtons.Separator("Prefrences");
+            SettingsButtons.Check("3D Card Flip","cardFlip",global.cardFlip);
+            SettingsButtons.Slider("John Rod Chance","johnRodChance",undefined,2,0,100,false,floor,"%");
             SettingsButtons.Button("What Do I Put Here...",function()
             {
                 instance_create_depth(ROOM_CENTER.x,ROOM_CENTER.y,-300,oJumpScare);

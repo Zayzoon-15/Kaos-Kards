@@ -13,4 +13,10 @@ change = function(_info = tourneyInfo.cameos,_dir = 0)
         ruleString += $"- {_desc}\n";
         
     }
+    
+    //Set Empty
+    if ruleString == ""
+    {
+        ruleString = "- There are no rules for this tournament";
+    }
 }

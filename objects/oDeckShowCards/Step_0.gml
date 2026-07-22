@@ -8,7 +8,7 @@ if instance_exists(oDeckShowMenu)
     }
     
     //Set Start Depth
-    startDepth = -(array_length(playerDeck)+oDeckShowMenu.depth+1);
+    //startDepth = -(array_length(playerDeck)+oDeckShowMenu.depth+1);
     
     //Set Show Placed
     showPlaced = oDeckShowMenu.showPlaced;

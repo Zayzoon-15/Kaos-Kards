@@ -32,7 +32,7 @@ function initSettings()
     global.voicePlaying = false;
     global.enemyDialogue = true;
 	
-	#region Input
+	#region --- Input ---
     
     //Game
     global.keyPlace = ord("X");
@@ -63,9 +63,13 @@ function initSettings()
     global.explosionsAfter = true;
     global.tipBox = true;
 	global.tipBoxSize = 1;
+    global.cardFlip = true;
     
     //Mobile
     global.mobilePress = true;
+    
+    //John
+    global.johnRodChance = 1000;
     
     //Settings Menus
     global.settingsBtnId = 0;

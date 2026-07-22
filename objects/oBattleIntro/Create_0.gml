@@ -49,7 +49,7 @@ timeSourceCreate(_delay+10,function(){
 },[],time_source_units_frames);
 
 //Chance To Fight John Rod
-if irandom_range(1,1000) == 1
+if global.johnRodChance > 0 and irandom_range(1,100) <= global.johnRodChance
 {
     global.currentEnemy = enemyInfo.rod;
     info = enemyInfo.rod;

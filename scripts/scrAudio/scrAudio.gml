@@ -282,7 +282,7 @@ function audioSetEffect(_effectType = AudioEffectType.Reverb1,_params = {size : 
     {
         timeSourceCreate(_clearTime,function()
         {
-            audio_bus_main.effects[0] = [];
+            audio_bus_main.effects[0] = undefined;
         },[],_timeUnits);
     }
 }

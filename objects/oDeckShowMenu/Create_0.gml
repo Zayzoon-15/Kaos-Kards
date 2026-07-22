@@ -143,7 +143,7 @@ createCards = function()
             _discarded = true;
         }
         
-        instance_create_depth(boxPos.x,y,depth-1,oDeckShowCards,{
+        instance_create_depth(boxPos.x,y,depth-2,oDeckShowCards,{
             info : _deck[i],
             placed : _placed,
             discarded : _discarded,

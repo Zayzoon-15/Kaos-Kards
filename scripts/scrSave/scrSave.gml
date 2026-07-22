@@ -324,6 +324,11 @@ function SaveFile()
         struct_set(_saveData,"UiStick",global.stickUiToScreen);
         struct_set(_saveData,"TipBoxSize",global.tipBoxSize);
         struct_set(_saveData,"TipBox",global.tipBox);
+        struct_set(_saveData,"CardFlip",global.cardFlip);
+        
+        
+        //John Rod
+        struct_set(_saveData,"JohnRod",global.johnRodChance);
         
         //Save To File
         _saveFile(_saveData,"SettingsSave.kaos");
@@ -382,6 +387,10 @@ function SaveFile()
         global.stickUiToScreen = struct_get_variable(_saveData,"UiStick",true);
         global.tipBoxSize = struct_get_variable(_saveData,"TipBoxSize",true);
         global.tipBox = struct_get_variable(_saveData,"TipBox",true);
+        global.cardFlip = struct_get_variable(_saveData,"CardFlip",true);
+        
+        //John Rod
+        global.johnRodChance = struct_get_variable(_saveData,"JohnRod",0);
         
     }
     

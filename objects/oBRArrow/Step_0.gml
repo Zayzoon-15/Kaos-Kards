@@ -70,7 +70,7 @@ if (touchingMouse() and !global.menuOpen and !global.midTrans) or image_speed ==
 }
 
 //Fade Mix
-if clicked
+if clicked and audio_bus_main.effects[0] != undefined
 {
     audio_bus_main.effects[0].mix = reverbMix;
     reverbMix = approach(reverbMix,.66,.009);
