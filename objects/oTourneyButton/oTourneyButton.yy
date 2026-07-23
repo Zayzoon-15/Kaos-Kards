@@ -9,8 +9,8 @@
   "name":"oTourneyButton",
   "overriddenProperties":[],
   "parent":{
-    "name":"Tourney Menu",
-    "path":"folders/Objects/Ui/Tourney Menu.yy",
+    "name":"Buttons",
+    "path":"folders/Objects/Ui/Tourney Menu/Buttons.yy",
   },
   "parentObjectId":null,
   "persistent":false,

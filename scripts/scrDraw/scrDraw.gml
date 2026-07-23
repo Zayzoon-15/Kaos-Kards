@@ -683,10 +683,10 @@ function trimLine(_line)
 /// @param {real} _value The current value of the circle
 /// @param {Constant.Color} _color The color of the circle
 /// @param {real} _radius The radius of the circle
-/// @param {real} _width The width of the circle
-/// @param {real} _alpha The alpha of the circle
-/// @param {real} _sections The amount of sections the circle has
-function drawCircularBar(_x, _y, _value, _color, _radius, _width = 5,_outline = 0,_alpha = image_alpha,_sections = 60)
+/// @param {real} _width The width of the circle (Default = 5)
+/// @param {real} _alpha The alpha of the circle (Default = image_alpha)
+/// @param {real} _sections The amount of sections the circle has (Default = 60)
+function drawCircularBar(_x, _y, _value, _color, _radius, _width = 5,_alpha = image_alpha,_sections = 60)
 {
     //Set Local Vars
     var _length = 0;

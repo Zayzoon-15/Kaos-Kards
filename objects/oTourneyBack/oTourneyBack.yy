@@ -1,19 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"oTourneyArrow",
+  "%Name":"oTourneyBack",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oTourneyArrow",
+  "name":"oTourneyBack",
   "overriddenProperties":[],
   "parent":{
     "name":"Buttons",
     "path":"folders/Objects/Ui/Tourney Menu/Buttons.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oParBackButton",
+    "path":"objects/oParBackButton/oParBackButton.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -32,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sTourneyArrow",
-    "path":"sprites/sTourneyArrow/sTourneyArrow.yy",
+    "name":"sButtonBack",
+    "path":"sprites/sButtonBack/sButtonBack.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -1,6 +1,9 @@
 //Mouse
 canHover = true;
 pressed = false;
+holdTime = 0;
+targetHoldTime = 0;
+holdValue = 0;
 
 //Position
 stickToRight = true;

@@ -15,5 +15,5 @@ change = function(_info = tourneyInfo.cameos,_dir = 1)
 {
     sprite_index = _info.sprite;
     paperBits = array_create(paperAmounts,-1);
-    angDir = _dir != 0 ? _dir : 1;
+    angDir = _dir;
 }
