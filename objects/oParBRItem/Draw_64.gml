@@ -9,10 +9,14 @@ if targetHoldTime > 0
     var _value = (holdTime/targetHoldTime) * 100;
     holdValue = lerp(holdValue,_value,.2);
     
+    //Position
+    var _x = device_mouse_x_to_gui(0);
+    var _y = device_mouse_y_to_gui(0);
+    
     //Draw Main
-    drawCircularBar(mouse_x,mouse_y,holdValue,c_white,_rad,5);
+    drawCircularBar(_x,_y,holdValue,c_white,_rad,5);
     
     //Draw Outline
-    drawCircularBar(mouse_x,mouse_y,holdValue,c_black,_rad-5,3);
-    drawCircularBar(mouse_x,mouse_y,holdValue,c_black,_rad+2,3);
+    drawCircularBar(_x,_y,holdValue,c_black,_rad-5,3);
+    drawCircularBar(_x,_y,holdValue,c_black,_rad+2,3);
 }

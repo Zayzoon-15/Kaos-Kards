@@ -13,7 +13,7 @@ yOffset = 150;
 xOffset = 400;
 
 //Time
-timeBetweenCards = 70;
+timeBetweenCards = 100//70;
 
 //Start Kaos
 kaosOver = false;

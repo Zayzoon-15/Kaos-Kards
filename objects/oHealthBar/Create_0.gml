@@ -15,6 +15,7 @@ angle = 0;
 //TipBox
 canHover = true;
 tipBoxString = "";
+tipOnTop = true;
 
 //Icons
 icons = [];
@@ -36,5 +37,5 @@ hitEffect = function()
 
 gainEffect = function()
 {
-    effectHealth(x,y,10,false,30,15);
+    effectHealth(x,y,10,false,30,15,sprite_width,sprite_height,layer,depth-1);
 }

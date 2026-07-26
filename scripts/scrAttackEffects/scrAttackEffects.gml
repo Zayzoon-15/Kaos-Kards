@@ -12,7 +12,7 @@
 /// @param {array<real>} [_totalTime] The total time the effect takes to disappear
 /// @param {bool} [_ignoreShield] If the effect should ignore shields
 /// @param {bool} [_shieldCounters] if the effect can't work when a shield is active
-function createAttackEffect(_name,_sprite,_color,_type,_timeBetween = undefined,_totalTime = undefined,_ignoreShield = false,_shieldCounters = false) constructor 
+function createAttackEffect(_name,_sprite,_color,_type,_timeBetween = undefined,_totalTime = undefined,_ignoreShield = false,_shieldCounters = false,_onAdd = function(){}) constructor 
 {
     name = _name;
     sprite = _sprite;
@@ -21,7 +21,8 @@ function createAttackEffect(_name,_sprite,_color,_type,_timeBetween = undefined,
     timeBetween = _timeBetween;
 	totalTime = _totalTime;
     ignoreShield = _ignoreShield;
-    shieldCounter = _shieldCounters
+    shieldCounter = _shieldCounters;
+    onAdd = _onAdd;
 }
 
 
@@ -30,7 +31,8 @@ function createAttackEffect(_name,_sprite,_color,_type,_timeBetween = undefined,
 /// @param {struct.createattackeffect} [_effect] The effect to use
 /// @param {real} [_value] The effects strength
 /// @param {bool} [_targetEnemy] If it should attack the enemy
-function attackEffectAdd(_effect = effectInfo.fire,_value = 1,_targetEnemy = true)
+/// @param {struct.vector2} [_overidePos] The overide position to create the on add effect an effect can do (Ex: Vector2(0,0)) (Default = Vector2(self.x,self.y))
+function attackEffectAdd(_effect = effectInfo.fire,_value = 1,_targetEnemy = true,_overidePos = new Vector2(self.x,self.y))
 {
     //Get Target Map
     var _map = _targetEnemy ? enemyEffects : playerEffects;
@@ -66,6 +68,9 @@ function attackEffectAdd(_effect = effectInfo.fire,_value = 1,_targetEnemy = tru
         });
         
     }
+    
+    //Extra Effects
+    _effect.onAdd(_targetEnemy,self.id,_overidePos);
 }
 
 

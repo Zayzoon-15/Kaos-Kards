@@ -12,6 +12,9 @@ function initFonts(){
         DBLetter : font_add_sprite_ext(sDBLetters,"ABCDEFGHIJKLMNOPQRSTUVWXYZ|:",true,-5),
         DBNumber : font_add_sprite_ext(sDBNumbers,"/0123456789",true,-10),
         
+        //Tourney Menu
+        tourneyRule : font_add_sprite_ext(sTourneyRuleFont,"AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz,.:!?- 0123456789%",true,-35),
+        
         //Trophy Room
         TRNumber : font_add_sprite_ext(sTRFont, "0123456789", true, -3),
         

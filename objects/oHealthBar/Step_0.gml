@@ -13,6 +13,9 @@ angle = lerp(angle,0,.2);
 
 #region Info Box
 
+//Set On Top Or Bottom
+tipOnTop = y > ROOM_CENTER.y;
+
 //Local Vars
 var _string = target == "Player" ? "Your Health Bar" : "Enemies Health Bar";
 var _dist = tipOnTop ? 5 : 9;

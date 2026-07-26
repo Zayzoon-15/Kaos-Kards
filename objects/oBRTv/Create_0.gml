@@ -15,8 +15,7 @@ action = function()
 {
     if holdTime >= targetHoldTime-2
     {
-        //Choose A Game
-        
-        
+        //Go To Game Menu For Now
+        transStart(rTvChoose,seqStaticOut,seqStaticIn,1);
     } else createBubble(bubbleText);
 }

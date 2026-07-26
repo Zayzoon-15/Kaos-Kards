@@ -6,6 +6,7 @@ var maxVel = 40;
 //Draw Paper Bits
 var _baseX = x// - sprite_width/2;
 var _baseY = y;
+var _pullAmount = random_range(.07,.13);
 for (var i = 0; i < array_length(paperBits); i++) {
 	
     //Last Index Info
@@ -22,15 +23,13 @@ for (var i = 0; i < array_length(paperBits); i++) {
         //Set Info
         _info = {
             angle : 0,
-            angleVel : (1 + .2*i)*angDir,//(5 + .5 * i)*angDir,
+            angleVel : (1 + _pullAmount*i)*angDir,//(5 + .5 * i)*angDir,
             xscale : 1,
             yscale : 1,
             color : image_blend//random(c_white), //Set random color for debugin
         };
         
-        print(_info.angleVel, i,angDir);
         _info.angleVel = clamp(_info.angleVel,-maxVel,maxVel);
-        print(_info.angleVel, i);
     }
     
     #region --- Sway Animation ---

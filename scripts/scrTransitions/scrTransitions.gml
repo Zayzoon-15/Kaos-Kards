@@ -9,7 +9,7 @@ function transPlaceSequence(_type,_speed)
     var _layer = layer_create(-99999,"Transitions");
 	
 	var _x = camera_get_view_x(view_camera[0]);
-	var _xscale = camera_get_view_width(view_camera[0]);
+	var _xscale = camera_get_view_width(view_camera[0])/1280;
     
     var _seq = layer_sequence_create(_layer,_x,0,_type);
 	layer_sequence_xscale(_seq,_xscale);

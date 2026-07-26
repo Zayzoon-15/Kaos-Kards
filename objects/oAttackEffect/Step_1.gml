@@ -1,5 +1,5 @@
 //Destroy
-if !array_contains([rPrepare,rKaos,rEnemy,rTesting],room)
+if !array_contains([rPrepare,rKaos,rEnemy,rTesting,rTestingCard],room)
 {
 	instance_destroy();
 	print("WRONG ROOM FOR EFFECTS");
@@ -35,10 +35,11 @@ with (oAttackEffect) {
 //Move Position
 if targetHealthBar != noone
 {
+    visible = true;
     var _xOffset = 10;
     x = targetHealthBar.flipped ? targetHealthBar.bbox_left - _xOffset : targetHealthBar.bbox_right + _xOffset;
     y = cardHandMush(ds_map_size(mapId),iconId,targetHealthBar.y+5,55);
-}
+} else visible = false;
 
 //Reduce HitStun
 if hitStun > 0 then hitStun --;

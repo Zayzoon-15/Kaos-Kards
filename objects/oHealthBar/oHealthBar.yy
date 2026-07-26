@@ -33,7 +33,6 @@
         "\"Player\"",
         "\"Enemy\"",
       ],"multiselect":false,"name":"target","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"\"Player\"","varType":6,},
-    {"$GMObjectProperty":"v2","%Name":"tipOnTop","filters":[],"listItems":[],"multiselect":false,"name":"tipOnTop","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
