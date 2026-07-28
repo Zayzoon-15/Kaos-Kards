@@ -17,11 +17,11 @@ var _linePos = 1;
 
 //Curve
 var _curveDist = 15;
-var _curveCenter = _baseY + 50;
+var _curveCenter = _baseY + 45;
 
 //DEBUG
 draw_rectangle(_baseX,_baseY,_baseX + maxWidth,_baseY + maxHeight,true);
-draw_circle(_baseX,_curveCenter,10,false);
+draw_circle(_baseX,_curveCenter,5,false);
 
 //Draw Text
 for (var i = 1; i < string_length(_string)+1; i++) {
@@ -74,34 +74,6 @@ for (var i = 1; i < string_length(_string)+1; i++) {
     _cursorX += _charWidth;
 }
 
-//draw_text_ext_transformed(_x,_y,ruleString,sep*textScale,maxW/textScale,textScale,textScale,0);
-//
-//var _lineX = _baseX;
-//var _lineY = _baseY;
-//for (var i = 1; i <= string_length(ruleString); i++) {
-	//
-    ////Get Position
-    //var _x = _lineX;
-    //var _y = _lineY;
-    //
-    ////Get Character
-    //var _char = string_char_at(ruleString,i);
-    //
-    ////Move Position
-    //_lineX += string_width(_char) * textScale;
-    //
-    ////Wrap
-    //if _lineX - _baseX >= maxW
-    //{
-        //_lineY += string_height(_char) * textScale;
-        //_lineX = _baseX;
-    //}
-    //
-    //
-    ////Draw Text
-    //draw_text_transformed(_x,_y,_char,textScale,textScale,0);
-    //
-//}
 
 //Reset
 drawReset();
