@@ -13,9 +13,13 @@ var _aspect = _winW / _winH;
 camW = baseH * _aspect;
 camH = baseH;
 
+//Set Camera Zoom
+var _camW = camW;
+var _camH = camH;
+
 //Get Camera Position
-var _camX = room_width/2 - camW/2;
-var _camY = 0;
+var _camX = room_width/2 - _camW/2;
+var _camY = 0;//room_height/2 - _camH/2;
 
 
 //Resize Screen
@@ -28,7 +32,7 @@ if _winW >= baseW * _scale and _winW >= 200 and _winH >= 200
 
         //Set Camera
         camera_set_view_pos(view_camera[0], _camX, _camY);
-        camera_set_view_size(view_camera[0], camW, camH);
+        camera_set_view_size(view_camera[0], _camW, _camH);
         
         //Set GUI Size
         display_set_gui_size(camW, camH);
@@ -41,7 +45,7 @@ if _winW >= baseW * _scale and _winW >= 200 and _winH >= 200
     //Set Camera
     _camX = room_width/2 - baseW/2;
     camera_set_view_pos(view_camera[0], _camX, _camY);
-    camera_set_view_size(view_camera[0], baseW, baseH);
+    camera_set_view_size(view_camera[0], _camW, _camH);
     
     //Set GUI Size
     display_set_gui_size(baseW, baseH);

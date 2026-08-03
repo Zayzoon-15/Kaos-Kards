@@ -5,3 +5,6 @@ baseH = camera_get_view_height(view_camera[0]);
 //Camera Values
 camW = baseW;
 camH = baseH;
+
+//Scale
+camScale = 1;

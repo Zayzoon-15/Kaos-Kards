@@ -1,6 +1,9 @@
 //String
 ruleString = "-Rules\n";
 
+//Surface
+//paperSurface = undefined;
+
 //Text
 textScale = 1;
 sep = 30;
@@ -20,20 +23,19 @@ change = function(_info = tourneyInfo.cameos,_dir = 0)
     	
         var _rule = _info.rules[i];
         var _desc = is_string(_rule.desc) ? _rule.desc : _rule.desc();
-        ruleString += $"- {_desc}\n";
+        ruleString += $"-{_desc} [n]";
         
     }
     
     //Set Empty
     if ruleString == ""
     {
-        ruleString = "- There are no rules for this tournament";
+        ruleString = "-There are no rules for this tournament";
     }
     
-    //Shrink Scale
-    while string_height_ext(ruleString,sep*textScale,maxWidth/textScale) * textScale >= maxHeight
-    {
-        print(string_height_ext(ruleString,sep*textScale,maxWidth/textScale) * textScale,textScale);
-        textScale -= .01;
-    }
+    ////Shrink Scale
+    //while string_height_ext(ruleString,sep*textScale,maxWidth/textScale) * textScale >= maxHeight
+    //{
+        //textScale -= .01;
+    //}
 }

@@ -28,8 +28,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"BreakRoom",
-    "path":"folders/Sprites/Game/BreakRoom.yy",
+    "name":"Elements",
+    "path":"folders/Sprites/Game/BreakRoom/Elements.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
