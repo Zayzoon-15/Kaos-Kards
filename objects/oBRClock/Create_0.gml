@@ -4,11 +4,16 @@ minHandAng = 0;
 
 //Time
 timeSpd = .5;
-hour = 0;
-minute = 0;
-second = 0;
+hours = global.savedGameTime.hours;
+mins = global.savedGameTime.mins;
+secs = global.savedGameTime.secs;
+
+//Get Total Seconds
+var _totalSecs = secs;
+_totalSecs += mins mod 60;
+_totalSecs += hours mod 3600;
 
 //Total Time
-totalHours = 0;
-totalMin = 0;
-totalSecond = 0;
+totalHours = _totalSecs div 3600;
+totalMins = _totalSecs div 60;
+totalSecs = secs;

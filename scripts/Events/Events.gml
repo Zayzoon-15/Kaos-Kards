@@ -35,6 +35,7 @@ function eventGameReset(_hardReset = true)
     global.isMiniBoss = false;
     
     //Reset Time
+    global.savedGameTime = global.gameTime;
     global.gameTime = {
         hours : 0,
         mins : 0,

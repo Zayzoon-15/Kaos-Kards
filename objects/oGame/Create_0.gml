@@ -28,6 +28,7 @@ global.totalGameTime = {
     mins : 0,
     secs : 0
 }
+global.savedGameTime = global.gameTime;
 
 //Values
 global.valueMult = 1;
