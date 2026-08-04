@@ -17,6 +17,18 @@ initVoices();
 
 #region Global Vars
 
+//Time
+global.gameTime = {
+    hours : 0,
+    mins : 0,
+    secs : 0
+}
+global.totalGameTime = {
+    hours : 0,
+    mins : 0,
+    secs : 0
+}
+
 //Values
 global.valueMult = 1;
 global.comboMult = 1;

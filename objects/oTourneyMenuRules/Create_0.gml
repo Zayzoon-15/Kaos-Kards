@@ -22,7 +22,7 @@ change = function(_info = tourneyInfo.cameos,_dir = 0)
     for (var i = 0; i < array_length(_info.rules); i++) {
     	
         var _rule = _info.rules[i];
-        var _desc = is_string(_rule.desc) ? _rule.desc : _rule.desc();
+        var _desc = is_string(_rule.sum) ? _rule.sum : _rule.sum();
         ruleString += $"-{_desc} [n]";
         
     }

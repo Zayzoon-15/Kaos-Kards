@@ -1,5 +1,13 @@
 ///@desc Tick Timer Down
 
+//Dont If Intro Is Playing
+if instance_exists(oBattleIntro)
+{
+    alarm[0] = 1;
+    exit;
+}
+
+//Tick Time Down
 global.gameTimer -= 1;
 
 //Check Time

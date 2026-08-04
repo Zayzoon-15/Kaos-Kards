@@ -1,6 +1,7 @@
 //Play Song
 audioPlaySong("BreakRoomIntro");
 
+//Set Tounrey For Debugs
 if global.currentTourney == undefined
 {
     global.currentTourney = tourneyInfo.debut;

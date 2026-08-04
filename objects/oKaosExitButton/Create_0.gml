@@ -57,7 +57,8 @@ action = function()
             global.tourneyReward = global.currentTourney;
         } else {
             transStart(rBreakRoom);
-            timeSourceCreate(.3,eventGameReset,[false]);
+            timeSourceCreate(.3,eventStartedBreak,[false]);
+            timeSourceCreate(.4,eventGameReset,[false]);
         }
         
     }

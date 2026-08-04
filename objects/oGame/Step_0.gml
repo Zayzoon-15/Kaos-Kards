@@ -23,3 +23,24 @@ if array_contains([rPrepare,rKaos],room) and global.currentTourney != undefined
         }
     }
 }
+
+//Increase Time
+if array_contains([rPrepare,rEnemy,rKaos],room) and global.currentTourney != undefined and !instance_exists(oBattleIntro) and !global.paused
+{
+    //Increase Second
+    global.gameTime.secs += 1 / game_get_speed(gamespeed_fps);
+    
+    //Increase Minute
+    if floor(global.gameTime.secs) >= 60
+    {
+        global.gameTime.mins ++;
+        global.gameTime.secs = 0;
+    }
+    
+    //Increase Hour
+    if floor(global.gameTime.mins) >= 60
+    {
+        global.gameTime.hours ++;
+        global.gameTime.mins = 0;
+    }
+}

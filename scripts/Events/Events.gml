@@ -17,6 +17,14 @@ function eventGameReset(_hardReset = true)
         global.miniBossesBeaten = 0;
         global.isMiniBoss = false;
         global.lastWasMini = false;
+        
+        //Reset TIme
+        global.gameTime = {
+            hours : 0,
+            mins : 0,
+            secs : 0,
+        }
+        global.totalGameTime = global.gameTime;
     }
     
 	//Set Gamestate
@@ -25,6 +33,13 @@ function eventGameReset(_hardReset = true)
     //Reset Round
     global.gameRound = 0;
     global.isMiniBoss = false;
+    
+    //Reset Time
+    global.gameTime = {
+        hours : 0,
+        mins : 0,
+        secs : 0,
+    }
     
     //Set Rewards For Break Room
     global.gaveReward = false;
@@ -241,6 +256,26 @@ function eventAllCardValuesGained()
     
     //Set Done Button
     instance_destroy(oDonePrepButton);
+}
+
+
+/// @desc  This event plays when the player begins their break by entering the break room
+// Keep in mind this event plays before you enter the break room but also before the game is reset
+function eventStartedBreak()
+{
+    print("GAME TIME", global.gameTime);
+    
+    //Add Total Time
+    global.totalGameTime.hours += global.gameTime.hours;
+    global.totalGameTime.mins += global.gameTime.mins;
+    global.totalGameTime.secs += global.gameTime.secs;
+    
+    //Combine Total Time
+    global.totalGameTime.mins += global.totalGameTime.secs div 60;
+    global.totalGameTime.hours += global.totalGameTime.secs div 3600;
+    global.totalGameTime.hours += global.totalGameTime.mins div 60;
+    
+    print("TOTAL GAME TIME", global.totalGameTime);
 }
 
 

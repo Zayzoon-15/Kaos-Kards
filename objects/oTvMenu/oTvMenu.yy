@@ -1,13 +1,15 @@
 {
   "$GMObject":"",
   "%Name":"oTvMenu",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"oTvMenu",
   "overriddenProperties":[],
   "parent":{
-    "name":"Menu",
-    "path":"folders/TvGames/Menu.yy",
+    "name":"_Menu",
+    "path":"folders/TvGames/_Menu.yy",
   },
   "parentObjectId":null,
   "persistent":false,

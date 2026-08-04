@@ -67,8 +67,9 @@
     {"name":"Tourney Selection","order":6,"path":"folders/Sprites/Ui/Tourney Selection.yy",},
     {"name":"Trophy Room","order":7,"path":"folders/Sprites/Ui/Trophy Room.yy",},
     {"name":"TvGames","order":10,"path":"folders/TvGames.yy",},
-    {"name":"Menu","order":1,"path":"folders/TvGames/Menu.yy",},
-    {"name":"Sprites","order":1,"path":"folders/TvGames/Menu/Sprites.yy",},
+    {"name":"_Menu","order":1,"path":"folders/TvGames/_Menu.yy",},
+    {"name":"Sprites","order":1,"path":"folders/TvGames/_Menu/Sprites.yy",},
+    {"name":"Glaggle","order":2,"path":"folders/TvGames/Glaggle.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"acBRBubble","order":5,"path":"animcurves/acBRBubble/acBRBubble.yy",},
@@ -639,6 +640,7 @@
     {"name":"sTRTrophy","order":9,"path":"sprites/sTRTrophy/sTRTrophy.yy",},
     {"name":"sTRTrophyCount","order":10,"path":"sprites/sTRTrophyCount/sTRTrophyCount.yy",},
     {"name":"sTRTrophyIcon","order":11,"path":"sprites/sTRTrophyIcon/sTRTrophyIcon.yy",},
+    {"name":"sTvGlaggle","order":1,"path":"sprites/sTvGlaggle/sTvGlaggle.yy",},
     {"name":"sWoah","order":14,"path":"sprites/sWoah/sWoah.yy",},
   ],
 }

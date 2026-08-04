@@ -1,6 +1,7 @@
 
 
-function Rule(_desc = "Blank Rule", _action = function(){}, _actionEvent = ACTION_EVENTS.EVERY_ROUND) constructor {
+function Rule(_sum = "Blank Rule",_desc = "Rule explained more", _action = function(){}, _actionEvent = ACTION_EVENTS.EVERY_ROUND) constructor {
+    sum = _sum;
     desc = _desc;
     action = _action;
     event = _actionEvent;
@@ -11,14 +12,14 @@ function initRules(){
     globalvar ruleInfo;
     ruleInfo = {
         
-        deckShuffle : new Rule("Decks are shuffled after every round",function(){
+        deckShuffle : new Rule("Decks shuffled","Decks are shuffled after every round",function(){
             with oDeck
             {
                 deck = array_shuffle(deck);
             }
         }),
         
-        timeLimit : new Rule(function(){
+        timeLimit : new Rule("Time limit",function(){
             
             //Get Time
             var _time = global.currentTourney.timeLimit;

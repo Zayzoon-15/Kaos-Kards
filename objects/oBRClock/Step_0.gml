@@ -22,11 +22,11 @@ if floor(minute) >= 60
 }
 
 //Increase Angle
-minHandAng = lerp(minHandAng, totalMin * 6, .1);
-hourHandAng = lerp(hourHandAng, totalHours + ( (totalMin/60) * 30 ), .2);
+minHandAng = lerp(minHandAng, -(totalMin * 6), .1);
+hourHandAng = lerp(hourHandAng, -(totalHours + ( (totalMin/60) * 30 )), .2);
 
-print("HOUR", hour);
-print("MINUTE", minute);
-print("SECOND", second);
+//print("HOUR", hour);
+//print("MINUTE", minute);
+//print("SECOND", second);
 
 #endregion
