@@ -94,6 +94,12 @@ function eventGameReset(_hardReset = true)
         enemy : []
     };
 	
+    //Reset Speeds
+    global.cardsSpeed = {
+        player : 1,
+        enemy : 1
+    }
+    
 	//Reset Log
 	ds_list_clear(global.gamelog);
     
@@ -155,6 +161,12 @@ function eventNextRoundStarted()
     global.healEffects = {
         player: [],
         enemy : []
+    }
+    
+    //Reset Speeds
+    global.cardsSpeed = {
+        player : 1,
+        enemy : 1
     }
 	
 	//Reset Mult

@@ -28,8 +28,13 @@ var _createCombo = function(_card,_targetEnemy)
 //Play Normal Cards
 if !ds_list_find_value(playerActions,0) and !ds_list_find_value(enemyActions,0)
 {
-    alarm[1] = 10;
-    alarm[2] = 10; 
+    //Get First Cards
+    var _playersFirstCard = ds_list_find_value(playerActions,1);
+    var _enemiesFirstCard = ds_list_find_value(enemyActions,1);
+    
+    //Play Cards
+    alarm[1] = _playersFirstCard != undefined and _playersFirstCard != 0 ? _playersFirstCard.info.showSpd * global.cardsSpeed.player : 10;
+    alarm[2] = _enemiesFirstCard != undefined and _enemiesFirstCard != 0 ? _enemiesFirstCard.info.showSpd * global.cardsSpeed.enemy: 10;
 }
 
 

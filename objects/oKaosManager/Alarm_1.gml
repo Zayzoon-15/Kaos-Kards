@@ -2,6 +2,7 @@
 
 //Get Card
 var _card = ds_list_find_value(playerActions,playerCard+1);
+var _nextCard = ds_list_find_value(playerActions,playerCard+2);
 
 //Create Card
 if _card != undefined and _card != 0
@@ -21,5 +22,12 @@ if _card != undefined and _card != 0
 //Goto Next
 playerCard ++;
 
+//Get Speed
+var _speed = 70;
+if _nextCard != undefined and _nextCard != 0 and _nextCard != NaN
+{
+    _speed = _nextCard.info.showSpd * global.cardsSpeed.player;
+}
+
 //Keep Going
-if playerCard < 3 then alarm[1] = timeBetweenCards; else alarm[3] = 135;
+if playerCard < 3 then alarm[1] = _speed; else alarm[3] = 250;

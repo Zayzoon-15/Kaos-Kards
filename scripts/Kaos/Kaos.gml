@@ -319,10 +319,56 @@ function kaosActionVampire(_targetEnemy)
 
 
 ///@self oAttackCard
+function kaosActionFast(_targetEnemy)
+{
+    //Speed Change
+    var _mult = random_range(1.5,2);
+    
+    //Show Message
+    createAlertMessage($"Cards speed increased by {string_currency_prettify(_mult,"x",1,false)}");
+    
+    //Juice
+    cardJuice(true,true);
+    
+    //Add Speed
+    if _targetEnemy
+    {
+        global.cardsSpeed.player *= _mult;
+    } else global.cardsSpeed.enemy *= _mult;
+    
+    //Finish
+    timeSourceCreate(1.5,eventKaosCardDone);
+}
+
+
+///@self oAttackCard
+function kaosActionSlow(_targetEnemy)
+{
+    //Speed Change
+    var _mult = random_range(.3,.8);
+    
+    //Show Message
+    createAlertMessage($"Cards speed decreased by {string_currency_prettify(_mult,"x",1,false)}");
+    
+    //Juice
+    cardJuice(true,true);
+    
+    //Add Speed
+    if _targetEnemy
+    {
+        global.cardsSpeed.enemy *= _mult;
+    } else global.cardsSpeed.player *= _mult;
+    
+    //Finish
+    timeSourceCreate(1.5,eventKaosCardDone);
+}
+
+
+///@self oAttackCard
 function kaosActionSpeedrun(_targetEnemy)
 {
 	//Show Message
-	createAlertMessage("Hotsauce Applied");
+	createAlertMessage("Speed");
 
     //Finish
     timeSourceCreate(1.5,eventKaosCardDone);

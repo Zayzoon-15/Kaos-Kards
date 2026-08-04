@@ -12,9 +12,12 @@
 
 function attackEffectOnAddFire(_targetEnemy = false, _parent = oGame, _pos = new Vector2(0,0))
 {
-    repeat (irandom_range(4,6)) {
-        instance_create_layer(_pos.x,_pos.y,"Effects",oFireEffectParticle,{
-            targetEnemy : _targetEnemy
-        });
+    if irandom_range(1,3) == 1
+    {
+        repeat (irandom_range(4,6)) {
+            instance_create_layer(_pos.x,_pos.y,"Effects",oFireEffectParticle,{
+                targetEnemy : _targetEnemy
+            });
+        }
     }
 }

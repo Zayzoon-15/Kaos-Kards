@@ -30,7 +30,7 @@ if struct_exists(card.info,"genre") and card.info.genre == CARDACT_GENRES.ATTACK
 }
 
 //Action
-var _actTime = 30;
+var _actTime = card.info.attackSpd * (targetEnemy ? global.cardsSpeed.player : global.cardsSpeed.enemy);
 if card.info.type == CARDTYPES.KAOS then _actTime = 60;
 if combo then _actTime = 80;
 alarm[0] = _actTime;

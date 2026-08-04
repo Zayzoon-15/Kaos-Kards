@@ -70,6 +70,10 @@ kaosCards = {
     "Halfs all card values and applies them to the next round",
     sCardVampire,kaosActionVampire,[],updateKaosVampire),
     
+    fast : new createCardKaos("Fast idk","Makes all your cards [o]faster[/] by a random amount for the current round",sCardHigh,kaosActionFast),
+    
+    slow : new createCardKaos("Slow idk","Makes all your enemies cards [b]slower[/] by a random amount for the current round",sCardFreeze,kaosActionSlow),
+    
     speedrun : new createCardKaos("Speedrun",
     "Halfs the timer the enemy has to play cards",
     sCardRerun,kaosActionSpeedrun,[],undefined,NaN,true),
