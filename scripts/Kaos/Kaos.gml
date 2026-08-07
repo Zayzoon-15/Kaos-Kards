@@ -322,7 +322,7 @@ function kaosActionVampire(_targetEnemy)
 function kaosActionFast(_targetEnemy)
 {
     //Speed Change
-    var _mult = random_range(1.5,2);
+    var _mult = random_range(1.8,2.5);
     
     //Show Message
     createAlertMessage($"Cards speed increased by {string_currency_prettify(_mult,"x",1,false)}");
@@ -345,7 +345,7 @@ function kaosActionFast(_targetEnemy)
 function kaosActionSlow(_targetEnemy)
 {
     //Speed Change
-    var _mult = random_range(.3,.8);
+    var _mult = random_range(.1,.7);
     
     //Show Message
     createAlertMessage($"Cards speed decreased by {string_currency_prettify(_mult,"x",1,false)}");
@@ -361,6 +361,22 @@ function kaosActionSlow(_targetEnemy)
     
     //Finish
     timeSourceCreate(1.5,eventKaosCardDone);
+}
+
+
+///@self oAttackCard
+function kaosActionHpShare(_targetEnemy)
+{
+	////Show Message
+	//createAlertMessage("Health bars connected");
+    //
+    ////Juice
+    //cardJuice(false,false);
+    //effectHearts(x,y,3,false,0,0,5,5);
+    
+    //Create Hug
+    instance_create_depth(x,y,depth,oHug);
+    targetY += 80;
 }
 
 

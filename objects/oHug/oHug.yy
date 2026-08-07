@@ -1,20 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"oEffectHealth",
+  "%Name":"oHug",
   "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oEffectHealth",
+  "name":"oHug",
   "overriddenProperties":[],
   "parent":{
-    "name":"Ui",
-    "path":"folders/Objects/Effects/Ui.yy",
+    "name":"Kaos",
+    "path":"folders/Objects/Attacks/Kaos.yy",
   },
-  "parentObjectId":{
-    "name":"oParEffect",
-    "path":"objects/oParEffect/oParEffect.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -33,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sHealth",
-    "path":"sprites/sHealth/sHealth.yy",
+    "name":"sHug",
+    "path":"sprites/sHug/sHug.yy",
   },
   "spriteMaskId":null,
   "visible":true,

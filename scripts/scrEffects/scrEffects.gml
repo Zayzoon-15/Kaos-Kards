@@ -82,6 +82,46 @@ function effectHealth(_x,_y,_amount = 5,_sound = true,_xOffset = 30,_yOffset = 3
 }
 
 
+
+///@desc Creates a heart effect
+///@arg {real} _x The x center position of the effect
+///@arg {real} _y The y center position of the effect
+///@arg {real} _amount The amount of health to spawn (Default = 5)
+///@arg {bool} _sound If it should play the awww sound effect (Default = true)
+///@arg {real} _xOffset The x offset of the effect (Default = 30)
+///@arg {real} _yOffset The y offset of the effect (Default = 30)
+///@arg {real} _width The width (Default = sprite_width)
+///@arg {real} _height The height (Default = sprite_height)
+///@arg {string} _layer The layer to make the effect on (Default = "Effects")
+///@arg {real} _depthOveride The depth of the effect
+function effectHearts(_x,_y,_amount = 5,_sound = true,_xOffset = 30,_yOffset = 30,_width = sprite_width,_height = sprite_height,_layer = "Effects",_depthOveride = undefined)
+{
+    //Play Sound
+    if _sound then audioPlaySfx(snBoo,.9,1.1);
+    
+	//Set Amount
+	_amount *= global.partAmount;
+	
+    //Loop
+    for (var i = 0; i < _amount; i++) {
+        
+		//Get Values
+		var _effectX = (_width/2)-_xOffset;
+		var _effectY = (_height/2)-_yOffset;
+		
+		//Get Offsets
+		var _xOff = random_range(-_effectX,_effectX);
+		var _yOff = random_range(-_effectY,_effectY);
+        
+		//Create Effect
+		var _inst = instance_create_layer(_x+_xOff,_y+_yOff,_layer,oEffectHearts);
+    
+        //Depth Overide
+        if _depthOveride != undefined then _inst.depth = _depthOveride;	
+    }
+}
+
+
 ///@desc Creates a number hit effect
 ///@arg {real} _x The x pos of the effect
 ///@arg {real} _y The y pos of the effect

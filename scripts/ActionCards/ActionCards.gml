@@ -17,7 +17,7 @@ actionCards = {
     
     shield : new createCardAction("Shield",
     "Grants you [b]temporary health[/] that reduces after every round",
-    sCardShield,[1,12],[.7,1],CARDACT_GENRES.DEFEND,actionShield,comboShield),
+    sCardShield,[1,12],[.8,1],CARDACT_GENRES.DEFEND,actionShield,comboShield),
     
     slash : new createCardAction("Mighty Sword",
     "Slashes your enemy with a mighty sword",

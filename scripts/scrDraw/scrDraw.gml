@@ -145,28 +145,41 @@ function createAlertMessage(_text,_lifeSpan = 30,_x=room_width/2,_y=235,_targetF
 ///@arg {real} _anims The amount of animations (Default = 4)
 /// @param {asset.gmsprite} [_targetSprite] The target sprite to check the animations for (Default = sprite_index)
 /// @param {bool} [_changeMe] If it should change the current objects sprite (Default = true)
-function spriteLoopFrames(_frame,_anims = 4,_targetSprite = sprite_index,_changeMe = true)
+/// @param {string} [_targetFrame] The variable that the function will use for the sprites frames
+/// @param {string} [_targetAnim] The variable that the function will use for the sprites animation ends
+function spriteLoopFrames(_frame,_anims = 4,_targetSprite = sprite_index,_changeMe = true,_targetFrame = "frame",_targetAnim = "animationEnd")
 {
     //Create Required Variables
-    if !variable_instance_exists(self.id,"frame")
+    var _frameVar = 0;
+    if !variable_instance_exists(self.id,_targetFrame)
     {
-        variable_instance_set(self.id,"frame",0);
-    }
+        variable_instance_set(self.id,_targetFrame,0);
+    } else _frameVar = variable_instance_get(self.id,_targetFrame);
+    
+    var _animVar = 0;
+    if !variable_instance_exists(self.id,_targetAnim)
+    {
+        variable_instance_set(self.id,_targetAnim,0);
+    } else _animVar = variable_instance_get(self.id,_targetAnim);
     
     //Set Frame
     var _totalFrames = sprite_get_number(_targetSprite) / _anims;
-    frame += sprite_get_speed(_targetSprite)/60;
+    _frameVar += sprite_get_speed(_targetSprite)/60;
     
     //Loop Animation
-    if frame >= _totalFrames
+    if _frameVar >= _totalFrames
     {
-        animationEnd = true;
-        frame -= _totalFrames;
-    } else animationEnd = false;
+        _animVar = true;
+        _frameVar -= _totalFrames;
+    } else _animVar = false;
     
     //Final Frame
-    var _finalFrame = frame + (_frame*_totalFrames);
+    var _finalFrame = _frameVar + (_frame*_totalFrames);
     _finalFrame = clamp(_finalFrame, 0, sprite_get_number(_targetSprite)-1);
+    
+    //Update Var
+    variable_instance_set(self.id,_targetFrame,_frameVar);
+    variable_instance_set(self.id,_targetAnim,_animVar);
     
     //Update Sprte
     if _changeMe

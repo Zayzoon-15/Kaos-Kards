@@ -70,17 +70,21 @@ kaosCards = {
     "Halfs all card values and applies them to the next round",
     sCardVampire,kaosActionVampire,[],updateKaosVampire),
     
-    fast : new createCardKaos("Fast idk","Makes all your cards [o]faster[/] by a random amount for the current round",sCardHigh,kaosActionFast),
+    sugar : new createCardKaos("Sugar Rush",
+    "Makes all your cards [o]faster[/] by a random amount for the current round[s][lg](cards will be weaker after speeds are changed)",
+    sCardSugar,kaosActionFast),
     
-    slow : new createCardKaos("Slow idk","Makes all your enemies cards [b]slower[/] by a random amount for the current round",sCardFreeze,kaosActionSlow),
+    drunk : new createCardKaos("Drunken Sailor",
+    "Makes all your enemies cards [b]slower[/] by a random amount for the current round[s][lg](cards will be weaker after speeds are changed)",
+    sCardDrunk,kaosActionSlow),
+    
+    hpShare : new createCardKaos("Sharing Is Caring",
+    "Both players share a health bar",
+    sCardShare,kaosActionHpShare,[],undefined,NaN,true),
     
     speedrun : new createCardKaos("Speedrun",
     "Halfs the timer the enemy has to play cards",
     sCardRerun,kaosActionSpeedrun,[],undefined,NaN,true),
-    
-    hpShare : new createCardKaos("Sharing Is Caring",
-    "Both players share a health bar",
-    sCardSwoop,kaosActionSpeedrun,[],undefined,NaN,true),
     
     //Concept
     hotsauce : new createCardKaos("Hot Sauce",

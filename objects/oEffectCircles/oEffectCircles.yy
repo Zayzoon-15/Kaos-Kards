@@ -9,8 +9,8 @@
   "name":"oEffectCircles",
   "overriddenProperties":[],
   "parent":{
-    "name":"Effects",
-    "path":"folders/Objects/Effects.yy",
+    "name":"Ui",
+    "path":"folders/Objects/Effects/Ui.yy",
   },
   "parentObjectId":{
     "name":"oParEffect",

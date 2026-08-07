@@ -10,8 +10,8 @@
   "name":"oParEffect",
   "overriddenProperties":[],
   "parent":{
-    "name":"Effects",
-    "path":"folders/Objects/Effects.yy",
+    "name":"Parent",
+    "path":"folders/Objects/Effects/Parent.yy",
   },
   "parentObjectId":null,
   "persistent":false,

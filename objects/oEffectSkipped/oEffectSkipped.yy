@@ -9,8 +9,8 @@
   "name":"oEffectSkipped",
   "overriddenProperties":[],
   "parent":{
-    "name":"Effects",
-    "path":"folders/Objects/Effects.yy",
+    "name":"Game",
+    "path":"folders/Objects/Effects/Game.yy",
   },
   "parentObjectId":{
     "name":"oParEffect",
