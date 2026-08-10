@@ -1,6 +1,8 @@
-//Set Current Card
-playerCard = 0;
-enemyCard = 0;
+//Reset Log
+global.lastCardsPlayed = {
+    player : array_create(4,-1),
+    enemy : array_create(4,-1)
+}
 
 //Combo
 playerComboDone = false;

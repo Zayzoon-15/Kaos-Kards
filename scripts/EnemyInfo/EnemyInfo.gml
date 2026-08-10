@@ -1,7 +1,10 @@
 function initEnemyinfo()
 {
 
+//Setup Functions
+EnemyEffects();
 Enemy();
+
 
 globalvar enemyInfo, enemyDeck;
 
@@ -20,7 +23,8 @@ enemyInfo = {
             actionCards.slash, actionCards.slash
         ],
         [kaosCards.swoop],
-        Enemy.Strat(.7,0.3,0.3,.6,1.3), [actionCards.bread,actionCards.bread,kaosCards.swoop]
+        Enemy.Strat(.7,0.3,0.3,.6,1.3), [actionCards.bread,actionCards.bread,kaosCards.swoop],
+        [EnemyEffects.BanLastCards], [], 1
     ),
     
     cock : new Enemy.Create("Cock the Bug",
@@ -33,7 +37,8 @@ enemyInfo = {
             actionCards.bread, actionCards.bread
         ],
         [kaosCards.destroy],
-        Enemy.Strat(.5,.6,.7,.4,.4), [actionCards.bread,actionCards.bread,kaosCards.destroy]
+        Enemy.Strat(.5,.6,.7,.4,.4), [actionCards.bread,actionCards.bread,kaosCards.destroy],
+        []
     ),
     
     angel : new Enemy.Create("Angel the Juvenile",
@@ -46,7 +51,8 @@ enemyInfo = {
             actionCards.laser, actionCards.laser
         ],
         [kaosCards.high],
-        Enemy.Strat(.8,.4,.7,.7,.9), [actionCards.flaminAce,actionCards.flaminAce,kaosCards.high]
+        Enemy.Strat(.8,.4,.7,.7,.9), [actionCards.flaminAce,actionCards.flaminAce,kaosCards.high],
+        []
     ),
     
     alien : new Enemy.Create("Alan the Alien",
@@ -59,7 +65,8 @@ enemyInfo = {
             actionCards.slash, actionCards.slash
         ],
         [kaosCards.swap],
-        Enemy.Strat(.6,.5,.7,.4,.5), [actionCards.laser,actionCards.laser,kaosCards.swap]
+        Enemy.Strat(.6,.5,.7,.4,.5), [actionCards.laser,actionCards.laser,kaosCards.swap],
+        []
     ),
     
     ///--- BOSS ---///
@@ -75,7 +82,8 @@ enemyInfo = {
         ],
         [kaosCards.swoop,kaosCards.high],
         Enemy.Strat(.6,.5,.7,.4,.6), [actionCards.punch,actionCards.punch,kaosCards.high],
-        enemySpecialBeer,["BeerIntro",["BeerKaos1","BeerKaos2"]],sgBattleIntroBeer
+        [], [], 1, enemySpecialBeer,
+        ["BeerIntro",["BeerKaos1","BeerKaos2"]],sgBattleIntroBeer
     ),
     
     #endregion
@@ -94,7 +102,8 @@ enemyInfo = {
             actionCards.ghost, actionCards.ghost,
         ],
         [kaosCards.rps],
-        Enemy.Strat(.6,.5,.7,.4,.5), [actionCards.punch,actionCards.punch,kaosCards.rps]
+        Enemy.Strat(.6,.5,.7,.4,.5), [actionCards.punch,actionCards.punch,kaosCards.rps],
+        [EnemyEffects.SmallerHand], [], 5
     ),
     
     ///--- BOSS ---///
@@ -112,7 +121,8 @@ enemyInfo = {
         ],
         [kaosCards.brawl],
         Enemy.Strat(.7,.5,.8,.3,.7), [actionCards.taunt,actionCards.taunt,kaosCards.brawl],
-        function(){},["ChudIntro",["ChudKaos1","ChudKaos2"],"ChudMini"],sgBattleIntroChud
+        [EnemyEffects.SendMessage], ["IM A CHUD IM SO FAT"], 5, undefined,
+        ["ChudIntro",["ChudKaos1","ChudKaos2"],"ChudMini"],sgBattleIntroChud
     ),
     
     #endregion
@@ -132,7 +142,8 @@ enemyInfo = {
             actionCards.mirror,
         ],
         [kaosCards.hotdog],
-        Enemy.Strat(.95,.6,.8,.4,1), [actionCards.taunt,actionCards.taunt,actionCards.taunt]
+        Enemy.Strat(.95,.6,.8,.4,1), [actionCards.taunt,actionCards.taunt,actionCards.taunt],
+        []
     ),
     
     
@@ -154,7 +165,8 @@ enemyInfo = {
         ],
         [kaosCards.hotdog,kaosCards.swoop],
         Enemy.Strat(.7,.5,.7,.4,.5), [actionCards.taunt,actionCards.taunt,actionCards.taunt],
-        undefined, ["TetoPrepare","TetoKaos"]
+        [EnemyEffects.SendMessage], ["MAN FUCK NODEX"], 3, undefined,
+        ["TetoPrepare","TetoKaos"]
     ),
     
     jsg : new Enemy.Create("Just Some Guy",
@@ -168,7 +180,8 @@ enemyInfo = {
             actionCards.burger,
         ],
         [kaosCards.hotdog,kaosCards.swoop],
-        Enemy.Strat(.7,.5,.7,.4,.7), [actionCards.taunt,actionCards.taunt,actionCards.taunt]
+        Enemy.Strat(.7,.5,.7,.4,.7), [actionCards.taunt,actionCards.taunt,actionCards.taunt],
+        []
     ),
     
     pug : new Enemy.Create("Loulou the Pug",
@@ -184,7 +197,8 @@ enemyInfo = {
             actionCards.perro,
         ],
         [kaosCards.high,kaosCards.freeze],
-        Enemy.Strat(), [actionCards.taunt,actionCards.taunt,actionCards.taunt]
+        Enemy.Strat(), [actionCards.taunt,actionCards.taunt,actionCards.taunt],
+        []
     ),
     
     fungi : new Enemy.Create("Fungi",
@@ -199,7 +213,8 @@ enemyInfo = {
             actionCards.bread, actionCards.slash
         ],
         [kaosCards.high,kaosCards.destroy],
-        Enemy.Strat(), [actionCards.taunt,actionCards.taunt,actionCards.taunt]
+        Enemy.Strat(), [actionCards.taunt,actionCards.taunt,actionCards.taunt],
+        []
     ),
     
     bf : new Enemy.Create("Boyfriend From Fnf",
@@ -213,7 +228,8 @@ enemyInfo = {
             actionCards.flaminAce, actionCards.flaminAce, actionCards.jerryCan
         ],
         [kaosCards.rerun,kaosCards.high],
-        Enemy.Strat(1.3,.7,.5,.7,.8), [actionCards.taunt,actionCards.taunt,actionCards.taunt]
+        Enemy.Strat(1.3,.7,.5,.7,.8), [actionCards.taunt,actionCards.taunt,actionCards.taunt],
+        []
     ),
     
     rod : new Enemy.Create("John Rod",
@@ -225,7 +241,8 @@ enemyInfo = {
             actionCards.laser, actionCards.laser, actionCards.laser,
         ],
         [kaosCards.rerun,kaosCards.high],
-        Enemy.Strat(10,0,0,0,0), [kaosCards.herobrine]
+        Enemy.Strat(10,0,0,0,0), [kaosCards.herobrine],
+        []
     ),
     
     

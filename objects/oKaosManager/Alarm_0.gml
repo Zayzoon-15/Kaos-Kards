@@ -16,7 +16,7 @@ var _createKaos = function(_card,_y,_targetEnemy)
 if enemyKaos == undefined and playerKaos == undefined
 {
     playerFirst = choose(true,false);
-    alarm[5] = 10; 
+    alarm[5] = 5; //10 
 }
 
 //Play Players Card

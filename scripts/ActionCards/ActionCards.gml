@@ -8,81 +8,81 @@ globalvar actionCards;
 
 actionCards = {
     
-    gato : new createCardAction("Gato","It's a cat",sGato,[10000000000,10000000001],[3,.1],CARDACT_GENRES.ATTACK,actionLaser),
-    perro : new createCardAction("Perro","It's a dog",sPerro,[9360,9360],[3,.1],CARDACT_GENRES.ATTACK,actionLaser),
+    gato : new createCardAction("Gato","It's a cat",sGato,[10000000000,10000000001],[60 * 5,-20],CARDACT_GENRES.ATTACK,actionLaser),
+    perro : new createCardAction("Perro","It's a dog",sPerro,[9360,9360],[60 * 5,-20],CARDACT_GENRES.ATTACK,actionLaser),
     
     heal : new createCardAction("Health Pack",
     "[g]Heals[/] you depending on cards value",
-    sCardHeal,[1,12],[.8,1.2],CARDACT_GENRES.HEAL,actionHeal,comboHeal),
+    sCardHeal,[1,12],[30,-10],CARDACT_GENRES.HEAL,actionHeal,comboHeal),
     
     shield : new createCardAction("Shield",
     "Grants you [b]temporary health[/] that reduces after every round",
-    sCardShield,[1,12],[.8,1],CARDACT_GENRES.DEFEND,actionShield,comboShield),
+    sCardShield,[1,12],[30,0],CARDACT_GENRES.DEFEND,actionShield,comboShield),
     
     slash : new createCardAction("Mighty Sword",
     "Slashes your enemy with a mighty sword",
-    sCardSlash,[1,6],[1,1],CARDACT_GENRES.ATTACK,actionSlash,comboSlash),
+    sCardSlash,[1,6],[0,0],CARDACT_GENRES.ATTACK,actionSlash,comboSlash),
     
     bread : new createCardAction("Bread",
     "Shoots a 3 slices of bread at the enemy",
-    sCardBread,[1,6],[1.3,.7],CARDACT_GENRES.ATTACK,actionBread,comboBread),
+    sCardBread,[1,6],[-20,10],CARDACT_GENRES.ATTACK,actionBread,comboBread),
 	
     laser : new createCardAction("Giant F**King Laser",
     "Shoots a giant f**king laser at the enemy",
-    sCardLaser,[1,6],[.7,.7],CARDACT_GENRES.ATTACK,actionLaser),
+    sCardLaser,[1,6],[20,20],CARDACT_GENRES.ATTACK,actionLaser),
     
     punch : new createCardAction("Punch",
     "Punches your enemy in the flipping face",
-    sCardPunch,[1,6],[1.2,1.3],CARDACT_GENRES.ATTACK,actionPunch),
+    sCardPunch,[1,6],[-20,-10],CARDACT_GENRES.ATTACK,actionPunch),
     
     flaminAce : new createCardAction("Flamin' Ace",
     "[o]Burns[/] your enemy [r]alive",
-    sCardFlaminAce,[1,4],[.8,1],CARDACT_GENRES.ATTACK,actionFlameAce),
+    sCardFlaminAce,[1,4],[20,0],CARDACT_GENRES.ATTACK,actionFlameAce),
     
     poison : new createCardAction("Poison",
     "[p]Poisons[/] your enemy for a random period of time",
-    sCardPoison,[1,4],[1,.8],CARDACT_GENRES.ATTACK,actionPoison),
+    sCardPoison,[1,4],[0,10],CARDACT_GENRES.ATTACK,actionPoison),
 	
     mirror : new createCardAction("Mirror",
     "Reflects any [aq]physical[/] attacks attacking the card but you take some damage as well[s][lg](The range changes how much more damage the attack does)",
-    sCardMirror,[0,2],[.5,3],CARDACT_GENRES.DEFEND,actionMirror),
+    sCardMirror,[0,2],[30,-20],CARDACT_GENRES.DEFEND,actionMirror),
 	
     ghost : new createCardAction("Ghost",
     "Shoots a [aq]non physical[/] ghost that ignores [b]shields",
-    sCardGhost,[1,5],[1,1.5],CARDACT_GENRES.ATTACK,actionGhost),
+    sCardGhost,[1,5],[0,-10],CARDACT_GENRES.ATTACK,actionGhost),
 	
     taunt : new createCardAction("Taunt",
     "Taunt your enemy to gain a random amount of [o]combo[/] charge and steal a random amount from them",
-    sCardTaunt,[1,4],[2,1.5],CARDACT_GENRES.ATTACK,actionTaunt),
+    sCardTaunt,[1,4],[20,-10],CARDACT_GENRES.ATTACK,actionTaunt),
     
     steak : new createCardAction("Juicy Steak",
     "Increase [g]max health[/] by cards value",
-    sCardSteak,[0,7],[.7,1.2],CARDACT_GENRES.HEAL,actionSteak),
+    sCardSteak,[0,7],[30,-10],CARDACT_GENRES.HEAL,actionSteak),
     
     silence : new createCardAction("Silence",
     "A chance to silence the the card in front of it[s][lg](The higher the value the higher the chance of silencing the card)",
-    sCardSilence,[0,10],[.5,1],CARDACT_GENRES.DEFEND,actionSilence),
+    sCardSilence,[0,10],[30,0],CARDACT_GENRES.DEFEND,actionSilence),
     
     jerryCan : new createCardAction("Jerry Can",
     "All [o]fire effects[/] currently active create an [r]explosion[/] and get removed",
-    sCardFlaminAce,[4,9],[.4,1],CARDACT_GENRES.ATTACK,actionJerryCan),
+    sCardFlaminAce,[4,9],[60,0],CARDACT_GENRES.ATTACK,actionJerryCan),
     
     bodyslam : new createCardAction("Body Slam",
     "Turn a percentage of your [b]shield[/] into [r]damage[/]",
-    sCardShield,[35,65],[.3,.8],CARDACT_GENRES.ATTACK,actionBodySlam),
+    sCardShield,[35,65],[60,20],CARDACT_GENRES.ATTACK,actionBodySlam),
     
     fiary : new createCardAction("Fairy Bottle",
     "bottle",
-    sCardShield,[1,7],[1,.5],CARDACT_GENRES.ATTACK,actionBodySlam),
+    sCardShield,[1,7],[0,60],CARDACT_GENRES.ATTACK,actionBodySlam),
     
     //CONCEPT
     burger : new createCardAction("Burger",
     "[g]Heals[/] you a great amount but the amount it [g]heals[/] [o]decreases[/] every use[s][lg](The healing can go negative, damaging you)",
-    sCardBurger,[10,20],[.6,.8],CARDACT_GENRES.HEAL,actionBurger,undefined,actionAfterRangeBurger),
+    sCardBurger,[10,20],[30,-10],CARDACT_GENRES.HEAL,actionBurger,undefined,actionAfterRangeBurger),
     
     reckless : new createCardAction("Reckless Attack",
     "Deal high damage to the enemy, but take a small amount of recoil damage",
-    sCardPunch,[5,9],[2,2],CARDACT_GENRES.ATTACK,actionReckless),
+    sCardPunch,[5,9],[50,50],CARDACT_GENRES.ATTACK,actionReckless),
     
 };
 

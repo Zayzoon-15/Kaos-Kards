@@ -1,0 +1,32 @@
+
+/// @desc  A function holding all the effects an enemy can do
+/// All effects happen 
+function EnemyEffects()
+{
+    
+    /// @desc Creates a message for the player (testing func)
+    /// @param {string} _text The text
+    /// @param {bool} _inGame If it should alert in game or the pc
+    static SendMessage = function(_text = "text",_inGame = true)
+    {
+        var _func = _inGame ? createAlertMessage : show_message;
+        timeSourceCreate(1,_func,[_text]);
+    }
+    
+    
+    /// @desc Decreases the players hand size
+    static SmallerHand = function()
+    {
+        instance_create_depth(0,0,0,oEnemyEffectSmallHand);
+    }
+    
+    
+    /// @desc Stops the player from using the last cards they used
+    static BanLastCards = function()
+    {
+        print(global.lastCardsPlayed);
+    }
+    
+    
+    
+}

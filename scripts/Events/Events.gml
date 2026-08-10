@@ -110,7 +110,7 @@ function eventGameReset(_hardReset = true)
     global.enemyAddCards = [];
     
     //Reset Hand Size
-    global.maxHandSize = 6;
+    global.handsize = global.maxHandSize;
     global.maxDiscards = round(array_length(playerDeck)*.6);
     
     //Audio
@@ -192,6 +192,27 @@ function eventNextRoundStarted()
                 _rules[i].action();
             }
         }
+    }
+    
+    //Apply Enemy Effects
+    var _effectChance = irandom_range(1,global.currentEnemy.effectChance);
+    if array_length(global.currentEnemy.effects) > 0 and _effectChance == 1 //and global.gameRound > 1
+    {
+        //Get Info
+        var _targetIndex = irandom_range(0,array_length(global.currentEnemy.effects) - 1);
+        var _effectFunc = global.currentEnemy.effects[_targetIndex];
+        var _effectArgs = [];
+        
+        print("PREFORMED EFFECT", _targetIndex);
+        
+        //Setup Arguments
+        if !array_is_empty(global.currentEnemy.effectArgs) and array_length(global.currentEnemy.effectArgs) - 1 >= _targetIndex
+        {
+            _effectArgs = is_array(global.currentEnemy.effectArgs) ? global.currentEnemy.effectArgs : [global.currentEnemy.effectArgs];
+        }
+        
+        //Preform
+        method_call(_effectFunc,_effectArgs);
     }
     
 }

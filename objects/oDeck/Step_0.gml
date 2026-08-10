@@ -9,7 +9,7 @@ touchingStack = point_in_rectangle(mouse_x,mouse_y,x-sprite_width/2,y-sprite_hei
 if room == rPrepare
 {
     //Draw Cards
-    if cardsInPlay < global.maxHandSize and drawTime <= 0 and cardsLeft != 0
+    if cardsInPlay < global.handsize and drawTime <= 0 and cardsLeft != 0
     {
         drawCard();
     } else drawTime --;

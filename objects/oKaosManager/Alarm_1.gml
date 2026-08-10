@@ -1,4 +1,5 @@
 ///@desc Create Player Card
+/*
 
 //Get Card
 var _card = ds_list_find_value(playerActions,playerCard+1);

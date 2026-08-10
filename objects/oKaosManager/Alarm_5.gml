@@ -1,6 +1,8 @@
-///@desc Preform Combo
+///@desc Place Cards
 
-//Create Card
+#region --- Functions
+
+//Combo
 var _createCombo = function(_card,_targetEnemy)
 {
     //Position
@@ -24,17 +26,70 @@ var _createCombo = function(_card,_targetEnemy)
 
 }
 
+//Normal Cards (Creates ALL the cards for the player or enemy)
+var _createNormalCards = function(_targetEnemy = true)
+{
+    //Position
+    var _x = ROOM_CENTER.x;
+    var _y = _targetEnemy ? room_height+sprite_get_height(sCardBlank) : -sprite_get_height(sCardBlank);
+    var _targetY = _targetEnemy ? room_height - yOffset : yOffset;
+    
+    //Setup
+    var _list = _targetEnemy ? playerActions : enemyActions;
+    var _totalTime = 0;
+    
+    for (var i = 1; i < 4; i++) {
+        
+        //Get Card
+        var _card = ds_list_find_value(_list,i);
+        
+        //Create Card
+        if _card != undefined and _card != 0
+        {
+            //Change Value
+            _card.value *= global.valueMult;
+            
+            //Get Speed
+            var _speed = _card.info.showSpd * (_targetEnemy ? global.cardsSpeed.player : global.cardsSpeed.enemy);
+            var _showTime = _speed + (40 * (i-1));
+            _totalTime += _showTime;
+            
+            //PRINT FOR DEBUG
+            print($"CARDPLAYED: {_card.info.name}",$"TARGET ENEMY: {_targetEnemy}",$"SPEED: {_speed}",$"SHOW TIME: {_showTime}",$"VALUE: {_card.value}");
+            
+            //Create Cards Later Based On Speed
+            timeSourceCreate(_showTime,function(){
+                
+                instance_create_layer(argument[0],argument[1],"Cards",oAttackCard,{
+                    targetX : argument[2],
+                    targetY : argument[3],
+                    targetEnemy : argument[4],
+                    card : argument[5],
+                    cardId : argument[6]
+                });
+                
+                
+            },[_x,_y,getXPos(i-1),_targetY,_targetEnemy,_card,i],time_source_units_frames);
+        }
+        
+    }
+    
+    //End Kaos
+    alarm[3] = _totalTime + 30;
+}
+
+#endregion
+
 
 //Play Normal Cards
 if !ds_list_find_value(playerActions,0) and !ds_list_find_value(enemyActions,0)
 {
-    //Get First Cards
-    var _playersFirstCard = ds_list_find_value(playerActions,1);
-    var _enemiesFirstCard = ds_list_find_value(enemyActions,1);
+    _createNormalCards(true);
+    _createNormalCards(false);
     
-    //Play Cards
-    alarm[1] = _playersFirstCard != undefined and _playersFirstCard != 0 ? _playersFirstCard.info.showSpd * global.cardsSpeed.player : 10;
-    alarm[2] = _enemiesFirstCard != undefined and _enemiesFirstCard != 0 ? _enemiesFirstCard.info.showSpd * global.cardsSpeed.enemy: 10;
+    
+    //alarm[1] = _playersFirstCard != undefined and _playersFirstCard != 0 ? _playersFirstCard.info.showSpd * global.cardsSpeed.player : 10;
+    //alarm[2] = _enemiesFirstCard != undefined and _enemiesFirstCard != 0 ? _enemiesFirstCard.info.showSpd * global.cardsSpeed.enemy: 10;
 }
 
 

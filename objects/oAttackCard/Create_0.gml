@@ -55,6 +55,11 @@ hover = false;
 //Disable
 disabled = false;
 
+//Add To Log
+if targetEnemy
+{
+    global.lastCardsPlayed.player[cardId] = card.info;
+} else global.lastCardsPlayed.enemy[cardId] = card.info;
 
 #region Functions
 

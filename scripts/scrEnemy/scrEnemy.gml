@@ -124,10 +124,13 @@ function Enemy()
     /// @param {array} [_kaosCards] The enemies kaos cards (Example: [kaosCards.swoop])
     /// @param {struct.enemycreatestrat} [_strat] The enemies figthing strategy
     /// @param {array} [_rewards] The cards the enemy gives (Example: [actionCards.bread, actionCards.heal])
+    /// @param {array} [_effects] The enemies effects (leave as an empty array if they don't use one)
+    /// @param {array} [_effectArgs] The arguments for each effects (leave as an empty array if they don't use one)
+    /// @param {real} [_effectChance] 1 in what chance will the effect play for the enemy
     /// @param {any*} [_special] The enemies special move(leave as undefined if they don't use one)
     /// @param {array.string} _customSong The song the enemy plays (Example: ["Prepare","Kaos"])
     /// @param {asset.GMSound} _introSong The song that plays in the enemies intro
-    static Create = function(_name,_sprite,_animInfo = Anims(),_dialogue = Dialouge(),_difficulty = Difficulty(),_actionCards=[],_kaosCards=[],_strat = Strat(),_rewards=[actionCards.bread],_special = undefined,_customSong = ["Prepare","Kaos","Kaos"],_introSong = sgBattleIntro) constructor
+    static Create = function(_name,_sprite,_animInfo = Anims(),_dialogue = Dialouge(),_difficulty = Difficulty(),_actionCards=[],_kaosCards=[],_strat = Strat(),_rewards=[actionCards.bread],_effects = [],_effectArgs = [],_effectChance = 1,_special = undefined,_customSong = ["Prepare","Kaos","Kaos"],_introSong = sgBattleIntro) constructor
     {    
         //Info
         name = _name;
@@ -153,6 +156,9 @@ function Enemy()
         
         //Combat
         strat = _strat;
+        effectChance = _effectChance
+        effects = _effects;
+        effectArgs = _effectArgs;
         special = _special;
     }
     

@@ -17,7 +17,12 @@ initVoices();
 
 #region Global Vars
 
+//Log
 global.gamelog = ds_list_create();
+global.lastCardsPlayed = {
+    player : array_create(4,-1),
+    enemy : array_create(4,-1)
+}
 
 //Time
 global.gameTime = {
@@ -57,7 +62,7 @@ global.cardsSpeed = {
 }
 
 //Enemy
-global.currentEnemy = enemyInfo.bones;
+global.currentEnemy = enemyInfo.dog;
 global.enemySpecialUses = 0;
 
 //Removes

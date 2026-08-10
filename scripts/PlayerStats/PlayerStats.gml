@@ -34,6 +34,7 @@ global.playerSeenCards = playerDeck;
 global.maxHandSize = 6;
 global.maxDiscards = round(array_length(playerDeck)*.6);
 global.discards = 0;
+global.handsize = global.maxHandSize;
 
 //Set Deck Size For Now
 global.deckCardAmount = array_length(playerDeck);

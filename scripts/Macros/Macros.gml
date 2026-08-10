@@ -1,7 +1,7 @@
 //Game
 #macro VALUE_MULT .6
 #macro COMBO_MULT 1 
-#macro CARD_SHOW_SPD 100
+#macro CARD_SHOW_SPD 70
 #macro CARD_ATTACK_SPD 30
 
 //Ui

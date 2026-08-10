@@ -106,6 +106,3 @@ drawCard = function(){
 }
 
 sprite_index = global.currentDeck.sprite;
-
-//Setup
-alarm[0] = 1;

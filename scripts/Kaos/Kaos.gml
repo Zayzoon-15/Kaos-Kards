@@ -54,7 +54,7 @@ function kaosActionHandy(_targetEnemy)
 	cardJuice(true,true);
 	
 	//Double Values
-	global.maxHandSize += 1;
+	global.handsize += 1;
     
     //Finish
     timeSourceCreate(1.5,eventKaosCardDone);

@@ -122,6 +122,7 @@ function FiggySetup() {
 			if argument0 != ""
 			{
 				global.maxHandSize = real(argument0);
+				global.handsize = real(argument0);
 			}
 		});
     

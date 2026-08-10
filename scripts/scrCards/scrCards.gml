@@ -19,7 +19,7 @@ enum CARDACT_GENRES {
 /// @param {string} _desc The cards description (You can put a function with a return and that would also work EX: function(){return "My string"}
 /// @param {asset.GMSprite} _sprite The cards sprite
 /// @param {array} _range The cards range Ex: [1,6] min-1 max-6
-/// @param {array} _cardSpeed How fast the card comes out, keep in mind its a multiplier so 1 is the base speed, the higher the number the faster they are (First entry is the show speed and the second is the attack speed)
+/// @param {array} _cardSpeed How fast the card comes out, keep in mind it adds the amount give to the base speed (First entry is the show speed and the second is the attack speed)
 /// @param {Enum} _genre The card genre
 /// @param {function} _action The cards action (Put undefined of it has no action)
 /// @param {function} _comboAction The cards combo action (Put undefined if it has no action)
@@ -45,8 +45,8 @@ function createCardAction(_name,_desc,_sprite,_range,_cardSpeed = [CARD_SHOW_SPD
         min : _range[0],
         max : _range[1]
     };
-    showSpd = CARD_SHOW_SPD/_cardSpeed[0];
-    attackSpd = CARD_ATTACK_SPD/_cardSpeed[1];
+    showSpd = CARD_SHOW_SPD + _cardSpeed[0];
+    attackSpd = CARD_ATTACK_SPD + _cardSpeed[1];
     
     //Get Action
     var _funcAction = _action == undefined ? function(){} : _action;

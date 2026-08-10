@@ -1,5 +1,5 @@
 //Get Info
-text = $"Hand:{oDeck.currentCard}/{global.maxHandSize}\nCards in play:{oDeck.cardsInPlay}/{global.maxHandSize}";
+text = $"Hand:{oDeck.currentCard}/{global.handsize}\nCards in play:{oDeck.cardsInPlay}/{global.handsize}";
 
 //Depth
 depth = -1;

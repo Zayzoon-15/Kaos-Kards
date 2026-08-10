@@ -1,4 +1,5 @@
 ///@desc Create Enemy Card
+/*
 
 //Get Card
 var _card = ds_list_find_value(enemyActions,enemyCard+1);
