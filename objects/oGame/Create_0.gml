@@ -60,6 +60,10 @@ global.cardsSpeed = {
     player : 1,
     enemy : 1,
 }
+global.cardsTempBanned = {
+    player : [],
+    enemy : []
+}
 
 //Enemy
 global.currentEnemy = enemyInfo.dog;

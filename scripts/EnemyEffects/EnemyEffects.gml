@@ -24,7 +24,17 @@ function EnemyEffects()
     /// @desc Stops the player from using the last cards they used
     static BanLastCards = function()
     {
-        print(global.lastCardsPlayed);
+        //Temporaly Ban Cards
+        for (var i = 0; i < array_length(global.lastCardsPlayed.player); i++) {
+        	if global.lastCardsPlayed.player[i] != -1
+            {
+                array_push(global.cardsTempBanned.player,global.lastCardsPlayed.player[i]);
+                print(global.lastCardsPlayed.player[i].index);
+            }
+        }
+        
+        //Show Alert
+        timeSourceCreate(1,createAlertMessage,["Disabled Last Used Cards", 60]);
     }
     
     

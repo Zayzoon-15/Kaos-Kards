@@ -1,34 +1,25 @@
-///@desc Create Enemy Card
-/*
+///@desc Round Over
 
-//Get Card
-var _card = ds_list_find_value(enemyActions,enemyCard+1);
-var _nextCard = ds_list_find_value(enemyActions,enemyCard+2);
-
-//Create Card
-if _card != undefined and _card != 0
+//Attacks Exists
+var _attcksExists = instance_exists(oParAttacks);
+with oAttackEffect
 {
-    //Change Value
-    _card.value *= global.valueMult;
-    
-    instance_create_layer(room_width/2,-sprite_get_height(sCardBlank),"Cards",oAttackCard,{
-        card : _card,
-        targetX : getXPos(enemyCard),
-        targetY : yOffset,
-        targetEnemy : false,
-		cardId : enemyCard
-    });
+	if info.type == EFFECT_TYPE.HARM and !effectDone then _attcksExists = true;
 }
 
-//Goto Next
-enemyCard ++;
-
-//Get Speed
-var _speed = 70;
-if _nextCard != undefined and _nextCard != 0 and _nextCard != NaN
+//Loop Again If There Are Attacks Left
+if _attcksExists
 {
-    _speed = _nextCard.info.showSpd * global.cardsSpeed.enemy;
+	alarm[2] = 20;
+	exit;
 }
 
-//Keep Going
-if enemyCard < 3 then alarm[2] = _speed;
+//Round Over Message
+createAlertMessage("Round Over",30,room_width/2,(room_height/2)-60);
+audioPlaySfx(snRoundEnd);
+
+//Set Kaos Over
+kaosOver = true;
+
+//Create Button
+alarm[3] = 30;

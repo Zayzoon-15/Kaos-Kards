@@ -1,9 +1,3 @@
-//Reset Log
-global.lastCardsPlayed = {
-    player : array_create(4,-1),
-    enemy : array_create(4,-1)
-}
-
 //Combo
 playerComboDone = false;
 
@@ -30,7 +24,6 @@ getXPos = function(_index)
         case 2: return (room_width/2)+xOffset;
     }
 }
-
 
 //Play Starting Voice
 timeSourceCreate(10,audioPlayVoice,[voicePack.kaosStarting,false,2],time_source_units_frames);

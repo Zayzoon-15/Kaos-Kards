@@ -5,7 +5,9 @@ if !ds_exists(playerHand,ds_type_list)
 } else ds_list_clear(playerHand);
 
 //Deck
+shuffleDeck = false;
 deck = playerDeck;
+ogDeck = deck;
 placedCards = [];
 
 //Remove Cards
@@ -21,16 +23,10 @@ for (var i = 0; i < array_length(global.playerRemovedCards); i++)
 //Add Cards
 deck = array_concat(deck,global.playerAddCards);
 
-
 //Enemy Deck
-if room == rEnemy
-{
-    deck = array_create(irandom_range(1,5),undefined);
-}
-
+if room == rEnemy then deck = array_create(irandom_range(1,5),undefined);
 
 //Set Stats
-//deck = array_shuffle(deck);
 deckNum = 0;
 totalCards = array_length(deck);
 cardsLeft = totalCards;
@@ -76,15 +72,19 @@ offsetY = 0;
 touchingStack = false;
 
 //Functions
-drawCard = function(){
+drawCard = function() {
 	
+    //Shuffle Deck If Needed (Gets a random number based on the deck size)
+    if shuffleDeck then deckNum = irandom_range(0,array_length(deck)-1);
+    
     //Create Card
 	var _x = room_width/2;
 	var _y = 630;
     var _info = deck[deckNum];
 	var _inst = instance_create_layer(_x,_y,"Cards",oCard,{
         cardId : currentCard,
-        info : _info
+        info : _info,
+        index : deckNum
     });
     
     //Add To Array
@@ -92,6 +92,9 @@ drawCard = function(){
     
     //Add To Hand
     ds_list_add(playerHand,_inst);
+    
+    //Delete From Deck Array
+    array_delete(deck,deckNum,1);
     
     //Change Stats
     cardsLeft --;

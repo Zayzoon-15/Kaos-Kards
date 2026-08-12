@@ -111,7 +111,7 @@ function SettingsMenus()
             SettingsButtons.Check("Enemy Dialogue","enemyDialogue",global.enemyDialogue);
             //SettingsButtons.Slider("Game Speed","gameSpeed",undefined,2,1,4,false,undefined,"X");
 		
-        SettingsButtons.Separator("Prefrences");
+        SettingsButtons.Separator("Preferences");
             SettingsButtons.Check("3D Card Flip","cardFlip",global.cardFlip);
             SettingsButtons.Slider("John Rod Chance","johnRodChance",undefined,2,0,100,false,floor,"%");
             SettingsButtons.Button("What Do I Put Here...",function()

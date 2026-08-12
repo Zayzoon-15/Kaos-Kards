@@ -58,8 +58,18 @@ disabled = false;
 //Add To Log
 if targetEnemy
 {
-    global.lastCardsPlayed.player[cardId] = card.info;
-} else global.lastCardsPlayed.enemy[cardId] = card.info;
+    global.lastCardsPlayed.player[cardId] = {
+        info : card.info,
+        value : card.value,
+        index : card.index
+    };
+} else {
+    global.lastCardsPlayed.enemy[cardId] = {
+        info : card.info,
+        value : card.value,
+        index : card.index
+    };
+}
 
 #region Functions
 

@@ -43,6 +43,24 @@ action = function()
         }
     }
     
+    //Reset Last Used Cards EXCEPT FOR DICE
+    global.lastCardsPlayed.player[0] = -1;
+    global.lastCardsPlayed.player[1] = -1;
+    global.lastCardsPlayed.player[2] = -1;
+    global.lastCardsPlayed.enemy[0] = -1;
+    global.lastCardsPlayed.enemy[1] = -1;
+    global.lastCardsPlayed.enemy[2] = -1;
+    
+    //Reset Dice If None
+    with oSpecialSlot
+    {
+        if !filled and !used
+        {
+            global.lastCardsPlayed.player[3] = -1;
+            global.lastCardsPlayed.enemy[3] = -1;
+        }
+    }
+    
     //Go To Enemy Room
     transStart(rEnemy);
     

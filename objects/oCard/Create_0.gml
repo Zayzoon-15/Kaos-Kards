@@ -47,6 +47,14 @@ rangeScale = 1;
 uses = info.uses;
 uses -= checkCardUses(info.name,"Player");
 
+//Ban Card
+for (var i = 0; i < array_length(global.cardsTempBanned.player); i++) {
+    if index == global.cardsTempBanned.player[i].index and info == global.cardsTempBanned.player[i].info
+    {
+        canUse = false;
+    }
+}
+
 //State
 enum CARDSTATE
 {

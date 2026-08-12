@@ -10,7 +10,8 @@ function addPlayerAction(_card)
     {
         _struct = {
             info : info,
-            value : currentValue
+            value : currentValue,
+            index : index
         };
     }
     
@@ -23,14 +24,14 @@ function addPlayerAction(_card)
 ///@arg {Asset.GMObject} _card The card inst
 function addPlayerKaos(_card)
 {
-    
     //Create Struct
     var _struct;
     with _card
     {
         _struct = {
             info : info,
-            value : currentValue
+            value : currentValue,
+            index : index
         };
     }
     
@@ -53,7 +54,8 @@ function addEnemyAction(_info,_value,_pos)
     var _struct;
     _struct = {
         info : _info,
-        value : _value
+        value : _value,
+        index : -1
     }
     
     //Add To List
@@ -68,7 +70,8 @@ function addEnemyKaos(_info)
     var _struct;
     _struct = {
         info : _info,
-        value : undefined
+        value : undefined,
+        index : -1
     }
     
     //Add To List

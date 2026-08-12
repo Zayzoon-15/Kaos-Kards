@@ -1,25 +1,16 @@
-///@desc Round Over
+///@desc Create Button
 
-//Attacks Exists
-var _attcksExists = instance_exists(oParAttacks);
-with oAttackEffect
+//Button
+instance_create_layer(room_width/2,room_height/2,"Buttons",oKaosOverButton);
+
+//Voice Line
+var _voiceline = voicePack.neutral;
+if irandom_range(1,3) == 1
 {
-	if info.type == EFFECT_TYPE.HARM and !effectDone then _attcksExists = true;
+    if global.playerPerformance > global.enemyPerformance
+    {
+        _voiceline = voicePack.winning;
+    } else _voiceline = voicePack.losing;
 }
 
-//Loop Again If There Are Attacks Left
-if _attcksExists
-{
-	alarm[3] = 30;
-	exit;
-}
-
-//Round Over Message
-createAlertMessage("Round Over",30,room_width/2,(room_height/2)-60);
-audioPlaySfx(snRoundEnd);
-
-//Set Kaos Over
-kaosOver = true;
-
-//Create Button
-alarm[4] = 30;
+audioPlayVoice(_voiceline,false,3);

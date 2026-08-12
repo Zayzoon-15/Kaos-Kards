@@ -15,7 +15,8 @@ function initRules(){
         deckShuffle : new Rule("Decks shuffled","Decks are shuffled after every round",function(){
             with oDeck
             {
-                deck = array_shuffle(deck);
+                shuffleDeck = true;
+                //deck = array_shuffle(deck);
             }
         }),
         

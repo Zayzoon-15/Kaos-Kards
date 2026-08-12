@@ -100,6 +100,12 @@ function eventGameReset(_hardReset = true)
         enemy : 1
     }
     
+    //Reset Temp Bans
+    global.cardsTempBanned = {
+        player : [],
+        enemy : []
+    }
+    
 	//Reset Log
 	ds_list_clear(global.gamelog);
     
@@ -168,7 +174,13 @@ function eventNextRoundStarted()
         player : 1,
         enemy : 1
     }
-	
+    
+    //Reset Temp Bans
+    global.cardsTempBanned = {
+        player : [],
+        enemy : []
+    }
+
 	//Reset Mult
 	global.valueMult = 1;
     global.comboMult = 1;
@@ -249,7 +261,9 @@ function eventKaosCardDone()
     }
     
     //Next Kaos
-	if instance_exists(oKaosManager) then oKaosManager.alarm[0] = 50;
+	if instance_exists(oKaosManager) {
+        if oKaosManager.alarm[0] == -1 then oKaosManager.alarm[0] = 50;
+    } 
 }
 
 
