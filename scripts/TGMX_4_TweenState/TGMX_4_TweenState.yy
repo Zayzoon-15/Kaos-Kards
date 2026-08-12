@@ -6,7 +6,7 @@
   "name":"TGMX_4_TweenState",
   "parent":{
     "name":"User",
-    "path":"folders/Extensions/TweenGMX/User.yy",
+    "path":"folders/Addons/TweenGMX/User.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

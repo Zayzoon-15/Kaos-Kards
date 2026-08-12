@@ -52,8 +52,8 @@
   },
   "origin":9,
   "parent":{
-    "name":"Action",
-    "path":"folders/Sprites/Attacks/Action.yy",
+    "name":"Laser",
+    "path":"folders/Sprites/Attacks/Action/Laser.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

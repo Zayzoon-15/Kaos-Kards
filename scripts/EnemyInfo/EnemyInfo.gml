@@ -24,7 +24,7 @@ enemyInfo = {
         ],
         [kaosCards.swoop],
         Enemy.Strat(.7,0.3,0.3,.6,1.3), [actionCards.bread,actionCards.bread,kaosCards.swoop],
-        [EnemyEffects.BanLastCards], [], 1
+        [], [], 1
     ),
     
     cock : new Enemy.Create("Cock the Bug",
@@ -82,7 +82,7 @@ enemyInfo = {
         ],
         [kaosCards.swoop,kaosCards.high],
         Enemy.Strat(.6,.5,.7,.4,.6), [actionCards.punch,actionCards.punch,kaosCards.high],
-        [], [], 1, enemySpecialBeer,
+        [EnemyEffects.BanLastCards], [], 10, enemySpecialBeer,
         ["BeerIntro",["BeerKaos1","BeerKaos2"]],sgBattleIntroBeer
     ),
     

@@ -6,7 +6,7 @@
   "name":"TGM_Vector",
   "parent":{
     "name":"TurboGML",
-    "path":"folders/Extensions/TurboGML.yy",
+    "path":"folders/Addons/TurboGML.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

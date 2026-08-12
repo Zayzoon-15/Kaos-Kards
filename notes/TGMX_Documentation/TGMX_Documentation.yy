@@ -4,7 +4,7 @@
   "name":"TGMX_Documentation",
   "parent":{
     "name":"Docs",
-    "path":"folders/Extensions/TweenGMX/Docs.yy",
+    "path":"folders/Addons/TweenGMX/Docs.yy",
   },
   "resourceType":"GMNotes",
   "resourceVersion":"2.0",

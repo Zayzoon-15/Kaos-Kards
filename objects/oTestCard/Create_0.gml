@@ -10,6 +10,9 @@ canGrab = true;
 uses = info.uses;
 value = 10;
 
+//Sprite
+sprite_index = info.sprite;
+
 #region Functions
 
 //Uses
@@ -92,4 +95,7 @@ cardSetShake = function(_shakeAmount,_easeAmount = .1)
 
 #endregion
 
-method_call(action,args);
+if action == undefined
+{
+    method_call(info.action,[targetEnemy]);
+} else method_call(action,args);

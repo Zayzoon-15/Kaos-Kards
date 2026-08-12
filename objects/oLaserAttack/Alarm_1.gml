@@ -1,7 +1,7 @@
 ///@desc Damage Target
 
 //Action
-action();
+if !beamClash then action();
 
 //Start Time Again
 if !laserDone

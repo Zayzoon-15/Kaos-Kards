@@ -21,7 +21,7 @@
   "name":"EaseHeartbeat",
   "parent":{
     "name":"Curves",
-    "path":"folders/Extensions/TweenGMX/User/Curves.yy",
+    "path":"folders/Addons/TweenGMX/User/Curves.yy",
   },
   "resourceType":"GMAnimCurve",
   "resourceVersion":"2.0",

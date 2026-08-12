@@ -6,7 +6,7 @@
   "name":"TGMX_System",
   "parent":{
     "name":"Admin",
-    "path":"folders/Extensions/TweenGMX/Admin.yy",
+    "path":"folders/Addons/TweenGMX/Admin.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

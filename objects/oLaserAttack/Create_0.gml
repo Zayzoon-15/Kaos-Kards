@@ -8,6 +8,9 @@ posBasedOnCard = true;
 //Stats
 currentlyDamaging = false;
 
+//Beam Clash
+beamClash = false;
+
 //Reduce Value
 value *= 0.3;
 

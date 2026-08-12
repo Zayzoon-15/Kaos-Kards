@@ -4,7 +4,7 @@
   "name":"03. Figgy Info",
   "parent":{
     "name":"Figgy",
-    "path":"folders/Extensions/Figgy.yy",
+    "path":"folders/Addons/Figgy.yy",
   },
   "resourceType":"GMNotes",
   "resourceVersion":"2.0",
