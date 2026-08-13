@@ -1,5 +1,6 @@
 //Visual
 flipSprite = false; //If The Sprite Should Flip Based on The Target
+flipBackwards = false; //If it should flip the sprite backwards so targeting enemy is -1 and not 1 (MUST HAVE FLIP SPRITE ENABLED)
 posBasedOnCard = false; //If The Attack Offset is Diffrent Based on The Target
 newYPos = [card.bbox_top,card.bbox_bottom]; //[targetEnemy,targetPlayer];
 

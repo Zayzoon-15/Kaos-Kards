@@ -17,3 +17,11 @@ if drawFront
 {
     draw_sprite(frontSprite,0,0,0);
 }
+
+//Draw Flash
+draw_set_colour(flashColor);
+draw_set_alpha(flashAlpha);
+draw_rectangle(SCREEN_EDGE.left,0,SCREEN_EDGE.right,SCREEN_HEIGHT,false);
+
+//Reset
+drawReset();

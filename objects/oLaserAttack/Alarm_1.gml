@@ -11,6 +11,10 @@ if !laserDone
     //Set Sprite
     sprite_index = sLaserEnd;
     
-    //Set Shake
-    card.cardSetShake(0);
+    //Beam Clash
+    beamFrame = 0;
+    beamSprite = sLaserClashEnd;
+    
+    //Stop Shake
+    loopShake = false;
 }

@@ -2,19 +2,28 @@
 if !beamClash
 {
     draw_self();
-} else { //Draw Laser Cut Due To Clash
+} else {
     
-    var _cutAmount = 200;
+    //Cut Laser
+    var _cutAmount = 230;
+    var _yscale = abs(_cutAmount / sprite_height) * image_yscale;
+    draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,_yscale,image_angle,image_blend,image_alpha);
     
-    //Position
-    var _x = (x - sprite_xoffset);
-    var _y = (y - sprite_yoffset) + (sprite_height - _cutAmount) * image_yscale;
+    //Draw Clash
+    if targetEnemy and beamSprite != noone
+    {
+        draw_sprite(beamSprite,beamFrame,x + 3,y - _cutAmount);
+        
+        //Frame Looped
+        if beamFrame >= sprite_get_number(beamSprite)-1
+        {
+            //Change Sprite
+            if beamSprite == sLaserClashStart then beamSprite = sLaserClashLoop;
+            if beamSprite == sLaserClashEnd then beamSprite = noone;
+            
+            //Reset Frame
+            beamFrame = 0;
+        } else beamFrame += beamSpd;
+    }
     
-    //Sizes
-    var _top = sprite_height - _cutAmount//image_yscale == 1 ? sprite_height - _cutAmount : 0;
-    var _height = _cutAmount * image_yscale;
-    
-    //Draw Laser
-	draw_sprite_part_ext(sprite_index,image_index,0,_top,sprite_width,_height,_x,_y,image_xscale,image_yscale,image_blend,image_alpha);
-    draw_sprite_ext(sprite_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,.2);
 }

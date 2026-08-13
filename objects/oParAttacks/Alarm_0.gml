@@ -3,7 +3,10 @@
 //Flip Sprite
 if flipSprite
 {
-    if targetEnemy then image_yscale = 1; else image_yscale = -1;
+    if flipBackwards
+    {
+        image_yscale = targetEnemy ? -1 : 1;
+    } else image_yscale = targetEnemy ? 1 : -1;
 }
 
 //Change Positon

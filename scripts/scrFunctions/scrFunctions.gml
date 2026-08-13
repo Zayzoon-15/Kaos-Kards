@@ -343,3 +343,13 @@ function roundHalf(_number)
 	return round(_number * 2 + .5)/2;
 }
 
+function flashBg(_amount,_color = c_white,_spd = .2,_flashTarget = 0)
+{
+    with oBg
+    {
+        flashAlpha = _amount;
+        flashColor = _color;
+        flashSpd = _spd;
+        flashTarget = _flashTarget;
+    }
+}

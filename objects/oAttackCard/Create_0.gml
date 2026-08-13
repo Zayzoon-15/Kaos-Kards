@@ -4,6 +4,7 @@
 sprite_index = card.info.sprite;
 
 //Image
+rotAngle = true;
 targetScale = 1;
 shakeTarget = 0;
 shakeEase = .1;
@@ -12,6 +13,7 @@ flashAlpha = 0;
 flashColor = c_white;
 
 //Animation
+animCurve = acCard;
 angle = 0;
 curvePos = 0;
 
@@ -99,8 +101,7 @@ cardJuice = function(_stars = true,_starSound = false,_angle = true,_angleAmount
 /// @desc Makes the card shake from left to right
 cardShake = function()
 {
-    var _tween = TweenCreate(self,EaseLinear,TWEEN_MODE_ONCE,false,0,10,"curvePos",0,1);
-    TweenPlay(_tween);
+    TweenFire(self,EaseLinear,TWEEN_MODE_ONCE,false,0,10,"curvePos",0,1);
 }
 
 /// @desc The card hurt effect

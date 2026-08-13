@@ -104,6 +104,7 @@
     {"name":"acBRWand","order":1,"path":"animcurves/acBRWand/acBRWand.yy",},
     {"name":"acCard","order":2,"path":"animcurves/acCard/acCard.yy",},
     {"name":"acDropMenu","order":3,"path":"animcurves/acDropMenu/acDropMenu.yy",},
+    {"name":"acLaserCard","order":7,"path":"animcurves/acLaserCard/acLaserCard.yy",},
     {"name":"acMiniBoss","order":6,"path":"animcurves/acMiniBoss/acMiniBoss.yy",},
     {"name":"acRps","order":4,"path":"animcurves/acRps/acRps.yy",},
     {"name":"EaseHeartbeat","order":1,"path":"animcurves/EaseHeartbeat/EaseHeartbeat.yy",},

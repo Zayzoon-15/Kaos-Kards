@@ -9,19 +9,31 @@ hover = false;
 canGrab = true;
 uses = info.uses;
 value = 10;
+disabled = false;
+
+//Image
+rotAngle = true;
+targetScale = 1;
+shakeTarget = 0;
+shakeEase = .1;
+shake = 0;
+flashAlpha = 0;
+flashColor = c_white;
+
+//Animation
+animCurve = acCard;
+angle = 0;
+curvePos = 0;
+
+//Shadow
+shadowX = 0;
+shadowY = 8;
+shadowSize = 0.05;
 
 //Sprite
 sprite_index = info.sprite;
 
 #region Functions
-
-//Uses
-angle = 0;
-shake = 0;
-flashAlpha = 0;
-flashColor = 0;
-shakeTarget = 0;
-shakeEase = 0;
 
 /// @desc Make the card have juice
 /// @param {bool} [_stars] [True] If it should have stars
@@ -49,8 +61,7 @@ cardJuice = function(_stars = true,_starSound = false,_angle = true,_angleAmount
 /// @desc Makes the card shake from left to right
 cardShake = function()
 {
-    var _tween = TweenCreate(self,EaseLinear,TWEEN_MODE_ONCE,false,0,10,"curvePos",0,1);
-    TweenPlay(_tween);
+    TweenFire(self,EaseLinear,TWEEN_MODE_ONCE,false,0,10,"curvePos",0,1);
 }
 
 /// @desc The card hurt effect

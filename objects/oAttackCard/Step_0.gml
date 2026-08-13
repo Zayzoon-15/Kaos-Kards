@@ -3,10 +3,10 @@ x = lerp(x,targetX,.2);
 y = lerp(y,targetY,.2);
 
 //Animate
-x += animGetValue(acCard,curvePos,"shake")*7;
+x += animGetValue(animCurve, curvePos, 0)*7;
 
 //Rotate
-var _angle = (xprevious - x);
+var _angle = rotAngle ? (xprevious - x) : 0;
 image_angle = lerp(image_angle,_angle,.2);
 
 //Shadow

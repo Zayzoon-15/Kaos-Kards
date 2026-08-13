@@ -3,13 +3,11 @@ event_inherited();
 
 //Flip
 flipSprite = true;
+flipBackwards = true;
 posBasedOnCard = true;
 
 //Stats
 currentlyDamaging = false;
-
-//Beam Clash
-beamClash = false;
 
 //Reduce Value
 value *= 0.3;
@@ -18,15 +16,25 @@ value *= 0.3;
 sprite_index = sLaserStart;
 depth -= 2;
 
-//Laser Done
+//Beam Clash
+beamClash = false;
+beamSprite = noone;
+beamFrame = 0;
+beamSpd = sprite_get_speed(sLaserClashStart)/60;
+
+//Laser
 laserDone = false;
+laserSound = noone;
+loopShake = false;
+
+//Card Setup
+card.rotAngle = false;
+card.curvePos = 1;
 
 //Alarm Values
 delayTime = 40;
 laserTime = 60*2;
 
-//Sound
-laserSound = noone;
 
 //Functions
 action = function()
@@ -43,7 +51,8 @@ reflected = function()
 {
 	//Stop Shake
 	card.cardSetShake(0);
-	
+	loopShake = false;
+    
 	//Stop Sound
 	audio_sound_gain(laserSound,0,60);
 }
