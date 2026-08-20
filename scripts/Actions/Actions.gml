@@ -59,9 +59,6 @@ function actionShield(_targetEnemy)
 ///@self oAttackCard
 function actionSlash(_targetEnemy)
 {
-    //Juice
-    cardShake();
-    
     //Create Sword
     instance_create_layer(x,y,"Attacks",oSlashAttack,{
         targetEnemy : _targetEnemy,

@@ -15,7 +15,7 @@ shadowX = clamp(shadowX,-6,6);
 shadowX = lerp(shadowX,_shadowX,.2);
 
 //Flash
-if flashAlpha > 0 then flashAlpha -= 0.03;
+if flashAlpha > 0 then flashAlpha -= flashColor;
 
 //Ease
 image_xscale = lerp(image_xscale,targetScale,.3);

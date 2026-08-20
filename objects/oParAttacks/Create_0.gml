@@ -12,10 +12,17 @@ ignoreShield = false; //If the attack should ignore the targets shield
 
 #region Functions DONT CHANGE
 
-hurtEffect = function(_x = x,_y = y,_starAmount = 5,_stars = true,_value = value)
+/// @desc Returns the card the attack is harming
+/// @returns {oAttackCard} The card
+getCard = function()
+{
+    return instance_place(x,y,[oAttackCard,oTestCard]);
+}
+
+hurtEffect = function(_x = x,_y = y,_starAmount = 5,_stars = true)
 {
     //Get Card
-    var _card = instance_place(x,y,oAttackCard);
+    var _card = getCard();
     
     if !_card
     {
@@ -27,7 +34,7 @@ hurtEffect = function(_x = x,_y = y,_starAmount = 5,_stars = true,_value = value
     }
     
     //Card Effect
-    with _card {cardHurt(other.value);}
+    with _card {cardHurt(other.value,_stars);}
 }
 
 damageTarget = function(_value = value)

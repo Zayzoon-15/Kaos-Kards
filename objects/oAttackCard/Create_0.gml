@@ -11,6 +11,7 @@ shakeEase = .1;
 shake = 0;
 flashAlpha = 0;
 flashColor = c_white;
+flashSpd = 0.03;
 
 //Animation
 animCurve = acCard;
@@ -128,10 +129,12 @@ cardHurt = function(_value,_stars = true)
 /// @desc Makes the card flash
 /// @param {real} [_flashAmount] [1] The amount it should flash
 /// @param {Constant.Color} [_flashColor] [c_white] The flash color
-cardFlash = function(_flashAmount = 1,_flashColor = c_white)
+/// @param {real} [_flashSpd] [0.03] The speed that the flash goes away
+cardFlash = function(_flashAmount = 1,_flashColor = c_white,_flashSpd = 0.03)
 {
     flashAlpha = _flashAmount;
     flashColor = _flashColor;
+    flashSpd = _flashSpd;
 }
 
 /// @desc Makes the card shake in all directions
