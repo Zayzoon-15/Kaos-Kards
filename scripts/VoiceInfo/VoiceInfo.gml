@@ -19,12 +19,12 @@ voiceInfo = {
     #region Fighting
     
     //Start Match
-    kaosBegin : new voiceCreate(voKaosBegin,"Let the chaos... begin."),
-    downForKaos : new voiceCreate(voDownForKaos,"Who's down for some chaos!"),
+    kaosBegin : new voiceCreate(voKaosBegin,"Let the Kaos... begin."),
+    downForKaos : new voiceCreate(voDownForKaos,"Who's down for some Kaos!"),
     
     //Great Job
     dank : new voiceCreate(voDank,"That was DANK!"),
-    bringinKaos : new voiceCreate(voBringinKaos,["Woah!", "These cards sure are bringing some...", "chaos.", "See what I did there?"],[0,.5,2.8,4.2]),
+    bringinKaos : new voiceCreate(voBringinKaos,["Woah!", "These cards sure are bringing some...", "Kaos.", "See what I did there?"],[0,.5,2.8,4.2]),
     touchDial : new voiceCreate(voTouchDial,["Don't touch that dial!","Things are getting heated!"],[0,1.15]),
     
     //Bad Job
