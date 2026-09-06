@@ -6,7 +6,7 @@
   "name":"ActionCards",
   "parent":{
     "name":"Info",
-    "path":"folders/Scripts/Card/Info.yy",
+    "path":"folders/Scripts/Card/OLD/Info.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

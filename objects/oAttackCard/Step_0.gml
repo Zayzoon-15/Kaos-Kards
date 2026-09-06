@@ -27,4 +27,4 @@ shake = lerp(shake,shakeTarget,shakeEase);
 hover = touchingMouse() and canGrab and !instance_exists(oTipBox) and oKaosManager.kaosOver;
 
 //Draw Info
-drawCardText(card.info);
+drawCardText(info);

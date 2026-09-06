@@ -1,3 +1,9 @@
+//Info
+var _static = static_get(CardsAction);
+info = CardsAction.Bread; //Set To Bread To Get Values In Code
+info = cardInfo;
+info.create(self, false);
+
 //Position
 targetX = x;
 targetY = y;

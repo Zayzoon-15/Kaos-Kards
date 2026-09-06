@@ -3,7 +3,7 @@
 //Get Range
 if info.range != undefined
 {
-    currentValue = irandom_range(info.range.min,info.range.max);
+    currentValue = irandom_range(info.range[0],info.range[1]);
 }
 
 //Juice

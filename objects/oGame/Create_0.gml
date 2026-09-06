@@ -2,10 +2,17 @@
 
 initFonts();
 initDeck();
-initActionCards();
+
+
+//initActionCards();
 initDiceTypes();
-initDiceCards();
-initKaosCards();
+//initDiceCards();
+//initKaosCards();
+
+CardsAction();
+CardsDice();
+CardsKaos();
+
 initEnemyinfo();
 initTourney();
 initPlayerStats();
@@ -121,6 +128,8 @@ global.gameRound = 0;
 global.paused = false;
 global.menuOpen = false;
 global.timeSources = [];
+globalvar deltaTime;
+deltaTime = 0;
 
 //Modes
 global.mobile = os_type == os_android or os_type == os_ios or os_type == os_gxgames;
@@ -139,7 +148,7 @@ audio_group_load(agVoice);
 
 //Load Save
 SaveFile(); //Setup Save File System
-SaveFile.GameLoad();
+//SaveFile.GameLoad();
 SaveFile.SettingsLoad();
 
 //Set Window

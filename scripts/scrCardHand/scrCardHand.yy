@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scrCardHand",
   "parent":{
-    "name":"Card",
-    "path":"folders/Scripts/Card.yy",
+    "name":"OLD",
+    "path":"folders/Scripts/Card/OLD.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -40,6 +40,7 @@
     {"$GMObjectProperty":"v2","%Name":"cardId","filters":[],"listItems":[],"multiselect":false,"name":"cardId","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"-1","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"info","filters":[],"listItems":[],"multiselect":false,"name":"info","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"-1","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"index","filters":[],"listItems":[],"multiselect":false,"name":"index","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
+    {"$GMObjectProperty":"v2","%Name":"cardInfo","filters":[],"listItems":[],"multiselect":false,"name":"cardInfo","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"Bread","varType":2,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

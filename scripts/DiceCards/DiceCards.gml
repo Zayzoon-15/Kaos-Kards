@@ -1,3 +1,6 @@
+
+
+
 function initDiceTypes()
 {
 	
@@ -34,7 +37,7 @@ diceTypes =  {
 
 }
 
-
+/*
 
 function initDiceCards()
 {
@@ -68,7 +71,7 @@ diceCards = {
     
     dice20 : new createCardDice("20 Sided Dice",
     "Changes one random [aq]dice[/] to a 20 sided [aq]dice[s][lg](Can ONLY be placed before roll)",
-    sCardDice20,diceCardSwapDice,true,false,4,[diceTypes.d20]),
+    ,diceCardSwapDice,true,false,4,[diceTypes.d20]),
     
 };
 

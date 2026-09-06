@@ -1,0 +1,46 @@
+-- All info is indeed required to make the card
+
+-- Card Type
+type = "Action"
+genre = "Attack"
+
+-- Info 
+name = "Modded Card"
+desc = "This card was modded in"
+uses = NaN
+banned = false
+
+-- Stats
+range = [1,10]
+showSpd = 0
+attackSpd = 0
+
+-- Dice Card Specfics
+targetsDice = true
+targetSoundOn = -1 -- If -1 it uses the default sounds used in game
+targetSoundOff = -1 -- If -1 it uses the default sounds used in game
+
+-- Custom Functions
+use = fun (card,targetEnemy) {
+
+}
+
+combo = fun (card,targetEnemy) {
+
+}
+
+afterRange = fun (card,targetEnemy) {
+
+}
+
+-- Built In Functions (Object Events)
+create = fun (card,targetEnemy) {
+
+}
+
+udpate = fun (card,targetEnemy) {
+
+}
+
+
+return "Card Loaded!"

@@ -1,176 +1,176 @@
-
-//Card Types
-enum CARDTYPES {
-	ACTION,
-    DICE,
-    KAOS
-}
-
-//Card Genres
-enum CARDACT_GENRES {
-	HEAL,
-    DEFEND,
-    ATTACK
-}
-
-
-/// @desc Creates an action card
-/// @param {string} _name The cards names
-/// @param {string} _desc The cards description (You can put a function with a return and that would also work EX: function(){return "My string"}
-/// @param {asset.GMSprite} _sprite The cards sprite
-/// @param {array} _range The cards range Ex: [1,6] min-1 max-6
-/// @param {array} _cardSpeed How fast the card comes out, keep in mind it adds the amount give to the base speed (First entry is the show speed and the second is the attack speed)
-/// @param {Enum} _genre The card genre
-/// @param {function} _action The cards action (Put undefined of it has no action)
-/// @param {function} _comboAction The cards combo action (Put undefined if it has no action)
-/// @param {function} _afterRange The cards action for when the player gains its range (Put undefined if it has no action)
-/// @param {function} _update The cards action that plays for every frame no matter if placed (Put undefined if it has none)
-/// @param {real} _uses The max times the card can be used
-/// @param {bool} _banned If the card is banned always
-/// @param {array} _extraArgs Extra arguments the givin function can use
-/// @param {array} _comboArgs Extra arguments the givin combo function can use
-/// @param {array} _afterRangeArgs Extra arguments the givin after range function can use
-function createCardAction(_name,_desc,_sprite,_range,_cardSpeed = [CARD_SHOW_SPD,CARD_ATTACK_SPD],_genre = CARDACT_GENRES.ATTACK,_action = undefined,_comboAction = undefined,_afterRange = undefined,_update = undefined,_uses = NaN,_banned = false,_extraArgs = [],_comboArgs = [],_afterRangeArgs = []) constructor
-{
-    //Info
-    name = _name;
-    desc = _desc;
-    sprite = _sprite;
-    uses = _uses;
-    banned = _banned;
-    date = $"{current_month}/{current_day}/{current_year}/{current_second}";
-    
-    //Set Range
-    range = { 
-        min : _range[0],
-        max : _range[1]
-    };
-    showSpd = CARD_SHOW_SPD + _cardSpeed[0];
-    attackSpd = CARD_ATTACK_SPD + _cardSpeed[1];
-    
-    //Get Action
-    var _funcAction = _action == undefined ? function(){} : _action;
-    var _funcCombo = _comboAction == undefined ? _funcAction: _comboAction;
-    var _funcUpdate = _update == undefined ? function(){}: _update;
-    
-    //Set Action
-    action = _funcAction;
-    extraArgs = _extraArgs;
-    comboAction = _funcCombo;
-    comboArgs = _comboArgs;
-    afterRange = _afterRange;
-    afterRangeArgs = _afterRangeArgs;
-    update = _funcUpdate;
-    
-    //Set Type
-    type = CARDTYPES.ACTION;
-    genre = _genre;
-    
-    //Placement
-    //Mainly just to be able to order the cards based on the struct :P
-    global.deckPlacementId ++;   
-    placementId = global.deckPlacementId;
-}
+//
+////Card Types
+//enum CARDTYPES {
+	//ACTION,
+    //DICE,
+    //KAOS
+//}
+//
+////Card Genres
+//enum CARDACT_GENRES {
+	//HEAL,
+    //DEFEND,
+    //ATTACK
+//}
 
 
-/// @desc Creates a kaos card
-/// @param {string} _name The cards names
-/// @param {string} _desc The cards description (You can put a function with a return and that would also work EX: function(){return "My string"}
-/// @param {asset.GMSprite} _sprite The cards sprite
-/// @param {function} _action The cards action (Put undefined of it has no action)
-/// @param {array} _extraArgs Extra arguments the givin function can use
-/// @param {bool} _banned If the card is banned always
-function createCardKaos(_name,_desc,_sprite,_action = undefined,_extraArgs = [],_update = undefined,_uses = NaN,_banned = false) constructor
-{
-    //Info
-    name = _name;
-    desc = _desc;
-    sprite = _sprite;
-    range = undefined;
-    uses = _uses;
-    banned = _banned;
-    date = $"{current_month}/{current_day}/{current_year}/{current_second}";
-    
-    //Speeds
-    showSpd = 70;
-    attackSpd = 60;
-    
-    //Get Action
-    var _func = _action == undefined ? function(){} : _action;
-    var _updateFunc = _update == undefined ? function(){} : _update;
-    
-    //Set Action
-    action = _func;
-    update = _updateFunc;
-    extraArgs = _extraArgs;
-    
-    //Set Type
-    type = CARDTYPES.KAOS;
-    
-    //Placement
-    //Mainly just to be able to order the cards based on the struct :P
-    global.deckPlacementId ++;   
-    placementId = global.deckPlacementId;
-}
-
-
-/// @desc Creates a dice card
-/// @param {string} _name The cards names
-/// @param {string} _desc The cards description (You can put a function with a return and that would also work EX: function(){return "My string"}
-/// @param {asset.GMSprite} _sprite The cards sprite
-/// @param {function} _action The cards action (Put NaN of it has no action)
-/// @param {bool} _targetsDice If it effects a target dice
-/// @param {real} _uses The amount of times the card can be used before not being able to use again (Put Nan if infinite)
-/// @param {array} _extraArgs Extra arguments the givin function can use
-/// @param {array} _range The cards range Ex: [1,6] min-1 max-6
-/// @param {bool} _banned If the card is banned always
-function createCardDice(_name,_desc,_sprite,_action = function(){},_targetsDice = false,_targetSound = true,_uses = NaN,_extraArgs = [],_range = [],_banned = false) constructor
-{
-    //Info
-    name = _name;
-    desc = _desc;
-    sprite = _sprite;
-    targetsDice = _targetsDice
-    uses = _uses;
-    date = $"{current_month}/{current_day}/{current_year}/{current_second}";
-    banned = _banned;
-    
-    //Speeds
-    showSpd = 70;
-    attackSpd = 60;
-    
-    //Set Range
-    if array_length(_range) > 0
-    {
-        range = {
-            min : _range[0],
-            max : _range[1]
-        }
-    } else range = undefined;
-    
-    //Set Sound
-    if _targetSound and !is_struct(_targetSound)
-    {
-        targetSound = {
-            on  : [snDiceLockOn1,snDiceLockOn2,snDiceLockOn3,snDiceLockOn4],
-            off : [snDiceLockOff1,snDiceLockOff2,snDiceLockOff3,snDiceLockOff4],
-        }
-        
-    } else targetSound = _targetSound;
-    
-    //Get Action
-    var _func = _action;
-    if _action == undefined then _func = function(){};
-    
-    //Set Action
-    action = _func;
-    extraArgs = _extraArgs;
-    
-    //Set Type
-    type = CARDTYPES.DICE;
-    
-    //Placement
-    //Mainly just to be able to order the cards based on the struct :P
-    global.deckPlacementId ++;   
-    placementId = global.deckPlacementId;
-}
+///// @desc Creates an action card
+///// @param {string} _name The cards names
+///// @param {string} _desc The cards description (You can put a function with a return and that would also work EX: function(){return "My string"}
+///// @param {asset.GMSprite} _sprite The cards sprite
+///// @param {array} _range The cards range Ex: [1,6] min-1 max-6
+///// @param {array} _cardSpeed How fast the card comes out, keep in mind it adds the amount give to the base speed (First entry is the show speed and the second is the attack speed)
+///// @param {Enum} _genre The card genre
+///// @param {function} _action The cards action (Put undefined of it has no action)
+///// @param {function} _comboAction The cards combo action (Put undefined if it has no action)
+///// @param {function} _afterRange The cards action for when the player gains its range (Put undefined if it has no action)
+///// @param {function} _update The cards action that plays for every frame no matter if placed (Put undefined if it has none)
+///// @param {real} _uses The max times the card can be used
+///// @param {bool} _banned If the card is banned always
+///// @param {array} _extraArgs Extra arguments the givin function can use
+///// @param {array} _comboArgs Extra arguments the givin combo function can use
+///// @param {array} _afterRangeArgs Extra arguments the givin after range function can use
+//function createActionCards(_name,_desc,_sprite,_range,_cardSpeed = [CARD_SHOW_SPD,CARD_ATTACK_SPD],_genre = CARDACT_GENRES.ATTACK,_action = undefined,_comboAction = undefined,_afterRange = undefined,_update = undefined,_uses = NaN,_banned = false,_extraArgs = [],_comboArgs = [],_afterRangeArgs = []) constructor
+//{
+    ////Info
+    //name = _name;
+    //desc = _desc;
+    //sprite = _sprite;
+    //uses = _uses;
+    //banned = _banned;
+    //date = $"{current_month}/{current_day}/{current_year}/{current_hour}";
+    //
+    ////Set Range
+    //range = { 
+        //min : _range[0],
+        //max : _range[1]
+    //};
+    //showSpd = CARD_SHOW_SPD + _cardSpeed[0];
+    //attackSpd = CARD_ATTACK_SPD + _cardSpeed[1];
+    //
+    ////Get Action
+    //var _funcAction = _action == undefined ? function(){} : _action;
+    //var _funcCombo = _comboAction == undefined ? _funcAction: _comboAction;
+    //var _funcUpdate = _update == undefined ? function(){}: _update;
+    //
+    ////Set Action
+    //action = _funcAction;
+    //extraArgs = _extraArgs;
+    //comboAction = _funcCombo;
+    //comboArgs = _comboArgs;
+    //afterRange = _afterRange;
+    //afterRangeArgs = _afterRangeArgs;
+    //update = _funcUpdate;
+    //
+    ////Set Type
+    //type = CARDTYPES.ACTION;
+    //genre = _genre;
+    //
+    ////Placement
+    ////Mainly just to be able to order the cards based on the struct :P
+    //global.deckPlacementId ++;   
+    //placementId = global.deckPlacementId;
+//}
+//
+//
+///// @desc Creates a kaos card
+///// @param {string} _name The cards names
+///// @param {string} _desc The cards description (You can put a function with a return and that would also work EX: function(){return "My string"}
+///// @param {asset.GMSprite} _sprite The cards sprite
+///// @param {function} _action The cards action (Put undefined of it has no action)
+///// @param {array} _extraArgs Extra arguments the givin function can use
+///// @param {bool} _banned If the card is banned always
+//function createCardKaos(_name,_desc,_sprite,_action = undefined,_extraArgs = [],_update = undefined,_uses = NaN,_banned = false) constructor
+//{
+    ////Info
+    //name = _name;
+    //desc = _desc;
+    //sprite = _sprite;
+    //range = undefined;
+    //uses = _uses;
+    //banned = _banned;
+    //date = $"{current_month}/{current_day}/{current_year}/{current_second}";
+    //
+    ////Speeds
+    //showSpd = 70;
+    //attackSpd = 60;
+    //
+    ////Get Action
+    //var _func = _action == undefined ? function(){} : _action;
+    //var _updateFunc = _update == undefined ? function(){} : _update;
+    //
+    ////Set Action
+    //action = _func;
+    //update = _updateFunc;
+    //extraArgs = _extraArgs;
+    //
+    ////Set Type
+    //type = CARDTYPES.KAOS;
+    //
+    ////Placement
+    ////Mainly just to be able to order the cards based on the struct :P
+    //global.deckPlacementId ++;   
+    //placementId = global.deckPlacementId;
+//}
+//
+//
+///// @desc Creates a dice card
+///// @param {string} _name The cards names
+///// @param {string} _desc The cards description (You can put a function with a return and that would also work EX: function(){return "My string"}
+///// @param {asset.GMSprite} _sprite The cards sprite
+///// @param {function} _action The cards action (Put NaN of it has no action)
+///// @param {bool} _targetsDice If it effects a target dice
+///// @param {real} _uses The amount of times the card can be used before not being able to use again (Put Nan if infinite)
+///// @param {array} _extraArgs Extra arguments the givin function can use
+///// @param {array} _range The cards range Ex: [1,6] min-1 max-6
+///// @param {bool} _banned If the card is banned always
+//function createCardDice(_name,_desc,_sprite,_action = function(){},_targetsDice = false,_targetSound = true,_uses = NaN,_extraArgs = [],_range = [],_banned = false) constructor
+//{
+    ////Info
+    //name = _name;
+    //desc = _desc;
+    //sprite = _sprite;
+    //targetsDice = _targetsDice
+    //uses = _uses;
+    //date = $"{current_month}/{current_day}/{current_year}/{current_second}";
+    //banned = _banned;
+    //
+    ////Speeds
+    //showSpd = 70;
+    //attackSpd = 60;
+    //
+    ////Set Range
+    //if array_length(_range) > 0
+    //{
+        //range = {
+            //min : _range[0],
+            //max : _range[1]
+        //}
+    //} else range = undefined;
+    //
+    ////Set Sound
+    //if _targetSound and !is_struct(_targetSound)
+    //{
+        //targetSound = {
+            //on  : [snDiceLockOn1,snDiceLockOn2,snDiceLockOn3,snDiceLockOn4],
+            //off : [snDiceLockOff1,snDiceLockOff2,snDiceLockOff3,snDiceLockOff4],
+        //}
+        //
+    //} else targetSound = _targetSound;
+    //
+    ////Get Action
+    //var _func = _action;
+    //if _action == undefined then _func = function(){};
+    //
+    ////Set Action
+    //action = _func;
+    //extraArgs = _extraArgs;
+    //
+    ////Set Type
+    //type = CARDTYPES.DICE;
+    //
+    ////Placement
+    ////Mainly just to be able to order the cards based on the struct :P
+    //global.deckPlacementId ++;   
+    //placementId = global.deckPlacementId;
+//}

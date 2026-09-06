@@ -40,7 +40,7 @@ rollDice = function()
     //Destroy Reroll
     with oCard
     {
-        if info == diceCards.reroll and state == CARDSTATE.PLACED
+        if info == CardsDice.Reroll and state == CARDSTATE.PLACED
         {
             slot.used = true;
             instance_destroy();
@@ -100,8 +100,8 @@ setTarget = function(_card = noone,_target)
 {
     isTargeted = _target;
     
-    if _card != noone and _card.info.type == CARDTYPES.DICE and _card.info.targetSound
+    if _card != noone and _card.info.type == CARDTYPES.DICE and _card.info.targetSoundOn != undefined
     {
-        audioPlaySfx(_target ? _card.info.targetSound.on : _card.info.targetSound.off);
+        audioPlaySfx(_target ? _card.info.targetSoundOn : _card.info.targetSoundOff);
     }
 }

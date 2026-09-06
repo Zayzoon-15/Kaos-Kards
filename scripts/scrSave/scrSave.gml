@@ -86,16 +86,16 @@ function SaveFile()
                 var _struct = {};
                 switch (_card.type) {
                 	case CARDTYPES.ACTION: 
-                        _struct = actionCards;
-                        _keys = struct_get_names(actionCards);
+                        _struct = CardsAction;
+                        _keys = static_get(CardsAction);
                     break;
                 	case CARDTYPES.KAOS: 
-                        _struct = kaosCards;
-                        _keys = struct_get_names(kaosCards);
+                        _struct = CardsKaos;
+                        _keys = static_get(CardsKaos);
                     break;
                 	case CARDTYPES.DICE: 
-                        _struct = diceCards;
-                        _keys = struct_get_names(diceCards);
+                        _struct = CardsDice;
+                        _keys = static_get(CardsDice);
                     break;
                 }
                 
