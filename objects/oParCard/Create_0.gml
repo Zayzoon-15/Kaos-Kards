@@ -34,6 +34,10 @@ cardOffsetY = 0;
 
 #region --- Image ---
 
+//Scale
+scaleTargetX = 1;
+scaleTargetY = 1;
+
 //Effects
 shake = 0;
 flashAlpha = 0;
@@ -47,11 +51,15 @@ shadowTargetSize = 0.05;
 shadowX = 0;
 shadowY = 0;
 shadowSize = shadowTargetSize;
+shadowOffsetX = 0;
+shadowOffsetY = 0;
 
 //Angle
 angelVel = 0;
 
 //3D Card
+card3dRot = 0;
+card3dTween = noone;
 
 #endregion
 
@@ -74,6 +82,7 @@ canMove = true; //If the card can be moved
 
 //Mouse
 hover = false;
+mouseTime = 0;
 
 //Grab
 grabbed = false;

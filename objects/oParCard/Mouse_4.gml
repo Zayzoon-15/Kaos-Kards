@@ -12,6 +12,10 @@ if hover and canMove and grabbable and !global.holdingCard and !global.mobile {
 	//Set State
 	state = CARD_STATES.GRABBED;
 	
+	//Set 3d Card To Zero (No Spin)
+	if TweenIsActive(card3dTween) then TweenStop(card3dTween);
+	card3dRot = 0;
+	
 	//Function
 	onGrab();
 	
