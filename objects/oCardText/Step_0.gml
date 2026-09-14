@@ -15,7 +15,7 @@ if instance_exists(parent)
     depth = parent.depth-(depthChange);
     
 	//Destory
-	if !parent.hover or !parent.canGrab or global.holdingCard
+	if !parent.hover or !parent.grabbable or global.holdingCard
 	{
 	    instance_destroy();
 	}

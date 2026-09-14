@@ -83,7 +83,7 @@ drawCard = function() {
     var _info = deck[deckNum];
 	var _inst = instance_create_layer(_x,_y,"Cards",oCard,{
         cardId : currentCard,
-        info : _info,
+        cardInfo : _info,
         index : deckNum
     });
     

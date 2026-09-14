@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"FiggyMain",
+  "%Name":"InfoDice",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"FiggyMain",
+  "name":"InfoDice",
   "parent":{
-    "name":"01. Public",
-    "path":"folders/Addons/Figgy/01. Public.yy",
+    "name":"Card",
+    "path":"folders/Scripts/Card.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"__FiggyMacros",
   "parent":{
-    "name":"02. Private",
-    "path":"folders/Addons/Figgy/02. Private.yy",
+    "name":"(System)",
+    "path":"folders/Addons/Figgy/(System).yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

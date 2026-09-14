@@ -9,20 +9,20 @@ playerHand = undefined;
 playerDeck = [
     
 	//Action
-    actionCards.heal,
-    actionCards.heal,
-    actionCards.heal,
-    actionCards.shield,
-    actionCards.shield,
-    actionCards.shield,
+	CardsAction.Heal,
+	CardsAction.Heal,
+	CardsAction.Heal,
+	CardsAction.Shield,
+	CardsAction.Shield,
+	CardsAction.Shield,
     
-    actionCards.slash,
-    actionCards.slash,
-    actionCards.slash,
+    CardsAction.Slash,
+    CardsAction.Slash,
+    CardsAction.Slash,
 	
     //Dice
-    diceCards.reroll,
-    diceCards.upgrade,
+    CardsDice.Reroll,
+    CardsDice.Upgrade,
 
 ];
 

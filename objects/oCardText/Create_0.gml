@@ -37,7 +37,7 @@ if !is_nan(uses)
 }
 
 //Add Range
-if range != undefined then text += $"[s][s][m]Range: {range.min} - {range.max}";
+if range != undefined then text += $"[s][s][m]Range: {range[0]} - {range[1]}";
 
 //Box Color
 boxColor = c_white;

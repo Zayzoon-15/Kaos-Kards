@@ -33,25 +33,26 @@ if combo
 var _args = array_concat([targetEnemy],card.info.extraArgs);
 
 //Do Action
-method_call(card.info.action,_args);
+info.use(self,targetEnemy);
+//method_call(card.info.action,_args);
 
 //Reduce Uses
 if card.info.uses != NaN
 {
     if targetEnemy
     {
-        array_push(global.cardUses.player,card.info.name);
-    } else array_push(global.cardUses.enemy,card.info.name);
+        array_push(global.cardUses.player,info.name);
+    } else array_push(global.cardUses.enemy,info.name);
 }
 
 //Add To Log
-ds_list_add(global.gamelog,card.info.name);
+ds_list_add(global.gamelog,info.name);
 
 //Increase Repeated
 repeatedTimes ++;
 
 //Repeat
-if global.repeatTimes >= repeatedTimes and card.info.type == CARDTYPES.ACTION
+if global.repeatTimes >= repeatedTimes and info.type == CARDTYPES.ACTION
 {
     alarm[0] = 100;
 }

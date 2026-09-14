@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Figgy",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Figgy",
+  "parent":{
+    "name":"Figgy",
+    "path":"folders/Addons/Figgy.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

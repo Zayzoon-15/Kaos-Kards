@@ -295,7 +295,7 @@ _addCard = function(_slotId,_info,_used = false,_disabled = false)
     var _cardValue = undefined;
     if _info != undefined and _info.card.type == CARDTYPES.ACTION
     {
-        _cardValue = _info.dice + irandom_range(_info.card.range.min,_info.card.range.max);
+        _cardValue = _info.dice + irandom_range(_info.card.range[0],_info.card.range[1]);
     }
     
     //Get Inst
@@ -387,7 +387,7 @@ for (var i = 0; i < array_length(diceVals); i++) {
     }
     
     //Remove Duplicate Hand
-    array_delete(hand,_bestIndex,1);
+    //array_delete(hand,_bestIndex,1);
     
 }
 

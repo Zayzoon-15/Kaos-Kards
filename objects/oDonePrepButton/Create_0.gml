@@ -58,7 +58,7 @@ condition = function()
     //Check If Reroll Used
     with oCard
     {
-        if info == diceCards.reroll and state == CARDSTATE.PLACED
+        if info == CardsDice.Reroll and state == CARDSTATE.PLACED
         {
             createAlertMessage("You haven't used your reroll");
             other.canPress = false;

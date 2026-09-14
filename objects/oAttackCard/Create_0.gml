@@ -1,7 +1,14 @@
 ///@desc Setup Card
 
+//Set Info
+info = CardsAction.Bread;
+info = card.info;
+
 //Set Sprite
-sprite_index = card.info.sprite;
+sprite_index = info.sprite;
+
+//Card Setup
+cardComp = new Card();
 
 //Image
 rotAngle = true;
@@ -27,14 +34,14 @@ shadowSize = 0.05;
 value = card.value != undefined ? ceil(card.value*global.valueMult) : undefined;
 
 //Reduce Attack Values
-if struct_exists(card.info,"genre") and card.info.genre == CARDACT_GENRES.ATTACK and value != undefined
+if struct_exists(info,"genre") and info.genre == CARDACT_GENRES.ATTACK and value != undefined
 {
 	value = ceil(value*VALUE_MULT);
 }
 
 //Action
-var _actTime = card.info.attackSpd * (targetEnemy ? global.cardsSpeed.player : global.cardsSpeed.enemy);
-if card.info.type == CARDTYPES.KAOS then _actTime = 60;
+var _actTime = info.attackSpd * (targetEnemy ? global.cardsSpeed.player : global.cardsSpeed.enemy);
+if info.type == CARDTYPES.KAOS then _actTime = 60;
 if combo then _actTime = 80;
 alarm[0] = _actTime;
 
@@ -42,12 +49,12 @@ alarm[0] = _actTime;
 repeatedTimes = 0;
 
 //Set Uses
-uses = card.info.uses;
+uses = info.uses;
 var _usesArray = targetEnemy ? global.cardUses.player : global.cardUses.enemy;
-if array_contains(_usesArray,card.info.name)
+if array_contains(_usesArray,info.name)
 {
     for (var i = 0; i < array_length(_usesArray); i++) {
-    	if _usesArray[i] == card.info.name then uses --;
+    	if _usesArray[i] == info.name then uses --;
     }
 }
 
@@ -62,13 +69,13 @@ disabled = false;
 if targetEnemy
 {
     global.lastCardsPlayed.player[cardId] = {
-        info : card.info,
+        info : info,
         value : card.value,
         index : card.index
     };
 } else {
     global.lastCardsPlayed.enemy[cardId] = {
-        info : card.info,
+        info : info,
         value : card.value,
         index : card.index
     };

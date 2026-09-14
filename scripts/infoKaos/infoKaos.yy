@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"infoKaos",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"infoKaos",
+  "parent":{
+    "name":"Card",
+    "path":"folders/Scripts/Card.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

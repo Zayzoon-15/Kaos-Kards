@@ -353,3 +353,13 @@ function flashBg(_amount,_color = c_white,_spd = .2,_flashTarget = 0)
         flashTarget = _flashTarget;
     }
 }
+
+function spring(_current, _velocity = 0, _target = 0, _ease = .3, _spring = .5) {
+	return lerp_dt(_velocity, (_target - _current) * _spring,_ease, deltaTime);
+}
+
+function angelVelocity(_curAngle = image_angle, _angMult = 1, _ease = .2, _maxAng = 90) {
+	var _angle = (xprevious - x) * _angMult;
+	_angle = clamp(_angle, -_maxAng, _maxAng);
+	return lerp_dt(_curAngle,_angle,_ease,deltaTime);
+}
