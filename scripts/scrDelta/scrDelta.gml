@@ -31,7 +31,7 @@ function delta_step() {
 
 /// @desc Returns the given value multiplied by the step delta
 /// Use this to modify any game time related value, like speed, timers, or animation speeds
-function delta(argument0) {
+function delta(argument0 = 1) {
 	return argument0 * global.__delta_stepFactor;
 }
 

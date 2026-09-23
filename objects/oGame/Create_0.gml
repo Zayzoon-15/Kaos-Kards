@@ -128,8 +128,6 @@ global.gameRound = 0;
 global.paused = false;
 global.menuOpen = false;
 global.timeSources = [];
-globalvar deltaTime;
-deltaTime = 0;
 
 //Modes
 global.mobile = os_type == os_android or os_type == os_ios or os_type == os_gxgames;

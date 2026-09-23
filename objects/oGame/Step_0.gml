@@ -1,5 +1,5 @@
 //Delta Time
-deltaTime = (delta_time/1000000)/(1/60);
+//deltaTime = (delta_time/1000000)/(1/60);
 
 //Fullscreen
 if keyCheckPressed(global.keyFullscreen)

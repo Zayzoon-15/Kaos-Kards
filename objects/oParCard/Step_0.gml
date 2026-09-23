@@ -4,6 +4,7 @@
 
 //Follow Mouse If Grabbed
 if grabbed {
+	
 	targetX = mouse_x - grabOffsetX;
 	targetY = mouse_y - grabOffsetY;
 	
@@ -13,13 +14,13 @@ if grabbed {
 		//Set Grabbed
 		grabbed = false;
 		global.holdingCard = false;
+		lastHeldFrames = 10;
 	
 		//Set State
 		state = CARD_STATES.PLACED;
 		
 		//Reset Rotation
-		TweenFire(self,EaseOutBack,TWEEN_MODE_ONCE,false,0,30,"card3dRot",card3dRot,0);
-
+		TweenFire(self,EaseOutBack,TWEEN_MODE_ONCE,true,0,.5,"card3dRot",card3dRot,0);
 		
 		//Function
 		onLetgo();
@@ -27,11 +28,12 @@ if grabbed {
 }
 
 //Set Hover
-if touchingMouse() and hoverable {
+if touchingMouse() and !checkTouchingCards() and !global.holdingCard and hoverable and lastHeldFrames <= 5 {
 	
 	//Set Hover
 	if !hover {
 		onHover();
+		audioPlaySfx(snCardHover);
 		hover = true;
 	}
 	
@@ -40,9 +42,12 @@ if touchingMouse() and hoverable {
 	
 } else hover = false;
 
+//Reduce Frames
+if lastHeldFrames > 0 then lastHeldFrames -= delta();
+
 #endregion
 
-#region --- Position
+#region --- Position ---
 
 //Set Target Position If Following Placed Position
 if followPlaced and !grabbed {
@@ -51,10 +56,11 @@ if followPlaced and !grabbed {
 }
 
 //Ease To Target Position
-xspd = spring(x, xspd, targetX,.6,.3);
-yspd = spring(y, yspd, targetY,.6,.3);
+xspd = spring(x, xspd, targetX, .5, .3);
+yspd = spring(y, yspd, targetY, .5, .3);
 x += xspd;
 y += yspd;
+
 
 #endregion
 
@@ -64,29 +70,29 @@ y += yspd;
 if !grabbed {
 	
 	//Hover
-	if hover {
+	if hover and !checkTouchingCards() {
 		
 		//Set Card Offset
-		cardOffsetY = lerp(cardOffsetY, -10, .2);
+		cardOffsetY = lerp_dt(cardOffsetY, -10, .2);
 		
 		//Set Shadow Properties
-		shadowOffsetY = 8;
+		shadowOffsetY = 6;
 		shadowTargetSize = 0.06;
 		
 		//Increase Mouse Time
-		mouseTime ++;
+		mouseTime += delta();
 	
 	} else {
 		
 		//Set Card Offset
-		cardOffsetY = lerp(cardOffsetY, 0, .2);
+		cardOffsetY = lerp_dt(cardOffsetY, 0, .2);
 		
 		//Set Shadow Properties
 		shadowOffsetY = 0;
 		shadowTargetSize = 0.05;
 		
 		//3D Flip
-		if mouseTime <= 2 and mouseTime > 0 {
+		if mouseTime <= 2 and mouseTime > 0 and lastHeldFrames <= 0 {
 			
 			//Sound
 			audio_stop_sound(snCardHover);
@@ -96,7 +102,7 @@ if !grabbed {
 			var _dir = sign(mouse_x - x);
             var _start = _dir == -1 ? 0 : 360;
             var _end = _dir == -1 ? 360 : 0;
-			card3dTween = TweenFire(self, EaseOutBack, TWEEN_MODE_ONCE, false, 0, 60, "card3dRot", _start, _end);
+			card3dTween = TweenFire(self, EaseOutBack, TWEEN_MODE_ONCE, true, 0, 1, "card3dRot", _start, _end);
 		}
 		mouseTime = 0; //Reset Mouse Time
 	}
@@ -104,6 +110,9 @@ if !grabbed {
 	//Set Size
 	scaleTargetX = 1;
 	scaleTargetY = 1;
+	
+	//Depth
+	depth = startDepth - cardId;
 	
 } else { //Grab Effect
 	
@@ -115,26 +124,28 @@ if !grabbed {
 	scaleTargetX = 1.1;
 	scaleTargetY = 1.1;
 	
-	
 	//3D Rotation
-	var _3dRotDir = clamp((xprevious-x)*3, -50, 50);
-	card3dRot = lerp(card3dRot, _3dRotDir, .2);//angelVel
+	var _3dRotDir = clamp((xprevious-x), -40, 40);
+	card3dRot = lerp_dt(card3dRot, _3dRotDir, .2);//angelVel
 	
+	//Depth
+	depth = startDepth - 10;
 }
 
 //Ease Angel Based On Velocity
-var _ang = clamp(xprevious - x, - 90, 90);
+var _ang = clamp(targetAngle + (xprevious - x), -90, 90);
 angelVel = spring(image_angle, angelVel, _ang, .6, .5);
 image_angle += angelVel;
 
 //Ease Scale
-image_xscale = lerp(image_xscale, scaleTargetX, .3);
-image_yscale = lerp(image_yscale, scaleTargetY, .3);
+image_xscale = lerp_dt(image_xscale, scaleTargetX, .3);
+image_yscale = lerp_dt(image_yscale, scaleTargetY, .3);
 
 //Set Shadow
-if shadowFollowRoomCenter then shadowTargetX = clamp((x - (room_width/2))*.05, -10, 10);
-shadowX = lerp(shadowX, shadowTargetX + shadowOffsetX, .2);
-shadowY = lerp(shadowY, shadowTargetY + shadowOffsetY, .2);
-shadowSize = lerp(shadowSize, shadowTargetSize, .2);
+var _shadowMult = grabbed ? .05 : .02;
+if shadowFollowRoomCenter then shadowTargetX = clamp((x - (room_width/2))*_shadowMult, -maxShadow, maxShadow);
+shadowX = lerp_dt(shadowX, shadowTargetX + shadowOffsetX, .2);
+shadowY = lerp_dt(shadowY, shadowTargetY + shadowOffsetY, .2);
+shadowSize = lerp_dt(shadowSize, shadowTargetSize, .2);
 
 #endregion

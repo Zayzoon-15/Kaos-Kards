@@ -6,9 +6,25 @@ if !ds_exists(playerHand,ds_type_list)
 
 //Deck
 shuffleDeck = false;
-deck = global.playerFullDeck;
+deck = playerDeck;
 ogDeck = deck;
 placedCards = [];
+
+//Remove Cards
+for (var i = 0; i < array_length(global.playerRemovedCards); i++) 
+{
+    //Get Index
+    var _index = array_get_index(deck,global.playerRemovedCards[i]);
+    
+    //Remove Card
+    if _index != -1 then array_delete(deck,_index,1);
+}
+
+//Add Cards
+deck = array_concat(deck,global.playerAddCards);
+
+//Enemy Deck
+if room == rEnemy then deck = array_create(irandom_range(1,5),undefined);
 
 //Set Stats
 deckNum = 0;
@@ -58,10 +74,8 @@ touchingStack = false;
 //Functions
 drawCard = function() {
 	
-    //Shuffle Deck
-    if shuffleDeck{
-		deckNum = array_length(deck) > 1 ? irandom_range(0, array_length(deck)-1) : 0;
-	} else deckNum = 0;
+    //Shuffle Deck If Needed (Gets a random number based on the deck size)
+    if shuffleDeck then deckNum = array_length(deck) > 1 ? irandom_range(0,array_length(deck)-1) : 0;
 	
 	print(deckNum);
 	print(deck[deckNum].name);

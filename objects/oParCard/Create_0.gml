@@ -11,6 +11,11 @@ event_inherited();
 info ??= CardsAction.Bread;
 sprite_index = info.sprite;
 
+//Set Card Id
+if cardId == -1 {
+	cardId = instance_number_object(object_index) - 1;
+}
+
 #region --- Position ---
 
 //Speeds For Easing
@@ -38,6 +43,9 @@ cardOffsetY = 0;
 scaleTargetX = 1;
 scaleTargetY = 1;
 
+//Depth
+startDepth = depth;
+
 //Effects
 shake = 0;
 flashAlpha = 0;
@@ -53,8 +61,10 @@ shadowY = 0;
 shadowSize = shadowTargetSize;
 shadowOffsetX = 0;
 shadowOffsetY = 0;
+maxShadow = 10;
 
 //Angle
+targetAngle = 0;
 angelVel = 0;
 
 //3D Card
@@ -83,11 +93,34 @@ canMove = true; //If the card can be moved
 //Mouse
 hover = false;
 mouseTime = 0;
+touchingOtherCards = false;
 
 //Grab
 grabbed = false;
+lastHeldFrames = 0;
 grabOffsetX = 0;
 grabOffsetY = 0;
+
+#endregion
+
+#region --- REQUIRED FUNCS DONT TOUCH ---
+
+checkTouchingCards = function() {
+	
+	//Check Touching
+	var _touch = false;
+	with oParCard {
+		if id != other.id and touchingMouse() {
+			_touch = depth < other.depth;
+		}
+	} 
+
+	//Set Hover
+	if _touch then hover = false;
+	
+	//Return Touch
+	return _touch;
+}
 
 #endregion
 
@@ -110,4 +143,3 @@ onLetgo = function() {
 }
 
 #endregion
-
