@@ -1,45 +1,16 @@
-//Inherit Parent Card
-event_inherited();
-
-#region --- Card Stuff ---
-
-//Toggles
-grabbable = true;
-doBaseHoverJuice = false;
-doCardSpin = false;
-showInfo = false;
-
-//Shadow
-baseShadowSize = shadowTargetSize;
-shadowAlpha = 0;
-
-//Depth
-depthChange = 10;
-depthBasedOnId = false;
-
-
-
-#endregion
-
-
-#region --- Setup Deck ---
-
-//Create Players Hand
+//Create Hand
 if !ds_exists(playerHand,ds_type_list)
 {
     playerHand = ds_list_create();
 } else ds_list_clear(playerHand);
 
-//Set Deck Sprite
-sprite_index = global.currentDeck.sprite;
-
-//Deck Info
+//Deck
 shuffleDeck = false;
 deck = array_concat(global.playerFullDeck,[]);
+ogDeck = deck;
 placedCards = [];
-drawTime = 10;
 
-//Deck Stats
+//Set Stats
 deckNum = 0;
 totalCards = array_length(deck);
 cardsLeft = totalCards;
@@ -47,14 +18,28 @@ cardsDiscarded = [];
 currentCard = 0;
 cardsInPlay = 0;
 
-//Visuals
-cardDeckSep = 2;
+//Draw Cards
+drawTime = 10;
 
-#endregion
+//Drawing
+targetX = x;
+targetY = y;
+xscale = 1;
+yscale = 1;
+angle = 0;
+targetXLast = x;
+startDepth = depth;
 
+//Shadow
+shadowX = 0;
+shadowY = 0;
+shadowSize = 0.05;
+
+//Hover
+canHover = true;
+cardSep = 2;
 
 //Ui Box Stats
-canHover = true;
 height = 0;
 width = 0;
 heightMargin = 2;
@@ -62,6 +47,13 @@ widthMargin = 10;
 maxWidth = 300;
 tipBoxTouching = false;
 
+//Mouse
+grabbed = false;
+pressed = false;
+heldTime = 0;
+offsetX = 0;
+offsetY = 0;
+touchingStack = false;
 
 //Functions
 drawCard = function() {
@@ -70,6 +62,9 @@ drawCard = function() {
     if shuffleDeck{
 		deckNum = array_length(deck) > 1 ? irandom_range(0, array_length(deck)-1) : 0;
 	} else deckNum = 0;
+	
+	print(deckNum);
+	print(deck[deckNum].name);
 	
     //Create Card
 	var _x = room_width/2;
@@ -105,3 +100,5 @@ drawCard = function() {
     audioPlaySfx([snCardDraw1,snCardDraw2,snCardDraw3]);
     
 }
+
+sprite_index = global.currentDeck.sprite;

@@ -7,7 +7,9 @@ shake = lerp(shake,0,.3);
 var _xScale = global.cardFlip ? cos(degtorad(card3dRot)) : 1;
 
 //Draw Shadow
-draw_sprite_ext(sprite_index, image_index, x+cardOffsetX+shadowX+_shakeX, y+cardOffsetY+shadowY+_shakeY, (image_xscale*_xScale)-shadowSize, image_yscale-shadowSize, image_angle, c_black, SHADOW_ALPHA*image_alpha);
+if drawShadow {
+	draw_sprite_ext(sprite_index, image_index, x+cardOffsetX+shadowX+_shakeX, y+cardOffsetY+shadowY+_shakeY, (image_xscale*_xScale)-shadowSize, image_yscale-shadowSize, image_angle, c_black, (SHADOW_ALPHA*image_alpha)*shadowAlpha);
+}
 
 //Draw Card
 drawCard3d(x + cardOffsetX + _shakeX, y + cardOffsetY + _shakeY, sprite_index, global.currentDeck.sprite, card3dRot, image_angle);

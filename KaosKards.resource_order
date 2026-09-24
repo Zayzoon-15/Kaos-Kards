@@ -161,6 +161,7 @@
     {"name":"oDBSortDone","order":2,"path":"objects/oDBSortDone/oDBSortDone.yy",},
     {"name":"oDBSortDropDown","order":3,"path":"objects/oDBSortDropDown/oDBSortDropDown.yy",},
     {"name":"oDeck_1","order":7,"path":"objects/oDeck_1/oDeck_1.yy",},
+    {"name":"oDeck_2","order":10,"path":"objects/oDeck_2/oDeck_2.yy",},
     {"name":"oDeck","order":9,"path":"objects/oDeck/oDeck.yy",},
     {"name":"oDeckBuilder","order":8,"path":"objects/oDeckBuilder/oDeckBuilder.yy",},
     {"name":"oDeckShowFullBtn","order":1,"path":"objects/oDeckShowFullBtn/oDeckShowFullBtn.yy",},

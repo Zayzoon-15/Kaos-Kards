@@ -99,5 +99,5 @@ if !grabbed {
 
 //Set Angle
 if state == CARD_STATES.HAND {
-	targetAngle = (ROOM_CENTER.x - x) * .03;
+	targetAngle = (ROOM_CENTER.x - x) * .02;
 } else targetAngle = 0;
