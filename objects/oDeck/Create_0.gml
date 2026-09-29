@@ -17,8 +17,6 @@ shadowAlpha = 0;
 depthChange = 10;
 depthBasedOnId = false;
 
-
-
 #endregion
 
 

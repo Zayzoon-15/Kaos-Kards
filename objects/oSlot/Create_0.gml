@@ -15,6 +15,7 @@ disabled = false;
 
 //Image
 targetScale = 1;
+targetAlpha = 1;
 scaleX = targetScale;
 scaleY = targetScale;
 
@@ -23,4 +24,3 @@ slotOffsetTargetX = 0;
 slotOffsetTargetY = 0;
 slotOffsetX = 0;
 slotOffsetY = 0;
-

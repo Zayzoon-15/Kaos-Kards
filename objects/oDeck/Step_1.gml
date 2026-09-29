@@ -18,7 +18,6 @@ if grabbed {
 //Set Position
 placedX = global.stickItemsToScreen ? getPosToWindow(true) : xstart;
 placedY = ystart - cardsLeft * cardDeckSep;
-print(placedY);
 
 //Set Can Hover
 canHover = !global.holdingCard and !global.menuOpen;

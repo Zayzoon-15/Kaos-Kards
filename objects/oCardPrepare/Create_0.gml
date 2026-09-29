@@ -3,6 +3,11 @@ event_inherited();
 
 //Set Info So We Can See It In Code
 info ??= CardsAction.Bread;
+showInfo = true;
+
+//Value
+currentValue = undefined;
+valueScale = 1;
 
 //Shadow
 baseMaxShadow = maxShadow;
@@ -66,6 +71,16 @@ discardCard = function() {
     
     //Destroy
     instance_destroy();	
+}
+
+cardJuice = function() {
+    
+    //Scale
+    setSize(1.5,1.5);
+    valueScale += 1;
+    
+    //Angle
+    image_angle += random_range(5,10)*choose(-1,1);
 }
 
 #endregion

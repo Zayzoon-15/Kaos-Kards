@@ -38,9 +38,17 @@ if filled {
 	
 }
 
+//Slot Used Or Disabled Visual
+if used and !disabled
+{
+    targetScale = 1;
+    targetAlpha = .7;
+}
+
 
 //Ease Values
 scaleX = lerp_dt(scaleX, targetScale, .2);
 scaleY = lerp_dt(scaleY, targetScale, .2);
 slotOffsetX = lerp_dt(slotOffsetX, slotOffsetTargetX, .2);
 slotOffsetY = lerp_dt(slotOffsetY, slotOffsetTargetY, .2);
+image_alpha = lerp_dt(image_alpha, targetAlpha, .7);

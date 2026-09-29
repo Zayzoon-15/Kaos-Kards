@@ -1,3 +1,5 @@
+if gameState == GAMESTATES.GETVALUES then grabbable = false;
+
 //Change Placement
 if !grabbed {
 	if !instance_exists(slot) { //Hand Placement

@@ -1,15 +1,82 @@
+//Inherit Delta Time Object (For delta time ooooo)
+event_inherited();
+
 //Image
-image_speed = 0;
+d_image_speed = 0;
+targetScale = 1;
 
-//Dice Types
-dice = diceTypes.d6;
-
-//Dice
+//Set Dice Stats
+diceType = diceTypes.d6;
 diceNum = undefined;
-rolling = false;
-rollDone = false;
 targetSlot = undefined;
-skipped = false;
+
+//Set Dice States
+enum DICE_STATES {
+    IDLE, //When the dice is not interacted with yet
+    ROLLING, //When the dice is rolling duhh
+    DONE, //When the dice is done rolling is ready to combine
+    SKIPPED, //When the dice has been skipped
+    COMBINE //When the dice is combining with the cards
+}
+state = DICE_STATES.IDLE;
+
+//Targeted 
+isTargeted = false;
+
+#region --- Custom Functions ---
+
+rollDice = function() {
+    
+    //Roll Dice Visually WOAH
+    d_image_speed = 1;
+    
+    //Set State
+    state = DICE_STATES.ROLLING;
+    diceNum = undefined;
+    
+    //Finish Roll
+    d_alarm[0] = diceId * 20;
+    
+}
+
+diceJuice = function(_sound = true) {
+    
+    //Move Down
+    y += 10;
+    
+    //Set Size
+    setSize(targetScale+1,targetScale+1);
+    
+    //Stars
+    effectStar(x,y,5,_sound);
+    
+}
+
+combineValues = function() {
+    
+    
+    //Get Target Slot
+    with oSlot {
+        if slotId == other.diceId and filled {
+            other.targetSlot = self.id;
+        }
+    }
+    
+    //Check If We Should Combine More
+    var _extraCombine = 0;
+    with oCardPrepare {
+        if state == CARD_STATES.PLACED and info.type == CARDTYPES.DICE {
+            _extraCombine = 1;
+        }
+    }
+    
+    //Combine The Dice
+    d_alarm[1] = 30 * (diceId + _extraCombine);
+}
+
+#endregion
+
+/*
 scale = 1;
 
 //Targeted
@@ -19,89 +86,3 @@ lockOnAlpha = 0;
 
 //Events
 diceFullyDone = false;
-
-//State
-diceStates = {
-    idle : 0,
-    combine : 1
-};
-
-state = diceStates.idle;
-
-//Functions
-rollDice = function()
-{
-    //Spin
-    image_speed = 1;
-    
-    //Finish Roll
-    alarm[0] = 20*diceId;
-    
-    //Destroy Reroll
-    with oCard
-    {
-        if info == CardsDice.Reroll and state == CARDSTATE.PLACED
-        {
-            slot.used = true;
-            instance_destroy();
-            effectStar(x,y,10);
-        }
-    }
-    
-    //Set Vars
-    diceNum = undefined;
-    rolling = true;
-    rollDone = false;
-    
-}
-
-diceJuice = function(_sound = true)
-{
-    //Move Down
-    y += 10;
-    
-    //Set Size
-    setSize(scale+1,scale+1);
-    
-    //Stars
-    effectStar(x,y,5,_sound);
-}
-
-combineValues = function()
-{
-    //Vars
-    var _combine = false;
-    var _diceCardExtra = 0;
-    
-    //Check Slots
-    with oParSlots
-    {
-        if slotId == other.diceId and filled
-        {
-            other.targetSlot = self.id;
-            _combine = true;
-        }
-    }
-    
-    //Combine More
-    with oCard
-    {
-        if state == CARDSTATE.PLACED and info.type == CARDTYPES.DICE
-        {
-            _diceCardExtra = 1;
-        }
-    }
-    
-    //Next
-    alarm[2] = 30*(diceId+_diceCardExtra);
-}
-
-setTarget = function(_card = noone,_target)
-{
-    isTargeted = _target;
-    
-    if _card != noone and _card.info.type == CARDTYPES.DICE and _card.info.targetSoundOn != undefined
-    {
-        audioPlaySfx(_target ? _card.info.targetSoundOn : _card.info.targetSoundOff);
-    }
-}

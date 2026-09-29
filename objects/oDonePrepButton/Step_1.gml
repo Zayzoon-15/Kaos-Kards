@@ -3,7 +3,7 @@ with oDice
 {
     if diceId == 3
     {
-        if rollDone then other.canHover = true; else other.canHover = false;
+        other.canHover = state == DICE_STATES.DONE;
     }
 }
 

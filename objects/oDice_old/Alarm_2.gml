@@ -1,40 +1,33 @@
-///@desc Combine
+///@desc Go To Slot
 
 //Set State
-state = DICE_STATES.COMBINE;
+state = diceStates.combine;
 
-//Check If Skipped
-if targetSlot == undefined {
+//Skipped
+if targetSlot == undefined
+{ 
+    skipped = true;
     
-    //Set State
-    state = DICE_STATES.SKIPPED;
-    
-    //Give Combo For Skipping
-    if !global.disabledSlots.player[diceId] {
-        global.playerComboMeter += irandom_range(clamp(diceNum - 3, 2, diceNum), diceNum + 2);
+    //Give Combo
+    if !global.disabledSlots.player[diceId]
+    {
+        global.playerComboMeter += irandom_range(3,4);
     }
     
-    //Juice
-    instance_create_layer(x, bbox_top, "Effects", oEffectSkipped);
-    setSize(1.5, 1.5);
-    
-} else { //Go To Slot
-    
-    //Move Towards Slot *with passion*
-    TweenEasyMove(x, y, targetSlot.x, targetSlot.y, 0, .5, EaseInBack);
+    //Animate
+    instance_create_layer(x,bbox_top,"Effects",oEffectSkipped);
+    setSize(image_xscale+.5,image_yscale+.5);
+} 
 
-    //Finish Combine
-    d_alarm[2] = 30;
+//Go To Slot
+if targetSlot != undefined
+{
+    var _time = 30;
     
+    TweenEasyMove(x,y,targetSlot.x,targetSlot.y,0,_time,EaseInBack);
+    
+    alarm[3] = _time;
 }
-
-//Finish Prepare
-if diceId == 3 {
-    
-}
-
-
-/*
 
 //Finish Prepare
 if diceId == 3

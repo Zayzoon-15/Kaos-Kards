@@ -15,31 +15,25 @@ action = function()
     //Show Card Values
     var _timeBetween = 0;
     
-    //Add If Dice
-    with oCard
-    {
-        if state == CARDSTATE.PLACED and info.type == CARDTYPES.DICE
-        {
+    //Add More Time If Theres A Dice Card To Add
+    with oCardPrepare {
+        if state == CARD_STATES.PLACED and info.type == CARDTYPES.DICE {
             _timeBetween = 1;
         }
     }
     
-    with oCard
-    {
-        if state == CARDSTATE.PLACED
-        {
-            //Make Card Get Value
-            if info.type != CARDTYPES.KAOS
-            {
-                alarm[0] = 30*(slot.slotId+_timeBetween);
-            }
+    //Make Card Get Values
+    with oCardPrepare {
+        if state == CARD_STATES.PLACED and info.type != CARDTYPES.KAOS {
+            d_alarm[0] = 30 * (slot.slotId + _timeBetween);
         }
     }
     
-    //Empty Slot
-    with oActionSlot
-    {
-        alarm[0] = 30*(slotId+_timeBetween);
+    //Make Slots Get Notified
+    with oSlot {
+        if array_contains(types,CARDTYPES.ACTION) {
+            d_alarm[0] = 30 * (slotId + _timeBetween);
+        }
     }
     
     //Set Gamestate
@@ -68,9 +62,9 @@ condition = function()
     
     //Check If One Action Slot Filled
     var _slotsFilled = 0;
-    with oCard //Add To Slots Filled
+    with oCardPrepare //Add To Slots Filled
     {
-        if state == CARDSTATE.PLACED and info.type == CARDTYPES.ACTION
+        if state == CARD_STATES.PLACED and info.type == CARDTYPES.ACTION
         {
             _slotsFilled ++;
         }
