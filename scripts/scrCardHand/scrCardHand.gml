@@ -2,7 +2,7 @@
 
 
 ///@self oCard
-function cardHandMush(_handSize = ds_list_size(playerHand),_id = cardId,_center = room_width/2,_width = 780)
+function cardHandMush(_handSize,_id = cardId,_center = room_width/2,_width = 780)
 {    
 	//Get Position
     var _gap = _width/(_handSize);
@@ -14,7 +14,7 @@ function cardHandMush(_handSize = ds_list_size(playerHand),_id = cardId,_center 
 }
 
 ///@self oCard
-function cardHandSep(_handSize = ds_list_size(playerHand), _id = cardId,_center = room_width/2,_gap = sprite_width+5)
+function cardHandSep(_handSize, _id = cardId,_center = room_width/2,_gap = sprite_width+5)
 {
 	//Get Position
     var _leftEdge = (_handSize-1)*(_gap/2);

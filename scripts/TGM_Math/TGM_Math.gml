@@ -61,7 +61,7 @@ function step(_edge, _value) {
 /// @param {Real} b The second value.
 /// @param {Real} amount The amount to interpolate.
 /// @param {Real} dt The delta time.
-function lerp_dt(_a, _b, _amount, _dt) {
+function lerp_dt(_a, _b, _amount, _dt = delta()) {
 	return _b + (_a - _b) * exp(-_amount * _dt); // Freya Holmér
 	//return _a + (_b - _a) * (1 - power(1 - _amount, _dt)); // Mozart Junior
 	//return lerp(_a, _b, 1 - power(0.5, _dt * _amount)); // Jonas Tyroller
@@ -83,7 +83,7 @@ function lerp_angle(_a, _b, _amount) {
 /// @param {Real} amount The amount to interpolate.
 /// @param {Real} dt The delta time.
 /// @returns {Real} 
-function lerp_angle_dt(_a, _b, _amount, _dt) {
+function lerp_angle_dt(_a, _b, _amount, _dt = delta()) {
 	return lerp_dt(_a, _a + angle_difference(_b, _a), _amount, _dt);
 }
 

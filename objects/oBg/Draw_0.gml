@@ -13,9 +13,16 @@ if extraSprite != noone
 }
 
 //Draw Front
-if drawFront
+if drawFront and sprite_exists(frontSprite)
 {
     draw_sprite(frontSprite,0,0,0);
+}
+
+
+//Draw Logos
+if drawLogos and sprite_exists(logoSprite)
+{
+    draw_sprite_stretched(logoSprite,0,x,y,SCREEN_WIDTH,SCREEN_HEIGHT);
 }
 
 //Draw Flash

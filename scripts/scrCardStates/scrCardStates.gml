@@ -14,8 +14,8 @@ function cardStateHand(){
     
     if _handSize >= _maxSize
     {
-        _handX = cardHandMush();
-    } else _handX = cardHandSep();
+        _handX = cardHandMush(_handSize);
+    } else _handX = cardHandSep(_handSize);
     
     //Warp Cards
     var _rad = 30;

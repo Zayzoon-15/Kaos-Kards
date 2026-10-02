@@ -1,77 +1,93 @@
-//Draw Hidden Deck
-if cardsLeft <= 1
-{
-    //drawRectOutlined(bbox_left,bbox_top,bbox_right,bbox_bottom,UIBOX_RAD,0,c_black,c_white,.3*image_alpha,0);
-    drawRectOutlined(targetX-sprite_width/2,targetY-sprite_height/2,targetX+sprite_width/2,targetY+sprite_height/2,UIBOX_RAD,0,c_black,c_white,.3*image_alpha,0);
+
+
+//Draw Bottom Stack
+if cardsLeft > 1 {
+    var _extendedYscale = (ystart - (ystart - cardsLeft * cardDeckSep)) / sprite_get_height(sDeckExtened) + .2;
+    draw_sprite_ext(sDeckExtened, 0, placedX, ystart + sprite_get_height(sDeck)/2, 1, _extendedYscale, 0, image_blend, image_alpha);
+    
+    //Draw Top Card
+    draw_sprite_ext(sprite_index, 0, placedX, placedY, 1, 1, 0, image_blend, image_alpha);
+    draw_sprite_ext(sprite_index, 0, placedX, placedY, 1, 1, 0, c_black, .2);
 }
 
-//Draw Deck Extended
-if cardsLeft > 1
-{
-    var _extendedYscale = (targetY - (targetY - cardsLeft*cardSep))/sprite_get_height(sDeckExtened)+.2;
-    draw_sprite_ext(sDeckExtened,0,targetX,targetY+sprite_height/2,1,_extendedYscale,0,image_blend,image_alpha);
-}
+//Draw Main Card
+event_inherited();
 
-//Draw Deck
-if cardsLeft != 0
-{
-    //Draw Bottom Deck
-    if cardsLeft > 1
-    {
-        //Draw Bottom Card
-    	draw_sprite_ext(sprite_index,image_index,targetX,targetY-(cardsLeft*cardSep),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
+
+////Draw Hidden Deck
+//if cardsLeft <= 1
+//{
+//    //drawRectOutlined(bbox_left,bbox_top,bbox_right,bbox_bottom,UIBOX_RAD,0,c_black,c_white,.3*image_alpha,0);
+//    drawRectOutlined(targetX-sprite_width/2,targetY-sprite_height/2,targetX+sprite_width/2,targetY+sprite_height/2,UIBOX_RAD,0,c_black,c_white,.3*image_alpha,0);
+//}
+
+////Draw Deck Extended
+//if cardsLeft > 1
+//{
+//    var _extendedYscale = (targetY - (targetY - cardsLeft*cardSep))/sprite_get_height(sDeckExtened)+.2;
+//    draw_sprite_ext(sDeckExtened,0,targetX,targetY+sprite_height/2,1,_extendedYscale,0,image_blend,image_alpha);
+//}
+
+////Draw Deck
+//if cardsLeft != 0
+//{
+//    //Draw Bottom Deck
+//    if cardsLeft > 1
+//    {
+//        //Draw Bottom Card
+//    	draw_sprite_ext(sprite_index,image_index,targetX,targetY-(cardsLeft*cardSep),image_xscale,image_yscale,image_angle,image_blend,image_alpha);
         
-        //Draw Bottom Card Dark
-        draw_sprite_ext(sprite_index,image_index,targetX,targetY-(cardsLeft*cardSep),image_xscale,image_yscale,image_angle,c_black,image_alpha*.3);
-    }
+//        //Draw Bottom Card Dark
+//        draw_sprite_ext(sprite_index,image_index,targetX,targetY-(cardsLeft*cardSep),image_xscale,image_yscale,image_angle,c_black,image_alpha*.3);
+//    }
     
-    //Deck Deck Shadow
-    draw_sprite_ext(sprite_index,image_index,x+shadowX,y+shadowY,xscale-shadowSize,yscale-shadowSize,angle,c_black,image_alpha*SHADOW_ALPHA);
+//    //Deck Deck Shadow
+//    draw_sprite_ext(sprite_index,image_index,x+shadowX,y+shadowY,xscale-shadowSize,yscale-shadowSize,angle,c_black,image_alpha*SHADOW_ALPHA);
     
-    //Draw Top Deck
-    draw_sprite_ext(sprite_index,image_index,x,y,xscale,yscale,angle,image_blend,image_alpha);
-}
+//    //Draw Top Deck
+//    draw_sprite_ext(sprite_index,image_index,x,y,xscale,yscale,angle,image_blend,image_alpha);
+//}
 
-#region Draw Stats
+//#region Draw Stats
 
-//Dont Draw If In Enemy Room
-if room == rEnemy then exit;
+////Dont Draw If In Enemy Room
+//if room == rEnemy then exit;
 
-//Setup Text
-draw_set_font(fnMain);
-draw_set_halign(fa_center);
-draw_set_valign(fa_top);
-var _text = $"{cardsLeft}/{totalCards}";
-height = string_height_ext(_text,-1,maxWidth);
-width = string_width_ext(_text,-1,maxWidth);
+////Setup Text
+//draw_set_font(fnMain);
+//draw_set_halign(fa_center);
+//draw_set_valign(fa_top);
+//var _text = $"{cardsLeft}/{totalCards}";
+//height = string_height_ext(_text,-1,maxWidth);
+//width = string_width_ext(_text,-1,maxWidth);
 
-//Setup Box
-var _halfWidth = width/2;
-var _rectRound = UIBOX_RAD;
-var _x = targetX;
-var _y = targetY + (sprite_height/2) + 25;
+////Setup Box
+//var _halfWidth = width/2;
+//var _rectRound = UIBOX_RAD;
+//var _x = targetX;
+//var _y = targetY + (sprite_height/2) + 25;
 
-//Draw The Box
-drawRectOutlined(_x-_halfWidth-widthMargin,_y-height-(heightMargin*2),_x+_halfWidth+widthMargin,_y,_rectRound,1,c_black,c_white,UIBOX_ALPHA*image_alpha,1*image_alpha);
+////Draw The Box
+//drawRectOutlined(_x-_halfWidth-widthMargin,_y-height-(heightMargin*2),_x+_halfWidth+widthMargin,_y,_rectRound,1,c_black,c_white,UIBOX_ALPHA*image_alpha,1*image_alpha);
 
-//Draw Text
-draw_text_ext_transformed(_x,_y-height-(heightMargin/2),_text,-1,maxWidth,1,1,0);
+////Draw Text
+//draw_text_ext_transformed(_x,_y-height-(heightMargin/2),_text,-1,maxWidth,1,1,0);
 
-//Draw Box Hover
-if (touchingMouse() or touchingStack) and !grabbed and !global.holdingCard and !global.menuOpen
-{
-    //Draw Box
-    var _w = 20;
-    var _h = 20;
-    drawRectOutlined(x-_w,y-_h,x+_w,y+_h,UIBOX_RAD,0,c_black,c_white,.6*image_alpha,0);
+////Draw Box Hover
+//if (touchingMouse() or touchingStack) and !grabbed and !global.holdingCard and !global.menuOpen
+//{
+//    //Draw Box
+//    var _w = 20;
+//    var _h = 20;
+//    drawRectOutlined(x-_w,y-_h,x+_w,y+_h,UIBOX_RAD,0,c_black,c_white,.6*image_alpha,0);
     
-    //Draw Text
-    textSetup(fnMain,fa_center,fa_middle,c_white,image_alpha);
-    draw_text_transformed(x,y,"View\nDeck",1,1,0);
-}
+//    //Draw Text
+//    textSetup(fnMain,fa_center,fa_middle,c_white,image_alpha);
+//    draw_text_transformed(x,y,"View\nDeck",1,1,0);
+//}
 
-//Reset Draw
-drawReset();
+////Reset Draw
+//drawReset();
 
 
-#endregion
+//#endregion

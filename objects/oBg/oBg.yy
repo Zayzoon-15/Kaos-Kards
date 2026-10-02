@@ -32,6 +32,10 @@
     {"$GMObjectProperty":"v2","%Name":"frontSprite","filters":[
         "GMSprite",
       ],"listItems":[],"multiselect":false,"name":"frontSprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"sBgFront","path":"sprites/sBgFront/sBgFront.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"sBgFront","varType":5,},
+    {"$GMObjectProperty":"v2","%Name":"drawLogos","filters":[],"listItems":[],"multiselect":false,"name":"drawLogos","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"true","varType":3,},
+    {"$GMObjectProperty":"v2","%Name":"logoSprite","filters":[
+        "GMSprite",
+      ],"listItems":[],"multiselect":false,"name":"logoSprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"sBgLogos","path":"sprites/sBgLogos/sBgLogos.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"sBgLogos","varType":5,},
     {"$GMObjectProperty":"v2","%Name":"extraSprite","filters":[
         "GMSprite",
       ],"listItems":[],"multiselect":false,"name":"extraSprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":5,},

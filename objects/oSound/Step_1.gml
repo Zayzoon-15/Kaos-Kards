@@ -2,10 +2,10 @@
 
 //Set Targets
 var _ease = .3;
-var _masterTarget = global.masterVol/100;
+var _masterTarget =  global.masterVol/100;//power(global.masterVol/100,2);
 var _musicTarget = global.musicVol/200;
-var _sfxTarget = global.sfxVol/40;
-var _voiceTarget = global.voiceVol/40;
+var _sfxTarget = global.sfxVol/50;
+var _voiceTarget = global.voiceVol/50;
 
 //Unfocus Mute
 if global.unfocusMute and !window_has_focus()

@@ -11,6 +11,12 @@ event_inherited();
 info ??= CardsAction.Bread;
 sprite_index = info.sprite;
 
+//Set Card Id
+if cardId == -1 {
+	cardId = instance_number_object(object_index) - 1;
+}
+
+
 #region --- Position ---
 
 //Speeds For Easing
@@ -32,11 +38,15 @@ cardOffsetY = 0;
 
 #endregion
 
+
 #region --- Image ---
 
 //Scale
 scaleTargetX = 1;
 scaleTargetY = 1;
+
+//Depth
+startDepth = depth;
 
 //Effects
 shake = 0;
@@ -44,6 +54,7 @@ flashAlpha = 0;
 flashColor = c_white;
 
 //Shadow
+drawShadow = true;
 shadowFollowRoomCenter = true; //If the shadow should be based off the room center
 shadowTargetX = 0;
 shadowTargetY = 8;
@@ -53,15 +64,25 @@ shadowY = 0;
 shadowSize = shadowTargetSize;
 shadowOffsetX = 0;
 shadowOffsetY = 0;
+maxShadow = 10;
+shadowAlpha = 1;
+shadowTargetAlpha = 1; //This is not the actual alpha so it will always have the normal alpha a shadow has just multiplied with this value
 
 //Angle
+targetAngle = 0;
 angelVel = 0;
 
 //3D Card
 card3dRot = 0;
 card3dTween = noone;
 
+//Depth
+depthChange = 10; //How much the depth changes when grabbed based on its original depth
+depthBasedOnId = true; //If it should change its depth based on the cardId *Used for in hand cards*
+ogLayer = layer;
+
 #endregion
+
 
 #region --- States ---
 
@@ -79,19 +100,58 @@ grabbable = true; //If the card can be grabbed
 hoverable = true; //If the card can be hovered
 placeable = false; //If enabled when the card is let go its last position will be the new placed position
 canMove = true; //If the card can be moved
+showInfo = true;
 
 //Mouse
 hover = false;
 mouseTime = 0;
+touchingOtherCards = false;
 
 //Grab
 grabbed = false;
+lastHeldFrames = 0;
 grabOffsetX = 0;
 grabOffsetY = 0;
 
 #endregion
 
+
+#region --- Juices ---
+//Visual stuff all cards do which can be turned off
+
+doBaseHoverJuice = true; //Normal hover
+doBaseGrabJuice = true; //Normal grab
+doCardSpin = true; //Card can do a 3d spin
+
+#endregion
+
+
+#region --- REQUIRED FUNCS DONT TOUCH ---
+
+checkTouchingCards = function() {
+	
+	//Check Touching
+	var _touch = false;
+	with oParCard {
+		if id != other.id and touchingMouse() {
+			_touch = depth < other.depth;
+		}
+	} 
+
+	//Set Hover
+	if _touch then hover = false;
+	
+	//Return Touch
+	return _touch;
+}
+
+#endregion
+
+
 #region --- Custom Functions ---
+
+
+///On Something Events
 
 //Fires when card is barley hovered 
 onHover = function() {
@@ -103,11 +163,9 @@ onGrab = function() {
 	
 }
 
-
 //Fires when card is let go after being grabbed 
 onLetgo = function() {
 	
 }
 
 #endregion
-

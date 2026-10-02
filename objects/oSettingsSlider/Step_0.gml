@@ -77,6 +77,11 @@ if dragging
 	var _pitch = (currentAmount/slideMax)+.8;
 	audio_sound_pitch(snSettingsHold,_pitch);
 	
+	//Change Gain
+	if changeVar != "masterVol" and changeVar != "sfxVol" {
+		audio_sound_gain(snSettingsHold, currentAmount/slideMax);
+	} else audio_sound_gain(snSettingsHold, 1);
+	
 } else {
 	if playSound {
 		audio_stop_sound(snSettingsHold);

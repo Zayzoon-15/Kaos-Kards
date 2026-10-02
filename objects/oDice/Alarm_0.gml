@@ -1,24 +1,35 @@
-///@desc Roll Done
+///@desc Finish Roll
 
-//Reset Sprite
-image_speed = 0;
+//Stop Animation
+d_image_speed = 0;
 image_index = 0;
 
-//Animation
+//Animation Stuf
 diceJuice();
 
 //Dice Number
-diceNum = irandom_range(dice.range.min,dice.range.max);
+diceNum = irandom_range(diceType.range.min, diceType.range.max);
 
-//Cheer If Perfect
-if diceNum == dice.range.max
-{
-    audioPlaySfx(snCheer,.9,1.1);
+//Set All Dice To Be Done
+if diceId == 3 {
+    with oDice {state = DICE_STATES.DONE;}
 }
 
-//Final Dice
-if diceId == 3
-{
-    with oDice {rolling = false;}
-    alarm[1] = 30;
-}
+////Animation
+//diceJuice();
+//
+////Dice Number
+//diceNum = irandom_range(dice.range.min,dice.range.max);
+//
+////Cheer If Perfect
+//if diceNum == dice.range.max
+//{
+    //audioPlaySfx(snCheer,.9,1.1);
+//}
+//
+////Final Dice
+//if diceId == 3
+//{
+    //with oDice {rolling = false;}
+    //alarm[1] = 30;
+//}
