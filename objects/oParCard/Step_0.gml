@@ -3,8 +3,16 @@
 //Follow Mouse If Grabbed
 if grabbed {
 	
+    //Set Target Position
 	targetX = mouse_x - grabOffsetX;
 	targetY = mouse_y - grabOffsetY;
+    
+    //Set Position To Be Exact To The Mouse
+    if !global.debugMenu.cards.easeWithGrab {
+        x = targetX;
+        y = targetY;
+    }
+    
 	
     //Set Layer
     if layer_exists("Cards") {
@@ -73,10 +81,22 @@ if followPlaced and !grabbed {
 }
 
 //Ease To Target Position
-xspd = spring(x, xspd, targetX, .5, .3);
-yspd = spring(y, yspd, targetY, .5, .3);
-x += xspd;
-y += yspd;
+switch (global.debugMenu.cards.easeType) {
+	case "Lerp":
+        x = lerp_dt(x, targetX, global.debugMenu.cards.cardEaseValue);
+        y = lerp_dt(y, targetY, global.debugMenu.cards.cardEaseValue);
+    break;
+	case "Spring":
+        xspd = spring(x, xspd, targetX, global.debugMenu.cards.cardSpringEaseValue, global.debugMenu.cards.cardSpringValue); //.5, .3
+        yspd = spring(y, yspd, targetY, global.debugMenu.cards.cardSpringEaseValue, global.debugMenu.cards.cardSpringValue);
+        x += xspd;
+        y += yspd;
+    break;
+}
+print(global.debugMenu.cards);
+//xspd = spring(x, xspd, targetX, .5, .3);
+//yspd = spring(y, yspd, targetY, .5, .3);
+
 
 #endregion
 
@@ -160,8 +180,17 @@ if !grabbed {
 
 //Ease Angel Based On Velocity
 var _ang = clamp(targetAngle + (xprevious - x), -90, 90);
-angelVel = spring(image_angle, angelVel, _ang, .6, .5);
-image_angle += angelVel;
+switch (global.debugMenu.cards.easeTypeRot) {
+	case "Lerp":
+        image_angle = lerp_dt(image_angle, _ang, global.debugMenu.cards.cardAngleEaseValue); //.3
+    break;
+	case "Spring":
+        angelVel = spring(image_angle, angelVel, _ang, global.debugMenu.cards.cardAngleSpringEaseValue, global.debugMenu.cards.cardAngleSpringValue); //.6, .5
+        image_angle += angelVel;
+    break;
+}
+
+
 
 //Ease Scale
 image_xscale = lerp_dt(image_xscale, scaleTargetX, .3);

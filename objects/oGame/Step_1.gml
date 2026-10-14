@@ -4,3 +4,6 @@ if _loaded and !alarm[0] and room == rSetup
 {
     alarm[0] = 1;
 }
+
+//Delta
+delta_step();

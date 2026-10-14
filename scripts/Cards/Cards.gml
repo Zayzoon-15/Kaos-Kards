@@ -102,7 +102,7 @@ function createCardKaos(_name = "Name",_desc = "Description",_sprite = sCardBlan
 	}
 }
 
-function createCardDice(_name = "Name",_desc = "Description",_sprite = sCardBlank,_targetsDice = false,_range = [1, 6],_uses = NaN, _banned = false) constructor {
+function createCardDice(_name = "Name",_desc = "Description",_sprite = sCardBlank,_targetsDice = false,_range = undefined,_uses = NaN, _banned = false) constructor {
     
     //Info
     name = _name;

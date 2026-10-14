@@ -14,18 +14,3 @@ with oCardPrepare {
 
 //Destroy
 instance_destroy();
-
-//with oCard
-//{
-    //if state == CARDSTATE.PLACED and slot == other.targetSlot
-    //{
-        ////Juice
-        //cardJuice();
-        //effectStar(x,y,10);
-        //
-        ////Add Range
-        //currentValue += other.diceNum;
-    //}
-//}
-//
-//instance_destroy();

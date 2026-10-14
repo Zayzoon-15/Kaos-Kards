@@ -1,3 +1,6 @@
+//Inherit Delta Time Object
+event_inherited();
+
 //Apply Options 
 timeSourceCreate(2,function()
 {

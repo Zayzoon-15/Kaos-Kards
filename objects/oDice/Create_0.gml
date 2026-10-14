@@ -34,6 +34,11 @@ rollDice = function() {
     state = DICE_STATES.ROLLING;
     diceNum = undefined;
     
+    //Sound
+    if diceId == 3 {
+        d_alarm[3] = 1;
+    }
+    
     //Finish Roll
     d_alarm[0] = diceId * 20;
     

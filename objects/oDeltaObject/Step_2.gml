@@ -1,5 +1,3 @@
-delta_step();
-
 // Break down speed into a vector
 var spd_hvec = lengthdir_x(d_speed, direction);
 var spd_vvec = lengthdir_y(d_speed, direction);

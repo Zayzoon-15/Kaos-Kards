@@ -10,8 +10,8 @@
   "name":"oDeck_1",
   "overriddenProperties":[],
   "parent":{
-    "name":"Prepare",
-    "path":"folders/Objects/Game/Prepare.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

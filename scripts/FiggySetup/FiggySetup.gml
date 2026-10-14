@@ -224,5 +224,42 @@ function FiggySetup() {
         Figgy.Button("Apply Fire Enemy",function(){attackEffectAdd(effectInfo.fire,10,true)});
     
         #endregion
-
+        
+        Figgy.Section("Game Feel",false); #region 
+        
+        Figgy.Separator("Cards");
+        Figgy.Any("Ease Type", "Lerp", ["Lerp", "Spring"], ["Lerp", "Spring"], function(){
+            global.debugMenu.cards.easeType = argument0;
+        });
+        Figgy.Real("Card Ease Value", 0.3, function(){
+            global.debugMenu.cards.cardEaseValue = argument0;
+        });
+        Figgy.Real("Card Spring Ease Value", 0.5, function(){
+            global.debugMenu.cards.cardSpringEaseValue = argument0;
+        });
+        Figgy.Real("Card Spring Value", 0.3, function(){
+            global.debugMenu.cards.cardSpringValue = argument0;
+        });
+        Figgy.Any("Ease Type For Rotation", "Lerp", ["Lerp", "Spring"], ["Lerp", "Spring"], function(){
+            global.debugMenu.cards.easeTypeRot = argument0;
+        });
+        Figgy.Real("Card Angle Ease Value", 0.3, function(){
+            global.debugMenu.cards.cardAngleEaseValue = argument0;
+        });
+        Figgy.Real("Card Angle Spring Ease Value", 0.6, function(){
+            global.debugMenu.cards.cardAngleSpringEaseValue = argument0;
+        });
+        Figgy.Real("Card Angle Spring Value", 0.5, function(){
+            global.debugMenu.cards.cardAngleSpringValue = argument0;
+        });
+        Figgy.Bool("Ease With Grab", false, function(){
+            global.debugMenu.cards.easeWithGrab = argument0;
+        });
+    
+        Figgy.Separator("Prepare Room");
+        Figgy.Bool("Slot Look At Cards", true, function(){
+            global.debugMenu.slots.lookAtCards = argument0;
+        });
+    
+        #endregion
 }

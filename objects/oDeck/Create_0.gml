@@ -48,8 +48,12 @@ cardsInPlay = 0;
 //Visuals
 cardDeckSep = 2;
 
+//Touhcing Deck Stack
+touchingStack = false;
+
 #endregion
 
+#region --- Ui Menu ---
 
 //Ui Box Stats
 canHover = true;
@@ -59,6 +63,10 @@ heightMargin = 2;
 widthMargin = 10;
 maxWidth = 300;
 tipBoxTouching = false;
+
+
+#endregion
+
 
 
 //Functions
@@ -82,6 +90,10 @@ drawCard = function() {
 	//Set Card Position To Start At Deck
 	_inst.x = x;
 	_inst.y = y;
+	_inst.xprevious = x;
+	_inst.yprevious = y;
+	_inst.cardX = x;
+	_inst.cardY = y;
     
     //Add To Array
     array_push(placedCards,_info);

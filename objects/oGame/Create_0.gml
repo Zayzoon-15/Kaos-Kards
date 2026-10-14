@@ -171,3 +171,6 @@ if GM_build_type == "run"
     gameVersion = file_text_read_string(_file);
     file_text_close(_file);
 }
+
+//Delta
+delta_init();
