@@ -31,18 +31,9 @@ if targetSlot == undefined {
 //Finish Prepare
 if diceId == 3 {
     
-}
-
-
-/*
-
-//Finish Prepare
-if diceId == 3
-{
-    //Setup
+    //Setup Vars
     var _time = 60;
     var _rangeId = 1;
-    
     
     //Do After Range Function
     var _slotId = 0;
@@ -53,7 +44,7 @@ if diceId == 3
             if state == CARDSTATE.PLACED and variable_struct_exists(info,"afterRange") and info.afterRange != undefined and slot.slotId == _slotId
             {
                 _time += 30;
-                alarm[3] = 25 + (_rangeId*30);
+                d_alarm[1] = 25 + (_rangeId*30);
                 _rangeId += 1;
             }
             
@@ -61,8 +52,7 @@ if diceId == 3
         _slotId += 1;
     }
     
-    //Set Button
-    //oDonePrepButton.alarm[0] = _time;
-    timeSourceCreate(_time,eventAllCardValuesGained,[],time_source_units_frames);
+    //Fire Card Values Gained Event
+    timeSourceCreate(1,eventAllCardValuesGained);
 }
 

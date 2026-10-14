@@ -5,6 +5,11 @@ if state != DICE_STATES.COMBINE {
     y = lerp_dt(y, ystart, .2);
 }
 
+//Stop Roll Sound
+if diceId == 3 and state != DICE_STATES.ROLLING {
+    audio_stop_sound(snDiceRoll);
+}
+
 #region --- Image ---
 
 //Set Sprite

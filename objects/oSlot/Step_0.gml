@@ -1,3 +1,8 @@
+//Stick To Screen
+if special {
+    x = getPosToWindow(false);
+}
+
 //Get Colliding Card
 var _card = collision_circle(x, y, 80, oCardPrepare, false, true);
 
@@ -7,7 +12,7 @@ if _card and _card.grabbed and array_contains_value(types, _card.info.type) {
 	targetScale = 1.15;
 		
 	//Look Towards Card
-	if !filled {
+	if !filled and global.debugMenu.slots.lookAtCards {
 		//Get Distance To Card
 		var _distance = distance_to_point(_card.x, _card.y)/20;
 		_distance = clamp(_distance, -30, 30);
@@ -44,7 +49,6 @@ if used and !disabled
     targetScale = 1;
     targetAlpha = .7;
 }
-
 
 //Ease Values
 scaleX = lerp_dt(scaleX, targetScale, .2);

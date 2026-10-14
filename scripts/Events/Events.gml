@@ -143,7 +143,7 @@ function eventNextRoundStarted()
     //Set Gamestate
     gameState = GAMESTATES.PREPARE;
     
-    //Enemy Show
+    //Enemy Intro Sequence
     if global.gameRound == 0 and global.currentTourney != undefined
     {
         if global.isMiniBoss
@@ -155,7 +155,7 @@ function eventNextRoundStarted()
     
     //Increase Round
     global.gameRound ++;
-    print("Game Round",global.gameRound)
+    print("Game Round",global.gameRound);
     
     //Remove Actions
     ds_list_clear(playerActions);
@@ -301,9 +301,14 @@ function eventAllCardValuesGained()
         exit;
     }
     
-    
     //Set Done Button
-    instance_destroy(oDonePrepButton);
+    oPrepBtn.buttonVer = "Done";
+    oPrepBtn.buttonUsed = false;
+    oPrepBtn.canHover = true;
+    
+    //A Lil Button Juice
+    oPrepBtn.xscale += .1;
+    oPrepBtn.yscale -= .1;
 }
 
 

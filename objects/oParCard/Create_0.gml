@@ -16,10 +16,9 @@ if cardId == -1 {
 	cardId = instance_number_object(object_index) - 1;
 }
 
-
 #region --- Position ---
 
-//Speeds For Easing
+//Speeds For Easing (Unused as of now, but the code is still there just commented out)
 xspd = 0;
 yspd = 0;
 

@@ -104,9 +104,9 @@ function eerp(_a, _b, _amount) {
 function approach(_a, _b, _amount) {
 	//return a - clamp(a-b, -amount, amount);
 	if (_a < _b) {
-		return min(_a + _amount, _b);
+		return min(_a + _amount * delta(), _b);
 	} else {
-		return max(_a - _amount, _b);
+		return max(_a - _amount * delta(), _b);
 	}
 }
 
