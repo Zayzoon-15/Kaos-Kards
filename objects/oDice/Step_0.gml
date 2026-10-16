@@ -25,4 +25,15 @@ if state == DICE_STATES.SKIPPED {
     image_alpha = lerp_dt(image_alpha,.7,.3);
 }
 
+//Change Lock On Image
+if isTargeted and state == DICE_STATES.IDLE {
+    
+    //Change Frame
+    lockOnFrame += (sprite_get_speed(sDiceLockOn) * delta()) / game_get_speed(gamespeed_fps);
+    
+    //Fade In
+    lockOnAlpha = lerp_dt(lockOnAlpha, 1, .3);
+    
+} else lockOnAlpha = lerp_dt(lockOnAlpha, 0, .3); //Fade Away
+
 #endregion

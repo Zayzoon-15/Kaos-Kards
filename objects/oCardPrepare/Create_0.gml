@@ -15,6 +15,9 @@ baseMaxShadow = maxShadow;
 //Set Slot
 slot = noone;
 
+//Set Target Dice
+targetDiceId = info.type == CARDTYPES.DICE ? irandom_range(1,3) : -1;
+
 //Flip Card
 TweenFire(self, EaseOutBack, TWEEN_MODE_ONCE, true, 0, 1, "card3dRot", 180, 0);
 
@@ -83,12 +86,32 @@ cardJuice = function() {
     image_angle += random_range(5,10)*choose(-1,1);
 }
 
+setDiceTargeted = function(_targeted = true) {
+    if info.type == CARDTYPES.DICE and info.targetsDice {
+        with oDice { //Find The Correct Dice
+            if diceId == other.targetDiceId and isTargeted != _targeted {
+                
+                //Set Dice As Targeted
+                setTargeted(_targeted);
+                
+                //Play Target Sound
+                if _targeted {
+                    audioPlaySfx(other.info.targetSoundOn);
+                } else audioPlaySfx(other.info.targetSoundOff);
+            }
+        }
+    }
+}
+
 #endregion
 
 #region --- Built-In Functions ---
 
 onGrab = function() {
+    
 	removeFromHand();
+    setDiceTargeted(false);
+    
 }
 
 onLetgo = function() {
@@ -96,10 +119,11 @@ onLetgo = function() {
 	//Let Go On Correct Slot
 	var _slot = instance_place(x, y, oSlot);
 	if _slot and array_contains_value(_slot.types, info.type) and !_slot.disabled and !_slot.used {
-		
 		//Swap Cards
 		if _slot.filled {
 			_slot.card.slot = slot;
+            
+            if _slot.card != noone then _slot.card.setDiceTargeted(false);
 			if slot != noone then slot.card = _slot.card; else _slot.card.putCardInHand();
 		}
 		
@@ -126,7 +150,6 @@ onLetgo = function() {
 			createAlertMessage("Trash Is Full");
 			shake += 5;
 		}
-
 	}
 	
 	//Go Back To Hand

@@ -4,11 +4,14 @@ event_inherited();
 //Image
 d_image_speed = 0;
 targetScale = 1;
+lockOnFrame = 0;
+lockOnAlpha = 0;
 
 //Set Dice Stats
 diceType = diceTypes.d6;
 diceNum = undefined;
 targetSlot = undefined;
+isTargeted = false;
 
 //Set Dice States
 enum DICE_STATES {
@@ -20,8 +23,7 @@ enum DICE_STATES {
 }
 state = DICE_STATES.IDLE;
 
-//Targeted 
-isTargeted = false;
+
 
 #region --- Custom Functions ---
 
@@ -77,6 +79,10 @@ combineValues = function() {
     
     //Combine The Dice
     d_alarm[1] = 30 * (diceId + _extraCombine);
+}
+
+setTargeted = function(_targeted = true) {
+    isTargeted = _targeted;
 }
 
 #endregion

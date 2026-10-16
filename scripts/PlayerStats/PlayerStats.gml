@@ -23,6 +23,9 @@ playerDeck = [
     //Dice
     CardsDice.Reroll,
     CardsDice.Upgrade,
+    
+    //Kaos FOR NOW
+    CardsKaos.Swoop
 
 ];
 

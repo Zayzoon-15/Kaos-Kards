@@ -93,7 +93,6 @@ switch (global.debugMenu.cards.easeType) {
         y += yspd;
     break;
 }
-print(global.debugMenu.cards);
 //xspd = spring(x, xspd, targetX, .5, .3);
 //yspd = spring(y, yspd, targetY, .5, .3);
 

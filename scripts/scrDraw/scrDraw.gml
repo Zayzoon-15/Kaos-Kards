@@ -850,3 +850,15 @@ function outlineSurfaceSetup(_thickness = 2.0,_color = c_white,_alpha = 1.0,_sur
 
 }
 
+
+/// @desc For debuging, it creates an on screen alert
+/// @param {string} [_alertText] Text on the alert box
+/// @param {string} [_alertTitle] The title on the alert box
+/// @param {real} [_lifespan] The alert boxes life span
+function debugAlert(_alertText = "Alert Text Box Empty...", _alertTitle = "", _lifespan = 120) {
+    instance_create_depth(0, 0, 0, oDebuAlert, {
+        alertText : _alertText,
+        alertTitle : _alertTitle,
+        lifespan : _lifespan
+    })
+}

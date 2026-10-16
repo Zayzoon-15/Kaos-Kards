@@ -6,7 +6,7 @@ function CardsDice() {
 	}
 	
 	static Upgrade = new createCardDice("Dice Upgrade", "Adds a random amount to a random [aq]dice[/] roll", sCardUpgrade, true, [1, 6]);
-	Upgrade.use = function(_card = oAttackCard, _targetEnemy = false) {
+    Upgrade.use = function(_card = oAttackCard, _targetEnemy = false) {
 		
 	}
 	
@@ -17,7 +17,7 @@ function CardsDice() {
 	
 	///Dice Changes
 	static Dice8 = new createCardDice("8 Sided Dice", "Changes one random [aq]dice[/] to an 8 sided [aq]dice[s][lg](Can ONLY be placed before roll)", sCardDice8, true, undefined, 9);
-	Dice8.use = function(_card = oAttackCard, _targetEnemy = false) {
+    Dice8.use = function(_card = oAttackCard, _targetEnemy = false) {
 		
 	}
 	

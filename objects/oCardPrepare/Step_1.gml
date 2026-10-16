@@ -31,21 +31,41 @@ if !grabbed {
 				var _filledSlot = true;
 				for (var i = 0; i < 4; ++i) {
 					with oSlot {
-						if _swap and slotId == i and array_contains_value(types, other.info.type) and !used and !filled and !disabled {
-							_swap = false;
-							
-							//Move Card Over
-							var _oldPos = new Vector2(other.x,other.y);
-							other.x = x;
-							other.y = y;
-							other.removeFromHand();
-							other.onLetgo();
-							other.x = _oldPos.x;
-							other.y = _oldPos.y;
-							
-							_filledSlot = false;
-							
-							continue;
+						if _swap and slotId == i and array_contains_value(types, other.info.type) and !used and !disabled {
+                            if !filled {
+    							_swap = false;
+    							
+    							//Move Card Over
+    							var _oldPos = new Vector2(other.x,other.y);
+    							other.x = x;
+    							other.y = y;
+    							other.removeFromHand();
+    							other.onLetgo();
+    							other.x = _oldPos.x;
+    							other.y = _oldPos.y;
+    							
+    							_filledSlot = false;
+    							
+                                //Exit Loop
+    							continue;
+                            } else if special { //Swap If Special
+                                
+                                _swap = false;
+                                
+                                //Move New Card Over
+                                var _oldPos = new Vector2(other.x, other.y);
+                                other.x = x;
+                                other.y = y;
+                                other.removeFromHand();
+                                other.onLetgo();
+                                other.x = _oldPos.x;
+                                other.y = _oldPos.y;
+                                
+                                _filledSlot = false;
+                                
+                                //Exit Loop
+                                continue;
+                            }
 						}
 					}
 				}
@@ -91,8 +111,13 @@ if !grabbed {
 			slot.card = noone;
 			slot.filled = false;
 			slot = noone;
+            setDiceTargeted(false);
 			putCardInHand();
+            exit;
 		}
+        
+        //Set Dice As Targeted
+        setDiceTargeted(true);
 	
 		//Set State
 		state = CARD_STATES.PLACED;
