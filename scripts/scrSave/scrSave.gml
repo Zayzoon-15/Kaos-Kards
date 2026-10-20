@@ -314,6 +314,8 @@ function SaveFile()
         struct_set(_saveData,"keyAttack",global.keyAttack);
         struct_set(_saveData,"keyBlock",global.keyBlock);
         struct_set(_saveData,"MobilePress",global.mobilePress);
+        struct_set(_saveData,"Gamepad",global.gamepad);
+        struct_set(_saveData,"GamepadCursorSpeed",global.gamepadCursorSpeed);
         
         //Game
         struct_set(_saveData,"ShowPercentage",global.showPercentage);
@@ -377,6 +379,8 @@ function SaveFile()
         global.keyAttack = struct_get_variable(_saveData,"keyAttack",ord("Z"));
         global.keyBlock = struct_get_variable(_saveData,"keyBlock",ord("X"));
         global.mobilePress = struct_get_variable(_saveData,"MobilePress",true);
+        global.gamepad = struct_get_variable(_saveData,"Gamepad",true);
+        global.gamepadCursorSpeed = struct_get_variable(_saveData,"GamepadCursorSpeed",1);
         
         //Game
         global.showPercentage = struct_get_variable(_saveData,"ShowPercentage",true);

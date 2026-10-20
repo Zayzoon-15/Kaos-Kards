@@ -86,14 +86,3 @@ setTargeted = function(_targeted = true) {
 }
 
 #endregion
-
-/*
-scale = 1;
-
-//Targeted
-isTargeted = false;
-lockOnFrames = 0;
-lockOnAlpha = 0;
-
-//Events
-diceFullyDone = false;

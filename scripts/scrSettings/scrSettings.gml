@@ -53,6 +53,12 @@ function initSettings()
     global.keyAttack = ord("Z");
     global.keyBlock = ord("X");
     
+    //Mobile
+    global.mobilePress = true;
+    
+    //Gamepad
+    global.gamepadCursorSpeed = 1;
+    
     #endregion
     
     //Game
@@ -64,9 +70,6 @@ function initSettings()
     global.tipBox = true;
 	global.tipBoxSize = 1;
     global.cardFlip = true;
-    
-    //Mobile
-    global.mobilePress = true;
     
     //John
     global.johnRodChance = 1000;

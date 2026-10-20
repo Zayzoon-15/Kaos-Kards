@@ -190,8 +190,9 @@ function SettingsMenus()
                 SettingsButtons.Input("Brawler Block","keyBlock");
             
             //Removed For Now
-            //SettingsButtons.Separator("Gamepad (Maybe)");
-                //SettingsButtons.Check("Gamepad");
+            SettingsButtons.Separator("Gamepad");
+                SettingsButtons.Check("Gamepad","gamepad");
+                SettingsButtons.Slider("Cursor Speed", "gamepadCursorSpeed", undefined, 2, .1, 5, false);
                 //SettingsButtons.Button("Accept");
                 //SettingsButtons.Button("Discard");
         } else { //Mobile Input

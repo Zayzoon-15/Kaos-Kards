@@ -60,11 +60,37 @@ if touchingMouse() and !checkTouchingCards() and !global.holdingCard and hoverab
 		//Set Hover
 		hover = true;
 	}
+    
+    //Set Pressed
+    if mouse_check_button_pressed(mb_left) then pressed = true;
+    
+    //Increase Grab Time
+    if mouse_check_button(mb_left) and pressed {
+        grabTime += delta();
+        
+        //Do Grab
+        if grabTime >= grabTargetTime {
+            event_perform(ev_mouse,ev_left_press);
+        }
+        
+    } else grabTime = 0;
+    
+    //Set Pressed
+    if mouse_check_button_released(mb_left) and pressed {
+        pressed = false;
+        
+        //Attempted Grab
+        if grabTime < grabTargetTime then attemptedGrab();
+    }
 	
 	//Darw Info
 	if showInfo then drawCardText(info);
 	
-} else hover = false;
+} else {
+    hover = false;
+    pressed = false;
+    grabTime = 0;
+}
 
 //Reduce Frames
 if lastHeldFrames > 0 then lastHeldFrames -= delta();

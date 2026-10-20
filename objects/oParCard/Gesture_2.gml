@@ -1,5 +1,5 @@
 ///@desc Grab Card
-if hover and canMove and grabbable and !global.holdingCard and global.mobile {
+if hover and canMove and grabbable and !global.holdingCard and !grabbed and (!ignoreDrag or global.mobile) {
 
 	//Set Grab Offset
 	grabOffsetX = mouse_x - x;

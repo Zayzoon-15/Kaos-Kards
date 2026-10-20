@@ -4,6 +4,7 @@ event_inherited();
 //Set Info So We Can See It In Code
 info ??= CardsAction.Bread;
 showInfo = true;
+canUse = true;
 
 //Value
 currentValue = undefined;
@@ -14,6 +15,7 @@ baseMaxShadow = maxShadow;
 
 //Set Slot
 slot = noone;
+justPlaced = false;
 
 //Set Target Dice
 targetDiceId = info.type == CARDTYPES.DICE ? irandom_range(1,3) : -1;
@@ -115,7 +117,8 @@ onGrab = function() {
 }
 
 onLetgo = function() {
-	
+	if !canUse then exit;
+    
 	//Let Go On Correct Slot
 	var _slot = instance_place(x, y, oSlot);
 	if _slot and array_contains_value(_slot.types, info.type) and !_slot.disabled and !_slot.used {
@@ -142,7 +145,7 @@ onLetgo = function() {
 	} else slot = noone;
 	
 	//Let Go On Discard
-	if place_meeting(x, y, oDiscard) {
+	if place_meeting(x, y, oDiscard) and canMove {
 		if !oDiscard.isFull {
 			discardCard();
 			exit;

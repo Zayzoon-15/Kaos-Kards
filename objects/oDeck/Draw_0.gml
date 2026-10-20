@@ -1,33 +1,3 @@
-
-//Draw Empty Spot
-drawRectOutlined(placedX-sprite_get_width(sDeck)/2,ystart-sprite_get_height(sDeck)/2,placedX+sprite_get_width(sDeck)/2,ystart+sprite_get_height(sDeck)/2,UIBOX_RAD,0,c_black,c_white,.3*image_alpha,0);
-
-//Draw Bottom Stack
-if cardsLeft > 1 {
-    var _extendedYscale = (ystart - (ystart - cardsLeft * cardDeckSep)) / sprite_get_height(sDeckExtened) + .2;
-    draw_sprite_ext(sDeckExtened, 0, placedX, ystart + sprite_get_height(sDeck)/2, 1, _extendedYscale, 0, image_blend, image_alpha);
-    
-    //Draw Top Card
-    draw_sprite_ext(sprite_index, 0, placedX, placedY, 1, 1, 0, image_blend, image_alpha);
-    draw_sprite_ext(sprite_index, 0, placedX, placedY, 1, 1, 0, c_black, .2);
-}
-
-//Draw Main Card
-if cardsLeft > 0 then event_inherited();
-
-//Draw Box Hover
-if (touchingMouse() or touchingStack) and !grabbed and !global.holdingCard and !global.menuOpen
-{
-    //Draw Box
-    var _w = 20;
-    var _h = 20;
-    drawRectOutlined(x-_w,y-_h,x+_w,y+_h,UIBOX_RAD,0,c_black,c_white,.6*image_alpha,0);
-    
-    //Draw Text
-    textSetup(fnMain,fa_center,fa_middle,c_white,image_alpha);
-    draw_text_transformed(x,y,"View\nDeck",1,1,0);
-}
-
 #region Draw Stats
 
 //Dont Draw If In Enemy Room
@@ -58,6 +28,35 @@ drawReset();
 
 
 #endregion
+
+//Draw Empty Spot
+drawRectOutlined(placedX-sprite_get_width(sDeck)/2,ystart-sprite_get_height(sDeck)/2,placedX+sprite_get_width(sDeck)/2,ystart+sprite_get_height(sDeck)/2,UIBOX_RAD,0,c_black,c_white,.3*image_alpha,0);
+
+//Draw Bottom Stack
+if cardsLeft > 1 {
+    var _extendedYscale = (ystart - (ystart - cardsLeft * cardDeckSep)) / sprite_get_height(sDeckExtened) + .2;
+    draw_sprite_ext(sDeckExtened, 0, placedX, ystart + sprite_get_height(sDeck)/2, 1, _extendedYscale, 0, image_blend, image_alpha);
+    
+    //Draw Top Card
+    draw_sprite_ext(sprite_index, 0, placedX, placedY, 1, 1, 0, image_blend, image_alpha);
+    draw_sprite_ext(sprite_index, 0, placedX, placedY, 1, 1, 0, c_black, .2);
+}
+
+//Draw Main Card
+if cardsLeft > 0 then event_inherited();
+
+//Draw Box Hover
+if (touchingMouse() or touchingStack) and !grabbed and !global.holdingCard and !global.menuOpen
+{
+    //Draw Box
+    var _w = 20;
+    var _h = 20;
+    drawRectOutlined(x-_w,y-_h,x+_w,y+_h,UIBOX_RAD,0,c_black,c_white,.6*image_alpha,0);
+    
+    //Draw Text
+    textSetup(fnMain,fa_center,fa_middle,c_white,image_alpha);
+    draw_text_transformed(x,y,"View\nDeck",1,1,0);
+}
 
 
 ////Draw Hidden Deck

@@ -9,6 +9,9 @@ doBaseHoverJuice = false;
 doCardSpin = false;
 showInfo = false;
 
+//Grab
+grabTargetTime = 80;
+
 //Shadow
 baseShadowSize = shadowTargetSize;
 shadowAlpha = 0;
@@ -68,8 +71,13 @@ tipBoxTouching = false;
 #endregion
 
 
+#region --- Card Functions ---
 
-//Functions
+attemptedGrab = function() {
+    createAlertMessage("This is where the deck menu would open",120);
+    timeSourceCreate(1.5, createAlertMessage, ["Which we don't have right now...\n-_-",120]);
+}
+
 drawCard = function() {
 	
     //Shuffle Deck
@@ -115,3 +123,5 @@ drawCard = function() {
     audioPlaySfx([snCardDraw1,snCardDraw2,snCardDraw3]);
     
 }
+
+#endregion

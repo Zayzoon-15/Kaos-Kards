@@ -12,7 +12,10 @@
     "name":"Info",
     "path":"folders/Objects/Ui/Info.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oDeltaObject",
+    "path":"objects/oDeltaObject/oDeltaObject.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

@@ -100,9 +100,12 @@ hoverable = true; //If the card can be hovered
 placeable = false; //If enabled when the card is let go its last position will be the new placed position
 canMove = true; //If the card can be moved
 showInfo = true;
+ignoreDrag = false; //If the card should ignore the player trying to drag the card instead of waiting for the grab target timer to end
+
 
 //Mouse
 hover = false;
+pressed = false;
 mouseTime = 0;
 touchingOtherCards = false;
 
@@ -111,6 +114,8 @@ grabbed = false;
 lastHeldFrames = 0;
 grabOffsetX = 0;
 grabOffsetY = 0;
+grabTime = 0; //How much time the player is holding the card before grabbing
+grabTargetTime = 0; //How much time the player has to hold in order to grab the card
 
 #endregion
 
@@ -165,6 +170,11 @@ onGrab = function() {
 //Fires when card is let go after being grabbed 
 onLetgo = function() {
 	
+}
+
+//Fires when the player tried grabbing the card but didnt wait long enough to be able to
+attemptedGrab = function() {
+    
 }
 
 #endregion

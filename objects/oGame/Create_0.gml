@@ -132,6 +132,8 @@ global.timeSources = [];
 //Modes
 global.mobile = os_type == os_android or os_type == os_ios or os_type == os_gxgames;
 global.gamepad = false;
+global.gamepadsConnected = [];
+global.gamepadMain = undefined;
 
 #endregion
 
@@ -152,24 +154,36 @@ SaveFile.SettingsLoad();
 //Set Window
 setWindowToRes();
 
+//Set Game Version
+gameVersion = "NO GAME VERSION FOUND";
+if file_exists(working_directory + "GameVersion.kaos") {
+    
+    //Text Tags
+    var _ver = "Dev";
+    var _date = $"{date_get_year(GM_build_date)}.{date_get_month(GM_build_date)}.{date_get_day(GM_build_date)}";
 
-//Load Game Version
-gameVersion = "";
-if GM_build_type == "run"
-{
-    var _date = date_current_datetime();
-    var _version = $"{date_get_year(_date)}.{date_get_month(_date)}.{date_get_day(_date)}.{date_get_hour(_date)}";
-
-    var _file = file_text_open_write("GameVersion.kaos");
-    file_text_write_string(_file, _version);
-    file_text_close(_file);
-
-    gameVersion = _version;
-} else if file_exists("GameVersion.kaos")
-{
-    var _file = file_text_open_read("GameVersion.kaos");
-    gameVersion = file_text_read_string(_file);
-    file_text_close(_file);
+    //If In IDE Change Game Version
+    if GM_build_type == "run" {
+        
+        //Get File
+        var _file = file_text_open_write(working_directory + "GameVersion.kaos");
+        var _text = $"Version {_date}.{_ver}";
+        
+        //Write New Version Down
+        file_text_write_string(_file,_text);
+        gameVersion = _text;
+        
+    } else {
+        
+        //Get File
+        var _file = file_text_open_read(working_directory + "GameVersion.kaos");
+        
+        //Read Gameversion
+        gameVersion = file_text_read_string(_file);
+        
+        //Close File
+        file_text_close(_file);
+    }
 }
 
 //Delta

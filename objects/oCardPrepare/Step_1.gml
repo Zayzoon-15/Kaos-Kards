@@ -1,4 +1,8 @@
-if gameState == GAMESTATES.GETVALUES then grabbable = false;
+//Set As Can Interact
+if gameState == GAMESTATES.GETVALUES {
+    //grabbable = false;
+    canUse = false;
+}
 
 //Change Placement
 if !grabbed {
@@ -21,7 +25,7 @@ if !grabbed {
 		maxShadow = baseMaxShadow;
 		
 		//Key Place
-		if hover and grabbable and !global.holdingCard and canMove and gameState == GAMESTATES.PREPARE {
+		if hover and grabbable and !global.holdingCard and canMove and gameState == GAMESTATES.PREPARE and canUse {
 			
 			//Place Card
 			if keyCheckPressed(global.keyPlace) {
@@ -94,10 +98,22 @@ if !grabbed {
 		}
 	
 		//Set State
+        justPlaced = false;
 		state = CARD_STATES.HAND;
 	
 	} else { //Slot Placement
-	
+    
+        //Set Placed
+        if !justPlaced {
+            
+            justPlaced = true;
+            
+            //Do Dice Action
+            if info.type == CARDTYPES.DICE {
+                info.use(self.id, true);
+            }
+        }
+        
 		//Set Placement To Slot
 		placedX = slot.x;
 		placedY = slot.y;
@@ -106,7 +122,7 @@ if !grabbed {
 		maxShadow = 5;
 	
 		//Remove Card
-		if keyCheckPressed(global.keyPlace) and hover and grabbable and !global.holdingCard and canMove and gameState == GAMESTATES.PREPARE {
+		if keyCheckPressed(global.keyPlace) and hover and grabbable and !global.holdingCard and canMove and gameState == GAMESTATES.PREPARE and canUse {
 			state = CARD_STATES.GRABBED;
 			slot.card = noone;
 			slot.filled = false;
@@ -122,9 +138,17 @@ if !grabbed {
 		//Set State
 		state = CARD_STATES.PLACED;
 	}
-} else maxShadow = baseMaxShadow;
+} else { 
+    maxShadow = baseMaxShadow;
+    justPlaced = false;
+}
 
 //Set Angle
 if state == CARD_STATES.HAND {
 	targetAngle = (ROOM_CENTER.x - x) * .02;
 } else targetAngle = 0;
+
+//Do Action
+if gameState == GAMESTATES.PREPARE and canUse {
+    info.update(self.id, true);
+}

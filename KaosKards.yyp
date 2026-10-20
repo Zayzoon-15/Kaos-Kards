@@ -214,6 +214,7 @@
     {"link":"io.gamemaker.sdfshaders-1.0.0","name":"io.gamemaker.sdfshaders-1.0.0","path":"io.gamemaker.sdfshaders-1.0.0.yyp",},
   ],
   "IncludedFiles":[
+    {"$GMIncludedFile":"","%Name":"GameVersion.kaos","CopyToMask":-1,"filePath":"datafiles","name":"GameVersion.kaos","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"LICENSE.txt","CopyToMask":-1,"filePath":"datafiles","name":"LICENSE.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"code.kaos","CopyToMask":-1,"filePath":"datafiles/Mods/Test","name":"code.kaos","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"Sprite.png","CopyToMask":-1,"filePath":"datafiles/Mods/Test","name":"Sprite.png","resourceType":"GMIncludedFile","resourceVersion":"2.0",},

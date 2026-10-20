@@ -26,7 +26,7 @@ if state == DICE_STATES.SKIPPED {
 }
 
 //Change Lock On Image
-if isTargeted and state == DICE_STATES.IDLE {
+if isTargeted and state != DICE_STATES.COMBINE and state != DICE_STATES.SKIPPED {
     
     //Change Frame
     lockOnFrame += (sprite_get_speed(sDiceLockOn) * delta()) / game_get_speed(gamespeed_fps);
