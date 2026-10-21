@@ -7,7 +7,7 @@ if special {
 var _card = collision_circle(x, y, 80, oCardPrepare, false, true);
 
 //Card Touching
-if _card and _card.grabbed and array_contains_value(types, _card.info.type) {
+if _card and _card.grabbed and array_contains_value(types, _card.info.type) and _card.canUse {
 	//Set Scale
 	targetScale = 1.15;
 		

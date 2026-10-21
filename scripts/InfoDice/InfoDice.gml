@@ -27,11 +27,11 @@ function CardsDice() {
     Reroll.update = function(_card = oCardPrepare, _targetEnemy) {
         
         //Set As Placeable
-        if _card.canMove {
+        //if _card.canMove {
             if oDice.state == DICE_STATES.DONE {
                 _card.canPlace = true;
             } else _card.canPlace = false;
-        }
+        //}
         
         //Set Roll Button As Not Hoverable
         if _card.canPlace and _card.state != CARDSTATE.PLACED {
@@ -50,16 +50,9 @@ function CardsDice() {
     }
 	
 	static Upgrade = new createCardDice("Dice Upgrade", "Adds a random amount to a random [aq]dice[/] roll", sCardUpgrade, true, [1, 6]);
-    Upgrade.use = function(_card = oCardPrepare, _targetEnemy = false) {
-		
-	}
     Upgrade.update = function(_card = oCardPrepare, _targetEnemy = false) {
         //Create Variable
         if !variable_instance_exists(_card, "upgradeUsed") then variable_instance_set(_card, "upgradeUsed", false);
-        
-        print("Upgrade Used",variable_instance_get(_card, "upgradeUsed"));
-        print("Gamestate", gameState, current_time);
-        print("Holding Card", global.holdingCard);
         
         //Use Upgrade
         if _card.state == CARD_STATES.PLACED and gameState == GAMESTATES.GETVALUES and !variable_instance_get(_card, "upgradeUsed") and _card.currentValue != undefined {
@@ -91,7 +84,6 @@ function CardsDice() {
                     },[_target, currentValue, _card]);
                 };
             }
-            
             
             //Set Used
             variable_instance_set(_card, "upgradeUsed", true);
@@ -150,6 +142,7 @@ function CardsDice() {
             }
         } else if oDice.state != DICE_STATES.IDLE { //Can't Place If Not Idle
             _card.canPlace = false;
+            _card.canMove = true;
         }
     }
 	

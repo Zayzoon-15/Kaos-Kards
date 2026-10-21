@@ -21,7 +21,7 @@ if targetSlot == undefined {
 } else { //Go To Slot
     
     //Move Towards Slot *with passion*
-    TweenEasyMove(x, y, targetSlot.x, targetSlot.y, 0, .5, EaseInBack);
+    TweenEasyMove(x, y, targetSlot.card.x, targetSlot.card.y, 0, .5, EaseInBack);
 
     //Finish Combine
     d_alarm[2] = 30;

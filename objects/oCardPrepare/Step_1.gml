@@ -1,7 +1,7 @@
 //Set As Can Interact
 if gameState == GAMESTATES.GETVALUES {
-    grabbable = false;
-    //canUse = false;
+    //grabbable = false;
+    canUse = false;
 }
 
 //Do Action
@@ -30,23 +30,25 @@ if !grabbed {
 		
 		//Shadow
 		maxShadow = baseMaxShadow;
-		
+        
 		//Key Place
-		if hover and grabbable and !global.holdingCard and canMove and gameState == GAMESTATES.PREPARE and canUse {
+		if hover and grabbable and !global.holdingCard and gameState == GAMESTATES.PREPARE and canUse {
 			
 			//Place Card
 			if keyCheckPressed(global.keyPlace) {
-                    timeSourceCreate(1, function() {
+                timeSourceCreate(1, function() {
     				
     				//Get Target Slot
     				var _swap = true;
     				var _filledSlot = true;
+                    var _used = true;
                     if canPlace {
         				for (var i = 0; i < 4; ++i) {
         					with oSlot {
         						if _swap and slotId == i and array_contains_value(types, other.info.type) and !used and !disabled {
                                     if !filled {
             							_swap = false;
+                                        _used = false
             							
             							//Move Card Over
             							var _oldPos = new Vector2(other.x,other.y);
@@ -64,6 +66,7 @@ if !grabbed {
                                     } else if special { //Swap If Special
                                         
                                         _swap = false;
+                                        _used = false;
                                         
                                         //Move New Card Over
                                         var _oldPos = new Vector2(other.x, other.y);
@@ -82,14 +85,22 @@ if !grabbed {
         						}
         					}
     				    }
-                    } else {
+                    } else if !_used {
                         _filledSlot = false;
                         createAlertMessage("Can't Place Card");
     					shake += 5;
+                    } else {
+                        createAlertMessage("Special Slot Has Already Been Used");
+    					shake += 5;
+                    }
+                    
+                    if _swap and _filledSlot and canPlace and _used {
+                        createAlertMessage("Special Slot Has Already Been Used");
+                        shake += 5;
                     }
     				
     				//Failed Swap
-    				if _swap and _filledSlot {
+    				if _swap and _filledSlot and !_used {
     					createAlertMessage("No Slots Open");
     					shake += 5;
     				}

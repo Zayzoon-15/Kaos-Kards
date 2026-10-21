@@ -113,17 +113,17 @@ setDiceTargeted = function(_targeted = true) {
 onGrab = function() {
     
 	removeFromHand();
-    setDiceTargeted(false);
+    if oDice.state == DICE_STATES.IDLE then setDiceTargeted(false);
     
 }
 
 onLetgo = function() {
-	if !canUse then exit;
-    
+	
 	//Let Go On Correct Slot
 	var _slot = instance_place(x, y, oSlot);
-	if _slot and array_contains_value(_slot.types, info.type) and !_slot.disabled and !_slot.used and canPlace {
-		//Swap Cards
+	if _slot and array_contains_value(_slot.types, info.type) and !_slot.disabled and !_slot.used and canPlace and canUse {
+        
+        //Swap Cards
 		if _slot.filled {
 			_slot.card.slot = slot;
             
@@ -143,16 +143,22 @@ onLetgo = function() {
 		//Exit Code
 		exit;
 		
-	} else if canPlace then slot = noone;
+	} else if canPlace and canUse then slot = noone;
     
     //Can't Place
-    if !canPlace {
+    if !canPlace and canUse and _slot and !_slot.used {
         createAlertMessage("Can't Place Card");
+        shake += 5;
+    }
+    
+    //Slot Used
+    if _slot and !_slot.disabled and _slot.used and _slot.special {
+        createAlertMessage("Special Slot has already been used");
         shake += 5;
     }
 	
 	//Let Go On Discard
-	if place_meeting(x, y, oDiscard) and canMove {
+	if place_meeting(x, y, oDiscard) and canMove and canUse {
 		if !oDiscard.isFull {
 			discardCard();
 			exit;
@@ -163,7 +169,7 @@ onLetgo = function() {
 	}
 	
 	//Go Back To Hand
-	putCardInHand();
+    if slot == noone then putCardInHand();
 	
 }
 
