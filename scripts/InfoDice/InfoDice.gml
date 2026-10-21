@@ -53,11 +53,53 @@ function CardsDice() {
     Upgrade.use = function(_card = oCardPrepare, _targetEnemy = false) {
 		
 	}
-	
-	static AllNothin = new createCardDice("All or Nothin'", "If all [aq]dice[/] roll [o]higher[/] than half of their maximum value, set all [aq]dice[/] to their maximum value. Otherwise, set all [aq]dice[/] to 0[s][lg](Can ONLY be placed before roll)", sCardAllNothin);
-	AllNothin.use = function(_card = oCardPrepare, _targetEnemy = false) {
+    Upgrade.update = function(_card = oCardPrepare, _targetEnemy = false) {
+        //Create Variable
+        if !variable_instance_exists(_card, "upgradeUsed") then variable_instance_set(_card, "upgradeUsed", false);
+        
+        print("Upgrade Used",variable_instance_get(_card, "upgradeUsed"));
+        print("Gamestate", gameState, current_time);
+        print("Holding Card", global.holdingCard);
+        
+        //Use Upgrade
+        if _card.state == CARD_STATES.PLACED and gameState == GAMESTATES.GETVALUES and !variable_instance_get(_card, "upgradeUsed") and _card.currentValue != undefined {
+            
+            //Get Target Dice
+            var _target = noone;
+            with oDice {
+                if diceId == _card.targetDiceId {
+                    _target = self.id;
+                }
+            }
+            
+            //Combine With Dice
+            with _card {
+                if _target != noone {
+                    timeSourceCreate(1.6, function(_target, _val, _card) {
+                        TweenEasyMove(x, y, _target.x, _target.y, 0, .5, EaseInBack);
+                        
+                        //Change Value
+                        timeSourceCreate(.5, function(_target, _val, _card) {
+                            with _target {
+                                diceJuice();
+                                diceNum += _val;
+                            }
+                            
+                            _card.destroy();
+                            
+                        },[_target, _val, _card]);
+                    },[_target, currentValue, _card]);
+                };
+            }
+            
+            
+            //Set Used
+            variable_instance_set(_card, "upgradeUsed", true);
+        }
         
     }
+	
+	static AllNothin = new createCardDice("All or Nothin'", "If all [aq]dice[/] roll [o]higher[/] than half of their maximum value, set all [aq]dice[/] to their maximum value. Otherwise, set all [aq]dice[/] to 0[s][lg](Can ONLY be placed before roll)", sCardAllNothin);
 	AllNothin.update = function(_card = oCardPrepare, _targetEnemy = false) {
         
         //Don't Let Escape If Rolling 

@@ -15,8 +15,7 @@ drawRectOutlined(_x1, _y1, _x2, _y2, 5, 1, c_black, c_white, .6 * image_alpha, i
 
 //Draw Alert Text
 textSetup(fnDebug, fa_left, fa_middle, c_white, image_alpha);
-var _title = extraNum > 0 ? $"{alertTitle} {extraNum}x" : alertTitle;
-print(_title);
+var _title = extraNum > 1 ? $"{alertTitle} {extraNum}x" : alertTitle;
 if _title != "" { //Draw Alert With A Title
     
     //Draw Text

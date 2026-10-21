@@ -1,11 +1,13 @@
 //Set As Can Interact
 if gameState == GAMESTATES.GETVALUES {
-    //grabbable = false;
-    canUse = false;
+    grabbable = false;
+    //canUse = false;
 }
 
 //Do Action
 if gameState == GAMESTATES.PREPARE and canUse {
+    info.update(self.id, true);
+} else if gameState == GAMESTATES.GETVALUES and canUse and info.type == CARDTYPES.DICE {
     info.update(self.id, true);
 }
 
@@ -34,75 +36,77 @@ if !grabbed {
 			
 			//Place Card
 			if keyCheckPressed(global.keyPlace) {
-				
-				//Get Target Slot
-				var _swap = true;
-				var _filledSlot = true;
-                if canPlace {
-    				for (var i = 0; i < 4; ++i) {
-    					with oSlot {
-    						if _swap and slotId == i and array_contains_value(types, other.info.type) and !used and !disabled {
-                                if !filled {
-        							_swap = false;
-        							
-        							//Move Card Over
-        							var _oldPos = new Vector2(other.x,other.y);
-        							other.x = x;
-        							other.y = y;
-        							other.removeFromHand();
-        							other.onLetgo();
-        							other.x = _oldPos.x;
-        							other.y = _oldPos.y;
-        							
-        							_filledSlot = false;
-        							
-                                    //Exit Loop
-        							continue;
-                                } else if special { //Swap If Special
-                                    
-                                    _swap = false;
-                                    
-                                    //Move New Card Over
-                                    var _oldPos = new Vector2(other.x, other.y);
-                                    other.x = x;
-                                    other.y = y;
-                                    other.removeFromHand();
-                                    other.onLetgo();
-                                    other.x = _oldPos.x;
-                                    other.y = _oldPos.y;
-                                    
-                                    _filledSlot = false;
-                                    
-                                    //Exit Loop
-                                    continue;
-                                }
-    						}
-    					}
-				    }
-                } else {
-                    _filledSlot = false;
-                    createAlertMessage("Can't Place Card");
-					shake += 5;
-                }
-				
-				//Failed Swap
-				if _swap and _filledSlot {
-					createAlertMessage("No Slots Open");
-					shake += 5;
-				}
-				
-			}
+                    timeSourceCreate(1, function() {
+    				
+    				//Get Target Slot
+    				var _swap = true;
+    				var _filledSlot = true;
+                    if canPlace {
+        				for (var i = 0; i < 4; ++i) {
+        					with oSlot {
+        						if _swap and slotId == i and array_contains_value(types, other.info.type) and !used and !disabled {
+                                    if !filled {
+            							_swap = false;
+            							
+            							//Move Card Over
+            							var _oldPos = new Vector2(other.x,other.y);
+            							other.x = x;
+            							other.y = y;
+            							other.removeFromHand();
+            							other.onLetgo();
+            							other.x = _oldPos.x;
+            							other.y = _oldPos.y;
+            							
+            							_filledSlot = false;
+            							
+                                        //Exit Loop
+            							continue;
+                                    } else if special { //Swap If Special
+                                        
+                                        _swap = false;
+                                        
+                                        //Move New Card Over
+                                        var _oldPos = new Vector2(other.x, other.y);
+                                        other.x = x;
+                                        other.y = y;
+                                        other.removeFromHand();
+                                        other.onLetgo();
+                                        other.x = _oldPos.x;
+                                        other.y = _oldPos.y;
+                                        
+                                        _filledSlot = false;
+                                        
+                                        //Exit Loop
+                                        continue;
+                                    }
+        						}
+        					}
+    				    }
+                    } else {
+                        _filledSlot = false;
+                        createAlertMessage("Can't Place Card");
+    					shake += 5;
+                    }
+    				
+    				//Failed Swap
+    				if _swap and _filledSlot {
+    					createAlertMessage("No Slots Open");
+    					shake += 5;
+    				}
+    				
+                }, [], time_source_units_frames);
+            }
 			
-			if keyCheckPressed(global.keyDiscard) {
-				if oDiscard.isFull {
-					createAlertMessage("Trash Is Full");
-					shake += 5;
-				} else {
-					removeFromHand();
-					discardCard();
-				}
-					
-
+			if keyCheckPressed(global.keyDiscard) and !keyCheckPressed(global.keyPlace) {
+                timeSourceCreate(1, function() {
+    				if oDiscard.isFull {
+    					createAlertMessage("Trash Is Full");
+    					shake += 5;
+    				} else {
+    					removeFromHand();
+    					discardCard();
+    				}
+                },[],time_source_units_frames)
 			}
 			
 			

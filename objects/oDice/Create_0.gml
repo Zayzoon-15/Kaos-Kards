@@ -13,6 +13,7 @@ baseDiceType = diceType;
 diceNum = undefined;
 targetSlot = undefined;
 isTargeted = false;
+stopSound = false;
 
 //Set Dice States
 enum DICE_STATES {

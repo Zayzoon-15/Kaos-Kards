@@ -1,7 +1,7 @@
 ///@desc Play Rolling Sound
 
 //Stop Loop
-if diceId == 3 and state != DICE_STATES.ROLLING  {
+if diceId == 3 and (state != DICE_STATES.ROLLING or stopSound) {
     exit;
 }
 

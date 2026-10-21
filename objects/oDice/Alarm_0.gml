@@ -17,4 +17,7 @@ if diceId == 3 {
             state = DICE_STATES.DONE;
         });
     }
+    
+    //Stop Sound
+    stopSound = true;
 }
