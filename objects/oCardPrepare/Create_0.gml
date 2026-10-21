@@ -153,7 +153,7 @@ onLetgo = function() {
     
     //Slot Used
     if _slot and !_slot.disabled and _slot.used and _slot.special {
-        createAlertMessage("Special Slot has already been used");
+        createAlertMessage("Special Slot Has Already Been Used");
         shake += 5;
     }
 	
