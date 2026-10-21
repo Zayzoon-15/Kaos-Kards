@@ -15,7 +15,9 @@ drawRectOutlined(_x1, _y1, _x2, _y2, 5, 1, c_black, c_white, .6 * image_alpha, i
 
 //Draw Alert Text
 textSetup(fnDebug, fa_left, fa_middle, c_white, image_alpha);
-if alertTitle != "" { //Draw Alert With A Title
+var _title = extraNum > 0 ? $"{alertTitle} {extraNum}x" : alertTitle;
+print(_title);
+if _title != "" { //Draw Alert With A Title
     
     //Draw Text
     draw_set_valign(fa_bottom);
@@ -23,7 +25,7 @@ if alertTitle != "" { //Draw Alert With A Title
     
     //Draw Title
     draw_set_valign(fa_top);
-    draw_text_transformed(_x1 + margin.x, _y2 + 5, alertTitle, 1, 1, 0);
+    draw_text_transformed(_x1 + margin.x, _y2 + 5, _title, 1, 1, 0);
     
     //Draw Seperating Line
     draw_line(_x1 + 5, _y2 + 23, _x2 - 5, _y2 + 23);

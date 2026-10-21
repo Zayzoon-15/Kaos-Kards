@@ -378,6 +378,7 @@
     {"id":{"name":"oRewardShop","path":"objects/oRewardShop/oRewardShop.yy",},},
     {"id":{"name":"oRewardUnc","path":"objects/oRewardUnc/oRewardUnc.yy",},},
     {"id":{"name":"oRewardUncPaper","path":"objects/oRewardUncPaper/oRewardUncPaper.yy",},},
+    {"id":{"name":"oRollBtn","path":"objects/oRollBtn/oRollBtn.yy",},},
     {"id":{"name":"oRollButton","path":"objects/oRollButton/oRollButton.yy",},},
     {"id":{"name":"oRpsChoice","path":"objects/oRpsChoice/oRpsChoice.yy",},},
     {"id":{"name":"oRpsHand","path":"objects/oRpsHand/oRpsHand.yy",},},

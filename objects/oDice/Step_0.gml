@@ -10,6 +10,11 @@ if diceId == 3 and state != DICE_STATES.ROLLING {
     audio_stop_sound(snDiceRoll);
 }
 
+//Swap Dice Back To Normal
+if !isTargeted and diceType != baseDiceType {
+    changeDiceType(baseDiceType);
+}
+
 #region --- Image ---
 
 //Set Sprite
@@ -27,7 +32,7 @@ if state == DICE_STATES.SKIPPED {
 
 //Change Lock On Image
 if isTargeted and state != DICE_STATES.COMBINE and state != DICE_STATES.SKIPPED {
-    
+    print(targetScale,image_xscale)
     //Change Frame
     lockOnFrame += (sprite_get_speed(sDiceLockOn) * delta()) / game_get_speed(gamespeed_fps);
     

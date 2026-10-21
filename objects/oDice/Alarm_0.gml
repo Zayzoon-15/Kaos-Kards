@@ -10,7 +10,11 @@ diceJuice();
 //Dice Number
 diceNum = irandom_range(diceType.range.min, diceType.range.max);
 
-//Set All Dice To Be Done
+//Set All Dice To Be Done (with a lil delay)
 if diceId == 3 {
-    with oDice {state = DICE_STATES.DONE;}
+    with oDice {
+        timeSourceCreate(.5,function(){
+            state = DICE_STATES.DONE;
+        });
+    }
 }

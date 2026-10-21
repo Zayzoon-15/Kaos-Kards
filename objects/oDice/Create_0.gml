@@ -8,7 +8,8 @@ lockOnFrame = 0;
 lockOnAlpha = 0;
 
 //Set Dice Stats
-diceType = diceTypes.d6;
+diceType = global.diceTypes.d6;
+baseDiceType = diceType;
 diceNum = undefined;
 targetSlot = undefined;
 isTargeted = false;
@@ -83,6 +84,11 @@ combineValues = function() {
 
 setTargeted = function(_targeted = true) {
     isTargeted = _targeted;
+}
+
+changeDiceType = function(_type = global.diceTypes.d6) {
+    diceJuice(false);
+    diceType = _type;
 }
 
 #endregion

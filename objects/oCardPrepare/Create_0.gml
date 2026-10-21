@@ -16,6 +16,7 @@ baseMaxShadow = maxShadow;
 //Set Slot
 slot = noone;
 justPlaced = false;
+canPlace = true;
 
 //Set Target Dice
 targetDiceId = info.type == CARDTYPES.DICE ? irandom_range(1,3) : -1;
@@ -121,7 +122,7 @@ onLetgo = function() {
     
 	//Let Go On Correct Slot
 	var _slot = instance_place(x, y, oSlot);
-	if _slot and array_contains_value(_slot.types, info.type) and !_slot.disabled and !_slot.used {
+	if _slot and array_contains_value(_slot.types, info.type) and !_slot.disabled and !_slot.used and canPlace {
 		//Swap Cards
 		if _slot.filled {
 			_slot.card.slot = slot;
@@ -142,7 +143,13 @@ onLetgo = function() {
 		//Exit Code
 		exit;
 		
-	} else slot = noone;
+	} else if canPlace then slot = noone;
+    
+    //Can't Place
+    if !canPlace {
+        createAlertMessage("Can't Place Card");
+        shake += 5;
+    }
 	
 	//Let Go On Discard
 	if place_meeting(x, y, oDiscard) and canMove {
@@ -158,6 +165,19 @@ onLetgo = function() {
 	//Go Back To Hand
 	putCardInHand();
 	
+}
+
+destroy = function(_disableSlot = true) {
+    
+    //Disable Slot
+    if slot != noone and _disableSlot {
+        slot.used = true;
+        slot.card = noone;
+    }
+    
+    //Destroy
+    effectStar(x,y);
+    instance_destroy();
 }
 
 #endregion

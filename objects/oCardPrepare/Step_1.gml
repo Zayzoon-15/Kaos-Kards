@@ -4,6 +4,11 @@ if gameState == GAMESTATES.GETVALUES {
     canUse = false;
 }
 
+//Do Action
+if gameState == GAMESTATES.PREPARE and canUse {
+    info.update(self.id, true);
+}
+
 //Change Placement
 if !grabbed {
 	if !instance_exists(slot) { //Hand Placement
@@ -33,46 +38,52 @@ if !grabbed {
 				//Get Target Slot
 				var _swap = true;
 				var _filledSlot = true;
-				for (var i = 0; i < 4; ++i) {
-					with oSlot {
-						if _swap and slotId == i and array_contains_value(types, other.info.type) and !used and !disabled {
-                            if !filled {
-    							_swap = false;
-    							
-    							//Move Card Over
-    							var _oldPos = new Vector2(other.x,other.y);
-    							other.x = x;
-    							other.y = y;
-    							other.removeFromHand();
-    							other.onLetgo();
-    							other.x = _oldPos.x;
-    							other.y = _oldPos.y;
-    							
-    							_filledSlot = false;
-    							
-                                //Exit Loop
-    							continue;
-                            } else if special { //Swap If Special
-                                
-                                _swap = false;
-                                
-                                //Move New Card Over
-                                var _oldPos = new Vector2(other.x, other.y);
-                                other.x = x;
-                                other.y = y;
-                                other.removeFromHand();
-                                other.onLetgo();
-                                other.x = _oldPos.x;
-                                other.y = _oldPos.y;
-                                
-                                _filledSlot = false;
-                                
-                                //Exit Loop
-                                continue;
-                            }
-						}
-					}
-				}
+                if canPlace {
+    				for (var i = 0; i < 4; ++i) {
+    					with oSlot {
+    						if _swap and slotId == i and array_contains_value(types, other.info.type) and !used and !disabled {
+                                if !filled {
+        							_swap = false;
+        							
+        							//Move Card Over
+        							var _oldPos = new Vector2(other.x,other.y);
+        							other.x = x;
+        							other.y = y;
+        							other.removeFromHand();
+        							other.onLetgo();
+        							other.x = _oldPos.x;
+        							other.y = _oldPos.y;
+        							
+        							_filledSlot = false;
+        							
+                                    //Exit Loop
+        							continue;
+                                } else if special { //Swap If Special
+                                    
+                                    _swap = false;
+                                    
+                                    //Move New Card Over
+                                    var _oldPos = new Vector2(other.x, other.y);
+                                    other.x = x;
+                                    other.y = y;
+                                    other.removeFromHand();
+                                    other.onLetgo();
+                                    other.x = _oldPos.x;
+                                    other.y = _oldPos.y;
+                                    
+                                    _filledSlot = false;
+                                    
+                                    //Exit Loop
+                                    continue;
+                                }
+    						}
+    					}
+				    }
+                } else {
+                    _filledSlot = false;
+                    createAlertMessage("Can't Place Card");
+					shake += 5;
+                }
 				
 				//Failed Swap
 				if _swap and _filledSlot {
@@ -122,15 +133,21 @@ if !grabbed {
 		maxShadow = 5;
 	
 		//Remove Card
-		if keyCheckPressed(global.keyPlace) and hover and grabbable and !global.holdingCard and canMove and gameState == GAMESTATES.PREPARE and canUse {
-			state = CARD_STATES.GRABBED;
-			slot.card = noone;
-			slot.filled = false;
-			slot = noone;
-            setDiceTargeted(false);
-			putCardInHand();
-            exit;
-		}
+        if keyCheckPressed(global.keyPlace) and hover {
+    		if grabbable and !global.holdingCard and canMove and gameState == GAMESTATES.PREPARE and canUse and canPlace {
+    			state = CARD_STATES.GRABBED;
+    			slot.card = noone;
+    			slot.filled = false;
+    			slot = noone;
+                setDiceTargeted(false);
+    			putCardInHand();
+                exit;
+    		}
+            
+            //Can't Place
+            createAlertMessage("Can't Place Card");
+            shake += 2;
+        }
         
         //Set Dice As Targeted
         setDiceTargeted(true);
@@ -147,8 +164,3 @@ if !grabbed {
 if state == CARD_STATES.HAND {
 	targetAngle = (ROOM_CENTER.x - x) * .02;
 } else targetAngle = 0;
-
-//Do Action
-if gameState == GAMESTATES.PREPARE and canUse {
-    info.update(self.id, true);
-}

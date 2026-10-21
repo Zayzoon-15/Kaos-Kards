@@ -2,10 +2,36 @@
 
 initFonts();
 initDeck();
-
+global.diceTypes = {
+    
+	d6 : {
+	    sprite : sDice6,
+	    range : {min:1,max:6},
+	    color : c_white
+	},
+    
+	d8 : {
+	    sprite : sDice8,
+	    range : {min:3,max:8},
+	    color : #f6e0ff
+	},
+    
+	d12 : {
+	    sprite : sDice12,
+	    range : {min:5,max:12},
+	    color : #d2ffff
+	},
+    
+	d20 : {
+	    sprite : sDice20,
+	    range : {min:8,max:20},
+	    color : #b23227
+	},
+    
+}
 
 //initActionCards();
-initDiceTypes();
+//initDiceTypes();
 //initDiceCards();
 //initKaosCards();
 

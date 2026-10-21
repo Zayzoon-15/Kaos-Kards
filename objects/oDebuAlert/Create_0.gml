@@ -9,6 +9,15 @@ if !variable_global_exists("_alertBox") {
 }
 alertId = array_length(variable_global_get("_alertBox"));
 
+//Get Duplicate Number
+extraNum = 0;
+for (var i = 0; i < array_length(variable_global_get("_alertBox")); i++) {
+	var _array = variable_global_get("_alertBox");
+    if instance_exists(_array[i]) and _array[i].alertTitle == alertTitle and _array[i].alertText == alertText {
+        extraNum ++;
+    }
+}
+
 //Box Size
 margin = new Vector2(10, 10);
 width = 200;
