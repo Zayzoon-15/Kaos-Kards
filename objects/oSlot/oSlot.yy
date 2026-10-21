@@ -11,8 +11,8 @@
   "name":"oSlot",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Prepare",
+    "path":"folders/Objects/Prepare.yy",
   },
   "parentObjectId":{
     "name":"oDeltaObject",

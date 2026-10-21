@@ -9,8 +9,8 @@
   "name":"oComboButton",
   "overriddenProperties":[],
   "parent":{
-    "name":"Buttons",
-    "path":"folders/Objects/Game/Prepare/Buttons.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":{
     "name":"oParButton",

@@ -3,7 +3,7 @@ if global.playerComboMeter < 100 then exit;
 
 //Check All Action Slots
 cards = [];
-with oActionSlot { 
+with oSlot { 
     if filled then array_push(other.cards,card);
 }
 
@@ -15,7 +15,7 @@ if array_length(cards) >= 3
     {
         if !instance_exists(_value)
         {
-            return  false;
+            return false;
         } else return _value.info == cards[0].info;
     }
     
@@ -25,7 +25,7 @@ if array_length(cards) >= 3
 
 
 //Create Combo Button
-if canCombo and !instance_exists(oComboButton)
+if canCombo and !instance_exists(oComboBtn)
 {
-    instance_create_layer(640,480,"Buttons",oComboButton);
+    instance_create_layer(640,480,"Buttons",oComboBtn);
 }

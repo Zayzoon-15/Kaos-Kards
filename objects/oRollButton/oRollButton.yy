@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Buttons",
-    "path":"folders/Objects/Game/Prepare/Buttons.yy",
+    "path":"folders/Objects/Game/Prepare_OLD/Buttons.yy",
   },
   "parentObjectId":{
     "name":"oParButton",

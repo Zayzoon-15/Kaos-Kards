@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Prepare",
-    "path":"folders/Objects/Game/Prepare.yy",
+    "path":"folders/Objects/Prepare.yy",
   },
   "parentObjectId":null,
   "persistent":false,

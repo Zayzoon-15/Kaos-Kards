@@ -48,7 +48,7 @@ if !grabbed {
         						if _swap and slotId == i and array_contains_value(types, other.info.type) and !used and !disabled {
                                     if !filled {
             							_swap = false;
-                                        _used = false
+                                        _used = false;
             							
             							//Move Card Over
             							var _oldPos = new Vector2(other.x,other.y);
@@ -89,14 +89,25 @@ if !grabbed {
                         _filledSlot = false;
                         createAlertMessage("Can't Place Card");
     					shake += 5;
-                    } else {
-                        createAlertMessage("Special Slot Has Already Been Used");
-    					shake += 5;
                     }
                     
-                    if _swap and _filledSlot and canPlace and _used {
-                        createAlertMessage("Special Slot Has Already Been Used");
-                        shake += 5;
+                    for (var i = 0; i < 4; ++i) {
+                        with oSlot {
+                            if slotId == i and array_contains_value(types, other.info.type) and !disabled and _swap and _filledSlot {
+                                
+                                if used {
+                                    createAlertMessage("Special Slot Has Already Been Used");
+                                    other.shake += 5;
+                                    continue;
+                                } else {
+                                    createAlertMessage("Can't Place Card");
+                                    other.shake += 5;
+                                    continue;
+                                }
+                                
+                                
+                            }
+                        }
                     }
     				
     				//Failed Swap
