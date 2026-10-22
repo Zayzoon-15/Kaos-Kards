@@ -19,8 +19,8 @@
   "name":"oCard",
   "overriddenProperties":[],
   "parent":{
-    "name":"Prepare_OLD",
-    "path":"folders/Objects/Game/Prepare_OLD.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

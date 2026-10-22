@@ -14,8 +14,8 @@
   "name":"oDice",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Instances",
+    "path":"folders/Objects/Game/Prepare/Instances.yy",
   },
   "parentObjectId":{
     "name":"oDeltaObject",

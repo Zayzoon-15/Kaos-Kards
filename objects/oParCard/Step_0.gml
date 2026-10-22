@@ -177,6 +177,9 @@ if !grabbed {
 		mouseTime = 0; //Reset Mouse Time
 		
 	}
+    
+    //Shadow
+    maxShadow = baseMaxShadow;
 	
 	//Depth
     depth = depthBasedOnId ? startDepth - cardId : startDepth;
@@ -188,6 +191,7 @@ if !grabbed {
 		//Shadow
 		shadowOffsetY = 11;
 		shadowTargetSize = 0.12;
+        maxShadow = baseMaxShadow + 5;
 	
 		//Set Scale
 		scaleTargetX = 1.1;

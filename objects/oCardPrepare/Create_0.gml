@@ -10,9 +10,6 @@ canUse = true;
 currentValue = undefined;
 valueScale = 1;
 
-//Shadow
-baseMaxShadow = maxShadow;
-
 //Set Slot
 slot = noone;
 justPlaced = false;

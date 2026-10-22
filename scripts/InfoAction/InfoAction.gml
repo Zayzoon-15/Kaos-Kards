@@ -8,7 +8,7 @@
 	
 	static Heal = new createCardAction("Health Pack", "Heals you depending on cards value", sCardHeal, [1,12], 30, -10, CARDACT_GENRES.HEAL);
 	Heal.use = function(_card = oAttackCard, _targetEnemy = true) {
-		
+		debugAlert($"Target Enemy: {_targetEnemy}", "Health Card Used");
 	}
 	
 	static Shield = new createCardAction("Shield", "Grants you temporary health that reduces after every round", sCardShield, [1,12], 30, 0, CARDACT_GENRES.DEFEND);

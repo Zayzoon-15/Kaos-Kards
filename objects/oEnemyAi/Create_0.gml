@@ -317,19 +317,20 @@ _addCard = function(_slotId,_info,_used = false,_disabled = false)
     }
 
     //Create Slot
-    var _slot = instance_create_layer(_x,_y,"Slots",_slotInst,{slotId : _slotId,});
-    _slot.used = _used; //Set Used
-    _slot.disabled = _disabled; //Set Disabled
+    var _slot = instance_create_layer(_x,_y,"Slots",oSlot,{slotId : _slotId,special : _slotId == 0});
+    _slot.used = _used;
+    _slot.disabled = _disabled;
+    _slot.filled = true;
     
     //Create Card
     if !_used and _info != undefined
     {
-        instance_create_layer(_x,_y,"Cards",oEnemyCard,{
+        var _card = instance_create_layer(_x,_y,"Cards",oCardEnemy,{
             info : _info.card,
             value : _cardValue,
-            slotId : _slotId,
 			slot : _slot
         });
+        _slot.card = _card;
     }
     
     //Add Card To Enemy

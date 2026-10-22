@@ -27,9 +27,6 @@ if !grabbed {
 		//Set Hand Placement
 		placedX = _handSize >= _maxSize ? cardHandMush(_handSize) : cardHandSep(_handSize);
 		placedY = _handY;
-		
-		//Shadow
-		maxShadow = baseMaxShadow;
         
 		//Key Place
 		if hover and grabbable and !global.holdingCard and gameState == GAMESTATES.PREPARE and canUse {
@@ -154,9 +151,6 @@ if !grabbed {
 		//Set Placement To Slot
 		placedX = slot.x;
 		placedY = slot.y;
-		
-		//Shadow
-		maxShadow = 5;
 	
 		//Remove Card
         if keyCheckPressed(global.keyPlace) and hover {
@@ -182,7 +176,6 @@ if !grabbed {
 		state = CARD_STATES.PLACED;
 	}
 } else { 
-    maxShadow = baseMaxShadow;
     justPlaced = false;
 }
 

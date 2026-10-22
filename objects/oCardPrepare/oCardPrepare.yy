@@ -13,7 +13,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Prepare",
-    "path":"folders/Objects/Prepare.yy",
+    "path":"folders/Objects/Game/Prepare.yy",
   },
   "parentObjectId":{
     "name":"oParCard",

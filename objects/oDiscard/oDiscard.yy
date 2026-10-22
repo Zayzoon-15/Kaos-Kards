@@ -10,8 +10,8 @@
   "name":"oDiscard",
   "overriddenProperties":[],
   "parent":{
-    "name":"Prepare",
-    "path":"folders/Objects/Prepare.yy",
+    "name":"Instances",
+    "path":"folders/Objects/Game/Prepare/Instances.yy",
   },
   "parentObjectId":null,
   "persistent":false,

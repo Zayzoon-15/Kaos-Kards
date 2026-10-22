@@ -8,13 +8,6 @@ playerHand = undefined;
 //Players Deck
 playerDeck = [
     
-    CardsDice.AllNothin,
-    CardsDice.Reroll,
-    CardsDice.Upgrade,
-    CardsDice.Dice8,
-    CardsDice.Dice12,
-    CardsDice.Dice20,
-    
 	//Action
 	CardsAction.Heal,
 	CardsAction.Heal,

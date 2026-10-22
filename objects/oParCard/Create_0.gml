@@ -63,7 +63,8 @@ shadowY = 0;
 shadowSize = shadowTargetSize;
 shadowOffsetX = 0;
 shadowOffsetY = 0;
-maxShadow = 10;
+maxShadow = 5;
+baseMaxShadow = maxShadow;
 shadowAlpha = 1;
 shadowTargetAlpha = 1; //This is not the actual alpha so it will always have the normal alpha a shadow has just multiplied with this value
 

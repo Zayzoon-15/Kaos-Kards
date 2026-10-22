@@ -11,7 +11,7 @@
   ],
   "parent":{
     "name":"Buttons",
-    "path":"folders/Objects/Prepare/Buttons.yy",
+    "path":"folders/Objects/Game/Prepare/Buttons.yy",
   },
   "parentObjectId":{
     "name":"oButton",

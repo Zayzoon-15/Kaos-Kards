@@ -9,8 +9,8 @@
   "name":"oComboChecker",
   "overriddenProperties":[],
   "parent":{
-    "name":"Prepare",
-    "path":"folders/Objects/Prepare.yy",
+    "name":"Managers",
+    "path":"folders/Objects/Game/Prepare/Managers.yy",
   },
   "parentObjectId":null,
   "persistent":false,
