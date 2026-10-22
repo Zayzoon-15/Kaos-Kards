@@ -7,8 +7,23 @@
 	
 	
 	static Heal = new createCardAction("Health Pack", "Heals you depending on cards value", sCardHeal, [1,12], 30, -10, CARDACT_GENRES.HEAL);
-	Heal.use = function(_card = oAttackCard, _targetEnemy = true) {
-		debugAlert($"Target Enemy: {_targetEnemy}", "Health Card Used");
+	Heal.use = function(_card = oCardTest, _targetEnemy = true) {
+		//Buff Heal Value
+        var _value = _card.value * 1.2;
+        
+        //Give Health
+        if _targetEnemy
+        {
+            healPlayer(_value);
+        } else healEnemy(_value);
+        
+        //Play Voice
+        audioPlayVoice([voiceInfo.healAnymore,voiceInfo.healMid],false,3);
+        
+        //Effects
+        effectHealth(_card.x,_card.y,10,true,0,0,sprite_get_width(sCardBlank) + 40,sprite_get_height(sCardBlank));
+        _card.cardJuice(false);
+        effectNumber(_card.x,_card.y,_value);
 	}
 	
 	static Shield = new createCardAction("Shield", "Grants you temporary health that reduces after every round", sCardShield, [1,12], 30, 0, CARDACT_GENRES.DEFEND);

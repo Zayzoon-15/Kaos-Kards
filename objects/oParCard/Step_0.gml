@@ -107,17 +107,14 @@ if followPlaced and !grabbed {
 }
 
 //Ease To Target Position
-switch (global.debugMenu.cards.easeType) {
-	case "Lerp":
-        x = lerp_dt(x, targetX, global.debugMenu.cards.cardEaseValue);
-        y = lerp_dt(y, targetY, global.debugMenu.cards.cardEaseValue);
-    break;
-	case "Spring":
-        xspd = spring(x, xspd, targetX, global.debugMenu.cards.cardSpringEaseValue, global.debugMenu.cards.cardSpringValue); //.5, .3
-        yspd = spring(y, yspd, targetY, global.debugMenu.cards.cardSpringEaseValue, global.debugMenu.cards.cardSpringValue);
-        x += xspd;
-        y += yspd;
-    break;
+if positionEaseMethod == easeMethods.lerp {
+    x = lerp_dt(x, targetX, global.debugMenu.cards.cardEaseValue);
+    y = lerp_dt(y, targetY, global.debugMenu.cards.cardEaseValue);
+} else {
+    xspd = spring(x, xspd, targetX, global.debugMenu.cards.cardSpringEaseValue, global.debugMenu.cards.cardSpringValue); //.5, .3
+    yspd = spring(y, yspd, targetY, global.debugMenu.cards.cardSpringEaseValue, global.debugMenu.cards.cardSpringValue);
+    x += xspd;
+    y += yspd;
 }
 //xspd = spring(x, xspd, targetX, .5, .3);
 //yspd = spring(y, yspd, targetY, .5, .3);
@@ -209,21 +206,23 @@ if !grabbed {
 
 //Ease Angel Based On Velocity
 var _ang = clamp(targetAngle + (xprevious - x), -90, 90);
-switch (global.debugMenu.cards.easeTypeRot) {
-	case "Lerp":
-        image_angle = lerp_dt(image_angle, _ang, global.debugMenu.cards.cardAngleEaseValue); //.3
-    break;
-	case "Spring":
-        angelVel = spring(image_angle, angelVel, _ang, global.debugMenu.cards.cardAngleSpringEaseValue, global.debugMenu.cards.cardAngleSpringValue); //.6, .5
-        image_angle += angelVel;
-    break;
+if angleEaseMethod == easeMethods.lerp {
+    image_angle = lerp_dt(image_angle, _ang, global.debugMenu.cards.cardAngleEaseValue); //.3
+} else {
+    angelVel = spring(image_angle, angelVel, _ang, global.debugMenu.cards.cardAngleSpringEaseValue, global.debugMenu.cards.cardAngleSpringValue); //.6, .5
+    image_angle += angelVel;
 }
 
-
-
 //Ease Scale
-image_xscale = lerp_dt(image_xscale, scaleTargetX, .3);
-image_yscale = lerp_dt(image_yscale, scaleTargetY, .3);
+if scaleEaseMethod == easeMethods.lerp {
+    image_xscale = lerp_dt(image_xscale, scaleTargetX, .3);
+    image_yscale = lerp_dt(image_yscale, scaleTargetY, .3);
+} else {
+    scaleVelX = spring(image_xscale, scaleVelX, scaleTargetX, .3, .5);
+    scaleVelY = spring(image_yscale, scaleVelY, scaleTargetY, .3, .5);
+    image_xscale += scaleVelX;
+    image_yscale += scaleVelY;
+}
 
 //Set Shadow
 var _shadowMult = grabbed ? .05 : .02;

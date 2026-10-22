@@ -40,9 +40,19 @@ cardOffsetY = 0;
 
 #region --- Image ---
 
+//Ease Methods
+easeMethods = {
+    lerp : 0,
+    spring : 1
+};
+positionEaseMethod = easeMethods.lerp;
+
 //Scale
 scaleTargetX = 1;
 scaleTargetY = 1;
+scaleVelX = 0;
+scaleVelY = 0;
+scaleEaseMethod = easeMethods.lerp;
 
 //Depth
 startDepth = depth;
@@ -71,6 +81,7 @@ shadowTargetAlpha = 1; //This is not the actual alpha so it will always have the
 //Angle
 targetAngle = 0;
 angelVel = 0;
+angleEaseMethod = easeMethods.lerp;
 
 //3D Card
 card3dRot = 0;
