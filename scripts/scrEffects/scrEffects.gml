@@ -139,6 +139,25 @@ function effectNumber(_x,_y,_value,_layer = "Effects",_depthOveride = undefined)
 }
 
 
+///@desc Creates a number hit effect
+///@arg {real} _x The x pos of the effect
+///@arg {real} _y The y pos of the effect
+///@arg {real} _value The number to show
+///@arg {string} _layer The layer to make the effect on (Default = "Effects")
+///@arg {real} _depthOveride The depth of the effect
+function effectNumberHeal(_x,_y,_value,_crit = false,_layer = "Effects",_depthOveride = undefined)
+{
+    var _inst = instance_create_layer(_x,_y,_layer,oEffectNum,{
+        value : _value,
+        color : c_lime,
+        crit : _crit
+    });
+    
+    //Depth Overide
+    if _depthOveride != undefined then _inst.depth = _depthOveride;
+}
+
+
 ///@desc Creates a text sprite effect
 ///@arg {real} _x The x pos of the effect
 ///@arg {real} _y The y pos of the effect

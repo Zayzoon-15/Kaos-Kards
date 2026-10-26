@@ -363,3 +363,12 @@ function angelVelocity(_curAngle = image_angle, _angMult = 1, _ease = .2, _maxAn
 	_angle = clamp(_angle, -_maxAng, _maxAng);
 	return lerp_dt(_curAngle, _angle, _ease, delta());
 }
+
+function applyCrit(_value = 1,_critChance = 1, _critBuff = 1.5) {
+    var _crit = irandom_range(1, _critChance) == 1;
+    if _crit {
+        _value *= _critBuff;
+    }
+    
+    return {value : _value, crit : _crit};
+}
